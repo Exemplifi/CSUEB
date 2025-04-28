@@ -1,0 +1,117 @@
+.bg-red {
+    background: var(--red);
+    color: var(--white);
+
+    * {
+        color: var(--white);
+    }
+}
+
+.bg-white {
+    background: var(--white);
+}
+
+.bg-black {
+    background: var(--black);
+    color: var(--white);
+    * {
+        color: var(--white);
+    }
+    .btn.btn-secondary {
+        .arrow {
+          color: var(--red);
+          path {
+            color: var(--red);
+          }
+        }
+        &:hover {
+          .arrow {
+            color: var(--gold);
+            path {
+                color: var(--gold);
+            }
+          }
+        }
+      }
+    .btn.btn-secondary-white {
+        &:hover {
+            background: rgba(253, 194, 90, 0.10);
+            transition: all 0.5s ease-in-out;
+            border: 1px solid var(--pink);
+            .arrow {
+              transform: rotate(-45deg);
+              color: var(--gold)!important;
+              path {
+                color: var(--gold);
+              }
+            }
+        }
+    }
+}
+.bg-gold {
+    background: var(--gold);
+}
+.bg-light-gray {
+    background: var(--light-gray);
+}
+.bg-grey-700 {
+    background: var(--grey-700);
+}
+
+.bg-danger {
+    background: var(--danger);
+}
+
+.bg-success {
+    background: var(--success);
+}
+
+.text-red {
+    color: var(--red);
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.text-black {
+    color: var(--black);
+    * {
+        color: var(--black); 
+    }
+}
+
+.text-gold {
+    color: var(--gold);
+    * {
+        color: var(--gold);
+    }
+}
+
+.text-purple {
+    color: var(--purple);
+    * {
+        color: var(--purple); 
+    }
+}
+
+.text-teal {
+    color: var(--teal);
+    * {
+        color: var(--teal);
+    }
+}
+.text-red {
+    color: var(--red);
+    * {
+        color: var(--red);
+    }
+}
+
+.text-success {
+    color: var(--success);
+}
+
+.text-danger {
+    color: var(--danger);
+}

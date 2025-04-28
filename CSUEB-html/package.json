@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "sass-rem": "^4.0.0",
+    "swiper": "^11.2.6"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "sass": "^1.87.0",
+    "vite": "^6.3.3"
+  },
+  "scripts": {
+    "sass": "sass --watch scss/styles.scss:styles.css",
+    "start": "concurrently \"npm run sass\" \"npm run js\"",
+    "js": "echo 'Watching JS manually, or handled in browser'"
+  }
+}

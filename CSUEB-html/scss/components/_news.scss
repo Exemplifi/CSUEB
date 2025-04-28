@@ -1,0 +1,155 @@
+.campus-news {
+  .news-card {
+    overflow: hidden;
+    border-radius: 0;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    height: 100%; 
+    img {
+      transition: transform 0.4s ease;
+      height: 100%;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      top:rem.convert(23px);
+      right:rem.convert(27px);
+      opacity: 0;
+      transition: all 0.4s ease-in-out;
+      background-image: url(images/star-3-white.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: right;
+      width: 7.20338rem;
+      height: 1.45013rem ;
+    }
+    &::after {
+      content: "";
+      background: linear-gradient(0deg, var(--black-70, rgba(0, 0, 0, 0.70)) 0%, var(--black-70, rgba(0, 0, 0, 0.70)) 100%);
+
+
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      @include media-breakpoint-up(md) {
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 15%, rgba(0, 0, 0, 0.70) 54.29%);
+      }
+    }
+    .overlay {
+      border: 12px solid transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      transition: all 0.4s ease-in-out;
+      z-index: 3;
+      .news-content {
+        position: relative;
+        z-index: 4;
+        @include media-breakpoint-up(xxl) {
+          max-width: 80%;
+        }
+        .button-grp{
+          margin-top:  rem.convert(12px);
+          @include media-breakpoint-up(md) {
+            margin-top:  rem.convert(24px);
+          }
+        }
+      }
+    }
+
+
+    &:hover {
+      @include media-breakpoint-up(md) {
+        &::after {
+          content: "";
+          background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 15%, rgba(0, 0, 0, 0) 54.29%);
+        }
+        &::before {
+          content: "";
+          opacity: 1;
+          z-index: 6;
+          transition: all 0.4s ease-in-out;
+        }
+        .overlay {
+          transition: all 0.4s ease-in-out;
+          border-color: #00b5ad;
+          border-color: var(--teal);
+          background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.40)) 0%, var(--black-40, rgba(0, 0, 0, 0.40)) 100%), var(--teal-80, rgba(0, 160, 173, 0.80));
+        }
+      }
+    
+      &.purple-hover {
+        @include media-breakpoint-up(md) {
+          &:hover  {
+            .overlay {
+              border-color: var(--purple);
+              background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.40)) 0%, var(--black-40, rgba(0, 0, 0, 0.40)) 100%), var(--purple-80, rgba(122, 35, 106, 0.80));
+              transition: all 0.4s ease-in-out;
+            }
+          }
+        }
+      }
+      &.teal-hover {
+        @include media-breakpoint-up(md) {
+          &:hover  {
+            .overlay {
+              border-color: var(--teal);
+              background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.40)) 0%, var(--black-40, rgba(0, 0, 0, 0.40)) 100%), var(--teal-80, rgba(0, 160, 173, 0.80));
+  
+              transition: all 0.4s ease-in-out;
+            }
+          }
+        }
+      }
+  
+      &.gold-hover {
+        @include media-breakpoint-up(md) {
+          &:hover  {
+            .overlay {
+              border-color: var(--gold);
+              background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.40)) 0%, var(--black-40, rgba(0, 0, 0, 0.40)) 100%), var(--orange-80, rgba(246, 144, 30, 0.80));
+              transition: background 0.4s, all 0.4s ease-in-out;
+            }
+          }
+        }
+      }
+      img {
+        transform: scale(1.05);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        transition: all 0.5s ease-in-out;
+        .arrow {
+          transform: rotate(-45deg);
+          color: var(--gold);
+        }
+      }
+    }
+  }
+
+  .side-small-cards {
+    .news-card {
+      .overlay {
+        .news-content {
+          max-width: 100%;
+          .button-grp {
+            margin-top:  rem.convert(12px)!important;
+          }
+        }
+      }
+    }
+  }
+
+
+}
+
+.row-button-sec {
+  margin-top: 2rem;
+  @include media-breakpoint-up(md) {
+    margin-top: 3rem;
+  }
+}

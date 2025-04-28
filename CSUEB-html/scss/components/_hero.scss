@@ -1,0 +1,124 @@
+
+
+// Home Hero Start
+.home-hero-sec {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.90) 0%, rgba(0, 0, 0, 0.90) 100%), url(images/hero-bg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 0.6rem;
+
+  .content-section {
+      padding-block: 5rem;
+      padding-left: 4rem;
+      display: inline-flex;
+      flex-direction: column;
+      gap: rem.convert(30px);
+      @include media-breakpoint-up(md) {
+        width: 46%;
+      }
+      @include media-breakpoint-up(xxl) {
+        padding-block: 9rem;
+      }
+      @include media-breakpoint-up(xxxl) {
+        padding-left: 3rem;
+      }
+      @include media-breakpoint-down(md) {
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+        padding-inline: 1.25rem;
+        gap: rem.convert(24px);
+      }
+    h1 {
+      .highlight {
+        color: #e30046; // Pinkish red
+      }
+    }
+  
+    .actions {
+      li {
+        margin-top: rem.convert(8px);
+        @include media-breakpoint-down(md) {
+          margin-top: rem.convert(12px);
+        }
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .image-section {
+    position: relative;
+    @include media-breakpoint-up(md) {
+      width: 54%;
+    }
+    .img-clip-path-box {
+      position: relative;
+      .img-wrapper {
+        position: relative;
+        height: 100%;
+        padding-top: rem.convert(37px);
+        padding-left: rem.convert(37px);
+        @include media-breakpoint-down(lg) {
+          padding-top: rem.convert(20px);
+          padding-left: rem.convert(20px);
+        }
+        img {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+          position: relative;
+          z-index: 2;
+          @include media-breakpoint-up(lg) {
+          }
+          @include media-breakpoint-down(md) {
+            min-height: 297px;
+          }
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          z-index: 1;
+          left: 0;
+          top: 0;
+          height: 94%;
+          width: 94%;
+          background-position: top left;
+          border: 12px solid #FDC25A;
+          @include media-breakpoint-down(lg) {
+           border-width: 6px;
+          }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          z-index: 3;
+          right: 1.25rem;
+          bottom: 1.25rem;
+          height: 100%;
+          width: 1.81644rem;
+          max-height: 15.44531rem;
+          background-image: url(images/stars-single-svg.svg);
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: right;
+          @include media-breakpoint-down(lg) {
+            max-height: 12rem;
+          }
+          @include media-breakpoint-down(md) {
+            max-height: 8.49619rem;
+            right: rem.convert(10px);
+            bottom:  rem.convert(10px);
+          }
+        }
+      }
+    } 
+    
+  }
+}
+// Home Hero End
+
+
+
+

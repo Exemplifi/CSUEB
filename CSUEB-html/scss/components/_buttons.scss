@@ -1,0 +1,226 @@
+.btn {
+  border-radius: 0px;
+  text-transform: uppercase;
+  border: 0px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.5s ease-in-out;
+  font-size: rem.convert(14px);
+  padding: 0.5rem 0.75rem 0.5rem 0.5rem;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: $semibold;
+  line-height: 175%; /* 1.75rem */
+  text-transform: uppercase;
+  font-family: var(--body-font-family);
+  @include media-breakpoint-down(md) {
+    padding: 0.25rem 0.5rem 0.25rem 0.25rem;
+    font-size: 0.875rem;
+  }
+  &.btn-primary {
+    background-color: transparent;
+    position: relative;
+    padding: 0;
+    padding-left: 0.865rem;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 0.875rem;
+      height: 100%;
+      top: 0;
+      z-index: 9;
+      background: var(--red);
+      clip-path:  polygon(20% 0%, 108% 0, 120% 20%, 100% 100%, 100% 100%, 0% 60%, 0 0);
+      transition: all 0.5s ease-in-out;
+    }
+    span {
+      display: block;
+      background-color: var(--red);
+      color: var(--white);
+      transition: all 0.5s ease-in-out;
+      padding: 0.75rem 1.5rem 0.75rem 0.75rem;
+    }
+    &:hover {
+      background-color: transparent;
+      color: var(--maroon);
+      transition: all 0.5s ease-in-out;
+      color: var(--white);
+      span { 
+        background-color: var(--black);
+
+      }
+      &::before {
+        background-color: var(--black);
+      }
+    }
+
+    &.disabled {
+      opacity: 0.4;
+    }
+
+  
+  }
+
+  &.btn-primary-yellow {
+    background-color: transparent;
+    position: relative;
+    padding: 0;
+    padding-left: 0.865rem;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 0.875rem;
+      height: 100%;
+      top: 0;
+      z-index: 9;
+      background: var(--gold);
+      clip-path:  polygon(20% 0%, 108% 0, 120% 20%, 100% 100%, 100% 100%, 0% 60%, 0 0);
+      transition: all 0.5s ease-in-out;
+    }
+    span {
+      display: block;
+      background-color: var(--gold);
+      color: var(--black);
+      transition: all 0.5s ease-in-out;
+      padding: 0.75rem 1.5rem 0.75rem 0.75rem;
+    }
+    &:hover {
+      background-color: transparent;
+      color: var(--maroon);
+      transition: all 0.5s ease-in-out;
+      color: var(--white);
+      span { 
+        background-color: var(--black);
+        color: var(--white);
+      }
+      &::before {
+        background-color: var(--black);
+      }
+    }
+
+    &.disabled {
+      opacity: 0.4;
+    }
+  }
+
+  &.btn-primary-default {
+    background-color: var(--pink);
+    color: var(--maroon);
+    font-size: rem.convert(14px);
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 0;
+      height: 0;
+      border-radius: 0 50% 50% 00%;
+      background-color: var(--dark-green);
+      // background: -webkit-linear-gradient(180deg, hsla(357, 71%, 17%, 1) 0%, hsla(175, 92%, 10%, 1) 60%);
+      // background: -moz-linear-gradient(180deg, hsla(357, 71%, 17%, 1) 0%, hsla(175, 92%, 10%, 1) 60%);
+      transition: width 0.5s ease-in-out, height 0.5s ease-in-out, transform 0.8s ease-in-out;
+      transform: translate(-100%, -50%);
+      top: 50%;
+      left: 0;
+      z-index: -1;
+    }
+
+    &:hover {
+      // background-color: var(--pink);
+      color: var(--sage);
+      transition: all 0.8s ease-in-out;
+
+      &::after {
+        width: 200%;
+        height: 500px;
+        transform: translate(0%, -50%);
+      }
+    }
+  }
+
+  &.btn-secondary {
+    background-color: transparent;
+    display: inline-flex;
+    text-align: left;
+    .arrow {
+      margin-right: rem.convert(12px);
+      transition: all 0.3s ease-in-out;
+      color: var(--red);
+    }
+    span {
+      flex: 1;
+    }
+    &:hover {
+      background: rgba(253, 194, 90, 0.10);
+      transition: all 0.5s ease-in-out;
+      border: 1px solid var(--pink);
+      .arrow {
+        transform: rotate(-45deg);
+        color: var(--gold);
+      }
+    }
+    &.btn-secondary-icon-yellow {
+      background: transparent;
+      .arrow {
+        color: var(--gold);
+      }
+    }
+  }
+
+  &.btn-secondary-white {
+    background-color: transparent;
+    display: inline-flex;
+    text-align: left;
+    span {
+      flex: 1;
+    }
+    .arrow {
+      margin-right: rem.convert(12px);
+      transition: all 0.3s ease-in-out;
+      color: var(--red);
+    }
+    &:hover {
+      background: rgba(213, 0, 50, 0.10);
+      transition: all 0.5s ease-in-out;
+      border: 1px solid var(--pink);
+      .arrow {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+
+}
+
+
+.link-btn {
+  font-family: var(--body-font-family);
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 175%; /* 1.3125rem */
+  text-decoration: none;
+  color: #FFFFFF99!important;
+  transition: all 0.5s ease-in-out;
+  text-transform: uppercase;
+  position: relative;
+  &::after {
+    content: "";
+    border-bottom:1px solid #FFFFFF99;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    bottom: rem.convert(2px);
+    transition: all 0.5s ease-in-out;
+  }
+  &:hover {
+    color: var(--white)!important;
+    &::after {
+      content: "";
+      border-color: transparent;
+    }
+  }
+}
