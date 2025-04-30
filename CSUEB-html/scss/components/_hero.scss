@@ -24,7 +24,7 @@
         padding-left: 3rem;
       }
       @include media-breakpoint-down(md) {
-        padding-top: 5rem;
+        padding-top: 0;
         padding-bottom: 3rem;
         padding-inline: 1.25rem;
         gap: rem.convert(24px);
@@ -119,6 +119,8 @@
 }
 // Home Hero End
 
-
+.section-hero {
+  padding-top: rem.convert(151px);
+}
 
 

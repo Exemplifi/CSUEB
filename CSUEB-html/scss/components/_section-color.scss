@@ -5,6 +5,14 @@
     * {
         color: var(--white);
     }
+
+    .btn-secondary.btn-secondary-icon-yellow {
+        svg {
+            * {
+                color: var(--gold);
+            }
+        }
+    }
 }
 
 .bg-white {

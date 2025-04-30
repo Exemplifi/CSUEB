@@ -21,6 +21,9 @@
       clip-path: polygon(0 0, 80% 0%, 100% 0, 100% 100%, 63% 100%, 25% 100%, 1% 68%, 0% 20%);
       position: relative;
       z-index: 2;
+      @include media-breakpoint-up(md) {
+        clip-path: polygon(0 0, 80% 0%, 100% 0, 100% 100%, 63% 100%, 43% 100%, 1% 68%, 0% 20%);
+      }
       @include media-breakpoint-up(lg) {
         clip-path: polygon(0 0, 80% 0%, 100% 0, 100% 100%, 63% 100%, 23% 100%, 1% 68%, 0% 20%);
       }
@@ -178,12 +181,22 @@
   }
 
   &.left-img-text-sec {
+    .content-section {
+      @include media-breakpoint-up(md) {
+        padding-left: 3rem;
+      }
+    }
     .row-section  {
       @include media-breakpoint-up(md) {
         flex-direction: row-reverse!Important;
       }
     }
     .image-section {
+      @include media-breakpoint-up(md) {
+        padding-left: 2rem;
+        padding-right: 1rem;
+      }
+
       .img-wrapper {
         &::after {
           content: "";

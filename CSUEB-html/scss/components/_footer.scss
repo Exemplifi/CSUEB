@@ -81,3 +81,7 @@
     margin-top: rem.convert(14px);
   }
 }
+.border-secondary {
+  --bs-border-opacity: 1;
+  border-color: #FFFFFF99 !important;
+}
