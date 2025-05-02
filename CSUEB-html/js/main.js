@@ -57,8 +57,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuBtn = document.querySelector('.menu-btn');
     const menuBtnMobile = document.getElementById('menuToggleMobile');
     const sidebar = document.querySelector('.sidebar');
-    const overlay = document.querySelector('.overlay');
+    const overlay = document.querySelector('.overlay-header');
     const closeBtn = document.querySelector('.close-btn'); // optional
+    const closeBtnMobile = document.querySelector('.close-btn-mobile'); // optional
     const body = document.body;
     const header = document.querySelector('.main-header');
 
@@ -81,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (menuBtnMobile) menuBtnMobile.addEventListener('click', openSidebar);
     if (overlay) overlay.addEventListener('click', closeSidebar);
     if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
+    if (closeBtnMobile) closeBtnMobile.addEventListener('click', closeSidebar);
 
     // Scroll Event - Add class on header when scrolled
     window.addEventListener('scroll', () => {

@@ -67,6 +67,9 @@
       }
     }
 
+    .btn-secondary {
+      color: var(--white);
+    }
 
     &:hover {
       @include media-breakpoint-up(md) {

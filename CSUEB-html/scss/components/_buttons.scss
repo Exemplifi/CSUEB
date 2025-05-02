@@ -247,6 +247,7 @@
     display: inline-flex;
     text-align: left;
     font-weight: $semibold;
+    color: var(--black);
     .arrow {
       margin-right: rem.convert(12px);
       transition: all 0.3s ease-in-out;
@@ -256,12 +257,11 @@
       flex: 1;
     }
     &:hover {
-      background: rgba(253, 194, 90, 0.10);
+      background: rgba(213, 0, 50, 0.10);
       transition: all 0.5s ease-in-out;
       border: 1px solid var(--pink);
       .arrow {
         transform: rotate(-45deg);
-        color: var(--gold);
       }
     }
     &.btn-secondary-icon-yellow {

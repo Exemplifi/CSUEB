@@ -17,6 +17,12 @@
   }
   .container  {
     padding-block: 1.5rem;
+    @media (min-width: 1600px) {
+      max-width: 95%;
+    }
+    @include media-breakpoint-down(xl) {
+      padding-inline: 1rem;
+    }
   }
 
   .logo {
@@ -27,6 +33,7 @@
     img {
       width: 100%;
       height: 100%;
+      transition: width 0.3s ease;
     }
   }
   .menu-btn {
@@ -77,6 +84,12 @@
   .container  {
     background-color: var(--black);
   }
+  .logo  {
+    img {
+      width: 80%;
+      transition: width 0.3s ease;
+    }
+  }
 }
 // Sidebar (fade animation)
 .sidebar {
@@ -91,19 +104,22 @@
   visibility: hidden;
   transition: all 0.3s ease-in-out;
   // Default mobile: slide-in from left
-  left: -100%;
+  right: -100%;
   transform: none;
   @include media-breakpoint-up(xl) {
     width: 85%;
+  }
+
+  @include media-breakpoint-up(xxl) {
+    width: 89%; 
   }
   @include media-breakpoint-down(md) {
     width: 100%;
     height: 100%;
   }
-  
 
   &.active {
-    left: 0;
+    right: 0;
     opacity: 1;
     visibility: visible;
   }
@@ -125,11 +141,21 @@
   .sidebar-header {
     padding: 3.5rem 4rem 3rem 4rem;
     @include media-breakpoint-down(xxl) {
-      padding-block: 2.5rem;
-      padding-inline: 5%;
+      padding-bottom: 2.5rem;
+      padding-top: 4rem;
+      padding-inline: 3.5;
     } 
     @include media-breakpoint-down(xl) {
-      padding-top: 1.5rem;
+      padding-top: 4rem;
+    }
+    @media (min-width: 1600px) { 
+      padding-right: 8rem;
+
+    }
+  }
+  .btn-primary-gray {
+    span {
+      padding: 0.50rem 0.75rem 0.50rem 0.5rem;
     }
   }
 
@@ -145,6 +171,9 @@
     @include media-breakpoint-up(xxl) {
       padding-inline: 8.25rem;
       padding-bottom: 4rem;
+    }
+    @media (min-width: 1600px) {
+      padding-inline: 11rem;
     }
   }
 
@@ -173,6 +202,7 @@
         padding-top: rem.convert(56px);
         padding-inline: rem.convert(32px);
       }
+
       .sidebar-link-wrap {
         margin-top: 1.25rem;
         li {
@@ -186,7 +216,6 @@
         }
       }
     }
-
     .sidebar-body {
       flex: 1;
       overflow-y: auto;
@@ -261,7 +290,7 @@
 }
 
 // Overlay
-.overlay {
+.overlay-header {
   position: fixed;
   top: 0;
   left: 0;
@@ -358,3 +387,19 @@
   }
 }
 
+
+.btn.btn-primary-close {
+  &::before {
+    background-color: #BC0829;
+    content: "";
+  }
+  span {
+    padding-left: 0.25rem;
+    padding-right: 0.75rem;
+    display: block;
+    background-color: #BC0829;
+  }
+  @media (min-width: 992px) {
+    display: none;
+  }
+}

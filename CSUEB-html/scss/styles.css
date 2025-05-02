@@ -134,7 +134,7 @@ h2, .h2 {
 }
 
 h3, .h3 {
-  font-family: var(--heading-font-family);
+  font-family: var(--body-font-family);
   font-size: 1.875rem;
   font-style: normal;
   font-weight: 600;
@@ -155,7 +155,7 @@ h3, .h3 {
 }
 
 h4, .h4 {
-  font-family: var(--heading-font-family);
+  font-family: var(--body-font-family);
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 600;
@@ -166,6 +166,14 @@ h4, .h4 {
     font-size: 1.125rem;
     line-height: 140%; /* 1.575rem */
   }
+}
+
+h5, .h5 {
+  font-family: var(--body-font-family);
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 1.575rem */
 }
 
 .h3-headng {
@@ -618,6 +626,7 @@ section.bg-black + section.bg-black {
   display: inline-flex;
   text-align: left;
   font-weight: 600;
+  color: var(--black);
 }
 .btn.btn-secondary .arrow {
   margin-right: 0.75rem;
@@ -628,13 +637,12 @@ section.bg-black + section.bg-black {
   flex: 1;
 }
 .btn.btn-secondary:hover {
-  background: rgba(253, 194, 90, 0.1);
+  background: rgba(213, 0, 50, 0.1);
   transition: all 0.5s ease-in-out;
   border: 1px solid var(--pink);
 }
 .btn.btn-secondary:hover .arrow {
   transform: rotate(-45deg);
-  color: var(--gold);
 }
 .btn.btn-secondary.btn-secondary-icon-yellow {
   background: transparent;
@@ -713,6 +721,16 @@ section.bg-black + section.bg-black {
 .main-header .container {
   padding-block: 1.5rem;
 }
+@media (min-width: 1600px) {
+  .main-header .container {
+    max-width: 95%;
+  }
+}
+@media (max-width: 1199.98px) {
+  .main-header .container {
+    padding-inline: 1rem;
+  }
+}
 .main-header .logo {
   width: 9.76744rem;
 }
@@ -724,6 +742,7 @@ section.bg-black + section.bg-black {
 .main-header .logo img {
   width: 100%;
   height: 100%;
+  transition: width 0.3s ease;
 }
 .main-header .menu-btn {
   font-weight: bold;
@@ -760,6 +779,10 @@ section.bg-black + section.bg-black {
 .main-header.header-color .container {
   background-color: var(--black);
 }
+.main-header.header-color .logo img {
+  width: 80%;
+  transition: width 0.3s ease;
+}
 
 .sidebar {
   position: fixed;
@@ -772,12 +795,17 @@ section.bg-black + section.bg-black {
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease-in-out;
-  left: -100%;
+  right: -100%;
   transform: none;
 }
 @media (min-width: 1200px) {
   .sidebar {
     width: 85%;
+  }
+}
+@media (min-width: 1400px) {
+  .sidebar {
+    width: 89%;
   }
 }
 @media (max-width: 767.98px) {
@@ -787,7 +815,7 @@ section.bg-black + section.bg-black {
   }
 }
 .sidebar.active {
-  left: 0;
+  right: 0;
   opacity: 1;
   visibility: visible;
 }
@@ -809,14 +837,23 @@ section.bg-black + section.bg-black {
 }
 @media (max-width: 1399.98px) {
   .sidebar .sidebar-header {
-    padding-block: 2.5rem;
-    padding-inline: 5%;
+    padding-bottom: 2.5rem;
+    padding-top: 4rem;
+    padding-inline: 3.5;
   }
 }
 @media (max-width: 1199.98px) {
   .sidebar .sidebar-header {
-    padding-top: 1.5rem;
+    padding-top: 4rem;
   }
+}
+@media (min-width: 1600px) {
+  .sidebar .sidebar-header {
+    padding-right: 8rem;
+  }
+}
+.sidebar .btn-primary-gray span {
+  padding: 0.5rem 0.75rem 0.5rem 0.5rem;
 }
 .sidebar .menu-search-accodian {
   padding-inline: 1rem;
@@ -834,6 +871,11 @@ section.bg-black + section.bg-black {
   .sidebar .menu-search-accodian {
     padding-inline: 8.25rem;
     padding-bottom: 4rem;
+  }
+}
+@media (min-width: 1600px) {
+  .sidebar .menu-search-accodian {
+    padding-inline: 11rem;
   }
 }
 .sidebar .mega-menu-wrapper {
@@ -955,7 +997,7 @@ section.bg-black + section.bg-black {
   overflow: hidden;
 }
 
-.overlay {
+.overlay-header {
   position: fixed;
   top: 0;
   left: 0;
@@ -965,7 +1007,7 @@ section.bg-black + section.bg-black {
   z-index: 1050;
   display: none;
 }
-.overlay.show {
+.overlay-header.show {
   display: block;
 }
 
@@ -1047,6 +1089,22 @@ section.bg-black + section.bg-black {
 }
 .accordion-menu .accordion-collapse .accordion-body {
   padding-bottom: 1.5rem;
+}
+
+.btn.btn-primary-close::before {
+  background-color: #BC0829;
+  content: "";
+}
+.btn.btn-primary-close span {
+  padding-left: 0.25rem;
+  padding-right: 0.75rem;
+  display: block;
+  background-color: #BC0829;
+}
+@media (min-width: 992px) {
+  .btn.btn-primary-close {
+    display: none;
+  }
 }
 
 .footer {
@@ -1349,16 +1407,37 @@ section.bg-black + section.bg-black {
 .bg-black * {
   color: var(--white);
 }
-.bg-black .btn.btn-secondary .arrow {
+.bg-black .btn-secondary {
+  background-color: transparent;
+  display: inline-flex;
+  text-align: left;
+  font-weight: 600;
+  color: var(--black);
+}
+.bg-black .btn-secondary .arrow {
+  margin-right: 0.75rem;
+  transition: all 0.3s ease-in-out;
   color: var(--red);
 }
-.bg-black .btn.btn-secondary .arrow path {
+.bg-black .btn-secondary .arrow path {
   color: var(--red);
 }
-.bg-black .btn.btn-secondary:hover .arrow {
+.bg-black .btn-secondary span {
+  flex: 1;
+}
+.bg-black .btn-secondary:hover {
+  background: rgba(253, 194, 90, 0.1019607843);
+  transition: all 0.5s ease-in-out;
+  border: 1px solid var(--pink);
+}
+.bg-black .btn-secondary:hover .arrow {
+  transform: rotate(-45deg);
   color: var(--gold);
 }
-.bg-black .btn.btn-secondary:hover .arrow path {
+.bg-black .btn-secondary.btn-secondary-icon-yellow {
+  background: transparent;
+}
+.bg-black .btn-secondary.btn-secondary-icon-yellow .arrow {
   color: var(--gold);
 }
 .bg-black .btn.btn-secondary-white:hover {
@@ -1372,6 +1451,22 @@ section.bg-black + section.bg-black {
 }
 .bg-black .btn.btn-secondary-white:hover .arrow path {
   color: var(--gold);
+}
+.bg-black .btn-primary:hover {
+  color: var(--black);
+}
+.bg-black .btn-primary:hover span {
+  background-color: var(--gold);
+  color: var(--black);
+}
+.bg-black .btn-primary:hover span svg {
+  color: var(--black);
+}
+.bg-black .btn-primary:hover span svg * {
+  color: var(--black);
+}
+.bg-black .btn-primary:hover::before {
+  background-color: var(--gold);
 }
 
 .bg-gold {
@@ -2156,6 +2251,9 @@ section.bg-black + section.bg-black {
   .campus-news .news-card .overlay .news-content .button-grp {
     margin-top: 1.5rem;
   }
+}
+.campus-news .news-card .btn-secondary {
+  color: var(--white);
 }
 @media (min-width: 768px) {
   .campus-news .news-card:hover::after {
