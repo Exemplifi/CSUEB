@@ -227,3 +227,22 @@
     }
   }
 }
+.swiper-btn {
+  display: flex;
+  padding: 0.5rem;
+  align-items: flex-start;
+  gap: 0.25rem;
+  background-color: var(--gold);
+  width: 2.5rem;
+  height: 2.5rem;
+  position: relative;
+  margin: 0;
+  left: 0;
+  right: 0;
+  &::after {
+    display: none;
+  }
+  svg {
+    width: rem.convert(9px);
+  }
+}

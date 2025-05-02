@@ -19,6 +19,34 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
+   // Icon and text Slider
+   var swipericon = new Swiper(".text-icon-slider", {
+    slidesPerView: 1.1,
+    spaceBetween: 20,
+    breakpoints: {
+      640: {
+        slidesPerView: 2.1,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next.swiper-button-next-new",
+      prevEl: ".swiper-button-prev.swiper-button-prev-new",
+    },
+  });
+
     var swiper = new Swiper(".bright-future-swiper", {
         slidesPerView: 3,
         spaceBetween: 20,
@@ -94,6 +122,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Header End
+    
+
+   
    
 });
   

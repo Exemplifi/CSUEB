@@ -17,6 +17,15 @@ body {
     margin: 0 auto;
 }
 
+.container-smaller {
+    max-width: 1268px;
+    margin: 0 auto;
+    padding-inline: 4rem;
+    @include media-breakpoint-down(xl) {
+        padding-inline: 1.25rem;
+    }
+}
+
 .section {
     padding: rem.convert(96px 0px);
     @include media-breakpoint-down(md) {
@@ -91,6 +100,9 @@ section.bg-black + section.bg-black {
 .mt-32 {
     margin-top: rem.convert(32px);
 }
+.my-32 {
+    margin-block: rem.convert(32px);
+}
 
 .gap-20 {
     gap: rem.convert(20px);
@@ -133,4 +145,47 @@ section.bg-black + section.bg-black {
         }
       }
     }
-  }
+}
+
+
+.button-with-pagination-sec {
+    max-width: 181px;
+    margin-inline: auto;
+    align-items: center;
+    .swiper-btn {
+        position: relative;
+        inset: 0;
+    }
+    .swiper-pagination {
+        position: relative;
+        inset: 0 !important;
+        flex: 1;
+        align-self: center;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        .swiper-pagination-bullet {
+            cursor: pointer;
+            clip-path: polygon(0 0, 33% 0, 100% 100%, 68% 100%);
+            width: 1.135rem;
+            height: 1rem;
+            border-radius: 0;
+            margin: 0 !important;
+            background: #00000033;
+            opacity: 1;
+            &.swiper-pagination-bullet-active {
+            background: var(--gold);
+            }
+        }
+    }
+
+}
+
+
+.container-slider {
+    @include media-breakpoint-down(md) {
+
+        padding-right: 0;
+    }
+}
+

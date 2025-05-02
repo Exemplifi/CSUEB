@@ -197,3 +197,30 @@
     font-size: 1.2rem;
   }
 }
+
+
+.text-icon-sec {
+  .icon-text-card {
+    .icon-div {
+      img {
+        margin-inline: auto;
+      }
+    }
+    .icon-text-content {
+      padding: 2rem;
+      background-color: var(--white);
+      @include media-breakpoint-up(md) {
+        padding: 2rem 1rem;
+      }
+      @include media-breakpoint-up(xl) {
+        padding: 3rem 2rem;
+      }
+    }
+  }
+}
+
+.text-icon-slider {
+    .swiper-slide {
+      background-color: transparent;
+    }
+}

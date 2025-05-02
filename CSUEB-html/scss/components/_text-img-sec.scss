@@ -134,7 +134,6 @@
 } 
 
 
-
 .img-text-sec {
   .row-section  {
     @include media-breakpoint-up(md) {
@@ -277,3 +276,24 @@
   }
 }
 // img-text-full-width-sec End
+
+.text-img-main-card {
+  .heading-row {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    @include media-breakpoint-down(md) {
+      gap: 0.5rem;
+    }
+  }
+  .bottom-content-sec {
+    display: flex;
+    padding: 2rem 1.5rem;
+    flex-direction: column;
+    gap: 1.5rem;
+    @include media-breakpoint-down(lg) {
+      padding: 1.5rem;
+      gap: 1.2rem;
+    }
+  }
+}

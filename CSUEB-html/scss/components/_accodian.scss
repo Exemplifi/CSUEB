@@ -1,0 +1,81 @@
+
+
+/* Accordion Items */
+.accodian-global {
+  .accordion-item {
+    .accordion-button {
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      border: none;
+      background-color: var(--gold);
+      padding: 2rem;
+      padding-right: 4rem;
+      margin-bottom: 0;
+      margin-top: 12px;
+      @include media-breakpoint-down(md) {
+        padding-block: 1.5rem;
+        padding-left: 1rem;
+        padding-right: 3rem;
+      }
+      &.h3-headng {
+        @include media-breakpoint-down(lg) {
+          font-size: 1.5rem;
+          line-height: 120%; /* 1.8rem */
+        }
+      }
+      .accordion-icon {
+        display: flex;
+        width: 2rem;
+        height: 2rem;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 2rem;
+        top: 31px;
+        @include media-breakpoint-down(md) {
+          top: 14px;
+          right: 1rem;
+        }
+      }
+      &.collapsed {
+        .accordion-icon {
+          transition: transform 0.3s ease;
+          background-color: var(--light-gray);
+          svg {
+            transition: transform 0.3s ease;
+            transform: rotate(0deg);
+            color: var(--red);
+          }
+        }
+      }
+      &:not(.collapsed) {
+        background-color: var(--light-gray);
+        .accordion-icon {
+          transition: transform 0.3s ease;
+          background-color: var(--red);
+          svg {
+            transition: transform 0.3s ease;
+            transform: rotate(45deg);
+            color: var(--white);
+          }
+        }
+      }
+    }
+  }
+  .accordion-collapse {
+    background-color: var(--light-gray);
+    .accordion-body {
+      padding-inline: 2rem;
+      padding-bottom: 1.5rem;
+      @include media-breakpoint-up(sm) {
+        width: 90%;
+      }
+      @include media-breakpoint-up(xl) {
+        width: 75%;
+      }
+    }
+  }
+}
+
