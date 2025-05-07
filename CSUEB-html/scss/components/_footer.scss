@@ -27,6 +27,13 @@
     @include media-breakpoint-up(md) {
       justify-content: flex-end;
     }
+    a {
+      transition: filter 0.3s ease;
+      &:hover {
+        filter: brightness(0) saturate(100%) invert(15%) sepia(97%) saturate(7485%) hue-rotate(358deg) brightness(98%) contrast(102%);
+
+      }
+    }
   }
 
   .footer-links {
