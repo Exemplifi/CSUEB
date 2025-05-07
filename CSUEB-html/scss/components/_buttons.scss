@@ -190,7 +190,6 @@
     }
     &:hover {
       background-color: transparent;
-      color: var(--maroon);
       transition: all 0.5s ease-in-out;
       color: var(--white);
       span { 
@@ -327,4 +326,7 @@
       border-color: transparent;
     }
   }
+}
+.link--hover {
+
 }

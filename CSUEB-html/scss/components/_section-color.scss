@@ -13,10 +13,54 @@
             }
         }
     }
+    .bg-white {
+        background: var(--white);
+        color: var(--black);
+        * {
+            color: var(--black);
+        }
+        .btn-secondary {
+            svg {
+                * {
+                    color: var(--red);
+                }
+            }
+        }
+    }
+    .section-heading {
+        .star-icon {
+             * {
+                color: #00000066;
+            }
+        }
+    }
+    .btn-primary {
+        background-color: transparent;
+        &::before {
+          content: "";
+          background: var(--gold);
+        }
+        span {
+          background-color: var(--gold);
+          color: var(--black);
+        }
+        &:hover {
+          background-color: transparent;
+          color: var(--white);
+          span { 
+            background-color: var(--black);
+            color: var(--white);
+          }
+          &::before {
+            background-color: var(--black);
+          }
+        }
+    }
 }
 
 .bg-white {
     background: var(--white);
+    color: var(--black);
 }
 
 .bg-black {
@@ -58,7 +102,7 @@
             color: var(--gold);
           }
         }
-      }
+    }
     .btn.btn-secondary-white {
         &:hover {
             background: rgba(253, 194, 90, 0.10);
