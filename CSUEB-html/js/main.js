@@ -19,6 +19,21 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
+   // inner-hero-slider
+   var swiperinnerhero = new Swiper(".hero-full-swiper", {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        // dynamicBullets: true,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next.swiper-btn",
+        prevEl: ".swiper-button-prev.swiper-btn",
+      },
+  });
+
    // Icon and text Slider
    var swipericon = new Swiper(".text-icon-slider", {
     slidesPerView: 1.1,

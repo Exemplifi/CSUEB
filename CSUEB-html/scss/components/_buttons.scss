@@ -248,8 +248,8 @@
     text-align: left;
     font-weight: $semibold;
     color: var(--black);
+    gap: rem.convert(12px);
     .arrow {
-      margin-right: rem.convert(12px);
       transition: all 0.3s ease-in-out;
       color: var(--red);
     }
@@ -276,11 +276,12 @@
     background-color: transparent;
     display: inline-flex;
     text-align: left;
+    gap: rem.convert(12px);
     span {
       flex: 1;
     }
     .arrow {
-      margin-right: rem.convert(12px);
+      // margin-right: rem.convert(12px);
       transition: all 0.3s ease-in-out;
       color: var(--red);
     }

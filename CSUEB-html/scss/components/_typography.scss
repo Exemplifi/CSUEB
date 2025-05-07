@@ -174,12 +174,14 @@ h5, .h5  {
 
 }
 .text-large {
+  font-family: var(--body-font-family);
   font-size: rem.convert(20px);
-  line-height: 1.5;
-  font-weight: $regular;
+  line-height: 2.1875rem;
+  font-weight: $medium;
 
   @include media-breakpoint-down(lg) {
-    font-size: rem.convert(18px);
+    font-size: rem.convert(16px);
+    line-height:  1.75rem; /* 175% */
   }
 }
 

@@ -123,4 +123,93 @@
   padding-top: rem.convert(151px);
 }
 
+// inner-hero-full-slider 
+.inner-hero-full-slider {
+  position: relative; 
+  height: 70vh;
+  @media (min-width: 1920px) {
+    height: 75vh;
+  }
+  &::before {
+    content: "";
+    background-image: url(images/yellow-line.svg);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: contain;
+    width: 39.44388rem;
+    height: 14.16938rem;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 7;
+    @include media-breakpoint-down(xxl) {
+      width: 11.55144rem;
+      height: 9.16938rem;
+    }
+    @include media-breakpoint-down(lg) {
+      background-image: url(images/yellow-line-mobile.svg);
+      width:  rem.convert(183px);
+      height: rem.convert(32px);
+    }
+  }
+  .inner-hero-slider {
+    .swiper-slide {
+      
+      .img-wrapper {
+        position: relative;
+        height: 100%;
+        &::after {
+          content: "";
+          background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 21.9%, rgba(0, 0, 0, 0.70) 100%);
+          position: absolute;
+          inset: 0;
+          z-index: 2;
+          height: 100%;
+          width: 100%;
+        }
+      }
+      .content-section {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index:8;
+        width: 100%;
+        padding-bottom: 3rem;
+        @include media-breakpoint-down(lg) {
+          padding-bottom: rem.convert(124px);
+        }
+        .slider-heading {
+          max-width: 870px;
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+      
+          @include media-breakpoint-up(sm) {
+            padding-left: 9rem;
+          }
+          @media (min-width:1920px) {
+            padding-left: 0;
+          }
+        }
+        .container {
+          @media (min-width: 1920px) {
+            padding-inline: 2rem;
+          }
+        }
+      }
+    }
+    .pagination-container {
+      @include media-breakpoint-down(md) {
+        bottom: rem.convert(60px);
+        .button-with-pagination-sec {
+          margin-inline: auto;
+        }
+      }
+    }
+  }
+
+  
+}
+
 

@@ -11,17 +11,29 @@
   top: 0;
   background: transparent;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  padding-top: rem.convert(6px);
+  padding-inline: rem.convert(6px);
   @include media-breakpoint-up(lg) {
     padding-top: 1rem;
     padding-inline: 1rem;
   }
+  @include media-breakpoint-up(xxl) {
+    padding-inline: 2rem;
+  }
   .container  {
     padding-block: 1.5rem;
+    @include media-breakpoint-up(xl) {
+      padding-inline: 2rem;
+    }
     @media (min-width: 1600px) {
       max-width: 95%;
     }
     @include media-breakpoint-down(xl) {
       padding-inline: 1rem;
+    }
+    @include media-breakpoint-down(lg) {
+      padding-inline: rem.convert(10px);
+      padding-block: rem.convert(14px);
     }
   }
 
@@ -402,4 +414,55 @@
   @media (min-width: 992px) {
     display: none;
   }
+}
+
+
+// secondary-nav
+.secondary-nav-sec {
+  padding-top: rem.convert(16px);
+  @include media-breakpoint-down(md) {
+    padding-top: rem.convert(24px);
+  }
+  .secondary-nav {
+    row-gap: rem.convert(20px);
+    column-gap: rem.convert(24px);
+    padding-inline: rem.convert(32px);
+    @include media-breakpoint-up(md) {
+      row-gap: rem.convert(10px);
+    }
+    @include media-breakpoint-up(xxl) {
+      column-gap: rem.convert(28px);
+    }
+    @include media-breakpoint-down(xxl) {
+      padding-block: rem.convert(24px);
+    }
+    @include media-breakpoint-down(md) {
+      padding-inline: rem.convert(24px);
+    }
+    .menu-link {
+      text-transform: uppercase;
+      font-weight: $bold;
+      text-decoration: none;
+      padding:0.5rem 0rem;
+      border-bottom: 4px solid transparent;
+      transition: all 0.5s ease-in-out;
+      font-family: var(--body-font-family);
+      font-size: 0.875rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 1.53125rem;
+      text-transform: uppercase;
+    
+      @include media-breakpoint-up(xxl) {
+        padding: 1.22rem 0rem;
+      }
+      @include media-breakpoint-down(md) {
+        padding-block: rem.convert(0);
+      }
+      &:hover {
+          border-color: var(--red);
+      }
+    }
+  }
+
 }
