@@ -71,36 +71,42 @@
     }
     .btn-secondary {
         background-color: transparent;
-        display: inline-flex;
-        text-align: left;
         font-weight: $semibold;
         color: var(--black);
         .arrow {
-          margin-right: rem.convert(12px);
-          transition: all 0.3s ease-in-out;
           color: var(--red);
-          path {
+          * {
             color: var(--red);
-          }
+        }
         }
         span {
           flex: 1;
         }
         &:hover {
             background: #FDC25A1A;
-          transition: all 0.5s ease-in-out;
-          border: 1px solid var(--pink);
-          .arrow {
-            transform: rotate(-45deg);
-            color: var(--gold);
-          }
+            border: 1px solid var(--pink);
+            .arrow {
+                color: var(--gold);
+                * {
+                    color: var(--gold);
+                }
+            }
 
         }
         &.btn-secondary-icon-yellow {
-          background: transparent;
-          .arrow {
-            color: var(--gold);
-          }
+            background: transparent;
+            .arrow {
+                color: var(--gold);
+            }
+            &:hover {
+                background: #FDC25A1A;
+                .arrow {
+                    color: var(--gold);
+                    * {
+                        color: var(--gold);
+                    }
+                }
+            }
         }
     }
     .btn.btn-secondary-white {

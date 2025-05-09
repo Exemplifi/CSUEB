@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sample Site</title>
+    <title>Interior Template</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="./scss/swiper-bundle.min.css" />
@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
+    
 
     <!-- Header -->
     <header class="main-header">
@@ -65,7 +66,7 @@
     <aside class="sidebar" id="sidebarMenu">
       <div class="mega-menu-wrapper">
         <div class="left-red-sec bg-red">
-          <div class="mb-4 text-end">
+          <div class="mb-4 text-end d-md-none">
             <button class="btn close-btn-mobile btn-primary btn-primary-close" aria-label="Close menu">
               <span>
                 <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -285,213 +286,277 @@
     </aside>
 
     <div class="overlay-header" id="overlay"></div>
+    <!-- Header End -->
 
-
-    <!--  Hero Section Start -->
-    <section class="inner-hero-section inner-hero-full-slider bg-black">
-        <!-- Swiper -->
-        <div class="swiper inner-hero-slider hero-full-swiper">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide bg-transparent">
-              <div class="img-wrapper w-100">
-                <img src="./images/inner-hero-primary.png" alt="Campus" class="img-fluid w-100 h-100 object-fit-cover">
-              </div>
-
-              <div class="content-section">
-                <div class="container"> 
-                  <div class="slider-heading text-center text-md-start ">
-                    <h1 class="mb-0">Sample Landing Page</h1>
-                    <p class="text-large">This site shows the various content types in our template.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide bg-transparent">
-              <div class="img-wrapper w-100">
-                <img src="./images/inner-hero-primary.png" alt="Campus" class="img-fluid w-100 h-100 object-fit-cover">
-              </div>
-
-              <div class="content-section">
-                <div class="container"> 
-                  <div class="slider-heading text-center text-md-start ">
-                    <h1 class="mb-0">Sample Landing Page</h1>
-                    <p class="text-large">This site shows the various content types in our template.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide bg-transparent">
-              <div class="img-wrapper w-100">
-                <img src="./images/inner-hero-primary.png" alt="Campus" class="img-fluid w-100 h-100 object-fit-cover">
-              </div>
-
-              <div class="content-section">
-                <div class="container"> 
-                  <div class="slider-heading text-center text-md-start ">
-                    <h1 class="mb-0">Sample Landing Page</h1>
-                    <p class="text-large">This site shows the various content types in our template.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide bg-transparent">
-              <div class="img-wrapper w-100">
-                <img src="./images/inner-hero-primary.png" alt="Campus" class="img-fluid w-100 h-100 object-fit-cover">
-              </div>
-
-              <div class="content-section">
-                <div class="container"> 
-                  <div class="slider-heading text-center text-md-start ">
-                    <h1 class="mb-0">Sample Landing Page</h1>
-                    <p class="text-large">This site shows the various content types in our template.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide bg-transparent">
-              <div class="img-wrapper w-100">
-                <img src="./images/inner-hero-primary.png" alt="Campus" class="img-fluid w-100 h-100 object-fit-cover">
-              </div>
-
-              <div class="content-section">
-                <div class="container"> 
-                  <div class="slider-heading text-center text-md-start ">
-                    <h1 class="mb-0">Sample Landing Page</h1>
-                    <p class="text-large">This site shows the various content types in our template.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            
-          </div>
-          
         
-          <div class="container pagination-container d-flex align-items-center">
-            <div class="button-with-pagination-sec relative d-flex gap-3">
-              <div class="swiper-button-next swiper-button-next-new swiper-btn">
-                <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6.99976 0.929688L0.929443 7L6.99976 13.0703L8.49976 11.5703L3.92944 7L8.49976 2.42969L6.99976 0.929688Z" fill="black"/>
-                </svg>
-              </div>
-            
-              <div class="swiper-pagination"></div>
-
-              <div class="swiper-button-prev swiper-button-prev-new swiper-btn">
-                <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1.99976 0.929688L0.499756 2.42969L5.07007 7L0.499756 11.5703L1.99976 13.0703L8.07007 7L1.99976 0.929688Z" fill="black"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <!-- Swiper End -->
-    </section>
-    <!--  Hero Section End -->
-      
-
-    <!-- Secondary Nav Start -->
-    <section class="section-nav secondary-nav-sec">
-      <div class="container">
-        <!-- Button Tags -->
-        <div class="d-flex flex-column flex-sm-row flex-wrap align-items-start secondary-nav bg-gold">
-          <a href="#" class="btn menu-link"><span>Child Page</span></a>
-          <a href="#" class="btn menu-link"><span>Another Child Page</span></a>
-          <a href="#" class="btn menu-link"><span>Third Child Page</span></a>
-          <a href="#" class="btn menu-link"><span>A Longer Title on a Page</span></a>
-          <a href="#" class="btn menu-link"><span>One More Page Here</span></a>
-          <a href="#" class="btn menu-link"><span>Another Page Title</span></a>
-          <a href="#" class="btn menu-link"><span>Child Page</span></a>
+    <!-- Inner Hero Section Start -->
+    <section class="inner-hero-section inner-hero-full-image">
+      <div class="full-img-hero-wrap bg-transparent h-100">
+        <div class="img-wrapper w-100 h-100">
+          <img src="./images/hero-secondary.png" alt="Campus" class="img-fluid w-100 h-100">
         </div>
       </div>
     </section>
-    <!-- Secondary Nav End -->
+    <!-- Inner Hero Section End -->
 
+    <!-- breadcrumb -->
+    <section class="container bg-white">       
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb align-items-center">
+          <li class="breadcrumb-item d-flex align-items-center">
+            <a href=""><svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.0002 0.249664L0.833496 8.49999H3.3335V16H8.3335V10.1667H11.6668V16H16.6668V8.49999H19.1668L10.0002 0.249664Z" fill="currentColor"/>
+            </svg>
+          </li></a>
+          <li class="breadcrumb-item subtext"><a href="">Sample site</a></li>
+          <li class="breadcrumb-item active subtext" aria-current="page">Interior Page</li>
+        </ol>
+      </nav>
+    </section>
+    <!-- breadcrumb End -->
+    
 
-    <!-- Only Text and Button Start -->
-    <section class="section bg-white text-button-sec position-relative">
-      <div class="container-smaller position-relative">
-        <div class="next-card">
-          <div class="section-heading text-center text-md-start">
-            <!-- Red Diamonds -->
-            <div class="title-wrap">
-              <h2 class="section-title mb-3">Message Area</h2>
-              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
-                <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"/>
-                <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"/>
-                <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"/>
-              </svg>
+    <!-- Image and text Section Start -->
+    <section class="section bg-white side-nav-with-content">
+      <div class="container">       
+        <div class="side-nav-wrap">
+          <div class="left-nav-wrap">
+            <div class="left-nav">
+              <div class="accordion-item bg-transparent border-none">
+                <h2 class="accordion-header bg-transparent mb-2" id="thissection-accordion">
+                  <button class="accordion-button collapsed text-smaller bg-transparent p-0" type="button" data-bs-toggle="collapse" data-bs-target="#thissection" aria-expanded="true" aria-controls="thissection">
+                    In this section
+                  </button>
+                </h2>
+                <div id="thissection" class="accordion-collapse collapse show" aria-labelledby="thissection-accordion" data-bs-parent="#accordion-menu">
+                  <div class="accordion-body p-0 m-0">
+                    <div class="sidebar-link-wrap">
+                      <div>
+                        <a href="#" class="text-decoration-none btn btn-secondary">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
+                          </svg>
+                          <span>Sample Page</span>
+                        </a>
+                      </div>
+        
+        
+                      <div>
+                        <a href="#" class="text-decoration-none btn btn-secondary">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
+                          </svg>
+                          <span>Interior Template</span>
+                        </a>
+                        <ul class="list-unstyled sub-menu-links"> 
+                          <li>
+                            <a href="#" class="subtext star-btn-link">Child Page</a>
+                          </li>
+                          <li>
+                            <a href="#" class="subtext star-btn-link">Another Child Page</a>
+                          </li>
+                          <li>
+                            <a href="#" class="subtext star-btn-link">Third Child Page</a>
+                          </li>
+                          <li>
+                            <a href="#" class="subtext star-btn-link">A Longer Title on a Page</a>
+                          </li>
+                          <li>
+                            <a href="#" class="subtext star-btn-link">One More Page Here</a>
+                          </li>
+                          <li>
+                            <a href="#" class="subtext star-btn-link">Another Page Title Goes in This Space</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
 
-            <!-- Description -->
-            <div class="heading-description">
-              <p class="text-medium">
-                The Message Area is a content presentation area which provides for a background image or solid color with Title, Text, and hyperlink capability. The background image is full-width and will be Parallax (stay stationary as you scroll). Can contain up to 4 call to action links.
-              </p>
+          <div class="right-content">
+            <section class="text-button-sec position-relative">
+              <div class="position-relative">
+                <div class="next-card">
+                  <div class="section-heading text-center text-md-start">
+                    <!-- Red Diamonds -->
+                    <div class="title-wrap">
+                      <h2 class="section-title mb-3">Message Area</h2>
+                      <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
+                        <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"/>
+                        <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"/>
+                        <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"/>
+                      </svg>
+                    </div>
+        
+                    <!-- Description -->
+                    <div class="heading-description">
+                      <p class="text-medium">
+                        The Message Area is a content presentation area which provides for a background image or solid color with Title, Text, and hyperlink capability. The background image is full-width and will be Parallax (stay stationary as you scroll). Can contain up to 4 call to action links.
+                      </p>
+                    </div>
+                  </div>
+            
+                  <!-- Button Tags -->
+                  <div class="d-flex flex-wrap button-listing">
+                    <a href="#" class="btn btn-primary"><span>CTA Button 1</span></a>
+                   
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Image Text Section Start -->
+            <section class="full-img-text-sec pt-72">
+              <div class="flex-column-reverse flex-md-row">
+                <!-- Right Section -->
+                <div class="img-full-sec">
+                  <div class="img-wrapper">
+                    <img src="./images/image-content.png" alt="Campus" class="img-fluid w-100 h-100 object-fit-cover">
+                  </div>
+                </div>
+
+                <div class="">     
+                  <!-- Left Section -->
+                  <div class="content-section">
+                    <div class="section-heading heading-gray-icon">
+                      <!-- Red Diamonds -->
+                      <div class="title-wrap">
+                        <h2 class="section-title">Content Area</h2>
+                        <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
+                          <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"/>
+                          <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"/>
+                          <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"/>
+                        </svg>
+                      </div>
+
+                      <div class="full-sec-content">
+                        <div class="heading-content text-medium ">
+                          <div class="h4">Example</div>
+                          <p>Insert text here to have the content displayed.</p>
+                        </div>
+
+                        <div class="">
+                          <a href="#" class="text-decoration-none btn btn-secondary">
+                            <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                              <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"/>
+                            </svg>
+                            <span>Read More Example</span> 
+                          </a>
+                        </div>
+
+                        <div class="full-mobile-cta">
+                          <a href="#" class="text-decoration-none btn btn-primary">
+                            <span>CTA Button</span>
+                          </a>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- Image Text Section End -->
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- Image and text Section End -->
+
+
+    <!-- Image and text Section Start -->
+    <section class="section bg-white review-text-img">
+      <div class="container-smaller">       
+        <div class="section-heading heading-gray-icon">
+          <!-- Red Diamonds -->
+          <div class="title-wrap">
+            <h2 class="section-title">Photo and Description</h2>
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
+              <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"></path>
+              <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"></path>
+              <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="row-section align-items-start flex-col flex-md-row row">
+          <!-- Right Section -->
+          <div class="col-md-6 image-section">
+            <img src="./images/photo-img.png" alt="image" class="img-fluid w-100 h-100">
+          </div>
+
+          <!-- Left Section -->
+          <div class="col-md-6 content-section">
+            <div class="content-wrap">
+              <h4 class="section-title">John Doe</h4>
+              <div class="text-medium">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla.</p>
+              </div>
             </div>
           </div>
     
-          <!-- Button Tags -->
-          <div class="d-flex flex-wrap button-listing">
-            <a href="#" class="btn btn-primary"><span>CTA Button 1</span></a>
-            <a href="#" class="btn btn-primary"><span>CTA Button 2</span></a>
-            <a href="#" class="btn btn-primary"><span>CTA Button 3</span></a>
-            <a href="#" class="btn btn-primary"><span>CTA Button 4</span></a>
-          </div>
+
         </div>
       </div>
     </section>
-    <!-- Only Text and Button End -->
+    <!-- Image and text Section End -->
 
-    <!-- text-icon-sec Start -->
-    <section class="section bg-light-gray text-icon-sec">
-      <div class="container-smaller container-slider">
+
+    <!-- Image Gallery Start -->
+    <section class="section bg-white image-gallery-sec">
+
+      <div class="container-smaller">   
+        <div class="section-heading heading-gray-icon text-center">
+          <!-- Red Diamonds -->
+          <div class="title-wrap">
+            <h2 class="section-title">Image Gallery</h2>
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
+              <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"></path>
+              <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"></path>
+              <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid pe-0 px-md-0">
         <!-- Swiper -->
-        <div class="swiper text-icon-slider">
+        <div class="swiper image-gallery-slider">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <div class="icon-text-card text-center">
-                <div class="icon-div my-32">
-                  <img src="./images/icon1.svg" class="img-fluid w-auto" alt="Icon">
-                </div>
-                <div class="icon-text-content text-medium">
-                  <p class="m-0">Cal State East Bay offers 50 baccalaureate degrees, 61 minors, 35 master’s degrees, 34 credentials and certificates, and one doctoral degree.</p>
-                </div>
+              <div class="img-card text-center w-100">
+                  <img src="./images/gallery-1.png" class="img-fluid w-100" alt="Gallery Image">
               </div>
             </div>
+
             <div class="swiper-slide">
-              <div class="icon-text-card text-center">
-                <div class="icon-div my-32">
-                  <img src="./images/icon2.svg" class="img-fluid w-auto" alt="Icon">
-                </div>
-                <div class="icon-text-content text-medium">
-                  <p class="m-0">Notable alumni include MLB Hall of Famer Joe Morgan, California Wellness Foundation President and CEO Judy Belk, Tony-winning actor James Iglehart and CSU Chancellor Timothy P. White.</p>
-                </div>
+              <div class="img-card text-center w-100">
+                  <img src="./images/gallery-2.png" class="img-fluid w-100" alt="Gallery Image">
               </div>
             </div>
+
             <div class="swiper-slide">
-              <div class="icon-text-card text-center">
-                <div class="icon-div my-32">
-                  <img src="./images/icon3.svg" class="img-fluid w-auto" alt="Icon">
-                </div>
-                <div class="icon-text-content text-medium">
-                  <p class="m-0">Cal State East Bay was noted for its exceptionally diverse student body, ranking as the most diverse four-year public college on the U.S. mainland by the Chronicle of Higher Education.</p>
-                </div>
+              <div class="img-card text-center w-100">
+                  <img src="./images/gallery-3.png" class="img-fluid w-100" alt="Gallery Image">
               </div>
             </div>
+            
+
             <div class="swiper-slide">
-              <div class="icon-text-card text-center">
-                <div class="icon-div my-32">
-                  <img src="./images/icon1.svg" class="img-fluid w-auto" alt="Icon">
-                </div>
-                <div class="icon-text-content text-medium">
-                  <p class="m-0">Cal State East Bay offers 50 baccalaureate degrees, 61 minors, 35 master’s degrees, 34 credentials and certificates, and one doctoral degree.</p>
-                </div>
+              <div class="img-card text-center w-100">
+                  <img src="./images/gallery-4.png" class="img-fluid w-100" alt="Gallery Image">
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="img-card text-center w-100">
+                  <img src="./images/gallery-5.png" class="img-fluid w-100" alt="Gallery Image">
               </div>
             </div>
           </div>
@@ -515,62 +580,8 @@
 
       </div>
     </section>
-    <!-- text-icon-sec End -->
+    <!-- Image Gallery End -->
 
-    <!-- Image Text Section Start -->
-    <section class="section bg-white full-img-text-sec">
-      <div class="flex-column-reverse flex-md-row">
-        <!-- Right Section -->
-        <div class="img-full-sec">
-          <div class="img-wrapper">
-            <img src="./images/img-full.png" alt="Campus" class="img-fluid w-100 h-100 object-fit-cover">
-          </div>
-        </div>
-
-        <div class="container-smaller">     
-          <!-- Left Section -->
-          <div class="content-section">
-            <div class="section-heading heading-gray-icon">
-              <!-- Red Diamonds -->
-              <div class="title-wrap">
-                <h2 class="section-title">Content Area</h2>
-                <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
-                  <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"/>
-                  <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"/>
-                  <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"/>
-                </svg>
-              </div>
-
-              <div class="full-sec-content">
-                <div class="heading-content text-medium ">
-                  <div class="h4">Example</div>
-                  <p>Insert text here to have the content displayed.</p>
-                </div>
-
-                <div class="">
-                  <a href="#" class="text-decoration-none btn btn-secondary">
-                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                      <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"/>
-                    </svg>
-                    <span>Read More Example</span> 
-                  </a>
-                </div>
-
-                <div class="full-mobile-cta">
-                  <a href="#" class="text-decoration-none btn btn-primary">
-                    <span>CTA Button</span>
-                  </a>
-                </div>
-              </div>
-
-            </div>
-
-            
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Image Text Section End -->
 
     <!-- img-video-text Section Start -->
     <section class="section bg-light-gray img-video-text-sec">
@@ -675,6 +686,7 @@
       </div>
     </section>
     <!-- img-video-text Section End -->
+
 
     <!-- Accordion Start -->
     <section class="section bg-white accordion-main-sec">
@@ -833,7 +845,7 @@
             </svg>
           </div>
         </div>
-
+  
         <div class="row gx-2px flip-tiles-grid">
           <div class="col-12 col-md-4">
             <div class="row m-0 gy-4px gx-4px">
@@ -913,7 +925,7 @@
     <section class="section bg-white img-verlap-link-sec">
       <div class="container-smaller">
           <div class="row row gy-10 gx-10 gap-md-0">
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md">
               <!-- Main Card -->
               <div class="img-verlap-link-card position-relative purple-hover">
                 <img src="./images/img-1.png" class="img-fluid w-100" alt="Image">
@@ -932,7 +944,7 @@
               </div>
             </div>
 
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md">
               <!-- Main Card -->
               <div class="img-verlap-link-card position-relative gold-hover">
                 <img src="./images/img-2.png" class="img-fluid w-100" alt="Image">
@@ -951,7 +963,7 @@
               </div>
             </div>
 
-            <div class="col-12 col-md-4">
+            <div class="col-12 col-md">
               <!-- Main Card -->
               <div class="img-verlap-link-card position-relative teal-hover">
                 <img src="./images/news-2.png" class="img-fluid w-100" alt="Image">
@@ -974,243 +986,80 @@
     </section>
     <!-- img-verlap-link-sec End -->
 
-    <!-- Only Text - Important Announcement Start -->
-    <section class="section important-announcement-sec position-relative">
-      <div class="container-smaller position-relative"> 
-        
-        <div class="next-card bg-white text-black">
-          <div class="section-heading heading-gray-icon">
-            <!-- Red Diamonds -->
-            <div class="title-wrap">
-              <h2 class="section-title">Important Announcement</h2>
-              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
-                <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"></path>
-                <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"></path>
-                <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"></path>
-              </svg>
-            </div>
-
-            <div class="full-sec-content">
-              <div class="heading-content text-medium ">
-                <p>A Message from President Morishita: Inside East Bay, December 2016</p>
-
-                <p> December 5, 2016</p>
-                  
-                <p> The last few weeks have been a time of turmoil for many of us. No matter what outcome you were hoping for, the result of the presidential election has elicited an outpouring of strong emotion and sentiment. During this time, I have had the opportunity to speak with many students, faculty and staff about their concerns, hopes, and fears. Now more than ever, our campus should take pride in our diversity of beliefs and pause a moment to reflect on what that means to us as a university and as individuals sharing a community.</p>
-                  
-                <p>Go Pioneers!</p>
-                   
-                <p> Leroy M. Morishita President</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Only Text - Important Announcement End -->
-      
-    <!-- Only Text and Button Start -->
-    <section class="section text-button-sec position-relative">
-      <div class="container-smaller position-relative">
-        <!-- Button Tags -->
-        <div class="d-flex flex-wrap button-listing justify-content-center">
-          <a href="#" class="btn btn-primary"><span>CTA Button 1</span></a>
-          <a href="#" class="btn btn-primary"><span>CTA Button 2</span></a>
-          <a href="#" class="btn btn-primary"><span>CTA Button 3</span></a>
-          
-        </div>
-
-      </div>
-    </section>
-    <!-- Only Text and Button End -->
-
-    <!-- img-video-text Section Start -->
-    <section class="section bg-light-gray img-video-text-sec">
-      <div class="container-smaller">
-        <div class="section-heading heading-gray-icon text-center">
+    <section class="section bg-white section-with-padding table-section">
+      <div class="container"> 
+        <div class="section-heading heading-gray-icon">
           <!-- Red Diamonds -->
           <div class="title-wrap">
-            <h2 class="section-title">News Example</h2>
+            <h2 class="section-title mb-3">Table Data</h2>
             <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
               <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"/>
               <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"/>
               <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"/>
             </svg>
           </div>
-        </div>
-    
-        <div class="row gy-10 gx-10">
-          <!-- Main Card -->
-          <div class="col-12 col-lg-4">
-            <div class="text-img-main-card">
-              <div class="bottom-content-sec bg-white">
-                <div class="heading-row">
-                  <a href="" class="m-0 h3">Cal State East Bay Ranked Among Best Online Business Schools in California</a>
-                  <p>College Choice put CSUEB's online Bachelor in Business Administration program in its California top 10</p>
-                </div>
-                <div class="button-grp">
-                  <a href="#" class="text-decoration-none btn btn-secondary">
-                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                      <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
-                    </svg>
-                    <span>Read More Example</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <!-- Main Card -->
-          <div class="col-12 col-lg-4">
-            <div class="text-img-main-card">
-              <div class="img-wrap with-star">
-                <img src="./images/newsExample-img.png" class="img-fluid w-100" alt="Image">
-              </div>
-
-              <div class="bottom-content-sec bg-white">
-                <div class="heading-row">
-                  <a href="" class="m-0 h3">Week of Inclusive Excellence Celebrates Diversity</a>
-                  <p>The university will host a series of speakers and events Jan. 17-20 as part of its annual week celebrating the its culture of diversity and inclusion</p>
-                </div>
-                <div class="button-grp">
-                  <a href="#" class="text-decoration-none btn btn-secondary">
-                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                      <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
-                    </svg>
-                    <span>Read More Example</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Main Card -->
-          <div class="col-12 col-lg-4">
-            <div class="text-img-main-card">
-              <div class="bottom-content-sec bg-white">
-                <div class="heading-row">
-                  <a href="" class="m-0 h3">CSUEB Lecturer Wins Awards for Two New Books</a>
-                  <p>Nursing and health sciences lecturer Stephen J. Morewitz earns San Jose State University Faculty Author awards</p>
-                </div>
-                <div class="button-grp">
-                  <a href="#" class="text-decoration-none btn btn-secondary">
-                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                      <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
-                    </svg>
-                    <span>Read More Example</span>
-                  </a>
-                </div>
-              </div>
-            </div>
+          <div class="heading-content text-medium col-full col-md-7">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu eros finibus, vestibulum nisi ut, luctus tellus. Mauris mauris nulla, tincidunt sed finibus ac, vehicula quis nulla. Pellentesque nec diam nec elit blandit mattis non congue erat. </p>
           </div>
         </div>
+      </div>
 
-
-        <div class="text-center row-button-sec">
-          <a href="#" class="btn btn-primary"><span>Read more</span></a>
+      <div class="container pe-0 pe-md-4">
+        <div class="custom-table-section">
+          <div class="table-responsive">
+            <table class="table custom-table mb-0">
+              <thead>
+                <tr>
+                  <th scope="col subtext text-bold">Column Header</th>
+                  <th scope="col subtext text-bold">Column 1</th>
+                  <th scope="col subtext text-bold">Another Column</th>
+                  <th scope="col subtext text-bold">One Last Column</th>
+                  <th scope="col subtext text-bold"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-medium">Row Name</td>
+                  <td class="text-medium">$12,456</td>
+                  <td class="text-medium">12.45</td>
+                  <td class="text-medium">3 hours</td>
+                  <td class="text-medium"></td>
+                </tr>
+                <tr>
+                  <td class="text-medium">Row Name</td>
+                  <td class="text-medium">$12,456</td>
+                  <td class="text-medium">12.45</td>
+                  <td class="text-medium">3 hours</td>
+                  <td class="text-medium"></td>
+                </tr>
+                <tr>
+                  <td class="text-medium">Row Name</td>
+                  <td class="text-medium">$12,456</td>
+                  <td class="text-medium">12.45</td>
+                  <td class="text-medium">3 hours</td>
+                  <td class="text-medium"></td>
+                </tr>
+                <tr>
+                  <td class="text-medium">Row Name</td>
+                  <td class="text-medium">$12,456</td>
+                  <td class="text-medium">12.45</td>
+                  <td class="text-medium">3 hours</td>
+                  <td class="text-medium"></td>
+                </tr>
+                <tr>
+                  <td class="text-medium">Row Name</td>
+                  <td class="text-medium">$12,456</td>
+                  <td class="text-medium">12.45</td>
+                  <td class="text-medium">3 hours</td>
+                  <td class="text-medium"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
-    <!-- img-video-text Section End -->
-
-    <!-- Image Text Section - Grid View Start -->
-    <section class="section bg-red img-video-text-sec event-sec">
-      <div class="container">
-        <div class="section-heading heading-gray-icon text-center">
-          <!-- Red Diamonds -->
-          <div class="title-wrap">
-            <h2 class="section-title">Events Example</h2>
-            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
-              <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"/>
-              <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"/>
-              <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"/>
-            </svg>
-          </div>
-        </div>
-
-        <div class="row gy-10 gx-10">
-          <!-- Main Card -->
-          <div class="col-12 col-lg-4">
-            <div class="text-img-main-card">
-              <div class="date-tag bg-black">
-                  <span class="date-text subtext">Mar</span>
-                  <div class="h2 text-gold m-0">7</div>
-              </div>
-              <div class="bottom-content-sec bg-white">
-                <div class="heading-row">
-                  <a href="" class="m-0 h3 link--hover">Info Session - Fortune Schools</a>
-                  <p class="text-black">This is an excellent opportunity to speak directly with Fortune School of Education representatives in a personalized, less formal environment. Fortune School of Education, in collaboration with our partner schools and districts, develops strong teacher leaders through a unique teacher credentialing program. Through our teaching fellowship model, you can earn a full-time teacher salary and benefits while earning your credential.</p>
-                </div>
-                <div class="button-grp">
-                  <a href="#" class="text-decoration-none btn btn-secondary">
-                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                      <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
-                    </svg>
-                    <span>Register</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Main Card -->
-          <div class="col-12 col-lg-4">
-            <div class="text-img-main-card">
-              <div class="date-tag bg-black">
-                  <span class="date-text subtext">Mar</span>
-                  <div class="h2 text-gold m-0">7</div>
-              </div>
-              <div class="bottom-content-sec bg-white">
-                <div class="heading-row">
-                  <a href="" class="m-0 h3 link--hover">East Bay Veterans Career Fair</a>
-                  <p class="text-black">All students are welcome to attend.</p>
-                </div>
-                <div class="button-grp">
-                  <a href="#" class="text-decoration-none btn btn-secondary">
-                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                      <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
-                    </svg>
-                    <span>Register</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Main Card -->
-          <div class="col-12 col-lg-4">
-            <div class="text-img-main-card">
-              <div class="date-tag bg-black">
-                  <span class="date-text subtext">Mar</span>
-                  <div class="h2 text-gold m-0">7</div>
-              </div>
-              <div class="bottom-content-sec bg-white">
-                <div class="heading-row">
-                  <a href="" class="m-0 h3 link--hover">CVHCare - Info Session  </a>
-                  <p class="text-black">CVHCare (Compassionate Visionary Health Care) is looking for outstanding Healthcare Professionals (new grads are welcome) to provide compassionate, visionary care to their patients. Their wonderful and responsive internal team truly allows you to function remotely and independently, with the flexibility to make your own schedule and plan patient visits around other commitments if needed. The home care setting allows you quality time with your patient in the comfort of their own home. Attend this Information Session and learn more about building your career with CVHCare a thriving home health company, where passion and team spirit are nurtured and rewarded.</p>
-                </div>
-                <div class="button-grp">
-                  <a href="#" class="text-decoration-none btn btn-secondary">
-                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
-                      <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
-                    </svg>
-                    <span>Register</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="text-center row-button-sec">
-          <a href="#" class="btn btn-primary"><span>View full calendar</span></a>
-        </div>
-      </div>
-    </section>
-    <!-- Image Text Section- Grid View End -->
-      
 
     <!-- Only Text - contact-us Start -->
     <section class="section bg-white contact-us-sec position-relative">
@@ -1315,14 +1164,10 @@
                     </li>
                   </ul>
                 </div>
-
-
-                
               </div>
             </div>
 
-
-            <div class="contact-address-list row w-100 gx-xxl-5">
+            <div class="contact-address-list gx-1 row w-100 gx-xxl-5">
               <div class="col-12 col-md-6">
                 <div class="adress-details">
                     <p class="text-16-bold">Department Chair</p>
@@ -1501,8 +1346,8 @@
       </div>
     </footer>
     <!-- Footer End -->
-
     
+
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Swiper JS -->
     <script src="./js/swiper-bundle.min.js"></script>

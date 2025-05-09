@@ -166,6 +166,13 @@ h5, .h5  {
   line-height: 175%; /* 1.75rem */
   font-weight: $medium;
 }
+
+.text-16-bold {
+  font-size: rem.convert(16px);
+  line-height: 175%; /* 1.75rem */
+  font-weight: $bold  ;
+}
+
 .text-regular {
   font-family: var(--body-font-family);
   font-size: rem.convert(18px);

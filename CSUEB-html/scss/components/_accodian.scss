@@ -14,6 +14,7 @@
       padding-right: 4rem;
       margin-bottom: 0;
       margin-top: 12px;
+      transition: all 0.3s ease-in-out;
       @include media-breakpoint-down(md) {
         padding-block: 1.5rem;
         padding-left: 1rem;
@@ -59,6 +60,17 @@
             transition: transform 0.3s ease;
             transform: rotate(45deg);
             color: var(--white);
+          }
+        }
+      }
+      &.collapsed:hover {
+        background-color: var(--black);
+        transition: all 0.3s ease-in-out;
+        color: var(--white);
+        .accordion-icon {
+          svg {
+            transition: all 0.3s ease-in-out;
+            transform: scale(1.2);
           }
         }
       }

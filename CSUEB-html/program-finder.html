@@ -1,0 +1,701 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>program-finder</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="./scss/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <!-- Header -->
+    <header class="main-header">
+      <div class="container d-flex justify-content-between align-items-center">
+        <div class="logo d-flex align-items-center">
+          <img src="./images/logo.svg" alt="Cal State East Bay">
+        </div>
+        <div class="header-links d-none d-lg-flex align-items-center gap-3">
+          <div class="d-flex menu-list-link">
+            <a href="#" class="text-white menu-link subtext">APPLY</a>
+            <a href="#" class="text-white menu-link subtext">REQUEST INFO</a>
+            <a href="#" class="text-white menu-link subtext">GIVE</a>
+          </div>
+  
+          <div class="dropdown">
+            <button class="dropdown-toggle btn btn-primary btn-dark" data-bs-toggle="dropdown">
+              <span>INFO FOR
+                <svg class="arrow-icon-white ms-2" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7.92969 10.1772L6.42969 11.6772L12.5 17.7476L18.5703 11.6772L17.0703 10.1772L12.5 14.7476L7.92969 10.1772Z" fill="currentColor"/>
+                </svg>
+              </span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Current Students</a></li>
+              <li><a class="dropdown-item" href="#">Future Students</a></li>
+              <li><a class="dropdown-item" href="#">Alumni</a></li>
+            </ul>
+          </div>
+  
+          <button class="btn menu-btn btn btn-primary btn-hover-yellow" id="menuToggle">
+             <span class="">
+              MENU
+              <svg  class="menu-icon ms-2" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 5.67724V7.67724H3V5.67724H21ZM21 11.6772V13.6772H3V11.6772H21ZM21 17.6772V19.6772H3V17.6772H21Z" fill="currentColor"/>
+              </svg>
+            </span>
+          </button>
+        </div>
+  
+        <!-- Mobile Menu Button -->
+        <button class="btn mobile-menu-btn d-lg-none btn-primary btn-hover-yellow" id="menuToggleMobile">
+          <span>
+            <svg  class="menu-icon " width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 5.67724V7.67724H3V5.67724H21ZM21 11.6772V13.6772H3V11.6772H21ZM21 17.6772V19.6772H3V17.6772H21Z" fill="currentColor"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebarMenu">
+      <div class="mega-menu-wrapper">
+        <div class="left-red-sec bg-red">
+          <div class="mb-4 text-end d-md-none">
+            <button class="btn close-btn-mobile btn-primary btn-primary-close" aria-label="Close menu">
+              <span>
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.293 4.29297L19.707 5.70703L13.4141 12L19.707 18.293L18.293 19.707L12 13.4141L5.70703 19.707L4.29297 18.293L10.5859 12L4.29297 5.70703L5.70703 4.29297L12 10.5859L18.293 4.29297Z" fill="white"/>
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div class="d-flex flex-wrap d-md-grid gap-2 gap-md-3 mb-4 mb-md-5">
+            <a href="" class="btn btn-primary-yellow"><span>APPLY</span></a>
+            <a href="" class="btn btn-primary-yellow"><span>REQUEST INFO</span></a>
+            <a href="" class="btn btn-primary-yellow"><span>MAKE A GIFT</span></a>
+          </div>
+
+          <div class="mb-3">
+            <div class="accordion info-accordion-sec bg-transparent" id="accordionExample1">
+              <div class="accordion-item bg-transparent border-none">
+                <h2 class="accordion-header bg-transparent" id="info-accordion">
+                  <button class="accordion-button collapsed h5 bg-transparent p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseinfo" aria-expanded="true" aria-controls="collapseinfo">
+                    Information for:
+                  </button>
+                </h2>
+                <div id="collapseinfo" class="accordion-collapse collapse" aria-labelledby="info-accordion" data-bs-parent="#accordionExample1">
+                  <div class="accordion-body p-0 m-0">
+                    <ul class="list-unstyled sidebar-link-wrap">
+                      <li>
+                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
+                          </svg>
+                          <span>Current Students</span>
+                        </a>
+                      </li>
+        
+                      <li>
+                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
+                          </svg>
+                          <span>Future Students</span>
+                        </a>
+                      </li>
+        
+                      <li>
+                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
+                          </svg>
+                          <span>Alumni</span>
+                        </a>
+                      </li>
+        
+                      <li>
+                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
+                          </svg>
+                          <span>Counselors</span>
+                        </a>
+                      </li>
+        
+                      <li>
+                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
+                          </svg>
+                          <span> Faculty & Staff</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+        
+        <div class="sidebar-body bg-white">
+          <div class="sidebar-header d-none d-md-flex justify-content-end align-items-center">
+            <button class="btn close-btn btn-primary-gray" aria-label="Close menu">
+              <span>
+                Close
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.293 4.29297L19.707 5.70703L13.4141 12L19.707 18.293L18.293 19.707L12 13.4141L5.70703 19.707L4.29297 18.293L10.5859 12L4.29297 5.70703L5.70703 4.29297L12 10.5859L18.293 4.29297Z" fill="black"/>
+                </svg>
+              </span>
+            </button>
+          </div>
+
+          <div class="menu-search-accodian">
+            <div class="search-wrap">
+              <input type="text" class="form-control" placeholder="Search Cal State East Bay...">
+              <div class="btn-search">
+                <button type="button" class="search__btn">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 2C18.8541 2 22 5.14585 22 9C22 12.8541 18.8541 16 15 16C13.252 16 11.655 15.348 10.4258 14.2812L10 14.707V16L4 22L2 20L8 14H9.29297L9.71875 13.5742C8.65198 12.345 8 10.748 8 9C8 5.14585 11.1459 2 15 2ZM15 4C12.2267 4 10 6.22673 10 9C10 11.7733 12.2267 14 15 14C17.7733 14 20 11.7733 20 9C20 6.22673 17.7733 4 15 4Z" fill="white"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+  
+            <ul class="accordion-menu list-unstyled" id="menuAccordion">
+              <li class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed h3" data-bs-toggle="collapse" data-bs-target="#section1">
+                    Academics
+                    <span class="accordion-icon">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.83333 0.5V7.16667H15.5V8.83333H8.83333V12.1667V15.5H7.16667V12.1667V8.83333H0.5V7.16667H7.16667V0.5H8.83333Z" fill="currentColor"/>
+                      </svg>
+                    </span>
+                  </button>
+                </h2>
+                <div id="section1" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
+                  <div class="accordion-body">
+                    <ul class="list-unstyled menu-link-list">
+                      <li>
+                        <a href="#" class="text-decoration-none btn btn-secondary">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
+                          </svg>
+                          <span>Degrees and Programs</span>
+                        </a>
+                      </li>
+        
+                      <li>
+                        <a href="#" class="text-decoration-none btn btn-secondary">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
+                          </svg>
+                          <span>Academic Affairs</span>
+                        </a>
+                      </li>
+        
+                      <li>
+                        <a href="#" class="text-decoration-none btn btn-secondary">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
+                          </svg>
+                          <span>Academic Calendar</span>
+                        </a>
+                      </li>
+        
+                      <li>
+                        <a href="#" class="text-decoration-none btn btn-secondary">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
+                          </svg>
+                          <span>Library</span>
+                        </a>
+                      </li>
+        
+                      <li>
+                        <a href="#" class="text-decoration-none btn btn-secondary">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
+                          </svg>
+                          <span>University Catalog</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="#" class="text-decoration-none btn btn-secondary">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
+                          </svg>
+                          <span>Bookstore</span>
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="#" class="text-decoration-none btn btn-secondary">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                            <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
+                          </svg>
+                          <span>Colleges and Departments</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed h3" data-bs-toggle="collapse" data-bs-target="#section2">
+                    Admissions and Aid
+                    <span class="accordion-icon">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.83333 0.5V7.16667H15.5V8.83333H8.83333V12.1667V15.5H7.16667V12.1667V8.83333H0.5V7.16667H7.16667V0.5H8.83333Z" fill="currentColor"/>
+                      </svg>
+                    </span>
+                  </button>
+                </h2>
+                <div id="section2" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
+                  <div class="accordion-body">Links...</div>
+                </div>
+              </li>
+              <!-- Add more as needed -->
+            </ul>
+    
+            <div class="quick-links">
+              <ul class="list-unstyled star-links-black">
+                <li><a href="#" class="subtext">MyCSUEB</a></li>
+                <li><a href="#" class="subtext">Canvas</a></li>
+                <li><a href="#" class="subtext">Library</a></li>
+                <li><a href="#" class="subtext">Email</a></li>
+                <li><a href="#" class="subtext">MyCompass</a></li>
+                <li><a href="#" class="subtext">Directory</a></li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+    <div class="overlay-header" id="overlay"></div>
+    <!-- Header End -->
+
+
+     <!--  Hero Section Start -->
+    <section class="inner-hero-section inner-hero-full-slider bg-black">
+        <!-- Swiper -->
+        <div class="swiper inner-hero-slider hero-full-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide bg-transparent">
+              <div class="img-wrapper w-100">
+                <img src="./images/inner-hero-primary.png" alt="Campus" class="img-fluid w-100 h-100 object-fit-cover">
+              </div>
+
+              <div class="content-section">
+                <div class="container"> 
+                  <div class="slider-heading text-center text-md-start ">
+                    <h1 class="mb-0">Degrees and Programs</h1>
+                    <p class="text-large">Lorem ipsum dolor sit amet, consectutur adipiscing elit, integer luctus.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="container pagination-container d-flex align-items-center">
+            <div class="button-with-pagination-sec relative d-flex gap-3">
+              <div class="swiper-button-next swiper-button-next-new swiper-btn">
+                <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6.99976 0.929688L0.929443 7L6.99976 13.0703L8.49976 11.5703L3.92944 7L8.49976 2.42969L6.99976 0.929688Z" fill="black"/>
+                </svg>
+              </div>
+            
+              <div class="swiper-pagination"></div>
+
+              <div class="swiper-button-prev swiper-button-prev-new swiper-btn">
+                <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.99976 0.929688L0.499756 2.42969L5.07007 7L0.499756 11.5703L1.99976 13.0703L8.07007 7L1.99976 0.929688Z" fill="black"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- Swiper End -->
+    </section>
+    <!--  Hero Section End -->
+
+    <!-- Only Text and Button Start -->
+    <section class="section bg-white text-button-sec position-relative program-finder-first-row">
+      <div class="container-smaller position-relative">
+        <div class="next-card">
+          <div class="section-heading text-center text-md-start">
+            <!-- Red Diamonds -->
+            <div class="title-wrap">
+              <h2 class="section-title mb-3">Subhead Goes Here</h2>
+              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
+                <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"/>
+                <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"/>
+                <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"/>
+              </svg>
+            </div>
+
+             <!-- Description -->
+             <div class="heading-description mb-0">
+              <p class="text-medium">
+                The Message Area is a content presentation area which provides for a background image or solid color with Title, Text, and hyperlink capability. The background image is full-width and will be Parallax (stay stationary as you scroll). Can contain up to 4 call to action links.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Only Text and Button End -->
+
+
+    
+    <!-- Only Text and Button Start -->
+    <section class="section bg-light-gray program-link-sec position-relative">
+      <div class="container-smaller position-relative"> 
+        
+        <div class="program-filter mb-4 mb-md-5">
+          <form class="row">
+            <div class="mb-4 col-12 col-sm-6">
+              <input type="text" class="form-control" placeholder="Search for a degree by keyword" id="" aria-describedby="">
+            </div>
+            <div class="mb-4 col-12 col-sm-6">
+              <select id="" class="form-select">
+                <option>Browse by degree level</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label text-medium" for="exampleCheck1">Show online degrees only</label>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="program-card">
+          <a href="" class="program-link text-decoration-none">
+            <div class="row gx-3">
+              <div class="left-program-link col-12 col-sm-6 mb-0">
+                <h4> Accountancy</h4>
+              </div>
+
+              <div class="right-program-link col-12 col-sm-6 d-flex justify-content-sm-end">
+                  <div class="text-decoration-none btn btn-secondary">
+                    <span>
+                        <p class="subtext fw-bold mb-0">Master of Science (MS)</p>
+                        <p class="subtext m-0">Self-Support only</p>
+                    </span> 
+                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                      <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
+                    </svg>
+                  </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="" class="program-link text-decoration-none">
+            <div class="row gx-3">
+              <div class="left-program-link col-12 col-sm-6 mb-0">
+                <h4>Accountancy and Analytics</h4>
+              </div>
+
+              <div class="right-program-link col-12 col-sm-6 d-flex justify-content-sm-end">
+                  <div class="text-decoration-none btn btn-secondary">
+                    <span>
+                        <p class="subtext fw-bold mb-0">Bachelor of Science (BS)</p>
+                    </span> 
+                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                      <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
+                    </svg>
+                  </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="" class="program-link text-decoration-none">
+            <div class="row gx-3">
+              <div class="left-program-link col-12 col-sm-6 mb-0">
+                <h4> Accountancy and Analytics</h4>
+              </div>
+
+              <div class="right-program-link col-12 col-sm-6 d-flex justify-content-sm-end">
+                  <div class="text-decoration-none btn btn-secondary">
+                    <span>
+                        <p class="subtext fw-bold mb-0">Bachelor of Science (BS)</p>
+                        <p class="subtext m-0">Online</p>
+                    </span> 
+                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                      <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
+                    </svg>
+                  </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="" class="program-link text-decoration-none">
+            <div class="row gx-3">
+              <div class="left-program-link col-12 col-sm-6 mb-0">
+                <h4>Anthropology</h4>
+                <p>Archaeology and Biological Anthropology Concentration</p>
+              </div>
+
+              <div class="right-program-link col-12 col-sm-6 d-flex justify-content-sm-end">
+                  <div class="text-decoration-none btn btn-secondary">
+                    <span>
+                        <p class="subtext fw-bold mb-0">Bachelor of Arts (BA)</p>
+                    </span> 
+                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                      <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
+                    </svg>
+                  </div>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="text-center row-button-sec">
+          <a href="#" class="btn btn-primary"><span>Load more</span></a>
+        </div>
+      </div>
+    </section>
+    <!-- Only Text and Button End -->
+
+    <!-- Only Text - contact-us Start -->
+    <section class="section bg-white contact-us-sec position-relative">
+      <div class="container-smaller"> 
+        
+        <div class="next-card bg-white text-black">
+          <div class="section-heading heading-gray-icon">
+            <!-- Red Diamonds -->
+            <div class="title-wrap w-100">
+              <h2 class="section-title">Contact Us</h2>
+              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
+                <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"></path>
+                <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"></path>
+                <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"></path>
+              </svg>
+            </div>
+
+            <div class="full-sec-content w-100">
+              <div class="heading-content text-medium">
+                <div class="contact-heading row">
+                  <div class="heading-box col-12 col-md-7 col-xl-9">
+                    <h3>Office of the Provost and Vice President, Academic Affairs</h3>
+                  </div>
+
+                  <div class="social-icon col-12 col-md-5 col-xl-3">
+                    <ul class="social-icons list-unstyled mb-0">
+                      <li>
+                       <a href=""><img src="./images/instagram-icon.svg" alt="Icon" class="img-fluid"></a> 
+                      </li>
+                      <li>
+                        <a href=""><img src="./images/twitch-icon.svg" alt="Icon" class="img-fluid"></a>
+                      </li>
+                      <li>
+                        <a href=""><img src="./images/youtube-icon.svg" alt="Icon" class="img-fluid"></a>
+                      </li>
+                      <li>
+                        <a href=""><img src="./images/facebook-icon.svg" alt="Icon" class="img-fluid"></a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="contact-details">
+                      <div class="info-icon">
+                        <img src="./images/address.svg" class="img-fluid w-100" alt="Address">
+                      </div>
+                      <div class="info-text text-medium">
+                        California State University, East Bay
+                        25800 Carlos Bee Blvd 3011 <br/>
+                        Meiklejohn Hall<br/>
+                        Hayward, CA 94542<br/>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-md-6 contact-listing">
+                    <div class="contact-details">
+                      <div class="info-icon">
+                        <img src="./images/address.svg" class="img-fluid w-100" alt="Address">
+                      </div>
+                      <div class="info-text text-medium">
+                        (510) 885-3292
+                      </div>
+                    </div>
+
+                    <div class="contact-details">
+                      <div class="info-icon">
+                        <img src="./images/email-icon.svg" class="img-fluid w-100" alt="Address">
+                      </div>
+                      <div class="info-text text-medium">
+                       <a href="" class="link--hover">communication@csueastbay.edu</a> 
+                      </div>
+                    </div>
+
+                    <div class="contact-details">
+                      <div class="info-icon">
+                        <img src="./images/link-icon.svg" class="img-fluid w-100" alt="Address">
+                      </div>
+                      <div class="info-text text-medium">
+                        <a href="" class="link--hover">Dept. of Communication</a> 
+                      </div>
+                    </div>  
+                  </div>
+                </div>
+
+
+                <div class="mobile-social-icon social-icon">
+                  <ul class="social-icons list-unstyled mb-0">
+                    <li>
+                     <a href=""><img src="./images/instagram-icon.svg" alt="Icon" class="img-fluid"></a> 
+                    </li>
+                    <li>
+                      <a href=""><img src="./images/twitch-icon.svg" alt="Icon" class="img-fluid"></a>
+                    </li>
+                    <li>
+                      <a href=""><img src="./images/youtube-icon.svg" alt="Icon" class="img-fluid"></a>
+                    </li>
+                    <li>
+                      <a href=""><img src="./images/facebook-icon.svg" alt="Icon" class="img-fluid"></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Only Text - contact-us End -->
+
+
+     <!-- Footer Start -->
+    <footer class="footer bg-black text-white">
+      <div class="container">
+
+        <div class="footer-lists">
+          <div class="footer-top-sec row align-items-center">
+            <div class="col-md-6">
+              <div class="footer-logo mb-3">
+                <img src="./images/logo-footer.svg" alt="Logo" class="img-fluid">
+              </div>
+            </div>
+            <div class="col-md-6 d-none d-md-block">
+              <ul class="social-icons list-unstyled">
+                <li>
+                 <a href=""><img src="./images/instagram-icon.svg" alt="Icon" class="img-fluid"></a> 
+                </li>
+                <li>
+                  <a href=""><img src="./images/twitch-icon.svg" alt="Icon" class="img-fluid"></a>
+                </li>
+                <li>
+                  <a href=""><img src="./images/youtube-icon.svg" alt="Icon" class="img-fluid"></a>
+                </li>
+                <li>
+                  <a href=""><img src="./images/facebook-icon.svg" alt="Icon" class="img-fluid"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+  
+          
+          <!-- Links -->
+          <div class="menu-wrapper">
+            <div class="row">
+              <!-- Logo and Address -->
+              <div class="col-12 col-sm-6 col-md address-sec">
+                <address class="text-white text-medium m-0">
+                  25800 Carlos Bee Boulevard<br>
+                  Hayward, CA 94542
+                </address>
+                <p class="fw-bold text-medium mt-2">(510) 885-3000</p>
+              </div>
+              
+              <div class="col-12 col-sm-6 col-md">
+                <ul class="list-unstyled footer-links">
+                  <li><a href="#" class="subtext">Academic Programs</a></li>
+                  <li><a href="#" class="subtext">Library</a></li>
+                  <li><a href="#" class="subtext">Bookstore</a></li>
+                  <li><a href="#" class="subtext">Athletics</a></li>
+                </ul>
+              </div>
+
+              <div class="col-12 col-sm-6 col-md">
+                <ul class="list-unstyled footer-links">
+                  <li><a href="#" class="subtext">Contact Cal State East Bay</a></li>
+                  <li><a href="#" class="subtext">Maps and Directions</a></li>
+                  <li><a href="#" class="subtext">Campus Directory</a></li>
+                  <li><a href="#" class="subtext">Career Opportunities</a></li>
+                </ul>
+              </div>
+
+              <div class="col-12 col-sm-6 col-md d-flex d-md-none mt-32">
+                <ul class="social-icons list-unstyled">
+                  <li>
+                    <img src="./images/instagram-icon.svg" alt="Icon" class="img-fluid">
+                  </li>
+                  <li>
+                    <img src="./images/twitch-icon.svg" alt="Icon" class="img-fluid">
+                  </li>
+                  <li>
+                    <img src="./images/youtube-icon.svg" alt="Icon" class="img-fluid">
+                  </li>
+                  <li>
+                    <img src="./images/facebook-icon.svg" alt="Icon" class="img-fluid">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+         
+      
+          <div class="footer-bottom">
+            <hr class="border-secondary mt-0 mb-3">
+        
+            <!-- Bottom Links -->
+            <div class="row">
+              <div class="col-12">
+                <ul class="list-unstyled d-flex flex-column flex-sm-row flex-wrap gap-2 gap-md-3">
+                  <li><a href="#" class="link-btn">Privacy Statement</a></li>
+                  <li><a href="#" class="link-btn">Emergency Information</a></li>
+                  <li><a href="#" class="link-btn">Annual Security Report</a></li>
+                  <li><a href="#" class="link-btn">Campus Safety Plan</a></li>
+                  <li><a href="#" class="link-btn">Register a Complaint</a></li>
+                  <li><a href="#" class="link-btn">Notice of Non-Discrimination and Retaliation Prohibition</a></li>
+                </ul>
+                <p class="copyright text-smaller">&copy; 2024 California State University, East Bay. All Rights Reserved.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+      </div>
+    </footer>
+    <!-- Footer End -->
+
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="./js/swiper-bundle.min.js"></script>
+
+    <!-- custom JS -->
+    <script src="./js/main.js"></script>
+
+  </body>
+</html>

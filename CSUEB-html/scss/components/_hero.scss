@@ -213,3 +213,34 @@
 }
 
 
+.inner-hero-full-image {
+  position: relative;
+  height: 17.75rem;
+  @include media-breakpoint-up(md) {
+    height: 66vh;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    right:  rem.convert(16px);
+    bottom: rem.convert(16px);
+    height: 100%;
+    width: 100%;  
+    background-image: url(images/full-star-inner-hero.svg);
+    background-size: 12.8125rem;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    @include media-breakpoint-up(md) {
+      background-size: 18rem;
+    }
+    @include media-breakpoint-up(xxl) {
+      background-size: 25.875rem;
+    }
+  }
+  .full-img-hero-wrap {
+    img  {
+      object-fit: cover;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+.custom-table-section {
+  margin-top: rem.convert(32px);
+  @include media-breakpoint-down(md) {
+    margin-top: rem.convert(24px);
+  }
+
+
+  .custom-table {
+    thead {
+      border-bottom: 2px solid var(--gold);
+      th {
+        text-transform: uppercase;
+        border: none;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        width: 10%;
+        @include media-breakpoint-down(md) {
+          white-space: nowrap;
+          text-transform: capitalize;
+          padding-right: 1.5rem;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          padding-top: 0.75rem;
+          padding-bottom: 0.75rem;
+          border-top: 1px solid var(--grey-800);
+          border-bottom: none;
+        }
+        &:last-child td {
+          border-bottom: 1px solid var(--grey-800);
+        }
+      }
+    }
+  }
+}

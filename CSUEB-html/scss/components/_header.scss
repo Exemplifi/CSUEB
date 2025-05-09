@@ -1,7 +1,7 @@
 
 // Header
+
 .main-header {
-  // background-color: var(--black);
   color: $white;
   // position: relative;
   z-index: 1050;
@@ -10,9 +10,13 @@
   right: 0;
   top: 0;
   background: transparent;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, top 0.3s ease-in-out;
   padding-top: rem.convert(6px);
   padding-inline: rem.convert(6px);
+  &.upwards {
+    top: -140px;
+    transition: top 0.5s ease-in-out;
+  }
   @include media-breakpoint-up(lg) {
     padding-top: 1rem;
     padding-inline: 1rem;
@@ -21,6 +25,7 @@
     padding-inline: 2rem;
   }
   .container  {
+     background-color: var(--black);
     padding-block: 1.5rem;
     @include media-breakpoint-up(xl) {
       padding-inline: 2rem;
@@ -155,14 +160,13 @@
     @include media-breakpoint-down(xxl) {
       padding-bottom: 2.5rem;
       padding-top: 4rem;
-      padding-inline: 3.5;
+      padding-inline: 3.5rem;
     } 
-    @include media-breakpoint-down(xl) {
-      padding-top: 4rem;
+    @include media-breakpoint-down(lg) {
+      padding: 2rem;
     }
     @media (min-width: 1600px) { 
       padding-right: 8rem;
-
     }
   }
   .btn-primary-gray {
@@ -402,14 +406,14 @@
 
 .btn.btn-primary-close {
   &::before {
-    background-color: #BC0829;
+    background-color: #BC0829!important;
     content: "";
   }
   span {
     padding-left: 0.25rem;
     padding-right: 0.75rem;
     display: block;
-    background-color: #BC0829;
+    background-color: #BC0829!important;
   }
   @media (min-width: 992px) {
     display: none;
