@@ -429,8 +429,8 @@
             </div>
 
             <!-- Description -->
-            <div class="heading-description">
-              <p class="text-medium">
+            <div class="heading-description text-medium">
+              <p>
                 The Message Area is a content presentation area which provides for a background image or solid color with Title, Text, and hyperlink capability. The background image is full-width and will be Parallax (stay stationary as you scroll). Can contain up to 4 call to action links.
               </p>
             </div>
@@ -691,10 +691,10 @@
           </div>
         </div>
 
-        <ul class="list-unstyled accodian-global" id="menuAccordion">
+        <ul class="list-unstyled accodian-global" id="globalAccordion">
           <li class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button collapsed h4" data-bs-toggle="collapse" data-bs-target="#section1">
+              <button class="accordion-button collapsed h4" data-bs-toggle="collapse" data-bs-target="#section1Id">
                 Accordion Row Title
                 <span class="accordion-icon">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -703,7 +703,7 @@
                 </span>
               </button>
             </h2>
-            <div id="section1" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
+            <div id="section1Id" class="accordion-collapse collapse" data-bs-parent="#globalAccordion">
               <div class="accordion-body text-medium">
                 <p>Registration for the Spring 2024 term is now open. Get off to a fresh start, with exciting opportunities to explore new subjects, engage with passionate professors, and connect with fellow students.</p>
               </div>
@@ -711,7 +711,7 @@
           </li>
           <li class="accordion-item">
             <h2 class="accordion-header">
-              <button class="accordion-button collapsed h4" data-bs-toggle="collapse" data-bs-target="#section2">
+              <button class="accordion-button collapsed h4" data-bs-toggle="collapse" data-bs-target="#section2Id">
                 An Open Accordion Row 
                 <span class="accordion-icon">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -720,7 +720,7 @@
                 </span>
               </button>
             </h2>
-            <div id="section2" class="accordion-collapse collapse" data-bs-parent="#menuAccordion">
+            <div id="section2Id" class="accordion-collapse collapse" data-bs-parent="#globalAccordion">
               <div class="accordion-body">Registration for the Spring 2024 term is now open. Get off to a fresh start, with exciting opportunities to explore new subjects, engage with passionate professors, and connect with fellow students.</div>
             </div>
           </li>
@@ -759,9 +759,8 @@
 
     <!-- Tab Start -->
     <section class="section bg-white tabbed-section">
-      <div class="container-smaller position-relative">
-        <div class="next-card">
-          <div class="section-heading heading-gray-icon">
+      <div class="container-smaller">
+         <div class="section-heading heading-gray-icon">
             <!-- Red Diamonds -->
             <div class="title-wrap">
               <h2 class="section-title mb-3">Tabbed Content</h2>
@@ -772,48 +771,47 @@
               </svg>
             </div>
           </div>
-          
+      </div>
 
-          <div class="">
-            <!-- Nav tabs -->
-              <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1"
-                          type="button" role="tab" aria-controls="tab1" aria-selected="true">TAB NO. 1</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2"
-                          type="button" role="tab" aria-controls="tab2" aria-selected="false">TAB NO. 2</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3"
-                          type="button" role="tab" aria-controls="tab3" aria-selected="false">TAB NO. 3</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button class="nav-link" id="tab4-tab" data-bs-toggle="tab" data-bs-target="#tab4"
-                          type="button" role="tab" aria-controls="tab4" aria-selected="false">TAB NO. 4</button>
-                </li>
-              </ul>
-        
-              <!-- Tab panes -->
-              <div class="tab-content">
-                <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
-                  <div class="tab-content-box">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu eros finibus, vestibulum nisi ut, luctus tellus. Mauris mauris nulla, tincidunt sed finibus ac, vehicula quis nulla. Pellentesque nec diam nec elit blandit mattis non congue erat.
-                  </div>
-                </div>
-                <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-                  <div class="tab-content-box">Tab 2 content goes here.</div>
-                </div>
-                <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
-                  <div class="tab-content-box">Tab 3 content goes here.</div>
-                </div>
-                <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
-                  <div class="tab-content-box">Tab 4 content goes here.</div>
-                </div>
+      <div class="container-smaller container-tab">
+        <div class="tab-card">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link subtext fw-bold active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1"
+                      type="button" role="tab" aria-controls="tab1" aria-selected="true">TAB NO. 1</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link subtext fw-bold" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2"
+                      type="button" role="tab" aria-controls="tab2" aria-selected="false">TAB NO. 2</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link subtext fw-bold" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3"
+                      type="button" role="tab" aria-controls="tab3" aria-selected="false">TAB NO. 3</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link subtext fw-bold" id="tab4-tab" data-bs-toggle="tab" data-bs-target="#tab4"
+                      type="button" role="tab" aria-controls="tab4" aria-selected="false">TAB NO. 4</button>
+            </li>
+          </ul>
+    
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+              <div class="tab-content-box text-medium">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu eros finibus, vestibulum nisi ut, luctus tellus. Mauris mauris nulla, tincidunt sed finibus ac, vehicula quis nulla. Pellentesque nec diam nec elit blandit mattis non congue erat.
               </div>
+            </div>
+            <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+              <div class="tab-content-box text-medium">Tab 2 content goes here.</div>
+            </div>
+            <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
+              <div class="tab-content-box text-medium">Tab 3 content goes here.</div>
+            </div>
+            <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
+              <div class="tab-content-box text-medium">Tab 4 content goes here.</div>
+            </div>
           </div>
-          
         </div>
       </div>
     </section>

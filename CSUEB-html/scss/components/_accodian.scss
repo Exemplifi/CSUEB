@@ -13,7 +13,7 @@
       padding: 2rem;
       padding-right: 4rem;
       margin-bottom: 0;
-      margin-top: 12px;
+      margin-top: rem.convert(12px);
       transition: all 0.3s ease-in-out;
       @include media-breakpoint-down(md) {
         padding-block: 1.5rem;
@@ -36,8 +36,11 @@
         right: 2rem;
         top: 31px;
         @include media-breakpoint-down(md) {
-          top: 14px;
+          top: rem.convert(26px);
           right: 1rem;
+          width: 1.5rem;
+          height:  1.5rem;
+          padding: 0.3rem;
         }
       }
       &.collapsed {
@@ -80,12 +83,33 @@
     background-color: var(--light-gray);
     .accordion-body {
       padding-inline: 2rem;
-      padding-bottom: 1.5rem;
+      padding-bottom: 2rem;
+     
       @include media-breakpoint-up(sm) {
         width: 90%;
       }
       @include media-breakpoint-up(xl) {
-        width: 75%;
+        width: 85%;
+      }
+      p {
+        margin-bottom: 8px;
+      }
+      .accordion-body-item {
+        margin-bottom: 1.5rem;
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        span {
+          font-family: var(--body-font-family);
+          font-size: rem.convert(14px);
+          line-height: 175%; /* 1.53125rem */
+          font-weight: 500;
+
+          @include media-breakpoint-down(lg) {
+            font-size: rem.convert(14px);
+          }
+        }
       }
     }
   }

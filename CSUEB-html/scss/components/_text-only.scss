@@ -27,8 +27,6 @@
   }
 }
 
-
-
 .key-feature-sec {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.90) 0%, rgba(0, 0, 0, 0.90) 100%), url(images/learn-profoundly.png);
   background-position: center;
@@ -92,8 +90,6 @@
     }
   }
 }
-
-
 
 .whats-next-section {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.90) 0%, rgba(0, 0, 0, 0.90) 100%), url(images/whats-next-section.png);
@@ -198,7 +194,6 @@
   }
 }
 
-
 .text-icon-sec {
   .icon-text-card {
     .icon-div {
@@ -257,12 +252,12 @@
   .next-card {
     max-width: 50rem;
     padding: 4.5rem 6rem 4rem 6rem;
-    @include media-breakpoint-down(md) {
-      padding: 4rem 2rem 3rem 2rem;
-    }
     margin-inline: auto;
     position: relative;
     z-index: 2;
+    @include media-breakpoint-down(md) {
+      padding: 4rem 2rem 3rem 2rem;
+    }
     .section-heading {
       .star-icon * {
         color: var(--grey-700);
@@ -283,7 +278,6 @@
     
   }
 }
-
 
 // testimonial
 .important-announcement-sec{
@@ -312,6 +306,9 @@
   .next-card {
     border: 12px solid var(--black);
     padding: 4.5rem 6rem;
+    margin-inline: auto;
+    position: relative;
+    z-index: 2;
     @include media-breakpoint-down(xxl) {
       padding: 3rem;
     }
@@ -319,9 +316,7 @@
       padding: 2rem 1.75rem 3rem 1.75rem;
       border-width: 8px;
     }
-    margin-inline: auto;
-    position: relative;
-    z-index: 2;
+
     .section-heading {
       .star-icon * {
         color: var(--grey-700);
@@ -342,8 +337,6 @@
     
   }
 }
-
-
 
 .contact-us-sec {
   position: relative;
@@ -373,6 +366,9 @@
   .next-card {
     border: 12px solid var(--gold);
     padding: 4.5rem 6rem;
+    margin-inline: auto;
+    position: relative;
+    z-index: 5;
     @include media-breakpoint-down(xxl) {
       padding: 3rem;
     }
@@ -380,9 +376,6 @@
       padding: 4rem 1.25rem 3rem 1.25rem;
       border-width: 8px;
     }
-    margin-inline: auto;
-    position: relative;
-    z-index: 5;
     .section-heading {
       .star-icon * {
         color: var(--grey-700);
@@ -519,7 +512,6 @@
     }
   }
 }
-
 
 .program-finder-first-row {
    padding-bottom: rem.convert(48px);

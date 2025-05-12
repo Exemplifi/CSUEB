@@ -104,6 +104,19 @@ h5, .h5  {
   line-height: 140%; /* 1.575rem */
 }
 
+.big-heading {
+  font-family: var(--heading-font-family);
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%; /* 4.4rem */
+  letter-spacing: -0.12rem;
+   @include media-breakpoint-down(lg) {
+    font-size: 3rem;
+    letter-spacing: -0.09rem;
+  }
+}
+
 .h3-headng {
   font-family: var(--body-font-family);
   font-size: 1.875rem;
@@ -155,7 +168,7 @@ h5, .h5  {
   font-size: rem.convert(14px);
   line-height: 175%; /* 1.53125rem */
   font-weight: 500;
-
+display: inline-block;
   @include media-breakpoint-down(lg) {
     font-size: rem.convert(14px);
   }

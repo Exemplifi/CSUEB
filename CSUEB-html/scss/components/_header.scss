@@ -447,7 +447,7 @@
       text-transform: uppercase;
       font-weight: $bold;
       text-decoration: none;
-      padding:0.5rem 0rem;
+      padding:0.5rem 0rem 3rem;
       border-bottom: 4px solid transparent;
       transition: all 0.5s ease-in-out;
       font-family: var(--body-font-family);
@@ -458,7 +458,7 @@
       text-transform: uppercase;
     
       @include media-breakpoint-up(xxl) {
-        padding: 1.22rem 0rem;
+        padding: 1.22rem 0rem 1rem;
       }
       @include media-breakpoint-down(md) {
         padding-block: rem.convert(0);
