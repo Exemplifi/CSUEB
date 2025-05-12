@@ -260,9 +260,3 @@ section.bg-white.section-with-padding + section.bg-white {
     }
 }
 
-
-.w-btn-full {
-  @include media-breakpoint-down(sm) {
-    width: 100%;
-  }
-}

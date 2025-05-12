@@ -377,3 +377,14 @@
 }
 
 
+
+.w-btn-full {
+  @include media-breakpoint-down(sm) {
+    width: 100%;
+  }
+}
+.row-button-sec {
+  .btn {
+    width: 100%;
+  }
+}

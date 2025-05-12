@@ -246,6 +246,7 @@
         color: #e30046; // Pinkish red
       }
     }
+
   
     .actions {
       li {
@@ -312,6 +313,12 @@
           background-color: transparent;
           text-decoration-color: var(--red);
         }
+      }
+    }
+
+    .btn-primary {
+      @include media-breakpoint-down(sm) {
+        width: 100%;
       }
     }
   }
