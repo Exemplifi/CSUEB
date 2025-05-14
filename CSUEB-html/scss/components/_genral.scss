@@ -4,7 +4,7 @@ body {
 }
 
 a {
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 ul {
@@ -18,14 +18,11 @@ ul {
         padding-inline: 1.25rem;
     }
 }
-
-
 .custom-container {
     max-width: 1440px;
     padding: 0;
     margin: 0 auto;
 }
-
 .container-smaller {
     max-width: 1268px;
     margin: 0 auto;
@@ -209,8 +206,6 @@ section.bg-white.section-with-padding + section.bg-white {
         padding-right: 0;
     }
 }
-
-
 
 .breadcrumb {
     padding-top: rem.convert(20px);
