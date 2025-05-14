@@ -22,7 +22,10 @@
       padding: 0.72rem 1.5rem;
       @include media-breakpoint-down(md) {
         padding: 0.5rem 1rem;
-
+      }
+      &:hover {
+        background-color: var(--light-gray);
+        color: var(--black);
       }
       &.active {
         background-color: var(--gold);

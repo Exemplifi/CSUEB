@@ -639,3 +639,10 @@
     }
   }
 }
+
+.gapping-btm-custom {
+   padding-bottom: rem.convert(72px);
+    @include media-breakpoint-down(md) {
+      padding-bottom: rem.convert(52px);
+    }
+}

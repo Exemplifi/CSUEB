@@ -65,3 +65,26 @@
 }
 // img-text-full-width-sec End
 
+
+.flip-tiles-section {
+  position: relative;
+  &::after {
+    content: "";
+    background-image: url(images/gray-line-bg.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 27.44375rem;
+    height: 14.16931rem;
+    position: absolute;
+    right: 0;
+    bottom: 2.1875rem;
+    @include media-breakpoint-up(xxxl) {
+      width: 39.44375rem;
+    }
+  }
+  .flip-tiles-grid {
+    position: relative;
+    z-index: 2;
+  }
+}

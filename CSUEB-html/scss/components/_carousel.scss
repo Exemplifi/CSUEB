@@ -271,17 +271,17 @@
       display: flex;
       justify-content: center;
       .swiper-pagination-bullet {
-          cursor: pointer;
-          clip-path: polygon(0 0, 33% 0, 100% 100%, 68% 100%);
-          width: 1.135rem;
-          height: 1rem;
-          border-radius: 0;
-          margin: 0 !important;
-          background: #00000033;
-          opacity: 1;
-          &.swiper-pagination-bullet-active {
+        cursor: pointer;
+        clip-path: polygon(0 0, 33% 0, 100% 100%, 68% 100%);
+        width: 1.135rem;
+        height: 1rem;
+        border-radius: 0;
+        margin: 0 !important;
+        background: #00000033;
+        opacity: 1;
+        &.swiper-pagination-bullet-active {
           background: var(--gold);
-          }
+        }
       }
   }
 
@@ -308,13 +308,27 @@
     margin-left: auto;
     margin-right: 0;
     .swiper-btn {
-      background-color: var(--white);
+      background-color: #FFFFFF40;
+      transition: all 0.3s ease-in-out;
+      svg {
+        path {
+        fill: var(--white);
+        }
+      }
+      &:hover {
+        background-color: var(--white);
+        svg {
+          path {
+          fill: var(--black);
+          }
+        }
+      }
       &.swiper-button-disabled {
           background-color: #FFFFFF40;
           opacity: 1;
           svg {
            path {
-            fill: #fff;
+            fill: var(--white);
            }
           }
       }
@@ -326,8 +340,12 @@
       .swiper-pagination-bullet {
           background: #FFFFFF99;
           opacity: 1;
+          transition: all 0.3s ease-in-out;
           &.swiper-pagination-bullet-active {
             background: var(--gold);
+          }
+          &:hover {
+              background-color: var(--white);
           }
       }
     }

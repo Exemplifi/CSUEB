@@ -15,7 +15,7 @@
   padding-inline: rem.convert(6px);
   &.upwards {
     top: -140px;
-    transition: top 0.5s ease-in-out;
+    transition: top 0.3s ease-in-out;
   }
   @include media-breakpoint-up(lg) {
     padding-top: 1rem;
@@ -86,7 +86,7 @@
         text-decoration: none;
         padding: 0.4rem 0rem;
         border-bottom: 2px solid transparent;
-        transition: all 0.5s ease-in-out;
+        transition: all 0.3s ease-in-out;
         &:hover {
             border-color: var(--red);
         }
@@ -449,7 +449,7 @@
       text-decoration: none;
       padding:0.5rem 0rem 3rem;
       border-bottom: 4px solid transparent;
-      transition: all 0.5s ease-in-out;
+      transition: all 0.3s ease-in-out;
       font-family: var(--body-font-family);
       font-size: 0.875rem;
       font-style: normal;

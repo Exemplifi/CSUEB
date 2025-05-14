@@ -120,6 +120,9 @@ section.bg-white.section-with-padding + section.bg-white {
 .mt-32 {
     margin-top: rem.convert(32px);
 }
+.mb-32 {
+    margin-bottom: rem.convert(32px);
+}
 .my-32 {
     margin-block: rem.convert(32px);
 }
