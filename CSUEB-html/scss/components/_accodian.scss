@@ -82,13 +82,13 @@
   .accordion-collapse {
     background-color: var(--light-gray);
     .accordion-body {
-      padding-inline: 2rem;
+      padding-inline: 3rem;
       padding-bottom: 2rem;
-     
       @include media-breakpoint-up(sm) {
         width: 90%;
       }
       @include media-breakpoint-up(xl) {
+        padding-inline: 2rem;
         width: 85%;
       }
       p {
@@ -99,7 +99,6 @@
         &:last-child {
           margin-bottom: 0;
         }
-
         span {
           font-family: var(--body-font-family);
           font-size: rem.convert(14px);

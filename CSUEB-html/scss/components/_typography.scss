@@ -109,7 +109,7 @@ h5, .h5  {
   font-size: 4rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 1.10%; /* 4.4rem */
+  line-height: 1.1; /* 4.4rem */
   letter-spacing: -0.12rem;
    @include media-breakpoint-down(lg) {
     font-size: 3rem;
@@ -168,16 +168,24 @@ h5, .h5  {
   font-size: rem.convert(14px);
   line-height: 1.75; /* 1.53125rem */
   font-weight: 500;
-display: inline-block;
   @include media-breakpoint-down(lg) {
     font-size: rem.convert(14px);
   }
-
 }
+
 .text-medium {
   font-size: rem.convert(16px);
   line-height: 1.75; /* 1.75rem */
   font-weight: $medium;
+}
+
+.text-medium-ver2 {
+  font-size: rem.convert(16px);
+  line-height: 1.75; /* 1.75rem */
+  font-weight: $medium;
+   @include media-breakpoint-down(lg) {
+    font-size: rem.convert(14px);
+  }
 }
 
 .text-16-bold {
@@ -196,7 +204,7 @@ display: inline-block;
 .text-large {
   font-family: var(--body-font-family);
   font-size: rem.convert(20px);
-  line-height: 2.1875;
+  line-height: 1.75; 
   font-weight: $medium;
 
   @include media-breakpoint-down(lg) {

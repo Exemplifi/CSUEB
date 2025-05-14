@@ -197,7 +197,12 @@ section.bg-white.section-with-padding + section.bg-white {
     }
 }
 
-
+.card-gaping {
+   padding-top: rem.convert(96px);
+    @include media-breakpoint-down(md) {
+        padding-top: rem.convert(72px);
+    }
+}
 
 .container-slider {
     @include media-breakpoint-down(md) {

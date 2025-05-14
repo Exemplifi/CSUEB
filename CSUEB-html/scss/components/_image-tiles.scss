@@ -82,6 +82,9 @@
     @include media-breakpoint-up(xxxl) {
       width: 39.44375rem;
     }
+    @include media-breakpoint-down(lg) {
+      display: none;
+    }
   }
   .flip-tiles-grid {
     position: relative;
