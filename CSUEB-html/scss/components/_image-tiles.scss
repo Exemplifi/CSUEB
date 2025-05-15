@@ -89,5 +89,17 @@
   .flip-tiles-grid {
     position: relative;
     z-index: 2;
+    @include media-breakpoint-down(md) {
+      .card-color-hover {
+        .overlay {
+          opacity: 0;
+        }
+        &:hover {
+           .overlay {
+            opacity: 1;
+          }
+        }
+      }
+    }
   }
 }

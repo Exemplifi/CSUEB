@@ -112,7 +112,7 @@
 .sidebar {
   position: fixed;
   top: 0;
-  height: 95%;
+  height: 100%;
   width: 95%;
   background-color: var(--white);
   color: var(--black);
@@ -208,7 +208,7 @@
         width: 300px;
         background-image: url(images/menu-left-vector.svg);
         background-position: left bottom;
-        background-size: contain;
+        background-size: 60%;
         background-repeat: no-repeat;
         padding-top: rem.convert(40px);
         padding-inline: rem.convert(24px);
