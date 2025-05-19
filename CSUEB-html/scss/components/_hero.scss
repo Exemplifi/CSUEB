@@ -223,19 +223,24 @@
     content: "";
     position: absolute;
     z-index: 3;
-    right:  rem.convert(16px);
+    right:  rem.convert(0);
     bottom: rem.convert(16px);
-    height: 100%;
-    width: 100%;  
-    background-image: url(images/full-star-inner-hero.svg);
-    background-size: 12.8125rem;
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    @include media-breakpoint-up(md) {
-      background-size: 18rem;
-    }
+    height: 154px;
+    width: 317px;
+    background-image: url(images/white-sigle-star.svg);
+    background-size: 44px;
+    background-repeat: repeat;
+    background-position: right top;
     @include media-breakpoint-up(xxl) {
-      background-size: 25.875rem;
+       height: 201px;
+      width: 414px;
+      background-size: 57px;
+    }
+    @include media-breakpoint-down(md) {
+      height: 96px;
+      width: 205px;
+      background-size: 27px;
+      bottom: rem.convert(10px);
     }
   }
   .full-img-hero-wrap {

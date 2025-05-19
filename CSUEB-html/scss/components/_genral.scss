@@ -57,6 +57,12 @@ ul {
         @include media-breakpoint-up(md) {
             margin-bottom: 3rem;
         }
+        .section-title {
+            margin-bottom: rem.convert(16px);
+            @include media-breakpoint-down(md) {
+                margin-bottom: rem.convert(12px);
+            }
+        }
         .star-icon {
             color: var(--red);
             * {

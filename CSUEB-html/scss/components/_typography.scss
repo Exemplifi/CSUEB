@@ -39,7 +39,7 @@ h1, .h1 {
   font-size: rem.convert(96px);
   font-style: normal;
   font-weight: $semibold;
-  line-height: 100%; /* 6rem */
+  line-height: 1; /* 6rem */
   letter-spacing: -0.3rem;
   @include media-breakpoint-down(xl) {
     font-size:4rem;
@@ -47,6 +47,7 @@ h1, .h1 {
   @include media-breakpoint-down(lg) {
     font-size:3rem;
     line-height: 1.10; 
+    letter-spacing: -0.09rem;
   }
 }
 
@@ -80,6 +81,7 @@ h3, .h3 {
   @include media-breakpoint-down(lg) {
     font-size: 1.5rem;
     line-height: 1.2; /* 2.55rem */
+    letter-spacing: normal;
   }
 }
 

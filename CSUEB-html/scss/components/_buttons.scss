@@ -241,6 +241,7 @@
     }
   }
 
+  
   &.btn-secondary {
     background-color: transparent;
     display: inline-flex;
@@ -268,6 +269,9 @@
       .arrow {
         color: var(--gold);
       }
+    }
+    &.btn-secondary-small {
+      padding: 0.25rem 0.5rem 0.25rem 0.25rem;
     }
   }
 
@@ -341,6 +345,7 @@
   word-break: break-word;
   &:hover {
     background:  rgba(213, 0, 50, 0.10);
+    text-decoration-color: transparent;
   }
 }
 

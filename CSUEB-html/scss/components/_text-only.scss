@@ -60,8 +60,11 @@
           width: 1.875rem;
           height: 1.875rem;
           @include media-breakpoint-down(md) {
-            width: 1.75rem;
-            height: 1.75rem;
+            width: rem.convert(26px);
+            height: rem.convert(26px);
+          }
+          svg {
+                vertical-align: top;
           }
         }
       }
@@ -222,10 +225,10 @@
 
 // testimonial
 .testimonial-sec {
-  background-image:url(images/blockquote.svg);
+  background: url(images/star-bg.svg), var(--red);
+  background-position: top center;
   background-repeat: repeat;
-  background-position: center;
-  background-size: cover;
+  background-size: 28px;
   &::after {
     content: "";
     background-image: url(images/testi-yellow-bg.svg);
@@ -284,10 +287,10 @@
   &::after {
     content: "";
     background-color: var(--red);
-    background: url(images/stars-full-svg.svg), var(--gold);
-    background-position: center;
+    background: url(images/star-bg.svg), var(--gold);
+    background-position: top center;
     background-repeat: repeat;
-    background-size: 100%;
+    background-size: 28px;
     width: 63%;
     height: 100%;
     position: absolute;
@@ -327,9 +330,9 @@
           margin-bottom: rem.convert(24px);
         }
         .section-title {
-          margin-bottom: rem.convert(32px);
+          margin-bottom: rem.convert(16px);
           @include media-breakpoint-down(md) {
-            margin-bottom: rem.convert(24px);
+            margin-bottom: rem.convert(12px);
           }
         }
       }
@@ -390,9 +393,9 @@
           margin-bottom: rem.convert(24px);
         }
         .section-title {
-          margin-bottom: rem.convert(32px);
+          margin-bottom: rem.convert(16px);
           @include media-breakpoint-down(md) {
-            margin-bottom: rem.convert(24px);
+            margin-bottom: rem.convert(12px);
           }
         }
       }

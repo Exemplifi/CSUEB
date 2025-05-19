@@ -250,10 +250,10 @@
   
     .actions {
       li {
-        margin-top: rem.convert(8px);
-        @include media-breakpoint-down(md) {
-          margin-top: rem.convert(12px);
-        }
+        margin-top: rem.convert(16px);
+        // @include media-breakpoint-down(md) {
+        //   margin-top: rem.convert(16px);
+        // }
         &:first-child {
           margin-top: 0;
         }
@@ -561,10 +561,10 @@
     &::after {
       content: "";
       background-color: var(--red);
-      background: url(images/star-overlay-bg.svg), var(--red);
-      background-position: center;
+      background: url(images/star-bg.svg), var(--red);
+      background-position: top center;
       background-repeat: repeat;
-      background-size: 100%;
+      background-size: 28px;
       width: 36%;
       height: 97%;
       position: absolute;
@@ -958,9 +958,9 @@
 }
 
 .full-video-sec {
-  background-image: url(images/youtube-bg.svg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image: url(images/line-bg.svg);
+  background-size: 13px;
+  background-repeat: repeat;
   background-position: center;
   .video-wrap {
     position: relative;

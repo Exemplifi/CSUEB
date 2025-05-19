@@ -45,7 +45,7 @@
       }
       &.collapsed {
         .accordion-icon {
-          transition: transform 0.3s ease;
+          transition: all 0.3s ease-in-out;
           background-color: var(--light-gray);
           svg {
             transition: transform 0.3s ease;
@@ -57,12 +57,15 @@
       &:not(.collapsed) {
         background-color: var(--light-gray);
         .accordion-icon {
-          transition: transform 0.3s ease;
+          transition: all 0.3s ease-in-out;
           background-color: var(--red);
           svg {
             transition: transform 0.3s ease;
             transform: rotate(45deg);
             color: var(--white);
+          }
+          &:hover {
+            background-color: var(--dark-red);
           }
         }
       }

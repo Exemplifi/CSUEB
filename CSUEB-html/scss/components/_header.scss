@@ -263,9 +263,13 @@
           gap: 0.25rem;
           background: var(--red);
           border: 1px solid var(--red);
+          transition: all 0.3s ease-in-out;
           @include media-breakpoint-down(md) {
             width: 2.75rem;
             height: 2.75rem;
+          }
+          &:hover {
+            background: #BC0829;
           }
         }
       }
@@ -368,29 +372,36 @@
         position: absolute;
         right: 0;
         top: 26px;
+        transition: all 0.3s ease-in-out;
         @include media-breakpoint-down(md) {
           top: 14px;
         }
       }
       &.collapsed {
         .accordion-icon {
-          transition: transform 0.3s ease;
+          transition: all 0.3s ease-in-out;
           background-color: var(--light-gray);
           svg {
             transition: transform 0.3s ease;
             transform: rotate(0deg);
             color: var(--black);
           }
+          &:hover {
+            background-color: #E5E5E5;
+          }
         }
       }
       &:not(.collapsed) {
         .accordion-icon {
-          transition: transform 0.3s ease;
+           transition: all 0.3s ease-in-out;
           background-color: var(--red);
           svg {
             transition: transform 0.3s ease;
             transform: rotate(45deg);
             color: var(--white);
+          }
+          &:hover {
+            background-color: var(--dark-red);
           }
         }
       }
