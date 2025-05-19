@@ -223,7 +223,10 @@
   position: relative;
   height: 17.75rem;
   @include media-breakpoint-up(md) {
-    height: 66vh;
+    height: 69vh;
+  }
+ @include media-breakpoint-up(xxl) {
+    height: 70vh;
   }
   &::after {
     content: "";

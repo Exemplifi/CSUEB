@@ -4075,7 +4075,12 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 @media (min-width: 768px) {
   .inner-hero-full-image {
-    height: 66vh;
+    height: 69vh;
+  }
+}
+@media (min-width: 1400px) {
+  .inner-hero-full-image {
+    height: 70vh;
   }
 }
 .inner-hero-full-image::after {
@@ -4342,22 +4347,30 @@ section.bg-white.section-with-padding + section.bg-white {
   background-color: var(--light-gray);
 }
 .accodian-global .accordion-collapse .accordion-body {
-  padding-inline: 3rem;
-  padding-bottom: 2rem;
+  padding-inline: 2rem;
+  padding-bottom: 1.5rem;
 }
 @media (min-width: 576px) {
   .accodian-global .accordion-collapse .accordion-body {
     width: 90%;
   }
 }
+@media (min-width: 768px) {
+  .accodian-global .accordion-collapse .accordion-body {
+    padding-inline: 3rem;
+  }
+}
 @media (min-width: 1200px) {
   .accodian-global .accordion-collapse .accordion-body {
-    padding-inline: 2rem;
+    padding-inline: 3rem;
     width: 85%;
   }
 }
 .accodian-global .accordion-collapse .accordion-body p {
   margin-bottom: 8px;
+}
+.accodian-global .accordion-collapse .accordion-body p:last-child {
+  margin-bottom: 0;
 }
 .accodian-global .accordion-collapse .accordion-body .accordion-body-item {
   margin-bottom: 1.5rem;
