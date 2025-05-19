@@ -44,7 +44,7 @@
 
   .logo {
     width: 9.76744rem;
-    @media (min-width: 992px) {
+    @include media-breakpoint-up(xxl) {
       width: 14.65119rem;
     }
     img {
@@ -444,12 +444,21 @@
     padding-inline: rem.convert(32px);
     @include media-breakpoint-up(md) {
       row-gap: rem.convert(10px);
+      column-gap: rem.convert(24px);
+    }
+   @include media-breakpoint-up(xl) {
+       padding-inline: rem.convert(16px);
     }
     @include media-breakpoint-up(xxl) {
       column-gap: rem.convert(28px);
+        padding-inline: rem.convert(32px);
     }
     @include media-breakpoint-down(xxl) {
-      padding-block: rem.convert(24px);
+      padding-block: rem.convert(0);
+    }
+     @include media-breakpoint-down(xl) {
+      padding-block: rem.convert(16px);
+      
     }
     @include media-breakpoint-down(md) {
       padding-inline: rem.convert(24px);
@@ -458,7 +467,7 @@
       text-transform: uppercase;
       font-weight: $bold;
       text-decoration: none;
-      padding:0.5rem 0rem 3rem;
+      padding:0.5rem 0rem 1rem;
       border-bottom: 4px solid transparent;
       transition: all 0.3s ease-in-out;
       font-family: var(--body-font-family);
@@ -467,9 +476,15 @@
       font-weight: 700;
       line-height: 1.53125rem;
       text-transform: uppercase;
-    
-      @include media-breakpoint-up(xxl) {
+      @include media-breakpoint-up(md) {
+        font-size: rem.convert(13px);
+         padding:0.3rem 0rem 0.3rem;
+      }
+      @include media-breakpoint-up(xl) {
         padding: 1.22rem 0rem 1rem;
+      }
+      @include media-breakpoint-up(xxl) {
+         font-size: 0.875rem;
       }
       @include media-breakpoint-down(md) {
         padding-block: rem.convert(0);

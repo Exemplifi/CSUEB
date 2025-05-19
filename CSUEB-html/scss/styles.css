@@ -1018,7 +1018,7 @@ section.bg-white.section-with-padding + section.bg-white {
 .main-header .logo {
   width: 9.76744rem;
 }
-@media (min-width: 992px) {
+@media (min-width: 1400px) {
   .main-header .logo {
     width: 14.65119rem;
   }
@@ -1419,17 +1419,30 @@ section.bg-white.section-with-padding + section.bg-white {
 @media (min-width: 768px) {
   .secondary-nav-sec .secondary-nav {
     row-gap: 0.625rem;
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .secondary-nav-sec .secondary-nav {
+    padding-inline: 1rem;
   }
 }
 @media (min-width: 1400px) {
   .secondary-nav-sec .secondary-nav {
     -moz-column-gap: 1.75rem;
          column-gap: 1.75rem;
+    padding-inline: 2rem;
   }
 }
 @media (max-width: 1399.98px) {
   .secondary-nav-sec .secondary-nav {
-    padding-block: 1.5rem;
+    padding-block: 0;
+  }
+}
+@media (max-width: 1199.98px) {
+  .secondary-nav-sec .secondary-nav {
+    padding-block: 1rem;
   }
 }
 @media (max-width: 767.98px) {
@@ -1441,7 +1454,7 @@ section.bg-white.section-with-padding + section.bg-white {
   text-transform: uppercase;
   font-weight: 700;
   text-decoration: none;
-  padding: 0.5rem 0rem 3rem;
+  padding: 0.5rem 0rem 1rem;
   border-bottom: 4px solid transparent;
   transition: all 0.3s ease-in-out;
   font-family: var(--body-font-family);
@@ -1451,9 +1464,20 @@ section.bg-white.section-with-padding + section.bg-white {
   line-height: 1.53125rem;
   text-transform: uppercase;
 }
-@media (min-width: 1400px) {
+@media (min-width: 768px) {
+  .secondary-nav-sec .secondary-nav .menu-link {
+    font-size: 0.8125rem;
+    padding: 0.3rem 0rem 0.3rem;
+  }
+}
+@media (min-width: 1200px) {
   .secondary-nav-sec .secondary-nav .menu-link {
     padding: 1.22rem 0rem 1rem;
+  }
+}
+@media (min-width: 1400px) {
+  .secondary-nav-sec .secondary-nav .menu-link {
+    font-size: 0.875rem;
   }
 }
 @media (max-width: 767.98px) {
@@ -3986,9 +4010,19 @@ section.bg-white.section-with-padding + section.bg-white {
   position: relative;
   height: 70vh;
 }
+@media (min-width: 768px) {
+  .inner-hero-full-slider {
+    height: 90vh;
+  }
+}
+@media (min-width: 1440px) {
+  .inner-hero-full-slider {
+    height: 78vh;
+  }
+}
 @media (min-width: 1920px) {
   .inner-hero-full-slider {
-    height: 75vh;
+    height: 77vh;
   }
 }
 .inner-hero-full-slider::before {
