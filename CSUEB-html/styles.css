@@ -2603,6 +2603,12 @@ section.bg-white.section-with-padding + section.bg-white {
   width: 1.5rem;
   height: 1.5rem;
 }
+@media (max-width: 767.98px) {
+  .contact-us-sec .full-sec-content .heading-content .contact-details .info-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
 .contact-us-sec .full-sec-content .heading-content .contact-details .info-text {
   flex: 1;
 }
@@ -2669,11 +2675,11 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 .contact-us-sec .social-icon .social-icons a {
   transition: filter 0.3s ease;
-  filter: brightness(0) saturate(100%) invert(79%) sepia(1%) saturate(0%) hue-rotate(330deg) brightness(94%) contrast(91%);
+  filter: brightness(0) saturate(100%) invert(75%) sepia(1%) saturate(0%) hue-rotate(330deg) brightness(94%) contrast(91%);
 }
 .contact-us-sec .social-icon .social-icons a img {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.125rem;
+  height: 1.125rem;
   object-fit: contain;
 }
 .contact-us-sec .social-icon .social-icons a:hover {

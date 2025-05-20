@@ -441,6 +441,10 @@
         .info-icon {
           width: 1.5rem;
           height: 1.5rem;
+           @include media-breakpoint-down(md) {
+            width: 1.25rem;
+            height: 1.25rem;
+          }
         }
   
         .info-text {
@@ -501,11 +505,12 @@
       a {
       
         transition: filter 0.3s ease;
-        filter: brightness(0) saturate(100%) invert(79%) sepia(1%) saturate(0%) hue-rotate(330deg) brightness(94%) contrast(91%);
+           filter: brightness(0) saturate(100%) invert(75%) sepia(1%) saturate(0%) hue-rotate(330deg) brightness(94%) contrast(91%);
         img {
-          width: 1.5rem;
-          height: 1.5rem;
+          width: 1.125rem;
+          height: 1.125rem;
           object-fit: contain;
+          
         }
         &:hover {
           filter: brightness(0) saturate(100%) invert(15%) sepia(97%) saturate(7485%) hue-rotate(358deg) brightness(98%) contrast(102%);
