@@ -3132,7 +3132,6 @@ section.bg-white.section-with-padding + section.bg-white {
   display: inline-flex;
   flex-direction: column;
   gap: 1.875rem;
-  padding-left: 3rem;
 }
 @media (min-width: 768px) {
   .img-text-full-width-sec .content-section {
@@ -3141,9 +3140,15 @@ section.bg-white.section-with-padding + section.bg-white {
     padding-left: 1.25rem;
   }
 }
+@media (min-width: 1200px) {
+  .img-text-full-width-sec .content-section {
+    padding-left: 3rem;
+  }
+}
 @media (min-width: 1400px) {
   .img-text-full-width-sec .content-section {
     padding-block: 9rem;
+    padding-right: 4rem;
   }
 }
 @media (max-width: 767.98px) {

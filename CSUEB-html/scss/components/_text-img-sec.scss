@@ -226,16 +226,21 @@
       display: inline-flex;
       flex-direction: column;
       gap: rem.convert(30px);
+      
       @include media-breakpoint-up(md) {
         width: 46%;
         padding-block: 4rem;
         padding-left: 1.25rem;
       }
+       @include media-breakpoint-up(xl) {
+           padding-left: 3rem;
+      }
       @include media-breakpoint-up(xxl) {
         padding-block: 9rem;
+        padding-right: 4rem;
       }
       @include media-breakpoint-up(xxxl) {
-        padding-left: 3rem;
+      
       }
       @include media-breakpoint-down(md) {
         padding-inline: 1.25rem;
