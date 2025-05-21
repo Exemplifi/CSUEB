@@ -1466,7 +1466,7 @@ section.bg-white.section-with-padding + section.bg-white {
   font-size: 0.875rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 1.53125rem;
+  line-height: 1.75;
   text-transform: uppercase;
 }
 @media (min-width: 768px) {
