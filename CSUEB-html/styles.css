@@ -3563,6 +3563,9 @@ section.bg-white.section-with-padding + section.bg-white {
     padding: 2rem;
   }
 }
+.review-text-img .content-section .content-wrap p {
+  text-decoration: underline;
+}
 
 .side-nav-with-content .side-nav-wrap {
   display: flex;
@@ -4512,6 +4515,7 @@ section.bg-white.section-with-padding + section.bg-white {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   width: 10%;
+  font-weight: 700;
 }
 @media (max-width: 767.98px) {
   .custom-table-section .custom-table thead th {
