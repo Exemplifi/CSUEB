@@ -4079,7 +4079,7 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 @media (min-width: 576px) {
   .inner-hero-full-slider .inner-hero-slider .swiper-slide .content-section .slider-heading {
-    padding-left: 9rem;
+    padding-left: 8.1rem;
   }
 }
 @media (min-width: 1920px) {
