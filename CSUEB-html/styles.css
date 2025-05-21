@@ -1073,6 +1073,7 @@ section.bg-white.section-with-padding + section.bg-white {
   padding: 0.4rem 0rem;
   border-bottom: 2px solid transparent;
   transition: all 0.3s ease-in-out;
+  color: #000;
 }
 .main-header .header-links .menu-list-link .menu-link:hover {
   border-color: var(--red);
@@ -3433,6 +3434,12 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 .img-verlap-link-sec .img-verlap-link-card:hover .btn-secondary .arrow * {
   color: var(--white);
+}
+.img-verlap-link-sec.img-verlap-academics-sec .img-verlap-link-card .btn .h4 {
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 .full-img-text-sec .content-section {
