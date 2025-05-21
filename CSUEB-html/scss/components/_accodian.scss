@@ -119,7 +119,6 @@
             font-size: rem.convert(14px);
           }
         }
-
         &.content-only-accordion {
           p {
             margin-bottom: rem.convert(40px);
@@ -127,6 +126,10 @@
                margin-bottom: 0;
             }
           }
+        }
+
+        .btn.btn-primary {
+            width: 100%;
         }
       }
     }

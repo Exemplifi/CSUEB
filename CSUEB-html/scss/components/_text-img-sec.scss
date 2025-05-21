@@ -449,6 +449,9 @@
       padding: 4px;
          align-items: end;
       text-transform: capitalize;
+      span {
+        font-weight: 600;
+      }
       &:hover {
         .arrow {
           color: var(--white);
@@ -636,11 +639,14 @@
   .text-img-main-card {
     position: relative;
     padding-left: 3.7rem;
+        height: 100%;
     @include media-breakpoint-down(md) {
       padding-left: 3.5rem;
     }
     .bottom-content-sec {
       padding: 1.5rem 2rem;
+      height: 100%;
+    justify-content: center;
       @include media-breakpoint-down(md) {
         padding: 2rem 1.5rem;
       }
@@ -662,7 +668,7 @@
   .big-date-box {
     .text-img-main-card {
       padding-left: 4.7rem;
-      @include media-breakpoint-down(lg) {
+      @include media-breakpoint-up(xl) {
       padding-left: 6.7rem;
       }
        @include media-breakpoint-down(md) {

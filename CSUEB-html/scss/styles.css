@@ -623,6 +623,9 @@ section.bg-white.section-with-padding + section.bg-white {
     font-size: 0.875rem;
   }
 }
+.btn span {
+  font-weight: 700;
+}
 .btn.btn-primary {
   background-color: transparent;
   position: relative;
@@ -646,6 +649,7 @@ section.bg-white.section-with-padding + section.bg-white {
   display: block;
   background-color: var(--red);
   color: var(--white);
+  font-weight: 700 !important;
   transition: all 0.3s ease-in-out;
   padding: 0.75rem 1.5rem 0.75rem 0.75rem;
 }
@@ -3401,6 +3405,9 @@ section.bg-white.section-with-padding + section.bg-white {
   align-items: end;
   text-transform: capitalize;
 }
+.img-verlap-link-sec .img-verlap-link-card .btn span {
+  font-weight: 600;
+}
 .img-verlap-link-sec .img-verlap-link-card .btn:hover .arrow {
   color: var(--white);
 }
@@ -3561,6 +3568,7 @@ section.bg-white.section-with-padding + section.bg-white {
 .event-sec .text-img-main-card {
   position: relative;
   padding-left: 3.7rem;
+  height: 100%;
 }
 @media (max-width: 767.98px) {
   .event-sec .text-img-main-card {
@@ -3569,6 +3577,8 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 .event-sec .text-img-main-card .bottom-content-sec {
   padding: 1.5rem 2rem;
+  height: 100%;
+  justify-content: center;
 }
 @media (max-width: 767.98px) {
   .event-sec .text-img-main-card .bottom-content-sec {
@@ -3592,7 +3602,7 @@ section.bg-white.section-with-padding + section.bg-white {
 .event-sec .big-date-box .text-img-main-card {
   padding-left: 4.7rem;
 }
-@media (max-width: 991.98px) {
+@media (min-width: 1200px) {
   .event-sec .big-date-box .text-img-main-card {
     padding-left: 6.7rem;
   }
@@ -4521,6 +4531,9 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 .accodian-global .accordion-collapse .accordion-body .accordion-body-item.content-only-accordion p:last-child {
   margin-bottom: 0;
+}
+.accodian-global .accordion-collapse .accordion-body .accordion-body-item .btn.btn-primary {
+  width: 100%;
 }
 
 .flip-tiles-section {
