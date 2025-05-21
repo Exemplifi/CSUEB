@@ -353,13 +353,16 @@
     background-position: right;
     background-repeat: no-repeat!important;
     background-size: 100%;
-    width: 34.76113rem;
+    width: 30.5rem;
     left: auto;
     height: 7.482rem;
     position: absolute;
     right: 0;
     top: 3rem;
     z-index: 4;
+    @include media-breakpoint-up(xxxl) {
+      width: 34.5rem;
+    }
     @include media-breakpoint-down(md) {
       content: "";
       background: url(images/red-line-mobile.svg); 

@@ -178,6 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Signle  Slider
     var swiperSlider = new Swiper(".main-img-slider", {
+      loop: true,
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",

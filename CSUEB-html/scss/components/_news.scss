@@ -51,13 +51,19 @@
       z-index: 3;
       @include media-breakpoint-down(md) {
         background: transparent;
-        padding: .5rem !important;
+        padding: 0.75rem !important;
       }
       .news-content {
         position: relative;
         z-index: 4;
         @include media-breakpoint-up(xxl) {
           max-width: 80%;
+        }
+        h3 {
+          @include media-breakpoint-down(md) {
+              font-size: 1.125rem;
+              line-height: 1.4; 
+          }
         }
         .button-grp{
           margin-top:  rem.convert(12px);

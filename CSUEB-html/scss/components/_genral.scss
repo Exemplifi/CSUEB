@@ -120,6 +120,10 @@ section.bg-white.section-with-padding + section.bg-white {
     --bs-gutter-y: 2rem;
 }
 
+.gy-64 {
+    --bs-gutter-y: 4rem;
+}
+
 .mt-32 {
     margin-top: rem.convert(32px);
 }
@@ -269,3 +273,6 @@ section.bg-white.section-with-padding + section.bg-white {
     }
 }
 
+.gap-20 {
+        gap: 1.25rem !important;
+}

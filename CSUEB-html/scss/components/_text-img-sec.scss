@@ -344,6 +344,10 @@
           background-color: transparent;
           text-decoration-color: var(--red);
         }
+        @include media-breakpoint-down(md) {
+          font-size: 1.125rem;
+          line-height: 1.4;
+        }
       }
     }
 
@@ -443,7 +447,7 @@
       color: var(--white);
       width: 100%;
       padding: 4px;
-      align-items: center;
+         align-items: end;
       text-transform: capitalize;
       &:hover {
         .arrow {
@@ -642,16 +646,38 @@
       }
     }
     .date-tag {
-      width: 4.5rem;
+      min-width: 4.5rem;
       padding: 0.3rem 0.75rem;
       text-align: center;
       position: absolute;
       left: 0;
       top: 16px;
       @include media-breakpoint-down(md) {
-        width: 4rem;
+        min-width: 4rem;
         padding: 0.25rem 0.75rem;
 
+      }
+    }
+  }
+  .big-date-box {
+    .text-img-main-card {
+      padding-left: 4.7rem;
+      @include media-breakpoint-down(lg) {
+      padding-left: 6.7rem;
+      }
+       @include media-breakpoint-down(md) {
+        padding-left: 3.7rem;
+      }
+      .date-tag {
+        .h2 {
+           @include media-breakpoint-down(xl) {
+            font-size:2.125rem;
+            line-height: 1.2;
+           }
+           @include media-breakpoint-down(md) {
+            font-size: 1.5rem;
+           }
+        }
       }
     }
   }

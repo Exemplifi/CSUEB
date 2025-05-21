@@ -14,7 +14,7 @@
   padding-top: rem.convert(6px);
   padding-inline: rem.convert(6px);
   &.upwards {
-    top: -140px;
+    top: -142px;
     transition: top 0.3s ease-in-out;
   }
   @include media-breakpoint-up(lg) {
@@ -43,9 +43,11 @@
   }
 
   .logo {
-    width: 9.76744rem;
+       width: auto;
+        height: 64px;
     @include media-breakpoint-up(xxl) {
-      width: 14.65119rem;
+
+        height: 77px;
     }
     img {
       width: 100%;
@@ -208,7 +210,7 @@
         width: 300px;
         background-image: url(images/menu-left-vector.svg);
         background-position: left bottom;
-        background-size: 60%;
+        background-size: 40%;
         background-repeat: no-repeat;
         padding-top: rem.convert(40px);
         padding-inline: rem.convert(24px);
@@ -218,7 +220,9 @@
         padding-top: rem.convert(56px);
         padding-inline: rem.convert(32px);
       }
-
+      @include media-breakpoint-up(xl) {
+            background-size: 55%;
+      }
       .sidebar-link-wrap {
         margin-top: 1.25rem;
         li {

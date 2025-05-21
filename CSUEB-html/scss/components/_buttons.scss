@@ -246,7 +246,7 @@
     background-color: transparent;
     display: inline-flex;
     text-align: left;
-    font-weight: $semibold;
+    font-weight: $bold;
     color: var(--black);
     gap: rem.convert(12px);
     .arrow {
@@ -393,5 +393,11 @@
     @include media-breakpoint-down(sm) {
       width: 100%;
     }
+  }
+}
+
+.row-btn-width {
+  .btn {
+    width: auto;
   }
 }
