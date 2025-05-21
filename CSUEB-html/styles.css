@@ -1465,6 +1465,7 @@ section.bg-white.section-with-padding + section.bg-white {
 @media (max-width: 767.98px) {
   .secondary-nav-sec .secondary-nav {
     padding-inline: 1.5rem;
+    padding-block: 1.5rem;
   }
 }
 .secondary-nav-sec .secondary-nav .menu-link {
@@ -2545,7 +2546,7 @@ section.bg-white.section-with-padding + section.bg-white {
     background-position: right;
     background-repeat: no-repeat !important;
     background-size: 100%;
-    width: 19.24994rem;
+    width: 15.5rem;
     height: 6.91506rem;
   }
 }

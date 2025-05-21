@@ -467,6 +467,7 @@
     }
     @include media-breakpoint-down(md) {
       padding-inline: rem.convert(24px);
+      padding-block: rem.convert(24px);
     }
     .menu-link {
       text-transform: uppercase;
