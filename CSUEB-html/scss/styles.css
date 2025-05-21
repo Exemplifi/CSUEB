@@ -1761,9 +1761,6 @@ section.bg-white.section-with-padding + section.bg-white {
   }
 }
 
-.bright-future-section .section-title {
-  font-weight: 700;
-}
 .bright-future-section .stars {
   font-size: 1.2rem;
 }
