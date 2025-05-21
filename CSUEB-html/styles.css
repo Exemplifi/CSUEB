@@ -281,6 +281,11 @@ h5, .h5 {
   line-height: 1.75; /* 1.75rem */
   font-weight: 700;
 }
+@media (max-width: 991.98px) {
+  .text-16-bold {
+    font-size: 0.875rem;
+  }
+}
 
 .text-regular {
   font-family: var(--body-font-family);
@@ -3693,6 +3698,10 @@ section.bg-white.section-with-padding + section.bg-white {
     padding-right: 1.25rem;
   }
 }
+.side-nav-with-content .side-nav-wrap .right-content .full-img-text-sec .content-section .full-sec-content .heading-content .h4 {
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
 .side-nav-with-content .container {
   padding-right: 0;
 }
@@ -3853,6 +3862,12 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 .full-video-sec .video-wrap .play-btn:hover svg * {
   color: var(--black);
+}
+
+@media (max-width: 767.98px) {
+  .img-video-text-sec .gy-10 {
+    --bs-gutter-y: 32px;
+  }
 }
 
 .home-hero-sec {

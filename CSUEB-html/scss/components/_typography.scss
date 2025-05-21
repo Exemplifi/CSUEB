@@ -194,6 +194,9 @@ h5, .h5  {
   font-size: rem.convert(16px);
   line-height: 1.75; /* 1.75rem */
   font-weight: $bold  ;
+   @include media-breakpoint-down(lg) {
+    font-size: rem.convert(14px);
+  }
 }
 
 .text-regular {

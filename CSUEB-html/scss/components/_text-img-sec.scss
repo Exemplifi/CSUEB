@@ -809,9 +809,18 @@
           }
         }
         .content-section {
-          @include media-breakpoint-down(md) {
-            padding-right: 1.25rem;
-        }
+            @include media-breakpoint-down(md) {
+              padding-right: 1.25rem;
+          }
+
+          .full-sec-content {
+            .heading-content {
+              .h4 {
+                font-size: 1.5rem;
+                line-height: 1.2;
+              }
+            }
+          }
         }
       }
     }
@@ -1007,6 +1016,15 @@
           }
         }
       }
+    }
+  }
+}
+
+
+.img-video-text-sec {
+  .gy-10 {
+    @include media-breakpoint-down(md) {
+       --bs-gutter-y:  32px;
     }
   }
 }
