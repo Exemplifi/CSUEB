@@ -3588,7 +3588,7 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 .event-sec .text-img-main-card .date-tag {
   min-width: 4.5rem;
-  padding: 0.3rem 0.75rem;
+  padding: 0.5rem 0.75rem;
   text-align: center;
   position: absolute;
   left: 0;
