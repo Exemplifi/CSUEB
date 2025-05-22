@@ -2998,8 +2998,8 @@ section.bg-white.section-with-padding + section.bg-white {
 .img-clip-path-box .img-wrapper {
   position: relative;
   height: 100%;
-  padding-top: 2.3125rem;
-  padding-left: 2.3125rem;
+  padding-top: 2.25rem;
+  padding-left: 2.25rem;
 }
 @media (max-width: 991.98px) {
   .img-clip-path-box .img-wrapper {

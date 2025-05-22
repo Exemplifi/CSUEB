@@ -76,8 +76,8 @@
   .img-wrapper {
     position: relative;
     height: 100%;
-    padding-top: rem.convert(37px);
-    padding-left: rem.convert(37px);
+    padding-top: rem.convert(36px);
+    padding-left: rem.convert(36px);
     @include media-breakpoint-down(lg) {
       padding-top: rem.convert(20px);
       padding-left: rem.convert(20px);
