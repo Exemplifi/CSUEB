@@ -3600,6 +3600,10 @@ section.bg-white.section-with-padding + section.bg-white {
     padding: 0.25rem 0.75rem;
   }
 }
+.event-sec .text-img-main-card .date-tag .date-text {
+  font-weight: 700;
+  text-transform: uppercase;
+}
 .event-sec .big-date-box .text-img-main-card {
   padding-left: 4.7rem;
 }
@@ -4402,6 +4406,9 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 
 /* Accordion Items */
+.accodian-global {
+  margin-bottom: 0;
+}
 .accodian-global .accordion-item .accordion-button {
   font-weight: 600;
   display: flex;

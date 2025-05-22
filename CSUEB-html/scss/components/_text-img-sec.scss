@@ -671,7 +671,10 @@
       @include media-breakpoint-down(md) {
         min-width: 4rem;
         padding: 0.25rem 0.75rem;
-
+      }
+      .date-text {
+        font-weight: 700;
+        text-transform: uppercase;
       }
     }
   }
