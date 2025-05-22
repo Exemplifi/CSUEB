@@ -541,7 +541,8 @@
   padding-top: 3rem;
   border-block: 1px solid #000;
   @include media-breakpoint-down(md) {
-    padding-bottom: rem.convert(32px);
+    border-block: none;
+    // padding-bottom: rem.convert(32px);
   }
   .container-smaller {
     max-width: 840px;

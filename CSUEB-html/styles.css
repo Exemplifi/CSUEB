@@ -2734,7 +2734,7 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 @media (max-width: 767.98px) {
   .program-link-sec {
-    padding-bottom: 2rem;
+    border-block: none;
   }
 }
 .program-link-sec .container-smaller {
