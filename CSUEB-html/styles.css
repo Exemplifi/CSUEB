@@ -2748,6 +2748,11 @@ section.bg-white.section-with-padding + section.bg-white {
   padding: 0.75rem;
   border-radius: 0;
 }
+@media (max-width: 767.98px) {
+  .program-link-sec .program-filter .form-control {
+    height: 2.75rem;
+  }
+}
 .program-link-sec .program-filter .form-control:focus {
   outline: none;
   box-shadow: none;
