@@ -110,6 +110,7 @@
             max-height: 8.49619rem;
             right: rem.convert(10px);
             bottom:  rem.convert(10px);
+            
           }
         }
       }
@@ -172,6 +173,9 @@
           z-index: 2;
           height: 100%;
           width: 100%;
+           @include media-breakpoint-down(md) {
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgb(0 0 0 / 33%) 57.09%);
+          }
         }
       }
       .content-section {

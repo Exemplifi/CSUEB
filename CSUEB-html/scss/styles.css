@@ -4159,6 +4159,11 @@ section.bg-white.section-with-padding + section.bg-white {
   height: 100%;
   width: 100%;
 }
+@media (max-width: 767.98px) {
+  .inner-hero-full-slider .inner-hero-slider .swiper-slide .img-wrapper::after {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.33) 57.09%);
+  }
+}
 .inner-hero-full-slider .inner-hero-slider .swiper-slide .content-section {
   position: absolute;
   bottom: 0;
