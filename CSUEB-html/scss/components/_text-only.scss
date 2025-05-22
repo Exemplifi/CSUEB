@@ -215,6 +215,13 @@
       }
     }
   }
+  // &.gapping-btm-custom {
+  //   padding-bottom: rem.convert(40px);
+  //     @include media-breakpoint-down(md) {
+  //       padding-bottom: rem.convert(20px);
+  //     }
+  // }
+
 }
 
 .text-icon-slider {
@@ -568,8 +575,11 @@
         font-size: 1rem;
         font-style: normal;
         font-weight: 500;
-        line-height: 175%; /* 1.75rem */
+        line-height: 1.75; /* 1.75rem */
         color: #929292;
+          @include media-breakpoint-down(md) {
+         font-size: rem.convert(14px);
+      }
       }
     }
 
@@ -596,17 +606,27 @@
       background-repeat: no-repeat;
       background-position: right 11px top 11px;
       background-size: 1.5rem;
+      font-weight: 500;
+        font-size: 1rem;
+       line-height: 1.75; /* 1.75rem */
+         @include media-breakpoint-down(md) {
+         font-size: rem.convert(14px);
+      }
       &:focus {
         outline: none;
         box-shadow: none;
       }
+      
       &::placeholder {
         font-family: var(--body-font-family);
         font-size: 1rem;
         font-style: normal;
         font-weight: 500;
-        line-height: 175%; /* 1.75rem */
+        line-height: 1.75; /* 1.75rem */
         color: #000;
+         @include media-breakpoint-down(md) {
+         font-size: rem.convert(14px);
+      }
       }
     }
     .form-check {
