@@ -556,7 +556,7 @@
       height: 3.25rem;
       padding: 0.75rem;
       border-radius: 0;
-       @include media-breakpoint-down(md) {
+       @include media-breakpoint-down(sm) {
           height: rem.convert(44px);
        }
       &:focus {
@@ -570,6 +570,19 @@
         font-weight: 500;
         line-height: 175%; /* 1.75rem */
         color: #929292;
+      }
+    }
+
+    .input-first {
+       margin-bottom: rem.convert(24px);
+      @include media-breakpoint-down(sm) {
+        margin-bottom: rem.convert(12px);
+      }
+    }
+    .input-last {
+      margin-bottom: rem.convert(24px);
+      @include media-breakpoint-down(sm) {
+        margin-bottom: rem.convert(20px);
       }
     }
     .form-select {

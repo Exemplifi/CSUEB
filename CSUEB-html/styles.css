@@ -2748,7 +2748,7 @@ section.bg-white.section-with-padding + section.bg-white {
   padding: 0.75rem;
   border-radius: 0;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 575.98px) {
   .program-link-sec .program-filter .form-control {
     height: 2.75rem;
   }
@@ -2764,6 +2764,22 @@ section.bg-white.section-with-padding + section.bg-white {
   font-weight: 500;
   line-height: 175%; /* 1.75rem */
   color: #929292;
+}
+.program-link-sec .program-filter .input-first {
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 575.98px) {
+  .program-link-sec .program-filter .input-first {
+    margin-bottom: 0.75rem;
+  }
+}
+.program-link-sec .program-filter .input-last {
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 575.98px) {
+  .program-link-sec .program-filter .input-last {
+    margin-bottom: 1.25rem;
+  }
 }
 .program-link-sec .program-filter .form-select {
   border: 2px solid var(--grey-800);
