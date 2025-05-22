@@ -230,10 +230,10 @@
   
   &.inner-normal-hero {
     @include media-breakpoint-down(md) {
-        min-height: 419px;
+        min-height: 430px;
         height: auto;
         .inner-hero-slider .swiper-slide .content-section {
-          padding-bottom: 3rem;
+          padding-bottom: 3.75rem;
         }
     }
   }

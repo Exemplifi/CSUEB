@@ -4264,11 +4264,11 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 @media (max-width: 767.98px) {
   .inner-hero-full-slider.inner-normal-hero {
-    min-height: 419px;
+    min-height: 430px;
     height: auto;
   }
   .inner-hero-full-slider.inner-normal-hero .inner-hero-slider .swiper-slide .content-section {
-    padding-bottom: 3rem;
+    padding-bottom: 3.75rem;
   }
 }
 .inner-hero-full-slider.program-finder-hero .inner-hero-slider .swiper-slide .content-section .slider-heading {
