@@ -2581,7 +2581,7 @@ section.bg-white.section-with-padding + section.bg-white {
   }
 }
 .contact-us-sec .next-card .section-heading .star-icon * {
-  color: var(--grey-700);
+  color: var(--grey-800);
 }
 .contact-us-sec .next-card .section-heading .title-wrap {
   margin-bottom: 2rem;

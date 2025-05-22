@@ -388,7 +388,7 @@
     }
     .section-heading {
       .star-icon * {
-        color: var(--grey-700);
+        color: var(--grey-800);
       }
       .title-wrap {
         margin-bottom: rem.convert(32px);
@@ -471,6 +471,7 @@
     .title-wrap {
       margin-bottom: 0!important;
     }
+  
   }
 
   .contact-address-list {
