@@ -57,7 +57,7 @@
       }
       &:not(.collapsed) {
         background-color: var(--light-gray);
-        padding-bottom: 1rem;
+        padding-bottom: 1.5rem;
         .accordion-icon {
           transition: all 0.3s ease-in-out;
           background-color: var(--red);
@@ -129,11 +129,17 @@
             &:last-child {
                margin-bottom: 0;
             }
+             @include media-breakpoint-down(md) {
+                 margin-bottom: rem.convert(35px);
+              }
           }
         }
 
         .btn.btn-primary {
-            width: 100%;
+          
+             @include media-breakpoint-down(md) {
+  width: 100%;
+             }
         }
       }
     }

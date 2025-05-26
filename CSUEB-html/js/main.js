@@ -111,6 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
    var swiperinnerhero = new Swiper(".hero-full-swiper", {
       slidesPerView: 1,
       spaceBetween: 10,
+      loop: true,
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -124,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
    // Icon and text Slider
    var swipericon = new Swiper(".text-icon-slider", {
-    slidesPerView: 1.1,
+    slidesPerView: 1.2,
     spaceBetween: 20,
     breakpoints: {
       640: {

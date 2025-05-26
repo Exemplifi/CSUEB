@@ -236,6 +236,15 @@
           padding-left: 0;
         }
       }
+
+      .btn.btn-primary-yellow {
+       span {
+         @include media-breakpoint-down(md) {
+          padding-right:0.75rem;
+           padding-left:0.25rem;
+        }
+       }
+      }
     }
     .sidebar-body {
       flex: 1;
@@ -257,6 +266,17 @@
           border-radius: 0;
           @include media-breakpoint-down(md) {
             height: 2.75rem;
+          }
+          &::placeholder {
+              font-family: var(--body-font-family);
+              font-size: 1rem;
+              font-style: normal;
+              font-weight: 500;
+              line-height: 1.75; /* 1.75rem */
+              color: #929292;
+                @include media-breakpoint-down(md) {
+              font-size: rem.convert(14px);
+            }
           }
         }
         .search__btn {
@@ -293,6 +313,7 @@
         border: none;
         box-shadow: none;
         color: var(--white)!important;
+        font-family: var(--body-font-family);
         @include media-breakpoint-up(md) {
           pointer-events: none;
           cursor: pointer;

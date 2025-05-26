@@ -48,7 +48,7 @@
       padding: 2rem;
       margin-top: 2rem;
       font-size: 1rem;
-      color: #333;
+      color: var(--black);
       border-left: 3px solid transparent;
       @include media-breakpoint-down(md) {
         padding-inline: 1.5rem;

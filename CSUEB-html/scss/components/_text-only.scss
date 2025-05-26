@@ -332,9 +332,9 @@
         color: var(--grey-700);
       }
       .title-wrap {
-        margin-bottom: rem.convert(32px);
+       margin-bottom: rem.convert(48px);
         @include media-breakpoint-down(md) {
-          margin-bottom: rem.convert(24px);
+          margin-bottom: rem.convert(32px);
         }
         .section-title {
           margin-bottom: rem.convert(16px);
@@ -549,7 +549,7 @@
   border-block: 1px solid #000;
   @include media-breakpoint-down(md) {
     border-block: none;
-    // padding-bottom: rem.convert(32px);
+     padding-top: 2rem;
   }
   .container-smaller {
     max-width: 840px;
@@ -680,6 +680,9 @@
       }
       .left-program-link  {
         align-self: center;
+         @include media-breakpoint-down(sm) {
+          margin-bottom: 8px!important;
+        }
         h4 {
           margin: 0;
          
