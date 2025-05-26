@@ -3385,12 +3385,6 @@ section.bg-white.section-with-padding + section.bg-white {
   background-color: transparent;
   text-decoration-color: var(--red);
 }
-@media (max-width: 767.98px) {
-  .text-img-main-card .bottom-content-sec .heading-row a {
-    font-size: 1.125rem;
-    line-height: 1.4;
-  }
-}
 @media (max-width: 575.98px) {
   .text-img-main-card .bottom-content-sec .btn-primary {
     width: 100%;
@@ -3667,6 +3661,12 @@ section.bg-white.section-with-padding + section.bg-white {
 @media (max-width: 767.98px) {
   .event-sec .text-img-main-card .bottom-content-sec {
     padding: 2rem 1.5rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .event-sec .text-img-main-card .bottom-content-sec .heading-row a {
+    font-size: 1.125rem;
+    line-height: 1.4;
   }
 }
 .event-sec .text-img-main-card .date-tag {
