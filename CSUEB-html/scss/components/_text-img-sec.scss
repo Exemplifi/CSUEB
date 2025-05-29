@@ -47,26 +47,26 @@
         top: 1rem;
       }
     }
-    &::after {
-      content: "";
-      position: absolute;
-      z-index: 3;
-      right:  rem.convert(20px);
-      bottom: rem.convert(20px);
-      height: 100%;
-      width: 100%;
-      max-height: 10.16338rem;
-      background-image: url(images/stars.svg);
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: right;
-      @include media-breakpoint-up(md) {
-        max-height: 18rem;
-      }
-      @include media-breakpoint-up(xxl) {
-        max-height: 25.63088rem;
-      }
-    }
+    // &::after {
+    //   content: "";
+    //   position: absolute;
+    //   z-index: 3;
+    //   right:  rem.convert(20px);
+    //   bottom: rem.convert(20px);
+    //   height: 100%;
+    //   width: 100%;
+    //   max-height: 10.16338rem;
+    //   background-image: url(images/stars.svg);
+    //   background-size: contain;
+    //   background-repeat: no-repeat;
+    //   background-position: right;
+    //   @include media-breakpoint-up(md) {
+    //     max-height: 18rem;
+    //   }
+    //   @include media-breakpoint-up(xxl) {
+    //     max-height: 25.63088rem;
+    //   }
+    // }
   }
 } 
 
@@ -117,7 +117,7 @@
       height: 100%;
       width: 1.81644rem;
       max-height: 15.44531rem;
-      background-image: url(images/stars-single-svg.svg);
+       background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="248" viewBox="0 0 30 248" fill="none"><path d="M15.1049 24.9794L14.5312 28.125L13.9576 24.9794C12.8104 19.7985 8.60403 15.7278 3.25041 14.6176L0 14.0625L3.25041 13.5074C8.60403 12.3972 12.8104 8.32648 13.9576 3.14555L14.5312 0L15.1049 3.14555C16.2521 8.32648 20.4585 12.3972 25.8121 13.5074L29.0625 14.0625L25.8121 14.6176C20.4585 15.7278 16.2521 19.7985 15.1049 24.9794Z" fill="white"/><path d="M15.1049 79.8433L14.5312 83.0938L13.9576 79.8433C12.8104 74.4897 8.60403 70.2833 3.25041 69.1361L0 68.5625L3.25041 67.9889C8.60403 66.8417 12.8104 62.6353 13.9576 57.2817L14.5312 54.0312L15.1049 57.2817C16.2521 62.6353 20.4585 66.8417 25.8121 67.9889L29.0625 68.5625L25.8121 69.1361C20.4585 70.2833 16.2521 74.4897 15.1049 79.8433Z" fill="white"/><path d="M15.1049 134.843L14.5312 138.094L13.9576 134.843C12.8104 129.49 8.60403 125.283 3.25041 124.136L0 123.562L3.25041 122.989C8.60403 121.842 12.8104 117.635 13.9576 112.282L14.5312 109.031L15.1049 112.282C16.2521 117.635 20.4585 121.842 25.8121 122.989L29.0625 123.562L25.8121 124.136C20.4585 125.283 16.2521 129.49 15.1049 134.843Z" fill="white"/><path d="M15.1049 189.843L14.5312 193.094L13.9576 189.843C12.8104 184.49 8.60403 180.283 3.25041 179.136L0 178.562L3.25041 177.989C8.60403 176.842 12.8104 172.635 13.9576 167.282L14.5312 164.031L15.1049 167.282C16.2521 172.635 20.4585 176.842 25.8121 177.989L29.0625 178.562L25.8121 179.136C20.4585 180.283 16.2521 184.49 15.1049 189.843Z" fill="white"/><path d="M15.1049 243.979L14.5312 247.125L13.9576 243.979C12.8104 238.799 8.60403 234.728 3.25041 233.618L0 233.062L3.25041 232.507C8.60403 231.397 12.8104 227.326 13.9576 222.146L14.5312 219L15.1049 222.146C16.2521 227.326 20.4585 231.397 25.8121 232.507L29.0625 233.062L25.8121 233.618C20.4585 234.728 16.2521 238.799 15.1049 243.979Z" fill="white"/></svg>');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: right;
@@ -363,7 +363,7 @@
         top: rem.convert(13px);
         right: rem.convert(17px);
         transition: all 0.4s ease-in-out;
-        background-image: url(images/white-star-vertical.svg);
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="116" viewBox="0 0 24 116" fill="none"><g id="Group 14"><path id="Vector" d="M11.143 94.2926L11.6009 91.6084L12.0589 94.2926C12.9747 98.7137 16.3329 102.187 20.6069 103.135L23.2019 103.608L20.6069 104.082C16.3329 105.029 12.9747 108.503 12.0589 112.924L11.6009 115.608L11.143 112.924C10.2271 108.503 6.86894 105.029 2.5949 104.082L-5.82695e-05 103.608L2.5949 103.135C6.86894 102.187 10.2271 98.7137 11.143 94.2926Z" fill="white"/><path id="Vector_2" d="M11.143 49.0563L11.6009 46.3721L12.0589 49.0563C12.9747 53.4773 16.3329 56.951 20.6069 57.8984L23.2019 58.3721L20.6069 58.8458C16.3329 59.7931 12.9747 63.2668 12.0589 67.6879L11.6009 70.3721L11.143 67.6879C10.2271 63.2668 6.86894 59.7931 2.5949 58.8458L-5.82695e-05 58.3721L2.5949 57.8984C6.86894 56.951 10.2271 53.4773 11.143 49.0563Z" fill="white"/><path id="Vector_3" d="M11.143 3.0387L11.6009 0.354493L12.0589 3.0387C12.9747 7.45975 16.3329 10.9334 20.6069 11.8808L23.2019 12.3545L20.6069 12.8282C16.3329 13.7756 12.9747 17.2492 12.0589 21.6703L11.6009 24.3545L11.143 21.6703C10.2271 17.2492 6.86894 13.7756 2.5949 12.8282L-5.82521e-05 12.3545L2.5949 11.8808C6.86894 10.9334 10.2271 7.45975 11.143 3.0387Z" fill="white"/></g></svg>');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: right;
@@ -399,7 +399,7 @@
       top:rem.convert(23px);
       right:rem.convert(23px);
       transition: all 0.4s ease-in-out;
-      background-image: url(images/star-3-white.svg);
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="116" height="24" viewBox="0 0 116 24" fill="none"><path d="M21.3158 11.9411L24 12.399L21.3158 12.857C16.8947 13.7728 13.4211 17.131 12.4737 21.405L12 24L11.5263 21.405C10.5789 17.131 7.10526 13.7728 2.68421 12.857L-5.24537e-07 12.399L2.68421 11.9411C7.10526 11.0252 10.5789 7.66704 11.5263 3.393L12 0.798038L12.4737 3.393C13.4211 7.66704 16.8947 11.0252 21.3158 11.9411Z" fill="white"/><path d="M66.5521 11.9411L69.2363 12.399L66.5521 12.857C62.1311 13.7728 58.6574 17.131 57.71 21.405L57.2363 24L56.7626 21.405C55.8153 17.131 52.3416 13.7728 47.9205 12.857L45.2363 12.399L47.9205 11.9411C52.3416 11.0252 55.8153 7.66704 56.7626 3.393L57.2363 0.798038L57.71 3.393C58.6574 7.66704 62.1311 11.0252 66.5521 11.9411Z" fill="white"/><path d="M112.57 11.9411L115.254 12.399L112.57 12.857C108.149 13.7728 104.675 17.131 103.728 21.405L103.254 24L102.78 21.405C101.833 17.131 98.3592 13.7728 93.9381 12.857L91.2539 12.399L93.9381 11.9411C98.3592 11.0252 101.833 7.66704 102.78 3.393L103.254 0.798038L103.728 3.393C104.675 7.66704 108.149 11.0252 112.57 11.9411Z" fill="white"/></svg>');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: right;
@@ -580,7 +580,7 @@
     &::after {
       content: "";
       background-color: var(--red);
-      background: url(images/star-bg.svg), var(--red);
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"><g opacity="0.07"><path d="M17.6299 10.722L18 8.625L18.3701 10.722C19.1102 14.176 21.824 16.8898 25.278 17.6299L27.375 18L25.278 18.3701C21.824 19.1102 19.1102 21.824 18.3701 25.278L18 27.375L17.6299 25.278C16.8898 21.824 14.176 19.1102 10.722 18.3701L8.625 18L10.722 17.6299C14.176 16.8898 16.8898 14.176 17.6299 10.722Z" fill="black"/></g></svg>'), var(--red);
       background-position: top center;
       background-repeat: repeat;
       background-size: 28px;
@@ -637,12 +637,29 @@
 
 
 .event-sec {
-  height: 100%;
-  width:  100%;
-  background: linear-gradient(0deg, rgba(213, 0, 50, 0.90) 0%, rgba(213, 0, 50, 0.90) 100%), url(images/events-bg.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  position: relative;
+  &::after {
+    background: linear-gradient(0deg, rgba(213, 0, 50, 0.90) 0%, rgba(213, 0, 50, 0.90) 100%);
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: 100%;
+       z-index: 2;
+      height: 100%;
+  }
+
+  .event-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .container {
+       z-index: 3;
+     position: relative;
+  }
   .text-img-main-card {
     position: relative;
     padding-left: 3.7rem;
@@ -1024,10 +1041,13 @@
 }
 
 .full-video-sec {
-  background-image: url(images/line-bg.svg);
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="13" height="19" viewBox="0 0 13 19" fill="none"><rect opacity="0.05" width="13" height="18.5" fill="url(%23pattern0_397_9715)"/><defs><pattern id="pattern0_397_9715" patternContentUnits="objectBoundingBox" width="1" height="1"><use xlink:href="%23image0_397_9715" transform="scale(0.0384615 0.027027)"/></pattern><image id="image0_397_9715" width="26" height="37" preserveAspectRatio="none" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAlCAYAAABcZvm2AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADzSURBVHgB7ZcxDoIwFIb/xAvo5tjR0dGxoyNH8SZyBG/gEVjdOAJdndDRSd9rIKmlRgzv6WC/5COEJjz6aH4oIEtF3gNb0kAB0908LFbzwAyyXMgzWQTXluScT3aQ54DnWbEqfeQZNHEhPlSQx6YKsRotLFOF2DVk4RbWqUJNNygJP3wbF2L3kMe/ljJRzEKB1FLUaKHHYjirIwTpI8iRC3ITjK3IK3mCAv1S/En6iqRGnN6cvjdyGxVXa2H8AdNIDY/BsIVqS77Ad1LDk1PjJWN+ThxyaiT45L8up4YIOTUmYzEyNaZuWxz+NjWkdnxvU+MBctuqgpGt+DwAAAAASUVORK5CYII="/></defs></svg>');
   background-size: 13px;
   background-repeat: repeat;
   background-position: center;
+
+  
+
   .video-wrap {
     position: relative;
     max-width: 928px;

@@ -95,3 +95,9 @@
   --bs-border-opacity: 1;
   border-color: #FFFFFF99 !important;
 }
+
+.phone-link {
+  &:hover {
+     color: #FFFFFF99;
+  }
+}
