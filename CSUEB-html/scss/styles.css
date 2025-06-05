@@ -4695,6 +4695,57 @@ section.bg-white.section-with-padding + section.bg-white {
   }
 }
 
+.sidebar-menu .accordion-button.root-item {
+  font-weight: bold;
+  color: #C5164C;
+  font-size: 1rem;
+  background: none;
+  box-shadow: none;
+  padding-left: 0;
+}
+.sidebar-menu .accordion-button.root-item:after {
+  display: none;
+}
+.sidebar-menu .submenu-toggle {
+  background: none;
+  border: none;
+  padding-left: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #000;
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+.sidebar-menu .submenu-toggle::before {
+  content: "+";
+  color: #000;
+  display: inline-block;
+  width: 20px;
+  margin-right: 4px;
+}
+.sidebar-menu .submenu-toggle.collapsed::before {
+  content: "+";
+}
+.sidebar-menu .submenu-toggle:not(.collapsed)::before {
+  content: "−";
+}
+.sidebar-menu .menu-link {
+  display: block;
+  padding-left: 24px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: #000;
+}
+.sidebar-menu .menu-link.active {
+  color: #C5164C;
+  font-weight: bold;
+}
+.sidebar-menu .menu-link:hover {
+  text-decoration: underline;
+}
+
 .flip-tiles-section {
   position: relative;
 }

@@ -146,3 +146,64 @@
   }
 }
 
+
+
+.sidebar-menu {
+  .accordion-button.root-item {
+    font-weight: bold;
+    color: #C5164C; // dark pink title
+    font-size: 1rem;
+    background: none;
+    box-shadow: none;
+    padding-left: 0;
+    &:after {
+      display: none; // remove default caret
+    }
+  }
+
+  .submenu-toggle {
+    background: none;
+    border: none;
+    padding-left: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000;
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: left;
+
+    &::before {
+      content: "+";
+      color: #000;
+      display: inline-block;
+      width: 20px;
+      margin-right: 4px;
+    }
+
+    &.collapsed::before {
+      content: "+";
+    }
+
+    &:not(.collapsed)::before {
+      content: "−";
+    }
+  }
+
+  .menu-link {
+    display: block;
+    padding-left: 24px;
+    font-size: 0.95rem;
+    text-decoration: none;
+    color: #000;
+
+    &.active {
+      color: #C5164C; // highlight "Create a Folder"
+      font-weight: bold;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
