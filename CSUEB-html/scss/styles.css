@@ -1711,7 +1711,7 @@ section.bg-white.section-with-padding + section.bg-white {
   border: 12px solid transparent;
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0);
   opacity: 1;
   transition: all 0.4s ease-in-out;
 }
@@ -1747,7 +1747,7 @@ section.bg-white.section-with-padding + section.bg-white {
 @media (min-width: 768px) {
   .bright-future-swiper .slide-card.purple-hover:hover .overlay {
     border-color: var(--purple);
-    background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), var(--purple-80, rgba(122, 35, 106, 0.8));
+    background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), linear-gradient(0deg, var(--purple-80, rgba(122, 35, 106, 0.8)) 0%, var(--purple-80, rgba(122, 35, 106, 0.8)) 100%);
     transition: all 0.4s ease-in-out;
   }
 }
@@ -1761,7 +1761,7 @@ section.bg-white.section-with-padding + section.bg-white {
 @media (min-width: 768px) {
   .bright-future-swiper .slide-card.teal-hover:hover .overlay {
     border-color: var(--teal);
-    background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), var(--teal-80, rgba(0, 160, 173, 0.8));
+    background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), linear-gradient(0deg, var(--teal-80, rgba(0, 160, 173, 0.8)) 0%, var(--teal-80, rgba(0, 160, 173, 0.8)) 100%);
     transition: all 0.4s ease-in-out;
   }
 }
@@ -1775,7 +1775,7 @@ section.bg-white.section-with-padding + section.bg-white {
 @media (min-width: 768px) {
   .bright-future-swiper .slide-card.gold-hover:hover .overlay {
     border-color: var(--gold);
-    background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), var(--orange-80, rgba(246, 144, 30, 0.8));
+    background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), linear-gradient(0deg, var(--orange-80, rgba(246, 144, 30, 0.8)) 0%, var(--orange-80, rgba(246, 144, 30, 0.8)) 100%);
     transition: background 0.4s, all 0.4s ease-in-out;
   }
 }
@@ -3899,6 +3899,7 @@ section.bg-white.section-with-padding + section.bg-white {
   position: relative;
   overflow: hidden;
   width: 100%;
+  display: block;
 }
 .card-color-hover img {
   width: 100%;
@@ -4116,7 +4117,7 @@ section.bg-white.section-with-padding + section.bg-white {
   }
 }
 .home-hero-sec .content-section h1 .highlight {
-  color: #e30046;
+  color: var(--red);
 }
 .home-hero-sec .content-section .actions li {
   margin-top: 0.5rem;

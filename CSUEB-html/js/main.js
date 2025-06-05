@@ -10,7 +10,20 @@
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  //Header On Scroll Script
+    // Testimonial Slider
+    var testimonialslider = new Swiper(".testimonial-slider", {
+      spaceBetween: 30,
+      effect: "fade",
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
   
   
     // Header
@@ -186,9 +199,10 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     });
 
-    
-    
+   
 
+
+    
    
    
 });
