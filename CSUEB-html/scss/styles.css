@@ -954,6 +954,7 @@ section.bg-white.section-with-padding + section.bg-white {
   top: 0.625rem;
   transition: all 0.4s ease-in-out;
   filter: brightness(0) saturate(100%) invert(88%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(90%) contrast(94%);
+  background-repeat: no-repeat;
 }
 .star-btn-link:hover {
   color: var(--black);
@@ -962,6 +963,7 @@ section.bg-white.section-with-padding + section.bg-white {
 .star-btn-link:hover::before {
   content: "";
   filter: inherit;
+  background-repeat: no-repeat;
 }
 
 @media (max-width: 575.98px) {
@@ -1613,6 +1615,7 @@ section.bg-white.section-with-padding + section.bg-white {
   left: 0;
   top: 0.625rem;
   transition: all 0.3s ease-in-out;
+  background-repeat: no-repeat;
 }
 .footer .footer-links li a:hover {
   color: var(--white);
@@ -1621,6 +1624,7 @@ section.bg-white.section-with-padding + section.bg-white {
 .footer .footer-links li a:hover::before {
   content: "";
   background-image: url('data:image/svg+xml,<svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.23684 11.0124L6 12.3545L5.76316 11.0124C5.28947 8.80186 3.55264 7.06502 1.34211 6.59134L0 6.35449L1.34211 6.11765C3.55264 5.64397 5.28947 3.90712 5.76316 1.6966L6 0.354492L6.23684 1.6966C6.71053 3.90712 8.44736 5.64397 10.6579 6.11765L12 6.35449L10.6579 6.59134C8.44736 7.06502 6.71053 8.80186 6.23684 11.0124Z" fill="%23FDC25A"/></svg>');
+  background-repeat: no-repeat;
 }
 .footer .social-icons {
   margin: 0;
@@ -2757,17 +2761,20 @@ section.bg-white.section-with-padding + section.bg-white {
   }
 }
 .contact-us-sec .social-icon .social-icons a {
-  transition: filter 0.3s ease;
-  filter: brightness(0) saturate(100%) invert(75%) sepia(1%) saturate(0%) hue-rotate(330deg) brightness(94%) contrast(91%);
+  transition: all 0.4s ease-in-out;
 }
-.contact-us-sec .social-icon .social-icons a img {
+.contact-us-sec .social-icon .social-icons a svg {
   width: 1.125rem;
   height: 1.125rem;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.contact-us-sec .social-icon .social-icons a:hover {
-  filter: brightness(0) saturate(100%) invert(15%) sepia(97%) saturate(7485%) hue-rotate(358deg) brightness(98%) contrast(102%);
+.contact-us-sec .social-icon .social-icons a svg path {
+  transition: all 0.4s ease-in-out;
+  color: #999494;
+}
+.contact-us-sec .social-icon .social-icons a:hover svg path {
+  color: var(--red);
 }
 .contact-us-sec .mobile-social-icon {
   display: none;

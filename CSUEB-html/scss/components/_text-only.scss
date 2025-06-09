@@ -554,17 +554,25 @@
         justify-content: flex-end;
       }
       a {
-      
-        transition: filter 0.3s ease;
-           filter: brightness(0) saturate(100%) invert(75%) sepia(1%) saturate(0%) hue-rotate(330deg) brightness(94%) contrast(91%);
-        img {
+        //transition: filter 0.3s ease;
+        //filter: brightness(0) saturate(100%) invert(75%) sepia(1%) saturate(0%) hue-rotate(330deg) brightness(94%) contrast(91%);
+        transition: all 0.4s ease-in-out;
+        svg {
           width: 1.125rem;
           height: 1.125rem;
           object-fit: contain;
-          
+          path {
+            transition: all 0.4s ease-in-out;
+            color: #999494;
+          }
         }
         &:hover {
-          filter: brightness(0) saturate(100%) invert(15%) sepia(97%) saturate(7485%) hue-rotate(358deg) brightness(98%) contrast(102%);
+          svg {
+            path {
+              color: var(--red);
+            }
+           
+          }
         }
       }
     }
