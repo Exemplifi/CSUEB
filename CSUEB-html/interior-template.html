@@ -514,8 +514,11 @@
     <!-- Image and text Section End -->
 
 
+  
+    
+
     <!-- Image Gallery Start -->
-    <section class="section bg-white image-gallery-sec">
+    <section class="section bg-white image-gallery-sec photo-gallery">
 
       <div class="container-smaller">   
         <div class="section-heading heading-gray-icon text-center">
@@ -532,61 +535,59 @@
       </div>
 
       <div class="container-fluid pe-0 px-md-0">
-        <!-- Swiper -->
         <div class="swiper image-gallery-slider">
-          <div class="swiper-wrapper">
+          <div class="gallery-grid swiper-wrapper">
             <div class="swiper-slide">
-              <div class="img-card text-center w-100">
-                  <img src="./images/gallery-1.png" class="img-fluid w-100" alt="Gallery Image">
-              </div>
+              <a class="gallery-item img-card text-center w-100" href="./images/gallery-1.png">
+                <img src="./images/gallery-1.png" class="img-fluid w-100" alt="Gallery Image">
+              </a>
             </div>
-
             <div class="swiper-slide">
-              <div class="img-card text-center w-100">
-                  <img src="./images/gallery-2.png" class="img-fluid w-100" alt="Gallery Image">
-              </div>
+              <a class="gallery-item img-card text-center w-100" href="./images/gallery-2.png">
+                <img src="./images/gallery-2.png" class="img-fluid w-100" alt="Gallery Image 2">
+              </a>
             </div>
-
             <div class="swiper-slide">
-              <div class="img-card text-center w-100">
-                  <img src="./images/gallery-3.png" class="img-fluid w-100" alt="Gallery Image">
-              </div>
+              <a class="gallery-item img-card text-center w-100" href="./images/gallery-3.png">
+                <img src="./images/gallery-3.png" class="img-fluid w-100" alt="Gallery Image">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a class="gallery-item img-card text-center w-100" href="./images/gallery-4.png">
+                <img src="./images/gallery-4.png" class="img-fluid w-100" alt="Gallery Image">
+              </a>
+            </div>
+            <div class="swiper-slide">
+              <a class="gallery-item img-card text-center w-100" href="./images/gallery-5.png">
+                <img src="./images/gallery-5.png" class="img-fluid w-100" alt="Gallery Image">
+              </a>
             </div>
             
-
-            <div class="swiper-slide">
-              <div class="img-card text-center w-100">
-                  <img src="./images/gallery-4.png" class="img-fluid w-100" alt="Gallery Image">
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="img-card text-center w-100">
-                  <img src="./images/gallery-5.png" class="img-fluid w-100" alt="Gallery Image">
-              </div>
-            </div>
-          </div>
-
-          <div class="button-with-pagination-sec relative d-flex gap-3 mt-32">
-            <div class="swiper-button-next swiper-button-next-new swiper-btn">
-              <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M6.99976 0.929688L0.929443 7L6.99976 13.0703L8.49976 11.5703L3.92944 7L8.49976 2.42969L6.99976 0.929688Z" fill="black"/>
-              </svg>
-            </div>
-          
-            <div class="swiper-pagination"></div>
-
-            <div class="swiper-button-prev swiper-button-prev-new swiper-btn">
-              <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.99976 0.929688L0.499756 2.42969L5.07007 7L0.499756 11.5703L1.99976 13.0703L8.07007 7L1.99976 0.929688Z" fill="black"/>
-              </svg>
-            </div>
           </div>
         </div>
-
       </div>
     </section>
     <!-- Image Gallery End -->
+
+    <div class="modal fade lightbox-modal" id="lightbox-modal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+        <div class="modal-content">
+          <button type="button" class="btn-fullscreen-enlarge" aria-label="Enlarge fullscreen">
+            <svg class="bi"><use href="#enlarge"></use></svg>
+          </button>
+          <button type="button" class="btn-fullscreen-exit d-none" aria-label="Exit fullscreen">
+            <svg class="bi"><use href="#exit"></use></svg>
+          </button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <div class="modal-body">
+            <div class="lightbox-content">
+              <!-- JS content here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
 
 
     <!-- img-video-text Section Start -->
