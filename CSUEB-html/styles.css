@@ -3857,13 +3857,11 @@ section.bg-white.section-with-padding + section.bg-white {
   flex-direction: column;
   gap: 0.25rem;
   align-items: center;
-  opacity: 0;
   transition: all 0.4s ease-in-out;
   position: absolute;
   left: auto;
   right: auto;
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 0.5rem;
 }
 @media (max-width: 767.98px) {
   .card-color-hover .slide-text {
@@ -3872,10 +3870,17 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 .card-color-hover .slide-text .title {
   font-family: var(--body-font-family);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0;
 }
 .card-color-hover .slide-text p {
   max-width: 17.5rem;
+}
+.card-color-hover::after {
+  content: "";
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 24%, rgba(0, 0, 0, 0.7) 68.29%);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
 }
 .card-color-hover .overlay {
   border: 12px solid transparent;
@@ -3884,6 +3889,7 @@ section.bg-white.section-with-padding + section.bg-white {
   background: rgba(0, 0, 0, 0);
   opacity: 1;
   transition: all 0.4s ease-in-out;
+  z-index: 3;
 }
 .card-color-hover .overlay .play-btn {
   background: rgba(0, 0, 0, 0.6980392157);
@@ -3913,6 +3919,10 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 .card-color-hover:hover .overlay {
   box-shadow: 0px 12px 28px 0px rgba(0, 0, 0, 0.25);
+}
+.card-color-hover:hover::after {
+  content: "";
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 24%, rgba(0, 0, 0, 0) 68.29%);
 }
 @media (min-width: 768px) {
   .card-color-hover.purple-hover:hover .overlay {
