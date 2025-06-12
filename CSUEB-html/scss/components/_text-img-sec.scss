@@ -893,7 +893,14 @@
   .container {
     padding-right: 0;
   }
+  .navbar-hidden {
+      display: none;
+  }
 }
+.padding-top-48 {
+  padding-top: 3rem!important;
+}
+
 
 
 // Hover Card
