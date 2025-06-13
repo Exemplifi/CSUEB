@@ -1,117 +1,45 @@
-
 // import "../scss/styles.scss";
-
-// // Import Swiper JS and CSS
+// import Swiper and styles if needed
 // import Swiper from "swiper";
-// import "../node_modules/swiper/css"; // Core CSS
-// import "../node_modules/swiper/navigation"; // Optional if you need navigation arrows
-// import "../node_modules/swiper/pagination"; // Optional if you need pagination dots
+// import "swiper/css";
 
 
+// DOM Ready
 
 document.addEventListener("DOMContentLoaded", () => {
+  initTestimonialSlider();
+  initHeader();
+  initGallerySlider();
+  initInnerHeroSlider();
+  initTextIconSlider();
+  initBrightFutureSlider();
+  initHeroSlider();
+  initMainImgSlider();
+});
 
-  
+// Swiper Sliders
+function initTestimonialSlider() {
+  new Swiper(".testimonial-slider", {
+    spaceBetween: 30,
+    effect: "fade",
+    loop: true,
+    autoplay: { delay: 2500, disableOnInteraction: false },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+}
 
-
-
-    // Testimonial Slider
-    var testimonialslider = new Swiper(".testimonial-slider", {
-      spaceBetween: 30,
-      effect: "fade",
-      loop: true,
-      autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-    });
-  
-  
-    // Header
-    const menuBtn = document.querySelector('.menu-btn');
-    const menuBtnMobile = document.getElementById('menuToggleMobile');
-    const sidebar = document.querySelector('.sidebar');
-    const overlay = document.querySelector('.overlay-header');
-    const closeBtn = document.querySelector('.close-btn'); // optional
-    const closeBtnMobile = document.querySelector('.close-btn-mobile'); // optional
-    const body = document.body;
-    const header = document.querySelector('.main-header');
-
-    // Open Sidebar
-    function openSidebar() {
-      sidebar.classList.add('active');
-      overlay.classList.add('show');
-      body.classList.add('sidebar-open', 'no-scroll');
-    }
-
-    // Close Sidebar
-    function closeSidebar() {
-      sidebar.classList.remove('active');
-      overlay.classList.remove('show');
-      body.classList.remove('sidebar-open', 'no-scroll');
-    }
-
-    // Add event listeners
-    if (menuBtn) menuBtn.addEventListener('click', openSidebar);
-    if (menuBtnMobile) menuBtnMobile.addEventListener('click', openSidebar);
-    if (overlay) overlay.addEventListener('click', closeSidebar);
-    if (closeBtn) closeBtn.addEventListener('click', closeSidebar);
-    if (closeBtnMobile) closeBtnMobile.addEventListener('click', closeSidebar);
-
-    // Scroll Event - Add class on header when scrolled
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 10) {
-        header.classList.add('header-color');
-      } else {
-        header.classList.remove('header-color');
-      }
-    });
-
-  // Scroll Event - Add class on header when scrolled up 
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-      if (scrollTop > lastScrollTop && scrollTop > 10) {
-        // Scrolling down
-        header.classList.add('upwards');
-      } else {
-        // Scrolling up
-        header.classList.remove('upwards');
-      }
-
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
-    // Header End
-
-    
-  
-    
-  // image-gallery-slider
-  var swiperimagegallery = new Swiper(".image-gallery-slider", {
+function initGallerySlider() {
+  new Swiper(".image-gallery-slider", {
     slidesPerView: 1.2,
     spaceBetween: 4,
     breakpoints: {
-      640: {
-        slidesPerView: 2.1,
-        spaceBetween: 4,
-      },
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 4,
-      },
-      1024: {
-        slidesPerView: 4,
-        spaceBetween: 4,
-      },
-      1280: {
-        slidesPerView: 5,
-        spaceBetween: 4,
-      },
+      640: { slidesPerView: 2.1 },
+      768: { slidesPerView: 3 },
+      1024: { slidesPerView: 4 },
+      1280: { slidesPerView: 5 },
     },
     pagination: {
       el: ".swiper-pagination",
@@ -122,167 +50,160 @@ document.addEventListener("DOMContentLoaded", () => {
       prevEl: ".swiper-button-prev.swiper-button-prev-new",
     },
   });
+}
 
-  
-
-   // inner-hero-slider
-   var swiperinnerhero = new Swiper(".hero-full-swiper", {
-      slidesPerView: 1,
-      spaceBetween: 10,
-      loop: true,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-        // dynamicBullets: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next.swiper-btn",
-        prevEl: ".swiper-button-prev.swiper-btn",
-      },
+function initInnerHeroSlider() {
+  new Swiper(".hero-full-swiper", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    loop: true,
+    pagination: { el: ".swiper-pagination", clickable: true },
+    navigation: {
+      nextEl: ".swiper-button-next.swiper-btn",
+      prevEl: ".swiper-button-prev.swiper-btn",
+    },
   });
+}
 
-   // Icon and text Slider
-   var swipericon = new Swiper(".text-icon-slider", {
+function initTextIconSlider() {
+  new Swiper(".text-icon-slider", {
     slidesPerView: 1.2,
     spaceBetween: 20,
     breakpoints: {
-      640: {
-        slidesPerView: 2.1,
-        spaceBetween: 20,
-      },
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
+      640: { slidesPerView: 2.1 },
+      768: { slidesPerView: 3 },
     },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
+    pagination: { el: ".swiper-pagination", clickable: true },
     navigation: {
       nextEl: ".swiper-button-next.swiper-button-next-new",
       prevEl: ".swiper-button-prev.swiper-button-prev-new",
     },
   });
+}
 
-    var swiper = new Swiper(".bright-future-swiper", {
-        slidesPerView: 3,
-        spaceBetween: 20,
-        breakpoints: {
-            100: { slidesPerView: 1.2 },
-            640: { slidesPerView: 2.2 },
-            1024: { slidesPerView: 3 },
-        }
-    });
+function initBrightFutureSlider() {
+  new Swiper(".bright-future-swiper", {
+    slidesPerView: 3,
+    spaceBetween: 20,
+    breakpoints: {
+      100: { slidesPerView: 1.2 },
+      640: { slidesPerView: 2.2 },
+      1024: { slidesPerView: 3 },
+    },
+  });
+}
 
-     // Hero Slider
-    const slideCount = document.querySelectorAll('.hero-slider .swiper-slide').length;
-    const hasMultipleSlides = slideCount > 1;
-    // Show/hide arrows based on the number of slides
-    if (!hasMultipleSlides) {
-        document.querySelector('.swiper-button-group').style.display = 'none';
-    }
-    const swiperhero = new Swiper(".hero-slider", {
-        navigation: hasMultipleSlides ? {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-        } : false,
-    });
+function initHeroSlider() {
+  const slides = document.querySelectorAll(".hero-slider .swiper-slide");
+  const hasMultipleSlides = slides.length > 1;
 
+  if (!hasMultipleSlides) {
+    const group = document.querySelector(".swiper-button-group");
+    if (group) group.style.display = "none";
+  }
 
-
-    // Signle  Slider
-    var swiperSlider = new Swiper(".main-img-slider", {
-      loop: true,
-        navigation: {
+  new Swiper(".hero-slider", {
+    navigation: hasMultipleSlides
+      ? {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
-        },
-    });
+        }
+      : false,
+  });
+}
 
-   
+function initMainImgSlider() {
+  new Swiper(".main-img-slider", {
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+}
+
+// Header Menu & Scroll Effects
+function initHeader() {
+  const menuBtn = document.querySelector(".menu-btn");
+  const menuBtnMobile = document.getElementById("menuToggleMobile");
+  const sidebar = document.querySelector(".sidebar");
+  const overlay = document.querySelector(".overlay-header");
+  const closeBtn = document.querySelector(".close-btn");
+  const closeBtnMobile = document.querySelector(".close-btn-mobile");
+  const body = document.body;
+  const header = document.querySelector(".main-header");
+  let lastScrollTop = 0;
+
+  function openSidebar() {
+    sidebar.classList.add("active");
+    overlay.classList.add("show");
+    body.classList.add("sidebar-open", "no-scroll");
+  }
+
+  function closeSidebar() {
+    sidebar.classList.remove("active");
+    overlay.classList.remove("show");
+    body.classList.remove("sidebar-open", "no-scroll");
+  }
+
+  [menuBtn, menuBtnMobile].forEach(btn => btn?.addEventListener("click", openSidebar));
+  [overlay, closeBtn, closeBtnMobile].forEach(el => el?.addEventListener("click", closeSidebar));
+
+  window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    header.classList.toggle("header-color", scrollTop > 10);
+    header.classList.toggle("upwards", scrollTop > lastScrollTop && scrollTop > 10);
+    lastScrollTop = Math.max(scrollTop, 0);
+  });
+}
 
 
-    
-   
-   
+const dropdownBtn = document.querySelector('#dropdownMenuButton1');
+const dropdown = dropdownBtn.closest('.custom-dropdown');
+
+dropdownBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  dropdown.classList.toggle('show');
 });
-  
 
 
-// Gallery Start
-const html = document.querySelector('html');
-html.setAttribute('data-bs-theme', 'dark');
 
-document.addEventListener('DOMContentLoaded', () => {
-  // --- Create LightBox
+// Lightbox Gallery
+const html = document.documentElement;
+html.setAttribute("data-bs-theme", "dark");
+
+
+document.addEventListener("DOMContentLoaded", () => {
   const galleryGrid = document.querySelector(".gallery-grid");
-  const links = galleryGrid.querySelectorAll("a");
-  const imgs = galleryGrid.querySelectorAll("img");
+  const links = galleryGrid?.querySelectorAll("a") || [];
+  const imgs = galleryGrid?.querySelectorAll("img") || [];
   const lightboxModal = document.getElementById("lightbox-modal");
-  const bsModal = new bootstrap.Modal(lightboxModal);
-  const modalBody = lightboxModal.querySelector(".lightbox-content");
+  const modalBody = lightboxModal?.querySelector(".lightbox-content");
+  const bsModal = lightboxModal ? new bootstrap.Modal(lightboxModal) : null;
 
-  function createCaption (caption) {
-    return `<div class="carousel-caption d-none d-md-block">
-        <h5 class="m-0">${caption}</h5>
-      </div>`;
+  function createCaption(caption) {
+    return `<div class="carousel-caption d-none d-md-block"><h5 class="m-0">${caption}</h5></div>`;
   }
 
-  function createIndicators (img) {
-    let markup = "", i, len;
-
-    const countSlides = links.length;
-    const parentCol = img.closest('.swiper-slide');
-    const curIndex = [...parentCol.parentElement.children].indexOf(parentCol);
-
-    for (i = 0, len = countSlides; i < len; i++) {
-      markup += `
-        <button type="button" data-bs-target="#lightboxCarousel"
-          data-bs-slide-to="${i}"
-          ${i === curIndex ? 'class="active" aria-current="true"' : ''}
-          aria-label="Slide ${i + 1}">
-        </button>`;
-    }
-
-    return markup;
+  function createIndicators(img) {
+    const curIndex = [...img.closest(".swiper-slide").parentElement.children].indexOf(img.closest(".swiper-slide"));
+    return [...links].map((_, i) => `<button type="button" data-bs-target="#lightboxCarousel" data-bs-slide-to="${i}" ${i === curIndex ? 'class="active" aria-current="true"' : ''} aria-label="Slide ${i + 1}"></button>`).join("");
   }
 
-  function createSlides (img) {
-    let markup = "";
-    const currentImgSrc = img.closest('.gallery-item').getAttribute("href");
-
-    for (const img of imgs) {
-      const imgSrc = img.closest('.gallery-item').getAttribute("href");
-      const imgAlt = img.getAttribute("alt");
-
-      markup += `
-        <div class="carousel-item${currentImgSrc === imgSrc ? " active" : ""}">
-          <img class="d-block img-fluid w-100" src=${imgSrc} alt="${imgAlt}">
-          ${imgAlt ? createCaption(imgAlt) : ""}
-        </div>`;
-    }
-
-    return markup;
+  function createSlides(img) {
+    const currentImgSrc = img.closest(".gallery-item").getAttribute("href");
+    return [...imgs].map(image => {
+      const imgSrc = image.closest(".gallery-item").getAttribute("href");
+      const imgAlt = image.getAttribute("alt") || "";
+      return `<div class="carousel-item${currentImgSrc === imgSrc ? " active" : ""}"><img class="d-block img-fluid w-100" src=${imgSrc} alt="${imgAlt}">${imgAlt ? createCaption(imgAlt) : ""}</div>`;
+    }).join("");
   }
 
-  function createCarousel (img) {
-    const markup = `
-      <!-- Lightbox Carousel -->
+  function createCarousel(img) {
+    modalBody.innerHTML = `
       <div id="lightboxCarousel" class="carousel slide carousel-fade" data-bs-ride="true">
-        <!-- Indicators/dots -->
-        <div class="carousel-indicators">
-          ${createIndicators(img)}
-        </div>
-        <!-- Wrapper for Slides -->
-        <div class="carousel-inner justify-content-center mx-auto">
-          ${createSlides(img)}
-        </div>
-        <!-- Controls/icons -->
+        <div class="carousel-indicators">${createIndicators(img)}</div>
+        <div class="carousel-inner justify-content-center mx-auto">${createSlides(img)}</div>
         <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
@@ -291,58 +212,40 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
-      </div>
-      `;
-
-    modalBody.innerHTML = markup;
+      </div>`;
   }
 
-  for (const link of links) {
-    link.addEventListener("click", function (e) {
-      e.preventDefault();
-      const currentImg = link.querySelector("img");
-      const lightboxCarousel = document.getElementById("lightboxCarousel");
+  links.forEach(link => link.addEventListener("click", e => {
+    e.preventDefault();
+    const currentImg = link.querySelector("img");
+    const lightboxCarousel = document.getElementById("lightboxCarousel");
+    if (lightboxCarousel) {
+      const index = [...link.closest(".swiper-slide").parentElement.children].indexOf(link.closest(".swiper-slide"));
+      const bsCarousel = new bootstrap.Carousel(lightboxCarousel);
+      bsCarousel.to(index);
+    } else {
+      createCarousel(currentImg);
+    }
+    bsModal?.show();
+  }));
 
-      if (lightboxCarousel) {
-        const parentCol = link.closest('.swiper-slide');
-        const index = [...parentCol.parentElement.children].indexOf(parentCol);
-
-        const bsCarousel = new bootstrap.Carousel(lightboxCarousel);
-        bsCarousel.to(index);
-      } else {
-        createCarousel(currentImg);
-      }
-
-      bsModal.show();
-    });
-  }
-
-  // --- Support Fullscreen
+  // Fullscreen
   const fsEnlarge = document.querySelector(".btn-fullscreen-enlarge");
   const fsExit = document.querySelector(".btn-fullscreen-exit");
 
-  function enterFS () {
-    lightboxModal.requestFullscreen().then({}).catch(err => {
-      alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-    });
-    fsEnlarge.classList.toggle("d-none");
-    fsExit.classList.toggle("d-none");
-  }
+  fsEnlarge?.addEventListener("click", e => {
+    e.preventDefault();
+    lightboxModal.requestFullscreen().then(() => {
+      fsEnlarge.classList.toggle("d-none");
+      fsExit.classList.toggle("d-none");
+    }).catch(err => alert(`Error enabling fullscreen: ${err.message}`));
+  });
 
-  function exitFS () {
+  fsExit?.addEventListener("click", e => {
+    e.preventDefault();
     document.exitFullscreen();
     fsExit.classList.toggle("d-none");
     fsEnlarge.classList.toggle("d-none");
-  }
-
-  fsEnlarge.addEventListener("click", (e) => {
-    e.preventDefault();
-    enterFS();
   });
-
-  fsExit.addEventListener("click", (e) => {
-    e.preventDefault();
-    exitFS();
-  });
-})
-// Gallery End
+});
+// Lightbox Gallery End

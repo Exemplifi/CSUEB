@@ -15,14 +15,14 @@
 .gallery-item {
   display: block;
   
-  img {
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
-    transition: box-shadow 0.2s;
-  }
+  // img {
+  //   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
+  //   transition: box-shadow 0.2s;
+  // }
   
-  &:hover img {
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.35);
-  }
+  // &:hover img {
+  //   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.35);
+  // }
 }
 
 .lightbox-modal {

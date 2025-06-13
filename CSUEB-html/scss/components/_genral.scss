@@ -273,3 +273,20 @@ section.bg-white.section-with-padding + section.bg-white {
     }
 }
 
+/* Smooth dropdown with relative positioning */
+.custom-dropdown .dropdown-menu {
+  position: relative !important;
+  opacity: 0;
+  transform: translateY(10px);
+  display: block;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.custom-dropdown.show .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+}

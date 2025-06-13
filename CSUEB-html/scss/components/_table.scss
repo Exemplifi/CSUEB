@@ -25,6 +25,11 @@
     }
     tbody {
       tr {
+        transition: all 0.3s ease-in-out;
+         background-color: transparent;
+        &:hover {
+          background-color: var(--light-gray);
+        }
         td {
           padding-top: 0.75rem;
           padding-bottom: 0.75rem;

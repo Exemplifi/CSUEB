@@ -598,6 +598,24 @@ section.bg-white.section-with-padding + section.bg-white {
   transition: all 0.4s ease-in-out;
 }
 
+/* Smooth dropdown with relative positioning */
+.custom-dropdown .dropdown-menu {
+  position: relative !important;
+  opacity: 0;
+  transform: translateY(10px);
+  display: block;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.custom-dropdown.show .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
 .btn {
   border-radius: 0px;
   text-transform: uppercase;
@@ -1575,18 +1593,23 @@ section.bg-white.section-with-padding + section.bg-white {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 @media (min-width: 768px) {
   .footer .social-icons {
     justify-content: flex-end;
   }
 }
-.footer .social-icons a {
-  transition: filter 0.3s ease;
+.footer .social-icons a svg {
+  width: 1.5rem;
+  height: 1.5rem;
 }
-.footer .social-icons a:hover {
-  filter: brightness(0) saturate(100%) invert(15%) sepia(97%) saturate(7485%) hue-rotate(358deg) brightness(98%) contrast(102%);
+.footer .social-icons a svg path {
+  transition: all 0.4s ease-in-out;
+  color: var(--gold);
+}
+.footer .social-icons a:hover svg path {
+  color: var(--red);
 }
 .footer .footer-links {
   margin: 0;
@@ -2840,6 +2863,10 @@ section.bg-white.section-with-padding + section.bg-white {
 .program-link-sec .program-filter .form-control:focus {
   outline: none;
   box-shadow: none;
+  border: 2px solid var(--gold);
+}
+.program-link-sec .program-filter .form-control:hover {
+  border: 2px solid var(--gold);
 }
 .program-link-sec .program-filter .form-control::-moz-placeholder {
   font-family: var(--body-font-family);
@@ -2904,6 +2931,10 @@ section.bg-white.section-with-padding + section.bg-white {
 .program-link-sec .program-filter .form-select:focus {
   outline: none;
   box-shadow: none;
+  border: 2px solid var(--gold);
+}
+.program-link-sec .program-filter .form-select:hover {
+  border: 2px solid var(--gold);
 }
 .program-link-sec .program-filter .form-select::-moz-placeholder {
   font-family: var(--body-font-family);
@@ -4857,6 +4888,13 @@ section.bg-white.section-with-padding + section.bg-white {
     font-size: 0.875rem;
   }
 }
+.custom-table-section .custom-table tbody tr {
+  transition: all 0.3s ease-in-out;
+  background-color: transparent;
+}
+.custom-table-section .custom-table tbody tr:hover {
+  background-color: var(--light-gray);
+}
 .custom-table-section .custom-table tbody tr td {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -4874,13 +4912,6 @@ section.bg-white.section-with-padding + section.bg-white {
 
 .gallery-item {
   display: block;
-}
-.gallery-item img {
-  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
-  transition: box-shadow 0.2s;
-}
-.gallery-item:hover img {
-  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.35);
 }
 
 .lightbox-modal .modal-content {

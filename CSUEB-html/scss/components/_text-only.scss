@@ -589,7 +589,6 @@
             path {
               color: var(--red);
             }
-           
           }
         }
       }
@@ -635,6 +634,10 @@
       &:focus {
         outline: none;
         box-shadow: none;
+         border: 2px solid var(--gold);
+      }
+      &:hover {
+         border: 2px solid var(--gold);
       }
       &::placeholder {
         font-family: var(--body-font-family);
@@ -681,8 +684,11 @@
       &:focus {
         outline: none;
         box-shadow: none;
+          border: 2px solid var(--gold);
       }
-      
+        &:hover {
+         border: 2px solid var(--gold);
+      }
       &::placeholder {
         font-family: var(--body-font-family);
         font-size: 1rem;
