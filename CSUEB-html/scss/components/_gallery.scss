@@ -127,6 +127,11 @@
       }
     }
   }
+  .video-lightbox-modal {
+    .carousel-item::after {
+      display: none;
+    }
+  }
 }
 
 .btn {
@@ -152,3 +157,4 @@
   vertical-align: -0.035em;
   fill: currentcolor;
 }
+

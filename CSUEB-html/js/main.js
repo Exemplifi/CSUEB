@@ -178,8 +178,9 @@ function initGalleryLightbox() {
   if (!galleryGrid) return; // Exit if no gallery grid found
 
   const links = galleryGrid.querySelectorAll("a");
-  const imgs = galleryGrid.querySelectorAll("img");
-  const lightboxModal = document.getElementById("lightbox-modal");
+  const lightboxModal =
+    document.getElementById("lightbox-modal-home") ||
+    document.getElementById("lightbox-modal-interior");
   const modalBody = lightboxModal?.querySelector(".lightbox-content");
   const bsModal = lightboxModal ? new bootstrap.Modal(lightboxModal) : null;
 
@@ -187,43 +188,53 @@ function initGalleryLightbox() {
     return caption ? `<div class="carousel-caption d-none d-md-block"><h5 class="m-0">${caption}</h5></div>` : '';
   }
 
-  function createIndicators(img) {
-    const parentSlide = img.closest(".swiper-slide");
-    if (!parentSlide) return '';
-    
-    const curIndex = [...parentSlide.parentElement.children].indexOf(parentSlide);
-    return [...links].map((_, i) => 
+  function createIndicators(activeIndex) {
+    return [...links].map((_, i) =>
       `<button type="button" data-bs-target="#lightboxCarousel" data-bs-slide-to="${i}" 
-        ${i === curIndex ? 'class="active" aria-current="true"' : ''} 
+        ${i === activeIndex ? 'class="active" aria-current="true"' : ''} 
         aria-label="Slide ${i + 1}"></button>`
     ).join("");
   }
 
-  function createSlides(img) {
-    const currentImgSrc = img.closest(".gallery-item")?.getAttribute("href");
-    if (!currentImgSrc) return '';
-
-    return [...imgs].map(image => {
-      const galleryItem = image.closest(".gallery-item");
-      if (!galleryItem) return '';
-      
-      const imgSrc = galleryItem.getAttribute("href");
-      const imgAlt = image.getAttribute("alt") || "";
-      return `
-        <div class="carousel-item${currentImgSrc === imgSrc ? " active" : ""}">
-          <img class="d-block img-fluid w-100" src="${imgSrc}" alt="${imgAlt}">
-          ${createCaption(imgAlt)}
-        </div>`;
+  function createSlides(activeIndex) {
+    return [...links].map((link, i) => {
+      const videoUrl = link.getAttribute('data-video-url');
+      const img = link.querySelector('img');
+      const imgAlt = img ? img.getAttribute('alt') || "" : "";
+      const isActive = i === activeIndex ? " active" : "";
+      if (videoUrl) {
+        return `
+          <div class="carousel-item${isActive}">
+            <div class="ratio ratio-16x9">
+              <iframe src="${videoUrl}?enablejsapi=1&autoplay=1" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+            </div>
+          </div>
+        `;
+      } else if (img) {
+        const imgSrc = link.getAttribute("href");
+        return `
+          <div class="carousel-item${isActive}">
+            <img class="d-block img-fluid w-100" src="${imgSrc}" alt="${imgAlt}">
+            ${createCaption(imgAlt)}
+          </div>
+        `;
+      }
+      return '';
     }).join("");
   }
 
-  function createCarousel(img) {
-    if (!modalBody || !img) return;
-    
+  function createCarousel(link) {
+    if (!modalBody || !link) return;
+    // Find the index of the clicked link
+    const parentSlide = link.closest(".swiper-slide");
+    const activeIndex = parentSlide
+      ? [...parentSlide.parentElement.children].indexOf(parentSlide)
+      : 0;
+
     modalBody.innerHTML = `
       <div id="lightboxCarousel" class="carousel slide carousel-fade" data-bs-ride="true">
-        <div class="carousel-indicators">${createIndicators(img)}</div>
-        <div class="carousel-inner justify-content-center mx-auto">${createSlides(img)}</div>
+        <div class="carousel-indicators">${createIndicators(activeIndex)}</div>
+        <div class="carousel-inner justify-content-center mx-auto">${createSlides(activeIndex)}</div>
         <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
@@ -232,26 +243,35 @@ function initGalleryLightbox() {
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
-      </div>`;
+      </div>
+    `;
+
+    // Pause video when slide changes
+    const carousel = modalBody.querySelector('#lightboxCarousel');
+    if (carousel) {
+      carousel.addEventListener('slide.bs.carousel', function (event) {
+        // Remove autoplay from all iframes
+        const items = modalBody.querySelectorAll('.carousel-item');
+        items.forEach((item, idx) => {
+          const iframe = item.querySelector('iframe');
+          if (iframe) {
+            let src = iframe.src.replace(/&autoplay=1|\\?autoplay=1/, '');
+            // Add autoplay=1 only to the next active slide
+            if (idx === event.to) {
+              src += (src.includes('?') ? '&' : '?') + 'autoplay=1';
+            }
+            iframe.src = src;
+          }
+        });
+      });
+    }
   }
 
   links.forEach(link => {
     link.addEventListener("click", e => {
       e.preventDefault();
-      const currentImg = link.querySelector("img");
-      if (!currentImg || !lightboxModal) return;
-
-      const lightboxCarousel = document.getElementById("lightboxCarousel");
-      if (lightboxCarousel) {
-        const parentSlide = link.closest(".swiper-slide");
-        if (parentSlide) {
-          const index = [...parentSlide.parentElement.children].indexOf(parentSlide);
-          const bsCarousel = new bootstrap.Carousel(lightboxCarousel);
-          bsCarousel.to(index);
-        }
-      } else {
-        createCarousel(currentImg);
-      }
+      if (!lightboxModal) return;
+      createCarousel(link);
       bsModal?.show();
     });
   });
@@ -263,7 +283,6 @@ function initGalleryLightbox() {
   fsEnlarge?.addEventListener("click", e => {
     e.preventDefault();
     if (!lightboxModal) return;
-    
     lightboxModal.requestFullscreen()
       .then(() => {
         fsEnlarge.classList.toggle("d-none");
@@ -278,5 +297,12 @@ function initGalleryLightbox() {
     fsExit.classList.toggle("d-none");
     fsEnlarge.classList.toggle("d-none");
   });
+
+  // Clean up modal when closed
+  lightboxModal.addEventListener('hidden.bs.modal', function () {
+    if (modalBody) modalBody.innerHTML = '';
+  });
 }
 // Lightbox Gallery End
+
+

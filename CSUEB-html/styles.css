@@ -4936,6 +4936,9 @@ section.bg-white.section-with-padding + section.bg-white {
 [data-bs-theme=dark] .lightbox-modal .carousel-control-next-icon, [data-bs-theme=dark] .lightbox-modal .carousel-control-prev-icon {
   filter: none;
 }
+[data-bs-theme=dark] .video-lightbox-modal .carousel-item::after {
+  display: none;
+}
 
 .btn-fullscreen-enlarge, .btn-fullscreen-exit {
   position: absolute;
