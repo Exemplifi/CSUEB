@@ -3643,7 +3643,7 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 .img-verlap-link-sec .img-verlap-link-card::after {
   content: "";
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0.7) 54.29%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0.8) 54.29%);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -4155,7 +4155,7 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 .card-color-hover::after {
   content: "";
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 24%, rgba(0, 0, 0, 0.7) 68.29%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0.8) 54.29%);
   position: absolute;
   inset: 0;
   z-index: 2;
