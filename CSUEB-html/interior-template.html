@@ -20,56 +20,71 @@
         <div class="logo d-flex align-items-center">
           <img src="./images/logo.svg" alt="Cal State East Bay">
         </div>
-        <div class="header-links d-none d-lg-flex align-items-center gap-3">
-          <div class="d-flex menu-list-link">
-            <a href="#" class="text-white menu-link subtext">APPLY</a>
-            <a href="#" class="text-white menu-link subtext">REQUEST INFO</a>
-            <a href="#" class="text-white menu-link subtext">GIVE</a>
-          </div>
 
-          <div class="menu-search">
-            <div class="btn-search">
-              <button type="button" class="search__btn bg-transparent border-0">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M15 2C18.8541 2 22 5.14585 22 9C22 12.8541 18.8541 16 15 16C13.252 16 11.655 15.348 10.4258 14.2812L10 14.707V16L4 22L2 20L8 14H9.29297L9.71875 13.5742C8.65198 12.345 8 10.748 8 9C8 5.14585 11.1459 2 15 2ZM15 4C12.2267 4 10 6.22673 10 9C10 11.7733 12.2267 14 15 14C17.7733 14 20 11.7733 20 9C20 6.22673 17.7733 4 15 4Z" fill="white"/>
-                </svg>
-              </button>
+        <div class="d-flex align-items-center gap-3">
+          <div class="header-links d-none d-lg-flex align-items-center gap-3">
+            <div class="d-flex menu-list-link">
+              <a href="#" class="text-white menu-link subtext">APPLY</a>
+              <a href="#" class="text-white menu-link subtext">REQUEST INFO</a>
+              <a href="#" class="text-white menu-link subtext">GIVE</a>
             </div>
-          </div>
-  
-          <div class="dropdown">
-            <button class="dropdown-toggle btn btn-primary btn-dark" data-bs-toggle="dropdown">
-              <span>INFO FOR
-                <svg class="arrow-icon-white ms-2" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7.92969 10.1772L6.42969 11.6772L12.5 17.7476L18.5703 11.6772L17.0703 10.1772L12.5 14.7476L7.92969 10.1772Z" fill="currentColor"/>
+        
+            <div class="dropdown">
+              <button class="dropdown-toggle btn btn-primary btn-dark" data-bs-toggle="dropdown">
+                <span>INFO FOR
+                  <svg class="arrow-icon-white ms-2" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.92969 10.1772L6.42969 11.6772L12.5 17.7476L18.5703 11.6772L17.0703 10.1772L12.5 14.7476L7.92969 10.1772Z" fill="currentColor"/>
+                  </svg>
+                </span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Current Students</a></li>
+                <li><a class="dropdown-item" href="#">Future Students</a></li>
+                <li><a class="dropdown-item" href="#">Alumni</a></li>
+              </ul>
+            </div>
+    
+            <button class="btn menu-btn btn btn-primary btn-hover-yellow" id="menuToggle">
+              <span class="">
+                MENU
+                <svg  class="menu-icon ms-2" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 5.67724V7.67724H3V5.67724H21ZM21 11.6772V13.6772H3V11.6772H21ZM21 17.6772V19.6772H3V17.6772H21Z" fill="currentColor"/>
                 </svg>
               </span>
             </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Current Students</a></li>
-              <li><a class="dropdown-item" href="#">Future Students</a></li>
-              <li><a class="dropdown-item" href="#">Alumni</a></li>
-            </ul>
           </div>
-  
-          <button class="btn menu-btn btn btn-primary btn-hover-yellow" id="menuToggle">
-             <span class="">
-              MENU
-              <svg  class="menu-icon ms-2" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+        
+          <!-- Mobile Menu Button -->
+          <button class="btn mobile-menu-btn d-lg-none btn-primary btn-hover-yellow" id="menuToggleMobile">
+            <span>
+              <svg  class="menu-icon " width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M21 5.67724V7.67724H3V5.67724H21ZM21 11.6772V13.6772H3V11.6772H21ZM21 17.6772V19.6772H3V17.6772H21Z" fill="currentColor"/>
               </svg>
             </span>
           </button>
+
+           <!-- search seection -->
+           <div class="menu-search">
+            <div class="btn-search position-relative">
+              <button type="button" class="search__btn border-0">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 2C18.8541 2 22 5.14585 22 9C22 12.8541 18.8541 16 15 16C13.252 16 11.655 15.348 10.4258 14.2812L10 14.707V16L4 22L2 20L8 14H9.29297L9.71875 13.5742C8.65198 12.345 8 10.748 8 9C8 5.14585 11.1459 2 15 2ZM15 4C12.2267 4 10 6.22673 10 9C10 11.7733 12.2267 14 15 14C17.7733 14 20 11.7733 20 9C20 6.22673 17.7733 4 15 4Z" fill="white"/>
+                </svg>
+              </button>
+              <div class="header-search-dropdown d-none">
+                <form class="search-form d-flex align-items-center">
+                  <input type="text" class="form-control search-input" placeholder="Search...">
+                  <button type="submit" class="btn btn-search-submit ms-2">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M15 2C18.8541 2 22 5.14585 22 9C22 12.8541 18.8541 16 15 16C13.252 16 11.655 15.348 10.4258 14.2812L10 14.707V16L4 22L2 20L8 14H9.29297L9.71875 13.5742C8.65198 12.345 8 10.748 8 9C8 5.14585 11.1459 2 15 2ZM15 4C12.2267 4 10 6.22673 10 9C10 11.7733 12.2267 14 15 14C17.7733 14 20 11.7733 20 9C20 6.22673 17.7733 4 15 4Z" fill="white"></path>
+                    </svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-  
-        <!-- Mobile Menu Button -->
-        <button class="btn mobile-menu-btn d-lg-none btn-primary btn-hover-yellow" id="menuToggleMobile">
-          <span>
-            <svg  class="menu-icon " width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M21 5.67724V7.67724H3V5.67724H21ZM21 11.6772V13.6772H3V11.6772H21ZM21 17.6772V19.6772H3V17.6772H21Z" fill="currentColor"/>
-            </svg>
-          </span>
-        </button>
       </div>
     </header>
 
@@ -1639,6 +1654,8 @@
 
     <!-- custom JS -->
     <script src="./js/main.js"></script>
+
+
 
   </body>
 </html>

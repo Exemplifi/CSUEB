@@ -1646,6 +1646,86 @@ section.bg-white.section-with-padding + section.bg-white {
   border-color: var(--red);
 }
 
+.menu-search .btn-search .search__btn {
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+}
+.menu-search .btn-search .search__btn:hover {
+  background: rgba(253, 194, 90, 0.1019607843);
+}
+
+.header-search-dropdown {
+  position: absolute;
+  top: 3.8rem;
+  right: 0;
+  z-index: 1000;
+  background: var(--white);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  border-radius: 0;
+  padding: 1.25rem 1.5rem;
+  min-width: 520px;
+  max-width: 90vw;
+  transition: all 0.2s;
+}
+@media (min-width: 992px) {
+  .header-search-dropdown {
+    top: 4.4rem;
+  }
+}
+@media (min-width: 1400px) {
+  .header-search-dropdown {
+    top: 4.6rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .header-search-dropdown {
+    min-width: 320px;
+  }
+}
+@media (max-width: 575.98px) {
+  .header-search-dropdown {
+    padding: 1rem;
+  }
+}
+.header-search-dropdown .search-form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.header-search-dropdown .search-form .search-input {
+  flex: 1;
+  border: 2px solid var(--grey-800);
+  background: var(--light-gray);
+  border-radius: 0;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #929292;
+  transition: border 0.2s;
+}
+.header-search-dropdown .search-form .search-input:focus {
+  border-color: var(--gold);
+  outline: none;
+  box-shadow: none;
+}
+.header-search-dropdown .search-form .btn-search-submit {
+  background: var(--red);
+  color: var(--white);
+  border: none;
+  border-radius: 0;
+  padding: 0.5rem 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  height: 44px;
+}
+.header-search-dropdown .search-form .btn-search-submit svg {
+  display: block;
+}
+.header-search-dropdown .search-form .btn-search-submit:hover, .header-search-dropdown .search-form .btn-search-submit:focus {
+  background: var(--dark-red);
+}
+
 .footer {
   background-color: var(--black);
   color: var(--white);

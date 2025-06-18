@@ -53,6 +53,25 @@ document.addEventListener("DOMContentLoaded", () => {
       menu.style.display = 'none';
     }
   });
+
+  // Header search dropdown toggle
+  const searchBtn = document.querySelector('.search__btn');
+  const searchDropdown = document.querySelector('.header-search-dropdown');
+  if (searchBtn && searchDropdown) {
+    searchBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      searchDropdown.classList.toggle('d-none');
+      if (!searchDropdown.classList.contains('d-none')) {
+        const input = searchDropdown.querySelector('.search-input');
+        if (input) input.focus();
+      }
+    });
+    document.addEventListener('click', function(e) {
+      if (!searchDropdown.classList.contains('d-none') && !searchDropdown.contains(e.target) && e.target !== searchBtn) {
+        searchDropdown.classList.add('d-none');
+      }
+    });
+  }
 });
 
 // Swiper Sliders
