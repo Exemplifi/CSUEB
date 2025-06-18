@@ -309,11 +309,12 @@ h5, .h5 {
 
 body {
   margin: 0;
-  color: #000;
+  color: var(--black);
 }
 
 a {
   transition: all 0.3s ease-in-out;
+  color: var(--black);
 }
 
 ul {
@@ -614,6 +615,86 @@ section.bg-white.section-with-padding + section.bg-white {
   transform: translateY(0);
   visibility: visible;
   pointer-events: auto;
+}
+
+/* Left Nav Container */
+.main-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.leftnav > ul {
+  padding: 0;
+  margin: 0;
+}
+.leftnav > ul li {
+  list-style: none;
+  list-style-image: none;
+}
+.leftnav > ul li a {
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+}
+.leftnav > ul li a:hover {
+  color: var(--red);
+}
+.leftnav > ul ul {
+  margin: 0 0 12px 0;
+}
+
+.sidenav {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.btn.btn-expander {
+  background: none;
+  box-shadow: none;
+  position: relative;
+  padding: 0.5rem 0.75rem 0.5rem 0.5rem;
+}
+
+.btn-expander .plus-minus-btn:before {
+  content: "";
+  font-size: 20px;
+  background-image: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.8333 2.5V9.16667H17.5V10.8333H10.8333V14.1667V17.5H9.16667V14.1667V10.8333H2.5V9.16667H9.16667V2.5H10.8333Z" fill="%23D50032"/></svg>');
+  width: 1rem;
+  height: 1rem;
+  position: absolute;
+  left: 0;
+  background-size: 16px;
+  top: 0;
+  background-repeat: no-repeat;
+  transition: all 0.2s ease-in-out;
+}
+.btn-expander .plus-minus-btn.minus-btn:before {
+  background-image: url('data:image/svg+xml,<svg width="20" height="2" viewBox="0 0 20 2" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.8986 -0.00275935L8.89884 -0.00220568L-0.000757456 0.000257611L-0.00020379 2.00004L8.8994 1.99758L10.8989 1.99744L19.7988 1.99456L19.7982 -0.00522399L10.8986 -0.00275935Z" fill="%23D50032"/></svg>');
+  width: 0.875rem;
+  height: 0.875rem;
+  top: 6px;
+}
+
+.sidenav-sub {
+  padding-left: 1.25rem;
+}
+.sidenav-sub .drop {
+  margin-bottom: 0.75rem;
+}
+
+.singe-menu {
+  margin-bottom: 0.375rem;
+}
+
+.sidenav-sub-menu > li {
+  font-size: 0.9em;
+  width: 100%;
+  line-height: 1.1em;
+  padding-left: 20px;
+}
+.sidenav-sub-menu .btn.btn-secondary {
+  width: 100%;
 }
 
 .btn {

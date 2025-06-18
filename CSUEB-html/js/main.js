@@ -16,6 +16,43 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroSlider();
   initMainImgSlider();
   initGalleryLightbox();
+  
+  const expanderButtons = document.querySelectorAll('.btn-expander');
+  
+  expanderButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const submenu = this.closest('li').querySelector('.sidenav-sub');
+      const icon = this.querySelector('.glyphicon');
+      
+      // Toggle submenu visibility
+      if (submenu) {
+        submenu.style.display = submenu.style.display === 'none' ? 'block' : 'none';
+      }
+      
+      // Toggle plus/minus icon
+      if (icon) {
+        icon.classList.toggle('glyphicon-plus');
+        icon.classList.toggle('glyphicon-minus');
+      }
+    });
+  });
+
+  // Accordion for .main-dropdown > .btn-expander
+  const mainDropdownExpanders = document.querySelectorAll('.main-dropdown > .btn-expander');
+  mainDropdownExpanders.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const menu = btn.parentElement.nextElementSibling;
+      if (menu && menu.classList.contains('sidenav-sub-menu')) {
+        menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        btn.querySelector('.plus-minus-btn').classList.toggle('minus-btn', menu.style.display === 'block');
+      }
+    });
+    // Set initial state
+    const menu = btn.parentElement.nextElementSibling;
+    if (menu && menu.classList.contains('sidenav-sub-menu')) {
+      menu.style.display = 'none';
+    }
+  });
 });
 
 // Swiper Sliders
@@ -304,5 +341,3 @@ function initGalleryLightbox() {
   });
 }
 // Lightbox Gallery End
-
-
