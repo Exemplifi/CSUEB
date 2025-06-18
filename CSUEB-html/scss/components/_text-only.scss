@@ -285,6 +285,11 @@
 .text-icon-slider {
     .swiper-slide {
       background-color: transparent;
+      .icon-div {
+        i {
+          font-size: 4rem;
+        }
+      }
     }
 }
 
