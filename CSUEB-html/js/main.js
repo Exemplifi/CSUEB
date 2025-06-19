@@ -240,6 +240,10 @@ function initGalleryLightbox() {
   const modalBody = lightboxModal?.querySelector(".lightbox-content");
   const bsModal = lightboxModal ? new bootstrap.Modal(lightboxModal) : null;
 
+  // Store references to iframes for proper control
+  let currentIframes = [];
+  let youtubePlayers = [];
+
   function createCaption(caption) {
     return caption ? `<div class="carousel-caption d-none d-md-block"><h5 class="m-0">${caption}</h5></div>` : '';
   }
@@ -258,11 +262,15 @@ function initGalleryLightbox() {
       const img = link.querySelector('img');
       const imgAlt = img ? img.getAttribute('alt') || "" : "";
       const isActive = i === activeIndex ? " active" : "";
+      
       if (videoUrl) {
+        // Only add autoplay to the active slide
+        const autoplayParam = i === activeIndex ? "&autoplay=1" : "";
+        const videoId = extractYouTubeId(videoUrl);
         return `
           <div class="carousel-item${isActive}">
             <div class="ratio ratio-16x9">
-              <iframe src="${videoUrl}?enablejsapi=1&autoplay=1" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+              <iframe id="youtube-player-${i}" src="${videoUrl}?enablejsapi=1${autoplayParam}" frameborder="0" allowfullscreen allow="autoplay; encrypted-media"></iframe>
             </div>
           </div>
         `;
@@ -279,8 +287,91 @@ function initGalleryLightbox() {
     }).join("");
   }
 
+  function extractYouTubeId(url) {
+    const match = url.match(/(?:youtube\.com\/embed\/|youtu\.be\/|youtube\.com\/watch\?v=)([^&\n?#]+)/);
+    return match ? match[1] : null;
+  }
+
+  function pauseAllVideos() {
+    // Pause all YouTube players
+    youtubePlayers.forEach(player => {
+      if (player && typeof player.pauseVideo === 'function') {
+        try {
+          player.pauseVideo();
+        } catch (e) {
+          console.log('Could not pause YouTube player:', e);
+        }
+      }
+    });
+
+    // Also handle iframes directly as fallback
+    currentIframes.forEach(iframe => {
+      if (iframe && iframe.contentWindow) {
+        try {
+          // Try to pause using postMessage for YouTube videos
+          iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+        } catch (e) {
+          // Fallback: reload the iframe without autoplay
+          const currentSrc = iframe.src;
+          iframe.src = currentSrc.replace(/&autoplay=1/, '');
+        }
+      }
+    });
+  }
+
+  function playVideoAtIndex(index) {
+    const iframes = modalBody.querySelectorAll('iframe');
+    if (iframes[index]) {
+      const iframe = iframes[index];
+      const currentSrc = iframe.src;
+      
+      // Remove autoplay from all iframes first
+      iframes.forEach((frame, idx) => {
+        if (idx !== index) {
+          frame.src = frame.src.replace(/&autoplay=1/, '');
+        }
+      });
+      
+      // Add autoplay to the target iframe
+      if (!currentSrc.includes('autoplay=1')) {
+        iframe.src = currentSrc + (currentSrc.includes('?') ? '&' : '?') + 'autoplay=1';
+      }
+
+      // Try to play using YouTube API if available
+      if (youtubePlayers[index] && typeof youtubePlayers[index].playVideo === 'function') {
+        try {
+          youtubePlayers[index].playVideo();
+        } catch (e) {
+          console.log('Could not play YouTube player:', e);
+        }
+      }
+    }
+  }
+
+  function initializeYouTubePlayers() {
+    // Clear existing players
+    youtubePlayers = [];
+    
+    // Initialize YouTube players for each iframe
+    currentIframes.forEach((iframe, index) => {
+      if (iframe.src.includes('youtube.com')) {
+        // YouTube iframe will handle its own API
+        // We'll use postMessage for control
+        youtubePlayers[index] = {
+          pauseVideo: () => {
+            iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+          },
+          playVideo: () => {
+            iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+          }
+        };
+      }
+    });
+  }
+
   function createCarousel(link) {
     if (!modalBody || !link) return;
+    
     // Find the index of the clicked link
     const parentSlide = link.closest(".swiper-slide");
     const activeIndex = parentSlide
@@ -288,7 +379,7 @@ function initGalleryLightbox() {
       : 0;
 
     modalBody.innerHTML = `
-      <div id="lightboxCarousel" class="carousel slide carousel-fade" data-bs-ride="true">
+      <div id="lightboxCarousel" class="carousel slide carousel-fade" data-bs-ride="false">
         <div class="carousel-indicators">${createIndicators(activeIndex)}</div>
         <div class="carousel-inner justify-content-center mx-auto">${createSlides(activeIndex)}</div>
         <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev">
@@ -302,23 +393,21 @@ function initGalleryLightbox() {
       </div>
     `;
 
-    // Pause video when slide changes
+    // Store references to iframes and initialize YouTube players
+    currentIframes = modalBody.querySelectorAll('iframe');
+    initializeYouTubePlayers();
+
+    // Handle slide changes
     const carousel = modalBody.querySelector('#lightboxCarousel');
     if (carousel) {
       carousel.addEventListener('slide.bs.carousel', function (event) {
-        // Remove autoplay from all iframes
-        const items = modalBody.querySelectorAll('.carousel-item');
-        items.forEach((item, idx) => {
-          const iframe = item.querySelector('iframe');
-          if (iframe) {
-            let src = iframe.src.replace(/&autoplay=1|\\?autoplay=1/, '');
-            // Add autoplay=1 only to the next active slide
-            if (idx === event.to) {
-              src += (src.includes('?') ? '&' : '?') + 'autoplay=1';
-            }
-            iframe.src = src;
-          }
-        });
+        // Pause all videos first
+        pauseAllVideos();
+        
+        // Play the video on the new slide
+        setTimeout(() => {
+          playVideoAtIndex(event.to);
+        }, 300); // Small delay to ensure slide transition is complete
       });
     }
   }
@@ -356,7 +445,17 @@ function initGalleryLightbox() {
 
   // Clean up modal when closed
   lightboxModal.addEventListener('hidden.bs.modal', function () {
-    if (modalBody) modalBody.innerHTML = '';
+    // Pause all videos before closing
+    pauseAllVideos();
+    
+    // Clear modal content
+    if (modalBody) {
+      modalBody.innerHTML = '';
+    }
+    
+    // Clear iframe references and YouTube players
+    currentIframes = [];
+    youtubePlayers = [];
   });
 }
 // Lightbox Gallery End
