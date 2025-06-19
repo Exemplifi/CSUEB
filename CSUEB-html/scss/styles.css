@@ -4671,7 +4671,7 @@ section.bg-white.section-with-padding + section.bg-white {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  max-height: 283px;
+  min-height: 283px;
 }
 .campus-news .news-card.main-first-card img {
   max-height: 591px;
