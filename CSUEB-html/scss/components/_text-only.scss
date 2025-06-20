@@ -27,6 +27,18 @@
   }
 }
 
+.text-button-sec.text-center {
+  .button-listing {
+    justify-content: center;
+  }
+  &.text-left {
+    text-align: left;
+    @include media-breakpoint-down(md) {
+      text-align: center;
+    }
+  }
+}
+
 .key-feature-sec {
  position: relative;
   .key-feature-bg {

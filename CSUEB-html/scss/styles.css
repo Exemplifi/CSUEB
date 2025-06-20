@@ -2427,6 +2427,18 @@ section.bg-white.section-with-padding + section.bg-white {
   }
 }
 
+.text-button-sec.text-center .button-listing {
+  justify-content: center;
+}
+.text-button-sec.text-center.text-left {
+  text-align: left;
+}
+@media (max-width: 767.98px) {
+  .text-button-sec.text-center.text-left {
+    text-align: center;
+  }
+}
+
 .key-feature-sec {
   position: relative;
 }
@@ -3539,6 +3551,15 @@ section.bg-white.section-with-padding + section.bg-white {
   padding-top: 63.7%;
 }
 .text-img-main-card .video-wrap video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.text-img-main-card .video-wrap iframe {
   position: absolute;
   top: 0;
   left: 0;
