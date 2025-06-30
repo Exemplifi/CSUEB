@@ -228,7 +228,7 @@ section.bg-white.section-with-padding + section.bg-white {
     .breadcrumb-item {
         color: #747474;
         a {
-            color: #00000066;
+            color: rgb(0 0 0 / 61%);
             text-decoration: underline;
             &:hover {
                 text-decoration-color: transparent;
