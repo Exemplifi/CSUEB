@@ -109,7 +109,8 @@
           .overlay {
             border-color: var(--purple);
             // background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.40)) 0%, var(--black-40, rgba(0, 0, 0, 0.40)) 100%), linear-gradient(0deg, var(--purple-80, rgba(122, 35, 106, 0.80)) 0%, var(--purple-80, rgba(122, 35, 106, 0.80)) 100%);
-            background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), linear-gradient(357deg, var(--purple-80, #7a236acc) 0%, var(--purple-80, #7a236acc) 100%);
+            background:  linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%),
+            linear-gradient(357deg, #7a236a 0%, #7a236a 100%);
             transition: all 0.4s ease-in-out;
           }
         }
@@ -117,7 +118,8 @@
       @include media-breakpoint-down(md) {
         .overlay {
           border-color: var(--purple);
-          background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), linear-gradient(357deg, var(--purple-80, #7a236acc) 0%, var(--purple-80, #7a236acc) 100%);
+          background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%),
+          linear-gradient(357deg, #7a236a 0%, #7a236a 100%);
           transition: all 0.4s ease-in-out;
         }
       }
@@ -128,8 +130,8 @@
         &:hover  {
           .overlay {
             border-color: var(--teal);
-            background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), 
-            linear-gradient(0deg, var(--teal-80, rgba(0, 160, 173, 0.8)) 0%, var(--teal-80, rgba(0, 160, 173, 0.8)) 100%);
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+            linear-gradient(0deg, rgba(0, 160, 173, 0.8), rgba(0, 160, 173, 0.8));
             transition: all 0.4s ease-in-out;
           }
         }
@@ -137,8 +139,8 @@
       @include media-breakpoint-down(md) {
         .overlay {
           border-color: var(--teal);
-          background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), 
-          linear-gradient(0deg, var(--teal-80, rgba(0, 160, 173, 0.8)) 0%, var(--teal-80, rgba(0, 160, 173, 0.8)) 100%);
+          background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          linear-gradient(0deg, rgba(0, 160, 173, 0.8), rgba(0, 160, 173, 0.8));
           transition: all 0.4s ease-in-out;
         }
       }
