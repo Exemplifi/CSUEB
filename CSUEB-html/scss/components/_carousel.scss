@@ -1,0 +1,415 @@
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  .swiper-slide {
+    text-align: center;
+    font-size: rem.convert(18px); 
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+
+.bright-future-swiper {
+  .swiper-slide {
+    width: 300px; // Adjust based on your design
+  }
+  
+  .slide-card {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  
+   
+    &.slide-card {
+      box-shadow: 0px 12px 28px 0px rgba(0, 0, 0, 0);
+      .slide-text {
+        color: #fff;
+        display: inline-flex;
+        flex-direction: column;
+        gap: rem.convert(4px);
+        align-items: center;
+        opacity: 0;
+        transition: all 0.4s ease-in-out;
+        position: absolute;
+        left: auto;
+        right: auto;
+        bottom: 20%;
+        @include media-breakpoint-down(md) {
+          opacity: 1;
+        }
+        .h3 {
+          font-family: var(--body-font-family);
+        }
+        p {
+          max-width: rem.convert(150px);
+        }
+      }
+      
+      .overlay {
+        border: 12px solid transparent;
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.0);
+        opacity: 1;
+        transition: all 0.4s ease-in-out;
+        .play-btn {
+          background: #000000B2;
+          border: none;
+          width: rem.convert(64px);
+          height: rem.convert(64px);
+          border-radius: 50%;
+          color: #000;
+          display: flex;
+          padding: 1rem;
+          justify-content: center;
+          align-items: center;
+          gap: 0.25rem;
+          transition: background 0.4s;
+          svg {
+            * {
+              color: var(--white);
+            }
+          }
+          &:hover {
+            background: var(--white);
+            svg {
+              * {
+                color: var(--black);
+              }
+            }
+          }
+        }
+      }
+      &:hover  {
+        box-shadow: 0px 12px 28px 0px rgba(0, 0, 0, 0.25);
+        .slide-text {
+          opacity: 1;
+        }
+      }
+    }
+    &.purple-hover {
+      @include media-breakpoint-up(md) {
+        &:hover  {
+          .overlay {
+            border-color: var(--purple);
+            // background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.40)) 0%, var(--black-40, rgba(0, 0, 0, 0.40)) 100%), var(--purple-80, rgba(122, 35, 106, 0.80));
+            background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.40)) 0%, var(--black-40, rgba(0, 0, 0, 0.40)) 100%), linear-gradient(0deg, var(--purple-80, rgba(122, 35, 106, 0.80)) 0%, var(--purple-80, rgba(122, 35, 106, 0.80)) 100%);
+            transition: all 0.4s ease-in-out;
+          }
+        }
+      }
+      @include media-breakpoint-down(md) {
+        .overlay {
+          border-color: var(--purple);
+          background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.40)) 0%, var(--black-40, rgba(0, 0, 0, 0.40)) 100%), var(--purple-80, rgba(122, 35, 106, 0.80));
+          transition: all 0.4s ease-in-out;
+        }
+      }
+    }
+
+    &.teal-hover {
+      @include media-breakpoint-up(md) {
+        &:hover  {
+          .overlay {
+            border-color: var(--teal);
+            // background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.40)) 0%, var(--black-40, rgba(0, 0, 0, 0.40)) 100%), var(--teal-80, rgba(0, 160, 173, 0.80));
+            background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.40)) 0%, var(--black-40, rgba(0, 0, 0, 0.40)) 100%), linear-gradient(0deg, var(--teal-80, rgba(0, 160, 173, 0.80)) 0%, var(--teal-80, rgba(0, 160, 173, 0.80)) 100%);
+            transition: all 0.4s ease-in-out;
+          }
+        }
+      }
+      @include media-breakpoint-down(md) {
+        .overlay {
+          border-color: var(--teal);
+          background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.40)) 0%, var(--black-40, rgba(0, 0, 0, 0.40)) 100%), var(--teal-80, rgba(0, 160, 173, 0.80));
+
+          transition: all 0.4s ease-in-out;
+        }
+      }
+    }
+
+    &.gold-hover {
+      @include media-breakpoint-up(md) {
+        &:hover  {
+          .overlay {
+            border-color: var(--gold);
+            // background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.40)) 0%, var(--black-40, rgba(0, 0, 0, 0.40)) 100%), var(--orange-80, rgba(246, 144, 30, 0.80));
+            background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.40)) 0%, var(--black-40, rgba(0, 0, 0, 0.40)) 100%), linear-gradient(0deg, var(--orange-80, rgba(246, 144, 30, 0.80)) 0%, var(--orange-80, rgba(246, 144, 30, 0.80)) 100%);
+            transition: background 0.4s, all 0.4s ease-in-out;
+          }
+        }
+      }
+    
+      @include media-breakpoint-down(md) {
+        .overlay {
+          border-color: var(--gold);
+          background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.40)) 0%, var(--black-40, rgba(0, 0, 0, 0.40)) 100%), var(--orange-80, rgba(246, 144, 30, 0.80));
+          transition: background 0.4s, all 0.4s ease-in-out;
+        }
+      }
+    }
+
+  }
+}
+
+.bright-future-section {
+  .container {
+    @include media-breakpoint-down(lg) {
+      padding-right: 0;
+    }
+  }
+  .section-heading .title-wrap {
+    @include media-breakpoint-down(lg) {
+      padding-right: rem.convert(20px);
+    }
+  }
+}
+
+
+.bright-future-section {
+  .section-title {
+    // font-weight: 700;
+  }
+
+  .stars {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+
+.main-single-slider {
+  .swiper-button-group {
+    width: rem.convert(92px);
+    // height: rem.convert(40px);
+    position: absolute;
+    right: rem.convert(32px);
+    bottom: rem.convert(32px);
+    display: flex;
+    gap: rem.convert(12px);
+    @include media-breakpoint-down(md) {
+      right: rem.convert(24px);
+      bottom: rem.convert(24px);
+    }
+    .swiper-btn {
+      display: flex;
+      padding: 0.5rem;
+      align-items: flex-start;
+      gap: 0.25rem;
+      background-color: var(--gold);
+      width: 2.5rem;
+      height: 2.5rem;
+      position: relative;
+      margin: 0;
+      left: 0;
+      right: 0;
+       transition: all 0.3s ease-in-out;
+      &::after {
+        display: none;
+      }
+      svg {
+        width: rem.convert(9px);
+      }
+      &:hover {
+        background-color: var(--white);
+      }
+    }
+  }
+}
+.swiper-btn {
+  display: flex;
+  padding: 0.5rem;
+  align-items: flex-start;
+  gap: 0.25rem;
+  background-color: var(--gold);
+  width: 2.5rem;
+  height: 2.5rem;
+  position: relative;
+  margin: 0;
+  left: 0;
+  right: 0;
+  &::after {
+    display: none;
+  }
+  svg {
+    width: rem.convert(9px);
+  }
+}
+
+
+
+.button-with-pagination-sec {
+  min-width: 181px;
+  margin-inline: auto;
+  align-items: center;
+  justify-content: center;
+  .swiper-btn {
+      position: relative;
+      inset: 0;
+      &.swiper-button-lock  {
+        display: none!important;
+      }
+  }
+  
+  .swiper-pagination {
+      position: relative;
+      inset: 0 !important;
+      // flex: 1;
+      align-self: center;
+      height: 100%;
+      width: auto;
+      display: flex;
+      justify-content: center;
+      .swiper-pagination-bullet {
+        cursor: pointer;
+        clip-path: polygon(0 0, 33% 0, 100% 100%, 68% 100%);
+        width: 1.135rem;
+        height: 1rem;
+        border-radius: 0;
+        margin: 0 !important;
+        background: #00000033;
+        opacity: 1;
+        &.swiper-pagination-bullet-active {
+          background: var(--gold);
+        }
+      }
+  }
+
+
+}
+
+.pagination-container {
+  position: absolute!important;
+  z-index: 8;
+  bottom: 3rem;
+  right: 0;
+  left: 0;
+  @include media-breakpoint-up(xl) {
+    padding-inline: 4rem;
+  }
+  @media (min-width: 1600px) {
+    max-width: 95%;
+  }
+  @include media-breakpoint-down(xl) {
+    padding-inline: 1rem;
+  }
+  .button-with-pagination-sec {
+    min-width: 220px;
+    margin-left: auto;
+    margin-right: 0;
+    .swiper-btn {
+      background-color: #FFFFFF40;
+      transition: all 0.3s ease-in-out;
+      svg {
+        path {
+        fill: var(--white);
+        }
+      }
+      &:hover {
+        background-color: var(--white);
+        svg {
+          path {
+          fill: var(--black);
+          }
+        }
+      }
+      &.swiper-button-disabled {
+          background-color: #FFFFFF40;
+          opacity: 1;
+          svg {
+           path {
+            fill: var(--white);
+           }
+          }
+      }
+      &.swiper-button-lock  {
+        display: none!important;
+      }
+    }
+    .swiper-pagination {
+      .swiper-pagination-bullet {
+          background: #FFFFFF99;
+          opacity: 1;
+          transition: all 0.3s ease-in-out;
+          &.swiper-pagination-bullet-active {
+            background: var(--gold);
+          }
+          &:hover {
+              background-color: var(--white);
+          }
+      }
+    }
+  }
+}
+
+
+.image-gallery-sec {
+  .swiper-slide {
+    height: auto;
+    .img-card  {
+      height: 100%;
+      transition: all 0.3s ease-in-out;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top:rem.convert(23px);
+        right:rem.convert(27px);
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="116" height="24" viewBox="0 0 116 24" fill="none"><path d="M21.3158 11.9411L24 12.399L21.3158 12.857C16.8947 13.7728 13.4211 17.131 12.4737 21.405L12 24L11.5263 21.405C10.5789 17.131 7.10526 13.7728 2.68421 12.857L-5.24537e-07 12.399L2.68421 11.9411C7.10526 11.0252 10.5789 7.66704 11.5263 3.393L12 0.798038L12.4737 3.393C13.4211 7.66704 16.8947 11.0252 21.3158 11.9411Z" fill="white"/><path d="M66.5521 11.9411L69.2363 12.399L66.5521 12.857C62.1311 13.7728 58.6574 17.131 57.71 21.405L57.2363 24L56.7626 21.405C55.8153 17.131 52.3416 13.7728 47.9205 12.857L45.2363 12.399L47.9205 11.9411C52.3416 11.0252 55.8153 7.66704 56.7626 3.393L57.2363 0.798038L57.71 3.393C58.6574 7.66704 62.1311 11.0252 66.5521 11.9411Z" fill="white"/><path d="M112.57 11.9411L115.254 12.399L112.57 12.857C108.149 13.7728 104.675 17.131 103.728 21.405L103.254 24L102.78 21.405C101.833 17.131 98.3592 13.7728 93.9381 12.857L91.2539 12.399L93.9381 11.9411C98.3592 11.0252 101.833 7.66704 102.78 3.393L103.254 0.798038L103.728 3.393C104.675 7.66704 108.149 11.0252 112.57 11.9411Z" fill="white"/></svg>');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: right;
+        width: 7.20338rem;
+        height: 1.45013rem;
+        z-index: 9;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        transition: all 0.3s ease-in-out;
+        background:rgba(0, 0, 0, 0.0);
+        width: 100%;
+        height:  100%;
+        z-index: 8;
+      }
+
+      &:hover {
+        &::after {
+          content: "";
+          background:rgba(0, 0, 0, 0.40);
+        }
+        &::before {
+          content: "";
+          opacity: 1;
+          z-index: 9;
+          transition: all 0.4s ease-in-out;
+        }
+      }
+
+    }
+  }
+}
+
+.carousel-indicators {
+  z-index: 1;
+}
