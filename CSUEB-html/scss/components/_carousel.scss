@@ -54,6 +54,7 @@
         }
         .h3 {
           font-family: var(--body-font-family);
+          text-shadow: 2px 2px 2px #000;
         }
         p {
           max-width: rem.convert(150px);
@@ -107,8 +108,7 @@
         &:hover  {
           .overlay {
             border-color: var(--purple);
-            background:  linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-            linear-gradient(357deg, rgba(122, 35, 106, 0.9), rgba(122, 35, 106, 0.9));
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%), linear-gradient(357deg, rgba(122, 35, 106, 0.9) 0%, rgba(122, 35, 106, 0.9) 100%); 
             transition: all 0.4s ease-in-out;
           }
         }
@@ -116,8 +116,7 @@
       @include media-breakpoint-down(md) {
         .overlay {
           border-color: var(--purple);
-          background:  linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-          linear-gradient(357deg, rgba(122, 35, 106, 0.9), rgba(122, 35, 106, 0.9));
+          background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%), linear-gradient(357deg, rgba(122, 35, 106, 0.9) 0%, rgba(122, 35, 106, 0.9) 100%); 
           transition: all 0.4s ease-in-out;
         }
       }
@@ -128,8 +127,8 @@
         &:hover  {
           .overlay {
             border-color: var(--teal);
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-            linear-gradient(0deg, rgba(0, 160, 173, 0.9), rgba(0, 160, 173, 0.9));
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+            linear-gradient(0deg, rgba(0, 160, 173, 0.8), rgba(0, 160, 173, 0.8));
             transition: all 0.4s ease-in-out;
           }
         }
@@ -137,8 +136,8 @@
       @include media-breakpoint-down(md) {
         .overlay {
           border-color: var(--teal);
-          background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-          linear-gradient(0deg, rgba(0, 160, 173, 0.9), rgba(0, 160, 173, 0.9));
+          background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          linear-gradient(0deg, rgba(0, 160, 173, 0.8), rgba(0, 160, 173, 0.8));
           transition: all 0.4s ease-in-out;
         }
       }
@@ -149,8 +148,8 @@
         &:hover  {
           .overlay {
             border-color: var(--gold);
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-            linear-gradient(0deg, rgba(246, 144, 30, 0.9), rgba(246, 144, 30, 0.9));
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+            linear-gradient(0deg, rgba(246, 144, 30, 0.8), rgba(246, 144, 30, 0.8));
             // background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.40)) 0%, var(--black-40, rgba(0, 0, 0, 0.40)) 100%), linear-gradient(0deg, var(--orange-80, rgba(246, 144, 30, 0.80)) 0%, var(--orange-80, rgba(246, 144, 30, 0.80)) 100%);
             transition: background 0.4s, all 0.4s ease-in-out;
           }
@@ -160,8 +159,8 @@
       @include media-breakpoint-down(md) {
         .overlay {
           border-color: var(--gold);
-          background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-          linear-gradient(0deg, rgba(246, 144, 30, 0.9), rgba(246, 144, 30, 0.9));
+          background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          linear-gradient(0deg, rgba(246, 144, 30, 0.8), rgba(246, 144, 30, 0.8));
           transition: background 0.4s, all 0.4s ease-in-out;
         }
       }
