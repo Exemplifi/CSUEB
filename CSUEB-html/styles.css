@@ -697,6 +697,19 @@ section.bg-white.section-with-padding + section.bg-white {
   width: 100%;
 }
 
+.screen-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
 .btn {
   border-radius: 0px;
   text-transform: uppercase;
@@ -717,6 +730,9 @@ section.bg-white.section-with-padding + section.bg-white {
     padding: 0.25rem 0.5rem 0.25rem 0.25rem;
     font-size: 0.875rem;
   }
+}
+.btn:focus-visible {
+  outline: -webkit-focus-ring-color auto 1px;
 }
 .btn span {
   font-weight: 700;
@@ -4110,6 +4126,19 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 .side-nav-with-content .side-nav-wrap .right-content .section-heading .heading-description p:last-child {
   margin-bottom: 0;
+}
+@media (max-width: 767.98px) {
+  .side-nav-with-content .side-nav-wrap .right-content .section-heading .heading-description p {
+    margin-bottom: 1.5rem;
+  }
+}
+.side-nav-with-content .side-nav-wrap .right-content .section-heading .heading-description h1, .side-nav-with-content .side-nav-wrap .right-content .section-heading .heading-description h2, .side-nav-with-content .side-nav-wrap .right-content .section-heading .heading-description h3, .side-nav-with-content .side-nav-wrap .right-content .section-heading .heading-description h4, .side-nav-with-content .side-nav-wrap .right-content .section-heading .heading-description h5 {
+  margin-bottom: 2.5rem;
+}
+@media (max-width: 767.98px) {
+  .side-nav-with-content .side-nav-wrap .right-content .section-heading .heading-description h1, .side-nav-with-content .side-nav-wrap .right-content .section-heading .heading-description h2, .side-nav-with-content .side-nav-wrap .right-content .section-heading .heading-description h3, .side-nav-with-content .side-nav-wrap .right-content .section-heading .heading-description h4, .side-nav-with-content .side-nav-wrap .right-content .section-heading .heading-description h5 {
+    margin-bottom: 1.5rem;
+  }
 }
 .side-nav-with-content .side-nav-wrap .right-content .full-img-text-sec .img-full-sec::after {
   content: "";

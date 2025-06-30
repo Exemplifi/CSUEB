@@ -14,78 +14,105 @@
   <body>
 
     <!-- Header -->
-    <header class="main-header">
+    <header class="main-header" role="banner">
       <div class="container d-flex justify-content-between align-items-center">
-        <a href="" class="logo d-flex align-items-center">
+        <a href="" class="logo d-flex align-items-center" aria-label="Home">
           <img src="./images/logo.svg" alt="Cal State East Bay">
         </a>
-        <div class="header-links d-none d-lg-flex align-items-center gap-3">
-          <div class="d-flex menu-list-link">
-            <a href="#" class="text-white menu-link subtext">APPLY</a>
-            <a href="#" class="text-white menu-link subtext">REQUEST INFO</a>
-            <a href="#" class="text-white menu-link subtext">GIVE</a>
-          </div>
-  
-          <div class="dropdown">
-            <button class="dropdown-toggle btn btn-primary btn-dark" data-bs-toggle="dropdown">
-              <span>INFO FOR
-                <svg class="arrow-icon-white ms-2" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7.92969 10.1772L6.42969 11.6772L12.5 17.7476L18.5703 11.6772L17.0703 10.1772L12.5 14.7476L7.92969 10.1772Z" fill="currentColor"/>
-                </svg>
+
+        <div class="d-flex align-items-center gap-3">
+          <nav class="header-links d-none d-lg-flex align-items-center gap-3"  role="navigation" aria-label="Main navigation">
+            <div class="d-flex menu-list-link">
+              <a href="#" class="text-white menu-link subtext" aria-label="Apply">APPLY</a>
+              <a href="#" class="text-white menu-link subtext" aria-label="Request Info">REQUEST INFO</a>
+              <a href="#" class="text-white menu-link subtext" aria-label="Give">GIVE</a>
+            </div>
+    
+            <div class="dropdown">
+              <button class="dropdown-toggle btn btn-primary btn-dark" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Information for different user types">
+                <span>INFO FOR
+                  <svg class="arrow-icon-white ms-2" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M7.92969 10.1772L6.42969 11.6772L12.5 17.7476L18.5703 11.6772L17.0703 10.1772L12.5 14.7476L7.92969 10.1772Z" fill="currentColor"/>
+                  </svg>
+                </span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#" aria-label="Current Students">Current Students</a></li>
+                <li><a class="dropdown-item" href="#" aria-label="Future Students">Future Students</a></li>
+                <li><a class="dropdown-item" href="#" aria-label="Alumni">Alumni</a></li>
+              </ul>
+            </div>
+    
+            <button class="btn menu-btn btn btn-primary btn-hover-yellow" id="menuToggle" aria-expanded="false" aria-controls="sidebarMenu" aria-label="Open main navigation menu">
+              <span class="">
+                MENU
+                <svg class="menu-icon ms-2" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M21 5.67724V7.67724H3V5.67724H21ZM21 11.6772V13.6772H3V11.6772H21ZM21 17.6772V19.6772H3V17.6772H21Z" fill="currentColor"/>
+                </svg> 
               </span>
             </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Current Students</a></li>
-              <li><a class="dropdown-item" href="#">Future Students</a></li>
-              <li><a class="dropdown-item" href="#">Alumni</a></li>
-            </ul>
-          </div>
-  
-          <button class="btn menu-btn btn btn-primary btn-hover-yellow" id="menuToggle">
-             <span class="">
-              MENU
-              <svg  class="menu-icon ms-2" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          </nav>
+    
+          <!-- Mobile Menu Button -->
+          <button class="btn mobile-menu-btn d-lg-none btn-primary btn-hover-yellow" id="menuToggleMobile" aria-expanded="false" aria-controls="sidebarMenu" aria-label="Open main navigation menu">
+            <label for="menuToggleMobile" class="screen-only" aria-label="Menu">Menu</label>
+            <span>
+              <svg class="menu-icon" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M21 5.67724V7.67724H3V5.67724H21ZM21 11.6772V13.6772H3V11.6772H21ZM21 17.6772V19.6772H3V17.6772H21Z" fill="currentColor"/>
               </svg>
             </span>
           </button>
+
+          <!-- search seection -->
+          <div class="menu-search">
+            <div class="btn-search position-relative">
+              <button type="button" class="search__btn border-0">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 2C18.8541 2 22 5.14585 22 9C22 12.8541 18.8541 16 15 16C13.252 16 11.655 15.348 10.4258 14.2812L10 14.707V16L4 22L2 20L8 14H9.29297L9.71875 13.5742C8.65198 12.345 8 10.748 8 9C8 5.14585 11.1459 2 15 2ZM15 4C12.2267 4 10 6.22673 10 9C10 11.7733 12.2267 14 15 14C17.7733 14 20 11.7733 20 9C20 6.22673 17.7733 4 15 4Z" fill="white"></path>
+                </svg>
+              </button>
+              <div class="header-search-dropdown d-none">
+                <form class="search-form d-flex align-items-center">
+                  <label for="site-search" class="screen-only" aria-label="Search the site">Search the site</label>
+                  <input type="text" class="form-control search-input" placeholder="Search..." aria-label="Search the site" name="search">
+                  <button type="submit" class="btn btn-search-submit ms-2">
+                    <span class="screen-only" aria-label="Search">Search</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M15 2C18.8541 2 22 5.14585 22 9C22 12.8541 18.8541 16 15 16C13.252 16 11.655 15.348 10.4258 14.2812L10 14.707V16L4 22L2 20L8 14H9.29297L9.71875 13.5742C8.65198 12.345 8 10.748 8 9C8 5.14585 11.1459 2 15 2ZM15 4C12.2267 4 10 6.22673 10 9C10 11.7733 12.2267 14 15 14C17.7733 14 20 11.7733 20 9C20 6.22673 17.7733 4 15 4Z" fill="white"></path>
+                    </svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-  
-        <!-- Mobile Menu Button -->
-        <button class="btn mobile-menu-btn d-lg-none btn-primary btn-hover-yellow" id="menuToggleMobile">
-          <span>
-            <svg  class="menu-icon " width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M21 5.67724V7.67724H3V5.67724H21ZM21 11.6772V13.6772H3V11.6772H21ZM21 17.6772V19.6772H3V17.6772H21Z" fill="currentColor"/>
-            </svg>
-          </span>
-        </button>
       </div>
     </header>
 
     <!-- Sidebar -->
-    <aside class="sidebar" id="sidebarMenu">
+    <aside class="sidebar" id="sidebarMenu" role="navigation" aria-label="Main navigation">
       <div class="mega-menu-wrapper">
         <div class="left-red-sec bg-red">
           <div class="mb-4 text-end d-md-none">
             <button class="btn close-btn-mobile btn-primary btn-primary-close" aria-label="Close menu">
               <span>
-                <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path d="M18.293 4.29297L19.707 5.70703L13.4141 12L19.707 18.293L18.293 19.707L12 13.4141L5.70703 19.707L4.29297 18.293L10.5859 12L4.29297 5.70703L5.70703 4.29297L12 10.5859L18.293 4.29297Z" fill="white"/>
                 </svg>
               </span>
             </button>
           </div>
           <div class="d-flex flex-wrap d-md-grid gap-2 gap-md-3 mb-4 mb-md-5">
-            <a href="" class="btn btn-primary-yellow"><span>APPLY</span></a>
-            <a href="" class="btn btn-primary-yellow"><span>REQUEST INFO</span></a>
-            <a href="" class="btn btn-primary-yellow"><span>MAKE A GIFT</span></a>
+            <a href="" class="btn btn-primary-yellow" aria-label="Apply to Cal State East Bay"><span>APPLY</span></a>
+            <a href="" class="btn btn-primary-yellow" aria-label="Request information about Cal State East Bay"><span>REQUEST INFO</span></a>
+            <a href="" class="btn btn-primary-yellow" aria-label="Make a gift to Cal State East Bay"><span>MAKE A GIFT</span></a>
           </div>
 
           <div class="mb-3">
             <div class="accordion info-accordion-sec bg-transparent" id="accordionExample1">
               <div class="accordion-item bg-transparent border-none">
                 <h2 class="accordion-header bg-transparent" id="info-accordion">
-                  <button class="accordion-button collapsed h5 bg-transparent p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseinfo" aria-expanded="true" aria-controls="collapseinfo">
+                  <button class="accordion-button collapsed h5 bg-transparent p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseinfo" aria-expanded="false" aria-controls="collapseinfo">
                     Information for:
                   </button>
                 </h2>
@@ -93,8 +120,8 @@
                   <div class="accordion-body p-0 m-0">
                     <ul class="list-unstyled sidebar-link-wrap">
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link" aria-label="Current Students">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Current Students</span>
@@ -102,8 +129,8 @@
                       </li>
         
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link" aria-label="Future Students">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Future Students</span>
@@ -111,8 +138,8 @@
                       </li>
         
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link" aria-label="Alumni">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Alumni</span>
@@ -120,8 +147,8 @@
                       </li>
         
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link" aria-label="Counselors">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Counselors</span>
@@ -129,8 +156,8 @@
                       </li>
         
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link" aria-label="Faculty and Staff">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span> Faculty & Staff</span>
@@ -150,7 +177,7 @@
             <button class="btn close-btn btn-primary-gray" aria-label="Close menu">
               <span>
                 Close
-                <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path d="M18.293 4.29297L19.707 5.70703L13.4141 12L19.707 18.293L18.293 19.707L12 13.4141L5.70703 19.707L4.29297 18.293L10.5859 12L4.29297 5.70703L5.70703 4.29297L12 10.5859L18.293 4.29297Z" fill="black"/>
                 </svg>
               </span>
@@ -158,24 +185,15 @@
           </div>
 
           <div class="menu-search-accodian">
-            <div class="search-wrap">
-              <input type="text" class="form-control" placeholder="Search Cal State East Bay...">
-              <div class="btn-search">
-                <button type="button" class="search__btn">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 2C18.8541 2 22 5.14585 22 9C22 12.8541 18.8541 16 15 16C13.252 16 11.655 15.348 10.4258 14.2812L10 14.707V16L4 22L2 20L8 14H9.29297L9.71875 13.5742C8.65198 12.345 8 10.748 8 9C8 5.14585 11.1459 2 15 2ZM15 4C12.2267 4 10 6.22673 10 9C10 11.7733 12.2267 14 15 14C17.7733 14 20 11.7733 20 9C20 6.22673 17.7733 4 15 4Z" fill="white"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
+            
   
             <ul class="accordion-menu list-unstyled" id="menuAccordion">
               <li class="accordion-item">
                 <h2 class="accordion-header">
-                  <button class="accordion-button collapsed h3" data-bs-toggle="collapse" data-bs-target="#section1">
+                  <button class="accordion-button collapsed h3" data-bs-toggle="collapse" data-bs-target="#section1" aria-expanded="false" aria-controls="section1">
                     Academics
                     <span class="accordion-icon">
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M8.83333 0.5V7.16667H15.5V8.83333H8.83333V12.1667V15.5H7.16667V12.1667V8.83333H0.5V7.16667H7.16667V0.5H8.83333Z" fill="currentColor"/>
                       </svg>
                     </span>
@@ -185,8 +203,8 @@
                   <div class="accordion-body">
                     <ul class="list-unstyled menu-link-list">
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary" aria-label="Degrees and Programs">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Degrees and Programs</span>
@@ -194,8 +212,8 @@
                       </li>
         
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary" aria-label="Academic Affairs">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Academic Affairs</span>
@@ -203,8 +221,8 @@
                       </li>
         
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary" aria-label="Academic Calendar">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Academic Calendar</span>
@@ -212,8 +230,8 @@
                       </li>
         
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary" aria-label="Library">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Library</span>
@@ -221,8 +239,8 @@
                       </li>
         
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary" aria-label="University Catalog">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>University Catalog</span>
@@ -230,8 +248,8 @@
                       </li>
 
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary" aria-label="Bookstore">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Bookstore</span>
@@ -239,8 +257,8 @@
                       </li>
 
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary" aria-label="Colleges and Departments">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Colleges and Departments</span>
@@ -252,12 +270,12 @@
               </li>
               <li class="accordion-item">
                 <h2 class="accordion-header">
-                  <button class="accordion-button collapsed h3" data-bs-toggle="collapse" data-bs-target="#section2">
+                  <button class="accordion-button collapsed h3" data-bs-toggle="collapse" data-bs-target="#section2" aria-expanded="false" aria-controls="section2">
                     Admissions and Aid
                     <span class="accordion-icon">
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">             
                         <path d="M8.83333 0.5V7.16667H15.5V8.83333H8.83333V12.1667V15.5H7.16667V12.1667V8.83333H0.5V7.16667H7.16667V0.5H8.83333Z" fill="currentColor"/>
-                      </svg>
+                      </svg>  
                     </span>
                   </button>
                 </h2>
@@ -270,12 +288,12 @@
     
             <div class="quick-links">
               <ul class="list-unstyled star-links-black">
-                <li><a href="#" class="subtext">MyCSUEB</a></li>
-                <li><a href="#" class="subtext">Canvas</a></li>
-                <li><a href="#" class="subtext">Library</a></li>
-                <li><a href="#" class="subtext">Email</a></li>
-                <li><a href="#" class="subtext">MyCompass</a></li>
-                <li><a href="#" class="subtext">Directory</a></li>
+                <li><a href="#" class="subtext" aria-label="MyCSUEB">MyCSUEB</a></li>
+                <li><a href="#" class="subtext" aria-label="Canvas">Canvas</a></li>
+                <li><a href="#" class="subtext" aria-label="Library">Library</a></li>
+                <li><a href="#" class="subtext" aria-label="Email">Email</a></li>
+                <li><a href="#" class="subtext" aria-label="MyCompass">MyCompass</a></li>
+                <li><a href="#" class="subtext" aria-label="Directory">Directory</a></li>
               </ul>
             </div>
             
@@ -300,7 +318,7 @@
             </div>
             <ul class="actions list-unstyled text-medium">
               <li>
-                <a href="#" class="text-decoration-none btn btn-secondary">
+                <a href="#" class="text-decoration-none btn btn-secondary" role="link" aria-label="Explore Our Programs">
                   <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                     <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"/>
                   </svg>
@@ -309,7 +327,7 @@
               </li>
 
               <li>
-                <a href="#" class="text-decoration-none btn btn-secondary">
+                <a href="#" class="text-decoration-none btn btn-secondary" role="link" aria-label="See Our Outcomes">
                   <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                     <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"/>
                   </svg>
@@ -574,7 +592,7 @@
           <div class="col-lg-4">
             <div class="content-section">
               <p class="oasis-description">
-               Whether you come to one of our physical locations or come to us online, Cal State East Bay offers you a modern-day safe haven — an intellectual oasis — where you can discover and sharpen you strengths.
+               Whether you come to one of our physical locations or come to us online, Cal State East Bay offers you a modern-day safe haven — an intellectual oasis — where you can discover and sharpen you strengths.
               </p>
               <ul class="actions list-unstyled text-medium">
                 <li>
@@ -719,86 +737,113 @@
     <!-- Image Text Section End -->
 
 
-    <!-- Carousel Section Start -->
-    <section class="section bright-future-section bg-light-gray">
-      <div class="container">
-        <div class="section-heading heading-gray-icon">
-          <!-- Red Diamonds -->
-          <div class="title-wrap">
-            <h2 class="section-title">Fresh Eyes on a Brighter Future</h2>
-            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
-              <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"/>
-              <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"/>
-              <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"/>
-            </svg>
-          </div>
-        </div>
-    
-        <!-- Swiper -->
-        <div class="swiper bright-future-swiper">
-          <div class="swiper-wrapper">
-            <!-- Slide 1 -->
-            <div class="swiper-slide">
-              <div class="slide-card purple-hover">
-                <img src="./images/video-slider-cover.png" alt="Video 1" class="img-fluid">
-                <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
-                  <button class="play-btn">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M10.6667 6.625V25.375L25.2682 16L23.5208 14.8776L10.6667 6.625Z" fill="currentColor"/>
-                    </svg>
-                  </button>
-
-                  <div class="slide-text mt-3">
-                    <div class="mb-1 h3">Going it alone?</div>
-                    <p class="small">Not on this side of the bay.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-    
-            <!-- Slide 2 -->
-            <div class="swiper-slide">
-              <div class="slide-card teal-hover">
-                <img src="./images/video-slider-cover2.png" alt="Video 2" class="img-fluid">
-                <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
-                  <button class="play-btn">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M10.6667 6.625V25.375L25.2682 16L23.5208 14.8776L10.6667 6.625Z" fill="currentColor"/>
-                    </svg>
-                  </button>
-
-                  <div class="slide-text mt-3">
-                    <div class="mb-1 h3">Going it alone?</div>
-                    <p class="small">Not on this side of the bay.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-    
-            <!-- Slide 3 -->
-            <div class="swiper-slide">
-              <div class="slide-card gold-hover">
-                <img src="./images/video-slider-cover3.png" alt="Video 3" class="img-fluid">
-                <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
-                  <button class="play-btn">
-                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M10.6667 6.625V25.375L25.2682 16L23.5208 14.8776L10.6667 6.625Z" fill="currentColor"/>
-                    </svg>
-                  </button>
-
-                  <div class="slide-text mt-3">
-                    <div class="mb-1 h3">Going it alone?</div>
-                    <p class="small">Not on this side of the bay.</p>
-                  </div>
-                </div>
-              </div>
+       <!-- Carousel Section Start -->
+       <section class="section bright-future-section bg-light-gray">
+        <div class="container">
+          <div class="section-heading heading-gray-icon">
+            <!-- Red Diamonds -->
+            <div class="title-wrap">
+              <h2 class="section-title">Fresh Eyes on a Brighter Future</h2>
+              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
+                <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"/>
+                <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"/>
+                <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"/>
+              </svg>
             </div>
           </div>
+      
+          <!-- Swiper -->
+          <div class="swiper bright-future-swiper">
+            <div class="gallery-grid swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <a class="gallery-item img-card text-center w-100" href="https://www.youtube.com/embed/Oczpz9SyX2s"  data-video-url="https://www.youtube.com/embed/Oczpz9SyX2s?enablejsapi=1&origin=window.location.origin">
+                  <div class="slide-card purple-hover">
+                    <img src="./images/video-slider-cover.png" alt="Video 1" class="img-fluid">
+                   
+                    <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
+                      <button class="play-btn">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M10.6667 6.625V25.375L25.2682 16L23.5208 14.8776L10.6667 6.625Z" fill="currentColor"/>
+                        </svg>
+                      </button>
+    
+                      <div class="slide-text mt-3">
+                        <div class="mb-1 h3">Going it alone?</div>
+                        <p class="small">Not on this side of the bay.</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+      
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <a class="gallery-item img-card text-center w-100" href="https://www.youtube.com/embed/SKFRIbHi0jQ?rel=0"  data-video-url="https://www.youtube.com/embed/SKFRIbHi0jQ?enablejsapi=1&rel=0&origin=window.location.origin">
+                  <div class="slide-card teal-hover">
+                    <img src="./images/video-slider-cover2.png" alt="Video 2" class="img-fluid">
+                    <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
+                      <button class="play-btn">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M10.6667 6.625V25.375L25.2682 16L23.5208 14.8776L10.6667 6.625Z" fill="currentColor"/>
+                        </svg>
+                      </button>
+    
+                      <div class="slide-text mt-3">
+                        <div class="mb-1 h3">Going it alone?</div>
+                        <p class="small">Not on this side of the bay.</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+      
+              <!-- Slide 3 -->
+            
+              <div class="swiper-slide">
+                <a class="gallery-item img-card text-center w-100" href="https://www.youtube.com/embed/SKFRIbHi0jQ?rel=0"  data-video-url="https://www.youtube.com/embed/SKFRIbHi0jQ?enablejsapi=1&rel=0&origin=window.location.origin">
+                  <div class="slide-card gold-hover">
+                    <img src="./images/video-slider-cover3.png" alt="Video 2" class="img-fluid">
+                    <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
+                      <button class="play-btn">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M10.6667 6.625V25.375L25.2682 16L23.5208 14.8776L10.6667 6.625Z" fill="currentColor"/>
+                        </svg>
+                      </button>
+    
+                      <div class="slide-text mt-3">
+                        <div class="mb-1 h3">Going it alone?</div>
+                        <p class="small">Not on this side of the bay.</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Swiper End -->
         </div>
-         <!-- Swiper End -->
+      </section>
+  
+      <div class="modal fade lightbox-modal video-lightbox-modal" id="lightbox-modal-home" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+          <div class="modal-content">
+            <button type="button" class="btn-fullscreen-enlarge" aria-label="Enlarge fullscreen">
+              <svg class="bi"><use href="#enlarge"></use></svg>
+            </button>
+            <button type="button" class="btn-fullscreen-exit d-none" aria-label="Exit fullscreen">
+              <svg class="bi"><use href="#exit"></use></svg>
+            </button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-body">
+              <div class="lightbox-content">
+                <!-- JS content here -->
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
-     <!-- Carousel Section End -->
+      <!-- Carousel Section End -->
 
 
     <!-- Text Only Start -->
@@ -812,11 +857,11 @@
           <div class="section-heading section-heading-dark">
             <!-- Red Diamonds -->
             <div class="title-wrap">
-              <h2 class="section-title mb-3">What’s next?</h2>
+              <h2 class="section-title mb-3">What's next?</h2>
               <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
                 <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"/>
-                <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"/>
-                <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"/>
+                  <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"/>
+                  <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"/>
               </svg>
             </div>
       
@@ -930,43 +975,46 @@
     <!-- News Section End -->
 
 
-     <!-- Footer Start -->
-    <footer class="footer bg-black text-white">
+    <!-- Footer Start -->
+    <footer class="footer bg-black text-white" aria-label="Footer Section">
       <div class="container">
-
         <div class="footer-lists">
           <div class="footer-top-sec row align-items-center">
             <div class="col-md-6">
-              <div class="footer-logo mb-3">
+              <div class="footer-logo mb-3" aria-label="Footer logo">
                 <img src="./images/logo-footer.svg" alt="Logo" class="img-fluid">
               </div>
             </div>
             <div class="col-md-6 d-none d-md-block">
-              <ul class="social-icons list-unstyled mb-0">
+              <ul class="social-icons list-unstyled mb-0" aria-label="Footer social icons">
                 <li>
-                  <a href="">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <a href="" aria-label="Follow us on LinkedIn">
+                    <span class="screen-only">linkedin</span>
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <path d="M5 0C2.23958 0 0 2.23958 0 5V13C0 15.7604 2.23958 18 5 18H13C15.7604 18 18 15.7604 18 13V5C18 2.23958 15.7604 0 13 0H5ZM15 2C15.5521 2 16 2.44792 16 3C16 3.55208 15.5521 4 15 4C14.4479 4 14 3.55208 14 3C14 2.44792 14.4479 2 15 2ZM9 4C11.7604 4 14 6.23958 14 9C14 11.7604 11.7604 14 9 14C6.23958 14 4 11.7604 4 9C4 6.23958 6.23958 4 9 4ZM9 6C7.34375 6 6 7.34375 6 9C6 10.6563 7.34375 12 9 12C10.6563 12 12 10.6563 12 9C12 7.34375 10.6563 6 9 6Z" fill="currentColor"></path>
                     </svg>
                   </a> 
                 </li>
                 <li>
-                  <a href="">
-                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <a href="" aria-label="Follow us on Twitter">
+                    <span class="screen-only">twitter</span>
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <path d="M0.864584 0L7.73438 9.81771L0.734375 18H3.38021L8.92188 11.5104L13.4635 18H19.3698L12.1719 7.69792L18.7448 0H16.1406L10.9948 6.01042L6.79688 0H0.864584Z" fill="currentColor"></path>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a href="">
-                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <a href="" aria-label="Follow us on Youtube">
+                    <span class="screen-only">youtube</span>
+                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <path d="M19.5833 2.1875C19.3542 1.32813 18.6719 0.645833 17.8125 0.416667C16.2552 0 10 0 10 0C10 0 3.74479 0 2.1875 0.416667C1.32813 0.645833 0.645833 1.32813 0.416667 2.1875C0 3.74479 0 8 0 8C0 8 0 12.2552 0.416667 13.8125C0.645833 14.6719 1.32813 15.3542 2.1875 15.5833C3.74479 16 10 16 10 16C10 16 16.2552 16 17.8125 15.5833C18.6771 15.3542 19.3542 14.6719 19.5833 13.8125C20 12.2552 20 8 20 8C20 8 20 3.74479 19.5833 2.1875ZM8 11.4635V4.53646L14 8L8 11.4635Z" fill="currentColor"></path>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a href="">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <a href="" aria-label="Follow us on Facebook">
+                    <span class="screen-only">facebook</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <path d="M10 0C4.47917 0 0 4.47917 0 10C0 15.0104 3.69271 19.151 8.50521 19.875V12.651H6.03125V10.0208H8.50521V8.27083C8.50521 5.375 9.91667 4.10417 12.3229 4.10417C13.474 4.10417 14.0833 4.1875 14.375 4.22917V6.52083H12.7344C11.7083 6.52083 11.3542 7.48958 11.3542 8.58333V10.0208H14.349L13.9427 12.651H11.3542V19.8958C16.2344 19.2344 20 15.0625 20 10C20 4.47917 15.5208 0 10 0Z" fill="currentColor"></path>
                     </svg>
                   </a>
@@ -978,7 +1026,7 @@
           
           <!-- Links -->
           <div class="menu-wrapper">
-            <div class="row">
+            <nav class="row" aria-label="Footer main navigation">
               <!-- Logo and Address -->
               <div class="col-12 col-sm-6 col-md address-sec">
                 <address class="text-white text-medium m-0">
@@ -1008,37 +1056,41 @@
 
               <div class="col-12 col-sm-6 col-md d-flex d-md-none mt-32">
                 <ul class="social-icons list-unstyled mb-0">
-                        <li>
-                          <a href="">
-                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M5 0C2.23958 0 0 2.23958 0 5V13C0 15.7604 2.23958 18 5 18H13C15.7604 18 18 15.7604 18 13V5C18 2.23958 15.7604 0 13 0H5ZM15 2C15.5521 2 16 2.44792 16 3C16 3.55208 15.5521 4 15 4C14.4479 4 14 3.55208 14 3C14 2.44792 14.4479 2 15 2ZM9 4C11.7604 4 14 6.23958 14 9C14 11.7604 11.7604 14 9 14C6.23958 14 4 11.7604 4 9C4 6.23958 6.23958 4 9 4ZM9 6C7.34375 6 6 7.34375 6 9C6 10.6563 7.34375 12 9 12C10.6563 12 12 10.6563 12 9C12 7.34375 10.6563 6 9 6Z" fill="currentColor"></path>
-                            </svg>
-                          </a> 
-                        </li>
-                        <li>
-                          <a href="">
-                            <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M0.864584 0L7.73438 9.81771L0.734375 18H3.38021L8.92188 11.5104L13.4635 18H19.3698L12.1719 7.69792L18.7448 0H16.1406L10.9948 6.01042L6.79688 0H0.864584Z" fill="currentColor"></path>
-                            </svg>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="">
-                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M19.5833 2.1875C19.3542 1.32813 18.6719 0.645833 17.8125 0.416667C16.2552 0 10 0 10 0C10 0 3.74479 0 2.1875 0.416667C1.32813 0.645833 0.645833 1.32813 0.416667 2.1875C0 3.74479 0 8 0 8C0 8 0 12.2552 0.416667 13.8125C0.645833 14.6719 1.32813 15.3542 2.1875 15.5833C3.74479 16 10 16 10 16C10 16 16.2552 16 17.8125 15.5833C18.6771 15.3542 19.3542 14.6719 19.5833 13.8125C20 12.2552 20 8 20 8C20 8 20 3.74479 19.5833 2.1875ZM8 11.4635V4.53646L14 8L8 11.4635Z" fill="currentColor"></path>
-                            </svg>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M10 0C4.47917 0 0 4.47917 0 10C0 15.0104 3.69271 19.151 8.50521 19.875V12.651H6.03125V10.0208H8.50521V8.27083C8.50521 5.375 9.91667 4.10417 12.3229 4.10417C13.474 4.10417 14.0833 4.1875 14.375 4.22917V6.52083H12.7344C11.7083 6.52083 11.3542 7.48958 11.3542 8.58333V10.0208H14.349L13.9427 12.651H11.3542V19.8958C16.2344 19.2344 20 15.0625 20 10C20 4.47917 15.5208 0 10 0Z" fill="currentColor"></path>
-                            </svg>
-                          </a>
-                        </li>
+                  <li>
+                    <a href="" aria-label="Follow us on LinkedIn">
+                      <span class="screen-only">linkedin</span>
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M5 0C2.23958 0 0 2.23958 0 5V13C0 15.7604 2.23958 18 5 18H13C15.7604 18 18 15.7604 18 13V5C18 2.23958 15.7604 0 13 0H5ZM15 2C15.5521 2 16 2.44792 16 3C16 3.55208 15.5521 4 15 4C14.4479 4 14 3.55208 14 3C14 2.44792 14.4479 2 15 2ZM9 4C11.7604 4 14 6.23958 14 9C14 11.7604 11.7604 14 9 14C6.23958 14 4 11.7604 4 9C4 6.23958 6.23958 4 9 4ZM9 6C7.34375 6 6 7.34375 6 9C6 10.6563 7.34375 12 9 12C10.6563 12 12 10.6563 12 9C12 7.34375 10.6563 6 9 6Z" fill="currentColor"></path>
+                      </svg>
+                    </a> 
+                  </li>
+                  <li>
+                    <a href="" aria-label="Follow us on Twitter">
+                      <span class="screen-only">twitter</span>
+                      <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M0.864584 0L7.73438 9.81771L0.734375 18H3.38021L8.92188 11.5104L13.4635 18H19.3698L12.1719 7.69792L18.7448 0H16.1406L10.9948 6.01042L6.79688 0H0.864584Z" fill="currentColor"></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" aria-label="Follow us on Youtube">
+                      <span class="screen-only">youtube</span>
+                      <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M19.5833 2.1875C19.3542 1.32813 18.6719 0.645833 17.8125 0.416667C16.2552 0 10 0 10 0C10 0 3.74479 0 2.1875 0.416667C1.32813 0.645833 0.645833 1.32813 0.416667 2.1875C0 3.74479 0 8 0 8C0 8 0 12.2552 0.416667 13.8125C0.645833 14.6719 1.32813 15.3542 2.1875 15.5833C3.74479 16 10 16 10 16C10 16 16.2552 16 17.8125 15.5833C18.6771 15.3542 19.3542 14.6719 19.5833 13.8125C20 12.2552 20 8 20 8C20 8 20 3.74479 19.5833 2.1875ZM8 11.4635V4.53646L14 8L8 11.4635Z" fill="currentColor"></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" aria-label="Follow us on Facebook">
+                      <span class="screen-only">facebook</span>
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M10 0C4.47917 0 0 4.47917 0 10C0 15.0104 3.69271 19.151 8.50521 19.875V12.651H6.03125V10.0208H8.50521V8.27083C8.50521 5.375 9.91667 4.10417 12.3229 4.10417C13.474 4.10417 14.0833 4.1875 14.375 4.22917V6.52083H12.7344C11.7083 6.52083 11.3542 7.48958 11.3542 8.58333V10.0208H14.349L13.9427 12.651H11.3542V19.8958C16.2344 19.2344 20 15.0625 20 10C20 4.47917 15.5208 0 10 0Z" fill="currentColor"></path>
+                      </svg>
+                    </a>
+                  </li>
                 </ul>
               </div>
-            </div>
+            </nav>
           </div>
           
       
