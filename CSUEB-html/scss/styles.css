@@ -1952,29 +1952,15 @@ section.bg-white.section-with-padding + section.bg-white {
 @media (min-width: 768px) {
   .bright-future-swiper .slide-card.purple-hover:hover .overlay {
     border-color: var(--purple);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), linear-gradient(357deg, rgba(122, 35, 106, 0.8), rgba(122, 35, 106, 0.8));
-    color: #fff;
+    background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), linear-gradient(357deg, var(--purple-80, rgba(122, 35, 106, 0.8)) 0%, var(--purple-80, rgba(122, 35, 106, 0.8)) 100%);
     transition: all 0.4s ease-in-out;
-  }
-  .bright-future-swiper .slide-card.purple-hover:hover .overlay .play-btn {
-    background: #fff;
-  }
-  .bright-future-swiper .slide-card.purple-hover:hover .overlay .play-btn svg * {
-    color: var(--black);
   }
 }
 @media (max-width: 767.98px) {
   .bright-future-swiper .slide-card.purple-hover .overlay {
     border-color: var(--purple);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), linear-gradient(357deg, rgba(122, 35, 106, 0.8), rgba(122, 35, 106, 0.8));
-    color: #fff;
+    background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), linear-gradient(357deg, var(--purple-80, rgba(122, 35, 106, 0.8)) 0%, var(--purple-80, rgba(122, 35, 106, 0.8)) 100%);
     transition: all 0.4s ease-in-out;
-  }
-  .bright-future-swiper .slide-card.purple-hover .overlay .play-btn {
-    background: #fff;
-  }
-  .bright-future-swiper .slide-card.purple-hover .overlay .play-btn svg * {
-    color: var(--black);
   }
 }
 @media (min-width: 768px) {
