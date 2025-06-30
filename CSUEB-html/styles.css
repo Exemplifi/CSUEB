@@ -553,7 +553,7 @@ section.bg-white.section-with-padding + section.bg-white {
   }
 }
 .breadcrumb .breadcrumb-item {
-  color: rgba(0, 0, 0, 0.4);
+  color: #747474;
 }
 .breadcrumb .breadcrumb-item a {
   color: rgba(0, 0, 0, 0.4);
@@ -1932,14 +1932,13 @@ section.bg-white.section-with-padding + section.bg-white {
 @media (min-width: 768px) {
   .bright-future-swiper .slide-card.purple-hover:hover .overlay {
     border-color: var(--purple);
-    background: rgba(78, 27, 69, 0.99);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%), linear-gradient(0deg, #7A236A 0%, #7A236A 100%);
     transition: all 0.4s ease-in-out;
   }
 }
 @media (max-width: 767.98px) {
   .bright-future-swiper .slide-card.purple-hover .overlay {
     border-color: var(--purple);
-    background: rgba(78, 27, 69, 0.99);
     transition: all 0.4s ease-in-out;
   }
 }
