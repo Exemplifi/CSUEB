@@ -1888,7 +1888,6 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 .bright-future-swiper .slide-card.slide-card .slide-text .h3 {
   font-family: var(--body-font-family);
-  text-shadow: 2px 2px 2px #000;
 }
 .bright-future-swiper .slide-card.slide-card .slide-text p {
   max-width: 9.375rem;
@@ -1933,14 +1932,14 @@ section.bg-white.section-with-padding + section.bg-white {
 @media (min-width: 768px) {
   .bright-future-swiper .slide-card.purple-hover:hover .overlay {
     border-color: var(--purple);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%), linear-gradient(357deg, rgba(122, 35, 106, 0.9) 0%, rgba(122, 35, 106, 0.9) 100%);
+    background: rgba(78, 27, 69, 0.99);
     transition: all 0.4s ease-in-out;
   }
 }
 @media (max-width: 767.98px) {
   .bright-future-swiper .slide-card.purple-hover .overlay {
     border-color: var(--purple);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%), linear-gradient(357deg, rgba(122, 35, 106, 0.9) 0%, rgba(122, 35, 106, 0.9) 100%);
+    background: rgba(78, 27, 69, 0.99);
     transition: all 0.4s ease-in-out;
   }
 }
