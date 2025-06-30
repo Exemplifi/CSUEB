@@ -1916,7 +1916,6 @@ section.bg-white.section-with-padding + section.bg-white {
   border: 12px solid transparent;
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0);
   opacity: 1;
   transition: all 0.4s ease-in-out;
 }
