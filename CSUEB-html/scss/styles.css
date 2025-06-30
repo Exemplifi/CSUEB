@@ -1956,6 +1956,12 @@ section.bg-white.section-with-padding + section.bg-white {
     color: #fff;
     transition: all 0.4s ease-in-out;
   }
+  .bright-future-swiper .slide-card.purple-hover:hover .overlay .play-btn {
+    background: #fff;
+  }
+  .bright-future-swiper .slide-card.purple-hover:hover .overlay .play-btn svg * {
+    color: var(--black);
+  }
 }
 @media (max-width: 767.98px) {
   .bright-future-swiper .slide-card.purple-hover .overlay {
@@ -1963,6 +1969,12 @@ section.bg-white.section-with-padding + section.bg-white {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), linear-gradient(357deg, rgba(122, 35, 106, 0.8), rgba(122, 35, 106, 0.8));
     color: #fff;
     transition: all 0.4s ease-in-out;
+  }
+  .bright-future-swiper .slide-card.purple-hover .overlay .play-btn {
+    background: #fff;
+  }
+  .bright-future-swiper .slide-card.purple-hover .overlay .play-btn svg * {
+    color: var(--black);
   }
 }
 @media (min-width: 768px) {
