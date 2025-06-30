@@ -65,7 +65,7 @@
         border: 12px solid transparent;
         position: absolute;
         inset: 0;
-        // background: rgba(0, 0, 0, 0.0);
+        background: rgba(0, 0, 0, 0.0);
         opacity: 1;
         transition: all 0.4s ease-in-out;
         .play-btn {
@@ -108,11 +108,12 @@
         &:hover  {
           .overlay {
             border-color: var(--purple);
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), linear-gradient(0deg, #7A236A 0%, #7A236A 100%);
-            
+            // background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), linear-gradient(357deg, var(--purple-80, #7a236acc) 0%, var(--purple-80, #7a236acc) 100%); 
             transition: all 0.4s ease-in-out;
+            background-color: #000;
           }
         }
+
       }
       @include media-breakpoint-down(md) {
         .overlay {
