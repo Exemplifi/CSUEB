@@ -5,7 +5,6 @@
 
 
 // DOM Ready
-
 document.addEventListener("DOMContentLoaded", () => {
   initTestimonialSlider();
   initHeader();
@@ -179,7 +178,66 @@ function initMainImgSlider() {
   });
 }
 
+
+
+// Tabbing loops inside sidebar
+
+// ✅ Shift+Tab loops backward
+
+// ✅ Escape closes sidebar and returns focus to trigger button
+
+// ✅ Focus doesn’t leak outside
 // Header Menu & Scroll Effects
+function trapFocus(container) {
+  const focusableSelectors = [
+    'a[href]',
+    'button:not([disabled])',
+    'textarea:not([disabled])',
+    'input:not([disabled])',
+    'select:not([disabled])',
+    '[tabindex]:not([tabindex="-1"])'
+  ];
+
+  let focusableElements = Array.from(container.querySelectorAll(focusableSelectors.join(', ')))
+    .filter(el => el.offsetParent !== null); // filter visible elements
+
+  const firstElement = focusableElements[0];
+  const lastElement = focusableElements[focusableElements.length - 1];
+
+  function handleKeyDown(e) {
+    if (e.key === 'Tab') {
+      if (focusableElements.length === 0) return;
+
+      if (e.shiftKey) {
+        // Shift + Tab
+        if (document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        }
+      } else {
+        // Tab
+        if (document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
+      }
+    }
+
+    if (e.key === 'Escape') {
+      closeSidebar();
+    }
+  }
+
+  container.addEventListener('keydown', handleKeyDown);
+
+  // Save a cleanup function to remove this trap when closing
+  container._removeFocusTrap = () => {
+    container.removeEventListener('keydown', handleKeyDown);
+  };
+}
+
+
+
 function initHeader() {
   const menuBtn = document.querySelector(".menu-btn");
   const menuBtnMobile = document.getElementById("menuToggleMobile");
@@ -191,20 +249,80 @@ function initHeader() {
   const header = document.querySelector(".main-header");
   let lastScrollTop = 0;
 
+  function trapFocus(container) {
+    const focusableSelectors = [
+      'a[href]',
+      'button:not([disabled])',
+      'textarea:not([disabled])',
+      'input:not([disabled])',
+      'select:not([disabled])',
+      '[tabindex]:not([tabindex="-1"])'
+    ];
+
+    let focusableElements = Array.from(container.querySelectorAll(focusableSelectors.join(', ')))
+      .filter(el => el.offsetParent !== null); // only visible ones
+
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    function handleKeyDown(e) {
+      if (e.key === 'Tab') {
+        if (focusableElements.length === 0) return;
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
+      }
+    }
+
+    container.addEventListener('keydown', handleKeyDown);
+    container._removeFocusTrap = () => container.removeEventListener('keydown', handleKeyDown);
+  }
+
   function openSidebar() {
     sidebar.classList.add("active");
     overlay.classList.add("show");
     body.classList.add("sidebar-open", "no-scroll");
+
+    menuBtn?.setAttribute("aria-expanded", "true");
+    menuBtnMobile?.setAttribute("aria-expanded", "true");
+
+    trapFocus(sidebar);
+
+    const firstFocusable = sidebar.querySelector('a, button, input, [tabindex]:not([tabindex="-1"])');
+    firstFocusable?.focus();
   }
 
   function closeSidebar() {
     sidebar.classList.remove("active");
     overlay.classList.remove("show");
     body.classList.remove("sidebar-open", "no-scroll");
+
+    menuBtn?.setAttribute("aria-expanded", "false");
+    menuBtnMobile?.setAttribute("aria-expanded", "false");
+
+    sidebar._removeFocusTrap?.();
+
+    menuBtn?.focus();
   }
 
   [menuBtn, menuBtnMobile].forEach(btn => btn?.addEventListener("click", openSidebar));
   [overlay, closeBtn, closeBtnMobile].forEach(el => el?.addEventListener("click", closeSidebar));
+
+  // Global ESC listener
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && sidebar.classList.contains("active")) {
+      closeSidebar();
+    }
+  });
 
   window.addEventListener("scroll", () => {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
@@ -213,6 +331,7 @@ function initHeader() {
     lastScrollTop = Math.max(scrollTop, 0);
   });
 }
+
 
 
 const dropdownBtn = document.querySelector('#dropdownMenuButton1');
