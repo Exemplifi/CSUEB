@@ -3660,6 +3660,7 @@ section.bg-white.section-with-padding + section.bg-white {
   z-index: 4;
 }
 .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .button-grp {
+  background: rgba(0, 0, 0, 0.0392156863);
   margin-top: 0.75rem;
 }
 @media (min-width: 768px) {
@@ -4216,6 +4217,7 @@ section.bg-white.section-with-padding + section.bg-white {
   left: auto;
   right: auto;
   bottom: 0.5rem;
+  background: rgba(0, 0, 0, 0.0392156863);
 }
 @media (max-width: 767.98px) {
   .card-color-hover .slide-text {
@@ -4717,6 +4719,7 @@ section.bg-white.section-with-padding + section.bg-white {
 .campus-news .news-card .overlay .news-content {
   position: relative;
   z-index: 4;
+  background: rgba(0, 0, 0, 0.0392156863);
 }
 @media (min-width: 1400px) {
   .campus-news .news-card .overlay .news-content {

@@ -440,6 +440,7 @@
         z-index: 4;
 
         .button-grp{
+          background: #0000000a;
           margin-top:  rem.convert(12px);
           @include media-breakpoint-up(md) {
             margin-top:  rem.convert(24px);
@@ -1021,6 +1022,7 @@
     left: auto;
     right: auto;
     bottom: 0.5rem;
+    background: #0000000a;
     // top: 50%;
     // transform: translateY(-50%);
     @include media-breakpoint-down(md) {
