@@ -24,7 +24,7 @@
       font-size: rem.convert(14px);
       line-height: 1.75; 
       display: inline-block;
-      background: #0000000a;
+      background: rgb(0 0 0 / 0%);
       @include media-breakpoint-down(md) {
         padding: 0.5rem 1rem;
       }
