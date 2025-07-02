@@ -1949,6 +1949,7 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 .bright-future-swiper .slide-card.slide-card:hover .slide-text {
   opacity: 1;
+  background: rgba(0, 0, 0, 0);
 }
 @media (min-width: 768px) {
   .bright-future-swiper .slide-card.purple-hover:hover .overlay {
