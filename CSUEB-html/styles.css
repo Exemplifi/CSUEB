@@ -1880,7 +1880,7 @@ section.bg-white.section-with-padding + section.bg-white {
   left: auto;
   right: auto;
   bottom: 20%;
-  background: #000;
+  background: rgba(0, 0, 0, 0.0392156863);
 }
 @media (max-width: 767.98px) {
   .bright-future-swiper .slide-card.slide-card .slide-text {
