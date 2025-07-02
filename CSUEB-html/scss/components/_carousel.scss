@@ -50,6 +50,7 @@
         left: auto;
         right: auto;
         bottom: 20%;
+        background: #000;
         @include media-breakpoint-down(md) {
           opacity: 1;
         }

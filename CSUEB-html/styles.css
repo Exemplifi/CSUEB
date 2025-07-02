@@ -1880,6 +1880,7 @@ section.bg-white.section-with-padding + section.bg-white {
   left: auto;
   right: auto;
   bottom: 20%;
+  background: #000;
 }
 @media (max-width: 767.98px) {
   .bright-future-swiper .slide-card.slide-card .slide-text {
@@ -3700,7 +3701,7 @@ section.bg-white.section-with-padding + section.bg-white {
 @media (min-width: 768px) {
   .img-verlap-link-sec .img-verlap-link-card:hover.purple-hover:hover .overlay {
     border-color: var(--purple);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), linear-gradient(357deg, rgba(122, 35, 106, 0.9), rgba(122, 35, 106, 0.9));
+    background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), var(--purple-80, rgba(122, 35, 106, 0.8));
     transition: all 0.4s ease-in-out;
   }
 }
@@ -3743,10 +3744,6 @@ section.bg-white.section-with-padding + section.bg-white {
   font-style: normal;
   font-weight: 600;
   line-height: 1.2;
-}
-
-.slide-text, .slide-text .title {
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .full-img-text-sec .content-section {
