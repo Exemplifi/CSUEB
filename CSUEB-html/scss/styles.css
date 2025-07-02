@@ -1664,7 +1664,7 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 
 .menu-search .btn-search .search__btn {
-  background: transparent;
+  background: rgba(0, 0, 0, 0.0392156863);
   transition: all 0.3s ease-in-out;
 }
 .menu-search .btn-search .search__btn:hover {
