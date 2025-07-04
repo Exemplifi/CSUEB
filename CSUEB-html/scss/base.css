@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  --body-font-family: Montserrat, sans-serif;
+  --heading-font-family: Roboto Serif, serif;
+  --heading-secondary-font-family: Montserrat, sans-serif;
+  --body-text-color: #000;
+  --link-color: #000;
+  --black: #000;
+  --white: #ffffff;
+  --red: #D50032;
+  --dark-red: #BC0829;
+  --gold: #FDC25A;
+  --light-gray: #F4F4F4;
+  --grey-700: #CDCDCD;
+  --grey-800: #E5E5E5;
+  --dark-grey: #313536;
+  --purple: #7A236A;
+  --teal: #00A0AD;
+  --danger: #D50032;
+  --success: #16A34A;
+  --maroon: #4E080C;
+  --size-0: 0;
+  --size-8: 0.5rem;
+  --size-16: 1rem;
+  --size-24: 1.5rem;
+  --size-32: 2rem;
+  --size-40: 2.5rem;
+  --size-48: 3rem;
+  --size-56: 3.5rem;
+  --size-64: 4rem;
+  --size-72: 4.5rem;
+  --size-80: 5rem;
+  --size-88: 5.5rem;
+  --size-96: 6rem;
+  --size-104: 6.5rem;
+  --size-112: 7rem;
+  --size-120: 7.5rem;
+  --size-128: 8rem;
+  --size-136: 8.5rem;
+  --size-144: 9rem;
+  --size-152: 9.5rem;
+  --size-160: 10rem;
+  --fz-0: 0;
+  --fz-12: rem-calc(12px);
+  --fz-14: rem-calc(14px);
+  --fz-16: 1rem;
+  --fz-18: rem-calc(18px);
+  --fz-20: rem-calc(20px);
+  --fz-22: rem-calc(22px);
+  --fz-24: 1.5rem;
+  --fz-32: 2rem;
+  --fz-40: 2.5rem;
+  --fz-48: 3rem;
+  --fz-56: 3.5rem;
+  --fz-64: 4rem;
+  --fz-72: 4.5rem;
+  --fz-80: 5rem;
+  --fz-88: 5.5rem;
+  --fz-96: 6rem;
+  --fz-104: 6.5rem;
+  --fz-110: rem-calc(110px);
+  --fz-112: 7rem;
+  --animate-duration: 1.2s;
+  --animate-easing: cubic-bezier(0.4, 0, 0.2, 1);
+  --animate-distance: 100px;
+}
+
+p:has(.asset) {
+  margin-bottom: 0 !important;
+}
+p:last-of-type {
+  margin-bottom: 0;
+}/*# sourceMappingURL=base.css.map */
