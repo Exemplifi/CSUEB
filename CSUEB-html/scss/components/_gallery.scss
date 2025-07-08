@@ -68,17 +68,27 @@
 
     &-item {
       // padding-bottom:4rem;
+      text-align: center;
       position: relative;
-      &::after {
-        content: "";
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 63%, rgb(0 0 0 / 50%) 88.29%
-        88.29%
-        );
-        position: absolute;
-        inset: 0;
-        z-index: 2;
-        width: 100%;
-        height: 100%;
+      .modal-img-container {  
+        position: relative;
+        width: auto;
+        margin: 0 auto;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        &::after {
+          content: "";
+          background: linear-gradient(180deg, rgba(0, 0, 0, 0) 63%, rgb(0 0 0 / 50%) 88.29%
+          88.29%
+          );
+          position: absolute;
+          inset: 0;
+          z-index: 2;
+          width: 100%;
+          height: 100%;
+        }
       }
       .carousel-caption {
         right: 0;
@@ -87,14 +97,14 @@
         padding-bottom: 1rem;
         background-color: var(--lightbox);
         color: var(--white) !important;
-        text-align: left;
+        text-align: center;
         z-index: 3;
         padding-left: 1rem;
       }
 
       img {
         height: 85vh;
-        object-fit: cover;
+        object-fit: contain;
         @include media-breakpoint-down(md) {
           height: auto;
         }

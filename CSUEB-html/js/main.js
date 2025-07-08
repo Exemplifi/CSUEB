@@ -397,8 +397,10 @@ function initGalleryLightbox() {
         const imgSrc = link.getAttribute("href");
         return `
           <div class="carousel-item${isActive}">
-            <img class="d-block img-fluid w-100" src="${imgSrc}" alt="${imgAlt}">
-            ${createCaption(imgAlt)}
+            <div class="modal-img-container">
+             <img class="d-block img-fluid w-100" src="${imgSrc}" alt="${imgAlt}">
+             ${createCaption(imgAlt)}
+            </div>
           </div>
         `;
       }

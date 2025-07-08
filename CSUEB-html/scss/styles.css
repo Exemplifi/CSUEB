@@ -2547,6 +2547,7 @@ section.bg-white.section-with-padding + section.bg-white {
 
 .whats-next-section {
   position: relative;
+  overflow: hidden;
 }
 .whats-next-section::after {
   content: "";
@@ -4336,22 +4337,17 @@ section.bg-white.section-with-padding + section.bg-white {
 .card-color-hover:hover .slide-text {
   opacity: 1;
 }
-.card-color-hover:hover .overlay {
-  box-shadow: 0px 12px 28px 0px rgba(0, 0, 0, 0.25);
-}
-.card-color-hover:hover::after {
-  content: "";
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 24%, rgba(0, 0, 0, 0) 68.29%);
+@media (min-width: 768px) {
+  .card-color-hover:hover::after {
+    content: "";
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 24%, rgba(0, 0, 0, 0) 68.29%);
+  }
+  .card-color-hover:hover .overlay {
+    box-shadow: 0px 12px 28px 0px rgba(0, 0, 0, 0.25);
+  }
 }
 @media (min-width: 768px) {
   .card-color-hover.purple-hover:hover .overlay {
-    border-color: var(--purple);
-    background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), var(--purple-80, rgba(122, 35, 106, 0.8));
-    transition: all 0.4s ease-in-out;
-  }
-}
-@media (max-width: 767.98px) {
-  .card-color-hover.purple-hover .overlay {
     border-color: var(--purple);
     background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), var(--purple-80, rgba(122, 35, 106, 0.8));
     transition: all 0.4s ease-in-out;
@@ -4364,22 +4360,8 @@ section.bg-white.section-with-padding + section.bg-white {
     transition: all 0.4s ease-in-out;
   }
 }
-@media (max-width: 767.98px) {
-  .card-color-hover.teal-hover .overlay {
-    border-color: var(--teal);
-    background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), var(--teal-80, rgba(0, 160, 173, 0.8));
-    transition: all 0.4s ease-in-out;
-  }
-}
 @media (min-width: 768px) {
   .card-color-hover.gold-hover:hover .overlay {
-    border-color: var(--gold);
-    background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), var(--orange-80, rgba(246, 144, 30, 0.8));
-    transition: background 0.4s, all 0.4s ease-in-out;
-  }
-}
-@media (max-width: 767.98px) {
-  .card-color-hover.gold-hover .overlay {
     border-color: var(--gold);
     background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), var(--orange-80, rgba(246, 144, 30, 0.8));
     transition: background 0.4s, all 0.4s ease-in-out;
@@ -5107,14 +5089,6 @@ section.bg-white.section-with-padding + section.bg-white {
   position: relative;
   z-index: 2;
 }
-@media (max-width: 767.98px) {
-  .flip-tiles-section .flip-tiles-grid .card-color-hover .overlay {
-    opacity: 0;
-  }
-  .flip-tiles-section .flip-tiles-grid .card-color-hover:hover .overlay {
-    opacity: 1;
-  }
-}
 
 @media (max-width: 767.98px) {
   .tabbed-section .container-tab {
@@ -5195,7 +5169,6 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 @media (max-width: 767.98px) {
   .custom-table-section .custom-table thead th {
-    white-space: nowrap;
     text-transform: capitalize;
     padding-right: 1.5rem;
     font-size: 0.875rem;
@@ -5261,9 +5234,19 @@ section.bg-white.section-with-padding + section.bg-white {
   }
 }
 .lightbox-modal .carousel-item {
+  text-align: center;
   position: relative;
 }
-.lightbox-modal .carousel-item::after {
+.lightbox-modal .carousel-item .modal-img-container {
+  position: relative;
+  width: auto;
+  margin: 0 auto;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.lightbox-modal .carousel-item .modal-img-container::after {
   content: "";
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 63%, rgba(0, 0, 0, 0.5) 88.29% 88.29%);
   position: absolute;
@@ -5279,14 +5262,14 @@ section.bg-white.section-with-padding + section.bg-white {
   padding-bottom: 1rem;
   background-color: var(--lightbox);
   color: var(--white) !important;
-  text-align: left;
+  text-align: center;
   z-index: 3;
   padding-left: 1rem;
 }
 .lightbox-modal .carousel-item img {
   height: 85vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 @media (max-width: 767.98px) {
   .lightbox-modal .carousel-item img {

@@ -126,6 +126,7 @@
 
 .whats-next-section {
   position: relative;
+  overflow: hidden;
   &::after {
     content: "";
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.90) 0%, rgba(0, 0, 0, 0.90) 100%);

@@ -16,7 +16,7 @@
         width: 10%;
         font-weight: 700;
         @include media-breakpoint-down(md) {
-          white-space: nowrap;
+          // white-space: nowrap;
           text-transform: capitalize;
           padding-right: 1.5rem;
            font-size: 0.875rem;
