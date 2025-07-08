@@ -2388,6 +2388,27 @@ section.bg-white.section-with-padding + section.bg-white {
   color: var(--purple);
 }
 
+.text-light-purple {
+  color: #DAA4D0;
+}
+.text-light-purple * {
+  color: #DAA4D0;
+}
+
+.text-light-pink {
+  color: #FF85A3;
+}
+.text-light-pink * {
+  color: #FF85A3;
+}
+
+.text-light-teal {
+  color: #8BF2F9;
+}
+.text-light-teal * {
+  color: #8BF2F9;
+}
+
 .text-teal {
   color: var(--teal);
 }
@@ -3004,8 +3025,8 @@ section.bg-white.section-with-padding + section.bg-white {
   transition: all 0.4s ease-in-out;
 }
 .contact-us-sec .social-icon .social-icons a svg {
-  width: 1.125rem;
-  height: 1.125rem;
+  width: 1.5rem;
+  height: 1.5rem;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -5105,7 +5126,7 @@ section.bg-white.section-with-padding + section.bg-white {
 .tabbed-section .nav-tabs .nav-link {
   border: none;
   border-radius: 0;
-  color: #505050;
+  color: #4B4B4B;
   font-weight: 700;
   padding: 0.72rem 1.5rem;
   font-family: var(--body-font-family);

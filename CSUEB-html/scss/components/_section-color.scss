@@ -187,6 +187,25 @@
         color: var(--purple); 
     }
 }
+.text-light-purple {
+    color: #DAA4D0;
+    * {
+        color: #DAA4D0; 
+    }
+}
+
+.text-light-pink {
+    color: #FF85A3;
+    * {
+        color: #FF85A3; 
+    }
+}
+.text-light-teal {
+    color:  #8BF2F9;
+    * {
+        color: #8BF2F9;     
+    }
+}
 
 .text-teal {
     color: var(--teal);
