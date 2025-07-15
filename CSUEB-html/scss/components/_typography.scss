@@ -40,14 +40,14 @@ h1, .h1 {
   font-style: normal;
   font-weight: $semibold;
   line-height: 1; /* 6rem */
-  letter-spacing: -0.3rem;
+  // letter-spacing: -0.3rem;
   @include media-breakpoint-down(xl) {
     font-size:4rem;
   }
   @include media-breakpoint-down(lg) {
     font-size:3rem;
     line-height: 1.10; 
-    letter-spacing: -0.09rem;
+    // letter-spacing: -0.09rem;
   }
 }
 
@@ -58,12 +58,12 @@ h2, .h2 {
   font-style: normal;
   font-weight: $semibold;
   line-height:1.10; /* 3.3rem */
-  letter-spacing: -0.09rem;
+  // letter-spacing: -0.09rem;
  
   @include media-breakpoint-down(lg) {
     font-size: rem.convert(34px);
     line-height: 1.2; /* 2.55rem */
-    letter-spacing: -0.06375rem;
+    // letter-spacing: -0.06375rem;
   }
 }
 
