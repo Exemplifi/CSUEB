@@ -1034,9 +1034,11 @@
       font-family: var(--body-font-family);
       // margin-bottom: rem.convert(12px);
       margin-bottom: 0;
+      background-color: rgba(0, 0, 0, 0.0392156863);
     }
     p {
       max-width: rem.convert(280px);
+      background-color: rgba(0, 0, 0, 0.0392156863);
     }
   }
   &::after {

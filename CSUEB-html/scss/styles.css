@@ -4308,9 +4308,11 @@ section.bg-white.section-with-padding + section.bg-white {
 .card-color-hover .slide-text .title {
   font-family: var(--body-font-family);
   margin-bottom: 0;
+  background-color: rgba(0, 0, 0, 0.0392156863);
 }
 .card-color-hover .slide-text p {
   max-width: 17.5rem;
+  background-color: rgba(0, 0, 0, 0.0392156863);
 }
 .card-color-hover::after {
   content: "";
