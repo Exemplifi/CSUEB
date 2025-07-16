@@ -69,13 +69,14 @@
     @include media-breakpoint-down(md) {
       gap: rem.convert(20px);
     }
+    
     li {
       display: flex;
       align-items: center;
       font-size: 2.5rem;
       font-weight: 700;
     
-      .title-big {
+      .content-big {
         display: flex;
         flex-direction: row;
         gap: rem.convert(32px);

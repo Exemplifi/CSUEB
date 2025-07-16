@@ -2514,31 +2514,31 @@ section.bg-white.section-with-padding + section.bg-white {
   font-size: 2.5rem;
   font-weight: 700;
 }
-.key-feature-sec .oasis-list li .title-big {
+.key-feature-sec .oasis-list li .content-big {
   display: flex;
   flex-direction: row;
   gap: 2rem;
   align-items: center;
 }
 @media (max-width: 767.98px) {
-  .key-feature-sec .oasis-list li .title-big {
+  .key-feature-sec .oasis-list li .content-big {
     gap: 1rem;
   }
 }
-.key-feature-sec .oasis-list li .title-big h1 {
+.key-feature-sec .oasis-list li .content-big h1 {
   margin-bottom: 0;
 }
-.key-feature-sec .oasis-list li .title-big .icon {
+.key-feature-sec .oasis-list li .content-big .icon {
   width: 1.875rem;
   height: 1.875rem;
 }
 @media (max-width: 767.98px) {
-  .key-feature-sec .oasis-list li .title-big .icon {
+  .key-feature-sec .oasis-list li .content-big .icon {
     width: 1.625rem;
     height: 1.625rem;
   }
 }
-.key-feature-sec .oasis-list li .title-big .icon svg {
+.key-feature-sec .oasis-list li .content-big .icon svg {
   vertical-align: top;
 }
 .key-feature-sec .oasis-description {
