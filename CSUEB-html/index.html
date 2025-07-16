@@ -16,7 +16,7 @@
     <!-- Header -->
     <header class="main-header" role="banner">
       <div class="container d-flex justify-content-between align-items-center">
-        <a href="#" class="logo d-flex align-items-center" aria-label="Cal State East Bay Home" role="link">  
+        <a href="#" class="logo d-flex align-items-center" aria-label="Cal State East Bay Home" role="button">  
           <span class="screen-only" aria-label="Cal State East Bay">Cal State East Bay</span>
           <img src="./images/logo.svg" alt="Cal State East Bay" class="img-fluid" aria-hidden="true">
         </a>
@@ -53,7 +53,7 @@
             </div>
           </div>
     
-            <div class="dropdown">
+            <div class="dropdown" role="menu">
               <button class="dropdown-toggle btn btn-primary btn-dark" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Information for different user types" role="menuitem">
                 <span>INFO FOR
                   <svg class="arrow-icon-white ms-2" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -320,9 +320,9 @@
             <div class="tagline" tabindex="0">
                   <h1 class="text-white mb-0">An impact<br>tagline <span class="highlight">goes<br>here.</span></h1>
             </div>
-            <ul class="actions list-unstyled text-medium" role="list">
-              <li role="none">
-                <a href="#" class="text-decoration-none btn btn-secondary"  aria-label="Explore Our Programs" role="listitem">
+            <ul class="actions list-unstyled text-medium">
+              <li>
+                <a href="#" class="text-decoration-none btn btn-secondary"  aria-label="Explore Our Programs" role="button">
                   <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                     <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"/>
                   </svg>
@@ -330,8 +330,8 @@
                 </a>
               </li>
 
-              <li role="none">
-                <a href="#" class="text-decoration-none btn btn-secondary" aria-label="See Our Outcomes" role="listitem">
+              <li>
+                <a href="#" class="text-decoration-none btn btn-secondary" aria-label="See Our Outcomes" role="button">
                   <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                     <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"/>
                   </svg>
@@ -348,7 +348,7 @@
             <div class="swiper main-single-slider hero-slider">
               <div class="swiper-wrapper">
                 <div class="swiper-slide bg-transparent">
-                  <div class="img-wrapper" tabindex="0" role="img">
+                  <div class="img-wrapper" tabindex="0">
                     <img src="./images/hero-banner.png" alt="Campus" class="img-fluid w-100 h-100 object-fit-cover">
                   </div>  
                 </div>
@@ -402,14 +402,28 @@
         </div>
   
         <!-- Button Tags -->
-        <div class="d-flex flex-wrap justify-content-center button-listing" role="list">
-          <a href="#" class="btn btn-primary" aria-label="Undergraduate page link" role="listitem">
-            <span>Undergraduate</span>
-          </a>
-          <a href="#" class="btn btn-primary" aria-label="Graduate page link" role="listitem"><span>Graduate</span></a>
-          <a href="#" class="btn btn-primary" aria-label="Continuing Education page link" role="listitem"><span>Continuing Education</span></a>
-          <a href="#" class="btn btn-primary" aria-label="Online page link" role="listitem"><span>Online</span></a>
-        </div>
+        <ul class="d-flex flex-wrap justify-content-center button-listing" role="list">
+          <li role="listitem">
+            <a href="/undergraduate" class="btn btn-primary" aria-label="Undergraduate page link">
+              <span>Undergraduate</span>
+            </a>
+          </li>
+          <li role="listitem">
+            <a href="/graduate" class="btn btn-primary" aria-label="Graduate page link">
+              <span>Graduate</span>
+            </a>
+          </li>
+          <li role="listitem">
+            <a href="/continuing-education" class="btn btn-primary" aria-label="Continuing Education page link">
+              <span>Continuing Education</span>
+            </a>
+          </li>
+          <li role="listitem">
+            <a href="/online" class="btn btn-primary" aria-label="Online page link">
+              <span>Online</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
     <!-- Text Only End -->
@@ -436,7 +450,7 @@
               </div>
             </div>
 
-            <ul class="actions list-unstyled text-medium d-grid gap-3" role="listlinks">
+            <ul class="actions list-unstyled text-medium d-grid gap-3" role="list">
               <li role="none">
                 <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-small" aria-label="Register for Classes" role="listitem">
                   <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
