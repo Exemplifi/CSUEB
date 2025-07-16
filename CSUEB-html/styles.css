@@ -3647,7 +3647,6 @@ section.bg-white.section-with-padding + section.bg-white {
   overflow: hidden;
   border-radius: 0;
   transition: all 0.4s ease;
-  cursor: pointer;
   position: relative;
   height: 100%;
 }
