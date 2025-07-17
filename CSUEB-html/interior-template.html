@@ -14,68 +14,39 @@
   <body>
     
 
-     <!-- Header -->
-     <header class="main-header" role="banner">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header -->
+    <header class="main-header" role="banner">
       <div class="container d-flex justify-content-between align-items-center">
-        <a href="" class="logo d-flex align-items-center" aria-label="Home">
-          <img src="./images/logo.svg" alt="Cal State East Bay">
+        <a href="#" class="logo d-flex align-items-center" aria-label="Cal State East Bay Home" role="button">  
+          <span class="screen-only" aria-label="Cal State East Bay">Cal State East Bay</span>
+          <img src="./images/logo.svg" alt="Cal State East Bay" class="img-fluid" aria-hidden="true">
         </a>
-        
+
         <div class="d-flex align-items-center gap-3">
-          <div class="header-links d-none d-lg-flex align-items-center gap-3">
-            <div class="d-flex menu-list-link">
-              <a href="#" class="text-white menu-link subtext">APPLY</a>
-              <a href="#" class="text-white menu-link subtext">REQUEST INFO</a>
-              <a href="#" class="text-white menu-link subtext">GIVE</a>
+          <nav class="header-links d-none d-lg-flex align-items-center gap-3" aria-label="Main navigation">
+            <div class="d-flex menu-list-link" role="menubar">
+              <a href="#" class="text-white menu-link subtext" aria-label="Apply menu" role="menuitem">APPLY</a>
+              <a href="#" class="text-white menu-link subtext" aria-label="Request Info menu" role="menuitem">REQUEST INFO</a>
+              <a href="#" class="text-white menu-link subtext" aria-label="Give menu"  role="menuitem">GIVE</a>
             </div>
-        
-            <div class="dropdown">
-              <button class="dropdown-toggle btn btn-primary btn-dark" data-bs-toggle="dropdown">
-                <span>INFO FOR
-                  <svg class="arrow-icon-white ms-2" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.92969 10.1772L6.42969 11.6772L12.5 17.7476L18.5703 11.6772L17.0703 10.1772L12.5 14.7476L7.92969 10.1772Z" fill="currentColor"></path>
-                  </svg>
-                </span>
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Current Students</a></li>
-                <li><a class="dropdown-item" href="#">Future Students</a></li>
-                <li><a class="dropdown-item" href="#">Alumni</a></li>
-              </ul>
-            </div>
-    
-            <button class="btn menu-btn btn btn-primary btn-hover-yellow" id="menuToggle">
-              <span class="">
-                MENU
-                <svg class="menu-icon ms-2" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M21 5.67724V7.67724H3V5.67724H21ZM21 11.6772V13.6772H3V11.6772H21ZM21 17.6772V19.6772H3V17.6772H21Z" fill="currentColor"></path>
-                </svg>
-              </span>
-            </button>
-          </div>
 
-        
-          <!-- Mobile Menu Button -->
-          <button class="btn mobile-menu-btn d-lg-none btn-primary btn-hover-yellow" id="menuToggleMobile">
-            <span>
-              <svg class="menu-icon " width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 5.67724V7.67724H3V5.67724H21ZM21 11.6772V13.6772H3V11.6772H21ZM21 17.6772V19.6772H3V17.6772H21Z" fill="currentColor"></path>
-              </svg>
-            </span>
-          </button>
-
-           <!-- search seection -->
-           <div class="menu-search">
+            <!-- search seection -->
+          <div class="menu-search">
             <div class="btn-search position-relative">
-              <button type="button" class="search__btn border-0">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <button type="button" class="search__btn border-0" aria-label="Search">
+                <span class="screen-only" aria-label="Search">Search</span>
+                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M15 2C18.8541 2 22 5.14585 22 9C22 12.8541 18.8541 16 15 16C13.252 16 11.655 15.348 10.4258 14.2812L10 14.707V16L4 22L2 20L8 14H9.29297L9.71875 13.5742C8.65198 12.345 8 10.748 8 9C8 5.14585 11.1459 2 15 2ZM15 4C12.2267 4 10 6.22673 10 9C10 11.7733 12.2267 14 15 14C17.7733 14 20 11.7733 20 9C20 6.22673 17.7733 4 15 4Z" fill="white"></path>
                 </svg>
               </button>
               <div class="header-search-dropdown d-none">
-                <form class="search-form d-flex align-items-center">
-                  <input type="text" class="form-control search-input" placeholder="Search...">
+                <form class="search-form d-flex align-items-center" role="search">
+                  <label for="site-search" class="screen-only" aria-label="Search the site">Search the site</label>
+                  <input type="text" class="form-control search-input" placeholder="Search..." aria-label="Search the site" name="search">
                   <button type="submit" class="btn btn-search-submit ms-2">
+                    <span class="screen-only" aria-label="Search">Search</span>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M15 2C18.8541 2 22 5.14585 22 9C22 12.8541 18.8541 16 15 16C13.252 16 11.655 15.348 10.4258 14.2812L10 14.707V16L4 22L2 20L8 14H9.29297L9.71875 13.5742C8.65198 12.345 8 10.748 8 9C8 5.14585 11.1459 2 15 2ZM15 4C12.2267 4 10 6.22673 10 9C10 11.7733 12.2267 14 15 14C17.7733 14 20 11.7733 20 9C20 6.22673 17.7733 4 15 4Z" fill="white"></path>
                     </svg>
@@ -84,6 +55,43 @@
               </div>
             </div>
           </div>
+    
+            <div class="dropdown" role="menu">
+              <button class="dropdown-toggle btn btn-primary btn-primary-yellow btn-hover-red" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Information for different user types" role="menuitem">
+                <span>INFO FOR
+                  <svg class="arrow-icon-white ms-2" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M7.92969 10.1772L6.42969 11.6772L12.5 17.7476L18.5703 11.6772L17.0703 10.1772L12.5 14.7476L7.92969 10.1772Z" fill="currentColor"/>
+                  </svg>
+                </span>
+              </button>
+              <ul class="dropdown-menu" role="menu" aria-label="Info for submenu">
+                <li><a class="dropdown-item" href="#" aria-label="Current Students" role="menuitem">Current Students</a></li>
+                <li><a class="dropdown-item" href="#" aria-label="Future Students" role="menuitem">Future Students</a></li>
+                <li><a class="dropdown-item" href="#" aria-label="Alumni" role="menuitem">Alumni</a></li>
+              </ul>
+            </div>
+    
+            <button class="btn menu-btn btn btn-primary btn-hover-yellow" id="menuToggle" aria-expanded="false" aria-controls="sidebarMenu" aria-label="Open main navigation menu">
+              <span class="">
+                MENU
+                <svg class="menu-icon ms-2" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M21 5.67724V7.67724H3V5.67724H21ZM21 11.6772V13.6772H3V11.6772H21ZM21 17.6772V19.6772H3V17.6772H21Z" fill="currentColor"/>
+                </svg> 
+              </span>
+            </button>
+          </nav>
+    
+          <!-- Mobile Menu Button -->
+          <button class="btn mobile-menu-btn d-lg-none btn-primary btn-hover-yellow" id="menuToggleMobile" aria-expanded="false" aria-controls="sidebarMenu" aria-label="Open main navigation menu">
+            <label for="menuToggleMobile" class="screen-only" aria-label="Menu">Menu</label>
+            <span>
+              <svg class="menu-icon" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M21 5.67724V7.67724H3V5.67724H21ZM21 11.6772V13.6772H3V11.6772H21ZM21 17.6772V19.6772H3V17.6772H21Z" fill="currentColor"/>
+              </svg>
+            </span>
+          </button>
+
+          
         </div>
       </div>
     </header>
@@ -101,10 +109,10 @@
               </span>
             </button>
           </div>
-          <div class="d-flex flex-wrap d-md-grid gap-2 gap-md-3 mb-4 mb-md-5">
-            <a href="" class="btn btn-primary-yellow" aria-label="Apply to Cal State East Bay"><span>APPLY</span></a>
-            <a href="" class="btn btn-primary-yellow" aria-label="Request information about Cal State East Bay"><span>REQUEST INFO</span></a>
-            <a href="" class="btn btn-primary-yellow" aria-label="Make a gift to Cal State East Bay"><span>MAKE A GIFT</span></a>
+          <div class="d-flex flex-wrap d-md-grid gap-2 gap-md-3 mb-4 mb-md-5" role="menubar" aria-label="Main navigation Sidebar">
+            <a href="" class="btn btn-primary-yellow" aria-label="Apply to Cal State East Bay" role="menuitem"><span>APPLY</span></a>
+            <a href="" class="btn btn-primary-yellow" aria-label="Request information about Cal State East Bay" role="menuitem"><span>REQUEST INFO</span></a>
+            <a href="" class="btn btn-primary-yellow" aria-label="Make a gift to Cal State East Bay" role="menuitem"><span>MAKE A GIFT</span></a>
           </div>
 
           <div class="mb-3">
@@ -117,9 +125,9 @@
                 </h2>
                 <div id="collapseinfo" class="accordion-collapse collapse" aria-labelledby="info-accordion" data-bs-parent="#accordionExample1">
                   <div class="accordion-body p-0 m-0">
-                    <ul class="list-unstyled sidebar-link-wrap">
-                      <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link" aria-label="Current Students">
+                    <ul class="list-unstyled sidebar-link-wrap" role="menubar">
+                      <li role="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link" aria-label="Current Students" role="menuitem">
                           <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
@@ -127,8 +135,8 @@
                         </a>
                       </li>
         
-                      <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link" aria-label="Future Students">
+                      <li role="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link" aria-label="Future Students" role="menuitem">
                           <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
@@ -136,17 +144,17 @@
                         </a>
                       </li>
         
-                      <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link" aria-label="Alumni">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
+                      <li role="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link" aria-label="Alumni" role="menuitem">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">  
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Alumni</span>
                         </a>
                       </li>
         
-                      <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link" aria-label="Counselors">
+                      <li role="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link" aria-label="Counselors" role="menuitem">
                           <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
@@ -154,8 +162,8 @@
                         </a>
                       </li>
         
-                      <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link" aria-label="Faculty and Staff">
+                      <li role="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link" aria-label="Faculty and Staff" role="menuitem">
                           <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
@@ -184,21 +192,12 @@
           </div>
 
           <div class="menu-search-accodian">
-            <div class="search-wrap"> 
-              <input type="text" class="form-control" placeholder="Search Cal State East Bay..." aria-label="Search Cal State East Bay website" name="search">
-              <div class="btn-search">
-                <button type="button" class="search__btn" aria-label="Search">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <path d="M15 2C18.8541 2 22 5.14585 22 9C22 12.8541 18.8541 16 15 16C13.252 16 11.655 15.348 10.4258 14.2812L10 14.707V16L4 22L2 20L8 14H9.29297L9.71875 13.5742C8.65198 12.345 8 10.748 8 9C8 5.14585 11.1459 2 15 2ZM15 4C12.2267 4 10 6.22673 10 9C10 11.7733 12.2267 14 15 14C17.7733 14 20 11.7733 20 9C20 6.22673 17.7733 4 15 4Z" fill="white"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
+            
   
             <ul class="accordion-menu list-unstyled" id="menuAccordion">
               <li class="accordion-item">
                 <h2 class="accordion-header">
-                  <button class="accordion-button collapsed h3" data-bs-toggle="collapse" data-bs-target="#section1" aria-expanded="false" aria-controls="section1">
+                  <button class="accordion-button collapsed h3" data-bs-toggle="collapse" data-bs-target="#section1" aria-expanded="false" aria-controls="section1" aria-label="Academics Accordion - click to expand">
                     Academics
                     <span class="accordion-icon">
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -211,7 +210,7 @@
                   <div class="accordion-body">
                     <ul class="list-unstyled menu-link-list">
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary" aria-label="Degrees and Programs">
+                        <a href="/degrees" class="text-decoration-none btn btn-secondary" aria-label="Degrees and Programs">
                           <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
@@ -220,7 +219,7 @@
                       </li>
         
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary" aria-label="Academic Affairs">
+                        <a href="/academic-affairs" class="text-decoration-none btn btn-secondary" aria-label="Academic Affairs">
                           <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
@@ -229,7 +228,7 @@
                       </li>
         
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary" aria-label="Academic Calendar">
+                        <a href="/academic-calendar" class="text-decoration-none btn btn-secondary" aria-label="Academic Calendar">
                           <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
@@ -238,7 +237,7 @@
                       </li>
         
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary" aria-label="Library">
+                        <a href="/library" class="text-decoration-none btn btn-secondary" aria-label="Library">
                           <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
@@ -247,25 +246,25 @@
                       </li>
         
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary" aria-label="University Catalog">
+                        <a href="/university-catalog" class="text-decoration-none btn btn-secondary" aria-label="University Catalog">
                           <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>University Catalog</span>
                         </a>
                       </li>
-
+  
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary" aria-label="Bookstore">
+                        <a href="/bookstore" class="text-decoration-none btn btn-secondary" aria-label="Bookstore">
                           <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Bookstore</span>
                         </a>
                       </li>
-
+  
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary" aria-label="Colleges and Departments">
+                        <a href="/colleges" class="text-decoration-none btn btn-secondary" aria-label="Colleges and Departments">
                           <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
@@ -278,7 +277,7 @@
               </li>
               <li class="accordion-item">
                 <h2 class="accordion-header">
-                  <button class="accordion-button collapsed h3" data-bs-toggle="collapse" data-bs-target="#section2" aria-expanded="false" aria-controls="section2">
+                  <button class="accordion-button collapsed h3" data-bs-toggle="collapse" data-bs-target="#section2" aria-expanded="false" aria-controls="section2" aria-label="Admissions and Aid - click to expand">  
                     Admissions and Aid
                     <span class="accordion-icon">
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">             
@@ -296,12 +295,12 @@
     
             <div class="quick-links">
               <ul class="list-unstyled star-links-black">
-                <li><a href="#" class="subtext" aria-label="MyCSUEB">MyCSUEB</a></li>
-                <li><a href="#" class="subtext" aria-label="Canvas">Canvas</a></li>
-                <li><a href="#" class="subtext" aria-label="Library">Library</a></li>
-                <li><a href="#" class="subtext" aria-label="Email">Email</a></li>
-                <li><a href="#" class="subtext" aria-label="MyCompass">MyCompass</a></li>
-                <li><a href="#" class="subtext" aria-label="Directory">Directory</a></li>
+                <li><a href="/myCSUEB" class="subtext" aria-label="MyCSUEB">MyCSUEB</a></li> 
+                <li><a href="/canvas" class="subtext" aria-label="Canvas">Canvas</a></li>
+                <li><a href="/Library" class="subtext" aria-label="Library">Library</a></li>
+                <li><a href="/email" class="subtext" aria-label="Email">Email</a></li>
+                <li><a href="/myCompass" class="subtext" aria-label="MyCompass">MyCompass</a></li>
+                <li><a href="/directory" class="subtext" aria-label="Directory">Directory</a></li>
               </ul>
             </div>
             
@@ -313,7 +312,8 @@
 
     <div class="overlay-header" id="overlay"></div>
 
-        
+
+    <main role="main" id="main-content">     
     <!-- Inner Hero Section Start -->
     <section class="inner-hero-section inner-hero-full-image">
       <div class="full-img-hero-wrap bg-transparent h-100">
@@ -1644,43 +1644,48 @@
     </section>
     <!-- Only Text - contact-us End -->
 
-    <!-- Footer Start -->
-    <footer class="footer bg-black text-white">
-      <div class="container">
+  </main>
 
+     <!-- Footer Start -->
+     <footer class="footer bg-black text-white" aria-label="Footer Section" role="contentinfo">
+      <div class="container">
         <div class="footer-lists">
           <div class="footer-top-sec row align-items-center">
             <div class="col-md-6">
-              <div class="footer-logo mb-3">
+              <div class="footer-logo mb-3" aria-label="Footer logo">
                 <img src="./images/logo-footer.svg" alt="Logo" class="img-fluid">
               </div>
             </div>
             <div class="col-md-6 d-none d-md-block">
-              <ul class="social-icons list-unstyled mb-0">
+              <ul class="social-icons list-unstyled mb-0" aria-label="Footer social icons">
                 <li>
-                  <a href="">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <a href="/linkedin" aria-label="Follow us on LinkedIn">
+                    <span class="screen-only">linkedin</span>
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <path d="M5 0C2.23958 0 0 2.23958 0 5V13C0 15.7604 2.23958 18 5 18H13C15.7604 18 18 15.7604 18 13V5C18 2.23958 15.7604 0 13 0H5ZM15 2C15.5521 2 16 2.44792 16 3C16 3.55208 15.5521 4 15 4C14.4479 4 14 3.55208 14 3C14 2.44792 14.4479 2 15 2ZM9 4C11.7604 4 14 6.23958 14 9C14 11.7604 11.7604 14 9 14C6.23958 14 4 11.7604 4 9C4 6.23958 6.23958 4 9 4ZM9 6C7.34375 6 6 7.34375 6 9C6 10.6563 7.34375 12 9 12C10.6563 12 12 10.6563 12 9C12 7.34375 10.6563 6 9 6Z" fill="currentColor"></path>
                     </svg>
                   </a> 
                 </li>
                 <li>
-                  <a href="">
-                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <a href="/twitter" aria-label="Follow us on Twitter">
+                    <span class="screen-only">twitter</span>
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <path d="M0.864584 0L7.73438 9.81771L0.734375 18H3.38021L8.92188 11.5104L13.4635 18H19.3698L12.1719 7.69792L18.7448 0H16.1406L10.9948 6.01042L6.79688 0H0.864584Z" fill="currentColor"></path>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a href="">
-                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <a href="/youtube" aria-label="Follow us on Youtube">
+                    <span class="screen-only">youtube</span>
+                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <path d="M19.5833 2.1875C19.3542 1.32813 18.6719 0.645833 17.8125 0.416667C16.2552 0 10 0 10 0C10 0 3.74479 0 2.1875 0.416667C1.32813 0.645833 0.645833 1.32813 0.416667 2.1875C0 3.74479 0 8 0 8C0 8 0 12.2552 0.416667 13.8125C0.645833 14.6719 1.32813 15.3542 2.1875 15.5833C3.74479 16 10 16 10 16C10 16 16.2552 16 17.8125 15.5833C18.6771 15.3542 19.3542 14.6719 19.5833 13.8125C20 12.2552 20 8 20 8C20 8 20 3.74479 19.5833 2.1875ZM8 11.4635V4.53646L14 8L8 11.4635Z" fill="currentColor"></path>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a href="">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <a href="/facebook" aria-label="Follow us on Facebook">
+                    <span class="screen-only">facebook</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <path d="M10 0C4.47917 0 0 4.47917 0 10C0 15.0104 3.69271 19.151 8.50521 19.875V12.651H6.03125V10.0208H8.50521V8.27083C8.50521 5.375 9.91667 4.10417 12.3229 4.10417C13.474 4.10417 14.0833 4.1875 14.375 4.22917V6.52083H12.7344C11.7083 6.52083 11.3542 7.48958 11.3542 8.58333V10.0208H14.349L13.9427 12.651H11.3542V19.8958C16.2344 19.2344 20 15.0625 20 10C20 4.47917 15.5208 0 10 0Z" fill="currentColor"></path>
                     </svg>
                   </a>
@@ -1692,7 +1697,7 @@
           
           <!-- Links -->
           <div class="menu-wrapper">
-            <div class="row">
+            <nav class="row" aria-label="Footer main navigation">
               <!-- Logo and Address -->
               <div class="col-12 col-sm-6 col-md address-sec">
                 <address class="text-white text-medium m-0">
@@ -1704,55 +1709,59 @@
               
               <div class="col-12 col-sm-6 col-md mb-2 mb-md-0">
                 <ul class="list-unstyled footer-links">
-                  <li><a href="#" class="subtext">Academic Programs</a></li>
-                  <li><a href="#" class="subtext">Library</a></li>
-                  <li><a href="#" class="subtext">Bookstore</a></li>
-                  <li><a href="#" class="subtext">Athletics</a></li>
+                  <li><a href="/academic-program" class="subtext" aria-label="Academic Programs"> Academic Programs</a></li>
+                  <li><a href="/library" class="subtext" aria-label="Library">Library</a></li>
+                  <li><a href="/bookstore" class="subtext" aria-label="Bookstore">Bookstore</a></li>
+                  <li><a href="/athletics" class="subtext" aria-label="Athletics">Athletics</a></li>
                 </ul>
               </div>
 
               <div class="col-12 col-sm-6 col-md">
                 <ul class="list-unstyled footer-links">
-                  <li><a href="#" class="subtext">Contact Cal State East Bay</a></li>
-                  <li><a href="#" class="subtext">Maps and Directions</a></li>
-                  <li><a href="#" class="subtext">Campus Directory</a></li>
-                  <li><a href="#" class="subtext">Career Opportunities</a></li>
+                  <li><a href="/contact" class="subtext" aria-label="Contact Cal State East Bay">Contact Cal State East Bay</a></li>
+                  <li><a href="/maps-and-directions" class="subtext" aria-label="Maps and Directions">Maps and Directions</a></li>
+                  <li><a href="/campus-directory" class="subtext" aria-label="Campus Directory">Campus Directory</a></li>
+                  <li><a href="/career-opportunities" class="subtext" aria-label="Career Opportunities">Career Opportunities</a></li>
                 </ul>
               </div>
 
               <div class="col-12 col-sm-6 col-md d-flex d-md-none mt-32">
                 <ul class="social-icons list-unstyled mb-0">
-                        <li>
-                          <a href="">
-                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M5 0C2.23958 0 0 2.23958 0 5V13C0 15.7604 2.23958 18 5 18H13C15.7604 18 18 15.7604 18 13V5C18 2.23958 15.7604 0 13 0H5ZM15 2C15.5521 2 16 2.44792 16 3C16 3.55208 15.5521 4 15 4C14.4479 4 14 3.55208 14 3C14 2.44792 14.4479 2 15 2ZM9 4C11.7604 4 14 6.23958 14 9C14 11.7604 11.7604 14 9 14C6.23958 14 4 11.7604 4 9C4 6.23958 6.23958 4 9 4ZM9 6C7.34375 6 6 7.34375 6 9C6 10.6563 7.34375 12 9 12C10.6563 12 12 10.6563 12 9C12 7.34375 10.6563 6 9 6Z" fill="currentColor"></path>
-                            </svg>
-                          </a> 
-                        </li>
-                        <li>
-                          <a href="">
-                            <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M0.864584 0L7.73438 9.81771L0.734375 18H3.38021L8.92188 11.5104L13.4635 18H19.3698L12.1719 7.69792L18.7448 0H16.1406L10.9948 6.01042L6.79688 0H0.864584Z" fill="currentColor"></path>
-                            </svg>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="">
-                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M19.5833 2.1875C19.3542 1.32813 18.6719 0.645833 17.8125 0.416667C16.2552 0 10 0 10 0C10 0 3.74479 0 2.1875 0.416667C1.32813 0.645833 0.645833 1.32813 0.416667 2.1875C0 3.74479 0 8 0 8C0 8 0 12.2552 0.416667 13.8125C0.645833 14.6719 1.32813 15.3542 2.1875 15.5833C3.74479 16 10 16 10 16C10 16 16.2552 16 17.8125 15.5833C18.6771 15.3542 19.3542 14.6719 19.5833 13.8125C20 12.2552 20 8 20 8C20 8 20 3.74479 19.5833 2.1875ZM8 11.4635V4.53646L14 8L8 11.4635Z" fill="currentColor"></path>
-                            </svg>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M10 0C4.47917 0 0 4.47917 0 10C0 15.0104 3.69271 19.151 8.50521 19.875V12.651H6.03125V10.0208H8.50521V8.27083C8.50521 5.375 9.91667 4.10417 12.3229 4.10417C13.474 4.10417 14.0833 4.1875 14.375 4.22917V6.52083H12.7344C11.7083 6.52083 11.3542 7.48958 11.3542 8.58333V10.0208H14.349L13.9427 12.651H11.3542V19.8958C16.2344 19.2344 20 15.0625 20 10C20 4.47917 15.5208 0 10 0Z" fill="currentColor"></path>
-                            </svg>
-                          </a>
-                        </li>
+                  <li>
+                    <a href="/linkedin" aria-label="Follow us on LinkedIn">
+                      <span class="screen-only">linkedin</span>
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M5 0C2.23958 0 0 2.23958 0 5V13C0 15.7604 2.23958 18 5 18H13C15.7604 18 18 15.7604 18 13V5C18 2.23958 15.7604 0 13 0H5ZM15 2C15.5521 2 16 2.44792 16 3C16 3.55208 15.5521 4 15 4C14.4479 4 14 3.55208 14 3C14 2.44792 14.4479 2 15 2ZM9 4C11.7604 4 14 6.23958 14 9C14 11.7604 11.7604 14 9 14C6.23958 14 4 11.7604 4 9C4 6.23958 6.23958 4 9 4ZM9 6C7.34375 6 6 7.34375 6 9C6 10.6563 7.34375 12 9 12C10.6563 12 12 10.6563 12 9C12 7.34375 10.6563 6 9 6Z" fill="currentColor"></path>
+                      </svg>
+                    </a> 
+                  </li>
+                  <li>
+                    <a href="/twitter" aria-label="Follow us on Twitter">
+                      <span class="screen-only">twitter</span>
+                      <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M0.864584 0L7.73438 9.81771L0.734375 18H3.38021L8.92188 11.5104L13.4635 18H19.3698L12.1719 7.69792L18.7448 0H16.1406L10.9948 6.01042L6.79688 0H0.864584Z" fill="currentColor"></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/youtube" aria-label="Follow us on Youtube">
+                      <span class="screen-only">youtube</span>
+                      <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M19.5833 2.1875C19.3542 1.32813 18.6719 0.645833 17.8125 0.416667C16.2552 0 10 0 10 0C10 0 3.74479 0 2.1875 0.416667C1.32813 0.645833 0.645833 1.32813 0.416667 2.1875C0 3.74479 0 8 0 8C0 8 0 12.2552 0.416667 13.8125C0.645833 14.6719 1.32813 15.3542 2.1875 15.5833C3.74479 16 10 16 10 16C10 16 16.2552 16 17.8125 15.5833C18.6771 15.3542 19.3542 14.6719 19.5833 13.8125C20 12.2552 20 8 20 8C20 8 20 3.74479 19.5833 2.1875ZM8 11.4635V4.53646L14 8L8 11.4635Z" fill="currentColor"></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/facebook" aria-label="Follow us on Facebook">  
+                      <span class="screen-only">facebook</span>
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M10 0C4.47917 0 0 4.47917 0 10C0 15.0104 3.69271 19.151 8.50521 19.875V12.651H6.03125V10.0208H8.50521V8.27083C8.50521 5.375 9.91667 4.10417 12.3229 4.10417C13.474 4.10417 14.0833 4.1875 14.375 4.22917V6.52083H12.7344C11.7083 6.52083 11.3542 7.48958 11.3542 8.58333V10.0208H14.349L13.9427 12.651H11.3542V19.8958C16.2344 19.2344 20 15.0625 20 10C20 4.47917 15.5208 0 10 0Z" fill="currentColor"></path>
+                      </svg>
+                    </a>
+                  </li>
                 </ul>
               </div>
-            </div>
+            </nav>
           </div>
           
       
@@ -1763,14 +1772,14 @@
             <div class="row">
               <div class="col-12">
                 <ul class="list-unstyled d-flex flex-column flex-sm-row flex-wrap gap-2 gap-md-3">
-                  <li><a href="#" class="link-btn">Privacy Statement</a></li>
-                  <li><a href="#" class="link-btn">Emergency Information</a></li>
-                  <li><a href="#" class="link-btn">Annual Security Report</a></li>
-                  <li><a href="#" class="link-btn">Campus Safety Plan</a></li>
-                  <li><a href="#" class="link-btn">Register a Complaint</a></li>
-                  <li><a href="#" class="link-btn">Notice of Non-Discrimination and Retaliation Prohibition</a></li>
+                  <li><a href="/privacy-statement" class="link-btn" aria-label="Privacy Statement">Privacy Statement</a></li>
+                  <li><a href="/emergency-information" class="link-btn" aria-label="Emergency Information">Emergency Information</a></li>
+                  <li><a href="/annual-security-report" class="link-btn" aria-label="Annual Security Report">Annual Security Report</a></li>
+                  <li><a href="/campus-safety-plan" class="link-btn" aria-label="Campus Safety Plan">Campus Safety Plan</a></li>
+                  <li><a href="/register-a-complaint" class="link-btn" aria-label="Register a Complaint">Register a Complaint</a></li>
+                  <li><a href="/notice-of-non-discrimination" class="link-btn" aria-label="Notice of Non-Discrimination and Retaliation Prohibition">Notice of Non-Discrimination and Retaliation Prohibition</a></li>
                 </ul>
-                <p class="copyright text-smaller">&copy; 2024 California State University, East Bay. All Rights Reserved.</p>
+                <p class="copyright text-smaller" aria-label="Copyright">&copy; 2024 California State University, East Bay. All Rights Reserved.</p>
               </div>
             </div>
           </div>
