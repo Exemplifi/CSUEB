@@ -931,6 +931,29 @@ section.bg-white.section-with-padding + section.bg-white {
 .btn.btn-primary-yellow.disabled {
   opacity: 0.4;
 }
+.btn.btn-primary-yellow.btn-hover-red svg {
+  transition: all 0.3s ease-in-out;
+  color: var(--black);
+}
+.btn.btn-primary-yellow.btn-hover-red svg * {
+  color: var(--black);
+}
+.btn.btn-primary-yellow.btn-hover-red:hover {
+  color: var(--white);
+}
+.btn.btn-primary-yellow.btn-hover-red:hover span {
+  background-color: var(--red);
+  color: var(--white);
+}
+.btn.btn-primary-yellow.btn-hover-red:hover span svg {
+  color: var(--white);
+}
+.btn.btn-primary-yellow.btn-hover-red:hover span svg * {
+  color: var(--white);
+}
+.btn.btn-primary-yellow.btn-hover-red:hover::before {
+  background-color: var(--red);
+}
 .btn.btn-primary-default {
   background-color: var(--pink);
   color: var(--maroon);
