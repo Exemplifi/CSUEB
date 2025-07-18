@@ -4731,7 +4731,7 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 .campus-news .news-card::after {
   content: "";
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 50%, rgba(0, 0, 0, 0.8) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0.9) 73.29% 71.29%);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -4767,6 +4767,12 @@ section.bg-white.section-with-padding + section.bg-white {
     max-width: 80%;
   }
 }
+.campus-news .news-card .overlay .news-content span {
+  background: rgba(0, 0, 0, 0.0392156863);
+}
+.campus-news .news-card .overlay .news-content h3 {
+  background: rgba(0, 0, 0, 0.0392156863);
+}
 @media (max-width: 767.98px) {
   .campus-news .news-card .overlay .news-content h3 {
     font-size: 1.125rem;
@@ -4774,6 +4780,7 @@ section.bg-white.section-with-padding + section.bg-white {
   }
 }
 .campus-news .news-card .overlay .news-content .button-grp {
+  background: rgba(0, 0, 0, 0.0392156863);
   margin-top: 0.75rem;
 }
 @media (min-width: 768px) {
