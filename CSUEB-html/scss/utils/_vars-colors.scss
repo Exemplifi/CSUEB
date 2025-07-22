@@ -1,0 +1,33 @@
+@use "sass:math";
+@use "sass:map";
+
+$site-colors: (
+  "black": #000,
+  "white": #ffffff,
+  "red":#D50032,
+  "dark-red":#BC0829,
+  "gold":#FDC25A,
+  "light-gray": #F4F4F4,
+  "grey-700": #CDCDCD,
+  "grey-800": #E5E5E5,
+  "dark-grey": #313536,
+  "purple":#7A236A,
+  "teal":#00A0AD,
+  "danger": #D50032,
+  "success": #16A34A,
+  "maroon": #4E080C
+);
+
+// Rebranding
+$black: map.get($site-colors, "black");
+$white: map.get($site-colors, "white");
+$red: map.get($site-colors, "red");
+$gold: map.get($site-colors, "gold");
+$light-gray: map.get($site-colors, "light-gray");
+$grey-700: map.get($site-colors, "grey-700");
+$purple: map.get($site-colors, "purple");
+$teal: map.get($site-colors, "teal");
+$danger: map.get($site-colors, "danger");
+$success: map.get($site-colors, "success");
+$maroon: map.get($site-colors, "maroon");
+
