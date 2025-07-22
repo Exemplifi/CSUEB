@@ -13,125 +13,157 @@
   </head>
   <body>
     
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- Header -->
-    <header class="main-header">
+    <header class="main-header" role="banner">
       <div class="container d-flex justify-content-between align-items-center">
-        <div class="logo d-flex align-items-center">
-          <img src="./images/logo.svg" alt="Cal State East Bay">
-        </div>
-        <div class="header-links d-none d-lg-flex align-items-center gap-3">
-          <div class="d-flex menu-list-link">
-            <a href="#" class="text-white menu-link subtext">APPLY</a>
-            <a href="#" class="text-white menu-link subtext">REQUEST INFO</a>
-            <a href="#" class="text-white menu-link subtext">GIVE</a>
-          </div>
-  
-          <div class="dropdown">
-            <button class="dropdown-toggle btn btn-primary btn-dark" data-bs-toggle="dropdown">
-              <span>INFO FOR
-                <svg class="arrow-icon-white ms-2" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7.92969 10.1772L6.42969 11.6772L12.5 17.7476L18.5703 11.6772L17.0703 10.1772L12.5 14.7476L7.92969 10.1772Z" fill="currentColor"/>
+        <a href="/home" class="logo d-flex align-items-center" aria-label="Cal State East Bay Home" role="button">  
+          <span class="screen-only" aria-label="Cal State East Bay">Cal State East Bay</span>
+          <img src="./images/logo.svg" alt="Cal State East Bay" class="img-fluid" aria-hidden="true">
+        </a>
+
+        <div class="d-flex align-items-center gap-3">
+          <nav class="header-links d-none d-lg-flex align-items-center gap-3" aria-label="Main navigation">
+            <div class="d-flex menu-list-link" role="menubar">
+              <a href="#" class="text-white menu-link subtext" aria-label="Apply menu. Press Enter to visit" role="menuitem">APPLY</a>
+              <a href="#" class="text-white menu-link subtext" aria-label="Request Info menu. Press Enter to visit" role="menuitem">REQUEST INFO</a>
+              <a href="#" class="text-white menu-link subtext" aria-label="Give menu. Press Enter to visit"  role="menuitem">GIVE</a>
+            </div>
+
+            <!-- search seection -->
+          <div class="menu-search">
+            <div class="btn-search position-relative">
+              <button type="button" class="search__btn border-0" aria-label="Search. Press Enter to open the search bar">
+                <span class="screen-only" aria-label="Search">Search</span>
+                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15 2C18.8541 2 22 5.14585 22 9C22 12.8541 18.8541 16 15 16C13.252 16 11.655 15.348 10.4258 14.2812L10 14.707V16L4 22L2 20L8 14H9.29297L9.71875 13.5742C8.65198 12.345 8 10.748 8 9C8 5.14585 11.1459 2 15 2ZM15 4C12.2267 4 10 6.22673 10 9C10 11.7733 12.2267 14 15 14C17.7733 14 20 11.7733 20 9C20 6.22673 17.7733 4 15 4Z" fill="white"></path>
                 </svg>
+              </button>
+              <div class="header-search-dropdown d-none">
+                <form class="search-form d-flex align-items-center" role="search">
+                  <label for="site-search" class="screen-only" aria-label="Search the site">Search the site</label>
+                  <input type="text" class="form-control search-input" placeholder="Search..." aria-label="Search the site" name="search">
+                  <button type="submit" class="btn btn-search-submit ms-2" aria-label="Search. Press Enter to submit">
+                    <span class="screen-only" aria-label="Search">Search</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M15 2C18.8541 2 22 5.14585 22 9C22 12.8541 18.8541 16 15 16C13.252 16 11.655 15.348 10.4258 14.2812L10 14.707V16L4 22L2 20L8 14H9.29297L9.71875 13.5742C8.65198 12.345 8 10.748 8 9C8 5.14585 11.1459 2 15 2ZM15 4C12.2267 4 10 6.22673 10 9C10 11.7733 12.2267 14 15 14C17.7733 14 20 11.7733 20 9C20 6.22673 17.7733 4 15 4Z" fill="white"></path>
+                    </svg>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+    
+            <div class="dropdown" role="menu">
+              <button class="dropdown-toggle btn btn-primary btn-primary-yellow btn-hover-red" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Information for different user types. Press Enter to open the dropdown" role="menuitem">
+                <span>INFO FOR
+                  <svg class="arrow-icon-white ms-2" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M7.92969 10.1772L6.42969 11.6772L12.5 17.7476L18.5703 11.6772L17.0703 10.1772L12.5 14.7476L7.92969 10.1772Z" fill="currentColor"/>
+                  </svg>
+                </span>
+              </button>
+              <ul class="dropdown-menu" role="menu" aria-label="Info for submenu">
+                <li><a class="dropdown-item" href="#" aria-label="Current Students. Press Enter to visit" role="menuitem">Current Students</a></li>
+                <li><a class="dropdown-item" href="#" aria-label="Future Students. Press Enter to visit" role="menuitem">Future Students</a></li>
+                <li><a class="dropdown-item" href="#" aria-label="Alumni. Press Enter to visit" role="menuitem">Alumni</a></li>
+              </ul>
+            </div>
+    
+            <button class="btn menu-btn btn btn-primary btn-hover-yellow" id="menuToggle" aria-expanded="false" aria-controls="sidebarMenu" aria-label="Open main navigation menu">
+              <span class="">
+                MENU
+                <svg class="menu-icon ms-2" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M21 5.67724V7.67724H3V5.67724H21ZM21 11.6772V13.6772H3V11.6772H21ZM21 17.6772V19.6772H3V17.6772H21Z" fill="currentColor"/>
+                </svg> 
               </span>
             </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Current Students</a></li>
-              <li><a class="dropdown-item" href="#">Future Students</a></li>
-              <li><a class="dropdown-item" href="#">Alumni</a></li>
-            </ul>
-          </div>
-  
-          <button class="btn menu-btn btn btn-primary btn-hover-yellow" id="menuToggle">
-             <span class="">
-              MENU
-              <svg  class="menu-icon ms-2" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+          </nav>
+    
+          <!-- Mobile Menu Button -->
+          <button class="btn mobile-menu-btn d-lg-none btn-primary btn-hover-yellow" id="menuToggleMobile" aria-expanded="false" aria-controls="sidebarMenu" aria-label="Open main navigation menu">
+            <label for="menuToggleMobile" class="screen-only" aria-label="Menu">Menu</label>
+            <span>
+              <svg class="menu-icon" width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                 <path d="M21 5.67724V7.67724H3V5.67724H21ZM21 11.6772V13.6772H3V11.6772H21ZM21 17.6772V19.6772H3V17.6772H21Z" fill="currentColor"/>
               </svg>
             </span>
           </button>
+
+          
         </div>
-  
-        <!-- Mobile Menu Button -->
-        <button class="btn mobile-menu-btn d-lg-none btn-primary btn-hover-yellow" id="menuToggleMobile">
-          <span>
-            <svg  class="menu-icon " width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M21 5.67724V7.67724H3V5.67724H21ZM21 11.6772V13.6772H3V11.6772H21ZM21 17.6772V19.6772H3V17.6772H21Z" fill="currentColor"/>
-            </svg>
-          </span>
-        </button>
       </div>
     </header>
 
     <!-- Sidebar -->
-    <aside class="sidebar" id="sidebarMenu">
+    <aside class="sidebar" id="sidebarMenu" role="navigation" aria-label="Main navigation">
       <div class="mega-menu-wrapper">
         <div class="left-red-sec bg-red">
           <div class="mb-4 text-end d-md-none">
             <button class="btn close-btn-mobile btn-primary btn-primary-close" aria-label="Close menu">
               <span>
-                <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path d="M18.293 4.29297L19.707 5.70703L13.4141 12L19.707 18.293L18.293 19.707L12 13.4141L5.70703 19.707L4.29297 18.293L10.5859 12L4.29297 5.70703L5.70703 4.29297L12 10.5859L18.293 4.29297Z" fill="white"/>
                 </svg>
               </span>
             </button>
           </div>
-          <div class="d-flex flex-wrap d-md-grid gap-2 gap-md-3 mb-4 mb-md-5">
-            <a href="" class="btn btn-primary-yellow"><span>APPLY</span></a>
-            <a href="" class="btn btn-primary-yellow"><span>REQUEST INFO</span></a>
-            <a href="" class="btn btn-primary-yellow"><span>MAKE A GIFT</span></a>
+          <div class="d-flex flex-wrap d-md-grid gap-2 gap-md-3 mb-4 mb-md-5" role="menubar" aria-label="Main navigation Sidebar">
+            <a href="" class="btn btn-primary-yellow" aria-label="Apply. Press Enter to visit" role="menuitem"><span>APPLY</span></a>
+            <a href="" class="btn btn-primary-yellow" aria-label="Request information. Press Enter to visit" role="menuitem"><span>REQUEST INFO</span></a>
+            <a href="" class="btn btn-primary-yellow" aria-label="Make a gift. Press Enter to visit" role="menuitem"><span>MAKE A GIFT</span></a>
           </div>
 
           <div class="mb-3">
             <div class="accordion info-accordion-sec bg-transparent" id="accordionExample1">
               <div class="accordion-item bg-transparent border-none">
                 <h2 class="accordion-header bg-transparent" id="info-accordion">
-                  <button class="accordion-button collapsed h5 bg-transparent p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseinfo" aria-expanded="true" aria-controls="collapseinfo">
+                  <button class="accordion-button collapsed h5 bg-transparent p-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseinfo" aria-expanded="false" aria-controls="collapseinfo" aria-label="Information for. Press Enter to expand the accordion">
                     Information for:
                   </button>
                 </h2>
                 <div id="collapseinfo" class="accordion-collapse collapse" aria-labelledby="info-accordion" data-bs-parent="#accordionExample1">
                   <div class="accordion-body p-0 m-0">
-                    <ul class="list-unstyled sidebar-link-wrap">
-                      <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                    <ul class="list-unstyled sidebar-link-wrap" role="menubar">
+                      <li role="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link" aria-label="Current Students. Press Enter to visit" role="menuitem">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Current Students</span>
                         </a>
                       </li>
         
-                      <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                      <li role="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link" aria-label="Future Students. Press Enter to visit" role="menuitem">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Future Students</span>
                         </a>
                       </li>
         
-                      <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                      <li role="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link" aria-label="Alumni. Press Enter to visit" role="menuitem">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">  
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Alumni</span>
                         </a>
                       </li>
         
-                      <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                      <li role="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link" aria-label="Counselors. Press Enter to visit" role="menuitem">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Counselors</span>
                         </a>
                       </li>
         
-                      <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                      <li role="none">
+                        <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow sidebar-link" aria-label="Faculty and Staff" role="menuitem">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span> Faculty & Staff</span>
@@ -151,7 +183,7 @@
             <button class="btn close-btn btn-primary-gray" aria-label="Close menu">
               <span>
                 Close
-                <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path d="M18.293 4.29297L19.707 5.70703L13.4141 12L19.707 18.293L18.293 19.707L12 13.4141L5.70703 19.707L4.29297 18.293L10.5859 12L4.29297 5.70703L5.70703 4.29297L12 10.5859L18.293 4.29297Z" fill="black"/>
                 </svg>
               </span>
@@ -159,24 +191,15 @@
           </div>
 
           <div class="menu-search-accodian">
-            <div class="search-wrap">
-              <input type="text" class="form-control" placeholder="Search Cal State East Bay...">
-              <div class="btn-search">
-                <button type="button" class="search__btn">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15 2C18.8541 2 22 5.14585 22 9C22 12.8541 18.8541 16 15 16C13.252 16 11.655 15.348 10.4258 14.2812L10 14.707V16L4 22L2 20L8 14H9.29297L9.71875 13.5742C8.65198 12.345 8 10.748 8 9C8 5.14585 11.1459 2 15 2ZM15 4C12.2267 4 10 6.22673 10 9C10 11.7733 12.2267 14 15 14C17.7733 14 20 11.7733 20 9C20 6.22673 17.7733 4 15 4Z" fill="white"/>
-                  </svg>
-                </button>
-              </div>
-            </div>
+            
   
             <ul class="accordion-menu list-unstyled" id="menuAccordion">
               <li class="accordion-item">
                 <h2 class="accordion-header">
-                  <button class="accordion-button collapsed h3" data-bs-toggle="collapse" data-bs-target="#section1">
+                  <button class="accordion-button collapsed h3" data-bs-toggle="collapse" data-bs-target="#section1" aria-expanded="false" aria-controls="section1" aria-label="Academics. Press Enter to expand the accordion">
                     Academics
                     <span class="accordion-icon">
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M8.83333 0.5V7.16667H15.5V8.83333H8.83333V12.1667V15.5H7.16667V12.1667V8.83333H0.5V7.16667H7.16667V0.5H8.83333Z" fill="currentColor"/>
                       </svg>
                     </span>
@@ -186,8 +209,8 @@
                   <div class="accordion-body">
                     <ul class="list-unstyled menu-link-list">
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <a href="/degrees" class="text-decoration-none btn btn-secondary" aria-label="Degrees and Programs. Press Enter to visit">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Degrees and Programs</span>
@@ -195,8 +218,8 @@
                       </li>
         
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <a href="/academic-affairs" class="text-decoration-none btn btn-secondary" aria-label="Academic Affairs. Press Enter to visit">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Academic Affairs</span>
@@ -204,8 +227,8 @@
                       </li>
         
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <a href="/academic-calendar" class="text-decoration-none btn btn-secondary" aria-label="Academic Calendar. Press Enter to visit">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Academic Calendar</span>
@@ -213,8 +236,8 @@
                       </li>
         
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <a href="/library" class="text-decoration-none btn btn-secondary" aria-label="Library. Press Enter to visit">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Library</span>
@@ -222,26 +245,26 @@
                       </li>
         
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <a href="/university-catalog" class="text-decoration-none btn btn-secondary" aria-label="University Catalog. Press Enter to visit">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>University Catalog</span>
                         </a>
                       </li>
-
+  
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <a href="/bookstore" class="text-decoration-none btn btn-secondary" aria-label="Bookstore. Press Enter to visit">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Bookstore</span>
                         </a>
                       </li>
-
+  
                       <li>
-                        <a href="#" class="text-decoration-none btn btn-secondary">
-                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                        <a href="/colleges" class="text-decoration-none btn btn-secondary" aria-label="Colleges and Departments. Press Enter to visit">
+                          <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                             <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                           </svg>
                           <span>Colleges and Departments</span>
@@ -253,12 +276,12 @@
               </li>
               <li class="accordion-item">
                 <h2 class="accordion-header">
-                  <button class="accordion-button collapsed h3" data-bs-toggle="collapse" data-bs-target="#section2">
+                  <button class="accordion-button collapsed h3" data-bs-toggle="collapse" data-bs-target="#section2" aria-expanded="false" aria-controls="section2" aria-label="Admissions and Aid. Press Enter to expand the accordion">  
                     Admissions and Aid
                     <span class="accordion-icon">
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">             
                         <path d="M8.83333 0.5V7.16667H15.5V8.83333H8.83333V12.1667V15.5H7.16667V12.1667V8.83333H0.5V7.16667H7.16667V0.5H8.83333Z" fill="currentColor"/>
-                      </svg>
+                      </svg>  
                     </span>
                   </button>
                 </h2>
@@ -271,12 +294,12 @@
     
             <div class="quick-links">
               <ul class="list-unstyled star-links-black">
-                <li><a href="#" class="subtext">MyCSUEB</a></li>
-                <li><a href="#" class="subtext">Canvas</a></li>
-                <li><a href="#" class="subtext">Library</a></li>
-                <li><a href="#" class="subtext">Email</a></li>
-                <li><a href="#" class="subtext">MyCompass</a></li>
-                <li><a href="#" class="subtext">Directory</a></li>
+                <li><a href="/myCSUEB" class="subtext" aria-label="MyCSUEB. Press Enter to visit">MyCSUEB</a></li> 
+                <li><a href="/canvas" class="subtext" aria-label="Canvas. Press Enter to visit">Canvas</a></li>
+                <li><a href="/Library" class="subtext" aria-label="Library. Press Enter to visit">Library</a></li>
+                <li><a href="/email" class="subtext" aria-label="Email. Press Enter to visit">Email</a></li>
+                <li><a href="/myCompass" class="subtext" aria-label="MyCompass. Press Enter to visit">MyCompass</a></li>
+                <li><a href="/directory" class="subtext" aria-label="Directory. Press Enter to visit">Directory</a></li>  
               </ul>
             </div>
             
@@ -287,9 +310,9 @@
     </aside>
 
     <div class="overlay-header" id="overlay"></div>
-    <!-- Header End -->
 
-        
+    <main role="main" id="main-content">
+
     <!-- Inner Hero Section Start -->
     <section class="inner-hero-section inner-hero-full-image">
       <div class="full-img-hero-wrap bg-transparent h-100">
@@ -307,11 +330,11 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb align-items-center">
           <li class="breadcrumb-item d-flex align-items-center">
-            <a href=""><svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a href="/home" aria-label="Home. Press Enter to visit"><svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
               <path d="M10.0002 0.249664L0.833496 8.49999H3.3335V16H8.3335V10.1667H11.6668V16H16.6668V8.49999H19.1668L10.0002 0.249664Z" fill="currentColor"/>
             </svg>
           </li></a>
-          <li class="breadcrumb-item subtext"><a href="">Sample site</a></li>
+          <li class="breadcrumb-item subtext"><a href="/sample-site" aria-label="Sample site. Press Enter to visit" >Sample site</a></li>
           <li class="breadcrumb-item active subtext" aria-current="page">Interior Page</li>
         </ol>
       </nav>
@@ -336,7 +359,7 @@
                         <ul class="sidenav">
                             <li>
                               <a href="../../faq.html" title="FAQ" class="text-decoration-none btn btn-secondary fw-bold">
-                                <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                                   <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                                 </svg>
                                 <span>FAQ</span>
@@ -345,10 +368,10 @@
                             <li class="drop ">
                                 <div class="main-dropdown">
                                   <button class="btn btn-expander text-decoration-none btn btn-secondary fw-bold" data-target="" type="button">
-                                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                                       <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                                     </svg>
-                                    <a href="../index.html" title="CASCADE TUTORIALS"><span>CASCADE TUTORIALS</span></a>
+                                    <a href="../index.html" title="CASCADE TUTORIALS" aria-label="CASCADE TUTORIALS. Press Enter to visit"><span>CASCADE TUTORIALS</span></a>
                                 </div>
                                 <ul class="sidenav-sub" id="">
                                     <li class="singe-menu"><a class="subtext star-btn-link" href="" title="Sample Site - CASCADE TUTORIALS"><span>Sample Site</span></a></li>
@@ -357,45 +380,45 @@
                                         <ul class="sidenav-sub-menu" id="">
                                             <li><a class="subtext star-btn-link" href="../pages/edit-a-page.html" title="Edit a Page - Pages - CASCADE TUTORIALS"><span>Edit a Page</span></a></li>
                                             <li><a class="subtext star-btn-link" href="../pages/create-a-page.html" title="Create a Page - Pages - CASCADE TUTORIALS"><span>Create a Page</span></a></li>
-                                            <li><a class="subtext star-btn-link"href="../pages/landing-vs-interior.html" title="Landing vs. Interior Pages - Pages - CASCADE TUTORIALS"><span>Landing vs. Interior Pages</span></a></li>
-                                            <li><a class="subtext star-btn-link"href="../pages/broken-links.html" title="Broken Link Checker - Pages - CASCADE TUTORIALS"><span>Broken Link Checker</span></a></li>
-                                            <li><a class="subtext star-btn-link"href="../pages/anchor-links.html" title="Anchor Links - Pages - CASCADE TUTORIALS"><span>Anchor Links</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="../pages/landing-vs-interior.html" title="Landing vs. Interior Pages - Pages - CASCADE TUTORIALS"><span>Landing vs. Interior Pages</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="../pages/broken-links.html" title="Broken Link Checker - Pages - CASCADE TUTORIALS"><span>Broken Link Checker</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="../pages/anchor-links.html" title="Anchor Links - Pages - CASCADE TUTORIALS"><span>Anchor Links</span></a></li>
                                         </ul>
                                     </li>
                                     <li class="drop">
                                         <div class="main-dropdown"><button class="btn btn-expander" type="button"><span class="plus-minus-btn"></span></button><a href="" title="Content - CASCADE TUTORIALS"><span>Content</span></a></div>
                                         <ul class="sidenav-sub-menu" id="">
-                                            <li><a class="subtext star-btn-link" href="https://www.csueastbay.edu/cascade-training/new-site/content-types/index.html" title="Content Types - Content - CASCADE TUTORIALS"><span>Content Types</span></a></li>
-                                            <li><a class="subtext star-btn-link"href="" title="WYSIWYG - Content - CASCADE TUTORIALS"><span>WYSIWYG</span></a></li>
-                                            <li><a class="subtext star-btn-link"href="" title="Reorder Content Types / Items - Content - CASCADE TUTORIALS"><span>Reorder Content Types / Items</span></a></li>
-                                            <li><a class="subtext star-btn-link"href="../content/embedded-video.html" title="Embedded Video - Content - CASCADE TUTORIALS"><span>Embedded Video</span></a></li>
-                                            <li><a class="subtext star-btn-link"href="" title="Links - Content - CASCADE TUTORIALS"><span>Links</span></a></li>
-                                            <li><a class="subtext star-btn-link"href="" title="Tables - Content - CASCADE TUTORIALS"><span>Tables</span></a></li>
-                                            <li><a class="subtext star-btn-link"href="" title="Landing Page Banner - Content - CASCADE TUTORIALS"><span>Landing Page Banner</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="https://www.csueastbay.edu/cascade-training/new-site/content-types/index.html" title="Content Types - Content - CASCADE TUTORIALS" aria-label="Content Types - Content - CASCADE TUTORIALS. Press Enter to visit"><span>Content Types</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/wysiwyg" title="WYSIWYG - Content - CASCADE TUTORIALS" aria-label="WYSIWYG - Content - CASCADE TUTORIALS. Press Enter to visit"><span>WYSIWYG</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/reorder-content-types-items" title="Reorder Content Types / Items - Content - CASCADE TUTORIALS" aria-label="Reorder Content Types / Items - Content - CASCADE TUTORIALS. Press Enter to visit"><span>Reorder Content Types / Items</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="../content/embedded-video.html" title="Embedded Video - Content - CASCADE TUTORIALS" aria-label="Embedded Video - Content - CASCADE TUTORIALS. Press Enter to visit"><span>Embedded Video</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/links" title="Links - Content - CASCADE TUTORIALS" aria-label="Links - Content - CASCADE TUTORIALS. Press Enter to visit"  ><span>Links</span></a></li> 
+                                            <li><a class="subtext star-btn-link" href="/tables" title="Tables - Content - CASCADE TUTORIALS" aria-label="Tables - Content - CASCADE TUTORIALS. Press Enter to visit"><span>Tables</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/landing-page-banner" title="Landing Page Banner - Content - CASCADE TUTORIALS" aria-label="Landing Page Banner - Content - CASCADE TUTORIALS. Press Enter to visit"><span>Landing Page Banner</span></a></li>
                                         </ul>
                                     </li>
                                     <li class="drop">
                                       <div class="main-dropdown"><button class="btn btn-expander" type="button"><span class="plus-minus-btn"></span></button><a href="../content-types/index.html" title="Content Types - CASCADE TUTORIALS"><span>Content Types</span></a></div>
                                         <ul class="sidenav-sub-menu" id="">
-                                            <li><a class="subtext star-btn-link" href="" title="Accordion - Content Types - CASCADE TUTORIALS"><span>Accordion</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Buttons - Content Types - CASCADE TUTORIALS"><span>Buttons</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Contact Us - Content Types - CASCADE TUTORIALS"><span>Contact Us</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Content Area - Content Types - CASCADE TUTORIALS"><span>Content Area</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Events - Content Types - CASCADE TUTORIALS"><span>Events</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Featured Links - Content Types - CASCADE TUTORIALS"><span>Featured Links</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Flip Tiles - Content Types - CASCADE TUTORIALS"><span>Flip Tiles</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Image Gallery - Content Types - CASCADE TUTORIALS"><span>Image Gallery</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Impact Images - Content Types - CASCADE TUTORIALS"><span>Impact Images</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Important Announcement - Content Types - CASCADE TUTORIALS"><span>Important Announcement</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Message Area - Content Types - CASCADE TUTORIALS"><span>Message Area</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="News - Content Types - CASCADE TUTORIALS"><span>News</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Photo and Description - Content Types - CASCADE TUTORIALS"><span>Photo and Description</span></a></li>
-                                            <li><a href="" title="Points of Pride - Content Types - CASCADE TUTORIALS"><span>Points of Pride</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Pull Quotes - Content Types - CASCADE TUTORIALS"><span>Pull Quotes</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Red Navigation - Content Types - CASCADE TUTORIALS"><span>Red Navigation</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Tabs - Content Types - CASCADE TUTORIALS"><span>Tabs</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Video Texture - Content Types - CASCADE TUTORIALS"><span>Video Texture</span></a></li>
-                                            <li><a href="" title="Virtual Tour - Content Types - CASCADE TUTORIALS"><span>Virtual Tour</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/accordion" title="Accordion - Content Types - CASCADE TUTORIALS" aria-label="Accordion - Content Types - CASCADE TUTORIALS. Press Enter to visit"><span>Accordion</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/buttons" title="Buttons - Content Types - CASCADE TUTORIALS" aria-label="Buttons - Content Types - CASCADE TUTORIALS. Press Enter to visit"><span>Buttons</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/contact-us" title="Contact Us - Content Types - CASCADE TUTORIALS" aria-label="Contact Us - Content Types - CASCADE TUTORIALS. Press Enter to visit"><span>Contact Us</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/content-area" title="Content Area - Content Types - CASCADE TUTORIALS" aria-label="Content Area - Content Types - CASCADE TUTORIALS. Press Enter to visit"><span>Content Area</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/events" title="Events - Content Types - CASCADE TUTORIALS" aria-label="Events - Content Types - CASCADE TUTORIALS. Press Enter to visit"><span>Events</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/featured-links" title="Featured Links - Content Types - CASCADE TUTORIALS" aria-label="Featured Links - Content Types - CASCADE TUTORIALS. Press Enter to visit"><span>Featured Links</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/flip-tiles" title="Flip Tiles - Content Types - CASCADE TUTORIALS" aria-label="Flip Tiles - Content Types - CASCADE TUTORIALS. Press Enter to visit"><span>Flip Tiles</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/image-gallery" title="Image Gallery - Content Types - CASCADE TUTORIALS" aria-label="Image Gallery - Content Types - CASCADE TUTORIALS. Press Enter to visit"><span>Image Gallery</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/impact-images" title="Impact Images - Content Types - CASCADE TUTORIALS" aria-label="Impact Images - Content Types - CASCADE TUTORIALS. Press Enter to visit"><span>Impact Images</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/important-announcement" title="Important Announcement - Content Types - CASCADE TUTORIALS" aria-label="Important Announcement - Content Types - CASCADE TUTORIALS. Press Enter to visit"><span>Important Announcement</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/message-area" title="Message Area - Content Types - CASCADE TUTORIALS" aria-label="Message Area - Content Types - CASCADE TUTORIALS. Press Enter to visit"><span>Message Area</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/news" title="News - Content Types - CASCADE TUTORIALS" aria-label="News - Content Types - CASCADE TUTORIALS. Press Enter to visit"><span>News</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/photo-and-description" title="Photo and Description - Content Types - CASCADE TUTORIALS" aria-label="Photo and Description - Content Types - CASCADE TUTORIALS. Press Enter to visit"><span>Photo and Description</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/points-of-pride" title="Points of Pride - Content Types - CASCADE TUTORIALS" aria-label="Points of Pride - Content Types - CASCADE TUTORIALS. Press Enter to visit"><span>Points of Pride</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/pull-quotes" title="Pull Quotes - Content Types - CASCADE TUTORIALS" aria-label="Pull Quotes - Content Types - CASCADE TUTORIALS. Press Enter to visit"><span>Pull Quotes</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/red-navigation" title="Red Navigation - Content Types - CASCADE TUTORIALS" aria-label="Red Navigation - Content Types - CASCADE TUTORIALS. Press Enter to visit"><span>Red Navigation</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/tabs" title="Tabs - Content Types - CASCADE TUTORIALS" aria-label="Tabs - Content Types - CASCADE TUTORIALS. Press Enter to visit"><span>Tabs</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/video-texture" title="Video Texture - Content Types - CASCADE TUTORIALS" aria-label="Video Texture - Content Types - CASCADE TUTORIALS. Press Enter to visit"><span>Video Texture</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/virtual-tour" title="Virtual Tour - Content Types - CASCADE TUTORIALS" aria-label="Virtual Tour - Content Types - CASCADE TUTORIALS. Press Enter to visit"><span>Virtual Tour</span></a></li>
                                         </ul>
                                     </li>
                                     <li class="drop">
@@ -403,45 +426,45 @@
                                           <button  class="btn btn-expander" type="button"><span class="plus-minus-btn"></span></button><a href="../publishing/index.html" title="Publishing - CASCADE TUTORIALS"><span>Publishing</span></a>
                                         </div>
                                         <ul class="sidenav-sub-menu" id="PublishingCASCADETUTORIALS">
-                                            <li><a class="subtext star-btn-link" href="" title="Publish - Publishing - CASCADE TUTORIALS"><span>Publish</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Unpublish - Publishing - CASCADE TUTORIALS"><span>Unpublish</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Publish Queue - Publishing - CASCADE TUTORIALS"><span>Publish Queue</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Include When Publishing - Publishing - CASCADE TUTORIALS"><span>Include When Publishing</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="View Live &amp; Test Link - Publishing - CASCADE TUTORIALS"><span>View Live &amp; Test Link</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Publish Entire Site - Publishing - CASCADE TUTORIALS"><span>Publish Entire Site</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/publish" title="Publish - Publishing - CASCADE TUTORIALS" aria-label="Publish - Publishing - CASCADE TUTORIALS. Press Enter to visit"><span>Publish</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/unpublish" title="Unpublish - Publishing - CASCADE TUTORIALS" aria-label="Unpublish - Publishing - CASCADE TUTORIALS. Press Enter to visit"><span>Unpublish</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/publish-queue" title="Publish Queue - Publishing - CASCADE TUTORIALS" aria-label="Publish Queue - Publishing - CASCADE TUTORIALS. Press Enter to visit"><span>Publish Queue</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/include-when-publishing" title="Include When Publishing - Publishing - CASCADE TUTORIALS" aria-label="Include When Publishing - Publishing - CASCADE TUTORIALS. Press Enter to visit"><span>Include When Publishing</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/view-live-and-test-link" title="View Live &amp; Test Link - Publishing - CASCADE TUTORIALS" aria-label="View Live &amp; Test Link - Publishing - CASCADE TUTORIALS. Press Enter to visit"><span>View Live &amp; Test Link</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/publish-entire-site" title="Publish Entire Site - Publishing - CASCADE TUTORIALS" aria-label="Publish Entire Site - Publishing - CASCADE TUTORIALS. Press Enter to visit"><span>Publish Entire Site</span></a></li>
                                         </ul>
                                     </li>
                                     <li class="drop">
                                       <div class="main-dropdown"><button  class="btn btn-expander" type="button"><span class="plus-minus-btn"></span></button><a href="index.html" title="Navigation - CASCADE TUTORIALS"><span>Navigation</span></a></div>
                                         <ul class="sidenav-sub-menu" id="NavigationCASCADETUTORIALS">
-                                            <li><a class="subtext star-btn-link" href="" title="Manage Left Navigation - Navigation - CASCADE TUTORIALS"><span>Manage Left Navigation</span></a></li>
-                                            <li class="active"><a class="subtext star-btn-link"href="" title="Site Navigation - Navigation - CASCADE TUTORIALS"><span>Site Navigation</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="https://www.csueastbay.edu/cascade-training/new-site/content-types/red-nav" title="Red Navigation - Navigation - CASCADE TUTORIALS"><span>Red Navigation</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="External Link on Left Navigation - Navigation - CASCADE TUTORIALS"><span>External Link on Left Navigation</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/manage-left-navigation" title="Manage Left Navigation - Navigation - CASCADE TUTORIALS" aria-label="Manage Left Navigation - Navigation - CASCADE TUTORIALS. Press Enter to visit"><span>Manage Left Navigation</span></a></li>
+                                            <li class="active"><a class="subtext star-btn-link"href="/site-navigation" title="Site Navigation - Navigation - CASCADE TUTORIALS" aria-label="Site Navigation - Navigation - CASCADE TUTORIALS. Press Enter to visit"><span>Site Navigation</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="https://www.csueastbay.edu/cascade-training/new-site/content-types/red-nav" title="Red Navigation - Navigation - CASCADE TUTORIALS" aria-label="Red Navigation - Navigation - CASCADE TUTORIALS. Press Enter to visit"><span>Red Navigation</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/external-link-on-left-navigation" title="External Link on Left Navigation - Navigation - CASCADE TUTORIALS" aria-label="External Link on Left Navigation - Navigation - CASCADE TUTORIALS. Press Enter to visit"><span>External Link on Left Navigation</span></a></li>
                                         </ul>
                                     </li>
                                     <li class="drop">
                                       <div class="main-dropdown"> <button class="btn btn-expander" type="button"><span class="plus-minus-btn"></span></button><a href="../files-folders/index.html" title="Files &amp; Folders - CASCADE TUTORIALS"><span>Files &amp; Folders</span></a></div>
                                         <ul class="sidenav-sub-menu">
-                                            <li><a class="subtext star-btn-link" href="" title="Upload a File - Files &amp; Folders - CASCADE TUTORIALS"><span>Upload a File</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="l" title="Update a File - Files &amp; Folders - CASCADE TUTORIALS"><span>Update a File</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Create a Folder - Files &amp; Folders - CASCADE TUTORIALS"><span>Create a Folder</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Finding Images - Files &amp; Folders - CASCADE TUTORIALS"><span>Finding Images</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Resizing an Image - Files &amp; Folders - CASCADE TUTORIALS"><span>Resizing an Image</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/upload-a-file" title="Upload a File - Files &amp; Folders - CASCADE TUTORIALS" aria-label="Upload a File - Files &amp; Folders - CASCADE TUTORIALS. Press Enter to visit"><span>Upload a File</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/update-a-file" title="Update a File - Files &amp; Folders - CASCADE TUTORIALS" aria-label="Update a File - Files &amp; Folders - CASCADE TUTORIALS. Press Enter to visit"><span>Update a File</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/create-a-folder" title="Create a Folder - Files &amp; Folders - CASCADE TUTORIALS" aria-label="Create a Folder - Files &amp; Folders - CASCADE TUTORIALS. Press Enter to visit"><span>Create a Folder</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/finding-images" title="Finding Images - Files &amp; Folders - CASCADE TUTORIALS" aria-label="Finding Images - Files &amp; Folders - CASCADE TUTORIALS. Press Enter to visit"><span>Finding Images</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/resizing-an-image" title="Resizing an Image - Files &amp; Folders - CASCADE TUTORIALS" aria-label="Resizing an Image - Files &amp; Folders - CASCADE TUTORIALS. Press Enter to visit"><span>Resizing an Image</span></a></li>
                                         </ul>
                                     </li>
                                     <li class="drop">
                                       <div class="main-dropdown"><button class="btn btn-expander" type="button"><span class="plus-minus-btn"></span></button><a href="../assets/index.html" title="Assets (Pages, Files) - CASCADE TUTORIALS"><span>Assets (Pages, Files)</span></a></div>
 
                                         <ul class="sidenav-sub-menu">
-                                            <li><a class="subtext star-btn-link" href="" title="Copy an Asset (page, image, etc.) - Assets (Pages, Files) - CASCADE TUTORIALS"><span>Copy an Asset (page, image, etc.)</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Versions - Assets (Pages, Files) - CASCADE TUTORIALS"><span>Versions</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Create a Reference - Assets (Pages, Files) - CASCADE TUTORIALS"><span>Create a Reference</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Move An Asset - Assets (Pages, Files) - CASCADE TUTORIALS"><span>Move An Asset</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Rename An Asset - Assets (Pages, Files) - CASCADE TUTORIALS"><span>Rename An Asset</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Delete an Asset - Assets (Pages, Files) - CASCADE TUTORIALS"><span>Delete an Asset</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Restore An Asset - Assets (Pages, Files) - CASCADE TUTORIALS"><span>Restore An Asset</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="" title="Periodic Site Analytics Reporting - Assets (Pages, Files) - CASCADE TUTORIALS"><span>Periodic Site Analytics Reporting</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/copy-an-asset" title="Copy an Asset (page, image, etc.) - Assets (Pages, Files) - CASCADE TUTORIALS" aria-label="Copy an Asset (page, image, etc.) - Assets (Pages, Files) - CASCADE TUTORIALS. Press Enter to visit"><span>Copy an Asset (page, image, etc.)</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/versions" title="Versions - Assets (Pages, Files) - CASCADE TUTORIALS" aria-label="Versions - Assets (Pages, Files) - CASCADE TUTORIALS. Press Enter to visit"><span>Versions</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/create-a-reference" title="Create a Reference - Assets (Pages, Files) - CASCADE TUTORIALS" aria-label="Create a Reference - Assets (Pages, Files) - CASCADE TUTORIALS. Press Enter to visit"><span>Create a Reference</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/move-an-asset" title="Move An Asset - Assets (Pages, Files) - CASCADE TUTORIALS" aria-label="Move An Asset - Assets (Pages, Files) - CASCADE TUTORIALS. Press Enter to visit"><span>Move An Asset</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/rename-an-asset" title="Rename An Asset - Assets (Pages, Files) - CASCADE TUTORIALS" aria-label="Rename An Asset - Assets (Pages, Files) - CASCADE TUTORIALS. Press Enter to visit"><span>Rename An Asset</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/delete-an-asset" title="Delete an Asset - Assets (Pages, Files) - CASCADE TUTORIALS" aria-label="Delete an Asset - Assets (Pages, Files) - CASCADE TUTORIALS. Press Enter to visit"><span>Delete an Asset</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/restore-an-asset" title="Restore An Asset - Assets (Pages, Files) - CASCADE TUTORIALS" aria-label="Restore An Asset - Assets (Pages, Files) - CASCADE TUTORIALS. Press Enter to visit"><span>Restore An Asset</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="/periodic-site-analytics-reporting" title="Periodic Site Analytics Reporting - Assets (Pages, Files) - CASCADE TUTORIALS" aria-label="Periodic Site Analytics Reporting - Assets (Pages, Files) - CASCADE TUTORIALS. Press Enter to visit"><span>Periodic Site Analytics Reporting</span></a></li>
                                         </ul>
                                     </li>
                                     <li class="drop">
@@ -449,27 +472,27 @@
                                           <button class="btn btn-expander" type="button" id="">
                                             <span class="screen-only">Icon</span>
                                             <span class="plus-minus-btn"></span>
-                                        </button><a href="../google-analytics-4-documentation/index.html" title="Google Analytics 4 Documentation - CASCADE TUTORIALS"><span>Google Analytics 4 Documentation</span></a></div>
+                                        </button><a href="../google-analytics-4-documentation/index.html" title="Google Analytics 4 Documentation - CASCADE TUTORIALS" aria-label="Google Analytics 4 Documentation - CASCADE TUTORIALS. Press Enter to visit"><span>Google Analytics 4 Documentation</span></a></div>
                                         <ul class="sidenav-sub-menu"
                                         >
-                                            <li><a class="subtext star-btn-link" href="../google-analytics-4-documentation/site-specific-data.html" title="Site Specific Data - Google Analytics 4 Documentation - CASCADE TUTORIALS"><span>Site Specific Data</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="../google-analytics-4-documentation/utm.html" title="UTM URL Generation - Google Analytics 4 Documentation - CASCADE TUTORIALS"><span>UTM URL Generation</span></a></li>
-                                            <li><a class="subtext star-btn-link" href="../google-analytics-4-documentation/ga4-exploration-documentation.html" title="GA4 Exploration Documentation - Google Analytics 4 Documentation - CASCADE TUTORIALS"><span>GA4 Exploration Documentation</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="../google-analytics-4-documentation/site-specific-data.html" title="Site Specific Data - Google Analytics 4 Documentation - CASCADE TUTORIALS" aria-label="Site Specific Data - Google Analytics 4 Documentation - CASCADE TUTORIALS. Press Enter to visit"><span>Site Specific Data</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="../google-analytics-4-documentation/utm.html" title="UTM URL Generation - Google Analytics 4 Documentation - CASCADE TUTORIALS" aria-label="UTM URL Generation - Google Analytics 4 Documentation - CASCADE TUTORIALS. Press Enter to visit"><span>UTM URL Generation</span></a></li>
+                                            <li><a class="subtext star-btn-link" href="../google-analytics-4-documentation/ga4-exploration-documentation.html" title="GA4 Exploration Documentation - Google Analytics 4 Documentation - CASCADE TUTORIALS" aria-label="GA4 Exploration Documentation - Google Analytics 4 Documentation - CASCADE TUTORIALS. Press Enter to visit"><span>GA4 Exploration Documentation</span></a></li>
                                         </ul>
                                     </li>
-                                    <li class="singe-menu"> <a class="subtext star-btn-link" href="../advanced-editing/index.html" title="Advanced Editing - CASCADE TUTORIALS"><span>Advanced Editing</span></a></li>
-                                    <li class="singe-menu"><a class="subtext star-btn-link" href="../video-tutorials.html" title="Video Tutorials - CASCADE TUTORIALS"><span>Video Tutorials</span></a></li>
+                                    <li class="singe-menu"> <a class="subtext star-btn-link" href="../advanced-editing/index.html" title="Advanced Editing - CASCADE TUTORIALS" aria-label="Advanced Editing. Press Enter to visit"><span>Advanced Editing</span></a></li>
+                                    <li class="singe-menu"><a class="subtext star-btn-link" href="../video-tutorials.html" title="Video Tutorials - CASCADE TUTORIALS" aria-label="Video Tutorials Press Enter to visit"><span>Video Tutorials</span></a></li>
                                 </ul>
                             </li>
                             <li class="drop">
                               <div class="main-dropdown"> <button class="btn btn-expander text-decoration-none btn btn-secondary fw-bold" data-target="#FacultyProfiles" type="button"><svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                                 <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                               </svg></button>
-                                <a href="../../faculty-profiles/index.html" title="Faculty Profiles"><span>Faculty Profiles</span></a></div>
+                                <a href="../../faculty-profiles/index.html" title="Faculty Profiles" aria-label="Faculty Profiles"><span>Faculty Profiles</span></a></div>
 
                                 <ul class="sidenav-sub-menu" id="">
-                                    <li><a class="subtext star-btn-link" href="http://www.csueastbay.edu/directory/profiles/instructions/" title="Edit Individual Faculty Profile - Faculty Profiles"><span>Edit Individual Faculty Profile</span></a></li>
-                                    <li><a class="subtext star-btn-link" href="../../faculty-profiles/staff-admin-edit-faculty-profiles.html" title="Staff Admin Edit Faculty Profiles - Faculty Profiles"><span>Staff Admin Edit Faculty Profiles</span></a></li>
+                                    <li><a class="subtext star-btn-link" href="http://www.csueastbay.edu/directory/profiles/instructions/" title="Edit Individual Faculty Profile - Faculty Profiles"  aria-label="Edit Individual Faculty Profile Press Enter to visit" ><span>Edit Individual Faculty Profile</span></a></li>
+                                    <li><a class="subtext star-btn-link" href="../../faculty-profiles/staff-admin-edit-faculty-profiles.html" title="Staff Admin Edit Faculty Profiles - Faculty Profiles" aria-label="Staff Admin Edit Faculty Profiles. Press Enter to visit"><span>Staff Admin Edit Faculty Profiles</span></a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -495,7 +518,8 @@
                     <!-- Red Diamonds -->
                     <div class="title-wrap">
                       <h2 class="section-title mb-3">Master's Program in Education</h2>
-                      <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
+                      <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none"  aria-hidden="true">
+                        <title>Star Icon</title>
                         <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"/>
                         <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"/>
                         <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"/>
@@ -514,8 +538,8 @@
             
                   <!-- Button Tags -->
                   <div class="d-flex flex-wrap button-listing">
-                    <a href="#" class="btn btn-primary"><span>Apply Now</span></a>
-                    <a href="#" class="btn btn-primary"><span>Request Info</span></a>
+                    <a href="/apply-now" class="btn btn-primary" aria-label="Apply Now. Press Enter to visit"><span>Apply Now</span></a>
+                    <a href="/request-info" class="btn btn-primary" aria-label="Request Info. Press Enter to visit"><span>Request Info</span></a>
                   </div>
                 </div>
 
@@ -524,7 +548,8 @@
                     <!-- Red Diamonds -->
                     <div class="title-wrap">
                       <h2 class="section-title mb-3">Why Education at East Bay?</h2>
-                      <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
+                      <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none" aria-hidden="true">
+                        <title>Star Icon</title>
                         <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"/>
                         <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"/>
                         <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"/>
@@ -556,7 +581,8 @@
           <!-- Red Diamonds -->
           <div class="title-wrap">
             <h2 class="section-title">Program Highlights</h2>
-            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none" aria-hidden="true">
+              <title>Star Icon</title>
               <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"/>
               <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"/>
               <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"/>
@@ -574,7 +600,7 @@
                   <p>Insert text here to have the content displayed.</p>
                 </div>
                 <div class="button-grp">
-                  <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow btn-secondary-small">
+                  <a href="/read-more" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow btn-secondary-small" aria-label="Read More Example. Press Enter to visit">
                     <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                       <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                     </svg>
@@ -594,8 +620,8 @@
                   <p>Insert text here to have the content displayed.</p>
                 </div>
                 <div class="button-grp">
-                  <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow btn-secondary-small">
-                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <a href="/read-more" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow btn-secondary-small" aria-label="Read More Example. Press Enter to visit">
+                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                       <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                     </svg>
                     <span>Read More Example</span>
@@ -614,8 +640,8 @@
                   <p>Insert text here to have the content displayed.</p>
                 </div>
                 <div class="button-grp">
-                  <a href="#" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow btn-secondary-small">
-                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+                  <a href="/read-more" class="text-decoration-none btn btn-secondary btn-secondary-icon-yellow btn-secondary-small" aria-label="Read More Example. Press Enter to visit">
+                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                       <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"></path>
                     </svg>
                     <span>Read More Example</span>
@@ -637,7 +663,8 @@
           <!-- Red Diamonds -->
           <div class="title-wrap">
             <h2 class="section-title mb-3">Program Curriculum</h2>
-            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none" aria-hidden="true">
+              <title>Star Icon</title>
               <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"/>
               <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"/>
               <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"/>
@@ -651,7 +678,7 @@
                 <button class="accordion-button collapsed h4" data-bs-toggle="collapse" data-bs-target="#section1Id">
                   Year One
                   <span class="accordion-icon">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <path d="M8.83333 0.5V7.16667H15.5V8.83333H8.83333V12.1667V15.5H7.16667V12.1667V8.83333H0.5V7.16667H7.16667V0.5H8.83333Z" fill="currentColor"/>
                     </svg>
                   </span>
@@ -735,7 +762,8 @@
                   <!-- Red Diamonds -->
                   <div class="title-wrap text-center">
                     <h3 class="section-title">"The difference between a successful person and others is not lack of strength, not a lack of knowledge, but rather a lack of will."</h3>
-                    <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
+                    <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none" aria-hidden="true">
+                      <title>Star Icon</title>
                       <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"/>
                       <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"/>
                       <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"/>
@@ -755,7 +783,8 @@
                   <!-- Red Diamonds -->
                   <div class="title-wrap text-center">
                     <h3 class="section-title">"A day without laughter is a day wasted."</h3>
-                    <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
+                    <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none" aria-hidden="true">
+                      <title>Star Icon</title>
                       <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"/>
                       <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"/>
                       <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"/>
@@ -785,7 +814,8 @@
             <!-- Red Diamonds -->
             <div class="title-wrap">
               <h2 class="section-title mb-3">Program Outcomes</h2>
-              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
+              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none" aria-hidden="true">
+                <title>Star Icon</title>
                 <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"/>
                 <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"/>
                 <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"/>
@@ -818,7 +848,8 @@
             <!-- Red Diamonds -->
             <div class="title-wrap w-100">
               <h2 class="section-title">Contact Us</h2>
-              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
+              <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none" aria-hidden="true">
+                <title>Star Icon</title>
                 <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"></path>
                 <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"></path>
                 <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"></path>
@@ -835,32 +866,28 @@
                   <div class="social-icon col-12 col-md-5 col-xl-3">
                     <ul class="social-icons list-unstyled mb-0">
                       <li>
-                        <a href="">
-                          <!-- <img src="./images/instagram-icon.svg" alt="Icon" class="img-fluid"> -->
+                        <a href="/instagram" aria-label="Follow us on Instagram">
                           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M5 0C2.23958 0 0 2.23958 0 5V13C0 15.7604 2.23958 18 5 18H13C15.7604 18 18 15.7604 18 13V5C18 2.23958 15.7604 0 13 0H5ZM15 2C15.5521 2 16 2.44792 16 3C16 3.55208 15.5521 4 15 4C14.4479 4 14 3.55208 14 3C14 2.44792 14.4479 2 15 2ZM9 4C11.7604 4 14 6.23958 14 9C14 11.7604 11.7604 14 9 14C6.23958 14 4 11.7604 4 9C4 6.23958 6.23958 4 9 4ZM9 6C7.34375 6 6 7.34375 6 9C6 10.6563 7.34375 12 9 12C10.6563 12 12 10.6563 12 9C12 7.34375 10.6563 6 9 6Z" fill="currentColor"></path>
                           </svg>
                         </a> 
                       </li>
                       <li>
-                        <a href="">
-                          <!-- <img src="./images/twitch-icon.svg" alt="Icon" class="img-fluid"> -->
+                        <a href="/twitch" aria-label="Follow us on Twitch">
                           <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0.864584 0L7.73438 9.81771L0.734375 18H3.38021L8.92188 11.5104L13.4635 18H19.3698L12.1719 7.69792L18.7448 0H16.1406L10.9948 6.01042L6.79688 0H0.864584Z" fill="currentColor"/>
                           </svg>
                         </a>
                       </li>
                       <li>
-                        <a href="">
-                          <!-- <img src="./images/youtube-icon.svg" alt="Icon" class="img-fluid"> -->
+                        <a href="/youtube" aria-label="Follow us on Youtube">
                           <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M19.5833 2.1875C19.3542 1.32813 18.6719 0.645833 17.8125 0.416667C16.2552 0 10 0 10 0C10 0 3.74479 0 2.1875 0.416667C1.32813 0.645833 0.645833 1.32813 0.416667 2.1875C0 3.74479 0 8 0 8C0 8 0 12.2552 0.416667 13.8125C0.645833 14.6719 1.32813 15.3542 2.1875 15.5833C3.74479 16 10 16 10 16C10 16 16.2552 16 17.8125 15.5833C18.6771 15.3542 19.3542 14.6719 19.5833 13.8125C20 12.2552 20 8 20 8C20 8 20 3.74479 19.5833 2.1875ZM8 11.4635V4.53646L14 8L8 11.4635Z" fill="currentColor"/>
                           </svg>
                         </a>
                       </li>
                       <li>
-                        <a href="">
-                          <!-- <img src="./images/facebook-icon.svg" alt="Icon" class="img-fluid"> -->
+                        <a href="/facebook" aria-label="Follow us on Facebook">
                           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10 0C4.47917 0 0 4.47917 0 10C0 15.0104 3.69271 19.151 8.50521 19.875V12.651H6.03125V10.0208H8.50521V8.27083C8.50521 5.375 9.91667 4.10417 12.3229 4.10417C13.474 4.10417 14.0833 4.1875 14.375 4.22917V6.52083H12.7344C11.7083 6.52083 11.3542 7.48958 11.3542 8.58333V10.0208H14.349L13.9427 12.651H11.3542V19.8958C16.2344 19.2344 20 15.0625 20 10C20 4.47917 15.5208 0 10 0Z" fill="currentColor"/>
                           </svg>
@@ -891,7 +918,7 @@
                         <img src="./images/phone.svg" class="img-fluid w-100" alt="Phone">
                       </div>
                       <div class="info-text text-medium">
-                        (510) 885-3292
+                        <a href="tel:5108853292" aria-label="Call (510) 885-3292">(510) 885-3292</a>
                       </div>
                     </div>
 
@@ -900,7 +927,7 @@
                         <img src="./images/email-icon.svg" class="img-fluid w-100" alt="Email">
                       </div>
                       <div class="info-text text-medium">
-                      <a href="" class="link--hover">communication@csueastbay.edu</a> 
+                      <a href="mailto:communication@csueastbay.edu" class="link--hover" aria-label="Email communication@csueastbay.edu">communication@csueastbay.edu</a> 
                       </div>
                     </div>
 
@@ -909,7 +936,7 @@
                         <img src="./images/link-icon.svg" class="img-fluid w-100" alt="Link">
                       </div>
                       <div class="info-text text-medium">
-                        <a href="" class="link--hover">Dept. of Communication</a> 
+                        <a href="/dept-of-communication" class="link--hover" aria-label="Dept. of Communication. Press Enter to visit">Dept. of Communication</a> 
                       </div>
                     </div>  
                   </div>
@@ -919,32 +946,28 @@
                 <div class="mobile-social-icon social-icon">
                   <ul class="social-icons list-unstyled mb-0">
                     <li>
-                      <a href="">
-                        <!-- <img src="./images/instagram-icon.svg" alt="Icon" class="img-fluid"> -->
+                      <a href="/instagram" aria-label="Follow us on Instagram">
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M5 0C2.23958 0 0 2.23958 0 5V13C0 15.7604 2.23958 18 5 18H13C15.7604 18 18 15.7604 18 13V5C18 2.23958 15.7604 0 13 0H5ZM15 2C15.5521 2 16 2.44792 16 3C16 3.55208 15.5521 4 15 4C14.4479 4 14 3.55208 14 3C14 2.44792 14.4479 2 15 2ZM9 4C11.7604 4 14 6.23958 14 9C14 11.7604 11.7604 14 9 14C6.23958 14 4 11.7604 4 9C4 6.23958 6.23958 4 9 4ZM9 6C7.34375 6 6 7.34375 6 9C6 10.6563 7.34375 12 9 12C10.6563 12 12 10.6563 12 9C12 7.34375 10.6563 6 9 6Z" fill="currentColor"></path>
                         </svg>
                       </a> 
                     </li>
                     <li>
-                      <a href="">
-                        <!-- <img src="./images/twitch-icon.svg" alt="Icon" class="img-fluid"> -->
+                      <a href="/twitch" aria-label="Follow us on Twitch">
                         <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M0.864584 0L7.73438 9.81771L0.734375 18H3.38021L8.92188 11.5104L13.4635 18H19.3698L12.1719 7.69792L18.7448 0H16.1406L10.9948 6.01042L6.79688 0H0.864584Z" fill="currentColor"/>
                         </svg>
                       </a>
                     </li>
                     <li>
-                      <a href="">
-                        <!-- <img src="./images/youtube-icon.svg" alt="Icon" class="img-fluid"> -->
+                      <a href="/youtube" aria-label="Follow us on Youtube">
                         <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M19.5833 2.1875C19.3542 1.32813 18.6719 0.645833 17.8125 0.416667C16.2552 0 10 0 10 0C10 0 3.74479 0 2.1875 0.416667C1.32813 0.645833 0.645833 1.32813 0.416667 2.1875C0 3.74479 0 8 0 8C0 8 0 12.2552 0.416667 13.8125C0.645833 14.6719 1.32813 15.3542 2.1875 15.5833C3.74479 16 10 16 10 16C10 16 16.2552 16 17.8125 15.5833C18.6771 15.3542 19.3542 14.6719 19.5833 13.8125C20 12.2552 20 8 20 8C20 8 20 3.74479 19.5833 2.1875ZM8 11.4635V4.53646L14 8L8 11.4635Z" fill="currentColor"/>
                         </svg>
                       </a>
                     </li>
                     <li>
-                      <a href="">
-                        <!-- <img src="./images/facebook-icon.svg" alt="Icon" class="img-fluid"> -->
+                      <a href="/facebook" aria-label="Follow us on Facebook">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M10 0C4.47917 0 0 4.47917 0 10C0 15.0104 3.69271 19.151 8.50521 19.875V12.651H6.03125V10.0208H8.50521V8.27083C8.50521 5.375 9.91667 4.10417 12.3229 4.10417C13.474 4.10417 14.0833 4.1875 14.375 4.22917V6.52083H12.7344C11.7083 6.52083 11.3542 7.48958 11.3542 8.58333V10.0208H14.349L13.9427 12.651H11.3542V19.8958C16.2344 19.2344 20 15.0625 20 10C20 4.47917 15.5208 0 10 0Z" fill="currentColor"/>
                         </svg>
@@ -960,43 +983,49 @@
     </section>
     <!-- Only Text - contact-us End -->
 
-     <!-- Footer Start -->
-    <footer class="footer bg-black text-white">
-      <div class="container">
+    </main>
 
+
+    <!-- Footer Start -->
+    <footer class="footer bg-black text-white" aria-label="Footer Section" role="contentinfo">
+      <div class="container">
         <div class="footer-lists">
           <div class="footer-top-sec row align-items-center">
             <div class="col-md-6">
-              <div class="footer-logo mb-3">
+              <div class="footer-logo mb-3" aria-label="Footer logo">
                 <img src="./images/logo-footer.svg" alt="Logo" class="img-fluid">
               </div>
             </div>
             <div class="col-md-6 d-none d-md-block">
-              <ul class="social-icons list-unstyled mb-0">
+              <ul class="social-icons list-unstyled mb-0" aria-label="Footer social icons">
                 <li>
-                  <a href="">
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <a href="/linkedin" aria-label="Follow us on LinkedIn">
+                    <span class="screen-only">linkedin</span>
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <path d="M5 0C2.23958 0 0 2.23958 0 5V13C0 15.7604 2.23958 18 5 18H13C15.7604 18 18 15.7604 18 13V5C18 2.23958 15.7604 0 13 0H5ZM15 2C15.5521 2 16 2.44792 16 3C16 3.55208 15.5521 4 15 4C14.4479 4 14 3.55208 14 3C14 2.44792 14.4479 2 15 2ZM9 4C11.7604 4 14 6.23958 14 9C14 11.7604 11.7604 14 9 14C6.23958 14 4 11.7604 4 9C4 6.23958 6.23958 4 9 4ZM9 6C7.34375 6 6 7.34375 6 9C6 10.6563 7.34375 12 9 12C10.6563 12 12 10.6563 12 9C12 7.34375 10.6563 6 9 6Z" fill="currentColor"></path>
                     </svg>
                   </a> 
                 </li>
                 <li>
-                  <a href="">
-                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <a href="/twitter" aria-label="Follow us on Twitter">
+                    <span class="screen-only">twitter</span>
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <path d="M0.864584 0L7.73438 9.81771L0.734375 18H3.38021L8.92188 11.5104L13.4635 18H19.3698L12.1719 7.69792L18.7448 0H16.1406L10.9948 6.01042L6.79688 0H0.864584Z" fill="currentColor"></path>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a href="">
-                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <a href="/youtube" aria-label="Follow us on Youtube">
+                    <span class="screen-only">youtube</span>
+                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <path d="M19.5833 2.1875C19.3542 1.32813 18.6719 0.645833 17.8125 0.416667C16.2552 0 10 0 10 0C10 0 3.74479 0 2.1875 0.416667C1.32813 0.645833 0.645833 1.32813 0.416667 2.1875C0 3.74479 0 8 0 8C0 8 0 12.2552 0.416667 13.8125C0.645833 14.6719 1.32813 15.3542 2.1875 15.5833C3.74479 16 10 16 10 16C10 16 16.2552 16 17.8125 15.5833C18.6771 15.3542 19.3542 14.6719 19.5833 13.8125C20 12.2552 20 8 20 8C20 8 20 3.74479 19.5833 2.1875ZM8 11.4635V4.53646L14 8L8 11.4635Z" fill="currentColor"></path>
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a href="">
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <a href="/facebook" aria-label="Follow us on Facebook">
+                    <span class="screen-only">facebook</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <path d="M10 0C4.47917 0 0 4.47917 0 10C0 15.0104 3.69271 19.151 8.50521 19.875V12.651H6.03125V10.0208H8.50521V8.27083C8.50521 5.375 9.91667 4.10417 12.3229 4.10417C13.474 4.10417 14.0833 4.1875 14.375 4.22917V6.52083H12.7344C11.7083 6.52083 11.3542 7.48958 11.3542 8.58333V10.0208H14.349L13.9427 12.651H11.3542V19.8958C16.2344 19.2344 20 15.0625 20 10C20 4.47917 15.5208 0 10 0Z" fill="currentColor"></path>
                     </svg>
                   </a>
@@ -1008,7 +1037,7 @@
           
           <!-- Links -->
           <div class="menu-wrapper">
-            <div class="row">
+            <nav class="row" aria-label="Footer main navigation">
               <!-- Logo and Address -->
               <div class="col-12 col-sm-6 col-md address-sec">
                 <address class="text-white text-medium m-0">
@@ -1020,55 +1049,59 @@
               
               <div class="col-12 col-sm-6 col-md mb-2 mb-md-0">
                 <ul class="list-unstyled footer-links">
-                  <li><a href="#" class="subtext">Academic Programs</a></li>
-                  <li><a href="#" class="subtext">Library</a></li>
-                  <li><a href="#" class="subtext">Bookstore</a></li>
-                  <li><a href="#" class="subtext">Athletics</a></li>
+                  <li><a href="/academic-program" class="subtext" aria-label="Academic Programs. Press Enter to visit"> Academic Programs</a></li>
+                  <li><a href="/library" class="subtext" aria-label="Library. Press Enter to visit">Library</a></li>
+                  <li><a href="/bookstore" class="subtext" aria-label="Bookstore. Press Enter to visit">Bookstore</a></li>
+                  <li><a href="/athletics" class="subtext" aria-label="Athletics. Press Enter to visit">Athletics</a></li>
                 </ul>
               </div>
 
               <div class="col-12 col-sm-6 col-md">
                 <ul class="list-unstyled footer-links">
-                  <li><a href="#" class="subtext">Contact Cal State East Bay</a></li>
-                  <li><a href="#" class="subtext">Maps and Directions</a></li>
-                  <li><a href="#" class="subtext">Campus Directory</a></li>
-                  <li><a href="#" class="subtext">Career Opportunities</a></li>
+                  <li><a href="/contact" class="subtext" aria-label="Contact Cal State East Bay. Press Enter to visit">Contact Cal State East Bay</a></li>
+                  <li><a href="/maps-and-directions" class="subtext" aria-label="Maps and Directions. Press Enter to visit">Maps and Directions</a></li>
+                  <li><a href="/campus-directory" class="subtext" aria-label="Campus Directory. Press Enter to visit">Campus Directory</a></li>
+                  <li><a href="/career-opportunities" class="subtext" aria-label="Career Opportunities. Press Enter to visit">Career Opportunities</a></li>
                 </ul>
               </div>
 
               <div class="col-12 col-sm-6 col-md d-flex d-md-none mt-32">
                 <ul class="social-icons list-unstyled mb-0">
-                        <li>
-                          <a href="">
-                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M5 0C2.23958 0 0 2.23958 0 5V13C0 15.7604 2.23958 18 5 18H13C15.7604 18 18 15.7604 18 13V5C18 2.23958 15.7604 0 13 0H5ZM15 2C15.5521 2 16 2.44792 16 3C16 3.55208 15.5521 4 15 4C14.4479 4 14 3.55208 14 3C14 2.44792 14.4479 2 15 2ZM9 4C11.7604 4 14 6.23958 14 9C14 11.7604 11.7604 14 9 14C6.23958 14 4 11.7604 4 9C4 6.23958 6.23958 4 9 4ZM9 6C7.34375 6 6 7.34375 6 9C6 10.6563 7.34375 12 9 12C10.6563 12 12 10.6563 12 9C12 7.34375 10.6563 6 9 6Z" fill="currentColor"></path>
-                            </svg>
-                          </a> 
-                        </li>
-                        <li>
-                          <a href="">
-                            <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M0.864584 0L7.73438 9.81771L0.734375 18H3.38021L8.92188 11.5104L13.4635 18H19.3698L12.1719 7.69792L18.7448 0H16.1406L10.9948 6.01042L6.79688 0H0.864584Z" fill="currentColor"></path>
-                            </svg>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="">
-                            <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M19.5833 2.1875C19.3542 1.32813 18.6719 0.645833 17.8125 0.416667C16.2552 0 10 0 10 0C10 0 3.74479 0 2.1875 0.416667C1.32813 0.645833 0.645833 1.32813 0.416667 2.1875C0 3.74479 0 8 0 8C0 8 0 12.2552 0.416667 13.8125C0.645833 14.6719 1.32813 15.3542 2.1875 15.5833C3.74479 16 10 16 10 16C10 16 16.2552 16 17.8125 15.5833C18.6771 15.3542 19.3542 14.6719 19.5833 13.8125C20 12.2552 20 8 20 8C20 8 20 3.74479 19.5833 2.1875ZM8 11.4635V4.53646L14 8L8 11.4635Z" fill="currentColor"></path>
-                            </svg>
-                          </a>
-                        </li>
-                        <li>
-                          <a href="">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M10 0C4.47917 0 0 4.47917 0 10C0 15.0104 3.69271 19.151 8.50521 19.875V12.651H6.03125V10.0208H8.50521V8.27083C8.50521 5.375 9.91667 4.10417 12.3229 4.10417C13.474 4.10417 14.0833 4.1875 14.375 4.22917V6.52083H12.7344C11.7083 6.52083 11.3542 7.48958 11.3542 8.58333V10.0208H14.349L13.9427 12.651H11.3542V19.8958C16.2344 19.2344 20 15.0625 20 10C20 4.47917 15.5208 0 10 0Z" fill="currentColor"></path>
-                            </svg>
-                          </a>
-                        </li>
+                  <li>
+                    <a href="/linkedin" aria-label="Follow us on LinkedIn">
+                      <span class="screen-only">linkedin</span>
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M5 0C2.23958 0 0 2.23958 0 5V13C0 15.7604 2.23958 18 5 18H13C15.7604 18 18 15.7604 18 13V5C18 2.23958 15.7604 0 13 0H5ZM15 2C15.5521 2 16 2.44792 16 3C16 3.55208 15.5521 4 15 4C14.4479 4 14 3.55208 14 3C14 2.44792 14.4479 2 15 2ZM9 4C11.7604 4 14 6.23958 14 9C14 11.7604 11.7604 14 9 14C6.23958 14 4 11.7604 4 9C4 6.23958 6.23958 4 9 4ZM9 6C7.34375 6 6 7.34375 6 9C6 10.6563 7.34375 12 9 12C10.6563 12 12 10.6563 12 9C12 7.34375 10.6563 6 9 6Z" fill="currentColor"></path>
+                      </svg>
+                    </a> 
+                  </li>
+                  <li>
+                    <a href="/twitter" aria-label="Follow us on Twitter">
+                      <span class="screen-only">twitter</span>
+                      <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M0.864584 0L7.73438 9.81771L0.734375 18H3.38021L8.92188 11.5104L13.4635 18H19.3698L12.1719 7.69792L18.7448 0H16.1406L10.9948 6.01042L6.79688 0H0.864584Z" fill="currentColor"></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/youtube" aria-label="Follow us on Youtube">
+                      <span class="screen-only">youtube</span>
+                      <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M19.5833 2.1875C19.3542 1.32813 18.6719 0.645833 17.8125 0.416667C16.2552 0 10 0 10 0C10 0 3.74479 0 2.1875 0.416667C1.32813 0.645833 0.645833 1.32813 0.416667 2.1875C0 3.74479 0 8 0 8C0 8 0 12.2552 0.416667 13.8125C0.645833 14.6719 1.32813 15.3542 2.1875 15.5833C3.74479 16 10 16 10 16C10 16 16.2552 16 17.8125 15.5833C18.6771 15.3542 19.3542 14.6719 19.5833 13.8125C20 12.2552 20 8 20 8C20 8 20 3.74479 19.5833 2.1875ZM8 11.4635V4.53646L14 8L8 11.4635Z" fill="currentColor"></path>
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/facebook" aria-label="Follow us on Facebook">  
+                      <span class="screen-only">facebook</span>
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M10 0C4.47917 0 0 4.47917 0 10C0 15.0104 3.69271 19.151 8.50521 19.875V12.651H6.03125V10.0208H8.50521V8.27083C8.50521 5.375 9.91667 4.10417 12.3229 4.10417C13.474 4.10417 14.0833 4.1875 14.375 4.22917V6.52083H12.7344C11.7083 6.52083 11.3542 7.48958 11.3542 8.58333V10.0208H14.349L13.9427 12.651H11.3542V19.8958C16.2344 19.2344 20 15.0625 20 10C20 4.47917 15.5208 0 10 0Z" fill="currentColor"></path>
+                      </svg>
+                    </a>
+                  </li>
                 </ul>
               </div>
-            </div>
+            </nav>
           </div>
           
       
@@ -1079,14 +1112,14 @@
             <div class="row">
               <div class="col-12">
                 <ul class="list-unstyled d-flex flex-column flex-sm-row flex-wrap gap-2 gap-md-3">
-                  <li><a href="#" class="link-btn">Privacy Statement</a></li>
-                  <li><a href="#" class="link-btn">Emergency Information</a></li>
-                  <li><a href="#" class="link-btn">Annual Security Report</a></li>
-                  <li><a href="#" class="link-btn">Campus Safety Plan</a></li>
-                  <li><a href="#" class="link-btn">Register a Complaint</a></li>
-                  <li><a href="#" class="link-btn">Notice of Non-Discrimination and Retaliation Prohibition</a></li>
+                  <li><a href="/privacy-statement" class="link-btn" aria-label="Privacy Statement. Press Enter to visit">Privacy Statement</a></li>
+                  <li><a href="/emergency-information" class="link-btn" aria-label="Emergency Information. Press Enter to visit">Emergency Information</a></li>
+                  <li><a href="/annual-security-report" class="link-btn" aria-label="Annual Security Report. Press Enter to visit">Annual Security Report</a></li>
+                  <li><a href="/campus-safety-plan" class="link-btn" aria-label="Campus Safety Plan. Press Enter to visit">Campus Safety Plan</a></li>
+                    <li><a href="/register-a-complaint" class="link-btn" aria-label="Register a Complaint. Press Enter to visit">Register a Complaint</a></li>
+                  <li><a href="/notice-of-non-discrimination" class="link-btn" aria-label="Notice of Non-Discrimination and Retaliation Prohibition. Press Enter to visit">Notice of Non-Discrimination and Retaliation Prohibition</a></li>
                 </ul>
-                <p class="copyright text-smaller">&copy; 2024 California State University, East Bay. All Rights Reserved.</p>
+                <p class="copyright text-smaller" aria-label="Copyright">&copy; 2024 California State University, East Bay. All Rights Reserved.</p>
               </div>
             </div>
           </div>
