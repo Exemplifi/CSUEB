@@ -411,3 +411,14 @@ section.bg-white.section-with-padding + section.bg-white {
     transform: translateY(0);
     outline: 2px solid #000;
   }
+
+.padding-top-48 {
+    padding-top: rem.convert(48px)!important;
+}
+
+.padding-bottom-48 {
+    padding-bottom: rem.convert(48px);
+    @include media-breakpoint-down(md) {
+        padding-bottom: rem.convert(32px);
+    }
+}
