@@ -4535,6 +4535,47 @@ section.bg-white.section-with-padding + section.bg-white {
   margin-right: 2.5rem;
 }
 
+.left-nav-wrap {
+  width: 100%;
+  background: var(--white);
+}
+.left-nav-wrap .left-nav {
+  padding: 1rem 1.5rem;
+  border-top: 8px solid var(--red);
+}
+@media (max-width: 767.98px) {
+  .left-nav-wrap .left-nav {
+    padding-block: 1.5rem;
+  }
+}
+.left-nav-wrap .left-nav .sub-menu-links {
+  padding-left: 2rem;
+}
+.left-nav-wrap .left-nav .accordion-item .accordion-button {
+  font-family: var(--body-font-family);
+  font-size: 0.875rem;
+  line-height: 1.75; /* 1.53125rem */
+  font-weight: 500;
+}
+@media (min-width: 768px) {
+  .left-nav-wrap .left-nav .accordion-item .accordion-button {
+    pointer-events: none;
+  }
+}
+@media (max-width: 767.98px) {
+  .left-nav-wrap .left-nav .accordion-item .accordion-button::after {
+    content: "";
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"><path d="M7.42969 10L5.92969 11.5L12 17.5703L18.0703 11.5L16.5703 10L12 14.5703L7.42969 10Z" fill="black"/></svg>');
+    background-size: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .left-nav-wrap .left-nav .accordion-item .accordion-button[aria-expanded=false]::after {
+    content: "";
+    transform: rotate(-180deg);
+  }
+}
+
 .home-hero-sec {
   position: relative;
   padding-top: 0.6rem;
