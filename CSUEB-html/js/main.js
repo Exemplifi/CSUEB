@@ -15,19 +15,19 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroSlider();
   initMainImgSlider();
   initGalleryLightbox();
-  
+
   const expanderButtons = document.querySelectorAll('.btn-expander');
-  
+
   expanderButtons.forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
       const submenu = this.closest('li').querySelector('.sidenav-sub');
       const icon = this.querySelector('.glyphicon');
-      
+
       // Toggle submenu visibility
       if (submenu) {
         submenu.style.display = submenu.style.display === 'none' ? 'block' : 'none';
       }
-      
+
       // Toggle plus/minus icon
       if (icon) {
         icon.classList.toggle('glyphicon-plus');
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Accordion for .main-dropdown > .btn-expander
   const mainDropdownExpanders = document.querySelectorAll('.main-dropdown > .btn-expander');
   mainDropdownExpanders.forEach(btn => {
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function () {
       const menu = btn.parentElement.nextElementSibling;
       if (menu && menu.classList.contains('sidenav-sub-menu')) {
         menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchBtn = document.querySelector('.search__btn');
   const searchDropdown = document.querySelector('.header-search-dropdown');
   if (searchBtn && searchDropdown) {
-    searchBtn.addEventListener('click', function(e) {
+    searchBtn.addEventListener('click', function (e) {
       e.stopPropagation();
       searchDropdown.classList.toggle('d-none');
       if (!searchDropdown.classList.contains('d-none')) {
@@ -65,12 +65,54 @@ document.addEventListener("DOMContentLoaded", () => {
         if (input) input.focus();
       }
     });
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
       if (!searchDropdown.classList.contains('d-none') && !searchDropdown.contains(e.target) && e.target !== searchBtn) {
         searchDropdown.classList.add('d-none');
       }
     });
   }
+
+  // Faculty Profile Read More Button
+  var buttons = document.querySelectorAll('.read-more-btn');
+
+  buttons.forEach(function (btn) {
+    var showMoreText = 'Read More';
+    var showLessText = 'Read Less';
+
+    btn.addEventListener('click', function () {
+      var descWrap = btn.closest('.faculty-more-info');
+      var details = descWrap.querySelector('.faculty-desc-wrap');
+      var isExpanded = details.classList.contains('expand');
+
+      // Find the text node after the icon span
+      var textNode = null;
+      for (var i = 0; i < btn.childNodes.length; i++) {
+        var node = btn.childNodes[i];
+        if (node.nodeType === Node.TEXT_NODE && node.textContent.trim().length > 0) {
+          textNode = node;
+          break;
+        }
+      }
+
+      // Find the icon wrapper
+      var iconWrap = btn.querySelector('.icon-wrap');
+
+      if (!textNode || !iconWrap) return;
+
+      if (!isExpanded) {
+        details.classList.add('expand');
+        btn.setAttribute('aria-expanded', 'true');
+        textNode.textContent = ' ' + showLessText;
+        iconWrap.classList.add('rotate');
+      } else {
+        details.classList.remove('expand');
+        btn.setAttribute('aria-expanded', 'false');
+        textNode.textContent = ' ' + showMoreText;
+        iconWrap.classList.remove('rotate');
+      }
+    });
+  });
+
 });
 
 // Swiper Sliders
@@ -161,9 +203,9 @@ function initHeroSlider() {
   new Swiper(".hero-slider", {
     navigation: hasMultipleSlides
       ? {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        }
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      }
       : false,
   });
 }
@@ -381,7 +423,7 @@ function initGalleryLightbox() {
       const img = link.querySelector('img');
       const imgAlt = img ? img.getAttribute('alt') || "" : "";
       const isActive = i === activeIndex ? " active" : "";
-      
+
       if (videoUrl) {
         // Only add autoplay to the active slide
         const autoplayParam = i === activeIndex ? "&autoplay=1" : "";
@@ -445,14 +487,14 @@ function initGalleryLightbox() {
     if (iframes[index]) {
       const iframe = iframes[index];
       const currentSrc = iframe.src;
-      
+
       // Remove autoplay from all iframes first
       iframes.forEach((frame, idx) => {
         if (idx !== index) {
           frame.src = frame.src.replace(/&autoplay=1/, '');
         }
       });
-      
+
       // Add autoplay to the target iframe
       if (!currentSrc.includes('autoplay=1')) {
         iframe.src = currentSrc + (currentSrc.includes('?') ? '&' : '?') + 'autoplay=1';
@@ -472,7 +514,7 @@ function initGalleryLightbox() {
   function initializeYouTubePlayers() {
     // Clear existing players
     youtubePlayers = [];
-    
+
     // Initialize YouTube players for each iframe
     currentIframes.forEach((iframe, index) => {
       if (iframe.src.includes('youtube.com')) {
@@ -492,7 +534,7 @@ function initGalleryLightbox() {
 
   function createCarousel(link) {
     if (!modalBody || !link) return;
-    
+
     // Find the index of the clicked link
     const parentSlide = link.closest(".swiper-slide");
     const activeIndex = parentSlide
@@ -524,7 +566,7 @@ function initGalleryLightbox() {
       carousel.addEventListener('slide.bs.carousel', function (event) {
         // Pause all videos first
         pauseAllVideos();
-        
+
         // Play the video on the new slide
         setTimeout(() => {
           playVideoAtIndex(event.to);
@@ -568,12 +610,12 @@ function initGalleryLightbox() {
   lightboxModal.addEventListener('hidden.bs.modal', function () {
     // Pause all videos before closing
     pauseAllVideos();
-    
+
     // Clear modal content
     if (modalBody) {
       modalBody.innerHTML = '';
     }
-    
+
     // Clear iframe references and YouTube players
     currentIframes = [];
     youtubePlayers = [];
