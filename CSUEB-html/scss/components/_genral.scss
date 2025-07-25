@@ -138,6 +138,9 @@ section.bg-white.section-with-padding + section.bg-white {
 .gap-20 {
     gap: rem.convert(20px);
 }
+.gap-32 {
+    gap: rem.convert(32px);
+}
 .gx-2px {
     --bs-gutter-x:  2px;
 }
