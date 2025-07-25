@@ -194,6 +194,9 @@
   max-width: 800px;
   padding: 6rem 1.25rem;
   margin: 0 auto;
+  @include media-breakpoint-down(lg) {
+    padding-block: 4.5rem;
+  }
   .social-icons {
     display: flex;
     flex-direction: row;
