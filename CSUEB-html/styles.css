@@ -5010,7 +5010,7 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 .campus-news .news-card::after {
   content: "";
-  background: linear-gradient(0deg, var(--black-70, rgba(0, 0, 0, 0.7)) 0%, var(--black-70, rgba(0, 0, 0, 0.7)) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 37.67%, #000 67.5%);
   position: absolute;
   inset: 0;
   z-index: 2;
