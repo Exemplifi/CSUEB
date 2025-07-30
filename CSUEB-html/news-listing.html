@@ -316,17 +316,18 @@
 
     <main role="main" id="main-content">     
       <!-- Inner Hero Section Start -->
-      <section class="inner-hero-section inner-hero-full-image">
+      <section class="inner-hero-section inner-hero-full-image hero-parallax">
         <div class="full-img-hero-wrap bg-transparent h-100">
-          <div class="img-wrapper w-100 h-100">
+          <div class="img-wrapper w-100 h-100 d-none d-md-block" style="background-image: url('./images/hero-secondary.png');">
+           
+          </div>
 
-            <img src="./images/hero-secondary.png" alt="Hero" class="img-fluid w-100 h-100 object-fit-cover d-none d-md-block">
-
-            <img src="./images/hero-secondary-mobile.png" alt="Mobile Hero" class="img-fluid w-100 h-100 object-fit-cover d-md-none">
+          <div class="img-wrapper w-100 h-100 d-md-none" style="background-image: url('./images/hero-secondary-mobile.png');">
           </div>
         </div>
       </section>
       <!-- Inner Hero Section End -->
+
 
       <!-- breadcrumb -->
       <section class="container bg-white">       

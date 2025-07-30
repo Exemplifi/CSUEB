@@ -136,6 +136,10 @@ section.bg-white.section-with-padding + section.bg-white {
     margin-block: rem.convert(32px);
 }
 
+.py-32 {
+    padding-block: rem.convert(32px);
+}
+
 .gap-20 {
     gap: rem.convert(20px);
 }
