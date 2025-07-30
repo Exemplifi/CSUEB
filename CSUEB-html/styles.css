@@ -5048,6 +5048,17 @@ section.bg-white.section-with-padding + section.bg-white {
   object-fit: cover;
 }
 
+.hero-parallax .img-wrapper {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (min-width: 768px) {
+  .hero-parallax .img-wrapper {
+    background-position: top;
+    background-attachment: fixed;
+  }
+}
+
 .campus-news .news-card {
   overflow: hidden;
   border-radius: 0;

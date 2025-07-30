@@ -342,3 +342,14 @@
     }
   }
 }
+
+.hero-parallax {
+  .img-wrapper {
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include media-breakpoint-up(md) {
+      background-position: top;
+      background-attachment: fixed;
+    }
+  }
+}
