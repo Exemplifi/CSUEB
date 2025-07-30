@@ -294,6 +294,14 @@
   //     }
   // }
 
+  &.text-icon-with-bg-sec {
+    .icon-text-card {
+      .icon-div {
+        background-color: var(--grey-900);
+      }
+    }
+  }
+
 }
 
 .text-icon-slider {

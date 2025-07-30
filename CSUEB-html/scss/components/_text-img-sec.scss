@@ -1271,6 +1271,20 @@
       }
     }
   }
+  .news-details-img-wrap {
+    max-width: rem.convert(928px);
+    margin: 0 auto;
+    padding-inline: rem.convert(20px);
+    @include media-breakpoint-up(xl) {
+      padding-inline: 0;
+    }
+      img {
+          width: 100%;
+          height: auto;
+          display: block;
+      }
+  }
+ 
 }
 
 .img-video-text-sec {
@@ -1442,3 +1456,4 @@
     }
   }
 }
+
