@@ -353,3 +353,14 @@
     }
   }
 }
+
+.no-image {
+  height: auto;
+  padding-top: 5rem;
+  @include media-breakpoint-up(md) {
+    padding-top:7rem;
+  }
+  @include media-breakpoint-up(lg) {
+    padding-top: 10rem;
+  }
+} 

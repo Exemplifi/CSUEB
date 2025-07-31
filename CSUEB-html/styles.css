@@ -5128,6 +5128,21 @@ section.bg-white.section-with-padding + section.bg-white {
   }
 }
 
+.no-image {
+  height: auto;
+  padding-top: 5rem;
+}
+@media (min-width: 768px) {
+  .no-image {
+    padding-top: 7rem;
+  }
+}
+@media (min-width: 992px) {
+  .no-image {
+    padding-top: 10rem;
+  }
+}
+
 .campus-news .news-card {
   overflow: hidden;
   border-radius: 0;
