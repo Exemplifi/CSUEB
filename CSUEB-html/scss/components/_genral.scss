@@ -340,6 +340,9 @@ section.bg-white.section-with-padding + section.bg-white {
                 &:hover {
                     color: var(--red);
                 }
+                &.active{
+                    color: var(--red);
+                }
             }
         }
         ul {

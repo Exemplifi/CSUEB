@@ -667,6 +667,9 @@ section.bg-white.section-with-padding + section.bg-white {
 .leftnav > ul li a:hover {
   color: var(--red);
 }
+.leftnav > ul li a.active {
+  color: var(--red);
+}
 .leftnav > ul ul {
   margin: 0 0 12px 0;
 }
