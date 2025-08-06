@@ -1,0 +1,448 @@
+/* Accessibility Enhancements */
+
+/* Skip Link Styling */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 10000;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 6px;
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Focus Indicators */
+*:focus {
+  outline: 2px solid #D50032;
+  outline-offset: 2px;
+}
+
+/* Remove focus outline for mouse users but keep for keyboard */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Enhanced focus for interactive elements */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus,
+[tabindex]:focus {
+  outline: 2px solid #D50032;
+  outline-offset: 2px;
+}
+
+/* Focus styles for buttons */
+.btn:focus {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #D50032;
+}
+
+/* Focus styles for form controls */
+.form-control:focus {
+  border-color: #D50032;
+  box-shadow: 0 0 0 0.2rem rgba(213, 0, 50, 0.25);
+}
+
+/* Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Enhanced button accessibility */
+.btn {
+  position: relative;
+}
+
+.btn:focus-visible {
+  outline: 2px solid #D50032;
+  outline-offset: 2px;
+}
+
+/* Improved link accessibility */
+a:not(.btn) {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:not(.btn):hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Enhanced form accessibility */
+label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Required field indicators */
+.required::after {
+  content: " *";
+  color: #D50032;
+  font-weight: bold;
+}
+
+/* Error states */
+.form-control.is-invalid {
+  border-color: #D50032;
+  box-shadow: 0 0 0 0.2rem rgba(213, 0, 50, 0.25);
+}
+
+.invalid-feedback {
+  display: block;
+  color: #D50032;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Enhanced table accessibility */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem;
+  border: 1px solid #dee2e6;
+}
+
+td {
+  padding: 0.75rem;
+  border: 1px solid #dee2e6;
+}
+
+/* Enhanced navigation accessibility */
+.nav-link:focus {
+  outline: 2px solid #D50032;
+  outline-offset: 2px;
+}
+
+/* Enhanced dropdown accessibility */
+.dropdown-menu {
+  border: 1px solid #dee2e6;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-item:focus {
+  background-color: #D50032;
+  color: #fff;
+  outline: none;
+}
+
+/* Enhanced accordion accessibility */
+.accordion-button:focus {
+  box-shadow: 0 0 0 0.2rem rgba(213, 0, 50, 0.25);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #f8f9fa;
+  color: #000;
+}
+
+/* Enhanced modal accessibility */
+.modal-content {
+  border: none;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+}
+
+/* Enhanced carousel accessibility */
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+  outline: 2px solid #D50032;
+  outline-offset: 2px;
+}
+
+.carousel-indicators button:focus {
+  outline: 2px solid #D50032;
+  outline-offset: 2px;
+}
+
+/* Enhanced search functionality */
+.search-form {
+  position: relative;
+}
+
+.search-input:focus + .btn-search-submit {
+  outline: 2px solid #D50032;
+  outline-offset: 2px;
+}
+
+/* Enhanced sidebar accessibility */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  z-index: 1050;
+  overflow-y: auto;
+}
+
+.sidebar:focus-within {
+  outline: 2px solid #D50032;
+  outline-offset: 2px;
+}
+
+/* Enhanced image accessibility */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Decorative images should have empty alt text */
+img[alt=""] {
+  position: relative;
+}
+
+/* Enhanced video accessibility */
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Enhanced iframe accessibility */
+iframe {
+  border: 1px solid #dee2e6;
+}
+
+/* Enhanced list accessibility */
+ul, ol {
+  padding-left: 1.5rem;
+}
+
+/* Enhanced heading accessibility */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Enhanced paragraph accessibility */
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Enhanced blockquote accessibility */
+blockquote {
+  border-left: 4px solid #D50032;
+  padding-left: 1rem;
+  margin-left: 0;
+  font-style: italic;
+}
+
+/* Enhanced code accessibility */
+code {
+  background-color: #f8f9fa;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}
+
+pre {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  overflow-x: auto;
+}
+
+/* Enhanced color contrast for better readability */
+.text-muted {
+  color: #6c757d !important;
+}
+
+/* Enhanced hover states */
+.btn:hover {
+  transform: translateY(-1px);
+  transition: transform 0.2s ease;
+}
+
+/* Enhanced loading states */
+.loading {
+  position: relative;
+  pointer-events: none;
+}
+
+.loading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #D50032;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Enhanced keyboard navigation for custom components */
+[role="button"]:focus,
+[role="menuitem"]:focus {
+  outline: 2px solid #D50032;
+  outline-offset: 2px;
+}
+
+/* Enhanced ARIA live regions */
+[aria-live] {
+  position: relative;
+}
+
+[aria-live="polite"] {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Enhanced error handling */
+.error-message {
+  color: #D50032;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Enhanced success messages */
+.success-message {
+  color: #16A34A;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Enhanced warning messages */
+.warning-message {
+  color: #FDC25A;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Enhanced info messages */
+.info-message {
+  color: #00A0AD;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Enhanced print styles */
+@media print {
+  .skip-link,
+  .btn,
+  .nav,
+  .sidebar,
+  .footer {
+    display: none !important;
+  }
+  
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  
+  a, a:visited {
+    text-decoration: underline;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+  
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  * {
+    border-color: currentColor !important;
+  }
+  
+  .btn {
+    border: 2px solid currentColor !important;
+  }
+  
+  .form-control {
+    border: 2px solid currentColor !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .btn:hover {
+    transform: none !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .skip-link {
+    background: #fff;
+    color: #000;
+  }
+  
+  .btn:focus {
+    box-shadow: 0 0 0 2px #000, 0 0 0 4px #D50032;
+  }
+  
+  .form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgba(213, 0, 50, 0.5);
+  }
+} 

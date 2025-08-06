@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="./scss/swiper-bundle.min.css" />
 
     <link rel="stylesheet" href="styles.css">
-     <link rel="stylesheet" href="override.css">
+    <link rel="stylesheet" href="scss/accessibility.css">
+    <link rel="stylesheet" href="override.css">
   </head>
   <body>
     
@@ -40,17 +41,18 @@
                   <path d="M15 2C18.8541 2 22 5.14585 22 9C22 12.8541 18.8541 16 15 16C13.252 16 11.655 15.348 10.4258 14.2812L10 14.707V16L4 22L2 20L8 14H9.29297L9.71875 13.5742C8.65198 12.345 8 10.748 8 9C8 5.14585 11.1459 2 15 2ZM15 4C12.2267 4 10 6.22673 10 9C10 11.7733 12.2267 14 15 14C17.7733 14 20 11.7733 20 9C20 6.22673 17.7733 4 15 4Z" fill="white"></path>
                 </svg>
               </button>
-              <div class="header-search-dropdown d-none">
+              <div class="header-search-dropdown d-none" role="search" aria-label="Site search">
                 <form class="search-form d-flex align-items-center" role="search">
-                  <label for="site-search" class="screen-only" aria-label="Search the site">Search the site</label>
-                  <input type="text" class="form-control search-input" placeholder="Search..." aria-label="Search the site" name="search">
-                  <button type="submit" class="btn btn-search-submit ms-2" aria-label="Search. Press Enter to submit">
-                    <span class="screen-only" aria-label="Search">Search</span>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <label for="site-search" class="sr-only">Search the site</label>
+                  <input type="text" id="site-search" class="form-control search-input" placeholder="Search..." aria-label="Search the site" name="search" aria-describedby="search-help">
+                  <button type="submit" class="btn btn-search-submit ms-2" aria-label="Submit search">
+                    <span class="sr-only">Search</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <path d="M15 2C18.8541 2 22 5.14585 22 9C22 12.8541 18.8541 16 15 16C13.252 16 11.655 15.348 10.4258 14.2812L10 14.707V16L4 22L2 20L8 14H9.29297L9.71875 13.5742C8.65198 12.345 8 10.748 8 9C8 5.14585 11.1459 2 15 2ZM15 4C12.2267 4 10 6.22673 10 9C10 11.7733 12.2267 14 15 14C17.7733 14 20 11.7733 20 9C20 6.22673 17.7733 4 15 4Z" fill="white"></path>
                     </svg>
                   </button>
                 </form>
+                <div id="search-help" class="sr-only">Type your search terms and press Enter or click the search button to find content on this site.</div>
               </div>
             </div>
           </div>
@@ -313,18 +315,18 @@
 
     <main role="main" id="main-content">
     <!-- Home Hero Section Start -->
-    <section class="section-hero home-hero-sec bg-black">
-      <img src="./images/hero-bg.png" alt="Hero" class="img-fluid w-100 h-100 object-fit-cover hero-bg-img">
+    <section class="section-hero home-hero-sec bg-black" aria-labelledby="hero-heading">
+      <img src="./images/hero-bg.png" alt="" class="img-fluid w-100 h-100 object-fit-cover hero-bg-img" aria-hidden="true">
       <div class="custom-container padding">       
         <div class="row g-0">
           <!-- Left Section -->
           <div class="col-md-6 content-section align-self-center pe-md-4">
-            <div class="tagline" tabindex="0">
-                  <h1 class="text-white mb-0">An impact<br>tagline <span class="highlight">goes<br>here.</span></h1>
+            <div class="tagline">
+                  <h1 id="hero-heading" class="text-white mb-0">An impact<br>tagline <span class="highlight">goes<br>here.</span></h1>
             </div>
-            <ul class="actions list-unstyled text-medium">
-              <li>
-                <a href="#" class="text-decoration-none btn btn-secondary" aria-label="Browse and explore Cal State East Bay academic programs and degrees" role="link">
+            <ul class="actions list-unstyled text-medium" role="list">
+              <li role="listitem">
+                <a href="#" class="text-decoration-none btn btn-secondary" aria-label="Browse and explore Cal State East Bay academic programs and degrees">
                   <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                     <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"/>
                   </svg>
@@ -332,8 +334,8 @@
                 </a>
               </li>
 
-              <li>
-                <a href="#" class="text-decoration-none btn btn-secondary" aria-label="click here to see our outcomes" role="link"> 
+              <li role="listitem">
+                <a href="#" class="text-decoration-none btn btn-secondary" aria-label="Learn about student outcomes and success stories"> 
                   <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                     <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"/>
                   </svg>
@@ -347,31 +349,31 @@
           <!-- Right Section -->
           <div class="col-md-6 image-section img-clip-path">
             <!-- Swiper -->
-            <div class="swiper main-single-slider hero-slider">
+            <div class="swiper main-single-slider hero-slider" aria-label="Campus image gallery">
               <div class="swiper-wrapper">
                 <div class="swiper-slide bg-transparent">
-                  <div class="img-wrapper" tabindex="0">
-                    <img src="./images/hero-banner.png" alt="Campus" class="img-fluid w-100 h-100 object-fit-cover">
+                  <div class="img-wrapper">
+                    <img src="./images/hero-banner.png" alt="Cal State East Bay campus buildings and landscape" class="img-fluid w-100 h-100 object-fit-cover">
                   </div>  
                 </div>
               </div>
               
-              <div class="swiper-button-group">
-                <div class="swiper-button-prev swiper-btn">
+              <div class="swiper-button-group" aria-label="Gallery navigation">
+                <button type="button" class="swiper-button-prev swiper-btn" aria-label="Previous image">
                   <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M6.99976 0.929688L0.929443 7L6.99976 13.0703L8.49976 11.5703L3.92944 7L8.49976 2.42969L6.99976 0.929688Z" fill="black"/>
                   </svg>
-                </div>
+                </button>
 
-                <div class="swiper-button-next swiper-btn">
+                <button type="button" class="swiper-button-next swiper-btn" aria-label="Next image">
                   <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M1.99976 0.929688L0.499756 2.42969L5.07007 7L0.499756 11.5703L1.99976 13.0703L8.07007 7L1.99976 0.929688Z" fill="black"/>
                   </svg>
-                </div>
+                </button>
               </div>
             </div>
             <!-- Swiper End -->
-            <img src="./images/stars.svg" alt="star" class="img-fluid w-auto h-auto object-fit-contain star-svg">
+            <img src="./images/stars.svg" alt="" class="img-fluid w-auto h-auto object-fit-contain star-svg" aria-hidden="true">
           </div>
         </div>
       </div>
@@ -380,15 +382,13 @@
 
 
     <!-- Text Only Start -->
-    <section class="section text-center bg-light-gray full-content-button-sec">
+    <section class="section text-center bg-light-gray full-content-button-sec" aria-labelledby="opportunities-heading">
       <div class="container">
         <div class="section-heading">
           <!-- Red Diamonds -->
           <div class="title-wrap">
-            <h2 class="section-title mb-3" >Explore Opportunities</h2>
+            <h2 id="opportunities-heading" class="section-title mb-3">Explore Opportunities</h2>
             <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none" aria-hidden="true">
-              <title>Star Icon</title>
-  <desc>star</desc>
               <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"/>
               <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"/>
               <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"/>
@@ -404,35 +404,37 @@
         </div>
   
         <!-- Button Tags -->
-        <ul class="d-flex flex-wrap justify-content-center button-listing" role="list">
-          <li role="listitem">
-            <a href="/undergraduate" class="btn btn-primary" aria-label="click to explore Undergraduate page">
-              <span>Undergraduate</span>
-            </a>
-          </li>
-          <li role="listitem">
-            <a href="/graduate" class="btn btn-primary" aria-label="click to explore Graduate page">      
-              <span>Graduate</span>
-            </a>
-          </li>
-          <li role="listitem">
-            <a href="/continuing-education" class="btn btn-primary" aria-label="click to explore Continuing Education page">
-              <span>Continuing Education</span>
-            </a>
-          </li>
-          <li role="listitem">
-            <a href="/online" class="btn btn-primary" aria-label="click to explore Online page">
-              <span>Online</span>
-            </a>
-          </li>
-        </ul>
+        <nav aria-label="Academic program types">
+          <ul class="d-flex flex-wrap justify-content-center button-listing" role="list">
+            <li role="listitem">
+              <a href="/undergraduate" class="btn btn-primary" aria-label="Explore undergraduate programs and degrees">
+                <span>Undergraduate</span>
+              </a>
+            </li>
+            <li role="listitem">
+              <a href="/graduate" class="btn btn-primary" aria-label="Explore graduate programs and degrees">      
+                <span>Graduate</span>
+              </a>
+            </li>
+            <li role="listitem">
+              <a href="/continuing-education" class="btn btn-primary" aria-label="Explore continuing education and professional development">
+                <span>Continuing Education</span>
+              </a>
+            </li>
+            <li role="listitem">
+              <a href="/online" class="btn btn-primary" aria-label="Explore online learning programs">
+                <span>Online</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </section>
     <!-- Text Only End -->
 
 
     <!-- Image Text Section Start -->
-    <section class="section bg-white img-text-sec">
+    <section class="section bg-white img-text-sec" aria-labelledby="next-step-heading">
       <div class="container">       
         <div class="row-section flex-column-reverse flex-md-row row gy-5 gy-md-0">
           <!-- Left Section -->
@@ -440,8 +442,8 @@
             <div class="section-heading heading-gray-icon">
               <!-- Red Diamonds -->
               <div class="title-wrap">
-                <h2 class="section-title">Get started on the next step.</h2>
-                <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
+                <h2 id="next-step-heading" class="section-title">Get started on the next step.</h2>
+                <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none" aria-hidden="true">
                   <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"/>
                   <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"/>
                   <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"/>
@@ -452,44 +454,44 @@
               </div>
             </div>
 
-            <ul class="actions list-unstyled text-medium d-grid gap-3" role="list">
-              <li role="listitem">
-                <a href="/Register" class="text-decoration-none btn btn-secondary btn-secondary-small" aria-label="Cick here to Register for Classes">  
-                  <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
-                    <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"/>
-                  </svg>
-                  <span>Register for Classes</span> 
-                </a>
-              </li>
+            <nav aria-label="Student resources">
+              <ul class="actions list-unstyled text-medium d-grid gap-3" role="list">
+                <li role="listitem">
+                  <a href="/Register" class="text-decoration-none btn btn-secondary btn-secondary-small" aria-label="Register for classes for the upcoming semester">  
+                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
+                      <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"/>
+                    </svg>
+                    <span>Register for Classes</span> 
+                  </a>
+                </li>
 
-              <li role="listitem">
-                <a href="/Access" class="text-decoration-none btn btn-secondary btn-secondary-small" aria-label="Access the Academic Calendar">
-                  <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
-                    <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"/>
-                  </svg>
-                  <span>Access the Academic Calendar</span>
-                </a>
-              </li>
+                <li role="listitem">
+                  <a href="/Access" class="text-decoration-none btn btn-secondary btn-secondary-small" aria-label="View the academic calendar with important dates and deadlines">
+                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
+                      <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"/>
+                    </svg>
+                    <span>Access the Academic Calendar</span>
+                  </a>
+                </li>
 
-              <li role="listitem">
-                <a href="/MeetwithanAcademicAdvisor" class="text-decoration-none btn btn-secondary btn-secondary-small" aria-label="Meet with an Academic Advisor">
-                  <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true"> 
-                    <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"/>
-                  </svg>
-                  <span>Meet with an Academic Advisor</span>
-                </a>
-              </li>
-            
-            </ul>
+                <li role="listitem">
+                  <a href="/MeetwithanAcademicAdvisor" class="text-decoration-none btn btn-secondary btn-secondary-small" aria-label="Schedule an appointment with an academic advisor">
+                    <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true"> 
+                      <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"/>
+                    </svg>
+                    <span>Meet with an Academic Advisor</span>
+                  </a>
+                </li>
+              
+              </ul>
+            </nav>
           </div>
     
           <!-- Right Section -->
           <div class="col-md-6 image-section img-clip-path-box">
             <div class="img-wrapper">
-              <img src="./images/right-img.png" alt="Campus" class="img-fluid w-100 h-100 object-fit-cover">
+              <img src="./images/right-img.png" alt="Students studying and collaborating on campus" class="img-fluid w-100 h-100 object-fit-cover">
             </div>
-
-            <!-- <img src="./images/stars.svg" alt="Campus" class="img-fluid star-img w-auto h-auto object-fit-contain"> -->
           </div>
         </div>
       </div>
@@ -997,119 +999,127 @@
 
 
     <!-- Footer Start -->
-    <footer class="footer bg-black text-white" aria-label="Footer Section" role="contentinfo">
+    <footer class="footer bg-black text-white" role="contentinfo">
       <div class="container">
         <div class="footer-lists">
           <div class="footer-top-sec row align-items-center">
             <div class="col-md-6">
-              <div class="footer-logo mb-3" aria-label="Footer logo">
-                <img src="./images/logo-footer.svg" alt="Logo" class="img-fluid">
+              <div class="footer-logo mb-3">
+                <img src="./images/logo-footer.svg" alt="Cal State East Bay logo" class="img-fluid">
               </div>
             </div>
             <div class="col-md-6 d-none d-md-block">
-              <ul class="social-icons list-unstyled mb-0" aria-label="Footer social icons">
-                <li>
-                  <a href="/linkedin" aria-label="Follow us on LinkedIn">
-                    <span class="screen-only">linkedin</span>
-                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M5 0C2.23958 0 0 2.23958 0 5V13C0 15.7604 2.23958 18 5 18H13C15.7604 18 18 15.7604 18 13V5C18 2.23958 15.7604 0 13 0H5ZM15 2C15.5521 2 16 2.44792 16 3C16 3.55208 15.5521 4 15 4C14.4479 4 14 3.55208 14 3C14 2.44792 14.4479 2 15 2ZM9 4C11.7604 4 14 6.23958 14 9C14 11.7604 11.7604 14 9 14C6.23958 14 4 11.7604 4 9C4 6.23958 6.23958 4 9 4ZM9 6C7.34375 6 6 7.34375 6 9C6 10.6563 7.34375 12 9 12C10.6563 12 12 10.6563 12 9C12 7.34375 10.6563 6 9 6Z" fill="currentColor"></path>
-                    </svg>
-                  </a> 
-                </li>
-                <li>
-                  <a href="/twitter" aria-label="Follow us on Twitter">
-                    <span class="screen-only">twitter</span>
-                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M0.864584 0L7.73438 9.81771L0.734375 18H3.38021L8.92188 11.5104L13.4635 18H19.3698L12.1719 7.69792L18.7448 0H16.1406L10.9948 6.01042L6.79688 0H0.864584Z" fill="currentColor"></path>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="/youtube" aria-label="Follow us on Youtube">
-                    <span class="screen-only">youtube</span>
-                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M19.5833 2.1875C19.3542 1.32813 18.6719 0.645833 17.8125 0.416667C16.2552 0 10 0 10 0C10 0 3.74479 0 2.1875 0.416667C1.32813 0.645833 0.645833 1.32813 0.416667 2.1875C0 3.74479 0 8 0 8C0 8 0 12.2552 0.416667 13.8125C0.645833 14.6719 1.32813 15.3542 2.1875 15.5833C3.74479 16 10 16 10 16C10 16 16.2552 16 17.8125 15.5833C18.6771 15.3542 19.3542 14.6719 19.5833 13.8125C20 12.2552 20 8 20 8C20 8 20 3.74479 19.5833 2.1875ZM8 11.4635V4.53646L14 8L8 11.4635Z" fill="currentColor"></path>
-                    </svg>
-                  </a>
-                </li>
-                <li>
-                  <a href="/facebook" aria-label="Follow us on Facebook">
-                    <span class="screen-only">facebook</span>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path d="M10 0C4.47917 0 0 4.47917 0 10C0 15.0104 3.69271 19.151 8.50521 19.875V12.651H6.03125V10.0208H8.50521V8.27083C8.50521 5.375 9.91667 4.10417 12.3229 4.10417C13.474 4.10417 14.0833 4.1875 14.375 4.22917V6.52083H12.7344C11.7083 6.52083 11.3542 7.48958 11.3542 8.58333V10.0208H14.349L13.9427 12.651H11.3542V19.8958C16.2344 19.2344 20 15.0625 20 10C20 4.47917 15.5208 0 10 0Z" fill="currentColor"></path>
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          
-          <!-- Links -->
-          <div class="menu-wrapper">
-            <nav class="row" aria-label="Footer main navigation">
-              <!-- Logo and Address -->
-              <div class="col-12 col-sm-6 col-md address-sec">
-                <address class="text-white text-medium m-0">
-                  25800 Carlos Bee Boulevard<br>
-                  Hayward, CA 94542
-                </address>
-                <p class="fw-bold text-medium mt-2">(510) 885-3000</p>
-              </div>
-              
-              <div class="col-12 col-sm-6 col-md mb-2 mb-md-0">
-                <ul class="list-unstyled footer-links">
-                  <li><a href="/academic-program" class="subtext" aria-label="Academic Programs. Press Enter to visit"> Academic Programs</a></li>
-                  <li><a href="/library" class="subtext" aria-label="Library. Press Enter to visit">Library</a></li>
-                  <li><a href="/bookstore" class="subtext" aria-label="Bookstore. Press Enter to visit">Bookstore</a></li>
-                  <li><a href="/athletics" class="subtext" aria-label="Athletics. Press Enter to visit">Athletics</a></li>
-                </ul>
-              </div>
-
-              <div class="col-12 col-sm-6 col-md">
-                <ul class="list-unstyled footer-links">
-                  <li><a href="/contact" class="subtext" aria-label="Contact Cal State East Bay. Press Enter to visit">Contact Cal State East Bay</a></li>
-                  <li><a href="/maps-and-directions" class="subtext" aria-label="Maps and Directions. Press Enter to visit">Maps and Directions</a></li>
-                  <li><a href="/campus-directory" class="subtext" aria-label="Campus Directory. Press Enter to visit">Campus Directory</a></li>
-                  <li><a href="/career-opportunities" class="subtext" aria-label="Career Opportunities. Press Enter to visit">Career Opportunities</a></li>
-                </ul>
-              </div>
-
-              <div class="col-12 col-sm-6 col-md d-flex d-md-none mt-32">
+              <nav aria-label="Social media links">
                 <ul class="social-icons list-unstyled mb-0">
                   <li>
-                    <a href="/linkedin" aria-label="Follow us on LinkedIn">
-                      <span class="screen-only">linkedin</span>
+                    <a href="/linkedin" aria-label="Follow Cal State East Bay on LinkedIn">
+                      <span class="sr-only">LinkedIn</span>
                       <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M5 0C2.23958 0 0 2.23958 0 5V13C0 15.7604 2.23958 18 5 18H13C15.7604 18 18 15.7604 18 13V5C18 2.23958 15.7604 0 13 0H5ZM15 2C15.5521 2 16 2.44792 16 3C16 3.55208 15.5521 4 15 4C14.4479 4 14 3.55208 14 3C14 2.44792 14.4479 2 15 2ZM9 4C11.7604 4 14 6.23958 14 9C14 11.7604 11.7604 14 9 14C6.23958 14 4 11.7604 4 9C4 6.23958 6.23958 4 9 4ZM9 6C7.34375 6 6 7.34375 6 9C6 10.6563 7.34375 12 9 12C10.6563 12 12 10.6563 12 9C12 7.34375 10.6563 6 9 6Z" fill="currentColor"></path>
                       </svg>
                     </a> 
                   </li>
                   <li>
-                    <a href="/twitter" aria-label="Follow us on Twitter">
-                      <span class="screen-only">twitter</span>
+                    <a href="/twitter" aria-label="Follow Cal State East Bay on Twitter">
+                      <span class="sr-only">Twitter</span>
                       <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M0.864584 0L7.73438 9.81771L0.734375 18H3.38021L8.92188 11.5104L13.4635 18H19.3698L12.1719 7.69792L18.7448 0H16.1406L10.9948 6.01042L6.79688 0H0.864584Z" fill="currentColor"></path>
                       </svg>
                     </a>
                   </li>
                   <li>
-                    <a href="/youtube" aria-label="Follow us on Youtube">
-                      <span class="screen-only">youtube</span>
+                    <a href="/youtube" aria-label="Follow Cal State East Bay on YouTube">
+                      <span class="sr-only">YouTube</span>
                       <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M19.5833 2.1875C19.3542 1.32813 18.6719 0.645833 17.8125 0.416667C16.2552 0 10 0 10 0C10 0 3.74479 0 2.1875 0.416667C1.32813 0.645833 0.645833 1.32813 0.416667 2.1875C0 3.74479 0 8 0 8C0 8 0 12.2552 0.416667 13.8125C0.645833 14.6719 1.32813 15.3542 2.1875 15.5833C3.74479 16 10 16 10 16C10 16 16.2552 16 17.8125 15.5833C18.6771 15.3542 19.3542 14.6719 19.5833 13.8125C20 12.2552 20 8 20 8C20 8 20 3.74479 19.5833 2.1875ZM8 11.4635V4.53646L14 8L8 11.4635Z" fill="currentColor"></path>
                       </svg>
                     </a>
                   </li>
                   <li>
-                    <a href="/facebook" aria-label="Follow us on Facebook">  
-                      <span class="screen-only">facebook</span>
+                    <a href="/facebook" aria-label="Follow Cal State East Bay on Facebook">
+                      <span class="sr-only">Facebook</span>
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path d="M10 0C4.47917 0 0 4.47917 0 10C0 15.0104 3.69271 19.151 8.50521 19.875V12.651H6.03125V10.0208H8.50521V8.27083C8.50521 5.375 9.91667 4.10417 12.3229 4.10417C13.474 4.10417 14.0833 4.1875 14.375 4.22917V6.52083H12.7344C11.7083 6.52083 11.3542 7.48958 11.3542 8.58333V10.0208H14.349L13.9427 12.651H11.3542V19.8958C16.2344 19.2344 20 15.0625 20 10C20 4.47917 15.5208 0 10 0Z" fill="currentColor"></path>
                       </svg>
                     </a>
                   </li>
                 </ul>
+              </nav>
+            </div>
+          </div>
+
+          
+          <!-- Links -->
+          <div class="menu-wrapper">
+            <nav class="row" aria-label="Footer navigation">
+              <!-- Logo and Address -->
+              <div class="col-12 col-sm-6 col-md address-sec">
+                <address class="text-white text-medium m-0">
+                  25800 Carlos Bee Boulevard<br>
+                  Hayward, CA 94542
+                </address>
+                <p class="fw-bold text-medium mt-2">
+                  <a href="tel:+15108853000" class="text-white text-decoration-none">(510) 885-3000</a>
+                </p>
+              </div>
+              
+              <div class="col-12 col-sm-6 col-md mb-2 mb-md-0">
+                <h3 class="h6 text-white mb-3">Academic Resources</h3>
+                <ul class="list-unstyled footer-links">
+                  <li><a href="/academic-program" class="subtext">Academic Programs</a></li>
+                  <li><a href="/library" class="subtext">Library</a></li>
+                  <li><a href="/bookstore" class="subtext">Bookstore</a></li>
+                  <li><a href="/athletics" class="subtext">Athletics</a></li>
+                </ul>
+              </div>
+
+              <div class="col-12 col-sm-6 col-md">
+                <h3 class="h6 text-white mb-3">Campus Information</h3>
+                <ul class="list-unstyled footer-links">
+                  <li><a href="/contact" class="subtext">Contact Cal State East Bay</a></li>
+                  <li><a href="/maps-and-directions" class="subtext">Maps and Directions</a></li>
+                  <li><a href="/campus-directory" class="subtext">Campus Directory</a></li>
+                  <li><a href="/career-opportunities" class="subtext">Career Opportunities</a></li>
+                </ul>
+              </div>
+
+              <div class="col-12 col-sm-6 col-md d-flex d-md-none mt-32">
+                <nav aria-label="Social media links">
+                  <ul class="social-icons list-unstyled mb-0">
+                    <li>
+                      <a href="/linkedin" aria-label="Follow Cal State East Bay on LinkedIn">
+                        <span class="sr-only">LinkedIn</span>
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M5 0C2.23958 0 0 2.23958 0 5V13C0 15.7604 2.23958 18 5 18H13C15.7604 18 18 15.7604 18 13V5C18 2.23958 15.7604 0 13 0H5ZM15 2C15.5521 2 16 2.44792 16 3C16 3.55208 15.5521 4 15 4C14.4479 4 14 3.55208 14 3C14 2.44792 14.4479 2 15 2ZM9 4C11.7604 4 14 6.23958 14 9C14 11.7604 11.7604 14 9 14C6.23958 14 4 11.7604 4 9C4 6.23958 6.23958 4 9 4ZM9 6C7.34375 6 6 7.34375 6 9C6 10.6563 7.34375 12 9 12C10.6563 12 12 10.6563 12 9C12 7.34375 10.6563 6 9 6Z" fill="currentColor"></path>
+                        </svg>
+                      </a> 
+                    </li>
+                    <li>
+                      <a href="/twitter" aria-label="Follow Cal State East Bay on Twitter">
+                        <span class="sr-only">Twitter</span>
+                        <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M0.864584 0L7.73438 9.81771L0.734375 18H3.38021L8.92188 11.5104L13.4635 18H19.3698L12.1719 7.69792L18.7448 0H16.1406L10.9948 6.01042L6.79688 0H0.864584Z" fill="currentColor"></path>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/youtube" aria-label="Follow Cal State East Bay on YouTube">
+                        <span class="sr-only">YouTube</span>
+                        <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M19.5833 2.1875C19.3542 1.32813 18.6719 0.645833 17.8125 0.416667C16.2552 0 10 0 10 0C10 0 3.74479 0 2.1875 0.416667C1.32813 0.645833 0.645833 1.32813 0.416667 2.1875C0 3.74479 0 8 0 8C0 8 0 12.2552 0.416667 13.8125C0.645833 14.6719 1.32813 15.3542 2.1875 15.5833C3.74479 16 10 16 10 16C10 16 16.2552 16 17.8125 15.5833C18.6771 15.3542 19.3542 14.6719 19.5833 13.8125C20 12.2552 20 8 20 8C20 8 20 3.74479 19.5833 2.1875ZM8 11.4635V4.53646L14 8L8 11.4635Z" fill="currentColor"></path>
+                        </svg>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/facebook" aria-label="Follow Cal State East Bay on Facebook">  
+                        <span class="sr-only">Facebook</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                          <path d="M10 0C4.47917 0 0 4.47917 0 10C0 15.0104 3.69271 19.151 8.50521 19.875V12.651H6.03125V10.0208H8.50521V8.27083C8.50521 5.375 9.91667 4.10417 12.3229 4.10417C13.474 4.10417 14.0833 4.1875 14.375 4.22917V6.52083H12.7344C11.7083 6.52083 11.3542 7.48958 11.3542 8.58333V10.0208H14.349L13.9427 12.651H11.3542V19.8958C16.2344 19.2344 20 15.0625 20 10C20 4.47917 15.5208 0 10 0Z" fill="currentColor"></path>
+                        </svg>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
               </div>
             </nav>
           </div>
@@ -1121,15 +1131,17 @@
             <!-- Bottom Links -->
             <div class="row">
               <div class="col-12">
-                <ul class="list-unstyled d-flex flex-column flex-sm-row flex-wrap gap-2 gap-md-3">
-                  <li><a href="/privacy-statement" class="link-btn" aria-label="Privacy Statement. Press Enter to visit">Privacy Statement</a></li>
-                  <li><a href="/emergency-information" class="link-btn" aria-label="Emergency Information. Press Enter to visit">Emergency Information</a></li>
-                  <li><a href="/annual-security-report" class="link-btn" aria-label="Annual Security Report. Press Enter to visit">Annual Security Report</a></li>
-                  <li><a href="/campus-safety-plan" class="link-btn" aria-label="Campus Safety Plan. Press Enter to visit">Campus Safety Plan</a></li>
-                    <li><a href="/register-a-complaint" class="link-btn" aria-label="Register a Complaint. Press Enter to visit">Register a Complaint</a></li>
-                  <li><a href="/notice-of-non-discrimination" class="link-btn" aria-label="Notice of Non-Discrimination and Retaliation Prohibition. Press Enter to visit">Notice of Non-Discrimination and Retaliation Prohibition</a></li>
-                </ul>
-                <p class="copyright text-smaller" aria-label="Copyright">&copy; 2024 California State University, East Bay. All Rights Reserved.</p>
+                <nav aria-label="Legal and policy links">
+                  <ul class="list-unstyled d-flex flex-column flex-sm-row flex-wrap gap-2 gap-md-3">
+                    <li><a href="/privacy-statement" class="link-btn">Privacy Statement</a></li>
+                    <li><a href="/emergency-information" class="link-btn">Emergency Information</a></li>
+                    <li><a href="/annual-security-report" class="link-btn">Annual Security Report</a></li>
+                    <li><a href="/campus-safety-plan" class="link-btn">Campus Safety Plan</a></li>
+                    <li><a href="/register-a-complaint" class="link-btn">Register a Complaint</a></li>
+                    <li><a href="/notice-of-non-discrimination" class="link-btn">Notice of Non-Discrimination and Retaliation Prohibition</a></li>
+                  </ul>
+                </nav>
+                <p class="copyright text-smaller">&copy; 2024 California State University, East Bay. All Rights Reserved.</p>
               </div>
             </div>
           </div>

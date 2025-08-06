@@ -8,32 +8,34 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="./scss/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="scss/accessibility.css">
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-
+    <main role="main" id="main-content">
     <!-- Home Hero Section Start -->
-    <section class="section-hero home-hero-sec bg-black">
+    <section class="section-hero home-hero-sec bg-black" aria-labelledby="hero-heading">
       <div class="custom-container padding">       
         <div class="row g-0">
           <!-- Left Section -->
           <div class="col-md-6 content-section align-self-center pe-md-4">
             <div class="tagline">
-              <h1 class="text-white mb-0">An impact<br>tagline <span class="highlight">goes<br>here.</span></h1>
+              <h1 id="hero-heading" class="text-white mb-0">An impact<br>tagline <span class="highlight">goes<br>here.</span></h1>
             </div>
-            <ul class="actions list-unstyled text-medium">
-              <li>
-                <a href="#" class="text-decoration-none btn btn-secondary">
-                  <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+            <ul class="actions list-unstyled text-medium" role="list">
+              <li role="listitem">
+                <a href="#" class="text-decoration-none btn btn-secondary" aria-label="Browse and explore Cal State East Bay academic programs and degrees">
+                  <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                     <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"/>
                   </svg>
                   <span>EXPLORE OUR PROGRAMS</span>
                 </a>
               </li>
 
-              <li>
-                <a href="#" class="text-decoration-none btn btn-secondary">
-                  <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
+              <li role="listitem">
+                <a href="#" class="text-decoration-none btn btn-secondary" aria-label="Learn about student outcomes and success stories">
+                  <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none" aria-hidden="true">
                     <path d="M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z" fill="currentColor"/>
                   </svg>
                   <span>SEE OUR OUTCOMES</span>
@@ -46,27 +48,27 @@
           <!-- Right Section -->
           <div class="col-md-6 image-section img-clip-path">
             <!-- Swiper -->
-            <div class="swiper main-single-slider hero-slider">
+            <div class="swiper main-single-slider hero-slider" aria-label="Campus image gallery">
               <div class="swiper-wrapper">
                 <div class="swiper-slide bg-transparent">
                   <div class="img-wrapper">
-                    <img src="./images/hero-banner.png" alt="Campus" class="img-fluid w-100 h-100 object-fit-cover">
+                    <img src="./images/hero-banner.png" alt="Cal State East Bay campus buildings and landscape" class="img-fluid w-100 h-100 object-fit-cover">
                   </div>
                 </div>
               </div>
               
-              <div class="swiper-button-group">
-                <div class="swiper-button-prev swiper-btn">
-                  <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div class="swiper-button-group" aria-label="Gallery navigation">
+                <button type="button" class="swiper-button-prev swiper-btn" aria-label="Previous image">
+                  <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M6.99976 0.929688L0.929443 7L6.99976 13.0703L8.49976 11.5703L3.92944 7L8.49976 2.42969L6.99976 0.929688Z" fill="black"/>
                   </svg>
-                </div>
+                </button>
 
-                <div class="swiper-button-next swiper-btn">
-                  <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <button type="button" class="swiper-button-next swiper-btn" aria-label="Next image">
+                  <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M1.99976 0.929688L0.499756 2.42969L5.07007 7L0.499756 11.5703L1.99976 13.0703L8.07007 7L1.99976 0.929688Z" fill="black"/>
                   </svg>
-                </div>
+                </button>
               </div>
             </div>
             <!-- Swiper End -->
@@ -78,13 +80,13 @@
 
 
     <!-- Text Only Start -->
-    <section class="section text-button-sec text-center bg-light-gray full-content-button-sec">
+    <section class="section text-button-sec text-center bg-light-gray full-content-button-sec" aria-labelledby="opportunities-heading">
       <div class="container">
         <div class="section-heading">
           <!-- Red Diamonds -->
           <div class="title-wrap">
-            <h2 class="section-title mb-3">Explore Opportunities</h2>
-            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none">
+            <h2 id="opportunities-heading" class="section-title mb-3">Explore Opportunities</h2>
+            <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20" fill="none" aria-hidden="true">
               <path d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z" fill="currentColor"/>
               <path d="M45.6299 2.72203L46 0.624999L46.3701 2.72203C47.1102 6.17598 49.824 8.8898 53.278 9.62993L55.375 10L53.278 10.3701C49.824 11.1102 47.1102 13.824 46.3701 17.278L46 19.375L45.6299 17.278C44.8898 13.824 42.176 11.1102 38.722 10.3701L36.625 10L38.722 9.62993C42.176 8.8898 44.8898 6.17598 45.6299 2.72203Z" fill="currentColor"/>
               <path d="M9.62993 2.72203L10 0.624999L10.3701 2.72203C11.1102 6.17598 13.824 8.8898 17.278 9.62993L19.375 10L17.278 10.3701C13.824 11.1102 11.1102 13.824 10.3701 17.278L10 19.375L9.62993 17.278C8.8898 13.824 6.17599 11.1102 2.72204 10.3701L0.625001 10L2.72204 9.62993C6.17599 8.8898 8.8898 6.17598 9.62993 2.72203Z" fill="currentColor"/>
@@ -809,7 +811,7 @@
       </div>
     </footer>
     <!-- Footer End -->
-    
+    </main>
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Swiper JS -->

@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroSlider();
   initMainImgSlider();
   initGalleryLightbox();
+  initAccessibilityFeatures();
 
   const expanderButtons = document.querySelectorAll('.btn-expander');
 
@@ -620,5 +621,230 @@ function initGalleryLightbox() {
     currentIframes = [];
     youtubePlayers = [];
   });
+}
+
+// Accessibility Features
+function initAccessibilityFeatures() {
+  // Skip link functionality
+  const skipLink = document.querySelector('.skip-link');
+  if (skipLink) {
+    skipLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        target.focus();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  }
+
+  // Enhanced keyboard navigation for custom components
+  const customButtons = document.querySelectorAll('[role="button"]');
+  customButtons.forEach(button => {
+    button.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+      }
+    });
+  });
+
+  // Announce dynamic content changes
+  function announceToScreenReader(message) {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.setAttribute('aria-atomic', 'true');
+    announcement.className = 'sr-only';
+    announcement.textContent = message;
+    document.body.appendChild(announcement);
+    
+    setTimeout(() => {
+      document.body.removeChild(announcement);
+    }, 1000);
+  }
+
+  // Enhanced form validation
+  const forms = document.querySelectorAll('form');
+  forms.forEach(form => {
+    form.addEventListener('submit', function(e) {
+      const requiredFields = form.querySelectorAll('[required]');
+      let hasErrors = false;
+      
+      requiredFields.forEach(field => {
+        if (!field.value.trim()) {
+          hasErrors = true;
+          field.classList.add('is-invalid');
+          
+          // Create error message if it doesn't exist
+          let errorMessage = field.parentNode.querySelector('.invalid-feedback');
+          if (!errorMessage) {
+            errorMessage = document.createElement('div');
+            errorMessage.className = 'invalid-feedback';
+            errorMessage.textContent = 'This field is required.';
+            field.parentNode.appendChild(errorMessage);
+          }
+        } else {
+          field.classList.remove('is-invalid');
+          const errorMessage = field.parentNode.querySelector('.invalid-feedback');
+          if (errorMessage) {
+            errorMessage.remove();
+          }
+        }
+      });
+      
+      if (hasErrors) {
+        e.preventDefault();
+        announceToScreenReader('Please correct the errors before submitting the form.');
+      }
+    });
+  });
+
+  // Enhanced focus management for modals
+  const modals = document.querySelectorAll('.modal');
+  modals.forEach(modal => {
+    const focusableElements = modal.querySelectorAll('a[href], button:not([disabled]), textarea, input[type="text"], input[type="radio"], input[type="checkbox"], select');
+    const firstFocusableElement = focusableElements[0];
+    const lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+    modal.addEventListener('keydown', function(e) {
+      if (e.key === 'Tab') {
+        if (e.shiftKey) {
+          if (document.activeElement === firstFocusableElement) {
+            e.preventDefault();
+            lastFocusableElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastFocusableElement) {
+            e.preventDefault();
+            firstFocusableElement.focus();
+          }
+        }
+      }
+    });
+  });
+
+  // Enhanced image loading
+  const images = document.querySelectorAll('img[data-src]');
+  images.forEach(img => {
+    img.addEventListener('load', function() {
+      announceToScreenReader('Image loaded: ' + (this.alt || 'Image'));
+    });
+  });
+
+  // Enhanced link descriptions
+  const links = document.querySelectorAll('a[href]');
+  links.forEach(link => {
+    if (!link.getAttribute('aria-label') && !link.textContent.trim()) {
+      const href = link.getAttribute('href');
+      if (href) {
+        link.setAttribute('aria-label', 'Link to ' + href);
+      }
+    }
+  });
+
+  // Enhanced button descriptions
+  const buttons = document.querySelectorAll('button');
+  buttons.forEach(button => {
+    if (!button.getAttribute('aria-label') && !button.textContent.trim()) {
+      button.setAttribute('aria-label', 'Button');
+    }
+  });
+
+  // Enhanced table accessibility
+  const tables = document.querySelectorAll('table');
+  tables.forEach(table => {
+    if (!table.querySelector('caption')) {
+      const caption = document.createElement('caption');
+      caption.textContent = 'Table data';
+      table.insertBefore(caption, table.firstChild);
+    }
+  });
+
+  // Enhanced list accessibility
+  const lists = document.querySelectorAll('ul, ol');
+  lists.forEach(list => {
+    if (!list.getAttribute('role')) {
+      list.setAttribute('role', 'list');
+    }
+    
+    const listItems = list.querySelectorAll('li');
+    listItems.forEach(item => {
+      if (!item.getAttribute('role')) {
+        item.setAttribute('role', 'listitem');
+      }
+    });
+  });
+
+  // Enhanced heading structure
+  const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+  headings.forEach((heading, index) => {
+    if (!heading.getAttribute('id')) {
+      heading.setAttribute('id', 'heading-' + index);
+    }
+  });
+
+  // Enhanced ARIA live regions
+  const liveRegions = document.querySelectorAll('[aria-live]');
+  liveRegions.forEach(region => {
+    if (!region.getAttribute('aria-atomic')) {
+      region.setAttribute('aria-atomic', 'true');
+    }
+  });
+
+  // Enhanced error handling
+  window.addEventListener('error', function(e) {
+    console.error('JavaScript error:', e.error);
+    announceToScreenReader('An error occurred. Please refresh the page.');
+  });
+
+  // Enhanced loading states
+  const loadingElements = document.querySelectorAll('.loading');
+  loadingElements.forEach(element => {
+    element.setAttribute('aria-busy', 'true');
+    element.setAttribute('aria-live', 'polite');
+  });
+
+  // Enhanced focus indicators
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Tab') {
+      document.body.classList.add('keyboard-navigation');
+    }
+  });
+
+  document.addEventListener('mousedown', function() {
+    document.body.classList.remove('keyboard-navigation');
+  });
+
+  // Enhanced color scheme detection
+  if (window.matchMedia) {
+    const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const highContrastQuery = window.matchMedia('(prefers-contrast: high)');
+    const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function handleMediaQueryChange() {
+      if (darkModeQuery.matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+
+      if (highContrastQuery.matches) {
+        document.documentElement.setAttribute('data-contrast', 'high');
+      } else {
+        document.documentElement.setAttribute('data-contrast', 'normal');
+      }
+
+      if (reducedMotionQuery.matches) {
+        document.documentElement.setAttribute('data-motion', 'reduced');
+      } else {
+        document.documentElement.setAttribute('data-motion', 'normal');
+      }
+    }
+
+    darkModeQuery.addListener(handleMediaQueryChange);
+    highContrastQuery.addListener(handleMediaQueryChange);
+    reducedMotionQuery.addListener(handleMediaQueryChange);
+    handleMediaQueryChange();
+  }
 }
 // Lightbox Gallery End
