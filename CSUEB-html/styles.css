@@ -772,6 +772,25 @@ section.bg-white.section-with-padding + section.bg-white {
   }
 }
 
+.a-z-links ul li {
+  position: relative;
+}
+.a-z-links ul li::after {
+  content: "";
+  height: 10px;
+  width: 1px;
+  background: var(--black);
+  position: absolute;
+  left: -4px;
+  top: 9px;
+}
+.a-z-links ul li:first-child::after {
+  display: none;
+}
+.a-z-links ul li a {
+  padding: 0 6px;
+}
+
 .btn {
   border-radius: 0px;
   text-transform: uppercase;
