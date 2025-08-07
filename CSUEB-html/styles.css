@@ -5333,13 +5333,13 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 
 .news-details-content {
-  max-width: 800px;
-  padding: 6rem 1.25rem;
+  max-width: 1000px;
+  padding: 4rem 1.25rem;
   margin: 0 auto;
 }
 @media (max-width: 991.98px) {
   .news-details-content {
-    padding-block: 4.5rem;
+    padding-block: 3rem;
   }
 }
 .news-details-content .social-icons {
@@ -5436,6 +5436,29 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 .related-news-sec .text-img-main-card .bottom-content-sec .button-grp {
   padding-right: 1.5rem;
+}
+
+.news-img-container {
+  padding: 2rem 0rem;
+}
+.news-img-container .news-details-img-wrap {
+  position: relative;
+  padding-top: 22%;
+}
+@media (max-width: 1199.98px) {
+  .news-img-container .news-details-img-wrap {
+    padding-top: 32%;
+  }
+}
+@media (max-width: 767.98px) {
+  .news-img-container .news-details-img-wrap {
+    padding-top: 52%;
+  }
+}
+.news-img-container .news-details-img-wrap img {
+  height: 100%;
+  position: absolute;
+  inset: 0;
 }
 
 /* Accordion Items */

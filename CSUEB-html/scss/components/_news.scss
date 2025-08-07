@@ -191,11 +191,11 @@
 
 
 .news-details-content {
-  max-width: 800px;
-  padding: 6rem 1.25rem;
+  max-width: 1000px;
+  padding: 4rem 1.25rem;
   margin: 0 auto;
   @include media-breakpoint-down(lg) {
-    padding-block: 4.5rem;
+    padding-block: 3rem;
   }
   .social-icons {
     display: flex;
@@ -309,6 +309,25 @@
       .button-grp {
         padding-right: 1.5rem;
       }
+    }
+  }
+}
+
+.news-img-container{
+  padding: 2rem 0rem;
+  .news-details-img-wrap {
+    position: relative;
+    padding-top: 22%;
+    @include media-breakpoint-down(xl) {
+      padding-top: 32%;
+    }
+    @include media-breakpoint-down(md) {
+      padding-top: 52%;
+    }
+    img {
+      height: 100%;
+      position: absolute;
+      inset: 0;
     }
   }
 }
