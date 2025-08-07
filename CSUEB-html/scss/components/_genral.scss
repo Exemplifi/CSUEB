@@ -462,8 +462,11 @@ section.bg-white.section-with-padding + section.bg-white {
                 width: 1px;
                 background: var(--black);
                 position: absolute;
-                left: -4px;
+                left: -3px;
                 top: 9px;
+                @include media-breakpoint-up(xl) {
+                    left: -4px;
+                }
             }
             &:first-child {
                 &::after {
@@ -472,6 +475,9 @@ section.bg-white.section-with-padding + section.bg-white {
             }
             a {
                 padding: 0 6px;
+                &.inactive-link {
+                    color: var(--black);
+                }
             }
         }
     }

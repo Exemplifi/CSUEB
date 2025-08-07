@@ -781,14 +781,22 @@ section.bg-white.section-with-padding + section.bg-white {
   width: 1px;
   background: var(--black);
   position: absolute;
-  left: -4px;
+  left: -3px;
   top: 9px;
+}
+@media (min-width: 1200px) {
+  .a-z-links ul li::after {
+    left: -4px;
+  }
 }
 .a-z-links ul li:first-child::after {
   display: none;
 }
 .a-z-links ul li a {
   padding: 0 6px;
+}
+.a-z-links ul li a.inactive-link {
+  color: var(--black);
 }
 
 .btn {
