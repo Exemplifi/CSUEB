@@ -26,18 +26,18 @@
 
         <div class="d-flex align-items-center gap-3">
           <nav class="header-links d-none d-lg-flex align-items-center gap-3" aria-label="Main navigation">
-            <div class="d-flex menu-list-link" role="menubar">
-              <a href="#" class="text-white menu-link subtext" aria-label="Apply menu. Press Enter to visit" role="menuitem">APPLY</a>
-              <a href="#" class="text-white menu-link subtext" aria-label="Request Info menu. Press Enter to visit" role="menuitem">REQUEST INFO</a>
-              <a href="#" class="text-white menu-link subtext" aria-label="Give menu. Press Enter to visit"  role="menuitem">GIVE</a>
-            </div>
+            <ul class="d-flex menu-list-link" role="menubar">
+              <li role="none"><a href="#" class="text-white menu-link subtext" aria-label="Apply menu. Press Enter to visit" role="menuitem">APPLY</a></li>
+              <li role="none"><a href="#" class="text-white menu-link subtext" aria-label="Request Info menu. Press Enter to visit" role="menuitem">REQUEST INFO</a></li>
+              <li role="none"><a href="#" class="text-white menu-link subtext" aria-label="Give menu. Press Enter to visit" role="menuitem">GIVE</a></li>
+            </ul>
 
             <!-- search seection -->
           <div class="menu-search">
             <div class="btn-search position-relative">
               <button type="button" class="search__btn border-0" aria-label="Search. Press Enter to open the search bar">
                 <span class="screen-only" aria-label="Search">Search</span>
-                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path d="M15 2C18.8541 2 22 5.14585 22 9C22 12.8541 18.8541 16 15 16C13.252 16 11.655 15.348 10.4258 14.2812L10 14.707V16L4 22L2 20L8 14H9.29297L9.71875 13.5742C8.65198 12.345 8 10.748 8 9C8 5.14585 11.1459 2 15 2ZM15 4C12.2267 4 10 6.22673 10 9C10 11.7733 12.2267 14 15 14C17.7733 14 20 11.7733 20 9C20 6.22673 17.7733 4 15 4Z" fill="white"></path>
                 </svg>
               </button>
@@ -57,8 +57,8 @@
             </div>
           </div>
     
-            <div class="dropdown" role="menu">
-              <button class="dropdown-toggle btn btn-primary btn-primary-yellow btn-hover-red" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Information for different user types. Press Enter to open the dropdown" role="menuitem">
+            <div class="dropdown">
+              <button class="dropdown-toggle btn btn-primary btn-primary-yellow btn-hover-red" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Information for different user types. Press Enter to open the dropdown">
                 <span>INFO FOR
                   <svg class="arrow-icon-white ms-2" width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <path d="M7.92969 10.1772L6.42969 11.6772L12.5 17.7476L18.5703 11.6772L17.0703 10.1772L12.5 14.7476L7.92969 10.1772Z" fill="currentColor"/>
@@ -66,9 +66,9 @@
                 </span>
               </button>
               <ul class="dropdown-menu" role="menu" aria-label="Info for submenu">
-                <li><a class="dropdown-item" href="#" aria-label="Current Students. Press Enter to visit" role="menuitem">Current Students</a></li>
-                <li><a class="dropdown-item" href="#" aria-label="Future Students. Press Enter to visit" role="menuitem">Future Students</a></li>
-                <li><a class="dropdown-item" href="#" aria-label="Alumni. Press Enter to visit" role="menuitem">Alumni</a></li>
+                <li role="none"><a class="dropdown-item" href="#" aria-label="Current Students. Press Enter to visit" role="menuitem">Current Students</a></li>
+                <li role="none"><a class="dropdown-item" href="#" aria-label="Future Students. Press Enter to visit" role="menuitem">Future Students</a></li>
+                <li role="none"><a class="dropdown-item" href="#" aria-label="Alumni. Press Enter to visit" role="menuitem">Alumni</a></li>
               </ul>
             </div>
     
@@ -869,7 +869,7 @@
 
     <!-- Text Only Start -->
     <section class="section bg-black whats-next-section position-relative">
-      <img src="./images/yellow-stars-bg.svg" alt="star-icon" class="img-fluid yellow-stars">
+      <!-- <img src="./images/yellow-stars-bg.svg" alt="star-icon" class="img-fluid yellow-stars"> -->
       
 
       <img src="./images/whats-next-section.png" alt="Image" class="img-fluid whats-next-bg">
@@ -1155,10 +1155,8 @@
 
 
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
     <!-- Swiper JS -->
     <script src="./js/swiper-bundle.min.js"></script>
-
     <!-- custom JS -->
     <script src="./js/main.js"></script>
 
