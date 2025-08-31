@@ -192,7 +192,7 @@
   position: relative; 
   height: 70vh;
   @media (min-width: 768px) {
-    height: 90vh;
+     min-height: 90vh;
   }
   @media (min-width: 1440px) {
     height: 78vh;
@@ -243,6 +243,10 @@
                 background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, rgb(0 0 0 / 33%) 57.09%);
           }
         }
+        video {
+          object-fit: cover;
+          height: 100%;
+        }
       }
       .content-section {
         position: absolute;
@@ -292,6 +296,15 @@
         .inner-hero-slider .swiper-slide .content-section {
           padding-bottom: 3.75rem;
         }
+        .img-wrapper:has(video) {
+          @include media-breakpoint-down(md) {
+           min-height: rem.convert(430px);
+           video {
+            min-height: rem.convert(430px);
+            object-fit: cover;
+           }
+          }
+         }
     }
   }
   &.program-finder-hero {

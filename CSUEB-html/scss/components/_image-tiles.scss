@@ -47,6 +47,8 @@
   max-width: 1142px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
+  z-index: 2;
 
   @include media-breakpoint-down(lg) {
     column-count: 2;
@@ -152,5 +154,4 @@
     }
   }
 }
-
 

@@ -114,6 +114,42 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+ // More Menu Hide
+ const collapseMenu = document.getElementById("more-collapse");
+const toggleBtn = document.querySelector('[data-bs-target="#more-collapse"]');
+
+// 1. Close on click outside
+document.addEventListener("click", function (event) {
+  if (
+    collapseMenu &&
+    toggleBtn &&
+    !collapseMenu.contains(event.target) &&
+    !toggleBtn.contains(event.target)
+  ) {
+    closeCollapse();
+  }
+});
+
+// 2. Close on focus out
+collapseMenu.addEventListener("focusout", function (event) {
+  // Check if focus moved outside the collapse completely
+  if (!collapseMenu.contains(event.relatedTarget)) {
+    closeCollapse();
+  }
+});
+
+function closeCollapse() {
+  let bsCollapse = bootstrap.Collapse.getInstance(collapseMenu);
+
+  if (bsCollapse) {
+    bsCollapse.hide();
+  } else {
+    bsCollapse = new bootstrap.Collapse(collapseMenu, { toggle: false });
+    bsCollapse.hide();
+  }
+}
+
+
 });
 
 // Swiper Sliders
@@ -848,3 +884,13 @@ function initAccessibilityFeatures() {
   }
 }
 // Lightbox Gallery End
+
+$(document).on("click", function (e) {
+  // Check if click is outside #more-collapse and its toggle button
+  if (
+    !$(e.target).closest("#more-collapse").length &&
+    !$(e.target).closest('[data-bs-target="#more-collapse"]').length
+  ) {
+    $("#more-collapse").collapse("hide");
+  }
+});
