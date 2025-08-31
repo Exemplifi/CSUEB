@@ -1890,13 +1890,13 @@ section.bg-white.section-with-padding + section.bg-white {
   position: relative;
 }
 
-.more-menu-wrapper {
+.more-menu-wrap {
   position: relative;
   text-align: center;
   margin-top: -3rem;
   z-index: 1;
 }
-.more-menu-wrapper .btn {
+.more-menu-wrap .btn {
   margin: 0 auto;
   height: 4rem;
   min-width: 4rem;
@@ -1910,7 +1910,7 @@ section.bg-white.section-with-padding + section.bg-white {
   padding: 0 0 0.5rem 0;
   z-index: 11;
 }
-.more-menu-wrapper .collapse-menu {
+.more-menu-wrap .collapse-menu {
   position: absolute;
   top: 0;
   left: 0;
@@ -1925,18 +1925,18 @@ section.bg-white.section-with-padding + section.bg-white {
   opacity: 0;
 }
 @media (max-width: 767.98px) {
-  .more-menu-wrapper .collapse-menu {
+  .more-menu-wrap .collapse-menu {
     padding: 4.5rem 1rem 2rem 1rem;
   }
 }
-.more-menu-wrapper .collapse-menu.show {
+.more-menu-wrap .collapse-menu.show {
   opacity: 1;
 }
-.more-menu-wrapper .collapse-menu * {
+.more-menu-wrap .collapse-menu * {
   color: var(--white);
 }
 @media (max-width: 767.98px) {
-  .more-menu-wrapper .collapse-menu .section-title {
+  .more-menu-wrap .collapse-menu .section-title {
     display: flex;
     justify-content: space-between;
     column-gap: 1rem;
@@ -1944,45 +1944,45 @@ section.bg-white.section-with-padding + section.bg-white {
     margin-top: 0.5rem;
   }
 }
-.more-menu-wrapper .collapse-menu .section-title > a {
+.more-menu-wrap .collapse-menu .section-title > a {
   font-size: 1.25rem;
   font-weight: 600;
   text-decoration: none;
 }
-.more-menu-wrapper .collapse-menu .section-title > a:hover {
+.more-menu-wrap .collapse-menu .section-title > a:hover {
   color: var(--gold);
   text-decoration: underline;
 }
 @media (max-width: 767.98px) {
-  .more-menu-wrapper .collapse-menu .section-title > a {
+  .more-menu-wrap .collapse-menu .section-title > a {
     font-size: 1rem;
     flex: 0 0 calc(100% - 40px);
   }
 }
-.more-menu-wrapper .collapse-menu .section-title .sub-column {
+.more-menu-wrap .collapse-menu .section-title .sub-column {
   margin-top: 0.25rem;
   margin-bottom: 0.75rem;
 }
 @media (max-width: 767.98px) {
-  .more-menu-wrapper .collapse-menu .section-title .sub-column {
+  .more-menu-wrap .collapse-menu .section-title .sub-column {
     flex: 1;
   }
 }
-.more-menu-wrapper .collapse-menu .section-title .sub-column a {
+.more-menu-wrap .collapse-menu .section-title .sub-column a {
   text-decoration: none;
   display: inline-block;
   margin-bottom: 0.125rem;
 }
 @media (max-width: 767.98px) {
-  .more-menu-wrapper .collapse-menu .section-title .sub-column a {
+  .more-menu-wrap .collapse-menu .section-title .sub-column a {
     font-size: 0.875rem;
   }
 }
-.more-menu-wrapper .collapse-menu .section-title .sub-column a:hover {
+.more-menu-wrap .collapse-menu .section-title .sub-column a:hover {
   color: var(--gold);
   text-decoration: underline;
 }
-.more-menu-wrapper .collapse-menu .section-title .btn-expand {
+.more-menu-wrap .collapse-menu .section-title .btn-expand {
   background-color: transparent;
   box-shadow: none;
   padding: 0;
@@ -1991,22 +1991,22 @@ section.bg-white.section-with-padding + section.bg-white {
   display: none;
 }
 @media (max-width: 767.98px) {
-  .more-menu-wrapper .collapse-menu .section-title .btn-expand {
+  .more-menu-wrap .collapse-menu .section-title .btn-expand {
     display: inline-block;
     flex: 0 0 24px;
   }
 }
-.more-menu-wrapper .collapse-menu .section-title .btn-expand svg {
+.more-menu-wrap .collapse-menu .section-title .btn-expand svg {
   transition: all 0.3s ease-in-out;
 }
-.more-menu-wrapper .collapse-menu .section-title .btn-expand svg path {
+.more-menu-wrap .collapse-menu .section-title .btn-expand svg path {
   fill: var(--white);
 }
-.more-menu-wrapper .collapse-menu .section-title .btn-expand[aria-expanded=true] svg {
+.more-menu-wrap .collapse-menu .section-title .btn-expand[aria-expanded=true] svg {
   transform: rotate(180deg);
 }
 @media (max-width: 767.98px) {
-  .more-menu-wrapper .collapse-menu .section-title:not(:has(.sub-column)) .btn-expand {
+  .more-menu-wrap .collapse-menu .section-title:not(:has(.sub-column)) .btn-expand {
     display: none;
   }
 }
