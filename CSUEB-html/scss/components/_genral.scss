@@ -454,7 +454,9 @@ section.bg-white.section-with-padding + section.bg-white {
 
 .a-z-links {
     ul {
+        list-style: none!important;
         li {
+            list-style: none!important;
             position: relative;
             &::after {
                 content: "";
