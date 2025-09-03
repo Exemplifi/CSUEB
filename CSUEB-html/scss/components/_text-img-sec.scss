@@ -119,6 +119,30 @@
         min-height: rem.convert(297px);
       }
     }
+    video {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      @include media-breakpoint-up(lg) {
+      }
+      @include media-breakpoint-down(md) {
+        min-height: rem.convert(297px);
+      }
+    }
+    iframe {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+      @include media-breakpoint-up(lg) {
+      }
+      @include media-breakpoint-down(md) {
+        min-height: rem.convert(297px);
+      }
+    }
     &::before {
       content: "";
       position: absolute;
@@ -623,6 +647,13 @@
       align-self: stretch;
       @include media-breakpoint-down(lg) {
         gap: 1.5rem;
+      }
+      img {
+        width: 100%!important;
+        object-fit: cover;
+      }
+      video {
+        width: 100%!important;
       }
     }
     .full-mobile-cta {
@@ -1456,4 +1487,11 @@
     }
   }
 }
+
+
+.experts-profile-faculty-wraper .img-clip-path-box.img-content-section .img-wrapper {
+  max-width: 608px;
+}
+
+
 

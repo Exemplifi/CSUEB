@@ -772,7 +772,11 @@ section.bg-white.section-with-padding + section.bg-white {
   }
 }
 
+.a-z-links ul {
+  list-style: none !important;
+}
 .a-z-links ul li {
+  list-style: none !important;
   position: relative;
 }
 .a-z-links ul li::after {
@@ -1306,6 +1310,7 @@ section.bg-white.section-with-padding + section.bg-white {
   padding-left: 0.25rem;
 }
 .main-header .header-links .menu-list-link {
+  margin-bottom: 0 !important;
   gap: 2.5rem;
   align-items: center;
   margin-right: 1.5rem;
@@ -3791,6 +3796,30 @@ section.bg-white.section-with-padding + section.bg-white {
     min-height: 18.5625rem;
   }
 }
+.img-clip-path-box .img-wrapper video {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 767.98px) {
+  .img-clip-path-box .img-wrapper video {
+    min-height: 18.5625rem;
+  }
+}
+.img-clip-path-box .img-wrapper iframe {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+}
+@media (max-width: 767.98px) {
+  .img-clip-path-box .img-wrapper iframe {
+    min-height: 18.5625rem;
+  }
+}
 .img-clip-path-box .img-wrapper::before {
   content: "";
   position: absolute;
@@ -4232,6 +4261,13 @@ section.bg-white.section-with-padding + section.bg-white {
   .full-img-text-sec .content-section .full-sec-content {
     gap: 1.5rem;
   }
+}
+.full-img-text-sec .content-section .full-sec-content img {
+  width: 100% !important;
+  object-fit: cover;
+}
+.full-img-text-sec .content-section .full-sec-content video {
+  width: 100% !important;
 }
 @media (max-width: 575.98px) {
   .full-img-text-sec .content-section .full-mobile-cta {
@@ -4997,6 +5033,10 @@ section.bg-white.section-with-padding + section.bg-white {
     content: "";
     transform: rotate(-180deg);
   }
+}
+
+.experts-profile-faculty-wraper .img-clip-path-box.img-content-section .img-wrapper {
+  max-width: 608px;
 }
 
 .home-hero-sec {
