@@ -61,6 +61,14 @@
 .bg-white {
     background: var(--white);
     color: var(--black);
+    .full-sec-content{
+        a:not(.btn){
+            color: var(--red) !important;
+        }
+        p, ul li, ol li{
+            color: var(--black) !important;
+        }
+    }
 }
 
 .bg-black {

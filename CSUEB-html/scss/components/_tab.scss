@@ -49,11 +49,77 @@
       padding: 2rem;
       margin-top: 2rem;
       font-size: 1rem;
-      color: var(--black);
+      color: var(--black) !important;
       border-left: 3px solid transparent;
       @include media-breakpoint-down(md) {
         padding-inline: 1.5rem;
         margin-top: 1.5rem;
+      }
+      a:not(.btn) {
+        text-decoration-line: underline !important;
+        text-decoration-style: solid !important;
+        text-decoration-skip-ink: none !important;
+        text-decoration-thickness: auto !important;
+        text-underline-offset: auto !important;
+        background: transparent !important;
+        color: var(--red) !important;
+        display: inline-flex !important;
+        word-break: break-word !important;
+
+        &:hover {
+          background: rgba(213, 0, 50, 0.10) !important;
+          text-decoration-color: transparent !important;
+        }
+      }
+      ul{
+        margin-top: rem.convert(16px) !important;
+        padding-left: rem.convert(16px) !important;
+        margin-bottom: 0 !important;
+        li{
+          margin-bottom: rem.convert(2px) !important;
+          list-style-type: initial !important;
+          color: var(--black) !important;
+          &:last-child {
+            margin-bottom: 0 !important;
+          }
+        }
+      }
+      ol{
+        padding-left: rem.convert(16px) !important;
+        margin-top: rem.convert(24px) !important;
+        margin-bottom: 0 !important;
+        li{
+          margin-bottom: rem.convert(2px) !important;
+          color: var(--black) !important;
+          &:last-child {
+            margin-bottom: 0 !important;
+          }
+        }
+      }
+      img{
+        margin-top: rem.convert(32px) !important;
+        max-width: 100% !important;
+        height: auto !important;
+        @include media-breakpoint-down(md) {
+          min-height: auto !important;
+        }
+      }
+      video{
+        margin-top: rem.convert(32px) !important;
+        width: 100% !important;
+        height: auto !important;
+      }
+      iframe{
+        margin-top: rem.convert(32px) !important;
+        margin-bottom: rem.convert(16 px) !important;
+        width: 100% !important;
+        min-height: rem.convert(400px) !important;
+        @include media-breakpoint-down(md) {
+          min-height: auto !important;
+        }
+      }
+      h3, h4, h5, h6 {
+        margin-top: rem.convert(16px) !important;
       }
     }
   }

@@ -405,6 +405,57 @@
         width: 100%;
       }
     }
+    &.bg-black{
+      a{
+        @extend .link--hover-white;
+      }
+    }
+    &.bg-white{
+      a:not(.btn) {
+        text-decoration-line: underline !important;
+        text-decoration-style: solid !important;
+        text-decoration-skip-ink: none !important;
+        text-decoration-thickness: auto !important;
+        text-underline-offset: auto !important;
+        background: transparent !important;
+        color: var(--red) !important;
+        display: inline-flex !important;
+        word-break: break-word !important;
+        &:hover {
+            background: rgba(213, 0, 50, 0.10) !important;
+            text-decoration-color: transparent !important;
+        }
+    }       
+    }
+    a:not(.btn){
+      text-decoration: underline !important;
+    }
+    ul{
+      padding-left: rem.convert(16px) !important;
+      margin: 0 !important;
+      li{
+        list-style-type: initial !important;
+      }
+    }
+    ol{
+      padding-left: rem.convert(16px) !important;
+      margin-bottom: 0 !important;
+    }
+    img{
+      max-width: 100% !important;
+      height: auto !important;
+    }
+    video{
+      max-width: 100% !important;
+      height: auto !important;
+    }
+    iframe{
+      max-width: 100% !important;
+      height: auto !important;
+      video{
+        width: 100% !important;
+      }
+    }
   }
   .img-wrap {
     &.with-star {
@@ -485,6 +536,9 @@
         .button-grp {
           background: #0000000a;
           margin-top: rem.convert(12px);
+          a{
+            text-decoration: none !important;
+          }
           @include media-breakpoint-up(md) {
             margin-top: rem.convert(24px);
           }
@@ -643,7 +697,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 2rem;
+      //gap: 2rem;
       align-self: stretch;
       @include media-breakpoint-down(lg) {
         gap: 1.5rem;
@@ -657,6 +711,7 @@
       }
     }
     .full-mobile-cta {
+      margin-bottom: 32px;
       @include media-breakpoint-down(sm) {
         width: 100%;
         .btn {

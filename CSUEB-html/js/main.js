@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMainImgSlider();
   initGalleryLightbox();
   initAccessibilityFeatures();
+  initAccordionAccessibility();
 
   const expanderButtons = document.querySelectorAll('.btn-expander');
 
@@ -883,6 +884,115 @@ function initAccessibilityFeatures() {
     handleMediaQueryChange();
   }
 }
+
+// Enhanced Accordion Accessibility
+function initAccordionAccessibility() {
+  const accordion = document.getElementById('globalAccordion');
+  if (!accordion) return;
+
+  const accordionButtons = accordion.querySelectorAll('.accordion-button');
+  const accordionPanels = accordion.querySelectorAll('.accordion-collapse');
+
+  // Add keyboard navigation
+  accordionButtons.forEach((button, index) => {
+    button.addEventListener('keydown', function(e) {
+      switch(e.key) {
+        case 'ArrowDown':
+        case 'ArrowRight':
+          e.preventDefault();
+          const nextIndex = (index + 1) % accordionButtons.length;
+          accordionButtons[nextIndex].focus();
+          break;
+        case 'ArrowUp':
+        case 'ArrowLeft':
+          e.preventDefault();
+          const prevIndex = (index - 1 + accordionButtons.length) % accordionButtons.length;
+          accordionButtons[prevIndex].focus();
+          break;
+        case 'Home':
+          e.preventDefault();
+          accordionButtons[0].focus();
+          break;
+        case 'End':
+          e.preventDefault();
+          accordionButtons[accordionButtons.length - 1].focus();
+          break;
+      }
+    });
+
+    // Handle Bootstrap collapse events
+    button.addEventListener('click', function() {
+      const targetId = this.getAttribute('data-bs-target');
+      const targetPanel = document.querySelector(targetId);
+      
+      if (targetPanel) {
+        // Update ARIA attributes
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', !isExpanded);
+        targetPanel.setAttribute('aria-hidden', isExpanded);
+        
+        // Update icon aria-label
+        const icon = this.querySelector('.accordion-icon svg');
+        if (icon) {
+          icon.setAttribute('aria-label', isExpanded ? 'Expand accordion' : 'Collapse accordion');
+        }
+        
+        // Announce state change to screen readers
+        announceToScreenReader(
+          `${this.querySelector('[id^="accordion-heading-"]').textContent} ${isExpanded ? 'collapsed' : 'expanded'}`
+        );
+      }
+    });
+  });
+
+  // Listen for Bootstrap collapse events
+  accordionPanels.forEach(panel => {
+    panel.addEventListener('shown.bs.collapse', function() {
+      const button = accordion.querySelector(`[aria-controls="${this.id}"]`);
+      if (button) {
+        button.setAttribute('aria-expanded', 'true');
+        this.setAttribute('aria-hidden', 'false');
+        
+        // Update icon
+        const icon = button.querySelector('.accordion-icon svg');
+        if (icon) {
+          icon.setAttribute('aria-label', 'Collapse accordion');
+        }
+      }
+    });
+
+    panel.addEventListener('hidden.bs.collapse', function() {
+      const button = accordion.querySelector(`[aria-controls="${this.id}"]`);
+      if (button) {
+        button.setAttribute('aria-expanded', 'false');
+        this.setAttribute('aria-hidden', 'true');
+        
+        // Update icon
+        const icon = button.querySelector('.accordion-icon svg');
+        if (icon) {
+          icon.setAttribute('aria-label', 'Expand accordion');
+        }
+      }
+    });
+  });
+
+  // Function to announce changes to screen readers
+  function announceToScreenReader(message) {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.setAttribute('aria-atomic', 'true');
+    announcement.className = 'sr-only';
+    announcement.textContent = message;
+    document.body.appendChild(announcement);
+    
+    setTimeout(() => {
+      if (document.body.contains(announcement)) {
+        document.body.removeChild(announcement);
+      }
+    }, 1000);
+  }
+}
+
 // Lightbox Gallery End
 
 $(document).on("click", function (e) {
