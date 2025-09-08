@@ -417,6 +417,12 @@
     @include media-breakpoint-down(md) {
       gap: 0.5rem;
     }
+
+    a {
+      color: var(--black) !important;
+      text-decoration: none !important;
+
+    }
   }
 
   .bottom-content-sec {
@@ -476,6 +482,19 @@
           text-decoration-color: transparent !important;
         }
       }
+
+      .heading-row {
+        a {
+          color: var(--black) !important;
+          text-decoration: none !important;
+          &:hover{
+            background-color: transparent !important;
+            color: var(--red) !important;
+          }
+
+        }
+      }
+
     }
 
     a:not(.btn) {

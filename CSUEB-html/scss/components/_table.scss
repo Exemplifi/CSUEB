@@ -71,6 +71,11 @@ table {
         }
       }
   }
+  &:has(thead){
+    tr:first-child:not(:has(td p)) {
+      border-bottom: 1px solid var(--grey-800) !important;
+  }
+  }
 
   margin-top: rem.convert(32px) !important;
 

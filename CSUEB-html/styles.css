@@ -4247,6 +4247,10 @@ section.bg-white.section-with-padding + section.bg-white {
     gap: 0.5rem;
   }
 }
+.text-img-main-card .heading-row a {
+  color: var(--black) !important;
+  text-decoration: none !important;
+}
 .text-img-main-card .bottom-content-sec {
   display: flex;
   padding: 2rem 1.5rem;
@@ -4291,6 +4295,14 @@ section.bg-white.section-with-padding + section.bg-white {
 .text-img-main-card .bottom-content-sec.bg-white a:not(.btn):hover {
   background: rgba(213, 0, 50, 0.1) !important;
   text-decoration-color: transparent !important;
+}
+.text-img-main-card .bottom-content-sec.bg-white .heading-row a {
+  color: var(--black) !important;
+  text-decoration: none !important;
+}
+.text-img-main-card .bottom-content-sec.bg-white .heading-row a:hover {
+  background-color: transparent !important;
+  color: var(--red) !important;
 }
 .text-img-main-card .bottom-content-sec a:not(.btn) {
   text-decoration: underline !important;
@@ -6503,6 +6515,9 @@ table tr:first-child:has(td p) {
 }
 table tr:first-child:has(td p) + tr {
   border-bottom: 2px solid var(--gold) !important;
+}
+table:has(thead) tr:first-child:not(:has(td p)) {
+  border-bottom: 1px solid var(--grey-800) !important;
 }
 table thead {
   border-bottom: 2px solid var(--gold) !important;
