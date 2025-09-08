@@ -703,6 +703,9 @@
         .info-icon {
           width: 1.5rem;
           height: 1.5rem;
+          img{
+            margin-top: 0 !important;
+          }
            @include media-breakpoint-down(md) {
             width: 1.25rem;
             height: 1.25rem;
@@ -762,6 +765,9 @@
       flex-direction: row;
       align-items: flex-start;
       gap: 1rem;
+      li{
+        list-style-type: none !important;
+      }
       @include media-breakpoint-up(md) {
         justify-content: flex-end;
       }

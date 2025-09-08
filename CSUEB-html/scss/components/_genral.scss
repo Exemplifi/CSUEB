@@ -95,6 +95,7 @@ ul {
             color: var(--red) !important;
             display: inline-flex !important;
             word-break: break-word !important;
+
             &:hover {
                 background: rgba(213, 0, 50, 0.10) !important;
                 text-decoration-color: transparent !important;
@@ -150,7 +151,8 @@ ul {
             margin-top: rem.convert(32px) !important;
             width: 100% !important;
             min-height: rem.convert(400px) !important;
-            @include media-breakpoint-down(md){
+
+            @include media-breakpoint-down(md) {
                 min-height: auto !important;
             }
         }
@@ -161,6 +163,8 @@ ul {
         h6 {
             margin-top: rem.convert(16px) !important;
         }
+
+       
     }
 
     &.heading-gray-icon {
@@ -693,6 +697,7 @@ section.bg-white.section-with-padding+section.bg-white {
         margin-top: rem.convert(32px) !important;
         width: 100% !important;
         min-height: rem.convert(400px) !important;
+
         @include media-breakpoint-down(md) {
             min-height: auto !important;
         }

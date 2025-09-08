@@ -132,12 +132,14 @@ document.addEventListener("click", function (event) {
 });
 
 // 2. Close on focus out
-collapseMenu.addEventListener("focusout", function (event) {
-  // Check if focus moved outside the collapse completely
-  if (!collapseMenu.contains(event.relatedTarget)) {
-    closeCollapse();
-  }
-});
+if (collapseMenu) {
+  collapseMenu.addEventListener("focusout", function (event) {
+    // Check if focus moved outside the collapse completely
+    if (!collapseMenu.contains(event.relatedTarget)) {
+      closeCollapse();
+    }
+  });
+}
 
 function closeCollapse() {
   let bsCollapse = bootstrap.Collapse.getInstance(collapseMenu);
@@ -415,12 +417,15 @@ function initHeader() {
 
 
 const dropdownBtn = document.querySelector('#dropdownMenuButton1');
-const dropdown = dropdownBtn.closest('.custom-dropdown');
-
-dropdownBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  dropdown.classList.toggle('show');
-});
+if (dropdownBtn) {
+  const dropdown = dropdownBtn.closest('.custom-dropdown');
+  if (dropdown) {
+    dropdownBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      dropdown.classList.toggle('show');
+    });
+  }
+}
 
 
 
@@ -790,10 +795,21 @@ function initAccessibilityFeatures() {
   // Enhanced table accessibility
   const tables = document.querySelectorAll('table');
   tables.forEach(table => {
-    if (!table.querySelector('caption')) {
-      const caption = document.createElement('caption');
-      caption.textContent = 'Table data';
-      table.insertBefore(caption, table.firstChild);
+    if (!table.querySelector('caption') && !table.getAttribute('aria-label')) {
+      table.setAttribute('aria-label', 'Table data');
+    }
+    
+    // Add Bootstrap table class if not present
+    if (!table.classList.contains('table')) {
+      table.classList.add('table');
+    }
+    
+    // Wrap table in responsive div if not already wrapped
+    if (!table.parentElement.classList.contains('table-responsive')) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'table-responsive';
+      table.parentNode.insertBefore(wrapper, table);
+      wrapper.appendChild(table);
     }
   });
 
@@ -830,7 +846,14 @@ function initAccessibilityFeatures() {
 
   // Enhanced error handling
   window.addEventListener('error', function(e) {
-    console.error('JavaScript error:', e.error);
+    // Enhanced error logging with fallback for missing e.error
+    if (e && e.error) {
+      console.error('JavaScript error:', e.error);
+    } else if (e && e.message) {
+      console.error('JavaScript error:', e.message);
+    } else {
+      console.error('JavaScript error:', e);
+    }
     announceToScreenReader('An error occurred. Please refresh the page.');
   });
 
@@ -995,12 +1018,35 @@ function initAccordionAccessibility() {
 
 // Lightbox Gallery End
 
-$(document).on("click", function (e) {
+document.addEventListener("click", function (e) {
   // Check if click is outside #more-collapse and its toggle button
-  if (
-    !$(e.target).closest("#more-collapse").length &&
-    !$(e.target).closest('[data-bs-target="#more-collapse"]').length
-  ) {
-    $("#more-collapse").collapse("hide");
+  const moreCollapse = document.getElementById("more-collapse");
+  const toggleButton = document.querySelector('[data-bs-target="#more-collapse"]');
+  const clickedInsideCollapse = moreCollapse && moreCollapse.contains(e.target);
+  const clickedToggle = toggleButton && toggleButton.contains(e.target);
+
+  if (!clickedInsideCollapse && !clickedToggle) {
+    // Use Bootstrap's native collapse API if available
+    if (moreCollapse && typeof bootstrap !== "undefined" && bootstrap.Collapse) {
+      const collapseInstance = bootstrap.Collapse.getOrCreateInstance(moreCollapse);
+      collapseInstance.hide();
+    } else if (moreCollapse && typeof $(moreCollapse).collapse === "function") {
+      // Fallback for jQuery-based Bootstrap
+      $(moreCollapse).collapse("hide");
+    }
   }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  var links = document.querySelectorAll('a[target="_blank"]');
+  links.forEach(function(link) {
+    if (!link.querySelector('.sr-only')) {
+      var srSpan = document.createElement('span');
+      srSpan.className = 'sr-only';
+      srSpan.textContent = '(opens in a new tab)';
+      link.appendChild(document.createTextNode(' '));
+      link.appendChild(srSpan);
+    }
+  });
+});
+
