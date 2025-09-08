@@ -902,6 +902,12 @@ section.bg-white.section-with-padding + section.bg-white {
 .full-sec-content ul li:last-child {
   margin-bottom: 0 !important;
 }
+.full-sec-content ul li ul {
+  margin-top: 0 !important;
+}
+.full-sec-content ul + h2 {
+  margin-top: 2rem !important;
+}
 .full-sec-content ol {
   padding-left: 1rem !important;
   margin-top: 1rem !important;
@@ -913,6 +919,12 @@ section.bg-white.section-with-padding + section.bg-white {
 .full-sec-content ol li:last-child {
   margin-bottom: 0 !important;
 }
+.full-sec-content ol li ul {
+  margin-top: 0 !important;
+}
+.full-sec-content ol + h2 {
+  margin-top: 2rem !important;
+}
 .full-sec-content img {
   margin-top: 2rem !important;
   max-width: 100% !important;
@@ -922,6 +934,9 @@ section.bg-white.section-with-padding + section.bg-white {
   .full-sec-content img {
     min-height: auto !important;
   }
+}
+.full-sec-content img + h2 {
+  margin-top: 2rem !important;
 }
 .full-sec-content video {
   margin-top: 2rem !important;
@@ -938,11 +953,21 @@ section.bg-white.section-with-padding + section.bg-white {
     min-height: auto !important;
   }
 }
+.full-sec-content h2 + h2, .full-sec-content p + h2 {
+  margin-top: 2rem !important;
+}
+.full-sec-content h3 strong {
+  font-weight: 600 !important;
+}
+.full-sec-content h2,
 .full-sec-content h3,
 .full-sec-content h4,
 .full-sec-content h5,
 .full-sec-content h6 {
-  margin-top: 1rem !important;
+  margin-top: 2rem !important;
+}
+.full-sec-content table {
+  margin-bottom: 2rem !important;
 }
 
 .btn {
@@ -1856,6 +1881,7 @@ section.bg-white.section-with-padding + section.bg-white {
 
 .secondary-nav-sec {
   padding-top: 1rem;
+  z-index: 999;
 }
 @media (max-width: 767.98px) {
   .secondary-nav-sec {
@@ -6454,7 +6480,7 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 
 table {
-  width: 100%;
+  width: 100% !important;
   margin-top: 2rem !important;
 }
 table:not(caption) > * > * {
@@ -6468,6 +6494,15 @@ table tr {
 }
 table tr:hover {
   background-color: var(--light-gray) !important;
+}
+table tr:first-child:not(:has(td p)) {
+  border-bottom: 2px solid var(--gold) !important;
+}
+table tr:first-child:has(td p) {
+  border-bottom: none !important;
+}
+table tr:first-child:has(td p) + tr {
+  border-bottom: 2px solid var(--gold) !important;
 }
 table thead {
   border-bottom: 2px solid var(--gold) !important;

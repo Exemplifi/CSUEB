@@ -660,6 +660,13 @@ section.bg-white.section-with-padding+section.bg-white {
             &:last-child {
                 margin-bottom: 0 !important;
             }
+            ul{
+                margin-top: 0 !important;
+            }
+        }
+
+        & + h2{
+            margin-top: rem.convert(32px) !important;
         }
     }
 
@@ -674,6 +681,12 @@ section.bg-white.section-with-padding+section.bg-white {
             &:last-child {
                 margin-bottom: 0 !important;
             }
+            ul{
+                margin-top: 0 !important;
+            }
+        }
+        & + h2{
+            margin-top: rem.convert(32px) !important;
         }
     }
 
@@ -684,6 +697,9 @@ section.bg-white.section-with-padding+section.bg-white {
 
         @include media-breakpoint-down(md) {
             min-height: auto !important;
+        }
+        & + h2{
+            margin-top: rem.convert(32px) !important;
         }
     }
 
@@ -702,11 +718,24 @@ section.bg-white.section-with-padding+section.bg-white {
             min-height: auto !important;
         }
     }
-
+    h2, p{
+        & + h2{
+            margin-top: rem.convert(32px) !important;
+        }
+    }
+    h3{
+        strong{
+            font-weight: 600 !important;
+        }
+    }
+    h2,
     h3,
     h4,
     h5,
     h6 {
-        margin-top: rem.convert(16px) !important;
+        margin-top: rem.convert(32px) !important;
+    }
+    table{
+        margin-bottom: rem.convert(32px) !important;
     }
 }

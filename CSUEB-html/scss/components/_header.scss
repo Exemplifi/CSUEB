@@ -479,6 +479,7 @@
 // secondary-nav
 .secondary-nav-sec {
   padding-top: rem.convert(16px);
+  z-index: 999;
   @include media-breakpoint-down(md) {
     padding-top: rem.convert(24px);
   }

@@ -47,7 +47,7 @@
   }
 }
 table {
-  width: 100%;
+  width: 100% !important;
   &:not(caption)>*>* {
       padding: .5rem .5rem;
       background-color: var(--bs-table-bg);
@@ -58,6 +58,17 @@ table {
       border-bottom: 1px solid var(--grey-800) !important;
       &:hover{
         background-color: var(--light-gray) !important;
+      }
+      &:first-child{
+        &:not(:has(td p)){
+          border-bottom: 2px solid var(--gold) !important;
+        }
+        &:has(td p){
+          border-bottom: none !important;
+          + tr{
+            border-bottom: 2px solid var(--gold) !important;
+          }
+        }
       }
   }
 
