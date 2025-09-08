@@ -115,6 +115,10 @@ ul {
                     margin-bottom: 0 !important;
                 }
             }
+
+            &.social-icons {
+                padding-left: 0 !important;
+            }
         }
 
         ol {
@@ -141,6 +145,12 @@ ul {
             }
         }
 
+        .social-icons {
+            img {
+                margin-top: 0 !important;
+            }
+        }
+
         video {
             margin-top: rem.convert(32px) !important;
             width: 100% !important;
@@ -164,7 +174,7 @@ ul {
             margin-top: rem.convert(16px) !important;
         }
 
-       
+
     }
 
     &.heading-gray-icon {
@@ -660,12 +670,13 @@ section.bg-white.section-with-padding+section.bg-white {
             &:last-child {
                 margin-bottom: 0 !important;
             }
-            ul{
+
+            ul {
                 margin-top: 0 !important;
             }
         }
 
-        & + h2{
+        &+h2 {
             margin-top: rem.convert(32px) !important;
         }
     }
@@ -681,11 +692,13 @@ section.bg-white.section-with-padding+section.bg-white {
             &:last-child {
                 margin-bottom: 0 !important;
             }
-            ul{
+
+            ul {
                 margin-top: 0 !important;
             }
         }
-        & + h2{
+
+        &+h2 {
             margin-top: rem.convert(32px) !important;
         }
     }
@@ -698,7 +711,8 @@ section.bg-white.section-with-padding+section.bg-white {
         @include media-breakpoint-down(md) {
             min-height: auto !important;
         }
-        & + h2{
+
+        &+h2 {
             margin-top: rem.convert(32px) !important;
         }
     }
@@ -718,16 +732,20 @@ section.bg-white.section-with-padding+section.bg-white {
             min-height: auto !important;
         }
     }
-    h2, p{
-        & + h2{
+
+    h2,
+    p {
+        &+h2 {
             margin-top: rem.convert(32px) !important;
         }
     }
-    h3{
-        strong{
+
+    h3 {
+        strong {
             font-weight: 600 !important;
         }
     }
+
     h2,
     h3,
     h4,
@@ -735,7 +753,8 @@ section.bg-white.section-with-padding+section.bg-white {
     h6 {
         margin-top: rem.convert(32px) !important;
     }
-    table{
+
+    table {
         margin-bottom: rem.convert(32px) !important;
     }
 }

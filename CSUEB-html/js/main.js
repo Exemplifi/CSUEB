@@ -814,19 +814,19 @@ function initAccessibilityFeatures() {
   });
 
   // Enhanced list accessibility
-  const lists = document.querySelectorAll('ul, ol');
-  lists.forEach(list => {
-    if (!list.getAttribute('role')) {
-      list.setAttribute('role', 'list');
-    }
+  // const lists = document.querySelectorAll('ul, ol');
+  // lists.forEach(list => {
+  //   if (!list.getAttribute('role')) {
+  //     list.setAttribute('role', 'list');
+  //   }
     
-    const listItems = list.querySelectorAll('li');
-    listItems.forEach(item => {
-      if (!item.getAttribute('role')) {
-        item.setAttribute('role', 'listitem');
-      }
-    });
-  });
+  //   const listItems = list.querySelectorAll('li');
+  //   listItems.forEach(item => {
+  //     if (!item.getAttribute('role')) {
+  //       item.setAttribute('role', 'listitem');
+  //     }
+  //   });
+  // });
 
   // Enhanced heading structure
   const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
