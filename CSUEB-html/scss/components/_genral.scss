@@ -458,6 +458,32 @@ section.bg-white.section-with-padding+section.bg-white {
     display: flex;
     align-items: center;
     gap: rem.convert(4px);
+    > button{
+        
+    }
+    >a:not(.star-btn-link) {
+        font-weight: 700;
+        font-size: rem.convert(14px);
+        text-transform: uppercase;
+        margin-left: rem.convert(-8px);
+
+        @include media-breakpoint-down(md) {
+            margin-left: rem.convert(-12px);
+        }
+
+        padding: rem.convert(8px) !important;
+        
+
+        &:hover {
+            color: var(--red);
+            background-color: rgba(213, 0, 50, 0.1);
+        }
+    }
+
+    >.btn {
+        padding: rem.convert(8px) !important;
+
+    }
 }
 
 .leftnav {
@@ -532,6 +558,25 @@ section.bg-white.section-with-padding+section.bg-white {
 
     .drop {
         margin-bottom: rem.convert(12px);
+        .main-dropdown{
+            >a:not(.star-btn-link) {
+                font-weight: 500;
+                font-size: rem.convert(16px);
+                text-transform: capitalize;
+                margin-left: rem.convert(0px);
+                padding: 0;
+                
+                &:hover{
+                    background-color: transparent;
+                }
+    
+                @include media-breakpoint-down(md) {
+                    margin-left: rem.convert(0px);
+                }
+            }
+        }
+
+        
     }
 }
 

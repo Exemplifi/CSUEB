@@ -725,6 +725,25 @@ section.bg-white.section-with-padding + section.bg-white {
   align-items: center;
   gap: 0.25rem;
 }
+.main-dropdown > a:not(.star-btn-link) {
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  margin-left: -0.5rem;
+  padding: 0.5rem !important;
+}
+@media (max-width: 767.98px) {
+  .main-dropdown > a:not(.star-btn-link) {
+    margin-left: -0.75rem;
+  }
+}
+.main-dropdown > a:not(.star-btn-link):hover {
+  color: var(--red);
+  background-color: rgba(213, 0, 50, 0.1);
+}
+.main-dropdown > .btn {
+  padding: 0.5rem !important;
+}
 
 .leftnav > ul {
   padding: 0;
@@ -786,6 +805,21 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 .sidenav-sub .drop {
   margin-bottom: 0.75rem;
+}
+.sidenav-sub .drop .main-dropdown > a:not(.star-btn-link) {
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: capitalize;
+  margin-left: 0rem;
+  padding: 0;
+}
+.sidenav-sub .drop .main-dropdown > a:not(.star-btn-link):hover {
+  background-color: transparent;
+}
+@media (max-width: 767.98px) {
+  .sidenav-sub .drop .main-dropdown > a:not(.star-btn-link) {
+    margin-left: 0rem;
+  }
 }
 
 .singe-menu {
@@ -1889,6 +1923,7 @@ section.bg-white.section-with-padding + section.bg-white {
 .secondary-nav-sec {
   padding-top: 1rem;
   z-index: 999;
+  position: relative;
 }
 @media (max-width: 767.98px) {
   .secondary-nav-sec {
