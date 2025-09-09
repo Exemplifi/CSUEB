@@ -1011,6 +1011,19 @@ section.bg-white.section-with-padding + section.bg-white {
   margin-bottom: 2rem !important;
 }
 
+@media (min-width: 768px) {
+  .message-content-sec .content-section .full-sec-content {
+    display: block !important;
+  }
+}
+.message-content-sec .container-smaller {
+  padding: 0;
+}
+
+.section .section:last-child {
+  padding: 0;
+}
+
 .btn {
   border-radius: 0px;
   text-transform: uppercase;
@@ -4850,6 +4863,7 @@ section.bg-white.section-with-padding + section.bg-white {
 @media (min-width: 768px) {
   .side-nav-with-content .side-nav-wrap .right-content {
     flex: 1;
+    overflow: hidden;
   }
 }
 .side-nav-with-content .side-nav-wrap .right-content .text-button-sec {
@@ -6069,15 +6083,15 @@ section.bg-white.section-with-padding + section.bg-white {
   background: rgba(213, 0, 50, 0.1) !important;
   text-decoration-color: transparent !important;
 }
-.accodian-global .accordion-collapse .accordion-body ul {
+.accodian-global .accordion-collapse .accordion-body ul:not(.star-ul) {
   margin-top: 1rem !important;
   padding-left: 1rem !important;
 }
-.accodian-global .accordion-collapse .accordion-body ul li {
+.accodian-global .accordion-collapse .accordion-body ul:not(.star-ul) li {
   margin-bottom: 0.125rem !important;
   list-style-type: initial !important;
 }
-.accodian-global .accordion-collapse .accordion-body ul li:last-child {
+.accodian-global .accordion-collapse .accordion-body ul:not(.star-ul) li:last-child {
   margin-bottom: 0 !important;
 }
 .accodian-global .accordion-collapse .accordion-body ol {
@@ -6091,7 +6105,6 @@ section.bg-white.section-with-padding + section.bg-white {
   margin-bottom: 0 !important;
 }
 .accodian-global .accordion-collapse .accordion-body img {
-  margin-top: 1.5rem !important;
   max-width: 100% !important;
   height: auto !important;
 }

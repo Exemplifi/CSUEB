@@ -803,3 +803,18 @@ section.bg-white.section-with-padding+section.bg-white {
         margin-bottom: rem.convert(32px) !important;
     }
 }
+.message-content-sec{
+    @include media-breakpoint-up(md) {
+        .content-section .full-sec-content {
+           display: block !important;
+        }
+    }
+    .container-smaller{
+        padding: 0;
+    }
+}
+.section{
+    .section:last-child{
+        padding: 0;
+    }
+}

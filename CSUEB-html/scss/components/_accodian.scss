@@ -139,7 +139,7 @@
         }
       }
 
-      ul {
+      ul:not(.star-ul) {
         margin-top: rem.convert(16px) !important;
         padding-left: rem.convert(16px) !important;
 
@@ -167,7 +167,6 @@
       }
 
       img {
-        margin-top: rem.convert(24px) !important;
         max-width: 100% !important;
         height: auto !important;
       }

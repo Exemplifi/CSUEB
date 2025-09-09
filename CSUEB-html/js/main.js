@@ -1050,3 +1050,13 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// Accessibility for iframe
+document.querySelectorAll(".message-content-sec iframe")
+  .forEach((iframe, index) => {
+    if (!iframe.hasAttribute("aria-label")) {
+      iframe.setAttribute("aria-label", "Embedded YouTube video " + (index + 1));
+    }
+    if (!iframe.hasAttribute("title")) {
+      iframe.setAttribute("title", "Embedded YouTube video " + (index + 1));
+    }
+  });
