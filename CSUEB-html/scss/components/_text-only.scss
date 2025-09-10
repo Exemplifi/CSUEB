@@ -272,6 +272,7 @@
     .icon-div {
       img {
         margin-inline: auto;
+        height: rem.convert(84px);
       }
     }
     .icon-text-content {
@@ -339,7 +340,7 @@
       background-color: transparent;
       .icon-div {
         i {
-          font-size: 4rem;
+          font-size: rem.convert(84px);
         }
       }
     }

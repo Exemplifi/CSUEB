@@ -330,13 +330,13 @@ pre {
   position: relative;
 }
 
-[aria-live="polite"] {
+/* [aria-live="polite"] {
   position: absolute;
   left: -10000px;
   width: 1px;
   height: 1px;
   overflow: hidden;
-}
+} */
 
 /* Enhanced error handling */
 .error-message {

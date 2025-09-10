@@ -252,6 +252,8 @@ function initHeroSlider() {
 
 function initMainImgSlider() {
   new Swiper(".main-img-slider", {
+      slidesPerView: 1,
+      spaceBetween: 0,
     loop: true,
     navigation: {
       nextEl: ".swiper-button-next",
