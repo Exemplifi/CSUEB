@@ -221,6 +221,9 @@
       width: 100%;
       padding-top: rem.convert(30px);
       padding-inline: rem.convert(16px);
+      &.bg-red{
+        background: var(--red) !important;
+      }
       @include media-breakpoint-up(md) {
         width: 300px;
         background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="211" height="310" viewBox="0 0 211 310" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M-447.499 0L-143.885 433.847L-148.386 437L-452 3.15335L-447.499 0Z" fill="%23FDC25A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M-412.003 0L-108.399 433.847L-112.9 437L-416.503 3.15328L-412.003 0Z" fill="%23FDC25A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M-376.516 0L-72.9123 433.847L-77.4131 437L-381.017 3.15328L-376.516 0Z" fill="%23FDC25A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M-341.03 0L-37.426 433.847L-41.9268 437L-345.53 3.15328L-341.03 0Z" fill="%23FDC25A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M-305.543 0L-1.92894 433.847L-6.42964 437L-310.044 3.15336L-305.543 0Z" fill="%23FDC25A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M-270.057 0L33.5576 433.847L29.0569 437L-274.557 3.15336L-270.057 0Z" fill="%23FDC25A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M-234.57 0L69.0438 433.847L64.5431 437L-239.071 3.15335L-234.57 0Z" fill="%23FDC25A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M-199.073 0L104.53 433.847L100.03 437L-203.574 3.15328L-199.073 0Z" fill="%23FDC25A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M-163.587 0L140.017 433.847L135.516 437L-168.088 3.15328L-163.587 0Z" fill="%23FDC25A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M-128.1 0L175.514 433.847L171.013 437L-132.601 3.15335L-128.1 0Z" fill="%23FDC25A"/><path fill-rule="evenodd" clip-rule="evenodd" d="M-92.6142 0L211 433.847L206.499 437L-97.115 3.15336L-92.6142 0Z" fill="%23FDC25A"/></svg>');

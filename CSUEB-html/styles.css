@@ -1677,6 +1677,9 @@ section.bg-white.section-with-padding + section.bg-white {
   padding-top: 1.875rem;
   padding-inline: 1rem;
 }
+.sidebar .mega-menu-wrapper .left-red-sec.bg-red {
+  background: var(--red) !important;
+}
 @media (min-width: 768px) {
   .sidebar .mega-menu-wrapper .left-red-sec {
     width: 300px;
@@ -6259,6 +6262,9 @@ section.bg-white.section-with-padding + section.bg-white {
 
 .flip-tiles-section {
   position: relative;
+}
+.flip-tiles-section.bg-light-gray {
+  background: var(--light-gray) !important;
 }
 .flip-tiles-section::after {
   content: "";
