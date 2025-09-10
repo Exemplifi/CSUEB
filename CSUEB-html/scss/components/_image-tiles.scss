@@ -42,13 +42,8 @@
 
 /* Gallery Grid Styles */
 .flip-tiles-gallery-grid {
-  column-count: 3;
-  column-gap: 0;
-  max-width: 1142px;
-  margin: 0 auto;
-  text-align: center;
+  z-index: 99;
   position: relative;
-  z-index: 2;
 
   @include media-breakpoint-down(lg) {
     column-count: 2;
@@ -77,11 +72,19 @@
   }
 
   .gallery-item {
-    margin-bottom: 4px;
-    margin-right: 4px;
-    display: inline-block;
-    width: 100%;
-    break-inside: avoid;
+    float: left;
+    width: 186px;
+    height: 186px;
+
+    @include media-breakpoint-down(lg) {
+      width: calc(25% - 6px);
+      height: 165px;
+    }
+
+    @include media-breakpoint-down(md) {
+      width: calc(50% - 2px);
+      height: 165px;
+    }
 
     a {
       @extend .card-color-hover;
@@ -112,33 +115,42 @@
       }
     }
 
+    .overlay {
+      .slide-text p {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
     @include media-breakpoint-down(md) {
       margin-right: 0;
       margin-left: 0;
       margin-bottom: 0;
     }
 
-    &.small {
-      width: calc(50% - 4px);
-      height: 186px;
-      float: left;
-
-      @include media-breakpoint-down(md) {
-        width: calc(50% - 2px);
-        height: rem.convert(165px);
-        margin-right: 0;
-        margin-left: 0;
-      }
-    }
 
     &.big {
-      float: left;
-      width: calc(100% - 4px);
-      height: 376px;
+      height: rem.convert(376px);
+      width: rem.convert(376px);
+      .slide-text p {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      @include media-breakpoint-down(lg) {
+        width: calc(50% - 8px);
+        height: rem.convert(376px);
+      }
 
       @include media-breakpoint-down(md) {
-        width: calc(100%);
-        height: rem.convert(335px);
+        width: 100%;
+        height: auto;
       }
     }
 
@@ -152,6 +164,9 @@
         height: 100% !important;
       }
     }
+  }
+  .gutter-sizer {
+    width: 4px !important;
   }
 }
 

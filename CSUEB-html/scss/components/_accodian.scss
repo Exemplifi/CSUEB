@@ -138,8 +138,11 @@
           text-decoration-color: transparent !important;
         }
       }
-
-      ul:not(.star-ul) {
+      
+      .custom-table-section {
+        margin-top: 0;
+      }
+      ul:not(:first-child) {
         margin-top: rem.convert(16px) !important;
         padding-left: rem.convert(16px) !important;
 
