@@ -816,6 +816,11 @@ section.bg-white.section-with-padding+section.bg-white {
     .container-smaller {
         padding: 0;
     }
+    .img-full-sec{
+        .img-wrapper{
+            margin-top: rem.convert(48px);
+        }
+    }
 }
 
 .section {

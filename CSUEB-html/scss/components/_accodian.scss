@@ -121,6 +121,9 @@
     .accordion-body {
       padding-inline: 2rem;
       padding-bottom: 1.5rem;
+      p:empty{
+        display: none;
+      }
 
       a:not(.btn) {
         text-decoration-line: underline !important;

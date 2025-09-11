@@ -437,6 +437,11 @@
     }
 
     .heading-row {
+      ul{
+        li{
+          margin-bottom: rem.convert(6px);
+        }
+      }
       a {
         text-decoration: underline;
         text-decoration-thickness: rem.convert(1.5px);
@@ -449,6 +454,21 @@
           color: var(--red) !important;
           background-color: transparent;
           text-decoration-color: var(--red);
+        }
+      }
+    }
+
+    &.bg-black {
+      .heading-row {
+        a {
+          color: var(--white) !important;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            color: var(--red) !important;
+            background-color: transparent;
+            text-decoration-color: var(--red);
+          }
         }
       }
     }
@@ -487,7 +507,8 @@
         a {
           color: var(--black) !important;
           text-decoration: none !important;
-          &:hover{
+
+          &:hover {
             background-color: transparent !important;
             color: var(--red) !important;
           }

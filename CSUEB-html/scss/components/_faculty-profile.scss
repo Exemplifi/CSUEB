@@ -45,6 +45,12 @@
         padding: rem.convert(4px) rem.convert(16px);
         background: rgba(253, 194, 90, 0.1);
         border: 1px solid var(--gold);
+        a{
+          text-decoration: none;
+          &:hover{
+            color: var(--red);
+          }
+        }
       }
     }
 
