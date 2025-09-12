@@ -442,25 +442,35 @@
           margin-bottom: rem.convert(6px);
         }
       }
-      a:not(.btn) {
-        text-decoration-line: underline !important;
-        text-decoration-style: solid !important;
-        text-decoration-skip-ink: none !important;
-        text-decoration-thickness: 1.5px !important;
-        text-underline-offset: auto !important;
-        background: transparent !important;
-        color: var(--red) !important;
-        display: inline-flex !important;
-        word-break: break-word !important;
+      a {
+        text-decoration: underline;
+        text-decoration-thickness: rem.convert(1.5px);
+        text-underline-offset: rem.convert(5px);
+        text-decoration-color: transparent;
+        color: var(--black) !important;
+        transition: all 0.3s ease-in-out;
 
         &:hover {
           color: var(--red) !important;
           background-color: transparent;
-          text-decoration-color: transparent !important;
+          text-decoration-color: var(--red);
         }
       }
     }
 
+    &.bg-black {
+      .heading-row {
+        a {
+          color: var(--white) !important;
+          transition: all 0.3s ease-in-out;
+          &:hover {
+            color: var(--red) !important;
+            background-color: transparent;
+            text-decoration-color: var(--red);
+          }
+        }
+      }
+    }
 
     .btn-primary {
       @include media-breakpoint-down(sm) {
@@ -468,7 +478,48 @@
       }
     }
 
+    &.bg-black {
+      a {
+        @extend .link--hover-white;
+      }
+    }
 
+    &.bg-white {
+      a:not(.btn) {
+        text-decoration-line: underline !important;
+        text-decoration-style: solid !important;
+        text-decoration-skip-ink: none !important;
+        text-decoration-thickness: auto !important;
+        text-underline-offset: auto !important;
+        background: transparent !important;
+        color: var(--red) !important;
+        display: inline-flex !important;
+        word-break: break-word !important;
+
+        &:hover {
+          background: rgba(213, 0, 50, 0.10) !important;
+          text-decoration-color: transparent !important;
+        }
+      }
+
+      .heading-row {
+        a {
+          color: var(--black) !important;
+          text-decoration: none !important;
+
+          &:hover {
+            background-color: transparent !important;
+            color: var(--red) !important;
+          }
+
+        }
+      }
+
+    }
+
+    a:not(.btn) {
+      text-decoration: underline !important;
+    }
 
     ul {
       padding-left: rem.convert(16px) !important;
