@@ -459,6 +459,12 @@
     }
 
     &.bg-black {
+      a.btn{
+        text-decoration: none !important;
+        &:hover{
+          text-decoration: none !important;
+        }
+      }
       .heading-row {
         a {
           color: var(--white) !important;
@@ -467,6 +473,23 @@
             color: var(--red) !important;
             background-color: transparent;
             text-decoration-color: var(--red);
+          }
+        }
+        a:not([class]) {
+          text-decoration-line: underline !important;
+          text-decoration-style: solid !important;
+          text-decoration-skip-ink: none !important;
+          text-decoration-thickness: 1.5px !important;
+          text-underline-offset: auto !important;
+          background: transparent !important;
+          color: var(--red) !important;
+          display: inline-flex !important;
+          word-break: break-word !important;
+  
+          &:hover {
+            color: var(--red) !important;
+            background-color: transparent;
+            text-decoration-color: transparent !important;
           }
         }
       }
@@ -485,6 +508,12 @@
     }
 
     &.bg-white {
+      a.btn{
+        text-decoration: none !important;
+        &:hover{
+          text-decoration: none !important;
+        }
+      }
       a:not(.btn) {
         text-decoration-line: underline !important;
         text-decoration-style: solid !important;
@@ -512,6 +541,23 @@
             color: var(--red) !important;
           }
 
+        }
+        a:not([class]) {
+          text-decoration-line: underline !important;
+          text-decoration-style: solid !important;
+          text-decoration-skip-ink: none !important;
+          text-decoration-thickness: 1.5px !important;
+          text-underline-offset: auto !important;
+          background: transparent !important;
+          color: var(--red) !important;
+          display: inline-flex !important;
+          word-break: break-word !important;
+  
+          &:hover {
+            color: var(--red) !important;
+            background-color: transparent;
+            text-decoration-color: transparent !important;
+          }
         }
       }
 

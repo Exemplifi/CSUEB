@@ -4349,6 +4349,12 @@ section.bg-white.section-with-padding + section.bg-white {
   background-color: transparent;
   text-decoration-color: var(--red);
 }
+.text-img-main-card .bottom-content-sec.bg-black a.btn {
+  text-decoration: none !important;
+}
+.text-img-main-card .bottom-content-sec.bg-black a.btn:hover {
+  text-decoration: none !important;
+}
 .text-img-main-card .bottom-content-sec.bg-black .heading-row a {
   color: var(--white) !important;
   transition: all 0.3s ease-in-out;
@@ -4358,10 +4364,32 @@ section.bg-white.section-with-padding + section.bg-white {
   background-color: transparent;
   text-decoration-color: var(--red);
 }
+.text-img-main-card .bottom-content-sec.bg-black .heading-row a:not([class]) {
+  text-decoration-line: underline !important;
+  text-decoration-style: solid !important;
+  text-decoration-skip-ink: none !important;
+  text-decoration-thickness: 1.5px !important;
+  text-underline-offset: auto !important;
+  background: transparent !important;
+  color: var(--red) !important;
+  display: inline-flex !important;
+  word-break: break-word !important;
+}
+.text-img-main-card .bottom-content-sec.bg-black .heading-row a:not([class]):hover {
+  color: var(--red) !important;
+  background-color: transparent;
+  text-decoration-color: transparent !important;
+}
 @media (max-width: 575.98px) {
   .text-img-main-card .bottom-content-sec .btn-primary {
     width: 100%;
   }
+}
+.text-img-main-card .bottom-content-sec.bg-white a.btn {
+  text-decoration: none !important;
+}
+.text-img-main-card .bottom-content-sec.bg-white a.btn:hover {
+  text-decoration: none !important;
 }
 .text-img-main-card .bottom-content-sec.bg-white a:not(.btn) {
   text-decoration-line: underline !important;
@@ -4385,6 +4413,22 @@ section.bg-white.section-with-padding + section.bg-white {
 .text-img-main-card .bottom-content-sec.bg-white .heading-row a:hover {
   background-color: transparent !important;
   color: var(--red) !important;
+}
+.text-img-main-card .bottom-content-sec.bg-white .heading-row a:not([class]) {
+  text-decoration-line: underline !important;
+  text-decoration-style: solid !important;
+  text-decoration-skip-ink: none !important;
+  text-decoration-thickness: 1.5px !important;
+  text-underline-offset: auto !important;
+  background: transparent !important;
+  color: var(--red) !important;
+  display: inline-flex !important;
+  word-break: break-word !important;
+}
+.text-img-main-card .bottom-content-sec.bg-white .heading-row a:not([class]):hover {
+  color: var(--red) !important;
+  background-color: transparent;
+  text-decoration-color: transparent !important;
 }
 .text-img-main-card .bottom-content-sec a:not(.btn) {
   text-decoration: underline !important;
