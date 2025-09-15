@@ -832,9 +832,6 @@ section.bg-white.section-with-padding + section.bg-white {
   line-height: 1.1em;
   padding-left: 20px;
 }
-.sidenav-sub-menu > li a.active {
-  background: rgba(213, 0, 50, 0.1);
-}
 .sidenav-sub-menu > li a.active.star-btn-link::before {
   filter: inherit;
 }

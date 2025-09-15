@@ -595,8 +595,7 @@ section.bg-white.section-with-padding+section.bg-white {
 
         a {
             &.active {
-                background: rgba(213, 0, 50, 0.1);
-
+               
                 &.star-btn-link::before {
                     filter: inherit;
 
