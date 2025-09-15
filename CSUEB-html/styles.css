@@ -832,6 +832,12 @@ section.bg-white.section-with-padding + section.bg-white {
   line-height: 1.1em;
   padding-left: 20px;
 }
+.sidenav-sub-menu > li a.active {
+  background: rgba(213, 0, 50, 0.1);
+}
+.sidenav-sub-menu > li a.active.star-btn-link::before {
+  filter: inherit;
+}
 .sidenav-sub-menu .btn.btn-secondary {
   width: 100%;
 }
@@ -1011,10 +1017,8 @@ section.bg-white.section-with-padding + section.bg-white {
   margin-bottom: 2rem !important;
 }
 
-@media (min-width: 768px) {
-  .message-content-sec .content-section .full-sec-content {
-    display: block !important;
-  }
+.message-content-sec .content-section .full-sec-content {
+  display: block !important;
 }
 .message-content-sec .container-smaller {
   padding: 0;
@@ -1026,10 +1030,13 @@ section.bg-white.section-with-padding + section.bg-white {
 .section .section:last-child {
   padding: 0;
 }
-
-.heading-gray-icon .full-sec-content a:not(.btn):hover {
-  background: transparent !important;
+.section + .section.bg-white.accordion-main-sec {
+  padding-top: 0 !important;
 }
+.section:has(+ .section.bg-white.accordion-main-sec) {
+  padding-bottom: 0rem !important;
+}
+
 .heading-gray-icon img {
   margin-top: 0 !important;
 }
@@ -1667,7 +1674,7 @@ section.bg-white.section-with-padding + section.bg-white {
     padding-inline: 11rem;
   }
 }
-.sidebar .menu-search-accodian .accordion-button:focus, .sidebar .menu-search-accodian .accordion-button:focus-visible {
+.sidebar .menu-search-accodian .accordion-button:focus-visible {
   outline: 3px solid var(--red);
   outline-offset: 2px;
   box-shadow: 0 0 0 1px var(--white), 0 0 0 4px var(--red);
@@ -2790,6 +2797,9 @@ section.bg-white.section-with-padding + section.bg-white {
   color: var(--black);
 }
 .bg-white .full-sec-content a:not(.btn) {
+  color: var(--red) !important;
+}
+.bg-white .full-sec-content a:not(.btn) span {
   color: var(--red) !important;
 }
 .bg-white .full-sec-content p, .bg-white .full-sec-content ul li, .bg-white .full-sec-content ol li {
@@ -4355,30 +4365,14 @@ section.bg-white.section-with-padding + section.bg-white {
 .text-img-main-card .bottom-content-sec.bg-black a.btn:hover {
   text-decoration: none !important;
 }
-.text-img-main-card .bottom-content-sec.bg-black .heading-row a {
+.text-img-main-card .bottom-content-sec.bg-black .heading-row a:not([class]) {
   color: var(--white) !important;
   transition: all 0.3s ease-in-out;
-}
-.text-img-main-card .bottom-content-sec.bg-black .heading-row a:hover {
-  color: var(--red) !important;
-  background-color: transparent;
-  text-decoration-color: var(--red);
-}
-.text-img-main-card .bottom-content-sec.bg-black .heading-row a:not([class]) {
-  text-decoration-line: underline !important;
-  text-decoration-style: solid !important;
-  text-decoration-skip-ink: none !important;
-  text-decoration-thickness: 1.5px !important;
-  text-underline-offset: auto !important;
-  background: transparent !important;
-  color: var(--red) !important;
-  display: inline-flex !important;
-  word-break: break-word !important;
 }
 .text-img-main-card .bottom-content-sec.bg-black .heading-row a:not([class]):hover {
   color: var(--red) !important;
   background-color: transparent;
-  text-decoration-color: transparent !important;
+  text-decoration-color: var(--red);
 }
 @media (max-width: 575.98px) {
   .text-img-main-card .bottom-content-sec .btn-primary {
@@ -4646,7 +4640,6 @@ section.bg-white.section-with-padding + section.bg-white {
   }
 }
 .full-img-text-sec .content-section .full-sec-content img {
-  width: 100% !important;
   object-fit: cover;
 }
 .full-img-text-sec .content-section .full-sec-content video {
@@ -4928,6 +4921,11 @@ section.bg-white.section-with-padding + section.bg-white {
     transform: rotate(-180deg);
   }
 }
+.side-nav-with-content .side-nav-wrap .right-content {
+  flex: 1;
+  overflow: hidden;
+  width: 100%;
+}
 @media (min-width: 768px) {
   .side-nav-with-content .side-nav-wrap .right-content {
     flex: 1;
@@ -5086,6 +5084,11 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 .side-nav-with-content .container {
   padding-right: 0;
+}
+@media (min-width: 1200px) {
+  .side-nav-with-content .container {
+    padding-right: 3rem;
+  }
 }
 .side-nav-with-content .navbar-hidden {
   display: none;
@@ -6642,6 +6645,7 @@ section.bg-white.section-with-padding + section.bg-white {
 
 table {
   width: 100% !important;
+  caption-side: top;
   margin-top: 2rem !important;
 }
 table:not(caption) > * > * {
@@ -6701,6 +6705,15 @@ table td:first-child {
 }
 table th:has(.screen-only) {
   display: none;
+}
+table caption {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.table-responsive {
+  margin-bottom: 1.5rem;
 }
 
 .gallery-item {

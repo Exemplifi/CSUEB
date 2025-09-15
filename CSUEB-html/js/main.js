@@ -39,21 +39,107 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Accordion for .main-dropdown > .btn-expander
-  const mainDropdownExpanders = document.querySelectorAll('.main-dropdown > .btn-expander');
-  mainDropdownExpanders.forEach(btn => {
-    btn.addEventListener('click', function () {
-      const menu = btn.parentElement.nextElementSibling;
-      if (menu && menu.classList.contains('sidenav-sub-menu')) {
-        menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-        btn.querySelector('.plus-minus-btn').classList.toggle('minus-btn', menu.style.display === 'block');
+  // const mainDropdownExpanders = document.querySelectorAll('.main-dropdown > .btn-expander');
+  // mainDropdownExpanders.forEach(btn => {
+  //   btn.addEventListener('click', function () {
+  //     const menu = btn.parentElement.nextElementSibling;
+  //     if (menu && menu.classList.contains('sidenav-sub-menu')) {
+  //       menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+  //       btn.querySelector('.plus-minus-btn').classList.toggle('minus-btn', menu.style.display === 'block');
+  //     }
+  //   });
+  //   // Set initial state
+  //   const menu = btn.parentElement.nextElementSibling;
+  //   if (menu && menu.classList.contains('sidenav-sub-menu')) {
+  //     menu.style.display = 'none';
+  //   }
+  // });
+
+
+  //script for left sidebar toggle by default active if have a tag active
+  (function () {
+    const findMenu = (btn) => {
+      // primary: sibling after the btn's parent (your original structure)
+      let menu = btn.parentElement.nextElementSibling;
+      // fallback: search inside closest main-dropdown
+      if (!menu || !menu.classList.contains('sidenav-sub-menu')) {
+        const main = btn.closest('.main-dropdown');
+        menu = main ? main.querySelector('.sidenav-sub-menu') : null;
       }
-    });
-    // Set initial state
-    const menu = btn.parentElement.nextElementSibling;
-    if (menu && menu.classList.contains('sidenav-sub-menu')) {
-      menu.style.display = 'none';
+      return menu;
+    };
+
+    const isVisible = (el) => !!el && getComputedStyle(el).display !== 'none';
+
+    function openMenu(menu, btn) {
+      // If your CSS uses a class for transitions, you may prefer toggling 'open' instead of style.display
+      menu.style.display = 'block';
+      menu.classList.add('open'); // harmless if not used
+      if (btn) {
+        const pm = btn.querySelector('.plus-minus-btn');
+        if (pm) pm.classList.add('minus-btn');
+        btn.setAttribute('aria-expanded', 'true');
+      }
     }
-  });
+
+    function closeMenu(menu, btn) {
+      menu.style.display = 'none';
+      menu.classList.remove('open');
+      if (btn) {
+        const pm = btn.querySelector('.plus-minus-btn');
+        if (pm) pm.classList.remove('minus-btn');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    const expanders = document.querySelectorAll('.main-dropdown > .btn-expander');
+
+    // Optional: close all submenus first (clean start)
+    document.querySelectorAll('.sidenav-sub-menu').forEach(m => {
+      // don't override if your CSS expects them open by default — remove this if not desired
+      m.style.display = 'none';
+      m.classList.remove('open');
+    });
+
+    expanders.forEach(btn => {
+      const menu = findMenu(btn);
+      if (!menu) return;
+
+      // ARIA link
+      if (!menu.id) menu.id = 'sidenav-sub-menu-' + Math.random().toString(36).slice(2, 9);
+      btn.setAttribute('aria-controls', menu.id);
+      btn.setAttribute('aria-expanded', isVisible(menu) ? 'true' : 'false');
+
+      // Initial state: open if it contains an active link
+      if (menu.querySelector('a.active')) {
+        // close others, then open this one
+        document.querySelectorAll('.sidenav-sub-menu').forEach(m => {
+          if (m !== menu) closeMenu(m, document.querySelector(`.btn-expander[aria-controls="${m.id}"]`));
+        });
+        openMenu(menu, btn);
+      } else {
+        closeMenu(menu, btn);
+      }
+
+      // Click toggles this menu and closes others
+      btn.addEventListener('click', function () {
+        const currentlyOpen = isVisible(menu);
+        if (currentlyOpen) {
+          closeMenu(menu, btn);
+        } else {
+          // close all other menus
+          document.querySelectorAll('.sidenav-sub-menu').forEach(m => {
+            if (m !== menu) {
+              const otherBtn = document.querySelector(`.btn-expander[aria-controls="${m.id}"]`);
+              closeMenu(m, otherBtn);
+            }
+          });
+          openMenu(menu, btn);
+        }
+      });
+    });
+  })();
+  //script for left sidebar toggle by default active if have a tag active ends
 
   // Header search dropdown toggle
   const searchBtn = document.querySelector('.search__btn');
@@ -252,8 +338,8 @@ function initHeroSlider() {
 
 function initMainImgSlider() {
   new Swiper(".main-img-slider", {
-      slidesPerView: 1,
-      spaceBetween: 0,
+    slidesPerView: 1,
+    spaceBetween: 0,
     loop: true,
     navigation: {
       nextEl: ".swiper-button-next",
@@ -810,10 +896,19 @@ function initAccessibilityFeatures() {
     if (!table.parentElement.classList.contains('table-responsive')) {
       const wrapper = document.createElement('div');
       wrapper.className = 'table-responsive';
+      wrapper.setAttribute('tabindex', '0');
       table.parentNode.insertBefore(wrapper, table);
       wrapper.appendChild(table);
     }
   });
+
+  //If Table th  empty added role presentaion
+  document.querySelectorAll('table th').forEach(th => {
+    if (!th.textContent.trim() && th.children.length === 0) {
+      th.setAttribute('role', 'presentation');
+    }
+  });
+  
 
   // Enhanced list accessibility
   const lists = document.querySelectorAll('ul, ol');
@@ -1054,7 +1149,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // Remove empty p Tag
-document.querySelectorAll(".accodian-global .accordion-body p").forEach(function(p) {
+document.querySelectorAll(".accodian-global .accordion-body p").forEach(function (p) {
   if (p.textContent.trim() === "") {
     p.remove();
   }
@@ -1077,14 +1172,14 @@ document.querySelectorAll(".message-content-sec iframe")
 // Flip Tiles Gallery
 
 document.addEventListener('DOMContentLoaded', function () {
-  document.querySelectorAll('.flip-tiles-gallery-grid').forEach(function(grid) {
-      // Assumes Packery is available as a global constructor
-      new Packery(grid, {
-          itemSelector: '.gallery-item',
-          percentPosition: true,
-          gutter: '.gutter-sizer'
-          
-      });
+  document.querySelectorAll('.flip-tiles-gallery-grid').forEach(function (grid) {
+    // Assumes Packery is available as a global constructor
+    new Packery(grid, {
+      itemSelector: '.gallery-item',
+      percentPosition: true,
+      gutter: '.gutter-sizer'
+
+    });
   });
 });
 

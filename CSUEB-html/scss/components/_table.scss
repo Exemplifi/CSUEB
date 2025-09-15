@@ -48,6 +48,7 @@
 }
 table {
   width: 100% !important;
+  caption-side: top;
   &:not(caption)>*>* {
       padding: .5rem .5rem;
       background-color: var(--bs-table-bg);
@@ -118,4 +119,12 @@ table {
   th:has(.screen-only){
     display: none;
   }
+  caption{
+    font-size: rem.convert(24px);
+    font-weight: 600;
+    margin-bottom: rem.convert(16px);
+  }
+}
+.table-responsive{
+  margin-bottom: rem.convert(24px);
 }

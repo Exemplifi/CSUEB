@@ -484,7 +484,7 @@ section.bg-white.section-with-padding+section.bg-white {
         padding: rem.convert(8px) !important;
 
     }
-    
+
 }
 
 .leftnav {
@@ -592,6 +592,17 @@ section.bg-white.section-with-padding+section.bg-white {
         width: 100%;
         line-height: 1.1em;
         padding-left: 20px;
+
+        a {
+            &.active {
+                background: rgba(213, 0, 50, 0.1);
+
+                &.star-btn-link::before {
+                    filter: inherit;
+
+                }
+            }
+        }
     }
 
     .btn.btn-secondary {
@@ -800,24 +811,22 @@ section.bg-white.section-with-padding+section.bg-white {
     h6 {
         margin-top: rem.convert(32px) !important;
     }
-
     table {
         margin-bottom: rem.convert(32px) !important;
     }
 }
 
 .message-content-sec {
-    @include media-breakpoint-up(md) {
-        .content-section .full-sec-content {
-            display: block !important;
-        }
+    .content-section .full-sec-content {
+        display: block !important;
     }
 
     .container-smaller {
         padding: 0;
     }
-    .img-full-sec{
-        .img-wrapper{
+
+    .img-full-sec {
+        .img-wrapper {
             margin-top: rem.convert(48px);
         }
     }
@@ -827,13 +836,17 @@ section.bg-white.section-with-padding+section.bg-white {
     .section:last-child {
         padding: 0;
     }
+
+    +.section.bg-white.accordion-main-sec {
+        padding-top: 0 !important;
+    }
+
+    &:has(+ .section.bg-white.accordion-main-sec) {
+        padding-bottom: rem.convert(0px) !important;
+    }
 }
 
 .heading-gray-icon {
-    .full-sec-content a:not(.btn):hover {
-        background: transparent !important;
-    }
-
     img {
         margin-top: 0 !important;
     }

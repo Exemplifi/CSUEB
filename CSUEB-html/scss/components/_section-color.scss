@@ -64,6 +64,9 @@
     .full-sec-content{
         a:not(.btn){
             color: var(--red) !important;
+            span{
+                color: var(--red) !important;
+            }
         }
         p, ul li, ol li{
             color: var(--black) !important;

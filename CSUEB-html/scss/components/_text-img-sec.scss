@@ -437,11 +437,12 @@
     }
 
     .heading-row {
-      ul{
-        li{
+      ul {
+        li {
           margin-bottom: rem.convert(6px);
         }
       }
+
       a {
         text-decoration: underline;
         text-decoration-thickness: rem.convert(1.5px);
@@ -459,37 +460,23 @@
     }
 
     &.bg-black {
-      a.btn{
+      a.btn {
         text-decoration: none !important;
-        &:hover{
+
+        &:hover {
           text-decoration: none !important;
         }
       }
+
       .heading-row {
-        a {
+        a:not([class]) {
           color: var(--white) !important;
           transition: all 0.3s ease-in-out;
+
           &:hover {
             color: var(--red) !important;
             background-color: transparent;
             text-decoration-color: var(--red);
-          }
-        }
-        a:not([class]) {
-          text-decoration-line: underline !important;
-          text-decoration-style: solid !important;
-          text-decoration-skip-ink: none !important;
-          text-decoration-thickness: 1.5px !important;
-          text-underline-offset: auto !important;
-          background: transparent !important;
-          color: var(--red) !important;
-          display: inline-flex !important;
-          word-break: break-word !important;
-  
-          &:hover {
-            color: var(--red) !important;
-            background-color: transparent;
-            text-decoration-color: transparent !important;
           }
         }
       }
@@ -508,12 +495,14 @@
     }
 
     &.bg-white {
-      a.btn{
+      a.btn {
         text-decoration: none !important;
-        &:hover{
+
+        &:hover {
           text-decoration: none !important;
         }
       }
+
       a:not(.btn) {
         text-decoration-line: underline !important;
         text-decoration-style: solid !important;
@@ -542,6 +531,7 @@
           }
 
         }
+
         a:not([class]) {
           text-decoration-line: underline !important;
           text-decoration-style: solid !important;
@@ -552,7 +542,7 @@
           color: var(--red) !important;
           display: inline-flex !important;
           word-break: break-word !important;
-  
+
           &:hover {
             color: var(--red) !important;
             background-color: transparent;
@@ -860,7 +850,7 @@
       }
 
       img {
-        width: 100% !important;
+        //width: 100% !important;
         object-fit: cover;
       }
 
@@ -1176,6 +1166,9 @@
         flex: 1;
         overflow: hidden;
       }
+      flex: 1;
+      overflow: hidden;
+      width: 100%;
 
       .text-button-sec {
         padding-right: 4rem;
@@ -1352,6 +1345,9 @@
   }
 
   .container {
+    @include media-breakpoint-up(xl){
+      padding-right: rem.convert(48px);
+    }
     padding-right: 0;
   }
 
