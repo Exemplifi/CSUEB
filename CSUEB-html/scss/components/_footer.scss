@@ -28,6 +28,7 @@
       justify-content: flex-end;
     }
     a {
+      transition: all 0.4s ease-in-out;
       svg {
           width: rem.convert(24px);
           height: rem.convert(24px);
@@ -41,6 +42,15 @@
           path {
             color: var(--red);
           }
+        }
+      }
+      img{
+        transition: all 0.4s ease-in-out;
+      }
+      &:hover{
+        img{
+          transition: all 0.4s ease-in-out;
+          filter: brightness(0) saturate(100%) invert(12%) sepia(85%) saturate(4616%) hue-rotate(337deg) brightness(100%) contrast(111%);
         }
       }
     }

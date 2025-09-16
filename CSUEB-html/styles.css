@@ -2324,6 +2324,9 @@ section.bg-white.section-with-padding + section.bg-white {
     justify-content: flex-end;
   }
 }
+.footer .social-icons a {
+  transition: all 0.4s ease-in-out;
+}
 .footer .social-icons a svg {
   width: 1.5rem;
   height: 1.5rem;
@@ -2334,6 +2337,13 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 .footer .social-icons a:hover svg path {
   color: var(--red);
+}
+.footer .social-icons a img {
+  transition: all 0.4s ease-in-out;
+}
+.footer .social-icons a:hover img {
+  transition: all 0.4s ease-in-out;
+  filter: brightness(0) saturate(100%) invert(12%) sepia(85%) saturate(4616%) hue-rotate(337deg) brightness(100%) contrast(111%);
 }
 .footer .footer-links {
   margin: 0;
