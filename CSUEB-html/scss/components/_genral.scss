@@ -595,7 +595,7 @@ section.bg-white.section-with-padding+section.bg-white {
 
         a {
             &.active {
-               
+
                 &.star-btn-link::before {
                     filter: inherit;
 
@@ -810,6 +810,7 @@ section.bg-white.section-with-padding+section.bg-white {
     h6 {
         margin-top: rem.convert(32px) !important;
     }
+
     table {
         margin-bottom: rem.convert(32px) !important;
     }
@@ -843,10 +844,29 @@ section.bg-white.section-with-padding+section.bg-white {
     &:has(+ .section.bg-white.accordion-main-sec) {
         padding-bottom: rem.convert(0px) !important;
     }
+
+    &.bg-white.side-nav-with-content {
+        &:has(+ .bg-white.contact-us-sec) {
+            padding-bottom: 0 !important;
+        }
+    }
 }
 
 .heading-gray-icon {
     img {
         margin-top: 0 !important;
     }
+}
+.row.white-bg {
+    background-color: var(--white);
+    display: none;
+}
+.gray-rule {
+    background: var(--white);
+    border-bottom: 1px solid #e5e6e7;
+    display: block;
+    margin: 0 auto;
+    max-width: 1140px;
+    width: 100%;
+    display: none;
 }

@@ -422,3 +422,8 @@
 .carousel-indicators {
   z-index: 1;
 }
+.image-gallery-slider{
+  .swiper-wrapper{
+    justify-content: center;
+  }
+}

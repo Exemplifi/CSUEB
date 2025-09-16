@@ -352,6 +352,25 @@
   .full-img-hero-wrap {
     img  {
       object-fit: cover;
+      &.small-height {
+        object-fit: contain;
+        margin-top: rem.convert(32px);
+        max-width: 1312px !important;
+        @include media-breakpoint-down(md){
+          margin-top: rem.convert(32px);
+        }
+        
+      }
+    }
+  }
+  &:has(.full-img-hero-wrap img.small-height) {
+    background: var(--grey-800);
+    &::after{
+      display: none;
+    }
+    .img-wrapper{
+      text-align: center;
+      padding: rem.convert(0 24px);
     }
   }
 }
@@ -369,7 +388,7 @@
 
 .no-image {
   height: auto;
-  padding-top: 5rem;
+  padding-top: rem.convert(100px);
   @include media-breakpoint-up(md) {
     padding-top:7rem;
   }

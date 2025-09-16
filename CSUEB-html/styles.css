@@ -1033,9 +1033,27 @@ section.bg-white.section-with-padding + section.bg-white {
 .section:has(+ .section.bg-white.accordion-main-sec) {
   padding-bottom: 0rem !important;
 }
+.section.bg-white.side-nav-with-content:has(+ .bg-white.contact-us-sec) {
+  padding-bottom: 0 !important;
+}
 
 .heading-gray-icon img {
   margin-top: 0 !important;
+}
+
+.row.white-bg {
+  background-color: var(--white);
+  display: none;
+}
+
+.gray-rule {
+  background: var(--white);
+  border-bottom: 1px solid #e5e6e7;
+  display: block;
+  margin: 0 auto;
+  max-width: 1140px;
+  width: 100%;
+  display: none;
 }
 
 .btn {
@@ -2743,8 +2761,12 @@ section.bg-white.section-with-padding + section.bg-white {
   z-index: 1;
 }
 
+.image-gallery-slider .swiper-wrapper {
+  justify-content: center;
+}
+
 .bg-red {
-  background: var(--red);
+  background: var(--red) !important;
   color: var(--white);
 }
 .bg-red * {
@@ -4645,6 +4667,9 @@ section.bg-white.section-with-padding + section.bg-white {
 .full-img-text-sec .content-section .full-mobile-cta {
   margin-bottom: 32px;
 }
+.full-img-text-sec .content-section .full-mobile-cta:last-child {
+  margin-bottom: 0;
+}
 @media (max-width: 575.98px) {
   .full-img-text-sec .content-section .full-mobile-cta {
     width: 100%;
@@ -4851,6 +4876,11 @@ section.bg-white.section-with-padding + section.bg-white {
   gap: 4.5rem;
   flex-direction: column;
 }
+@media (max-width: 767.98px) {
+  .side-nav-with-content .side-nav-wrap.padding-top-48 {
+    padding-top: 1rem !important;
+  }
+}
 @media (min-width: 768px) {
   .side-nav-with-content .side-nav-wrap {
     flex-direction: row;
@@ -4860,6 +4890,11 @@ section.bg-white.section-with-padding + section.bg-white {
 @media (min-width: 992px) {
   .side-nav-with-content .side-nav-wrap {
     gap: 3.75rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .side-nav-with-content .side-nav-wrap noindex {
+    width: 100%;
   }
 }
 .side-nav-with-content .side-nav-wrap .left-nav-wrap {
@@ -5079,12 +5114,37 @@ section.bg-white.section-with-padding + section.bg-white {
   font-size: 1.5rem;
   line-height: 1.2;
 }
+.side-nav-with-content .side-nav-wrap .right-content .section {
+  padding: 0 0 4rem 0;
+}
+@media (max-width: 767.98px) {
+  .side-nav-with-content .side-nav-wrap .right-content .section {
+    padding: 0 0 2rem 0;
+  }
+}
+.side-nav-with-content .side-nav-wrap .right-content .section.bg-white:first-child {
+  padding-top: 0 !important;
+}
+.side-nav-with-content .side-nav-wrap .right-content .section.bg-white:last-child {
+  padding-bottom: 0 !important;
+}
+.side-nav-with-content .side-nav-wrap .right-content .section.bg-white.img-video-text-sec:nth-child(1) {
+  padding-top: 0 !important;
+}
+.side-nav-with-content .side-nav-wrap .right-content > .big-heading {
+  margin-bottom: 3rem;
+}
 .side-nav-with-content .container {
   padding-right: 0;
 }
 @media (min-width: 1200px) {
   .side-nav-with-content .container {
     padding-right: 3rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .side-nav-with-content .container {
+    padding-right: 1.25rem;
   }
 }
 .side-nav-with-content .navbar-hidden {
@@ -5716,6 +5776,26 @@ section.bg-white.section-with-padding + section.bg-white {
 .inner-hero-full-image .full-img-hero-wrap img {
   object-fit: cover;
 }
+.inner-hero-full-image .full-img-hero-wrap img.small-height {
+  object-fit: contain;
+  margin-top: 2rem;
+  max-width: 1312px !important;
+}
+@media (max-width: 767.98px) {
+  .inner-hero-full-image .full-img-hero-wrap img.small-height {
+    margin-top: 2rem;
+  }
+}
+.inner-hero-full-image:has(.full-img-hero-wrap img.small-height) {
+  background: var(--grey-800);
+}
+.inner-hero-full-image:has(.full-img-hero-wrap img.small-height)::after {
+  display: none;
+}
+.inner-hero-full-image:has(.full-img-hero-wrap img.small-height) .img-wrapper {
+  text-align: center;
+  padding: 0 1.5rem;
+}
 
 .hero-parallax .img-wrapper {
   background-size: cover;
@@ -5730,7 +5810,7 @@ section.bg-white.section-with-padding + section.bg-white {
 
 .no-image {
   height: auto;
-  padding-top: 5rem;
+  padding-top: 6.25rem;
 }
 @media (min-width: 768px) {
   .no-image {

@@ -1168,6 +1168,33 @@ document.querySelectorAll(".message-content-sec iframe")
   });
 
 
+//Script for smalll hero  image
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".inner-hero-section .img-wrapper img").forEach(img => {
+    img.addEventListener("load", function () {
+      if (img.naturalHeight < 300) {
+        img.classList.add("small-height");
+      }
+    });
+
+    // in case image is cached and already loaded
+    if (img.complete) {
+      if (img.naturalHeight < 300) {
+        img.classList.add("small-height");
+      }
+    }
+  });
+});
+
+document.querySelectorAll("h3, h4, h5").forEach(el => {
+  if (el.textContent.trim() === "" || el.innerHTML.trim() === "&nbsp;") {
+    el.style.display = "none";
+    el.setAttribute("aria-hidden", "true");
+  }
+});
+
+
+
 
 // Flip Tiles Gallery
 
