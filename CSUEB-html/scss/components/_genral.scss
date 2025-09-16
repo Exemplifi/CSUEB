@@ -397,11 +397,11 @@ section.bg-white.section-with-padding+section.bg-white {
             }
 
             @include media-breakpoint-down(md) {
-                width: 450px;
+                width: auto;
             }
 
             @include media-breakpoint-down(sm) {
-                width: 190px;
+                width: auto;
             }
 
             @media (max-width: 374px) {

@@ -318,12 +318,12 @@
 
 .inner-hero-full-image {
   position: relative;
-  height: 17.75rem;
+  height: rem.convert(284px);
   @include media-breakpoint-up(md) {
-    height: 69vh;
+    min-height: rem.convert(544px);
   }
  @include media-breakpoint-up(xxl) {
-    height: 70vh;
+    min-height: rem.convert(544px);
   }
   &::after {
     content: "";

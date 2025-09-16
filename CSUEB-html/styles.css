@@ -668,12 +668,12 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 @media (max-width: 767.98px) {
   .breadcrumb .breadcrumb-item:last-child {
-    width: 450px;
+    width: auto;
   }
 }
 @media (max-width: 575.98px) {
   .breadcrumb .breadcrumb-item:last-child {
-    width: 190px;
+    width: auto;
   }
 }
 @media (max-width: 374px) {
@@ -4878,7 +4878,7 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 @media (max-width: 767.98px) {
   .side-nav-with-content .side-nav-wrap.padding-top-48 {
-    padding-top: 1rem !important;
+    padding-top: 0rem !important;
   }
 }
 @media (min-width: 768px) {
@@ -4912,7 +4912,7 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 @media (max-width: 767.98px) {
   .side-nav-with-content .side-nav-wrap .left-nav-wrap {
-    padding-right: 1.25rem;
+    padding-right: 0;
   }
 }
 .side-nav-with-content .side-nav-wrap .left-nav-wrap .left-nav {
@@ -5737,12 +5737,12 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 @media (min-width: 768px) {
   .inner-hero-full-image {
-    height: 69vh;
+    min-height: 34rem;
   }
 }
 @media (min-width: 1400px) {
   .inner-hero-full-image {
-    height: 70vh;
+    min-height: 34rem;
   }
 }
 .inner-hero-full-image::after {
