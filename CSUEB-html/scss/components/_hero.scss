@@ -325,6 +325,9 @@
  @include media-breakpoint-up(xxl) {
     min-height: rem.convert(544px);
   }
+  @media(min-width:1920px) {
+    min-height: rem.convert(700px);
+  }
   &::after {
     content: "";
     position: absolute;

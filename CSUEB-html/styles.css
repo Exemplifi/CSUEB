@@ -5142,7 +5142,7 @@ section.bg-white.section-with-padding + section.bg-white {
     padding-right: 3rem;
   }
 }
-@media (max-width: 767.98px) {
+@media (max-width: 1199.98px) {
   .side-nav-with-content .container {
     padding-right: 1.25rem;
   }
@@ -5743,6 +5743,11 @@ section.bg-white.section-with-padding + section.bg-white {
 @media (min-width: 1400px) {
   .inner-hero-full-image {
     min-height: 34rem;
+  }
+}
+@media (min-width: 1920px) {
+  .inner-hero-full-image {
+    min-height: 43.75rem;
   }
 }
 .inner-hero-full-image::after {
