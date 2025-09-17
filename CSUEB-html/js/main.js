@@ -1186,7 +1186,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-document.querySelectorAll("h3, h4, h5").forEach(el => {
+document.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(el => {
   if (el.textContent.trim() === "" || el.innerHTML.trim() === "&nbsp;") {
     el.style.display = "none";
     el.setAttribute("aria-hidden", "true");
