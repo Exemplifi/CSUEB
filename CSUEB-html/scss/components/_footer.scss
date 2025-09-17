@@ -22,7 +22,7 @@
   .social-icons {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     gap: 1.2rem;
     @include media-breakpoint-up(md) {
       justify-content: flex-end;
@@ -44,12 +44,9 @@
           }
         }
       }
-      img{
-        transition: all 0.4s ease-in-out;
-      }
+      
       &:hover{
         img{
-          transition: all 0.4s ease-in-out;
           filter: brightness(0) saturate(100%) invert(12%) sepia(85%) saturate(4616%) hue-rotate(337deg) brightness(100%) contrast(111%);
         }
       }

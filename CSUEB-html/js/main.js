@@ -1186,12 +1186,30 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// script for empty headings
 document.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(el => {
   if (el.textContent.trim() === "" || el.innerHTML.trim() === "&nbsp;") {
     el.style.display = "none";
     el.setAttribute("aria-hidden", "true");
   }
 });
+
+
+
+function handleAccordionBehavior() {
+  const accordion = document.querySelector('#thissection');
+  const button = document.querySelector('[data-bs-target="#thissection"]');
+
+  if (window.innerWidth >= 768) {
+    accordion.classList.add('show');       // keep open
+    button.setAttribute('aria-expanded', 'true');
+  }
+}
+
+// Run on load + resize
+window.addEventListener('load', handleAccordionBehavior);
+window.addEventListener('resize', handleAccordionBehavior);
+
 
 
 

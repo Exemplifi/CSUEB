@@ -1088,6 +1088,10 @@
 }
 
 .side-nav-with-content {
+  @include media-breakpoint-down(md){
+    margin-top: rem.convert(16px);
+    padding-top: 0 !important;
+  }
   .side-nav-wrap {
     display: flex;
     align-items: flex-start;
@@ -1097,6 +1101,9 @@
       @include media-breakpoint-down(md) {
         padding-top: rem.convert(0px) !important;
       }
+    }
+    @include media-breakpoint-down(md){
+      gap: rem.convert(48px);
     }
 
     @include media-breakpoint-up(md) {
@@ -1133,7 +1140,7 @@
         border-top: 8px solid var(--red);
 
         @include media-breakpoint-down(md) {
-          padding-block: 1.5rem;
+          padding:1.25rem 1.5rem;
         }
 
         .sub-menu-links {

@@ -353,7 +353,7 @@ section.bg-white.section-with-padding+section.bg-white {
     margin: 0;
 
     @include media-breakpoint-down(md) {
-        padding-block: rem.convert(16px);
+        padding: rem.convert(16px 0 0 0);
     }
 
     .breadcrumb-item {
