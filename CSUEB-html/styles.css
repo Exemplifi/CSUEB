@@ -5142,7 +5142,12 @@ section.bg-white.section-with-padding + section.bg-white {
   padding-top: 0 !important;
 }
 .side-nav-with-content .side-nav-wrap .right-content > .big-heading {
-  margin-bottom: 3rem;
+  margin-bottom: 6rem;
+}
+@media (max-width: 767.98px) {
+  .side-nav-with-content .side-nav-wrap .right-content > .big-heading {
+    margin-bottom: 4rem;
+  }
 }
 .side-nav-with-content .container {
   padding-right: 0;
@@ -5746,18 +5751,23 @@ section.bg-white.section-with-padding + section.bg-white {
   height: 17.75rem;
 }
 @media (min-width: 768px) {
-  .inner-hero-full-image {
-    min-height: 34rem;
+  .inner-hero-full-image:not(.no-image) {
+    min-height: 24rem;
   }
 }
-@media (min-width: 1400px) {
-  .inner-hero-full-image {
+@media (min-width: 1200px) {
+  .inner-hero-full-image:not(.no-image) {
     min-height: 34rem;
   }
 }
 @media (min-width: 1920px) {
-  .inner-hero-full-image {
+  .inner-hero-full-image:not(.no-image) {
     min-height: 43.75rem;
+  }
+}
+@media (min-width: 1920px) {
+  .inner-hero-full-image:has(.small-height) {
+    min-height: 34rem;
   }
 }
 .inner-hero-full-image::after {
@@ -5793,13 +5803,7 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 .inner-hero-full-image .full-img-hero-wrap img.small-height {
   object-fit: contain;
-  margin-top: 2rem;
   max-width: 1312px !important;
-}
-@media (max-width: 767.98px) {
-  .inner-hero-full-image .full-img-hero-wrap img.small-height {
-    margin-top: 2rem;
-  }
 }
 .inner-hero-full-image:has(.full-img-hero-wrap img.small-height) {
   background: var(--grey-800);
@@ -5808,8 +5812,20 @@ section.bg-white.section-with-padding + section.bg-white {
   display: none;
 }
 .inner-hero-full-image:has(.full-img-hero-wrap img.small-height) .img-wrapper {
-  text-align: center;
-  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8.8125rem 1.5rem 0 1.5rem;
+}
+@media (max-width: 1399.98px) {
+  .inner-hero-full-image:has(.full-img-hero-wrap img.small-height) .img-wrapper {
+    padding: 6rem 1.5rem 0 1.5rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .inner-hero-full-image:has(.full-img-hero-wrap img.small-height) .img-wrapper {
+    padding: 6rem 1.5rem 0 1.5rem;
+  }
 }
 
 .hero-parallax .img-wrapper {
