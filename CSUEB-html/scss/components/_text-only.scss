@@ -154,7 +154,7 @@
     }
     @include media-breakpoint-down(md) {
       top: rem.convert(24px);
-      right: -3.6875rem;
+      right: rem.convert(-48px);
       max-width: rem.convert(205px);
       max-height: rem.convert(96px);
     }

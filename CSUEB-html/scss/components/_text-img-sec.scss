@@ -1384,13 +1384,7 @@
         }
       }
 
-      .section {
-        padding: rem.convert(0 0 64px 0);
-
-        @include media-breakpoint-down(md) {
-          padding: rem.convert(0 0 32px 0);
-        }
-      }
+      
 
       .section.bg-white {
         &:first-child {

@@ -515,50 +515,52 @@ if (dropdownBtn) {
   }
 }
 
+// Assign unique IDs to all lightbox modals
+document.querySelectorAll(".lightbox-modal").forEach((modal, index) => {
+  if (!modal.id) {
+    modal.id = `lightbox-modal-${index + 1}`;
+  }
+});
 
+// Initialize each gallery section separately
+document.querySelectorAll(".image-gallery-sec").forEach((section) => {
+  const galleryGrid = section.querySelector(".gallery-grid");
+  const lightboxModal = section.querySelector(".lightbox-modal");
+  if (!galleryGrid || !lightboxModal) return;
 
-// Lightbox Gallery
-function initGalleryLightbox() {
-  const html = document.documentElement;
-  html.setAttribute("data-bs-theme", "dark");
+  const modalId = lightboxModal.id;
+  initGalleryLightbox(galleryGrid, modalId);
+});
 
-  const galleryGrid = document.querySelector(".gallery-grid");
-  if (!galleryGrid) return; // Exit if no gallery grid found
-
+function initGalleryLightbox(galleryGrid, modalId) {
   const links = galleryGrid.querySelectorAll("a");
-  const lightboxModal =
-    document.getElementById("lightbox-modal-home") ||
-    document.getElementById("lightbox-modal-interior");
-  const modalBody = lightboxModal?.querySelector(".lightbox-content");
-  const bsModal = lightboxModal ? new bootstrap.Modal(lightboxModal) : null;
+  const lightboxModal = document.getElementById(modalId);
+  if (!lightboxModal) return;
 
-  // Store references to iframes for proper control
+  const modalBody = lightboxModal.querySelector(".lightbox-content");
+  const bsModal = new bootstrap.Modal(lightboxModal);
+
   let currentIframes = [];
   let youtubePlayers = [];
+
+  function extractYouTubeId(url) {
+    const match = url.match(/(?:youtube\.com\/embed\/|youtu\.be\/|youtube\.com\/watch\?v=)([^&\n?#]+)/);
+    return match ? match[1] : null;
+  }
 
   function createCaption(caption) {
     return caption ? `<div class="carousel-caption d-none d-md-block"><h5 class="m-0">${caption}</h5></div>` : '';
   }
 
-  function createIndicators(activeIndex) {
-    return [...links].map((_, i) =>
-      `<button type="button" data-bs-target="#lightboxCarousel" data-bs-slide-to="${i}" 
-        ${i === activeIndex ? 'class="active" aria-current="true"' : ''} 
-        aria-label="Slide ${i + 1}"></button>`
-    ).join("");
-  }
-
   function createSlides(activeIndex) {
     return [...links].map((link, i) => {
-      const videoUrl = link.getAttribute('data-video-url');
-      const img = link.querySelector('img');
-      const imgAlt = img ? img.getAttribute('alt') || "" : "";
+      const videoUrl = link.dataset.videoUrl;
+      const img = link.querySelector("img");
+      const imgAlt = img?.alt || "";
       const isActive = i === activeIndex ? " active" : "";
 
       if (videoUrl) {
-        // Only add autoplay to the active slide
         const autoplayParam = i === activeIndex ? "&autoplay=1" : "";
-        const videoId = extractYouTubeId(videoUrl);
         return `
           <div class="carousel-item${isActive}">
             <div class="ratio ratio-16x9">
@@ -571,111 +573,74 @@ function initGalleryLightbox() {
         return `
           <div class="carousel-item${isActive}">
             <div class="modal-img-container">
-             <img class="d-block img-fluid w-100" src="${imgSrc}" alt="${imgAlt}">
-             ${createCaption(imgAlt)}
+              <img class="d-block img-fluid w-100" src="${imgSrc}" alt="${imgAlt}">
+              ${createCaption(imgAlt)}
             </div>
           </div>
         `;
       }
-      return '';
+      return "";
     }).join("");
   }
 
-  function extractYouTubeId(url) {
-    const match = url.match(/(?:youtube\.com\/embed\/|youtu\.be\/|youtube\.com\/watch\?v=)([^&\n?#]+)/);
-    return match ? match[1] : null;
-  }
-
   function pauseAllVideos() {
-    // Pause all YouTube players
     youtubePlayers.forEach(player => {
-      if (player && typeof player.pauseVideo === 'function') {
-        try {
-          player.pauseVideo();
-        } catch (e) {
-          console.log('Could not pause YouTube player:', e);
-        }
-      }
+      try { player.pauseVideo(); } catch(e){ console.log(e); }
     });
 
-    // Also handle iframes directly as fallback
     currentIframes.forEach(iframe => {
-      if (iframe && iframe.contentWindow) {
+      if (iframe?.contentWindow) {
         try {
-          // Try to pause using postMessage for YouTube videos
           iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
         } catch (e) {
-          // Fallback: reload the iframe without autoplay
-          const currentSrc = iframe.src;
-          iframe.src = currentSrc.replace(/&autoplay=1/, '');
+          iframe.src = iframe.src.replace("&autoplay=1", "");
         }
       }
     });
   }
 
   function playVideoAtIndex(index) {
-    const iframes = modalBody.querySelectorAll('iframe');
+    const iframes = modalBody.querySelectorAll("iframe");
     if (iframes[index]) {
       const iframe = iframes[index];
       const currentSrc = iframe.src;
 
-      // Remove autoplay from all iframes first
       iframes.forEach((frame, idx) => {
-        if (idx !== index) {
-          frame.src = frame.src.replace(/&autoplay=1/, '');
-        }
+        if (idx !== index) frame.src = frame.src.replace("&autoplay=1", "");
       });
 
-      // Add autoplay to the target iframe
-      if (!currentSrc.includes('autoplay=1')) {
-        iframe.src = currentSrc + (currentSrc.includes('?') ? '&' : '?') + 'autoplay=1';
+      if (!currentSrc.includes("autoplay=1")) {
+        iframe.src = currentSrc + (currentSrc.includes("?") ? "&" : "?") + "autoplay=1";
       }
 
-      // Try to play using YouTube API if available
-      if (youtubePlayers[index] && typeof youtubePlayers[index].playVideo === 'function') {
-        try {
-          youtubePlayers[index].playVideo();
-        } catch (e) {
-          console.log('Could not play YouTube player:', e);
-        }
+      if (youtubePlayers[index]?.playVideo) {
+        try { youtubePlayers[index].playVideo(); } catch(e){ console.log(e); }
       }
     }
   }
 
   function initializeYouTubePlayers() {
-    // Clear existing players
-    youtubePlayers = [];
-
-    // Initialize YouTube players for each iframe
     currentIframes.forEach((iframe, index) => {
-      if (iframe.src.includes('youtube.com')) {
-        // YouTube iframe will handle its own API
-        // We'll use postMessage for control
+      if (iframe.src.includes("youtube.com")) {
         youtubePlayers[index] = {
-          pauseVideo: () => {
-            iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-          },
-          playVideo: () => {
-            iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-          }
+          pauseVideo: () => iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*'),
+          playVideo: () => iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*')
         };
       }
     });
   }
 
   function createCarousel(link) {
-    if (!modalBody || !link) return;
-
-    // Find the index of the clicked link
-    const parentSlide = link.closest(".swiper-slide");
-    const activeIndex = parentSlide
-      ? [...parentSlide.parentElement.children].indexOf(parentSlide)
-      : 0;
+    const activeIndex = [...links].indexOf(link);
 
     modalBody.innerHTML = `
       <div id="lightboxCarousel" class="carousel slide carousel-fade" data-bs-ride="false">
-        <div class="carousel-indicators">${createIndicators(activeIndex)}</div>
-        <div class="carousel-inner justify-content-center mx-auto">${createSlides(activeIndex)}</div>
+        <div class="carousel-indicators">
+          ${[...links].map((_, i) =>
+            `<button type="button" data-bs-target="#lightboxCarousel" data-bs-slide-to="${i}" ${i===activeIndex?'class="active" aria-current="true"':''} aria-label="Slide ${i+1}"></button>`
+          ).join("")}
+        </div>
+        <div class="carousel-inner">${createSlides(activeIndex)}</div>
         <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
@@ -687,47 +652,37 @@ function initGalleryLightbox() {
       </div>
     `;
 
-    // Store references to iframes and initialize YouTube players
-    currentIframes = modalBody.querySelectorAll('iframe');
+    currentIframes = modalBody.querySelectorAll("iframe");
     initializeYouTubePlayers();
 
-    // Handle slide changes
-    const carousel = modalBody.querySelector('#lightboxCarousel');
+    const carousel = modalBody.querySelector("#lightboxCarousel");
     if (carousel) {
-      carousel.addEventListener('slide.bs.carousel', function (event) {
-        // Pause all videos first
+      carousel.addEventListener("slide.bs.carousel", e => {
         pauseAllVideos();
-
-        // Play the video on the new slide
-        setTimeout(() => {
-          playVideoAtIndex(event.to);
-        }, 300); // Small delay to ensure slide transition is complete
+        setTimeout(() => playVideoAtIndex(e.to), 300);
       });
     }
   }
 
+  // Link click
   links.forEach(link => {
     link.addEventListener("click", e => {
       e.preventDefault();
-      if (!lightboxModal) return;
       createCarousel(link);
-      bsModal?.show();
+      bsModal.show();
     });
   });
 
-  // Fullscreen functionality
-  const fsEnlarge = document.querySelector(".btn-fullscreen-enlarge");
-  const fsExit = document.querySelector(".btn-fullscreen-exit");
+  // Fullscreen buttons
+  const fsEnlarge = lightboxModal.querySelector(".btn-fullscreen-enlarge");
+  const fsExit = lightboxModal.querySelector(".btn-fullscreen-exit");
 
   fsEnlarge?.addEventListener("click", e => {
     e.preventDefault();
-    if (!lightboxModal) return;
-    lightboxModal.requestFullscreen()
-      .then(() => {
-        fsEnlarge.classList.toggle("d-none");
-        fsExit.classList.toggle("d-none");
-      })
-      .catch(err => console.error(`Error enabling fullscreen: ${err.message}`));
+    lightboxModal.requestFullscreen().then(() => {
+      fsEnlarge.classList.toggle("d-none");
+      fsExit.classList.toggle("d-none");
+    }).catch(err => console.error(err));
   });
 
   fsExit?.addEventListener("click", e => {
@@ -737,21 +692,17 @@ function initGalleryLightbox() {
     fsEnlarge.classList.toggle("d-none");
   });
 
-  // Clean up modal when closed
-  lightboxModal.addEventListener('hidden.bs.modal', function () {
-    // Pause all videos before closing
+  // Modal close
+  lightboxModal.addEventListener("hidden.bs.modal", () => {
     pauseAllVideos();
-
-    // Clear modal content
-    if (modalBody) {
-      modalBody.innerHTML = '';
-    }
-
-    // Clear iframe references and YouTube players
+    modalBody.innerHTML = "";
     currentIframes = [];
     youtubePlayers = [];
   });
 }
+
+
+
 
 // Accessibility Features
 function initAccessibilityFeatures() {

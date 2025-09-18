@@ -2896,7 +2896,7 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 
 .bg-light-gray {
-  background: var(--light-gray);
+  background: var(--light-gray) !important;
 }
 
 .bg-grey-700 {
@@ -3152,7 +3152,7 @@ section.bg-white.section-with-padding + section.bg-white {
 @media (max-width: 767.98px) {
   .whats-next-section .yellow-stars {
     top: 1.5rem;
-    right: -3.6875rem;
+    right: -3rem;
     max-width: 12.8125rem;
     max-height: 6rem;
   }
@@ -5136,14 +5136,6 @@ section.bg-white.section-with-padding + section.bg-white {
   .side-nav-with-content .side-nav-wrap .right-content .full-img-text-sec .content-section .full-sec-content h5,
   .side-nav-with-content .side-nav-wrap .right-content .full-img-text-sec .content-section .full-sec-content h6 {
     margin-bottom: 1rem;
-  }
-}
-.side-nav-with-content .side-nav-wrap .right-content .section {
-  padding: 0 0 4rem 0;
-}
-@media (max-width: 767.98px) {
-  .side-nav-with-content .side-nav-wrap .right-content .section {
-    padding: 0 0 2rem 0;
   }
 }
 .side-nav-with-content .side-nav-wrap .right-content .section.bg-white:first-child {
