@@ -206,12 +206,10 @@
 
 .main-single-slider {
   .swiper-button-group {
-    width: rem.convert(92px);
-    // height: rem.convert(40px);
     position: absolute;
     right: rem.convert(32px);
     bottom: rem.convert(32px);
-    display: flex !important;
+    display: flex;
     gap: rem.convert(12px);
     @include media-breakpoint-down(md) {
       right: rem.convert(24px);

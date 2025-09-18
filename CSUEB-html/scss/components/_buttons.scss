@@ -10,27 +10,37 @@
   // font-size: 1rem;
   font-style: normal;
   font-weight: $bold;
-  line-height: 175%; /* 1.75rem */
+  line-height: 175%;
+  /* 1.75rem */
   text-transform: uppercase;
   font-family: var(--body-font-family);
+
   @include media-breakpoint-down(md) {
     padding: 0.25rem 0.5rem 0.25rem 0.25rem;
     font-size: 0.875rem;
-  } 
+  }
+
   &:focus-visible {
     outline: -webkit-focus-ring-color auto 1px;
   }
 
   span {
-     font-weight: $bold;
+    font-weight: $bold;
   }
+
   &.btn-primary {
-    background-color: transparent;
+    background-color: var(--red);
     position: relative;
     padding: 0;
     padding-left: 0.865rem;
+    clip-path: polygon(0 0,
+        100% 0,
+        100% 100%,
+        15px 100%,
+        0 calc(100% - 14px));
+
     &::before {
-      content: "";
+      // content: "";
       position: absolute;
       left: 0;
       width: 0.875rem;
@@ -38,28 +48,33 @@
       top: 0;
       z-index: 9;
       background: var(--red);
-      clip-path:  polygon(20% 0%, 108% 0, 120% 20%, 100% 100%, 100% 100%, 0% 60%, 0 0);
+      clip-path: polygon(20% 0%, 108% 0, 120% 20%, 100% 100%, 100% 100%, 0% 60%, 0 0);
       transition: all 0.3s ease-in-out;
     }
+
     span {
       display: block;
-      background-color: var(--red);
+      //background-color: var(--red);
       color: var(--white);
-        font-weight: $bold!important;
+      font-weight: $bold !important;
       transition: all 0.3s ease-in-out;
       padding: 0.75rem 1.5rem 0.75rem 0.75rem;
+
       @include media-breakpoint-down(md) {
         padding: 0.50rem 1.5rem 0.50rem 0.75rem;
       }
     }
+
     &:hover {
-      background-color: transparent;
+      background-color: var(--black);
       transition: all 0.3s ease-in-out;
       color: var(--white);
-      span { 
-        background-color: var(--black);
+
+      span {
+        //background-color: var(--black);
 
       }
+
       &::before {
         background-color: var(--black);
       }
@@ -73,22 +88,28 @@
       svg {
         transition: all 0.3s ease-in-out;
         color: var(--white);
+
         * {
           color: var(--white);
         }
       }
+
       &:hover {
         color: var(--black);
-        span { 
-          background-color: var(--gold);
+        background-color: var(--gold);
+        span {
+          //background-color: var(--gold);
           color: var(--black);
+
           svg {
             color: var(--black);
+
             * {
               color: var(--black);
             }
           }
         }
+
         &::before {
           background-color: var(--gold);
         }
@@ -98,22 +119,27 @@
     &.btn-dark {
       svg {
         color: var(--white);
+
         * {
           color: var(--white);
         }
       }
+
       &::before {
         content: "";
         background: var(--dark-grey);
       }
+
       span {
-        background: var(--dark-grey);
+        //background: var(--dark-grey);
       }
+
       &:hover {
-        span { 
-          background-color: #5C5C5C;
-  
+        span {
+          //background-color: #5C5C5C;
+
         }
+
         &::before {
           background-color: #5C5C5C;
         }
@@ -122,12 +148,13 @@
   }
 
   &.btn-primary-gray {
-    background-color: transparent;
+    background-color: var(--light-gray);
     position: relative;
     padding: 0;
     padding-left: 0.865rem;
+
     &::before {
-      content: "";
+      //content: "";
       position: absolute;
       left: 0;
       width: 0.875rem;
@@ -135,30 +162,36 @@
       top: 0;
       z-index: 9;
       background: var(--light-gray);
-      clip-path:  polygon(20% 0%, 108% 0, 120% 20%, 100% 100%, 100% 100%, 0% 60%, 0 0);
+      clip-path: polygon(20% 0%, 108% 0, 120% 20%, 100% 100%, 100% 100%, 0% 60%, 0 0);
       transition: all 0.3s ease-in-out;
     }
+
     span {
       display: block;
-      background-color: var(--light-gray);
+      //background-color: var(--light-gray);
       color: var(--black);
       transition: all 0.3s ease-in-out;
       padding: 0.75rem 0.75rem 0.75rem 0.5rem;
+
       @include media-breakpoint-down(md) {
         padding: 0.50rem 1.5rem 0.50rem 0.75rem;
       }
+
       .icon {
         margin-left: 0.5rem;
       }
     }
+
     &:hover {
-      background-color: transparent;
+      background-color: var(--grey-800);
       transition: all 0.3s ease-in-out;
       color: var(--black);
-      span { 
-        background-color: var(--grey-800);
+
+      span {
+        //background-color: var(--grey-800);
 
       }
+
       &::before {
         background-color: var(--grey-800);
       }
@@ -170,12 +203,18 @@
   }
 
   &.btn-primary-yellow {
-    background-color: transparent;
+    background-color: var(--gold);
     position: relative;
     padding: 0;
     padding-left: 0.865rem;
+    clip-path: polygon(0 0,
+        100% 0,
+        100% 100%,
+        15px 100%,
+        0 calc(100% - 15px));
+
     &::before {
-      content: "";
+      //content: "";
       position: absolute;
       left: 0;
       width: 0.875rem;
@@ -183,27 +222,43 @@
       top: 0;
       z-index: 9;
       background: var(--gold);
-      clip-path:  polygon(20% 0%, 108% 0, 120% 20%, 100% 100%, 100% 100%, 0% 60%, 0 0);
+      //clip-path:  polygon(20% 0%, 108% 0, 120% 20%, 100% 100%, 100% 100%, 0% 60%, 0 0);
       transition: all 0.3s ease-in-out;
+      clip-path: polygon(0 0,
+          /* top-left */
+          100% 0,
+          /* top-right */
+          100% 100%,
+          /* bottom-right */
+          15px 100%,
+          /* bottom edge (shift right) */
+          0 calc(100% - 15px)
+          /* diagonal cut */
+        );
     }
+
     span {
       display: block;
-      background-color: var(--gold);
+      //background-color: var(--gold);
       color: var(--black);
       transition: all 0.3s ease-in-out;
       padding: 0.75rem 1.5rem 0.75rem 0.75rem;
+
       @include media-breakpoint-down(md) {
         padding: 0.50rem 1.5rem 0.50rem 0.75rem;
       }
     }
+
     &:hover {
-      background-color: transparent;
+      background-color: var(--black);
       transition: all 0.3s ease-in-out;
       color: var(--white);
-      span { 
-        background-color: var(--black);
+
+      span {
+        //background-color: var(--black);
         color: var(--white);
       }
+
       &::before {
         background-color: var(--black);
       }
@@ -218,22 +273,29 @@
       svg {
         transition: all 0.3s ease-in-out;
         color: var(--black);
+
         * {
           color: var(--black);
         }
       }
+
       &:hover {
+        background-color: var(--red);
         color: var(--white);
-        span { 
-          background-color: var(--red);
+
+        span {
+          //background-color: var(--red);
           color: var(--white);
+
           svg {
             color: var(--white);
+
             * {
               color: var(--white);
             }
           }
         }
+
         &::before {
           background-color: var(--red);
         }
@@ -241,7 +303,7 @@
     }
   }
 
- 
+
 
   &.btn-primary-default {
     background-color: var(--pink);
@@ -278,7 +340,7 @@
     }
   }
 
-  
+
   &.btn-secondary {
     background-color: transparent;
     display: inline-flex;
@@ -286,27 +348,34 @@
     font-weight: $bold;
     color: var(--black);
     gap: rem.convert(12px);
+
     .arrow {
       transition: all 0.3s ease-in-out;
       color: var(--red);
     }
+
     span {
       flex: 1;
     }
+
     &:hover {
       background: rgba(213, 0, 50, 0.10);
       transition: all 0.3s ease-in-out;
       border: 1px solid var(--pink);
+
       .arrow {
         transform: rotate(-45deg);
       }
     }
+
     &.btn-secondary-icon-yellow {
       background: transparent;
+
       .arrow {
         color: var(--gold);
       }
     }
+
     &.btn-secondary-small {
       padding: 0.25rem 0.5rem 0.25rem 0.25rem;
     }
@@ -317,18 +386,22 @@
     display: inline-flex;
     text-align: left;
     gap: rem.convert(12px);
+
     span {
       flex: 1;
     }
+
     .arrow {
       // margin-right: rem.convert(12px);
       transition: all 0.3s ease-in-out;
       color: var(--red);
     }
+
     &:hover {
       background: rgba(213, 0, 50, 0.10);
       transition: all 0.3s ease-in-out;
       border: 1px solid var(--pink);
+
       .arrow {
         transform: rotate(-45deg);
       }
@@ -344,15 +417,17 @@
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 175%; /* 1.3125rem */
+  line-height: 175%;
+  /* 1.3125rem */
   text-decoration: none;
-  color: #FFFFFF99!important;
+  color: #FFFFFF99 !important;
   transition: all 0.3s ease-in-out;
   text-transform: uppercase;
   position: relative;
+
   &::after {
     content: "";
-    border-bottom:1px solid #FFFFFF99;
+    border-bottom: 1px solid #FFFFFF99;
     position: absolute;
     left: 0;
     right: 0;
@@ -360,8 +435,10 @@
     bottom: rem.convert(2px);
     transition: all 0.3s ease-in-out;
   }
+
   &:hover {
-    color: var(--white)!important;
+    color: var(--white) !important;
+
     &::after {
       content: "";
       border-color: transparent;
@@ -377,11 +454,12 @@
   text-decoration-thickness: auto;
   text-underline-offset: auto;
   background: transparent;
-  color: var(--red)!important;
+  color: var(--red) !important;
   display: inline-flex;
   word-break: break-word;
+
   &:hover {
-    background:  rgba(213, 0, 50, 0.10);
+    background: rgba(213, 0, 50, 0.10);
     text-decoration-color: transparent;
   }
 }
@@ -393,6 +471,7 @@
   text-decoration-color: transparent;
   color: var(--white) !important;
   transition: all 0.3s ease-in-out;
+
   &:hover {
     color: var(--red) !important;
     background-color: transparent;
@@ -401,36 +480,39 @@
 }
 
 .star-btn-link {
-    color: var(--black);
+  color: var(--black);
+  transition: all 0.4s ease-in-out;
+  position: relative;
+  padding: 0.27rem;
+  padding-left: rem.convert(24px);
+  text-decoration: none;
+  display: inline-block;
+  background-color: transparent;
+
+  &::before {
+    content: "";
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6.23684 10.6579L6 12L5.76316 10.6579C5.28947 8.44737 3.55264 6.71053 1.34211 6.23684L0 6L1.34211 5.76316C3.55264 5.28947 5.28947 3.55263 5.76316 1.34211L6 0L6.23684 1.34211C6.71053 3.55263 8.44736 5.28947 10.6579 5.76316L12 6L10.6579 6.23684C8.44736 6.71053 6.71053 8.44737 6.23684 10.6579Z" fill="%23D50032"/></svg>');
+    margin-right: 0.5rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    position: absolute;
+    left: rem.convert(6.4px);
+    top: rem.convert(10px);
     transition: all 0.4s ease-in-out;
-    position: relative;
-    padding: 0.27rem;
-    padding-left: rem.convert(24px);
-    text-decoration: none;
-    display: inline-block;
-    background-color: transparent;
+    filter: brightness(0) saturate(100%) invert(88%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(90%) contrast(94%);
+    background-repeat: no-repeat;
+  }
+
+  &:hover {
+    color: var(--black);
+    background: rgba(213, 0, 50, 0.10);
+
     &::before {
       content: "";
-      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6.23684 10.6579L6 12L5.76316 10.6579C5.28947 8.44737 3.55264 6.71053 1.34211 6.23684L0 6L1.34211 5.76316C3.55264 5.28947 5.28947 3.55263 5.76316 1.34211L6 0L6.23684 1.34211C6.71053 3.55263 8.44736 5.28947 10.6579 5.76316L12 6L10.6579 6.23684C8.44736 6.71053 6.71053 8.44737 6.23684 10.6579Z" fill="%23D50032"/></svg>');
-      margin-right: 0.5rem;
-      width: 0.75rem;
-      height: 0.75rem;
-      position: absolute;
-      left: rem.convert(6.4px);
-      top: rem.convert(10px);
-      transition: all 0.4s ease-in-out;
-      filter: brightness(0) saturate(100%) invert(88%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(90%) contrast(94%);
+      filter: inherit;
       background-repeat: no-repeat;
     }
-    &:hover {
-      color: var(--black);
-      background: rgba(213, 0, 50, 0.10);
-      &::before {
-        content: "";
-        filter:inherit;
-        background-repeat: no-repeat;
-      }
-    }
+  }
 }
 
 
@@ -440,6 +522,7 @@
     width: 100%;
   }
 }
+
 .row-button-sec {
   .btn {
     @include media-breakpoint-down(sm) {

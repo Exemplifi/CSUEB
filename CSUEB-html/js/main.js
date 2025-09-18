@@ -941,17 +941,28 @@ function initAccessibilityFeatures() {
     }
   });
 
-  // Enhanced error handling
+  // Enhanced error handling with improved console output and accessibility
   window.addEventListener('error', function (e) {
-    // Enhanced error logging with fallback for missing e.error
-    if (e && e.error) {
-      console.error('JavaScript error:', e.error);
+    // Avoid generic "JavaScript error:" console message; provide more context
+    let errorMsg = 'JavaScript error: ';
+    if (e && e.error && e.error.stack) {
+      errorMsg += e.error.stack;
     } else if (e && e.message) {
-      console.error('JavaScript error:', e.message);
+      errorMsg += e.message;
+      if (e.filename) {
+        errorMsg += ` at ${e.filename}:${e.lineno}:${e.colno}`;
+      }
     } else {
-      console.error('JavaScript error:', e);
+      errorMsg += JSON.stringify(e);
     }
-    announceToScreenReader('An error occurred. Please refresh the page.');
+    // Only log if not already logged by browser
+    if (window && window.console && typeof window.console.error === 'function') {
+      window.console.error(errorMsg);
+    }
+    // Announce error to screen readers for accessibility
+    if (typeof announceToScreenReader === 'function') {
+      announceToScreenReader('An error occurred on the page. Please try refreshing or contact support if the problem persists.');
+    }
   });
 
   // Enhanced loading states
@@ -1187,18 +1198,30 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // script for empty headings
-document.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach(el => {
+document.querySelectorAll("h1, h2, h3, h4, h5, h6, p").forEach(el => {
   if (el.textContent.trim() === "" || el.innerHTML.trim() === "&nbsp;") {
     el.style.display = "none";
     el.setAttribute("aria-hidden", "true");
   }
 });
 
+// script for add aria-hidden true for star icon svg
+const stars = document.querySelectorAll('svg.star-icon');
+if (stars.length > 0) {
+  stars.forEach(svg => {
+    if (!svg.hasAttribute('aria-hidden')) {
+      svg.setAttribute('aria-hidden', 'true');
+    }
+  });
+}
 
 
+// sidebar accordion script
 function handleAccordionBehavior() {
   const accordion = document.querySelector('#thissection');
   const button = document.querySelector('[data-bs-target="#thissection"]');
+
+  if (!accordion || !button) return; // stop if not found
 
   if (window.innerWidth >= 768) {
     accordion.classList.add('show');       // keep open
@@ -1206,12 +1229,17 @@ function handleAccordionBehavior() {
   }
 }
 
-// Run on load + resize
-window.addEventListener('load', handleAccordionBehavior);
-window.addEventListener('resize', handleAccordionBehavior);
+document.addEventListener("DOMContentLoaded", function () {
+  handleAccordionBehavior();
+  window.addEventListener('resize', handleAccordionBehavior);
+});
 
-
-
+// remove table summary tag
+document.querySelectorAll("table[summary]").forEach(function(table) {
+  if (table.querySelector("caption")) {
+    table.removeAttribute("summary");
+  }
+});
 
 
 // Flip Tiles Gallery

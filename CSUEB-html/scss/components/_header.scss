@@ -211,16 +211,23 @@
   }
 
   .mega-menu-wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    
+    @include media-breakpoint-down(md) {
+      height: 100vh;
+      overflow-y: auto;
+    }
     @include media-breakpoint-up(md) {
       flex-direction: row;
+      display: flex;
+      height: 100%;
     }
     .left-red-sec {
       width: 100%;
       padding-top: rem.convert(30px);
       padding-inline: rem.convert(16px);
+      @include media-breakpoint-down(md){
+        padding-bottom: rem.convert(8px);
+      }
       @include media-breakpoint-up(md) {
         width: 300px;
         // Fix: Use proper SCSS syntax for background layering and escape SVG for data URI
@@ -490,6 +497,7 @@
     row-gap: rem.convert(20px);
     column-gap: rem.convert(24px);
     padding-inline: rem.convert(32px);
+    margin-bottom: 0;
     @include media-breakpoint-up(md) {
       row-gap: rem.convert(10px);
       column-gap: rem.convert(24px);
