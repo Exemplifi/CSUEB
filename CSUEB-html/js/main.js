@@ -515,48 +515,47 @@ if (dropdownBtn) {
   }
 }
 
-// Assign unique IDs to all lightbox modals
 document.querySelectorAll(".lightbox-modal").forEach((modal, index) => {
+  // Assign unique id if not already present
   if (!modal.id) {
     modal.id = `lightbox-modal-${index + 1}`;
   }
 });
 
-// Initialize each gallery section separately
-document.querySelectorAll(".image-gallery-sec").forEach((section) => {
-  const galleryGrid = section.querySelector(".gallery-grid");
-  const lightboxModal = section.querySelector(".lightbox-modal");
-  if (!galleryGrid || !lightboxModal) return;
 
-  const modalId = lightboxModal.id;
-  initGalleryLightbox(galleryGrid, modalId);
-});
+// Lightbox Gallery
+function initGalleryLightbox() {
+  const html = document.documentElement;
+  html.setAttribute("data-bs-theme", "dark");
 
-function initGalleryLightbox(galleryGrid, modalId) {
-  const links = galleryGrid.querySelectorAll("a");
-  const lightboxModal = document.getElementById(modalId);
-  if (!lightboxModal) return;
+  const galleryGrids = document.querySelectorAll(".gallery-grid");
+  if (!galleryGrids.length) return; // Exit if no gallery grids found
 
-  const modalBody = lightboxModal.querySelector(".lightbox-content");
-  const bsModal = new bootstrap.Modal(lightboxModal);
+  const lightboxModalEl = document.querySelector(".lightbox-modal");
+  const lightboxModal = lightboxModalEl ? document.getElementById(lightboxModalEl.id) : null;
+  const modalBody = lightboxModal?.querySelector(".lightbox-content");
+  const bsModal = lightboxModal ? new bootstrap.Modal(lightboxModal) : null;
 
   let currentIframes = [];
   let youtubePlayers = [];
-
-  function extractYouTubeId(url) {
-    const match = url.match(/(?:youtube\.com\/embed\/|youtu\.be\/|youtube\.com\/watch\?v=)([^&\n?#]+)/);
-    return match ? match[1] : null;
-  }
 
   function createCaption(caption) {
     return caption ? `<div class="carousel-caption d-none d-md-block"><h5 class="m-0">${caption}</h5></div>` : '';
   }
 
-  function createSlides(activeIndex) {
+  function createIndicators(links, activeIndex) {
+    return [...links].map((_, i) =>
+      `<button type="button" data-bs-target="#lightboxCarousel" data-bs-slide-to="${i}" 
+        ${i === activeIndex ? 'class="active" aria-current="true"' : ''} 
+        aria-label="Slide ${i + 1}"></button>`
+    ).join("");
+  }
+
+  function createSlides(links, activeIndex) {
     return [...links].map((link, i) => {
-      const videoUrl = link.dataset.videoUrl;
-      const img = link.querySelector("img");
-      const imgAlt = img?.alt || "";
+      const videoUrl = link.getAttribute('data-video-url');
+      const img = link.querySelector('img');
+      const imgAlt = img ? img.getAttribute('alt') || "" : "";
       const isActive = i === activeIndex ? " active" : "";
 
       if (videoUrl) {
@@ -564,7 +563,8 @@ function initGalleryLightbox(galleryGrid, modalId) {
         return `
           <div class="carousel-item${isActive}">
             <div class="ratio ratio-16x9">
-              <iframe id="youtube-player-${i}" src="${videoUrl}?enablejsapi=1${autoplayParam}" frameborder="0" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+              <iframe id="youtube-player-${i}" src="${videoUrl}?enablejsapi=1${autoplayParam}" 
+                frameborder="0" allowfullscreen allow="autoplay; encrypted-media"></iframe>
             </div>
           </div>
         `;
@@ -579,49 +579,36 @@ function initGalleryLightbox(galleryGrid, modalId) {
           </div>
         `;
       }
-      return "";
+      return '';
     }).join("");
   }
 
   function pauseAllVideos() {
     youtubePlayers.forEach(player => {
-      try { player.pauseVideo(); } catch(e){ console.log(e); }
+      try { player.pauseVideo?.(); } catch {}
     });
-
     currentIframes.forEach(iframe => {
-      if (iframe?.contentWindow) {
-        try {
-          iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-        } catch (e) {
-          iframe.src = iframe.src.replace("&autoplay=1", "");
-        }
-      }
+      try {
+        iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+      } catch {}
     });
   }
 
   function playVideoAtIndex(index) {
-    const iframes = modalBody.querySelectorAll("iframe");
+    const iframes = modalBody.querySelectorAll('iframe');
     if (iframes[index]) {
       const iframe = iframes[index];
-      const currentSrc = iframe.src;
-
-      iframes.forEach((frame, idx) => {
-        if (idx !== index) frame.src = frame.src.replace("&autoplay=1", "");
-      });
-
-      if (!currentSrc.includes("autoplay=1")) {
-        iframe.src = currentSrc + (currentSrc.includes("?") ? "&" : "?") + "autoplay=1";
+      if (!iframe.src.includes('autoplay=1')) {
+        iframe.src += (iframe.src.includes('?') ? '&' : '?') + 'autoplay=1';
       }
-
-      if (youtubePlayers[index]?.playVideo) {
-        try { youtubePlayers[index].playVideo(); } catch(e){ console.log(e); }
-      }
+      youtubePlayers[index]?.playVideo?.();
     }
   }
 
   function initializeYouTubePlayers() {
+    youtubePlayers = [];
     currentIframes.forEach((iframe, index) => {
-      if (iframe.src.includes("youtube.com")) {
+      if (iframe.src.includes('youtube.com')) {
         youtubePlayers[index] = {
           pauseVideo: () => iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*'),
           playVideo: () => iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*')
@@ -630,17 +617,15 @@ function initGalleryLightbox(galleryGrid, modalId) {
     });
   }
 
-  function createCarousel(link) {
-    const activeIndex = [...links].indexOf(link);
+  function createCarousel(links, clickedLink) {
+    if (!modalBody || !clickedLink) return;
+
+    const activeIndex = [...links].indexOf(clickedLink);
 
     modalBody.innerHTML = `
       <div id="lightboxCarousel" class="carousel slide carousel-fade" data-bs-ride="false">
-        <div class="carousel-indicators">
-          ${[...links].map((_, i) =>
-            `<button type="button" data-bs-target="#lightboxCarousel" data-bs-slide-to="${i}" ${i===activeIndex?'class="active" aria-current="true"':''} aria-label="Slide ${i+1}"></button>`
-          ).join("")}
-        </div>
-        <div class="carousel-inner">${createSlides(activeIndex)}</div>
+        <div class="carousel-indicators">${createIndicators(links, activeIndex)}</div>
+        <div class="carousel-inner justify-content-center mx-auto">${createSlides(links, activeIndex)}</div>
         <button class="carousel-control-prev" type="button" data-bs-target="#lightboxCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
@@ -652,39 +637,39 @@ function initGalleryLightbox(galleryGrid, modalId) {
       </div>
     `;
 
-    currentIframes = modalBody.querySelectorAll("iframe");
+    currentIframes = modalBody.querySelectorAll('iframe');
     initializeYouTubePlayers();
 
-    const carousel = modalBody.querySelector("#lightboxCarousel");
-    if (carousel) {
-      carousel.addEventListener("slide.bs.carousel", e => {
-        pauseAllVideos();
-        setTimeout(() => playVideoAtIndex(e.to), 300);
-      });
-    }
+    const carousel = modalBody.querySelector('#lightboxCarousel');
+    carousel?.addEventListener('slide.bs.carousel', function (event) {
+      pauseAllVideos();
+      setTimeout(() => playVideoAtIndex(event.to), 300);
+    });
   }
 
-  // Link click
-  links.forEach(link => {
-    link.addEventListener("click", e => {
-      e.preventDefault();
-      createCarousel(link);
-      bsModal.show();
+  // Loop through each gallery grid
+  galleryGrids.forEach(galleryGrid => {
+    const links = galleryGrid.querySelectorAll("a");
+    links.forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        if (!lightboxModal) return;
+        createCarousel(links, link);
+        bsModal?.show();
+      });
     });
   });
 
-  // Fullscreen buttons
-  const fsEnlarge = lightboxModal.querySelector(".btn-fullscreen-enlarge");
-  const fsExit = lightboxModal.querySelector(".btn-fullscreen-exit");
-
+  // Fullscreen
+  const fsEnlarge = document.querySelector(".btn-fullscreen-enlarge");
+  const fsExit = document.querySelector(".btn-fullscreen-exit");
   fsEnlarge?.addEventListener("click", e => {
     e.preventDefault();
-    lightboxModal.requestFullscreen().then(() => {
+    lightboxModal?.requestFullscreen().then(() => {
       fsEnlarge.classList.toggle("d-none");
       fsExit.classList.toggle("d-none");
-    }).catch(err => console.error(err));
+    });
   });
-
   fsExit?.addEventListener("click", e => {
     e.preventDefault();
     document.exitFullscreen();
@@ -692,16 +677,13 @@ function initGalleryLightbox(galleryGrid, modalId) {
     fsEnlarge.classList.toggle("d-none");
   });
 
-  // Modal close
-  lightboxModal.addEventListener("hidden.bs.modal", () => {
+  lightboxModal?.addEventListener('hidden.bs.modal', function () {
     pauseAllVideos();
-    modalBody.innerHTML = "";
+    if (modalBody) modalBody.innerHTML = '';
     currentIframes = [];
     youtubePlayers = [];
   });
 }
-
-
 
 
 // Accessibility Features
