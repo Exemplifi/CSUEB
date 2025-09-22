@@ -700,7 +700,8 @@ section.bg-white.section-with-padding+section.bg-white {
         margin-top: rem.convert(32px);
     }
 
-    a:not(.btn), a:not([class]) {
+    a:not(.btn),
+    a:not([class]) {
         text-decoration-line: underline !important;
         text-decoration-style: solid !important;
         text-decoration-skip-ink: none !important;
@@ -716,9 +717,10 @@ section.bg-white.section-with-padding+section.bg-white {
             text-decoration-color: transparent !important;
         }
     }
-    .social-icons{
-        a{
-            &:hover{
+
+    .social-icons {
+        a {
+            &:hover {
                 background: transparent !important;
             }
         }
@@ -867,7 +869,8 @@ section.bg-white.section-with-padding+section.bg-white {
 
 // High Contrast Mode
 
-html[hc="a2"], html[hc="a4"] {
+html[hc="a2"],
+html[hc="a4"] {
 
     .main-header {
         .header-links {
@@ -880,6 +883,7 @@ html[hc="a2"], html[hc="a4"] {
             }
         }
     }
+
     .section-hero * {
         color: #fff !important;
     }
@@ -891,19 +895,22 @@ html[hc="a2"], html[hc="a4"] {
         * {
             color: var(--black) !important;
         }
-        &:hover{
+
+        &:hover {
             background-color: var(--white) !important;
 
         }
     }
 
-    .menu-btn, .bg-red .btn-primary {
+    .menu-btn,
+    .bg-red .btn-primary {
         background-color: var(--gold) !important;
 
         * {
             color: var(--black) !important;
         }
-        &:hover{
+
+        &:hover {
             background-color: var(--white) !important;
 
         }
@@ -917,6 +924,7 @@ html[hc="a2"], html[hc="a4"] {
                     &::before {
                         background-image: url('data:image/svg+xml,<svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.23684 11.0124L6 12.3545L5.76316 11.0124C5.28947 8.80186 3.55264 7.06502 1.34211 6.59134L0 6.35449L1.34211 6.11765C3.55264 5.64397 5.28947 3.90712 5.76316 1.6966L6 0.354492L6.23684 1.6966C6.71053 3.90712 8.44736 5.64397 10.6579 6.11765L12 6.35449L10.6579 6.59134C8.44736 7.06502 6.71053 8.80186 6.23684 11.0124Z" fill="%23FDC25A"/></svg>');
                     }
+
                     &:hover {
                         background-color: rgba(253, 194, 90, 0.5);
                     }
@@ -926,48 +934,77 @@ html[hc="a2"], html[hc="a4"] {
     }
 
     .footer .social-icons a:hover img {
-      filter: brightness(0) saturate(100%) invert(100%) sepia(15%) saturate(2%) hue-rotate(269deg) brightness(114%) contrast(100%);
+        filter: brightness(0) saturate(100%) invert(100%) sepia(15%) saturate(2%) hue-rotate(269deg) brightness(114%) contrast(100%);
     }
 
-    .bg-black .btn-secondary:hover {
-        background: rgba(253, 194, 90, 0.5);
-    }
-    .next-card.bg-red{
-      svg{
-        *{
-            color: #bebcbc;
+    .bg-black {
+        .btn-secondary {
+            * {
+                color: var(--white) !important;
+            }
+
+            &:hover {
+                background: rgba(253, 194, 90, 0.5);
+            }
         }
-      }
     }
-    .text-img-main-card .bottom-content-sec.bg-black a.btn{
-        *{
+
+    .next-card.bg-red {
+        svg {
+            * {
+                color: #bebcbc;
+            }
+        }
+    }
+
+    .text-img-main-card .bottom-content-sec.bg-black a.btn {
+        * {
             color: var(--white);
         }
     }
+
     .text-img-main-card .bottom-content-sec.bg-black a.btn.btn-primary {
         background-color: var(--gold) !important;
-        *{
+
+        * {
             color: var(--black);
         }
-        &:hover{
+
+        &:hover {
             background-color: var(--white) !important;
         }
     }
-    .footer-bottom{
-     ul{
-        li {
-            a.link-btn{
-                color: rgb(255 255 255 / 0.8) !important;
+
+    .footer-bottom {
+        ul {
+            li {
+                a.link-btn {
+                    color: rgb(255 255 255 / 0.8) !important;
+                }
             }
         }
-     }
-     .copyright{
-        color: rgb(255 255 255 / 0.8);
-     }
+
+        .copyright {
+            color: rgb(255 255 255 / 0.8);
+        }
     }
+
     .whats-next-section {
-        &::after{
+        &::after {
             opacity: 0.3;
+        }
+    }
+
+    .bright-future-swiper {
+        .slide-card {
+            &.teal-hover:hover,
+            &.gold-hover:hover,
+            &.purple-hover:hover {
+                .overlay {
+                    border-color: var(--teal);
+                    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(0deg, rgba(0, 160, 173, 0.4), rgba(0, 160, 173, 0.4));
+                }
+            }
         }
     }
 }
