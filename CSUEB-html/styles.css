@@ -1048,6 +1048,18 @@ html[hc=a2] .main-header .header-links .menu-list-link .menu-link:hover,
 html[hc=a4] .main-header .header-links .menu-list-link .menu-link:hover {
   border-color: var(--white);
 }
+html[hc=a2] .home-hero-sec::after,
+html[hc=a4] .home-hero-sec::after {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+}
+html[hc=a2] .home-hero-sec .btn-secondary:hover,
+html[hc=a4] .home-hero-sec .btn-secondary:hover {
+  background-color: var(--white) !important;
+}
+html[hc=a2] .home-hero-sec .btn-secondary:hover *,
+html[hc=a4] .home-hero-sec .btn-secondary:hover * {
+  color: var(--black) !important;
+}
 html[hc=a2] .section-hero *,
 html[hc=a4] .section-hero * {
   color: #fff !important;
@@ -1146,6 +1158,18 @@ html[hc=a4] .bright-future-swiper .flip-tiles-gallery-grid .gallery-item:nth-chi
 .flip-tiles-gallery-grid .gallery-item:nth-child(3n+1) html[hc=a4] .bright-future-swiper a.slide-card:hover .overlay {
   border-color: var(--teal);
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(0deg, rgba(0, 160, 173, 0.4), rgba(0, 160, 173, 0.4));
+}
+html[hc=a2] .key-feature-sec .btn-secondary:hover,
+html[hc=a4] .key-feature-sec .btn-secondary:hover {
+  background-color: var(--white) !important;
+}
+html[hc=a2] .key-feature-sec .btn-secondary:hover *,
+html[hc=a4] .key-feature-sec .btn-secondary:hover * {
+  color: var(--black) !important;
+}
+html[hc=a2] .key-feature-sec::after,
+html[hc=a4] .key-feature-sec::after {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
 }
 
 .btn {

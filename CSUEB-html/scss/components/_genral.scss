@@ -878,6 +878,21 @@ html[hc="a4"] {
         }
     }
 
+    .home-hero-sec{
+        &::after {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
+    
+        }
+        .btn-secondary{
+            &:hover{
+                background-color: var(--white) !important;
+                *{
+                    color: var(--black) !important;
+                }
+            }
+        }
+    }
+
     .section-hero * {
         color: #fff !important;
     }
@@ -999,6 +1014,19 @@ html[hc="a4"] {
                     background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), linear-gradient(0deg, rgba(0, 160, 173, 0.4), rgba(0, 160, 173, 0.4));
                 }
             }
+        }
+    }
+    .key-feature-sec{
+        .btn-secondary{
+            &:hover{
+                background-color: var(--white) !important;
+                *{
+                    color: var(--black) !important;
+                }
+            }
+        }
+        &::after {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
         }
     }
 }
