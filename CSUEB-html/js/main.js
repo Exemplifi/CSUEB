@@ -585,12 +585,12 @@ function initGalleryLightbox() {
 
   function pauseAllVideos() {
     youtubePlayers.forEach(player => {
-      try { player.pauseVideo?.(); } catch {}
+      try { player.pauseVideo?.(); } catch { }
     });
     currentIframes.forEach(iframe => {
       try {
         iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
-      } catch {}
+      } catch { }
     });
   }
 
@@ -841,7 +841,7 @@ function initAccessibilityFeatures() {
       th.setAttribute('role', 'presentation');
     }
   });
-  
+
 
   // Enhanced list accessibility
   const lists = document.querySelectorAll('ul, ol');
@@ -1001,9 +1001,14 @@ function initAccordionAccessibility() {
           icon.setAttribute('aria-label', isExpanded ? 'Expand accordion' : 'Collapse accordion');
         }
 
-        // Announce state change to screen readers
+
+        // Get heading text safely
+        const headingEl = this.closest('.accordion-header');
+        const headingText = headingEl ? headingEl.textContent.trim() : 'Accordion';
+
+        // Announce state change
         announceToScreenReader(
-          `${this.querySelector('[id^="accordion-heading-"]').textContent} ${isExpanded ? 'collapsed' : 'expanded'}`
+          `${headingText} ${isExpanded ? 'collapsed' : 'expanded'}`
         );
       }
     });
@@ -1168,12 +1173,34 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // remove table summary tag
-document.querySelectorAll("table[summary]").forEach(function(table) {
+document.querySelectorAll("table[summary]").forEach(function (table) {
   if (table.querySelector("caption")) {
     table.removeAttribute("summary");
   }
 });
 
+//script for google translate to add label dynamicalyy
+document.addEventListener("DOMContentLoaded", function () {
+  setTimeout(function () {
+    const labels = [
+      { for: "goog-gt-votingInputSrcLang", text: "Source Language" },
+      { for: "goog-gt-votingInputTrgLang", text: "Target Language" },
+      { for: "goog-gt-votingInputSrcText", text: "Source Text" },
+      { for: "goog-gt-votingInputTrgText", text: "Translated Text" },
+      { for: "goog-gt-votingInputVote", text: "Vote" }
+    ];
+
+    labels.forEach(item => {
+      const input = document.getElementById(item.for);
+      if (input && !document.querySelector(`label[for="${item.for}"]`)) {
+        const label = document.createElement("label");
+        label.setAttribute("for", item.for);
+        label.textContent = item.text;
+        input.parentNode.insertBefore(label, input); // Insert before the input
+      }
+    });
+  }, 3000); 
+}); 
 
 // Flip Tiles Gallery
 
@@ -1194,6 +1221,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function n() { s.shift(o, e, i), o.positionDropPlaceholder(), s.layout() } var o = this.isEnabled && this.getItem(t); if (o) { e -= this.size.paddingLeft, i -= this.size.paddingTop; var s = this, r = new Date; this._itemDragTime && r - this._itemDragTime < c ? (clearTimeout(this.dragTimeout), this.dragTimeout = setTimeout(n, c)) : (n(), this._itemDragTime = r) }
   }, u.itemDragEnd = function (t) { function e() { n++, 2 == n && (i.element.classList.remove("is-positioning-post-drag"), i.hideDropPlaceholder(), o.dispatchEvent("dragItemPositioned", null, [i])) } var i = this.isEnabled && this.getItem(t); if (i) { clearTimeout(this.dragTimeout), i.element.classList.add("is-positioning-post-drag"); var n = 0, o = this; i.once("layout", e), this.once("layoutComplete", e), i.moveTo(i.rect.x, i.rect.y), this.layout(), this.dragItemCount = Math.max(0, this.dragItemCount - 1), this.sortItemsByPosition(), i.disablePlacing(), this.unstamp(i.element) } }, u.bindDraggabillyEvents = function (t) { this._bindDraggabillyEvents(t, "on") }, u.unbindDraggabillyEvents = function (t) { this._bindDraggabillyEvents(t, "off") }, u._bindDraggabillyEvents = function (t, e) { var i = this.handleDraggabilly; t[e]("dragStart", i.dragStart), t[e]("dragMove", i.dragMove), t[e]("dragEnd", i.dragEnd) }, u.bindUIDraggableEvents = function (t) { this._bindUIDraggableEvents(t, "on") }, u.unbindUIDraggableEvents = function (t) { this._bindUIDraggableEvents(t, "off") }, u._bindUIDraggableEvents = function (t, e) { var i = this.handleUIDraggable; t[e]("dragstart", i.start)[e]("drag", i.drag)[e]("dragstop", i.stop) }; var d = u.destroy; return u.destroy = function () { d.apply(this, arguments), this.isEnabled = !1 }, h.Rect = i, h.Packer = n, h
 });
+
 
 
 

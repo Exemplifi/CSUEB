@@ -32,12 +32,12 @@
     background-color: var(--red);
     position: relative;
     padding: 0;
-    padding-left: 0.865rem;
+    padding-left: rem.convert(14px);
     clip-path: polygon(0 0,
         100% 0,
         100% 100%,
-        15px 100%,
-        0 calc(100% - 14px));
+        14px 100%,
+        0 calc(100% - 20px));
 
     &::before {
       // content: "";
@@ -50,14 +50,15 @@
       background: var(--red);
       clip-path: polygon(20% 0%, 108% 0, 120% 20%, 100% 100%, 100% 100%, 0% 60%, 0 0);
       transition: all 0.3s ease-in-out;
+      color: var(--white);
     }
 
     span {
       display: block;
       //background-color: var(--red);
-      color: var(--white);
+      
       font-weight: $bold !important;
-      transition: all 0.3s ease-in-out;
+      //transition: all 0.3s ease-in-out;
       padding: 0.75rem 1.5rem 0.75rem 0.75rem;
 
       @include media-breakpoint-down(md) {
@@ -88,10 +89,6 @@
       svg {
         transition: all 0.3s ease-in-out;
         color: var(--white);
-
-        * {
-          color: var(--white);
-        }
       }
 
       &:hover {
@@ -99,7 +96,7 @@
         background-color: var(--gold);
         span {
           //background-color: var(--gold);
-          color: var(--black);
+          //color: var(--black);
 
           svg {
             color: var(--black);
@@ -170,7 +167,7 @@
       display: block;
       //background-color: var(--light-gray);
       color: var(--black);
-      transition: all 0.3s ease-in-out;
+      //transition: all 0.3s ease-in-out;
       padding: 0.75rem 0.75rem 0.75rem 0.5rem;
 
       @include media-breakpoint-down(md) {
@@ -206,12 +203,12 @@
     background-color: var(--gold);
     position: relative;
     padding: 0;
-    padding-left: 0.865rem;
+    padding-left: rem.convert(14px);
     clip-path: polygon(0 0,
-        100% 0,
-        100% 100%,
-        15px 100%,
-        0 calc(100% - 15px));
+    100% 0,
+    100% 100%,
+    14px 100%,
+    0 calc(100% - 20px));
 
     &::before {
       //content: "";
@@ -241,7 +238,7 @@
       display: block;
       //background-color: var(--gold);
       color: var(--black);
-      transition: all 0.3s ease-in-out;
+      //transition: all 0.3s ease-in-out;
       padding: 0.75rem 1.5rem 0.75rem 0.75rem;
 
       @include media-breakpoint-down(md) {

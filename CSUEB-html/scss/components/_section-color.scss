@@ -35,24 +35,16 @@
         }
     }
     .btn-primary {
-        background-color: transparent;
-        &::before {
-          content: "";
-          background: var(--gold);
-        }
+        background-color: var(--gold);
         span {
-          background-color: var(--gold);
+          //background-color: var(--gold);
           color: var(--black);
         }
         &:hover {
-          background-color: transparent;
+          background-color: var(--black);
           color: var(--white);
           span { 
-            background-color: var(--black);
             color: var(--white);
-          }
-          &::before {
-            background-color: var(--black);
           }
         }
     }
@@ -136,8 +128,9 @@
     .btn-primary {
         &:hover {
             color: var(--black);
+            background-color: var(--gold);
             span { 
-                background-color: var(--gold);
+                //background-color: var(--gold);
                 color: var(--black);
                 svg {
                 color: var(--black);

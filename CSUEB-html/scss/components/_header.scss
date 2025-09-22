@@ -66,6 +66,9 @@
     }
     span {
       padding: 0.50rem 0.75rem 0.50rem 0.5rem;
+      svg{
+        margin-top: rem.convert(-4px);
+      }
     }
   }
   .btn-hover-yellow {

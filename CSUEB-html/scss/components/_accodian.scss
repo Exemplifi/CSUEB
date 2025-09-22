@@ -193,13 +193,7 @@
         }
       }
 
-      h3,
-      h4,
-      h5,
-      h6 {
-        margin-top: rem.convert(16px) !important;
-      }
-
+      
       @include media-breakpoint-up(sm) {
         width: 90%;
       }

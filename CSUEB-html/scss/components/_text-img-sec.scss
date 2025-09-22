@@ -443,7 +443,7 @@
         }
       }
 
-      a {
+      a:not([class]) {
         text-decoration: underline;
         text-decoration-thickness: rem.convert(1.5px);
         text-underline-offset: rem.convert(5px);
@@ -489,7 +489,7 @@
     }
 
     &.bg-black {
-      a {
+      a:not([class]) {
         @extend .link--hover-white;
       }
     }
@@ -1220,7 +1220,7 @@
           margin-bottom: 2rem;
         }
 
-        a {
+        a:not([class]), a:not(.btn) {
           text-decoration-line: underline;
           text-decoration-style: solid;
           text-decoration-skip-ink: none;
