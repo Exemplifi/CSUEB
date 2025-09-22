@@ -878,15 +878,17 @@ html[hc="a4"] {
         }
     }
 
-    .home-hero-sec{
+    .home-hero-sec {
         &::after {
             background: linear-gradient(0deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.2) 100%);
-    
+
         }
-        .btn-secondary{
-            &:hover{
+
+        .btn-secondary {
+            &:hover {
                 background-color: var(--white) !important;
-                *{
+
+                * {
                     color: var(--black) !important;
                 }
             }
@@ -1006,6 +1008,7 @@ html[hc="a4"] {
 
     .bright-future-swiper {
         .slide-card {
+
             &.teal-hover:hover,
             &.gold-hover:hover,
             &.purple-hover:hover {
@@ -1016,17 +1019,26 @@ html[hc="a4"] {
             }
         }
     }
-    .key-feature-sec{
-        .btn-secondary{
-            &:hover{
+
+    .key-feature-sec {
+        .btn-secondary {
+            &:hover {
                 background-color: var(--white) !important;
-                *{
+
+                * {
                     color: var(--black) !important;
                 }
             }
         }
+
         &::after {
             background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%);
+        }
+    }
+
+    .event-sec{
+        &:after {
+            opacity: 0.6;
         }
     }
 }
