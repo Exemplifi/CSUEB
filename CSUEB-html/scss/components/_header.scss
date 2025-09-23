@@ -59,6 +59,9 @@
   }
   .menu-btn {
     font-weight: bold;
+    svg{
+      margin-top: -3px;
+    }
   }
   .dropdown-toggle.btn-primary {
     &::after {

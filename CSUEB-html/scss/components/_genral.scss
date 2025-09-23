@@ -838,6 +838,11 @@ section.bg-white.section-with-padding+section.bg-white {
             padding-bottom: 0 !important;
         }
     }
+    &.bg-white{
+        &:has(+ .white-bg) {
+            padding-bottom: 0 !important;
+        }
+    }
 }
 
 .heading-gray-icon {

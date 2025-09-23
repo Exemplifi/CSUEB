@@ -830,7 +830,7 @@
 
 .full-img-text-sec {
   .content-section {
-    margin-top: rem.convert(21px);
+    //margin-top: rem.convert(21px);
 
     @include media-breakpoint-down(md) {
       margin-top: rem.convert(16px);

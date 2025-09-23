@@ -140,7 +140,7 @@
   .yellow-stars {
     position: absolute;
     z-index: 4;
-    right: rem.convert(15px);
+    right: rem.convert(16px);
     height: 100%;
     width: 100%;
     max-width: rem.convert(414px);
@@ -148,13 +148,13 @@
     top: rem.convert(51px);
     @include media-breakpoint-down(xl) {
       top: rem.convert(24px);
-      right: -3.6875rem;
+      //right: rem.convert(4px);
       max-width: rem.convert(316px);
       max-height: rem.convert(140px);
     }
     @include media-breakpoint-down(md) {
       top: rem.convert(24px);
-      right: rem.convert(-48px);
+      right: rem.convert(4px);
       max-width: rem.convert(205px);
       max-height: rem.convert(96px);
     }

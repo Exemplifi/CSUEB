@@ -405,8 +405,7 @@
 
 .inner-hero-full-image {
   position: relative;
-  height: rem.convert(284px);
-
+  min-height: rem.convert(284px);
   &:not(.no-image) {
     @include media-breakpoint-up(md) {
       min-height: rem.convert(384px);
@@ -457,7 +456,6 @@
   .full-img-hero-wrap {
     img {
       object-fit: cover;
-
       &.small-height {
         object-fit: contain;
         //margin-top: rem.convert(48px);
@@ -467,6 +465,9 @@
           //margin-top: rem.convert(32px);
         }
 
+      }
+      &:not(.small-height) {
+        min-height: rem.convert(284px);
       }
     }
   }

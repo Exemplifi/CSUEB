@@ -1023,6 +1023,9 @@ section.bg-white.section-with-padding + section.bg-white {
 .section.bg-white.side-nav-with-content:has(+ .bg-white.contact-us-sec) {
   padding-bottom: 0 !important;
 }
+.section.bg-white:has(+ .white-bg) {
+  padding-bottom: 0 !important;
+}
 
 .heading-gray-icon img {
   margin-top: 0 !important;
@@ -1676,6 +1679,9 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 .main-header .menu-btn {
   font-weight: bold;
+}
+.main-header .menu-btn svg {
+  margin-top: -3px;
 }
 .main-header .dropdown-toggle.btn-primary::after {
   display: none;
@@ -3287,7 +3293,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .whats-next-section .yellow-stars {
   position: absolute;
   z-index: 4;
-  right: 0.9375rem;
+  right: 1rem;
   height: 100%;
   width: 100%;
   max-width: 25.875rem;
@@ -3297,7 +3303,6 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 @media (max-width: 1199.98px) {
   .whats-next-section .yellow-stars {
     top: 1.5rem;
-    right: -3.6875rem;
     max-width: 19.75rem;
     max-height: 8.75rem;
   }
@@ -3305,7 +3310,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 @media (max-width: 767.98px) {
   .whats-next-section .yellow-stars {
     top: 1.5rem;
-    right: -3rem;
+    right: 0.25rem;
     max-width: 12.8125rem;
     max-height: 6rem;
   }
@@ -4782,9 +4787,6 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   line-height: 1.2;
 }
 
-.full-img-text-sec .content-section {
-  margin-top: 1.3125rem;
-}
 @media (max-width: 767.98px) {
   .full-img-text-sec .content-section {
     margin-top: 1rem;
@@ -5954,7 +5956,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 
 .inner-hero-full-image {
   position: relative;
-  height: 17.75rem;
+  min-height: 17.75rem;
 }
 @media (min-width: 768px) {
   .inner-hero-full-image:not(.no-image) {
@@ -6010,6 +6012,9 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .inner-hero-full-image .full-img-hero-wrap img.small-height {
   object-fit: contain;
   max-width: 1312px !important;
+}
+.inner-hero-full-image .full-img-hero-wrap img:not(.small-height) {
+  min-height: 17.75rem;
 }
 .inner-hero-full-image:has(.full-img-hero-wrap img.small-height) {
   background: var(--grey-800);
