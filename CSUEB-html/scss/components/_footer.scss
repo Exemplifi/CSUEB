@@ -6,8 +6,21 @@
 
   .address-sec {
     margin-bottom: 2rem;
+    a{
+      transition: all 0.4s ease-in-out;
+      text-decoration-thickness: 0.5px;
+      text-underline-offset: 3.5px;
+      &:hover{
+        color: var(--white);
+        text-decoration-color: transparent;
+      }
+    }
     @include media-breakpoint-up(md) {
       margin-bottom: 0;
+    }
+    @include media-breakpoint-up(sm) {
+      
+      
     }
   }
 

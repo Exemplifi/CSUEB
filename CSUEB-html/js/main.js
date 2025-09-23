@@ -1135,12 +1135,26 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// script for empty headings
 document.querySelectorAll("h1, h2, h3, h4, h5, h6, p").forEach(el => {
-  if (el.textContent.trim() === "" || el.innerHTML.trim() === "&nbsp;") {
-    el.style.display = "none";
-    el.setAttribute("aria-hidden", "true");
+  // Remove whitespace and &nbsp; in case of empty headings
+  const textOnly = el.textContent.replace(/\u00A0/g, "").trim();
+  // Check if there's *any* non-whitespace text
+  if (textOnly === "") {
+    // But only hidden if there are no child elements
+    if (el.children.length === 0) {
+      el.setAttribute("aria-hidden", "true");
+    }
   }
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Select all td and th elements
+  const cells = document.querySelectorAll("td, th");
+
+  // Remove inline style attribute from each
+  cells.forEach(cell => {
+    cell.removeAttribute("style");
+  });
 });
 
 // script for add aria-hidden true for star icon svg

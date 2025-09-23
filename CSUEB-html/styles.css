@@ -447,7 +447,6 @@ ul {
   height: auto !important;
 }
 .section-heading .heading-description iframe {
-  margin-top: 2rem !important;
   width: 100% !important;
   min-height: 25rem !important;
 }
@@ -1019,7 +1018,7 @@ section.bg-white.section-with-padding + section.bg-white {
 }
 
 .section .section:last-child {
-  padding: 0;
+  padding-bottom: 0;
 }
 .section.bg-white.side-nav-with-content:has(+ .bg-white.contact-us-sec) {
   padding-bottom: 0 !important;
@@ -1174,6 +1173,38 @@ html[hc=a4] .key-feature-sec::after {
 html[hc=a2] .event-sec:after,
 html[hc=a4] .event-sec:after {
   opacity: 0.6;
+}
+html[hc=a2] .img-verlap-link-sec .img-verlap-link-card::after,
+html[hc=a4] .img-verlap-link-sec .img-verlap-link-card::after {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0.2) 73.29% 71.29%);
+}
+@media (min-width: 768px) {
+  html[hc=a2] .img-verlap-link-sec .img-verlap-link-card:hover .overlay,
+  html[hc=a4] .img-verlap-link-sec .img-verlap-link-card:hover .overlay {
+    background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.2)) 0%, var(--black-40, rgba(0, 0, 0, 0.2)) 100%), var(--teal-80, rgba(0, 160, 173, 0.4)) !important;
+  }
+}
+@media (min-width: 768px) {
+  html[hc=a2] .card-color-hover:hover .overlay, .flip-tiles-gallery-grid .gallery-item html[hc=a2] a:hover .overlay,
+  html[hc=a2] .flip-tiles-gallery-grid .gallery-item a:hover .overlay,
+  html[hc=a2] .flip-tiles-gallery-grid .gallery-item:nth-child(3n+1) a:hover .overlay,
+  html[hc=a4] .card-color-hover:hover .overlay,
+  .flip-tiles-gallery-grid .gallery-item html[hc=a4] a:hover .overlay,
+  html[hc=a4] .flip-tiles-gallery-grid .gallery-item a:hover .overlay,
+  html[hc=a4] .flip-tiles-gallery-grid .gallery-item:nth-child(3n+1) a:hover .overlay {
+    background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.2)) 0%, var(--black-40, rgba(0, 0, 0, 0.2)) 100%), var(--purple-80, rgba(122, 35, 106, 0.1)) !important;
+  }
+}
+html[hc=a2] .card-color-hover::after, .flip-tiles-gallery-grid .gallery-item html[hc=a2] a::after,
+html[hc=a2] .flip-tiles-gallery-grid .gallery-item a::after,
+html[hc=a4] .card-color-hover::after,
+.flip-tiles-gallery-grid .gallery-item html[hc=a4] a::after,
+html[hc=a4] .flip-tiles-gallery-grid .gallery-item a::after {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0.3) 54.29%) !important;
+}
+html[hc=a2] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .button-grp a *,
+html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .button-grp a * {
+  color: var(--white);
 }
 
 .btn {
@@ -1826,6 +1857,7 @@ html[hc=a4] .event-sec:after {
     background-repeat: no-repeat;
     padding-top: 2.5rem;
     padding-inline: 1.5rem;
+    overflow-y: auto;
   }
 }
 @media (min-width: 1200px) {
@@ -2405,6 +2437,15 @@ html[hc=a4] .event-sec:after {
 }
 .footer .address-sec {
   margin-bottom: 2rem;
+}
+.footer .address-sec a {
+  transition: all 0.4s ease-in-out;
+  text-decoration-thickness: 0.5px;
+  text-underline-offset: 3.5px;
+}
+.footer .address-sec a:hover {
+  color: var(--white);
+  text-decoration-color: transparent;
 }
 @media (min-width: 768px) {
   .footer .address-sec {
@@ -5084,14 +5125,6 @@ html[hc=a4] .event-sec:after {
     padding-left: 0.25rem;
   }
 }
-.side-nav-with-content .side-nav-wrap .right-content .text-button-sec {
-  padding-right: 4rem;
-}
-@media (max-width: 1199.98px) {
-  .side-nav-with-content .side-nav-wrap .right-content .text-button-sec {
-    padding-right: 1.25rem;
-  }
-}
 .side-nav-with-content .side-nav-wrap .right-content .message-content-sec ul {
   list-style: disc;
   padding-left: 1rem;
@@ -6479,7 +6512,7 @@ html[hc=a4] .event-sec:after {
   height: auto !important;
 }
 .accodian-global .accordion-collapse .accordion-body iframe {
-  margin-top: 1.5rem !important;
+  margin-top: 1rem !important;
   width: 100% !important;
   min-height: 25rem !important;
 }
@@ -6863,7 +6896,7 @@ html[hc=a4] .event-sec:after {
   height: auto !important;
 }
 .tabbed-section .tab-content .tab-content-box iframe {
-  margin-top: 2rem !important;
+  margin-top: 1rem !important;
   margin-bottom: 16 px !important;
   width: 100% !important;
   min-height: 25rem !important;
@@ -6928,7 +6961,6 @@ html[hc=a4] .event-sec:after {
 table {
   width: 100% !important;
   caption-side: top;
-  margin-top: 2rem !important;
 }
 table:not(caption) > * > * {
   padding: 0.5rem 0.5rem;
@@ -6941,18 +6973,6 @@ table tr {
 }
 table tr:hover {
   background-color: var(--light-gray) !important;
-}
-table tr:first-child:not(:has(td p)) {
-  border-bottom: 2px solid var(--gold) !important;
-}
-table tr:first-child:has(td p) {
-  border-bottom: none !important;
-}
-table tr:first-child:has(td p) + tr {
-  border-bottom: 2px solid var(--gold) !important;
-}
-table:has(thead) tr:first-child:not(:has(td p)) {
-  border-bottom: 1px solid var(--grey-800) !important;
 }
 table thead {
   border-bottom: 2px solid var(--gold) !important;

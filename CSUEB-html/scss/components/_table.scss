@@ -60,26 +60,9 @@ table {
       &:hover{
         background-color: var(--light-gray) !important;
       }
-      &:first-child{
-        &:not(:has(td p)){
-          border-bottom: 2px solid var(--gold) !important;
-        }
-        &:has(td p){
-          border-bottom: none !important;
-          + tr{
-            border-bottom: 2px solid var(--gold) !important;
-          }
-        }
-      }
+   
   }
-  &:has(thead){
-    tr:first-child:not(:has(td p)) {
-      border-bottom: 1px solid var(--grey-800) !important;
-  }
-  }
-
-  margin-top: rem.convert(32px) !important;
-
+ 
   thead {
       border-bottom: 2px solid var(--gold) !important;
       th {

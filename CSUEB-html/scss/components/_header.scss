@@ -241,6 +241,7 @@
         background-repeat: no-repeat;
         padding-top: rem.convert(40px);
         padding-inline: rem.convert(24px);
+        overflow-y: auto;
       }
 
       @include media-breakpoint-up(xl) {
