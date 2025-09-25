@@ -213,7 +213,7 @@ section.bg-white+section.bg-white {
 section.bg-black+section.bg-black {
     padding-top: 0;
 }
-section.bg-black.key-feature-sec+section.bg-black.key-feature-sec {
+section.bg-black.key-feature-sec+section.bg-black.key-feature-sec, section.bg-black + .bg-black.key-feature-sec  {
     padding-top: rem.convert(96px);
     @include media-breakpoint-down(md) {
         padding-top: rem.convert(72px);

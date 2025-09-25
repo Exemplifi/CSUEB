@@ -554,9 +554,13 @@
 
 
 .btn.btn-primary-close {
+  background-color: var(--dark-red) !important;
   &::before {
     background-color: #BC0829 !important;
     content: "";
+  }
+  &:hover{
+    background-color: var(--dark-red) !important;
   }
 
   span {

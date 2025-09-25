@@ -486,11 +486,11 @@ section.bg-black + section.bg-black {
   padding-top: 0;
 }
 
-section.bg-black.key-feature-sec + section.bg-black.key-feature-sec {
+section.bg-black.key-feature-sec + section.bg-black.key-feature-sec, section.bg-black + .bg-black.key-feature-sec {
   padding-top: 6rem;
 }
 @media (max-width: 767.98px) {
-  section.bg-black.key-feature-sec + section.bg-black.key-feature-sec {
+  section.bg-black.key-feature-sec + section.bg-black.key-feature-sec, section.bg-black + .bg-black.key-feature-sec {
     padding-top: 4.5rem;
   }
 }
@@ -2113,9 +2113,15 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   padding-bottom: 1.5rem;
 }
 
+.btn.btn-primary-close {
+  background-color: var(--dark-red) !important;
+}
 .btn.btn-primary-close::before {
   background-color: #BC0829 !important;
   content: "";
+}
+.btn.btn-primary-close:hover {
+  background-color: var(--dark-red) !important;
 }
 .btn.btn-primary-close span {
   padding-left: 0.25rem;
