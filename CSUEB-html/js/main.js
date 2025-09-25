@@ -143,11 +143,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Header search dropdown toggle
   const searchBtn = document.querySelector('.search__btn');
+  const langBtn  = document.querySelector('.language-dropdown .dropdown-toggle');
+  const langDropdown = document.querySelector('.language-dropdown .dropdown-menu');
   const searchDropdown = document.querySelector('.header-search-dropdown');
   if (searchBtn && searchDropdown) {
     searchBtn.addEventListener('click', function (e) {
       e.stopPropagation();
       searchDropdown.classList.toggle('d-none');
+      langDropdown.classList.remove('show');
+      langBtn.classList.remove('show');
+      langBtn.setAttribute('aria-expanded', 'false');
       if (!searchDropdown.classList.contains('d-none')) {
         const input = searchDropdown.querySelector('.search-input');
         if (input) input.focus();

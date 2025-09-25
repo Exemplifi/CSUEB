@@ -55,7 +55,7 @@
 
     .tagline {
       .highlight {
-        color: var(--red); // Pinkish red
+        color: var(--gold); 
       }
     }
 
@@ -151,6 +151,12 @@
     //   }
     // } 
     &.img-clip-path {
+      .img-wrapper{
+        &::before{
+          background-image: url('data:image/svg+xml,<svg width="940" height="732" viewBox="0 0 940 732" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M191.859 732H939.822V0H0L0.00011756 466L191.859 732ZM12 462.124V12H469.911H927.822V720H198L12 462.124Z" fill="%23D50032"/></svg>');        ;
+        }
+      }
+      
       .star-svg {
         position: absolute;
         z-index: 3;
@@ -509,6 +515,10 @@
 .no-image {
   height: auto;
   padding-top: rem.convert(100px);
+  min-height: rem.convert(164px);
+  @include media-breakpoint-down(lg) {
+    min-height: rem.convert(100px);
+  }
 
   @include media-breakpoint-up(md) {
     padding-top: 7rem;

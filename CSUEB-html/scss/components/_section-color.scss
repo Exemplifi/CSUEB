@@ -110,7 +110,13 @@
                 }
             }
         }
+        
     }
+    .btn-primary{
+        &:focus-visible{
+         outline: var(--white) auto 1px;
+        }
+     }
     .btn.btn-secondary-white {
         &:hover {
             background: rgba(253, 194, 90, 0.10);

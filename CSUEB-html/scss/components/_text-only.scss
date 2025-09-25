@@ -757,7 +757,7 @@
     }
   }
   .social-icon {
-    display: none;
+    //display: none;
     @include media-breakpoint-up(md) {
       display: block;
     }
@@ -771,6 +771,11 @@
       }
       @include media-breakpoint-up(md) {
         justify-content: flex-end;
+      }
+      @include media-breakpoint-down(md){
+        padding-left: 0;
+        gap: rem.convert(12px);
+        margin-top: rem.convert(16px);
       }
       a {
         //transition: filter 0.3s ease;

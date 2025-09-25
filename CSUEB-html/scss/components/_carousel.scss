@@ -296,6 +296,9 @@
         &.swiper-pagination-bullet-active {
           background: var(--gold);
         }
+        &:focus-visible{
+          background: var(--gold);
+        }
       }
   }
 

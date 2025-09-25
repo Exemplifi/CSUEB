@@ -33,34 +33,24 @@
     position: relative;
     padding: 0;
     padding-left: rem.convert(14px);
+    border: 1px solid transparent;
+      box-sizing: border-box;
     clip-path: polygon(0 0,
         100% 0,
         100% 100%,
         14px 100%,
         0 calc(100% - 20px));
 
-    &::before {
-      // content: "";
-      position: absolute;
-      left: 0;
-      width: 0.875rem;
-      height: 100%;
-      top: 0;
-      z-index: 9;
-      background: var(--red);
-      clip-path: polygon(20% 0%, 108% 0, 120% 20%, 100% 100%, 100% 100%, 0% 60%, 0 0);
-      transition: all 0.3s ease-in-out;
-      color: var(--white);
+    &:focus-visible {
+      outline: var(--black) auto 1px;
+      
     }
 
     span {
       display: block;
-      //background-color: var(--red);
-      
       font-weight: $bold !important;
       //transition: all 0.3s ease-in-out;
       padding: 0.75rem 1.5rem 0.75rem 0.75rem;
-
       @include media-breakpoint-down(md) {
         padding: 0.50rem 1.5rem 0.50rem 0.75rem;
       }
@@ -81,6 +71,8 @@
       }
     }
 
+    
+
     &.disabled {
       opacity: 0.4;
     }
@@ -94,6 +86,7 @@
       &:hover {
         color: var(--black);
         background-color: var(--gold);
+
         span {
           //background-color: var(--gold);
           //color: var(--black);
@@ -114,6 +107,8 @@
     }
 
     &.btn-dark {
+      background-color: var(--dark-grey);
+
       svg {
         color: var(--white);
 
@@ -123,7 +118,7 @@
       }
 
       &::before {
-        content: "";
+        //content: "";
         background: var(--dark-grey);
       }
 
@@ -132,16 +127,15 @@
       }
 
       &:hover {
-        span {
-          //background-color: #5C5C5C;
 
-        }
+        background-color: var(--red);
 
         &::before {
           background-color: #5C5C5C;
         }
       }
     }
+
   }
 
   &.btn-primary-gray {
@@ -205,10 +199,11 @@
     padding: 0;
     padding-left: rem.convert(14px);
     clip-path: polygon(0 0,
-    100% 0,
-    100% 100%,
-    14px 100%,
-    0 calc(100% - 20px));
+        100% 0,
+        100% 100%,
+        14px 100%,
+        0 calc(100% - 20px));
+
 
     &::before {
       //content: "";
