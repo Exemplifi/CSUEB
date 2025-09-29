@@ -759,19 +759,19 @@
   .social-icon {
     //display: none;
     @include media-breakpoint-up(md) {
-      display: block;
+      display: flex;
+      justify-content: flex-end;
     }
     .social-icons {
       display: flex;
       flex-direction: row;
-      align-items: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
       gap: 1rem;
       li{
         list-style-type: none !important;
       }
-      @include media-breakpoint-up(md) {
-        justify-content: flex-end;
-      }
+     
       @include media-breakpoint-down(md){
         padding-left: 0;
         gap: rem.convert(12px);

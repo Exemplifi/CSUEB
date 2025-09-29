@@ -879,29 +879,7 @@ function initAccessibilityFeatures() {
     }
   });
 
-  // Enhanced error handling with improved console output and accessibility
-  window.addEventListener('error', function (e) {
-    // Avoid generic "JavaScript error:" console message; provide more context
-    let errorMsg = 'JavaScript error: ';
-    if (e && e.error && e.error.stack) {
-      errorMsg += e.error.stack;
-    } else if (e && e.message) {
-      errorMsg += e.message;
-      if (e.filename) {
-        errorMsg += ` at ${e.filename}:${e.lineno}:${e.colno}`;
-      }
-    } else {
-      errorMsg += JSON.stringify(e);
-    }
-    // Only log if not already logged by browser
-    if (window && window.console && typeof window.console.error === 'function') {
-      window.console.error(errorMsg);
-    }
-    // Announce error to screen readers for accessibility
-    if (typeof announceToScreenReader === 'function') {
-      announceToScreenReader('An error occurred on the page. Please try refreshing or contact support if the problem persists.');
-    }
-  });
+
 
   // Enhanced loading states
   const loadingElements = document.querySelectorAll('.loading');
