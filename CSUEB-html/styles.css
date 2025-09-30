@@ -1587,13 +1587,21 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   right: 0;
   top: 0;
   background: transparent;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, top 0.3s ease-in-out;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, top 0.8s ease-in-out;
   padding-top: 0.375rem;
   padding-inline: 0.375rem;
 }
+@media (max-width: 575.98px) {
+  .main-header .alert {
+    font-size: 0.75rem;
+  }
+}
 .main-header.upwards {
-  top: -142px;
+  top: -8.875rem;
   transition: top 0.3s ease-in-out;
+}
+.main-header.upwards.alert-present {
+  top: -25rem;
 }
 @media (min-width: 992px) {
   .main-header {

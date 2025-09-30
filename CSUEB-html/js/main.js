@@ -1237,6 +1237,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function adjustHeroPadding() {
   const header = document.querySelector('.main-header');
   const alert = header?.querySelector('.alert');
+  header.classList.add('alert-present');
   if (window.innerWidth <= 991.98 && header && alert) {
     const hero = document.querySelector('.inner-hero-section, .home-hero-sec');
     if (hero) {
@@ -1267,12 +1268,16 @@ window.addEventListener('resize', adjustHeroPadding);
 
 // When alert is closed → remove padding (only below max-width)
 document.addEventListener('click', function (e) {
+  const header = document.querySelector('.main-header');
   if (window.innerWidth <= 991.98 && e.target.classList.contains('btn-close')) {
     const hero = document.querySelector('.inner-hero-section, .home-hero-sec');
+    
+
     if (hero) {
       hero.style.paddingTop = null; // reset
     }
   }
+  header.classList.remove('alert-present');
 });
 // Flip Tiles Gallery
 
