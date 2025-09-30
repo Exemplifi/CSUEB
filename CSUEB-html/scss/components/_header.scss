@@ -877,6 +877,9 @@
     @include media-breakpoint-down(md) {
       top: calc(100% - 6px) !important;
     }
+    @include media-breakpoint-down(sm) {
+      top: calc(100% - 6px) !important;
+    }
 
     .dropdown-item:active {
       background-color: var(--red) !important;

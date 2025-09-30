@@ -1,28 +1,6 @@
 
-
-// @keyframes zoomin {
-//   0% {
-//     transform: scale(1);
-//   }
-//   50% {
-//     transform: scale(1.05);
-//   }
-//   100% {
-//     transform: scale(1);
-//   }
-// }
-
 .gallery-item {
   display: block;
-  
-  // img {
-  //   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.15);
-  //   transition: box-shadow 0.2s;
-  // }
-  
-  // &:hover img {
-  //   box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.35);
-  // }
 }
 
 .lightbox-modal {
@@ -32,9 +10,9 @@
 
   .btn-close {
     position: absolute;
-    top: 1.25rem;
-    right: 1.25rem;
-    font-size: 1.25rem;
+    top: rem.convert(20px);
+    right: rem.convert(20px);
+    font-size: rem.convert(20px);
     z-index: 10;
     filter: invert(1) grayscale(100);
   }
@@ -94,12 +72,12 @@
         right: 0;
         bottom: 0;
         left: 0;
-        padding-bottom: 1rem;
+        padding-bottom: rem.convert(16px);
         background-color: var(--lightbox);
         color: var(--white) !important;
         text-align: center;
         z-index: 3;
-        padding-left: 1rem;                                                                                     
+        padding-left: rem.convert(16px);                                                                                     
       }
 
       img {
@@ -118,11 +96,11 @@
       }
 
       &-prev {
-        left: 0.5rem;
+        left: rem.convert(8px);
       }
 
       &-next {
-        right: 0.5rem;
+        right: rem.convert(8px);
       }
     }
   }
@@ -162,8 +140,8 @@
 
 .bi {
   display: inline-block;
-  width: 1em;
-  height: 1em;
+  width: rem.convert(16px);
+  height: rem.convert(16px);
   vertical-align: -0.035em;
   fill: currentcolor;
 }

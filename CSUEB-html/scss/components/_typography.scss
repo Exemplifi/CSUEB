@@ -32,10 +32,10 @@ h1, .h1 {
   font-weight: $semibold;
   line-height: 1;
   @include media-breakpoint-down(xl) {
-    font-size:4rem;
+    font-size: rem.convert(64px);
   }
   @include media-breakpoint-down(lg) {
-    font-size:3rem;
+    font-size: rem.convert(48px);
     line-height: 1.10; 
   }
 }
@@ -43,7 +43,7 @@ h1, .h1 {
 
 h2, .h2 {
   font-family: var(--heading-font-family);
-  font-size: 3rem;
+  font-size: rem.convert(48px);
   font-style: normal;
   font-weight: $semibold;
   line-height:1.10; 
@@ -56,17 +56,17 @@ h2, .h2 {
 
 h3, .h3 {
   font-family: var(--body-font-family);
-  font-size: 1.875rem;
+  font-size: rem.convert(30px);
   font-style: normal;
   font-weight: $semibold;
   line-height: 1.2; /* 2.25rem */
   letter-spacing: -0.05625rem;
   @include media-breakpoint-down(xl) {
-    font-size: 1.5rem;
+    font-size: rem.convert(24px);
     line-height: 1.4; /* 1.575rem */
   }
   @include media-breakpoint-down(lg) {
-    font-size: 1.5rem;
+    font-size: rem.convert(24px);
     line-height: 1.2; /* 2.55rem */
     letter-spacing: normal;
   }
@@ -75,19 +75,19 @@ h3, .h3 {
 
 h4, .h4 {
   font-family: var(--body-font-family);
-  font-size: 1.5rem;
+  font-size: rem.convert(24px);
   font-style: normal;
   font-weight: $semibold;
   line-height: 1.2; /* 1.8rem */
  
   @include media-breakpoint-down(lg) {
-    font-size: 1.125rem;
+    font-size: rem.convert(20px);
     line-height: 1.4; /* 1.575rem */  
   }
 }
 h5, .h5  {
   font-family: var(--body-font-family);
-  font-size: 1.125rem;
+  font-size: rem.convert(20px);
   font-style: normal;
   font-weight: $semibold;
   line-height: 1.4; /* 1.575rem */
@@ -95,49 +95,49 @@ h5, .h5  {
 
 .big-heading {
   font-family: var(--heading-font-family);
-  font-size: 4rem;
+  font-size: rem.convert(64px);
   font-style: normal;
   font-weight: 600;
   line-height: 1.1; /* 4.4rem */
   letter-spacing: -0.12rem;
    @include media-breakpoint-down(lg) {
-    font-size: 3rem;
+    font-size: rem.convert(48px);
     letter-spacing: -0.09rem;
   }
 }
 
 .h3-headng {
   font-family: var(--body-font-family);
-  font-size: 1.875rem;
+  font-size: rem.convert(30px);
   font-style: normal;
   font-weight: $semibold;
   line-height: 1.2; /* 2.25rem */
   letter-spacing: -0.05625rem;
   @include media-breakpoint-down(xl) {
-    font-size: 1.5rem;
+    font-size: rem.convert(24px);
     line-height: 1.4; /* 1.575rem */
   }
   @include media-breakpoint-down(lg) {
-    font-size: 1.125rem;
+    font-size: rem.convert(20px);
     line-height: 1.4; /* 1.575rem */
   }
 }
 .h4-headng {
   font-family: var(--body-font-family);
-  font-size: 1.5rem;
+  font-size: rem.convert(24px);
   font-style: normal;
   font-weight: $semibold;
   line-height: 1.2; /* 1.8rem */
  
   @include media-breakpoint-down(lg) {
-    font-size: 1.125rem;
+    font-size: rem.convert(18px);
     line-height: 1.4; /* 1.575rem */  
   }
 }
 
 .h5-headng {
   font-family: var(--body-font-family);
-  font-size: 1.125rem;
+  font-size: rem.convert(18px);
   font-style: normal;
   font-weight: $semibold;
   line-height: 1.4; /* 1.575rem */
@@ -146,7 +146,7 @@ h5, .h5  {
 
 .text-smaller  {
   font-family: var(--body-font-family);
-  font-size: 0.75rem;
+  font-size: rem.convert(12px);
   font-style: normal;
   font-weight: 500;
   line-height: 1.75; /* 1.3125rem */

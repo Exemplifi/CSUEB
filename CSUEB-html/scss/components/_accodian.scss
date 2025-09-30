@@ -10,8 +10,8 @@
       width: 100%;
       border: none;
       background-color: var(--gold);
-      padding: 2rem;
-      padding-right: 4rem;
+      padding: rem.convert(32px);
+      padding-right: rem.convert(64px);
       margin-bottom: 0;
       margin-top: rem.convert(12px);
       transition: all 0.3s ease-in-out;
@@ -35,35 +35,35 @@
       }
 
       @include media-breakpoint-down(md) {
-        padding-block: 1.5rem;
-        padding-left: 1rem;
-        padding-right: 3rem;
+        padding-block: rem.convert(24px);
+        padding-left: rem.convert(16px);
+        padding-right: rem.convert(48px);
       }
 
       &.h3-headng {
         @include media-breakpoint-down(lg) {
-          font-size: 1.5rem;
-          line-height: 120%;
+          font-size: rem.convert(24px);
+          line-height: 1.2;
           /* 1.8rem */
         }
       }
 
       .accordion-icon {
         display: flex;
-        width: 2rem;
-        height: 2rem;
+        width: rem.convert(32px);
+        height: rem.convert(32px);
         justify-content: center;
         align-items: center;
         position: absolute;
-        right: 2rem;
-        top: 31px;
+        right: rem.convert(32px);
+        top: rem.convert(31px);
 
         @include media-breakpoint-down(md) {
           top: rem.convert(26px);
-          right: 1rem;
-          width: 1.5rem;
-          height: 1.5rem;
-          padding: 0.3rem;
+          right: rem.convert(16px);
+          width: rem.convert(24px);
+          height: rem.convert(24px);
+          padding: rem.convert(4.8px);
         }
       }
 
@@ -82,7 +82,7 @@
 
       &:not(.collapsed) {
         background-color: var(--light-gray);
-        padding-bottom: 1.5rem;
+        padding-bottom: rem.convert(24px);
 
         .accordion-icon {
           transition: all 0.3s ease-in-out;
@@ -119,8 +119,8 @@
     background-color: var(--light-gray);
 
     .accordion-body {
-      padding-inline: 2rem;
-      padding-bottom: 1.5rem;
+      padding-inline: rem.convert(32px);
+      padding-bottom: rem.convert(24px);
       p:empty{
         display: none;
       }
@@ -199,16 +199,16 @@
       }
 
       @include media-breakpoint-up(md) {
-        padding-inline: 3rem;
+        padding-inline: rem.convert(48px);
       }
 
       @include media-breakpoint-up(xl) {
-        padding-inline: 3rem;
+        padding-inline: rem.convert(48px);
         width: 85%;
       }
 
       p {
-        margin-bottom: 8px;
+        margin-bottom: rem.convert(8px);
 
         &:last-child {
           margin-bottom: 0;
@@ -216,10 +216,10 @@
       }
 
       .accordion-body-item {
-        margin-bottom: 1.5rem;
+        margin-bottom: rem.convert(24px);
 
         @include media-breakpoint-down(md) {
-          margin-bottom: 1rem;
+          margin-bottom: rem.convert(16px);
         }
 
         &:last-child {
@@ -229,8 +229,7 @@
         span {
           font-family: var(--body-font-family);
           font-size: rem.convert(14px);
-          line-height: 175%;
-          /* 1.53125rem */
+          line-height: 1.75;
           font-weight: 500;
 
           @include media-breakpoint-down(lg) {
@@ -282,7 +281,7 @@
   .accordion-button.root-item {
     font-weight: bold;
     color: #C5164C; // dark pink title
-    font-size: 1rem;
+    font-size: rem.convert(16px);
     background: none;
     box-shadow: none;
     padding-left: 0;
@@ -296,9 +295,9 @@
     background: none;
     border: none;
     padding-left: 0;
-    font-size: 1rem;
+    font-size: rem.convert(16px);
     font-weight: 500;
-    color: #000;
+    color: var(--black);
     position: relative;
     display: block;
     width: 100%;
@@ -306,7 +305,7 @@
 
     &::before {
       content: "+";
-      color: #000;
+      color: var(--black);
       display: inline-block;
       width: 20px;
       margin-right: 4px;
@@ -326,7 +325,7 @@
     padding-left: 24px;
     font-size: 0.95rem;
     text-decoration: none;
-    color: #000;
+    color: var(--black);
 
     &.active {
       color: #C5164C; // highlight "Create a Folder"

@@ -209,7 +209,7 @@
   }
   .img-clip-path-box{
     .img-wrapper{
-        max-width: 400px;
+        max-width: rem.convert(400px);
     }
   }
 }

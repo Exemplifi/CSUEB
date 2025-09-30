@@ -417,6 +417,7 @@ h5, .h5 {
     font-size: 3rem;                   // 3rem
     letter-spacing: -0.09rem;
   }
+
 }
 
 // Text size variations
@@ -568,21 +569,145 @@ $gold: map.get($site-colors, "gold");
 - **Use rem for typography and spacing** for better accessibility
 - **Use px for borders and small decorative elements** where precise control is needed
 
-### 2. Typography Best Practices
+### 2. Color System Guidelines
+- **Centralize color definitions** in `scss/utils/_color.scss` using CSS custom properties and SCSS variables.
+- **Use semantic color names** (e.g., `--primary`, `--secondary`, `--background`, `--text`, `--error`) for maintainability and clarity.
+- **Reference color variables** (not hard-coded values) throughout all components for consistency and easy theming.
+- **Ensure color contrast ratios** meet accessibility standards (4.5:1 for normal text, 3:1 for large text).
+- **Support theming and high-contrast modes** by overriding custom properties in the appropriate context (e.g., `[hc="a2"]` in `_color.scss`).
+- **Document color usage and intent** in `scss/utils/_color.scss` and in this documentation for clarity.
+- **Example:**
+  ```scss
+  // scss/utils/_color.scss
+  :root {
+    --primary: #b41c18;
+    --secondary: #f5c518;
+    --background: #fff;
+    --text: #222;
+    --error: #d32f2f;
+    // ...other colors
+  }
+  ```
+  Use these variables in your components:
+  ```scss
+  .btn-primary {
+    background-color: var(--primary);
+    color: var(--background);
+  }
+  ```
+
+### 3. Typography Best Practices
 - **Use semantic HTML elements** (h1, h2, h3, etc.) with corresponding CSS classes
 - **Maintain consistent line-height ratios** (1.2 for headings, 1.75 for body text)
 - **Implement responsive typography** using media queries
 - **Use CSS custom properties** for font families to enable easy theming
 
-### 3. Component Organization
-- **One component per file** in the components directory
-- **Use BEM methodology** for class naming when appropriate
-- **Group related styles** together (typography, colors, spacing)
-- **Use mixins for repeated patterns**
+### 4. Component Organization
 
-### 4. Accessibility Considerations
+- **One component per file:**  
+  Place each UI component (e.g., button, card, modal) in its own SCSS file within the `components/` directory. This improves maintainability and makes it easier to locate and update styles for a specific component.
+
+- **Directory structure example:**
+  ```
+  scss/
+    components/
+      _button.scss
+      _card.scss
+      _modal.scss
+      ...
+  ```
+
+- **BEM Methodology for Class Naming:**  
+  Use [BEM (Block Element Modifier)](http://getbem.com/introduction/) for class names to ensure clarity and avoid conflicts.  
+  - **Block:** `.card`
+  - **Element:** `.card__header`
+  - **Modifier:** `.card--highlighted`
+  - Example:
+    ```scss
+    .card { ... }
+    .card__header { ... }
+    .card--highlighted { ... }
+    ```
+
+- **Group Related Styles:**  
+  Organize styles within each component file by grouping related rules together:
+  - **Typography:** Headings, text, font styles
+  - **Colors:** Backgrounds, borders, text color
+  - **Spacing:** Margin, padding, layout
+  - **States:** Hover, focus, active, disabled
+
+- **Use Mixins for Repeated Patterns:**  
+  Abstract repeated style patterns (e.g., button resets, focus indicators, responsive breakpoints) into mixins in a shared `mixins/` directory.  
+  Example:
+    ```scss
+    @include button-reset;
+    @include focus-outline;
+    @include media-breakpoint-down(md) { ... }
+    ```
+
+- **Accessibility:**  
+  - Ensure all interactive components (buttons, links, modals, etc.) include visible focus indicators and are keyboard accessible.
+  - Use semantic HTML structure in markup and provide ARIA attributes as needed.
+  - Test components with screen readers and keyboard navigation.
+
+- **Documentation:**  
+  - At the top of each component file, include a comment describing the component’s purpose, usage, and any dependencies (mixins, variables).
+  - Example:
+    ```scss
+    // _button.scss
+    // Styles for the primary and secondary button components.
+    // Depends on: button-reset mixin, color variables.
+    ```
+
+- **Example Component File (`_button.scss`):**
+    ```scss
+    // _button.scss
+    // Button component styles
+    @use '../utils/mixins' as *;
+    @use '../utils/vars-global' as *;
+
+    .btn {
+      @include button-reset;
+      font-family: var(--body-font-family);
+      font-size: rem.convert(16px);
+      background-color: var(--primary);
+      color: var(--background);
+      border-radius: 4px;
+      padding: rem.convert(12px) rem.convert(24px);
+      cursor: pointer;
+      transition: background 0.2s;
+
+      &:hover,
+      &:focus {
+        background-color: var(--primary-dark);
+        outline: 2px solid var(--focus);
+        outline-offset: 2px;
+      }
+
+      &--secondary {
+        background-color: var(--secondary);
+        color: var(--text);
+      }
+
+      &:disabled,
+      &--disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+    ```
+
+### 5. Accessibility Considerations
 - **Ensure sufficient color contrast** (4.5:1 for normal text, 3:1 for large text)
 - **Use relative units** (rem, em) for better zoom support
+- **Provide focus indicators** for interactive elements
+- **Test with screen readers** and keyboard navigation
+
+### 6. Performance Optimization
+- **Minimize CSS specificity** to avoid conflicts
+- **Use efficient selectors** (avoid deep nesting)
+- **Leverage CSS custom properties** for dynamic theming
+- **Optimize font loading** with appropriate font-display values
 - **Provide focus indicators** for interactive elements
 - **Test with screen readers** and keyboard navigation
 
