@@ -1179,6 +1179,7 @@ if (stars.length > 0) {
   stars.forEach(svg => {
     if (!svg.hasAttribute('aria-hidden')) {
       svg.setAttribute('aria-hidden', 'true');
+      svg.setAttribute('focusable', 'false');
     }
   });
 }
