@@ -295,6 +295,39 @@ function initInnerHeroSlider() {
 }
 
 function initTextIconSlider() {
+  // Get all slides
+  const slider = document.querySelector('.text-icon-slider .swiper-wrapper');
+  const slides = slider ? Array.from(slider.children) : [];
+  const totalSlides = slides.length;
+
+  // Show only 3 new items on each page load, randomize which 3
+  if (totalSlides > 3) {
+    // Remove all slides first
+    slides.forEach(slide => slide.remove());
+
+    // Show slides in groups of 3, cycling through them on each page load
+    // Use localStorage to persist the current group index
+    let groupIndex = parseInt(localStorage.getItem('textIconSliderGroupIndex') || '0', 10);
+    const groupSize = 3;
+    const totalGroups = Math.ceil(totalSlides / groupSize);
+
+    // Calculate start and end indices for the current group
+    const startIdx = groupIndex * groupSize;
+    const endIdx = startIdx + groupSize;
+
+    // Select the current group of slides
+    let selectedSlides = slides.slice(startIdx, endIdx);
+
+    // Update group index for next page load
+    groupIndex = (groupIndex + 1) % totalGroups;
+    localStorage.setItem('textIconSliderGroupIndex', groupIndex.toString());
+    // Select first 3
+    const selected = selectedSlides.slice(0, 3);
+
+    // Append selected slides
+    selected.forEach(slide => slider.appendChild(slide));
+  }
+
   new Swiper(".text-icon-slider", {
     slidesPerView: 1.2,
     spaceBetween: 20,
@@ -1199,6 +1232,47 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 3000); 
 }); 
 
+// Only add dynamic padding for Hero section if .main-header has .alert
+function adjustHeroPadding() {
+  const header = document.querySelector('.main-header');
+  const alert = header?.querySelector('.alert');
+  if (window.innerWidth <= 991.98 && header && alert) {
+    const hero = document.querySelector('.inner-hero-section, .home-hero-sec');
+    if (hero) {
+      let headerHeight;
+      if (hero.classList.contains('home-hero-sec')) {
+        headerHeight = header.offsetHeight;
+      } else {
+        headerHeight = header.offsetHeight - 100;
+      }
+      if (hero.classList.contains('no-image')) {
+        headerHeight = header.offsetHeight;
+      }
+      hero.style.paddingTop = headerHeight + 'px';
+    }
+  } else {
+    // Remove padding if above max-width or if no alert present
+    document.querySelectorAll('.inner-hero-section, .home-hero-sec').forEach(function(hero) {
+      hero.style.paddingTop = '';
+    });
+  }
+}
+
+// Run on load
+window.addEventListener('load', adjustHeroPadding);
+
+// Run on resize
+window.addEventListener('resize', adjustHeroPadding);
+
+// When alert is closed → remove padding (only below max-width)
+document.addEventListener('click', function (e) {
+  if (window.innerWidth <= 991.98 && e.target.classList.contains('btn-close')) {
+    const hero = document.querySelector('.inner-hero-section, .home-hero-sec');
+    if (hero) {
+      hero.style.paddingTop = null; // reset
+    }
+  }
+});
 // Flip Tiles Gallery
 
 document.addEventListener('DOMContentLoaded', function () {
