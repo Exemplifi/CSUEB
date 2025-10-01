@@ -965,230 +965,6 @@ function initAccessibilityFeatures() {
   }
 }
 
-// Enhanced Accordion Accessibility
-function initAccordionAccessibility() {
-  const accordion = document.getElementById('globalAccordion');
-  if (!accordion) return;
-
-  // Add accessibility attributes to accordion container
-  accordion.setAttribute('role', 'tablist');
-  accordion.setAttribute('aria-label', 'Frequently Asked Questions');
-
-  const accordionButtons = accordion.querySelectorAll('.accordion-button');
-  const accordionPanels = accordion.querySelectorAll('.accordion-collapse');
-
-  // Initialize ARIA attributes for all accordion elements
-  accordionButtons.forEach((button, index) => {
-    const targetId = button.getAttribute('data-bs-target');
-    const targetPanel = document.querySelector(targetId);
-    
-    // Add required ARIA attributes
-    button.setAttribute('role', 'tab');
-    button.setAttribute('aria-expanded', 'false');
-    button.setAttribute('aria-selected', 'false');
-    button.setAttribute('tabindex', '0');
-    button.setAttribute('id', `tab${index + 1}`);
-    
-    if (targetPanel) {
-      targetPanel.setAttribute('role', 'tabpanel');
-      targetPanel.setAttribute('aria-labelledby', button.id);
-      targetPanel.setAttribute('aria-hidden', 'true');
-      targetPanel.setAttribute('tabindex', '-1');
-    }
-
-    // Add aria-label to icon
-    const icon = button.querySelector('.accordion-icon svg');
-    if (icon) {
-      icon.setAttribute('aria-label', 'Expand accordion');
-    }
-  });
-
-  // Enhanced keyboard navigation with better focus management
-  accordionButtons.forEach((button, index) => {
-    // Enhanced keyboard navigation
-    button.addEventListener('keydown', function (e) {
-      switch (e.key) {
-        case 'ArrowDown':
-        case 'ArrowRight':
-          e.preventDefault();
-          const nextIndex = (index + 1) % accordionButtons.length;
-          accordionButtons[nextIndex].focus();
-          break;
-        case 'ArrowUp':
-        case 'ArrowLeft':
-          e.preventDefault();
-          const prevIndex = (index - 1 + accordionButtons.length) % accordionButtons.length;
-          accordionButtons[prevIndex].focus();
-          break;
-        case 'Home':
-          e.preventDefault();
-          accordionButtons[0].focus();
-          break;
-        case 'End':
-          e.preventDefault();
-          accordionButtons[accordionButtons.length - 1].focus();
-          break;
-        case 'Enter':
-        case ' ':
-          e.preventDefault();
-          this.click();
-          break;
-        case 'Escape':
-          // Close all accordion panels
-          accordionButtons.forEach(btn => {
-            const targetId = btn.getAttribute('data-bs-target');
-            const targetPanel = document.querySelector(targetId);
-            if (targetPanel && targetPanel.classList.contains('show')) {
-              btn.click();
-            }
-          });
-          break;
-      }
-    });
-
-    // Enhanced click handling with better ARIA management
-    button.addEventListener('click', function () {
-      const targetId = this.getAttribute('data-bs-target');
-      const targetPanel = document.querySelector(targetId);
-
-      if (targetPanel) {
-        // Update ARIA attributes
-        const isExpanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', !isExpanded);
-        this.setAttribute('aria-selected', !isExpanded);
-        targetPanel.setAttribute('aria-hidden', isExpanded);
-
-        // Update icon aria-label and visual state
-        const icon = this.querySelector('.accordion-icon svg');
-        if (icon) {
-          icon.setAttribute('aria-label', isExpanded ? 'Expand accordion' : 'Collapse accordion');
-          // Rotate icon for visual feedback
-          icon.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(45deg)';
-        }
-
-        // Get heading text safely for announcements
-        const headingText = this.textContent.trim().replace(/\s+/g, ' ');
-        
-        // Enhanced screen reader announcements
-        announceToScreenReader(
-          `${headingText} ${isExpanded ? 'collapsed' : 'expanded'}. ${isExpanded ? 'Content is now hidden' : 'Content is now visible'}`
-        );
-
-        // Update tabindex for better focus management
-        if (!isExpanded) {
-          // Panel is now open, make it focusable
-          targetPanel.setAttribute('tabindex', '0');
-        } else {
-          // Panel is now closed, remove from tab order
-          targetPanel.setAttribute('tabindex', '-1');
-        }
-      }
-    });
-
-    // Enhanced focus management
-    button.addEventListener('focus', function () {
-      this.setAttribute('aria-selected', 'true');
-      // Add visual focus indicator
-      this.classList.add('accordion-button-focused');
-    });
-
-    button.addEventListener('blur', function () {
-      this.classList.remove('accordion-button-focused');
-    });
-  });
-
-  // Enhanced Bootstrap collapse event handling
-  accordionPanels.forEach(panel => {
-    panel.addEventListener('shown.bs.collapse', function () {
-      const button = accordion.querySelector(`[data-bs-target="#${this.id}"]`);
-      if (button) {
-        button.setAttribute('aria-expanded', 'true');
-        button.setAttribute('aria-selected', 'true');
-        this.setAttribute('aria-hidden', 'false');
-        this.setAttribute('tabindex', '0');
-
-        // Update icon
-        const icon = button.querySelector('.accordion-icon svg');
-        if (icon) {
-          icon.setAttribute('aria-label', 'Collapse accordion');
-          icon.style.transform = 'rotate(45deg)';
-        }
-
-        // Enhanced announcement
-        const headingText = button.textContent.trim().replace(/\s+/g, ' ');
-        announceToScreenReader(`${headingText} expanded. Content is now visible.`);
-      }
-    });
-
-    panel.addEventListener('hidden.bs.collapse', function () {
-      const button = accordion.querySelector(`[data-bs-target="#${this.id}"]`);
-      if (button) {
-        button.setAttribute('aria-expanded', 'false');
-        button.setAttribute('aria-selected', 'false');
-        this.setAttribute('aria-hidden', 'true');
-        this.setAttribute('tabindex', '-1');
-
-        // Update icon
-        const icon = button.querySelector('.accordion-icon svg');
-        if (icon) {
-          icon.setAttribute('aria-label', 'Expand accordion');
-          icon.style.transform = 'rotate(0deg)';
-        }
-
-        // Enhanced announcement
-        const headingText = button.textContent.trim().replace(/\s+/g, ' ');
-        announceToScreenReader(`${headingText} collapsed. Content is now hidden.`);
-      }
-    });
-
-    // Enhanced keyboard navigation for panel content
-    panel.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        const button = accordion.querySelector(`[data-bs-target="#${this.id}"]`);
-        if (button) {
-          button.focus();
-          button.click();
-        }
-      }
-    });
-  });
-
-  // Enhanced screen reader announcement function
-  function announceToScreenReader(message) {
-    // Remove any existing announcements
-    const existingAnnouncements = document.querySelectorAll('.accordion-announcement');
-    existingAnnouncements.forEach(announcement => {
-      if (document.body.contains(announcement)) {
-        document.body.removeChild(announcement);
-      }
-    });
-
-    const announcement = document.createElement('div');
-    announcement.setAttribute('aria-live', 'polite');
-    announcement.setAttribute('aria-atomic', 'true');
-    announcement.className = 'sr-only accordion-announcement';
-    announcement.textContent = message;
-    document.body.appendChild(announcement);
-
-    setTimeout(() => {
-      if (document.body.contains(announcement)) {
-        document.body.removeChild(announcement);
-      }
-    }, 2000);
-  }
-
-  // Add accordion-level keyboard navigation
-  accordion.addEventListener('keydown', function (e) {
-    if (e.key === 'Tab') {
-      // Ensure proper tab order
-      const focusedButton = document.activeElement;
-      if (focusedButton && focusedButton.classList.contains('accordion-button')) {
-        // Allow normal tab behavior for accordion buttons
-        return;
-      }
-    }
-  });
-}
 
 // Lightbox Gallery End
 
@@ -1350,20 +1126,18 @@ function adjustHeroPadding() {
   const header = document.querySelector('.main-header');
   const alert = header?.querySelector('.alert');
   header.classList.add('alert-present');
-  if (window.innerWidth <= 991.98 && header && alert) {
-    const hero = document.querySelector('.inner-hero-section, .home-hero-sec');
-    if (hero) {
-      let headerHeight;
-      if (hero.classList.contains('home-hero-sec')) {
-        headerHeight = header.offsetHeight;
-      } else {
-        headerHeight = header.offsetHeight - 100;
-      }
-      if (hero.classList.contains('no-image')) {
-        headerHeight = header.offsetHeight;
-      }
-      hero.style.paddingTop = headerHeight + 'px';
+  const hero = document.querySelector('.inner-hero-section, .home-hero-sec');
+  if (hero && hero.classList.contains('no-image')) {
+    // Always apply padding for .no-image, regardless of screen size
+    hero.style.paddingTop = header ? header.offsetHeight + 'px' : '';
+  } else if (window.innerWidth <= 991.98 && header && alert && hero) {
+    let headerHeight;
+    if (hero.classList.contains('home-hero-sec')) {
+      headerHeight = header.offsetHeight;
+    } else {
+      headerHeight = header.offsetHeight - 100;
     }
+    hero.style.paddingTop = headerHeight + 'px';
   } else {
     // Remove padding if above max-width or if no alert present
     document.querySelectorAll('.inner-hero-section, .home-hero-sec').forEach(function(hero) {
@@ -1381,10 +1155,8 @@ window.addEventListener('resize', adjustHeroPadding);
 // When alert is closed → remove padding (only below max-width)
 document.addEventListener('click', function (e) {
   const header = document.querySelector('.main-header');
-  if (window.innerWidth <= 991.98 && e.target.classList.contains('btn-close')) {
+  if (e.target.classList.contains('btn-close')) {
     const hero = document.querySelector('.inner-hero-section, .home-hero-sec');
-    
-
     if (hero) {
       hero.style.paddingTop = null; // reset
     }

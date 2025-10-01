@@ -1034,3 +1034,50 @@
 .faculty-experts-form {
   border-block: none;
 }
+
+.parallax{
+  position: relative;
+  .container-smaller {
+    position: relative;
+    z-index: 3;
+  }
+  .text-white{
+    color: var(--white);
+  }
+  .text-red{
+    color: var(--red);
+  }
+  .text-black{
+    color:var(--black);
+  }
+  .dec-box{
+    max-width: rem.convert(978px);
+    margin: 0 auto;
+  }
+  .section-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+  }
+  &::after {
+    content: "";
+    opacity: 0.7;
+    background: #222;
+    background-position: top center;
+    background-repeat: repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+    inset: 0;
+}
+} 
