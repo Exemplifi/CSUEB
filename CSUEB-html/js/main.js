@@ -1133,7 +1133,7 @@ function adjustHeroPadding() {
   } else if (window.innerWidth <= 991.98 && header && alert && hero) {
     let headerHeight;
     if (hero.classList.contains('home-hero-sec')) {
-      headerHeight = header.offsetHeight;
+      headerHeight = header.offsetHeight + 50;
     } else {
       headerHeight = header.offsetHeight - 100;
     }
