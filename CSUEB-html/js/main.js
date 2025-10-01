@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMainImgSlider();
   initGalleryLightbox();
   initAccessibilityFeatures();
-  initAccordionAccessibility();
+
 
   const expanderButtons = document.querySelectorAll('.btn-expander');
 
