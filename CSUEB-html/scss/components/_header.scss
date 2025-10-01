@@ -695,9 +695,11 @@
     padding-inline: rem.convert(32px);
     margin-bottom: 0;
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
       row-gap: rem.convert(10px);
       column-gap: rem.convert(24px);
+      max-width: fit-content;
+      margin: 0 auto;
     }
 
     @include media-breakpoint-up(xl) {

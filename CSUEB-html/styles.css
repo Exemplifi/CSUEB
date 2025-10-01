@@ -2205,10 +2205,12 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   padding-inline: 2rem;
   margin-bottom: 0;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .secondary-nav-sec .secondary-nav {
     row-gap: 0.625rem;
     column-gap: 1.5rem;
+    max-width: fit-content;
+    margin: 0 auto;
   }
 }
 @media (min-width: 1200px) {

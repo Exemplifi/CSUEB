@@ -970,11 +970,42 @@ function initAccordionAccessibility() {
   const accordion = document.getElementById('globalAccordion');
   if (!accordion) return;
 
+  // Add accessibility attributes to accordion container
+  accordion.setAttribute('role', 'tablist');
+  accordion.setAttribute('aria-label', 'Frequently Asked Questions');
+
   const accordionButtons = accordion.querySelectorAll('.accordion-button');
   const accordionPanels = accordion.querySelectorAll('.accordion-collapse');
 
-  // Add keyboard navigation
+  // Initialize ARIA attributes for all accordion elements
   accordionButtons.forEach((button, index) => {
+    const targetId = button.getAttribute('data-bs-target');
+    const targetPanel = document.querySelector(targetId);
+    
+    // Add required ARIA attributes
+    button.setAttribute('role', 'tab');
+    button.setAttribute('aria-expanded', 'false');
+    button.setAttribute('aria-selected', 'false');
+    button.setAttribute('tabindex', '0');
+    button.setAttribute('id', `tab${index + 1}`);
+    
+    if (targetPanel) {
+      targetPanel.setAttribute('role', 'tabpanel');
+      targetPanel.setAttribute('aria-labelledby', button.id);
+      targetPanel.setAttribute('aria-hidden', 'true');
+      targetPanel.setAttribute('tabindex', '-1');
+    }
+
+    // Add aria-label to icon
+    const icon = button.querySelector('.accordion-icon svg');
+    if (icon) {
+      icon.setAttribute('aria-label', 'Expand accordion');
+    }
+  });
+
+  // Enhanced keyboard navigation with better focus management
+  accordionButtons.forEach((button, index) => {
+    // Enhanced keyboard navigation
     button.addEventListener('keydown', function (e) {
       switch (e.key) {
         case 'ArrowDown':
@@ -997,10 +1028,25 @@ function initAccordionAccessibility() {
           e.preventDefault();
           accordionButtons[accordionButtons.length - 1].focus();
           break;
+        case 'Enter':
+        case ' ':
+          e.preventDefault();
+          this.click();
+          break;
+        case 'Escape':
+          // Close all accordion panels
+          accordionButtons.forEach(btn => {
+            const targetId = btn.getAttribute('data-bs-target');
+            const targetPanel = document.querySelector(targetId);
+            if (targetPanel && targetPanel.classList.contains('show')) {
+              btn.click();
+            }
+          });
+          break;
       }
     });
 
-    // Handle Bootstrap collapse events
+    // Enhanced click handling with better ARIA management
     button.addEventListener('click', function () {
       const targetId = this.getAttribute('data-bs-target');
       const targetPanel = document.querySelector(targetId);
@@ -1009,64 +1055,118 @@ function initAccordionAccessibility() {
         // Update ARIA attributes
         const isExpanded = this.getAttribute('aria-expanded') === 'true';
         this.setAttribute('aria-expanded', !isExpanded);
+        this.setAttribute('aria-selected', !isExpanded);
         targetPanel.setAttribute('aria-hidden', isExpanded);
 
-        // Update icon aria-label
+        // Update icon aria-label and visual state
         const icon = this.querySelector('.accordion-icon svg');
         if (icon) {
           icon.setAttribute('aria-label', isExpanded ? 'Expand accordion' : 'Collapse accordion');
+          // Rotate icon for visual feedback
+          icon.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(45deg)';
         }
 
-
-        // Get heading text safely
-        const headingEl = this.closest('.accordion-header');
-        const headingText = headingEl ? headingEl.textContent.trim() : 'Accordion';
-
-        // Announce state change
+        // Get heading text safely for announcements
+        const headingText = this.textContent.trim().replace(/\s+/g, ' ');
+        
+        // Enhanced screen reader announcements
         announceToScreenReader(
-          `${headingText} ${isExpanded ? 'collapsed' : 'expanded'}`
+          `${headingText} ${isExpanded ? 'collapsed' : 'expanded'}. ${isExpanded ? 'Content is now hidden' : 'Content is now visible'}`
         );
+
+        // Update tabindex for better focus management
+        if (!isExpanded) {
+          // Panel is now open, make it focusable
+          targetPanel.setAttribute('tabindex', '0');
+        } else {
+          // Panel is now closed, remove from tab order
+          targetPanel.setAttribute('tabindex', '-1');
+        }
       }
+    });
+
+    // Enhanced focus management
+    button.addEventListener('focus', function () {
+      this.setAttribute('aria-selected', 'true');
+      // Add visual focus indicator
+      this.classList.add('accordion-button-focused');
+    });
+
+    button.addEventListener('blur', function () {
+      this.classList.remove('accordion-button-focused');
     });
   });
 
-  // Listen for Bootstrap collapse events
+  // Enhanced Bootstrap collapse event handling
   accordionPanels.forEach(panel => {
     panel.addEventListener('shown.bs.collapse', function () {
-      const button = accordion.querySelector(`[aria-controls="${this.id}"]`);
+      const button = accordion.querySelector(`[data-bs-target="#${this.id}"]`);
       if (button) {
         button.setAttribute('aria-expanded', 'true');
+        button.setAttribute('aria-selected', 'true');
         this.setAttribute('aria-hidden', 'false');
+        this.setAttribute('tabindex', '0');
 
         // Update icon
         const icon = button.querySelector('.accordion-icon svg');
         if (icon) {
           icon.setAttribute('aria-label', 'Collapse accordion');
+          icon.style.transform = 'rotate(45deg)';
         }
+
+        // Enhanced announcement
+        const headingText = button.textContent.trim().replace(/\s+/g, ' ');
+        announceToScreenReader(`${headingText} expanded. Content is now visible.`);
       }
     });
 
     panel.addEventListener('hidden.bs.collapse', function () {
-      const button = accordion.querySelector(`[aria-controls="${this.id}"]`);
+      const button = accordion.querySelector(`[data-bs-target="#${this.id}"]`);
       if (button) {
         button.setAttribute('aria-expanded', 'false');
+        button.setAttribute('aria-selected', 'false');
         this.setAttribute('aria-hidden', 'true');
+        this.setAttribute('tabindex', '-1');
 
         // Update icon
         const icon = button.querySelector('.accordion-icon svg');
         if (icon) {
           icon.setAttribute('aria-label', 'Expand accordion');
+          icon.style.transform = 'rotate(0deg)';
+        }
+
+        // Enhanced announcement
+        const headingText = button.textContent.trim().replace(/\s+/g, ' ');
+        announceToScreenReader(`${headingText} collapsed. Content is now hidden.`);
+      }
+    });
+
+    // Enhanced keyboard navigation for panel content
+    panel.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        const button = accordion.querySelector(`[data-bs-target="#${this.id}"]`);
+        if (button) {
+          button.focus();
+          button.click();
         }
       }
     });
   });
 
-  // Function to announce changes to screen readers
+  // Enhanced screen reader announcement function
   function announceToScreenReader(message) {
+    // Remove any existing announcements
+    const existingAnnouncements = document.querySelectorAll('.accordion-announcement');
+    existingAnnouncements.forEach(announcement => {
+      if (document.body.contains(announcement)) {
+        document.body.removeChild(announcement);
+      }
+    });
+
     const announcement = document.createElement('div');
     announcement.setAttribute('aria-live', 'polite');
     announcement.setAttribute('aria-atomic', 'true');
-    announcement.className = 'sr-only';
+    announcement.className = 'sr-only accordion-announcement';
     announcement.textContent = message;
     document.body.appendChild(announcement);
 
@@ -1074,8 +1174,20 @@ function initAccordionAccessibility() {
       if (document.body.contains(announcement)) {
         document.body.removeChild(announcement);
       }
-    }, 1000);
+    }, 2000);
   }
+
+  // Add accordion-level keyboard navigation
+  accordion.addEventListener('keydown', function (e) {
+    if (e.key === 'Tab') {
+      // Ensure proper tab order
+      const focusedButton = document.activeElement;
+      if (focusedButton && focusedButton.classList.contains('accordion-button')) {
+        // Allow normal tab behavior for accordion buttons
+        return;
+      }
+    }
+  });
 }
 
 // Lightbox Gallery End
