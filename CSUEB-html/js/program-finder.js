@@ -1,124 +1,157 @@
-document.addEventListener(DOMContentLoaded, function () {
-  const rawData = document.getElementById(programDataJson);
-  if (!rawData) return;
+document.addEventListener("DOMContentLoaded", function () {
+  const programList = document.getElementById("programList");
+  const filterBar = document.getElementById("programFilterBar");
 
-  const data = JSON.parse(rawData.textContent);
-  let filteredData = [...data];
-  let currentPage = 0;
-  const perPage = 10;
+  if (!programList || !filterBar) {
+    //console.warn("programList or filterBar not found — stopping script.");
+    return;
+  }
 
-  const filterBar = document.getElementById(programFilterBar);
-  const programList = document.getElementById(programList);
-  const loadMoreBtn = document.getElementById(loadMoreBtn);
+  // Insert Load More button after programList
+  const loadMoreWrapper = document.createElement("div");
+  loadMoreWrapper.className = "text-center row-button-sec row-btn-width";
+  loadMoreWrapper.style.display = "none"; // hidden until needed
 
-   Inject filter UI
-  filterBar.innerHTML = `
-    div class=row gx-3
-      div class=input-first col-12 col-sm-6
-        label for= class=form-label aria-label=Search for a degree by keywordSearch for a degree by keywordlabel
-        input type=text class=form-control placeholder=Search for a degree by keyword id=searchBox aria-describedby=Search for a degree by keyword
-      div
-      div class=input-last col-12 col-sm-6
-        label for= class=form-label aria-label=Browse by degree levelBrowse by degree levellabel
-        select id=degreeDropdown class=form-select aria-label=Degrees
-          option value=Browse by degree leveloption
-          ${[...new Set(data.map(p = p.degree))].map(d = `option value=${d}${d}option`).join('')}
-        select
-      div
-      div class=col-12
-        div class=form-check
-            input type=checkbox class=form-check-input id=onlineOnly
-            label class=form-check-label text-medium for=exampleCheck1Show online degrees onlylabel
-        div
-      div
-    div
+  loadMoreWrapper.innerHTML = `
+    <a href="#" class="btn btn-primary" aria-label="Load more">
+      <span>Load more</span>
+    </a>
   `;
 
-   Filter logic
-  function applyFilters() {
-    const keyword = document.getElementById(searchBox).value.toLowerCase();
-    const degree = document.getElementById(degreeDropdown).value;
-    const onlineOnly = document.getElementById(onlineOnly).checked;
+  programList.insertAdjacentElement("afterend", loadMoreWrapper);
 
-    filteredData = data.filter(p = {
-        const matchKeyword =
-            (p.title && p.title.toLowerCase().includes(keyword)) 
-            (p.concentration && p.concentration.toLowerCase().includes(keyword));
-        const matchDegree = degree  p.degree === degree  true;
-        const matchModality = onlineOnly
-           (typeof p.modality === string && p.modality.trim().toLowerCase() === online)
-           true;
-        return matchKeyword && matchDegree && matchModality;
-    });
-
-    currentPage = 0;
-    programList.innerHTML = ;
-    loadMore();
+  // Helper to safely extract text
+  function getElementText(parent, selector, allowMissing = false) {
+    const elem = parent.querySelector(selector);
+    if (!elem) {
+      if (!allowMissing) {
+        //console.warn(`Element with selector '${selector}' not found inside`, parent);
+      }
+      return "";
+    }
+    return elem.textContent.trim();
   }
 
-   Load more logic (lazy loading)
-  function loadMore(event) {
-    if (event) event.preventDefault();  Prevent scroll to top
+  // Build dropdown options (from .modalities text)
+  function buildDropdownOptions() {
+    const modalitySet = new Set();
+    const programLinks = programList.querySelectorAll(".program-link");
 
-    const start = currentPage  perPage;
-    const end = start + perPage;
-    const items = filteredData.slice(start, end);
-
-    items.forEach(p = {
-      const item = document.createElement(a);
-      item.href = p.link;
-      item.target = p.target  _self;
-      item.className = program-link text-decoration-none d-flex w-100 mb-2;
-
-      let leftHTML = `h4${p.title}h4`;
-      if (p.concentration && p.concentration.trim() !== ) {
-        leftHTML += `p class=mb-0${p.concentration}p`;
+    programLinks.forEach(link => {
+      const modalityEl = link.querySelector(".modalities");
+      if (modalityEl) {
+        modalityEl.textContent
+          .split(",") // split "Online, On Campus" into ["Online","On Campus"]
+          .map(m => m.trim())
+          .forEach(m => modalitySet.add(m));
       }
-
-      let rightHTML = ;
-      if (p.degree && p.degree.trim() !== ) {
-        rightHTML += `p class=subtext fw-bold mb-0${p.degree}p`;
-      }
-      if (p.modality && p.modality.trim() !== ) {
-        rightHTML += `p class=subtext m-0${p.modality}p`;
-      }
-
-      item.innerHTML = `
-        div class=d-flex w-100
-          div class=flex-1
-            div class=row
-              div class=left-program-link col-12 col-sm-6 mb-0
-                ${leftHTML}
-              div
-              div class=right-program-link col-12 col-sm-6 d-flex justify-content-sm-end
-                div class=p-0
-                  ${rightHTML}
-                div
-              div
-            div
-          div
-          div class=right-arrow-sec p-0
-            div class=text-decoration-none btn btn-secondary p-0
-              svg class=arrow xmlns=httpwww.w3.org2000svg width=24 height=25 viewBox=0 0 24 25 fill=none
-                path d=M14 5.60693L12.5 7.10693L17.0703 11.6772H3V13.6772H17.0703L12.5 18.2476L14 19.7476L21.0703 12.6772L14 5.60693Z fill=currentColorpath
-              svg
-            div
-          div
-        div
-      `;
-      programList.appendChild(item);
     });
 
-    currentPage++;
-    loadMoreBtn.style.display = currentPage  perPage = filteredData.length  none  inline-block;
+    let optionsHTML = '<option value="">All Major</option>';
+    modalitySet.forEach(modality => {
+      optionsHTML += `<option value="${modality}">${modality}</option>`;
+    });
+
+    return optionsHTML;
   }
 
-   Event bindings
-  document.getElementById(searchBox).addEventListener(input, applyFilters);
-  document.getElementById(degreeDropdown).addEventListener(change, applyFilters);
-  document.getElementById(onlineOnly).addEventListener(change, applyFilters);
-  loadMoreBtn.addEventListener(click, loadMore);
+  // Insert filter bar HTML
+  filterBar.innerHTML = `
+    <form class="row gx-3">
+      <div class="input-first col-12 col-sm-6">
+        <label for="search-input" class="form-label screen-only">Search for Majors</label>
+        <input type="text" class="form-control" placeholder="Search for Majors" id="search-input">
+      </div>
+      <div class="input-last col-12 col-sm-6">
+        <label for="degree-level" class="form-label screen-only">All Major</label>
+        <select id="degree-level" class="form-select">
+          ${buildDropdownOptions()}
+        </select>
+      </div>
+    </form>
+  `;
 
-   Initial load
-  applyFilters();
+  const searchInput = document.getElementById("search-input");
+  const degreeSelect = document.getElementById("degree-level");
+
+  const itemsPerPage = 10;
+  let currentlyShownCount = 0;
+  let filteredPrograms = [];
+
+  // Show/hide programs based on count
+  function updateProgramVisibility() {
+    filteredPrograms.forEach((program, idx) => {
+      if (idx < currentlyShownCount) {
+        program.classList.remove("d-none");
+        program.classList.add("d-flex");
+      } else {
+        program.classList.add("d-none");
+        program.classList.remove("d-flex");
+      }
+    });
+
+    if (filteredPrograms.length > itemsPerPage && currentlyShownCount < filteredPrograms.length) {
+      loadMoreWrapper.style.display = "block";
+    } else {
+      loadMoreWrapper.style.display = "none";
+    }
+  }
+
+  // Filtering logic
+    function filterPrograms() {
+      const searchTerm = searchInput.value.trim().toLowerCase();
+      const selectedModality = degreeSelect.value.trim().toLowerCase();
+    
+      const programs = Array.from(programList.querySelectorAll(".program-link"));
+      filteredPrograms = [];
+    
+      programs.forEach(program => {
+        const programName = getElementText(program, ".programName", true).toLowerCase();
+        const concentration = getElementText(program, ".concentration", true).toLowerCase();
+        const degree = getElementText(program, ".degree", true).toLowerCase();
+        const modalities = getElementText(program, ".modalities", true).toLowerCase();
+    
+        // Search will match if term is in ANY field
+        const matchesSearch =
+          !searchTerm ||
+          programName.includes(searchTerm) ||
+          concentration.includes(searchTerm) ||
+          degree.includes(searchTerm) ||
+          modalities.includes(searchTerm);
+    
+        // Dropdown will match only if selected modality is present
+        const matchesModality =
+          !selectedModality || modalities.includes(selectedModality);
+    
+        const showProgram = matchesSearch && matchesModality;
+    
+        if (showProgram) {
+          filteredPrograms.push(program);
+        } else {
+          program.classList.add("d-none");
+          program.classList.remove("d-flex");
+        }
+      });
+    
+      currentlyShownCount = Math.min(itemsPerPage, filteredPrograms.length);
+      updateProgramVisibility();
+    }
+
+
+  // Load more button click
+  loadMoreWrapper.querySelector("a").addEventListener("click", function (e) {
+    e.preventDefault();
+    currentlyShownCount += itemsPerPage;
+    if (currentlyShownCount > filteredPrograms.length) {
+      currentlyShownCount = filteredPrograms.length;
+    }
+    updateProgramVisibility();
+  });
+
+  // Event listeners
+  searchInput.addEventListener("input", filterPrograms);
+  degreeSelect.addEventListener("change", filterPrograms);
+
+  // Initial filter on load
+  filterPrograms();
 });
