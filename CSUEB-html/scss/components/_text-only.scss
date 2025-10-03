@@ -1104,8 +1104,9 @@
           margin-bottom: 8px !important;
         }
 
-        h4 {
+        h4,h2 {
           margin: 0;
+          color: var(--black);
 
         }
 
@@ -1159,6 +1160,9 @@
       &:hover {
         background-color: var(--black);
         color: var(--white);
+        h2,h4{
+          color: var(--white);
+        }
 
         * {
           color: var(--white);

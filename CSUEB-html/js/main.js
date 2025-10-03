@@ -541,7 +541,7 @@ function initHeader() {
         header.classList.toggle("upwards", scrollTop > lastScrollTop && scrollTop > 10);
       } else {
         // Always add 'upwards' class when scrolling down below 768px
-        if (scrollTop > 300) {
+        if (scrollTop > 100) {
           header.classList.add("upwards");
         } else {
           header.classList.remove("upwards");
