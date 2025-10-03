@@ -13,12 +13,15 @@
             }
         }
     }
+
     .bg-white {
         background: var(--white);
         color: var(--black);
+
         * {
             color: var(--black);
         }
+
         .btn-secondary {
             svg {
                 * {
@@ -27,25 +30,30 @@
             }
         }
     }
+
     .section-heading {
         .star-icon {
-             * {
+            * {
                 color: #00000066;
             }
         }
     }
+
     .btn-primary {
         background-color: var(--gold);
+
         span {
-          //background-color: var(--gold);
-          color: var(--black);
+            //background-color: var(--gold);
+            color: var(--black);
         }
+
         &:hover {
-          background-color: var(--black);
-          color: var(--white);
-          span { 
+            background-color: var(--black);
             color: var(--white);
-          }
+
+            span {
+                color: var(--white);
+            }
         }
     }
 }
@@ -53,110 +61,163 @@
 .bg-white {
     background: var(--white);
     color: var(--black);
-    .full-sec-content{
-        a:not(.btn){
+
+    .full-sec-content {
+        a:not(.btn) {
             color: var(--red) !important;
-            span{
+
+            span {
                 color: var(--red) !important;
             }
         }
-        p, ul li, ol li{
+
+        p,
+        ul li,
+        ol li {
             color: var(--black) !important;
         }
     }
+
+    .btn-primary {
+        &.clear {
+            background: none;
+            border: 1px solid var(--black);
+            color: var(--black);
+            clip-path: none;
+
+            span {
+                color: var(--black);
+            }
+
+            &:hover {
+                background-color: var(--black) !important;
+                color: var(--white);
+
+                span {
+                    color: var(--white);
+                }
+            }
+        }
+    }
+
 }
 
 .bg-black {
     background: var(--black);
     color: var(--white);
+
     * {
         color: var(--white);
     }
+
     .btn-secondary {
         background-color: transparent;
         color: var(--black);
+
         .arrow {
-          color: var(--red);
-          * {
             color: var(--red);
+
+            * {
+                color: var(--red);
+            }
         }
-        }
+
         span {
-          flex: 1;
+            flex: 1;
         }
+
         &:hover {
             background: #FDC25A1A;
             border: 1px solid var(--pink);
+
             .arrow {
                 color: var(--gold);
+
                 * {
                     color: var(--gold);
                 }
             }
 
         }
+
         &.btn-secondary-icon-yellow {
             background: transparent;
+
             .arrow {
                 color: var(--gold);
             }
+
             &:hover {
                 background: #FDC25A1A;
+
                 .arrow {
                     color: var(--gold);
+
                     * {
                         color: var(--gold);
                     }
                 }
             }
         }
-        
+
     }
-    .btn-primary{
-        &:focus-visible{
-         outline: var(--white) auto 1px;
+
+    .btn-primary {
+        &:focus-visible {
+            outline: var(--white) auto 1px;
         }
-     }
+    }
+
     .btn.btn-secondary-white {
         &:hover {
             background: rgba(253, 194, 90, 0.10);
             transition: all 0.5s ease-in-out;
             border: 1px solid var(--pink);
+
             .arrow {
-              transform: rotate(-45deg);
-              color: var(--gold)!important;
-              path {
-                color: var(--gold);
-              }
+                transform: rotate(-45deg);
+                color: var(--gold) !important;
+
+                path {
+                    color: var(--gold);
+                }
             }
         }
     }
+
     .btn-primary {
         &:hover {
             color: var(--black);
             background-color: var(--gold);
-            span { 
+
+            span {
                 //background-color: var(--gold);
                 color: var(--black);
+
                 svg {
-                color: var(--black);
-                * {
                     color: var(--black);
-                }
+
+                    * {
+                        color: var(--black);
+                    }
                 }
             }
+
             &::before {
                 background-color: var(--gold);
             }
         }
     }
 }
+
 .bg-gold {
     background: var(--gold);
 }
+
 .bg-light-gray {
     background: var(--light-gray) !important;
 }
+
 .bg-grey-700 {
     background: var(--grey-700);
 }
@@ -179,13 +240,15 @@
 
 .text-black {
     color: var(--black);
+
     * {
-        color: var(--black); 
+        color: var(--black);
     }
 }
 
 .text-gold {
     color: var(--gold);
+
     * {
         color: var(--gold);
     }
@@ -193,38 +256,47 @@
 
 .text-purple {
     color: var(--purple);
+
     * {
-        color: var(--purple); 
+        color: var(--purple);
     }
 }
+
 .text-light-purple {
     color: #DAA4D0;
+
     * {
-        color: #DAA4D0; 
+        color: #DAA4D0;
     }
 }
 
 .text-light-pink {
     color: #FF85A3;
+
     * {
-        color: #FF85A3; 
+        color: #FF85A3;
     }
 }
+
 .text-light-teal {
-    color:  #8BF2F9;
+    color: #8BF2F9;
+
     * {
-        color: #8BF2F9;     
+        color: #8BF2F9;
     }
 }
 
 .text-teal {
     color: var(--teal);
+
     * {
         color: var(--teal);
     }
 }
+
 .text-red {
     color: var(--red);
+
     * {
         color: var(--red);
     }

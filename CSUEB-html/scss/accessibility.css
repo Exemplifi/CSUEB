@@ -42,16 +42,7 @@ textarea:focus,
   outline-offset: 2px;
 }
 
-/* Focus styles for buttons */
-.btn:focus {
-  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #D50032;
-}
 
-/* Focus styles for form controls */
-.form-control:focus {
-  border-color: #D50032;
-  box-shadow: 0 0 0 0.2rem rgba(213, 0, 50, 0.25);
-}
 
 /* Screen reader only content */
 .sr-only {
@@ -247,12 +238,6 @@ ul, ol {
   padding-left: 1.5rem;
 }
 
-/* Enhanced heading accessibility */
-h1, h2, h3, h4, h5, h6 {
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
-
 /* Enhanced paragraph accessibility */
 p {
   margin-bottom: 1rem;
@@ -288,10 +273,10 @@ pre {
 }
 
 /* Enhanced hover states */
-.btn:hover {
+/* .btn:hover {
   transform: translateY(-1px);
-  transition: transform 0.2s ease;
-}
+  //transition: transform 0.2s ease;
+} */
 
 /* Enhanced loading states */
 .loading {

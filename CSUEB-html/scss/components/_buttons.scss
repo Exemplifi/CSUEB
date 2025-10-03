@@ -25,6 +25,7 @@
   span {
     font-weight: $bold;
   }
+  
 
   &.btn-primary {
     background-color: var(--red);
@@ -120,6 +121,23 @@
         }
       }
     }
+    &.clear{
+      background: none;
+      border: 1px solid var(--white);
+      color: var(--white);
+      clip-path: none;
+      span{
+        color: var(--white);
+      }
+      &:hover{
+        background-color: var(--white) !important;
+        color: var(--black);
+        span{
+          color: var(--black);
+        }
+      }
+    }
+    
 
   }
 

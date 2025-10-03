@@ -1345,17 +1345,34 @@
       <div class="container-smaller position-relative">
 
         <div class="next-card bg-white text-black">
-          <div class="swiper testimonial-slider">
+          <!-- Skip to testimonial content for screen readers -->
+          <a href="#testimonial-content" class="sr-only sr-only-focusable">Skip to testimonial content</a>
+          
+          <!-- Testimonial slider with full accessibility -->
+          <div class="swiper testimonial-slider" 
+               role="region" 
+               aria-label="Testimonial quotes carousel"
+               aria-live="polite">
+            
+            <!-- Live region for screen reader announcements -->
+            <div id="testimonial-announcements" 
+                 class="sr-only" 
+                 aria-live="polite" 
+                 aria-atomic="true"></div>
+
             <div class="swiper-wrapper">
-              <div class="swiper-slide h-auto">
+              <div class="swiper-slide h-auto" 
+                   role="tabpanel" 
+                   aria-label="Testimonial 1 of 2"
+                   id="testimonial-content">
                 <div class="section-heading heading-gray-icon text-center">
                   <!-- Red Diamonds -->
                   <div class="title-wrap text-center">
-                    <h3 class="section-title">“The difference between a successful person and others is not lack of
-                      strength, not a lack of knowledge, but rather a lack of will.”</h3>
+                    <h3 class="section-title">"The difference between a successful person and others is not lack of
+                      strength, not a lack of knowledge, but rather a lack of will."</h3>
                     <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20"
                       fill="none" aria-hidden="true">
-                      <title>Star Icon</title>
+                      <title>Decorative star rating</title>
                       <path
                         d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z"
                         fill="currentColor" />
@@ -1376,14 +1393,16 @@
                 </div>
               </div>
 
-              <div class="swiper-slide h-auto">
+              <div class="swiper-slide h-auto" 
+                   role="tabpanel" 
+                   aria-label="Testimonial 2 of 2">
                 <div class="section-heading heading-gray-icon text-center">
                   <!-- Red Diamonds -->
                   <div class="title-wrap text-center">
-                    <h3 class="section-title">“A day without laughter is a day wasted.”</h3>
+                    <h3 class="section-title">"A day without laughter is a day wasted."</h3>
                     <svg class="star-icon" xmlns="http://www.w3.org/2000/svg" width="92" height="20" viewBox="0 0 92 20"
                       fill="none" aria-hidden="true">
-                      <title>Star Icon</title>
+                      <title>Decorative star rating</title>
                       <path
                         d="M81.6299 2.72203L82 0.624999L82.3701 2.72203C83.1102 6.17598 85.824 8.8898 89.278 9.62993L91.375 10L89.278 10.3701C85.824 11.1102 83.1102 13.824 82.3701 17.278L82 19.375L81.6299 17.278C80.8898 13.824 78.176 11.1102 74.722 10.3701L72.625 10L74.722 9.62993C78.176 8.8898 80.8898 6.17598 81.6299 2.72203Z"
                         fill="currentColor" />
@@ -1440,24 +1459,24 @@
           <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
               <button class="nav-link subtext fw-bold active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1"
-                type="button" role="tab" aria-controls="tab1" aria-selected="true">TAB NO. 1</button>
+                type="button" role="tab" aria-controls="tab1" aria-selected="true" tabindex="0">TAB NO. 1</button>
             </li>
             <li class="nav-item" role="presentation">
               <button class="nav-link subtext fw-bold" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2"
-                type="button" role="tab" aria-controls="tab2" aria-selected="false">TAB NO. 2</button>
+                type="button" role="tab" aria-controls="tab2" aria-selected="false" tabindex="0">TAB NO. 2</button>
             </li>
             <li class="nav-item" role="presentation">
               <button class="nav-link subtext fw-bold" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3"
-                type="button" role="tab" aria-controls="tab3" aria-selected="false">TAB NO. 3</button>
+                type="button" role="tab" aria-controls="tab3" aria-selected="false" tabindex="0">TAB NO. 3</button>
             </li>
             <li class="nav-item" role="presentation">
               <button class="nav-link subtext fw-bold" id="tab4-tab" data-bs-toggle="tab" data-bs-target="#tab4"
-                type="button" role="tab" aria-controls="tab4" aria-selected="false">TAB NO. 4</button>
+                type="button" role="tab" aria-controls="tab4" aria-selected="false" tabindex="0">TAB NO. 4</button>
             </li>
           </ul>
-
+        
           <!-- Tab panes -->
-          <div class="tab-content">
+          <div class="tab-content" tabindex="0">
             <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
               <div class="tab-content-box text-medium">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu eros finibus, vestibulum nisi ut,
@@ -1475,8 +1494,28 @@
               <div class="tab-content-box text-medium">Tab 4 content goes here.</div>
             </div>
           </div>
+
+
+          <ul class="nav nav-tabs" id="myTab2" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+          </div>
         </div>
+        
       </div>
+
     </section>
     <!-- Tab End -->
 
@@ -2503,6 +2542,7 @@
   <script src="./js/swiper-bundle.min.js"></script>
   <!-- custom JS -->
   <script src="./js/main.js"></script>
+  <script></script>
 
 </body>
 

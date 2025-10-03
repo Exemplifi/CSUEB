@@ -123,6 +123,7 @@ h2, .h2 {
   font-style: normal;
   font-weight: 600;
   line-height: 1.1;
+  color: var(--red);
 }
 @media (max-width: 991.98px) {
   h2, .h2 {
@@ -1311,6 +1312,22 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 .btn.btn-primary.btn-dark:hover::before {
   background-color: #5C5C5C;
+}
+.btn.btn-primary.clear {
+  background: none;
+  border: 1px solid var(--white);
+  color: var(--white);
+  clip-path: none;
+}
+.btn.btn-primary.clear span {
+  color: var(--white);
+}
+.btn.btn-primary.clear:hover {
+  background-color: var(--white) !important;
+  color: var(--black);
+}
+.btn.btn-primary.clear:hover span {
+  color: var(--black);
 }
 .btn.btn-primary-gray {
   background-color: var(--light-gray);
@@ -3082,8 +3099,26 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .bg-white .full-sec-content a:not(.btn) span {
   color: var(--red) !important;
 }
-.bg-white .full-sec-content p, .bg-white .full-sec-content ul li, .bg-white .full-sec-content ol li {
+.bg-white .full-sec-content p,
+.bg-white .full-sec-content ul li,
+.bg-white .full-sec-content ol li {
   color: var(--black) !important;
+}
+.bg-white .btn-primary.clear {
+  background: none;
+  border: 1px solid var(--black);
+  color: var(--black);
+  clip-path: none;
+}
+.bg-white .btn-primary.clear span {
+  color: var(--black);
+}
+.bg-white .btn-primary.clear:hover {
+  background-color: var(--black) !important;
+  color: var(--white);
+}
+.bg-white .btn-primary.clear:hover span {
+  color: var(--white);
 }
 
 .bg-black {
@@ -4071,7 +4106,8 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 1.75; /* 1.75rem */
+  line-height: 1.75;
+  /* 1.75rem */
   color: #929292;
 }
 @media (max-width: 767.98px) {
@@ -4108,7 +4144,8 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   background-size: 1.5rem;
   font-weight: 500;
   font-size: 1rem;
-  line-height: 1.75; /* 1.75rem */
+  line-height: 1.75;
+  /* 1.75rem */
 }
 @media (max-width: 767.98px) {
   .program-link-sec .program-filter .form-select {
@@ -4128,7 +4165,8 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   font-size: 1rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 1.75; /* 1.75rem */
+  line-height: 1.75;
+  /* 1.75rem */
   color: #000;
 }
 @media (max-width: 767.98px) {
@@ -4201,7 +4239,8 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   max-width: 346px;
   font-family: var(--body-font-family);
   font-size: 0.875rem;
-  line-height: 1.75; /* 1.53125rem */
+  line-height: 1.75;
+  /* 1.53125rem */
   font-weight: 500;
   margin-top: 4px;
 }
@@ -4223,7 +4262,8 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   max-width: 346px;
   font-family: var(--body-font-family);
   font-size: 0.875rem;
-  line-height: 1.75; /* 1.53125rem */
+  line-height: 1.75;
+  /* 1.53125rem */
   font-weight: 500;
 }
 @media (max-width: 767.98px) {
@@ -4266,27 +4306,46 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   border-block: none;
 }
 
-.parallax {
-  position: relative;
+.bg-img .section-bg-overlay {
+  display: none;
 }
-.parallax .container-smaller {
-  position: relative;
-  z-index: 3;
+.bg-img .section-heading {
+  margin-bottom: 1.5rem;
 }
-.parallax .text-white {
-  color: var(--white);
-}
-.parallax .text-red {
-  color: var(--red);
-}
-.parallax .text-black {
-  color: var(--black);
-}
-.parallax .dec-box {
+.bg-img .dec-box {
   max-width: 61.125rem;
   margin: 0 auto;
 }
-.parallax .section-bg-overlay {
+.bg-img .text-white {
+  color: var(--white);
+}
+.bg-img .text-red {
+  color: var(--red);
+}
+.bg-img .text-black {
+  color: var(--black);
+}
+.bg-img.parallax {
+  position: relative;
+}
+.bg-img.parallax .section-bg-overlay {
+  display: block;
+}
+.bg-img.parallax * {
+  color: var(--white);
+}
+.bg-img.parallax .container-smaller {
+  position: relative;
+  z-index: 3;
+}
+.bg-img.parallax .btn-primary:hover {
+  background-color: var(--gold);
+  color: var(--black);
+}
+.bg-img.parallax .btn-primary:hover span {
+  color: var(--black);
+}
+.bg-img.parallax .section-bg-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -4299,7 +4358,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   background-position: center !important;
   background-repeat: no-repeat !important;
 }
-.parallax::after {
+.bg-img.parallax::after {
   content: "";
   opacity: 0.7;
   background: #222;
@@ -6239,7 +6298,6 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   overflow: hidden;
   border-radius: 0;
   transition: all 0.4s ease;
-  cursor: pointer;
   position: relative;
   height: 100%;
   box-shadow: 0px 12px 28px 0px rgba(0, 0, 0, 0);
