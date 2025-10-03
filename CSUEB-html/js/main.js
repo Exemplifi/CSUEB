@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Header search dropdown toggle
   const searchBtn = document.querySelector('.search__btn');
-  const langBtn  = document.querySelector('.language-dropdown .dropdown-toggle');
+  const langBtn = document.querySelector('.language-dropdown .dropdown-toggle');
   const langDropdown = document.querySelector('.language-dropdown .dropdown-menu');
   const searchDropdown = document.querySelector('.header-search-dropdown');
   if (searchBtn && searchDropdown) {
@@ -532,24 +532,24 @@ function initHeader() {
     }
   });
 
-    window.addEventListener("scroll", () => {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      header.classList.toggle("header-color", scrollTop > 10);
+  window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    header.classList.toggle("header-color", scrollTop > 10);
 
-      if (window.innerWidth > 768) {
-        // Only toggle 'upwards' class on screens wider than 768px and when scrolling down
-        header.classList.toggle("upwards", scrollTop > lastScrollTop && scrollTop > 10);
+    if (window.innerWidth > 768) {
+      // Only toggle 'upwards' class on screens wider than 768px and when scrolling down
+      header.classList.toggle("upwards", scrollTop > lastScrollTop && scrollTop > 10);
+    } else {
+      // Always add 'upwards' class when scrolling down below 768px
+      if (scrollTop > 100) {
+        header.classList.add("upwards");
       } else {
-        // Always add 'upwards' class when scrolling down below 768px
-        if (scrollTop > 100) {
-          header.classList.add("upwards");
-        } else {
-          header.classList.remove("upwards");
-        }
+        header.classList.remove("upwards");
       }
+    }
 
-      lastScrollTop = Math.max(scrollTop, 0);
-    });
+    lastScrollTop = Math.max(scrollTop, 0);
+  });
 }
 
 
@@ -893,20 +893,32 @@ function initAccessibilityFeatures() {
   });
 
 
-  // Enhanced list accessibility
-  const lists = document.querySelectorAll('ul, ol');
-  lists.forEach(list => {
-    if (!list.getAttribute('role')) {
-      list.setAttribute('role', 'list');
-    }
+  // // Enhanced list accessibility
+  // const lists = document.querySelectorAll('ul, ol');
+  // lists.forEach(list => {
+  //   if (!list.getAttribute('role')) {
+  //     list.setAttribute('role', 'list');
+  //   }
 
-    const listItems = list.querySelectorAll('li');
-    listItems.forEach(item => {
-      if (!item.getAttribute('role')) {
-        item.setAttribute('role', 'listitem');
-      }
-    });
+  //   const listItems = list.querySelectorAll('li');
+  //   listItems.forEach(item => {
+  //     if (!item.getAttribute('role')) {
+  //       item.setAttribute('role', 'listitem');
+  //     }
+  //   });
+  // });
+
+  // Select all links inside the menu list
+  const menuLinks = document.querySelectorAll('.menu-list-link a');
+
+  // Loop through each link and add the screen-reader comma span
+  menuLinks.forEach(link => {
+    const srSpan = document.createElement('span');
+    srSpan.className = 'sr-only';
+    srSpan.textContent = ', ';
+    link.appendChild(srSpan);
   });
+
 
   // Enhanced heading structure
   const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
@@ -1130,8 +1142,8 @@ document.addEventListener("DOMContentLoaded", function () {
         input.parentNode.insertBefore(label, input); // Insert before the input
       }
     });
-  }, 3000); 
-}); 
+  }, 3000);
+});
 
 // Only add dynamic padding for Hero section if .main-header has .alert
 function adjustHeroPadding() {
@@ -1152,7 +1164,7 @@ function adjustHeroPadding() {
     hero.style.paddingTop = headerHeight + 'px';
   } else {
     // Remove padding if above max-width or if no alert present
-    document.querySelectorAll('.inner-hero-section, .home-hero-sec').forEach(function(hero) {
+    document.querySelectorAll('.inner-hero-section, .home-hero-sec').forEach(function (hero) {
       hero.style.paddingTop = '';
     });
   }

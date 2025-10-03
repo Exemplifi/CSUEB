@@ -17,8 +17,9 @@
   <!-- Header -->
   <header class="main-header" role="banner">
     <div class="alert alert-warning alert-dismissible fade show" role="alert" bis_skin_checked="1"><strong>Alert
-        Message:&nbsp;&nbsp;</strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <button aria-label="Close" class="btn-close"
-        data-bs-dismiss="alert" type="button" fdprocessedid="u4un0r"></button></div>
+        Message:&nbsp;&nbsp;</strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <button
+        aria-label="Close" class="btn-close" data-bs-dismiss="alert" type="button" fdprocessedid="u4un0r"></button>
+    </div>
     <div class="container d-flex justify-content-between align-items-center">
       <!-- logo -->
       <a aria-label="Home" class="logo d-flex align-items-center" href="//www.csueastbay.edu/index.html">
@@ -36,22 +37,26 @@
 
         <nav aria-label="Main navigation" class="header-links d-flex align-items-center gap-3">
 
-          <!-- Apply, Request Info, Give links  -->
-          <ul class="d-flex menu-list-link" role="list">
-            <li role="listitem"><a aria-label="Apply - Press Enter to visit" class="text-white menu-link subtext"
-                href="#">Apply</a></li>
-            <li role="listitem"><a aria-label="Request Info - Press Enter to visit" class="text-white menu-link subtext"
-                href="#">Request Info</a></li>
-            <li role="listitem"><a aria-label="Give - Press Enter to visit" class="text-white menu-link subtext"
-                href="#">Give</a></li>
+      
+          <!-- Apply, Request Info, Give links -->
+          <ul class="d-flex menu-list-link">
+            <li><a class="text-white menu-link subtext" href="#">Apply</a></li>
+            <li><a class="text-white menu-link subtext" href="#">Request Info</a></li>
+            <li><a class="text-white menu-link subtext" href="#">Give</a> </li>
           </ul>
+          <!-- Apply, Request Info, Give links ends -->
+
           <!-- Apply, Request Info, Give links ends -->
 
 
           <!-- Language dropdown -->
-          <div class="dropdown language-dropdown" role="menu"><button aria-expanded="false" aria-haspopup="true"
-              class="dropdown-toggle btn subtext" data-bs-toggle="dropdown" role="menuitem" fdprocessedid="3veyvf"><svg
-                xmlns="http://www.w3.org/2000/svg" fill="none" height="25" viewBox="0 0 24 25" width="24">
+          <div class="dropdown language-dropdown">
+            <button aria-expanded="false" aria-haspopup="menu" class="dropdown-toggle btn subtext"
+              data-bs-toggle="dropdown" role="button" id="language-dropdown-button"
+              aria-labelledby="language-description"
+              aria-label="Language selector. Press Enter to open the language dropdown">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" height="25" viewBox="0 0 24 25" width="24"
+                aria-hidden="true">
                 <g clip-path="url(#clip0_947_13195)">
                   <path
                     d="M16.5 12.6772C16.5 13.7179 16.4438 14.721 16.3453 15.6772H7.65937C7.55625 14.721 7.50469 13.7179 7.50469 12.6772C7.50469 11.6366 7.56094 10.6335 7.65937 9.67725H16.3453C16.4484 10.6335 16.5 11.6366 16.5 12.6772ZM17.85 9.67725H23.6203C23.8687 10.6382 24 11.6413 24 12.6772C24 13.7132 23.8687 14.7163 23.6203 15.6772H17.85C17.9484 14.7116 18 13.7085 18 12.6772C18 11.646 17.9484 10.6429 17.85 9.67725ZM23.1281 8.17725H17.6578C17.1891 5.18193 16.2609 2.67412 15.0656 1.071C18.7359 2.04131 21.7219 4.70381 23.1234 8.17725H23.1281ZM16.1391 8.17725H7.86094C8.14687 6.471 8.5875 4.96162 9.12656 3.73818C9.61875 2.63193 10.1672 1.83037 10.6969 1.32412C11.2219 0.827246 11.6578 0.677246 12 0.677246C12.3422 0.677246 12.7781 0.827246 13.3031 1.32412C13.8328 1.83037 14.3812 2.63193 14.8734 3.73818C15.4172 4.95693 15.8531 6.46631 16.1391 8.17725ZM6.34219 8.17725H0.871875C2.27813 4.70381 5.25938 2.04131 8.93438 1.071C7.73906 2.67412 6.81094 5.18193 6.34219 8.17725ZM0.379688 9.67725H6.15C6.05156 10.6429 6 11.646 6 12.6772C6 13.7085 6.05156 14.7116 6.15 15.6772H0.379688C0.13125 14.7163 0 13.7132 0 12.6772C0 11.6413 0.13125 10.6382 0.379688 9.67725ZM9.12656 21.6116C8.58281 20.3929 8.14687 18.8835 7.86094 17.1772H16.1391C15.8531 18.8835 15.4125 20.3929 14.8734 21.6116C14.3812 22.7179 13.8328 23.5194 13.3031 24.0257C12.7781 24.5272 12.3422 24.6772 12 24.6772C11.6578 24.6772 11.2219 24.5272 10.6969 24.0304C10.1672 23.5241 9.61875 22.7226 9.12656 21.6163V21.6116ZM6.34219 17.1772C6.81094 20.1726 7.73906 22.6804 8.93438 24.2835C5.25938 23.3132 2.27813 20.6507 0.871875 17.1772H6.34219ZM23.1281 17.1772C21.7219 20.6507 18.7406 23.3132 15.0703 24.2835C16.2656 22.6804 17.1891 20.1726 17.6625 17.1772H23.1328H23.1281Z"
@@ -62,16 +67,19 @@
                     <rect fill="white" height="24" transform="translate(0 0.677246)" width="24"></rect>
                   </clipPath>
                 </defs>
-              </svg><span class="notranslate" id="selected-lang">EN</span></button>
-            <ul class="dropdown-menu" style="max-height:400px;overflow-y:auto;" translate="no" role="list">
-              <li role="listitem"><a class="dropdown-item subtext lang-option notranslate" data-lang="af" href="#"
-                  translate="no">Afrikaans</a></li>
-              <li role="listitem"><a class="dropdown-item subtext lang-option notranslate" data-lang="sq" href="#"
-                  translate="no">Albanian</a></li>
-              <li role="listitem"><a class="dropdown-item subtext lang-option notranslate" data-lang="am" href="#"
-                  translate="no">Amharic</a></li>
-              <li role="listitem"><a class="dropdown-item subtext lang-option notranslate" data-lang="ar" href="#"
-                  translate="no">Arabic</a></li>
+              </svg>
+              EN
+            </button>
+            <ul class="dropdown-menu" style="max-height:400px;overflow-y:auto;" translate="no" role="menu"
+              aria-labelledby="language-dropdown-button">
+              <li role="none"><a class="dropdown-item subtext lang-option notranslate" data-lang="af" href="#"
+                  translate="no" role="menuitem">Afrikaans</a></li>
+              <li role="none"><a class="dropdown-item subtext lang-option notranslate" data-lang="sq" href="#"
+                  translate="no" role="menuitem">Albanian</a></li>
+              <li role="none"><a class="dropdown-item subtext lang-option notranslate" data-lang="am" href="#"
+                  translate="no" role="menuitem">Amharic</a></li>
+              <li role="none"><a class="dropdown-item subtext lang-option notranslate" data-lang="ar" href="#"
+                  translate="no" role="menuitem">Arabic</a></li>
             </ul>
           </div>
           <!-- Language dropdown ends -->
@@ -79,9 +87,8 @@
           <!-- Search -->
           <div class="menu-search">
             <div class="btn-search position-relative">
-              <button aria-label="Search. Press Enter to open the search bar" class="search__btn border-0"
-                type="button">
-                <span aria-label="Search" class="screen-only">Search</span>
+              <button class="search__btn border-0" type="button"
+                aria-label="Search. Press Enter to open the search bar">
                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" height="24" viewBox="0 0 24 24"
                   width="24">
                   <path
