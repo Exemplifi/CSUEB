@@ -859,15 +859,26 @@ section.bg-white.section-with-padding+section.bg-white {
     display: none;
 }
 
-.gray-rule {
-    background: var(--white);
-    border-bottom: 1px solid #e5e6e7;
-    display: block;
-    margin: 0 auto;
-    max-width: rem.convert(1140px);
-    width: 100%;
-    display: none;
+.divider{
+    .gray-rule {
+        background: var(--white);
+        border-bottom: 1px solid #e5e6e7;
+        display: block;
+        margin: 0 auto;
+        max-width: rem.convert(1280px);
+        width: 100%;
+        padding: rem.convert(48px 0px);
+        @include media-breakpoint-down(md){
+            padding: rem.convert(24px 0px);
+        }
+    }
+    &.bg-white{
+        .gray-rule {
+            padding: rem.convert(0px);
+        }
+    }
 }
+
 
 .bg-light-gray+.bg-light-gray {
     padding-top: 0;

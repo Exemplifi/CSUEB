@@ -1043,14 +1043,22 @@ section.bg-white.section-with-padding + section.bg-white {
   display: none;
 }
 
-.gray-rule {
+.divider .gray-rule {
   background: var(--white);
   border-bottom: 1px solid #e5e6e7;
   display: block;
   margin: 0 auto;
-  max-width: 71.25rem;
+  max-width: 80rem;
   width: 100%;
-  display: none;
+  padding: 3rem 0rem;
+}
+@media (max-width: 767.98px) {
+  .divider .gray-rule {
+    padding: 1.5rem 0rem;
+  }
+}
+.divider.bg-white .gray-rule {
+  padding: 0rem;
 }
 
 .bg-light-gray + .bg-light-gray {
@@ -1517,7 +1525,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   border-color: transparent;
 }
 
-.link--hover {
+.link--hover, .bg-img .dec-box a:not(.btn), .bg-img .dec-box a:not([class]) {
   text-decoration-line: underline;
   text-decoration-style: solid;
   text-decoration-skip-ink: none;
@@ -1528,7 +1536,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   display: inline-flex;
   word-break: break-word;
 }
-.link--hover:hover {
+.link--hover:hover, .bg-img .dec-box a:hover:not(.btn), .bg-img .dec-box a:hover:not([class]) {
   background: rgba(213, 0, 50, 0.1);
   text-decoration-color: transparent;
 }
@@ -4232,7 +4240,8 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
     margin-bottom: 8px !important;
   }
 }
-.program-link-sec .program-card .program-link .left-program-link h4, .program-link-sec .program-card .program-link .left-program-link h2 {
+.program-link-sec .program-card .program-link .left-program-link h4,
+.program-link-sec .program-card .program-link .left-program-link h2 {
   margin: 0;
   color: var(--black);
 }
@@ -4284,7 +4293,8 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   background-color: var(--black);
   color: var(--white);
 }
-.program-link-sec .program-card .program-link:hover h2, .program-link-sec .program-card .program-link:hover h4 {
+.program-link-sec .program-card .program-link:hover h2,
+.program-link-sec .program-card .program-link:hover h4 {
   color: var(--white);
 }
 .program-link-sec .program-card .program-link:hover * {
@@ -4320,13 +4330,18 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   max-width: 61.125rem;
   margin: 0 auto;
 }
-.bg-img .text-white {
+.bg-img .dec-box a:not(.btn), .bg-img .dec-box a:not([class]) {
+  color: var(--red);
+  text-decoration: underline;
+  transition: all 0.3s ease-in-out;
+}
+.bg-img .text-white, .bg-img span.text-white {
   color: var(--white);
 }
-.bg-img .text-red {
+.bg-img .text-red, .bg-img span.text-red {
   color: var(--red);
 }
-.bg-img .text-black {
+.bg-img .text-black, .bg-img span.text-black {
   color: var(--black);
 }
 .bg-img.parallax {

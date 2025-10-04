@@ -1104,7 +1104,8 @@
           margin-bottom: 8px !important;
         }
 
-        h4,h2 {
+        h4,
+        h2 {
           margin: 0;
           color: var(--black);
 
@@ -1160,7 +1161,9 @@
       &:hover {
         background-color: var(--black);
         color: var(--white);
-        h2,h4{
+
+        h2,
+        h4 {
           color: var(--white);
         }
 
@@ -1195,29 +1198,47 @@
 }
 
 .bg-img {
-    .section-bg-overlay {
-      display: none;
-    }
-    .section-heading {
-      margin-bottom: rem.convert(24px);
-    }
-    .dec-box {
-      max-width: rem.convert(978px);
-      margin: 0 auto;
-    }
-    .text-white {
-      color: var(--white);
-    }
+  .section-bg-overlay {
+    display: none;
+  }
 
-    .text-red {
+  .section-heading {
+    margin-bottom: rem.convert(24px);
+  }
+
+  .dec-box {
+    max-width: rem.convert(978px);
+    margin: 0 auto;
+
+    a:not(.btn), a:not([class]) {
       color: var(--red);
+      text-decoration: underline;
+      transition: all 0.3s ease-in-out;
+      @extend .link--hover;
+      // &:hover {
+      //   color: var(--red);
+      //   text-decoration: none;
+      //   background: rgba(213, 0, 50, 0.1) !important;
+      //   text-decoration-color: transparent !important;
+      // }
     }
+  }
 
-    .text-black {
-      color: var(--black);
-    }
-    &.parallax {
+  .text-white, span.text-white {
+    color: var(--white);
+  }
+
+  .text-red, span.text-red {
+    color: var(--red);
+  }
+
+  .text-black, span.text-black {
+    color: var(--black);
+  }
+
+  &.parallax {
     position: relative;
+
     .section-bg-overlay {
       display: block;
     }
@@ -1231,18 +1252,19 @@
       z-index: 3;
     }
 
-    .btn-primary{
-      &:hover{
+    .btn-primary {
+      &:hover {
         background-color: var(--gold);
         color: var(--black);
-        span{
+
+        span {
           color: var(--black);
         }
       }
     }
 
 
-   
+
 
     .section-bg-overlay {
       position: absolute;
