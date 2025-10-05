@@ -14,11 +14,18 @@
   padding-inline: rem.convert(6px);
 
   .alert {
-    @include media-breakpoint-up(xl) {
+
+    @media(min-width: 1520px) {
+      max-width: 98.5%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media(min-width: 1600px) {
       max-width: 95%;
       margin-left: auto;
       margin-right: auto;
     }
+   
     @include media-breakpoint-down(sm) {
       font-size: rem.convert(12px);
     }
