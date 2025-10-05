@@ -894,7 +894,7 @@ section.bg-white.section-with-padding+section.bg-white {
     border-left: 5px solid var(--red);
     clear: both;
     padding-left: rem.convert(10px);
-    margin-bottom: rem.convert(20px);
+    margin: rem.convert(24px 0);
     font-style: italic;
     color: #717171;
 }
