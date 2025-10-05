@@ -885,6 +885,12 @@ section.bg-white.section-with-padding+section.bg-white {
     padding-top: 0;
 }
 
+.no-pseudo::before,
+.no-pseudo::after {
+  content: none !important;
+  display: none !important;
+}
+
 // High Contrast Mode
 
 html[hc="a2"],
@@ -1108,3 +1114,5 @@ html[hc="a4"] {
     }
 }
 
+
+ 

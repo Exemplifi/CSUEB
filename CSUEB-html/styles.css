@@ -1066,6 +1066,12 @@ section.bg-white.section-with-padding + section.bg-white {
   padding-top: 0;
 }
 
+.no-pseudo::before,
+.no-pseudo::after {
+  content: none !important;
+  display: none !important;
+}
+
 html[hc=a2] .main-header .header-links .menu-list-link .menu-link:hover,
 html[hc=a4] .main-header .header-links .menu-list-link .menu-link:hover {
   border-color: var(--white);

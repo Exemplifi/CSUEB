@@ -14,9 +14,3 @@
      background: #000 !important;
 }
 
-.no-pseudo::before,
-.no-pseudo::after {
-  content: none !important;
-  display: none !important;
-}
- 
