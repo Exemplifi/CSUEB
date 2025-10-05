@@ -870,6 +870,7 @@ section.bg-white.section-with-padding+section.bg-white {
         padding: rem.convert(48px 0px);
         @include media-breakpoint-down(md){
             padding: rem.convert(24px 0px);
+            width: calc(100% - 32px);
         }
     }
     &.bg-white{

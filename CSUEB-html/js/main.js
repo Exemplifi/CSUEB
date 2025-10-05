@@ -146,13 +146,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const langBtn = document.querySelector('.language-dropdown .dropdown-toggle');
   const langDropdown = document.querySelector('.language-dropdown .dropdown-menu');
   const searchDropdown = document.querySelector('.header-search-dropdown');
+  const infoDropdown = document.querySelector('.info-dropdown ul.dropdown-menu');
+  const infoDropdownBtn = document.querySelector('.info-dropdown button.dropdown-toggle');
   if (searchBtn && searchDropdown) {
     searchBtn.addEventListener('click', function (e) {
       e.stopPropagation();
       searchDropdown.classList.toggle('d-none');
+      infoDropdown.classList.remove('show');
       langDropdown.classList.remove('show');
       langBtn.classList.remove('show');
       langBtn.setAttribute('aria-expanded', 'false');
+      infoDropdownBtn.setAttribute('aria-expanded', 'false');
       if (!searchDropdown.classList.contains('d-none')) {
         const input = searchDropdown.querySelector('.search-input');
         if (input) input.focus();

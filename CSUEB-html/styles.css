@@ -1055,6 +1055,7 @@ section.bg-white.section-with-padding + section.bg-white {
 @media (max-width: 767.98px) {
   .divider .gray-rule {
     padding: 1.5rem 0rem;
+    width: calc(100% - 32px);
   }
 }
 .divider.bg-white .gray-rule {
@@ -1615,6 +1616,13 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   transition: background-color 0.3s ease, box-shadow 0.3s ease, top 0.8s ease-in-out;
   padding-top: 0.375rem;
   padding-inline: 0.375rem;
+}
+@media (min-width: 1200px) {
+  .main-header .alert {
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 @media (max-width: 575.98px) {
   .main-header .alert {
