@@ -1592,35 +1592,7 @@
   <!-- custom JS -->
   <script src="./js/main.js"></script>
 
-  <script>
-    document.querySelectorAll('[data-bs-toggle="tab"]').forEach(tab => {
-  tab.addEventListener('shown.bs.tab', function (e) {
-    const targetId = e.target.getAttribute('data-bs-target');
-    const panel = document.querySelector(targetId);
-    if (panel) {
-      // Add a temporary focus style
-      panel.classList.add('custom-focus-style');
-      panel.focus(); // SR announces the panel
-      // Remove the style after focus is lost
-      panel.addEventListener('blur', function removeFocusStyle() {
-        panel.classList.remove('custom-focus-style');
-        panel.removeEventListener('blur', removeFocusStyle);
-      });
-    }
-  });
-});
 
-// Add the style for .custom-focus-style
-const style = document.createElement('style');
-style.innerHTML = `
-  .custom-focus-style {
-    outline: 2px solid #0056b3 !important;
-    outline-offset: 2px;
-    transition: outline 0.2s;
-  }
-`;
-document.head.appendChild(style);
-  </script>
 
 </body>
 

@@ -37,7 +37,7 @@
 
         <nav aria-label="Main navigation" class="header-links d-flex align-items-center gap-3">
 
-      
+
           <!-- Apply, Request Info, Give links -->
           <ul class="d-flex menu-list-link">
             <li><a class="text-white menu-link subtext" href="#">Apply</a></li>
@@ -1979,6 +1979,46 @@
   <script src="./js/swiper-bundle.min.js"></script>
   <!-- custom JS -->
   <script src="./js/main.js"></script>
+  <script>
+ 
+// Function to handle moving focus to next tab after reading
+function handleTabFocus(tabButton) {
+  const tabId = tabButton.getAttribute('data-bs-target');
+  const tabPanel = document.querySelector(tabId);
+
+  if (!tabPanel) return;
+
+  // Make the panel focusable and focus it
+  tabPanel.setAttribute('tabindex', '-1');
+  tabPanel.focus();
+
+  // Use MutationObserver to detect content changes
+  const observer = new MutationObserver((mutations, obs) => {
+    // After first mutation (content fully rendered)
+    // Move focus to next tab button
+    const currentTabItem = tabButton.closest('li');
+    const nextTabItem = currentTabItem?.nextElementSibling;
+
+    if (nextTabItem) {
+      const nextTabButton = nextTabItem.querySelector('[role="tab"]');
+      if (nextTabButton) nextTabButton.focus();
+    }
+
+    // Disconnect observer after moving focus
+    obs.disconnect();
+  });
+
+  observer.observe(tabPanel, { childList: true, subtree: true });
+}
+
+// Listen for Bootstrap tab shown event
+document.addEventListener('shown.bs.tab', function (event) {
+  handleTabFocus(event.target);
+});
+
+
+
+  </script>
 
 </body>
 
