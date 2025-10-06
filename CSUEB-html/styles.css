@@ -3633,6 +3633,9 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .text-icon-slider .swiper-slide .icon-div i {
   font-size: 5.25rem;
 }
+.text-icon-slider:nth-child(n+4) {
+  display: none;
+}
 
 .testimonial-sec {
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"><g opacity="0.07"><path d="M17.6299 10.722L18 8.625L18.3701 10.722C19.1102 14.176 21.824 16.8898 25.278 17.6299L27.375 18L25.278 18.3701C21.824 19.1102 19.1102 21.824 18.3701 25.278L18 27.375L17.6299 25.278C16.8898 21.824 14.176 19.1102 10.722 18.3701L8.625 18L10.722 17.6299C14.176 16.8898 16.8898 14.176 17.6299 10.722Z" fill="black"/></g></svg>'), var(--red);
