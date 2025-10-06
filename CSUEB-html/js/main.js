@@ -299,52 +299,61 @@ function initInnerHeroSlider() {
 }
 
 function initTextIconSlider() {
-  // Get all slides
-  const slider = document.querySelector('.text-icon-slider .swiper-wrapper');
-  const slides = slider ? Array.from(slider.children) : [];
-  const totalSlides = slides.length;
 
-  // Show only 3 new items on each page load, randomize which 3
-  if (totalSlides > 3) {
-    // Remove all slides first
-    slides.forEach(slide => slide.remove());
+  const container = document.querySelector('.text-icon-slider .swiper-wrapper');
+  if (!container) return;
 
-    // Show slides in groups of 3, cycling through them on each page load
-    // Use localStorage to persist the current group index
-    let groupIndex = parseInt(localStorage.getItem('textIconSliderGroupIndex') || '0', 10);
-    const groupSize = 3;
-    const totalGroups = Math.ceil(totalSlides / groupSize);
-
-    // Calculate start and end indices for the current group
-    const startIdx = groupIndex * groupSize;
-    const endIdx = startIdx + groupSize;
-
-    // Select the current group of slides
-    let selectedSlides = slides.slice(startIdx, endIdx);
-
-    // Update group index for next page load
-    groupIndex = (groupIndex + 1) % totalGroups;
-    localStorage.setItem('textIconSliderGroupIndex', groupIndex.toString());
-    // Select first 3
-    const selected = selectedSlides.slice(0, 3);
-
-    // Append selected slides
-    selected.forEach(slide => slider.appendChild(slide));
+  const slides = Array.from(container.querySelectorAll('.swiper-slide .random'));
+  while (slides.length) {
+    const randomIndex = Math.floor(Math.random() * slides.length);
+    container.appendChild(slides.splice(randomIndex, 1)[0]);
   }
+  // Get all slides
+  // const slider = document.querySelector('.text-icon-slider .swiper-wrapper');
+  // const slides = slider ? Array.from(slider.children) : [];
+  // const totalSlides = slides.length;
 
-  new Swiper(".text-icon-slider", {
-    slidesPerView: 1.2,
-    spaceBetween: 20,
-    breakpoints: {
-      640: { slidesPerView: 2.1 },
-      768: { slidesPerView: 3 },
-    },
-    pagination: { el: ".swiper-pagination", clickable: true },
-    navigation: {
-      nextEl: ".swiper-button-next.swiper-button-next-new",
-      prevEl: ".swiper-button-prev.swiper-button-prev-new",
-    },
-  });
+  // // Show only 3 new items on each page load, randomize which 3
+  // if (totalSlides > 3) {
+  //   // Remove all slides first
+  //   slides.forEach(slide => slide.remove());
+
+  //   // Show slides in groups of 3, cycling through them on each page load
+  //   // Use localStorage to persist the current group index
+  //   let groupIndex = parseInt(localStorage.getItem('textIconSliderGroupIndex') || '0', 10);
+  //   const groupSize = 3;
+  //   const totalGroups = Math.ceil(totalSlides / groupSize);
+
+  //   // Calculate start and end indices for the current group
+  //   const startIdx = groupIndex * groupSize;
+  //   const endIdx = startIdx + groupSize;
+
+  //   // Select the current group of slides
+  //   let selectedSlides = slides.slice(startIdx, endIdx);
+
+  //   // Update group index for next page load
+  //   groupIndex = (groupIndex + 1) % totalGroups;
+  //   localStorage.setItem('textIconSliderGroupIndex', groupIndex.toString());
+  //   // Select first 3
+  //   const selected = selectedSlides.slice(0, 3);
+
+  //   // Append selected slides
+  //   selected.forEach(slide => slider.appendChild(slide));
+  // }
+
+  // new Swiper(".text-icon-slider", {
+  //   slidesPerView: 1.2,
+  //   spaceBetween: 20,
+  //   breakpoints: {
+  //     640: { slidesPerView: 2.1 },
+  //     768: { slidesPerView: 3 },
+  //   },
+  //   pagination: { el: ".swiper-pagination", clickable: true },
+  //   navigation: {
+  //     nextEl: ".swiper-button-next.swiper-button-next-new",
+  //     prevEl: ".swiper-button-prev.swiper-button-prev-new",
+  //   },
+  // });
 }
 
 function initBrightFutureSlider() {
