@@ -370,6 +370,9 @@
 .text-icon-slider {
   .swiper-slide {
     background-color: transparent;
+    &:nth-child(n+4) {
+      display: none !important;
+    }
 
     .icon-div {
       i {
@@ -377,9 +380,7 @@
       }
     }
 
-    &:nth-child(n+4) {
-      display: none;
-    }
+    
   }
 
 
