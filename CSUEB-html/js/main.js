@@ -344,15 +344,19 @@ function initTextIconSlider() {
   new Swiper(".text-icon-slider", {
     slidesPerView: 1.2,
     spaceBetween: 20,
+    loop: false,
     breakpoints: {
       640: { slidesPerView: 2.1 },
       768: { slidesPerView: 3 },
-    }
-    // pagination: { el: ".swiper-pagination", clickable: true },
-    // navigation: {
-    //   nextEl: ".swiper-button-next.swiper-button-next-new",
-    //   prevEl: ".swiper-button-prev.swiper-button-prev-new",
-    // },
+    },
+    // Only enable pagination and navigation below 640px
+    ...(window.innerWidth < 640 ? {
+      pagination: { el: ".swiper-pagination", clickable: true },
+      navigation: {
+        nextEl: ".swiper-button-next.swiper-button-next-new",
+        prevEl: ".swiper-button-prev.swiper-button-prev-new",
+      }
+    } : {}),
   });
 }
 
