@@ -297,19 +297,18 @@
       display: none !important;
     }
   }
-   // Fix for aria-disabled not working: Swiper disables buttons with .swiper-button-disabled, not aria-disabled.
-    // For accessibility, keep both selectors.
-    .swiper-btn[aria-disabled="true"] {
-      background-color: #FFFFFF40 !important;
-      opacity: 1 !important;
-      pointer-events: none !important;
 
-      svg {
-        path {
-          fill: var(--white) !important;
-        }
+  .swiper-btn[aria-disabled="true"] {
+    background-color: #FFFFFF40 !important;
+    opacity: 1 !important;
+    pointer-events: none !important;
+
+    svg {
+      path {
+        fill: var(--white) !important;
       }
     }
+  }
 
   .swiper-pagination {
     position: relative;
@@ -338,7 +337,7 @@
         background: var(--gold);
       }
     }
-    
+
   }
 
 
@@ -404,7 +403,7 @@
       }
     }
 
-   
+
 
     .swiper-pagination {
       .swiper-pagination-bullet {
