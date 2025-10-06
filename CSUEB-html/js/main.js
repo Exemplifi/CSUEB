@@ -341,19 +341,19 @@ function initTextIconSlider() {
   //   selected.forEach(slide => slider.appendChild(slide));
   // }
 
-  new Swiper(".text-icon-slider", {
-    slidesPerView: 1.2,
-    spaceBetween: 20,
-    breakpoints: {
-      640: { slidesPerView: 2.1 },
-      768: { slidesPerView: 3 },
-    },
-    pagination: { el: ".swiper-pagination", clickable: true },
-    navigation: {
-      nextEl: ".swiper-button-next.swiper-button-next-new",
-      prevEl: ".swiper-button-prev.swiper-button-prev-new",
-    },
-  });
+  // new Swiper(".text-icon-slider", {
+  //   slidesPerView: 1.2,
+  //   spaceBetween: 20,
+  //   breakpoints: {
+  //     640: { slidesPerView: 2.1 },
+  //     768: { slidesPerView: 3 },
+  //   },
+  //   pagination: { el: ".swiper-pagination", clickable: true },
+  //   navigation: {
+  //     nextEl: ".swiper-button-next.swiper-button-next-new",
+  //     prevEl: ".swiper-button-prev.swiper-button-prev-new",
+  //   },
+  // });
 }
 
 function initBrightFutureSlider() {
