@@ -303,7 +303,7 @@ function initTextIconSlider() {
   const container = document.querySelector('.text-icon-slider .swiper-wrapper');
   if (!container) return;
 
-  const slides = Array.from(container.querySelectorAll('.swiper-slide .random'));
+  const slides = Array.from(container.querySelectorAll('.swiper-slide.random'));
   while (slides.length) {
     const randomIndex = Math.floor(Math.random() * slides.length);
     container.appendChild(slides.splice(randomIndex, 1)[0]);
