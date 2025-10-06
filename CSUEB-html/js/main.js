@@ -341,22 +341,46 @@ function initTextIconSlider() {
   //   selected.forEach(slide => slider.appendChild(slide));
   // }
 
-  new Swiper(".text-icon-slider", {
-    slidesPerView: 1.2,
-    spaceBetween: 20,
-    loop: false,
-    breakpoints: {
-      640: { slidesPerView: 2.1 },
-      768: { slidesPerView: 3 },
-    },
-    // Only enable pagination and navigation below 640px
-    ...(window.innerWidth < 640 ? {
-      pagination: { el: ".swiper-pagination", clickable: true },
-      navigation: {
-        nextEl: ".swiper-button-next.swiper-button-next-new",
-        prevEl: ".swiper-button-prev.swiper-button-prev-new",
-      }
-    } : {}),
+  // Responsive Swiper initialization with re-init on window resize
+  let textIconSwiper;
+  let lastIsMobile = window.innerWidth < 640;
+
+  function initOrUpdateTextIconSwiper() {
+    // Destroy previous instance if exists
+    if (textIconSwiper && typeof textIconSwiper.destroy === "function") {
+      textIconSwiper.destroy(true, true);
+    }
+    const isMobile = window.innerWidth < 640;
+    textIconSwiper = new Swiper(".text-icon-slider", {
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+      loop: false,
+      breakpoints: {
+        640: { slidesPerView: 2.1 },
+        768: { slidesPerView: 3 },
+      },
+      ...(isMobile
+        ? {
+          pagination: { el: ".swiper-pagination", clickable: true },
+          navigation: {
+            nextEl: ".swiper-button-next.swiper-button-next-new",
+            prevEl: ".swiper-button-prev.swiper-button-prev-new",
+          },
+        }
+        : {}),
+    });
+    lastIsMobile = isMobile;
+  }
+
+  // Initialize on load
+  initOrUpdateTextIconSwiper();
+
+  // Re-initialize on resize if breakpoint crosses 640px
+  window.addEventListener("resize", function () {
+    const isMobile = window.innerWidth < 640;
+    if (isMobile !== lastIsMobile) {
+      initOrUpdateTextIconSwiper();
+    }
   });
 }
 

@@ -2952,6 +2952,14 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .button-with-pagination-sec .swiper-btn.swiper-button-lock {
   display: none !important;
 }
+.button-with-pagination-sec .swiper-btn[aria-disabled=true] {
+  background-color: rgba(255, 255, 255, 0.2509803922) !important;
+  opacity: 1 !important;
+  pointer-events: none !important;
+}
+.button-with-pagination-sec .swiper-btn[aria-disabled=true] svg path {
+  fill: var(--white) !important;
+}
 .button-with-pagination-sec .swiper-pagination {
   position: relative;
   inset: 0 !important;
@@ -15910,7 +15918,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url("./webfonts/fa-solid-900.woff2") format("woff2"), url("./webfonts/fa-solid-900.ttf") format("truetype");
+  src: url("../webfonts/fa-solid-900.woff2") format("woff2"), url("../webfonts/fa-solid-900.ttf") format("truetype");
 }
 .fas,
 .fa-solid {
@@ -15932,7 +15940,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("./webfonts/fa-brands-400.woff2") format("woff2"), url("./webfonts/fa-brands-400.ttf") format("truetype");
+  src: url("../webfonts/fa-brands-400.woff2") format("woff2"), url("../webfonts/fa-brands-400.ttf") format("truetype");
 }
 .fab,
 .fa-brands {
@@ -18074,7 +18082,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("./webfonts/fa-regular-400.woff2") format("woff2"), url("./webfonts/fa-regular-400.ttf") format("truetype");
+  src: url("../webfonts/fa-regular-400.woff2") format("woff2"), url("../webfonts/fa-regular-400.ttf") format("truetype");
 }
 .far,
 .fa-regular {
