@@ -382,7 +382,7 @@
   }
   .button-with-pagination-sec{
     @include media-breakpoint-up(md) {
-      display: none;
+      display: none !important;
     }
   }
 

@@ -3648,7 +3648,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 @media (min-width: 768px) {
   .text-icon-slider .button-with-pagination-sec {
-    display: none;
+    display: none !important;
   }
 }
 
