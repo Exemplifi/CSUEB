@@ -379,6 +379,11 @@
         font-size: rem.convert(84px);
       }
     }
+    .button-with-pagination-sec{
+      @include media-breakpoint-up(md) {
+        display: none;
+      }
+    }
 
     
   }
