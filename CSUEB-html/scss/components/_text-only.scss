@@ -376,11 +376,13 @@
         font-size: rem.convert(84px);
       }
     }
-  }
- 
+
     &:nth-child(n+4) {
-        display: none;
+      display: none;
     }
+  }
+
+
 }
 
 // testimonial
@@ -1214,7 +1216,8 @@
     max-width: rem.convert(978px);
     margin: 0 auto;
 
-    a:not(.btn), a:not([class]) {
+    a:not(.btn),
+    a:not([class]) {
       color: var(--red);
       text-decoration: underline;
       transition: all 0.3s ease-in-out;
@@ -1228,15 +1231,18 @@
     }
   }
 
-  .text-white, span.text-white {
+  .text-white,
+  span.text-white {
     color: var(--white);
   }
 
-  .text-red, span.text-red {
+  .text-red,
+  span.text-red {
     color: var(--red);
   }
 
-  .text-black, span.text-black {
+  .text-black,
+  span.text-black {
     color: var(--black);
   }
 
