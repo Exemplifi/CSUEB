@@ -1358,6 +1358,7 @@ document.addEventListener('DOMContentLoaded', function () {
         showNextSlide();
       }
     }, 5000); 
+    
   }
 
   // Show next slide
@@ -1374,11 +1375,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Update slider position and attributes
   function updateSlider() {
-    // Update slider position
-    sliderWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+    // Update slider position if sliderWrapper exists
+    if (sliderWrapper) {
+      sliderWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
 
-    // Update progress bar
-    progressBar.style.transform = `translateX(${currentSlide * 100}%)`;
+    // Update progress bar if progressBar exists
+    if (progressBar) {
+      progressBar.style.transform = `translateX(${currentSlide * 100}%)`;
+    }
 
     // Update current slide counter
     currentSlideElement.textContent = currentSlide + 1;
