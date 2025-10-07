@@ -1393,8 +1393,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Update ARIA attributes
     updateAriaAttributes();
 
-    // Announce slide change to screen readers
-    announceSlideChange();
+    // Announce slide change to screen readers with setTimeout
+    setTimeout(() => {
+      announceSlideChange();
+    }, 1000);
   }
   
   function updateAriaAttributes() {
@@ -1412,10 +1414,20 @@ document.addEventListener('DOMContentLoaded', function () {
   // Announce slide change to screen readers
   function announceSlideChange() {
     const currentSlideElement = slides[currentSlide];
-    const quote = currentSlideElement.querySelector('.section-title').textContent;
+    let quote = '';
+    const sectionTitle = currentSlideElement.querySelector('.section-title');
+    if (sectionTitle) {
+      quote = sectionTitle.textContent;
+    }
     const author = currentSlideElement.querySelector('.heading-name').textContent.trim();
 
-    announcement.textContent = `Slide ${currentSlide + 1} of ${slides.length}: ${quote} by ${author}`;
+    // Use setTimeout to ensure screen readers detect the change
+    if (announcement) {
+      announcement.textContent = '';
+      setTimeout(() => {
+        announcement.textContent = `Slide ${currentSlide + 1} of ${slides.length}: ${quote} by ${author}`;
+      }, 1000);
+    }
   }
 
   // Handle keyboard navigation
@@ -1458,8 +1470,10 @@ document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => { isUserInteracting = false; }, 1000);
   }
 
-  // Initialize the slider
-  initSlider();
+  // Initialize the slider with setTimeout to ensure DOM is ready
+  setTimeout(() => {
+    initSlider();
+  }, 100);
 });
 
 
