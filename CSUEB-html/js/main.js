@@ -1335,12 +1335,20 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('keydown', handleKeyDown);
 
     // Pause auto-rotation on focus and hover
-    sliderWrapper.addEventListener('mouseenter', pauseAutoRotation);
-    sliderWrapper.addEventListener('focusin', pauseAutoRotation);
+    if (sliderWrapper) {
+      sliderWrapper.addEventListener('mouseenter', pauseAutoRotation);
+    }
+    if (sliderWrapper) {
+      sliderWrapper.addEventListener('focusin', pauseAutoRotation);
+    }
 
     // Resume auto-rotation when user leaves
-    sliderWrapper.addEventListener('mouseleave', resumeAutoRotation);
-    sliderWrapper.addEventListener('focusout', resumeAutoRotation);
+    if (sliderWrapper) {
+      sliderWrapper.addEventListener('mouseleave', resumeAutoRotation);
+    }
+    if (sliderWrapper) {
+      sliderWrapper.addEventListener('focusout', resumeAutoRotation);
+    }
   }
 
   // Start auto rotation
