@@ -1306,101 +1306,65 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //Testimonial slider screen reader accessibility
+//Testimonial slider screen reader accessibility - Announcement only version
+//Testimonial slider screen reader accessibility - Fixed for your HTML structure
 document.addEventListener('DOMContentLoaded', function () {
-  const sliderWrapper = document.getElementById('.testimonial-sec .slider-wrapper');
-  const slides = document.querySelectorAll('.testimonial-sec .slider-wrapper .swiper-slide');
-  const progressBar = document.getElementById('progress-bar');
-  const currentSlideElement = document.getElementById('current-slide');
-  const totalSlidesElement = document.getElementById('total-slides');
-  const announcement = document.getElementById('slide-announcement');
-
+  const slides = document.querySelectorAll('.testimonial-slider .swiper-slide');
+  const announcement = document.getElementById('testimonial-announcements');
+  
   let currentSlide = 0;
-  let slideInterval;
-  let isUserInteracting = false;
 
-  // Initialize slider
-  function initSlider() {
+  // Initialize slider announcements
+  function initSliderAnnouncements() {
+    // Check if slides exist
+    if (slides.length === 0) {
+      console.warn('No slides found for testimonial slider');
+      return;
+    }
+    
+    console.log('Found', slides.length, 'slides'); // Debug log
+    
     // Set up initial ARIA attributes
     updateAriaAttributes();
-
-    // Set total slides count if element exists
-    if (totalSlidesElement) {
-      totalSlidesElement.textContent = slides.length;
-    }
-
-    // Start auto-rotation
-    startAutoRotation();
-
-    // Add keyboard navigation
-    document.addEventListener('keydown', handleKeyDown);
-
-    // Pause auto-rotation on focus and hover
-    if (sliderWrapper) {
-      sliderWrapper.addEventListener('mouseenter', pauseAutoRotation);
-    }
-    if (sliderWrapper) {
-      sliderWrapper.addEventListener('focusin', pauseAutoRotation);
-    }
-
-    // Resume auto-rotation when user leaves
-    if (sliderWrapper) {
-      sliderWrapper.addEventListener('mouseleave', resumeAutoRotation);
-    }
-    if (sliderWrapper) {
-      sliderWrapper.addEventListener('focusout', resumeAutoRotation);
-    }
-  }
-
-  //Start auto rotation
-  function startAutoRotation() {
-    slideInterval = setInterval(() => {
-      if (!isUserInteracting) {
-        showNextSlide();
-      }
-    }, 5000); 
     
+    // Announce initial slide
+    setTimeout(() => {
+      announceSlideChange();
+    }, 1000);
+
+    // Add keyboard navigation for announcements
+    document.addEventListener('keydown', handleKeyDown);
   }
 
   // Show next slide
   function showNextSlide() {
+    if (slides.length === 0) return;
     currentSlide = (currentSlide + 1) % slides.length;
     updateSlider();
   }
 
   // Show previous slide
   function showPrevSlide() {
+    if (slides.length === 0) return;
     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
     updateSlider();
   }
 
-  // Update slider position and attributes
+  // Update slider announcements
   function updateSlider() {
-    // Update slider position if sliderWrapper exists
-    if (sliderWrapper) {
-      sliderWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-
-    // Update progress bar if progressBar exists
-    if (progressBar) {
-      progressBar.style.transform = `translateX(${currentSlide * 100}%)`;
-    }
-
-    // Update current slide counter safely
-    if (currentSlideElement) {
-      currentSlideElement.textContent = currentSlide + 1;
-    }
-
     // Update ARIA attributes
     updateAriaAttributes();
 
-    // Announce slide change to screen readers with setTimeout
+    // Announce slide change to screen readers
     setTimeout(() => {
       announceSlideChange();
-    }, 1000);
+    }, 100);
   }
   
   function updateAriaAttributes() {
     slides.forEach((slide, index) => {
+      if (!slide) return;
+      
       if (index === currentSlide) {
         slide.setAttribute('aria-hidden', 'false');
         slide.setAttribute('aria-label', `${index + 1} of ${slides.length}`);
@@ -1413,66 +1377,72 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Announce slide change to screen readers
   function announceSlideChange() {
+    // Safety check for current slide element
+    if (!slides[currentSlide]) {
+      console.warn('Current slide element not found at index:', currentSlide);
+      return;
+    }
+    
     const currentSlideElement = slides[currentSlide];
     let quote = '';
+    let author = '';
+    
+    // Safely get quote text - using the correct selector from your HTML
     const sectionTitle = currentSlideElement.querySelector('.section-title');
     if (sectionTitle) {
-      quote = sectionTitle.textContent;
+      quote = sectionTitle.textContent || '';
+      console.log('Found quote:', quote); // Debug log
+    } else {
+      console.log('No section-title found in slide'); // Debug log
     }
-    const author = currentSlideElement.querySelector('.heading-name').textContent.trim();
+    
+    // Safely get author text - using the correct selector from your HTML
+    const authorElement = currentSlideElement.querySelector('.heading-name');
+    if (authorElement) {
+      author = authorElement.textContent?.trim() || '';
+      console.log('Found author:', author); // Debug log
+    } else {
+      console.log('No heading-name found in slide'); // Debug log
+    }
 
     // Use setTimeout to ensure screen readers detect the change
     if (announcement) {
       announcement.textContent = '';
       setTimeout(() => {
-        announcement.textContent = `Slide ${currentSlide + 1} of ${slides.length}: ${quote} by ${author}`;
-      }, 1000);
+        const slideInfo = `Slide ${currentSlide + 1} of ${slides.length}`;
+        const contentInfo = quote ? `: ${quote}${author ? ' by ' + author : ''}` : '';
+        announcement.textContent = slideInfo + contentInfo;
+        console.log('Announcement:', announcement.textContent); // Debug log
+      }, 100);
+    } else {
+      console.log('Announcement element not found'); // Debug log
     }
   }
 
-  // Handle keyboard navigation
+  // Handle keyboard navigation for announcements
   function handleKeyDown(event) {
+    if (slides.length === 0) return;
+    
     if (event.key === 'ArrowLeft') {
       event.preventDefault();
-      isUserInteracting = true;
       showPrevSlide();
-      // Reset user interaction flag after a delay
-      setTimeout(() => { isUserInteracting = false; }, 5000);
     } else if (event.key === 'ArrowRight') {
       event.preventDefault();
-      isUserInteracting = true;
       showNextSlide();
-      // Reset user interaction flag after a delay
-      setTimeout(() => { isUserInteracting = false; }, 5000);
     } else if (event.key === 'Home') {
       event.preventDefault();
-      isUserInteracting = true;
       currentSlide = 0;
       updateSlider();
-      setTimeout(() => { isUserInteracting = false; }, 5000);
     } else if (event.key === 'End') {
       event.preventDefault();
-      isUserInteracting = true;
       currentSlide = slides.length - 1;
       updateSlider();
-      setTimeout(() => { isUserInteracting = false; }, 5000);
     }
   }
 
-  // Pause auto-rotation when user interacts
-  function pauseAutoRotation() {
-    isUserInteracting = true;
-  }
-
-  // Resume auto-rotation when user stops interacting
-  function resumeAutoRotation() {
-    // Only resume if the user isn't currently interacting via keyboard
-    setTimeout(() => { isUserInteracting = false; }, 1000);
-  }
-
-  // Initialize the slider with setTimeout to ensure DOM is ready
+  // Initialize the slider announcements
   setTimeout(() => {
-    initSlider();
+    initSliderAnnouncements();
   }, 100);
 });
 
