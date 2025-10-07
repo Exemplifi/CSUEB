@@ -1305,9 +1305,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }, 1000);
 });
 
-
-
-
 // Call on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function () {
   initFlipTilesGallery();
