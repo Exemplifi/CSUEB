@@ -1394,8 +1394,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Announce slide change to screen readers
     announceSlideChange();
   }
-
-  // Update ARIA attributes
+  
   function updateAriaAttributes() {
     slides.forEach((slide, index) => {
       if (index === currentSlide) {
