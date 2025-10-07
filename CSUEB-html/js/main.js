@@ -1351,13 +1351,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Start auto rotation
+  //Start auto rotation
   function startAutoRotation() {
     slideInterval = setInterval(() => {
       if (!isUserInteracting) {
         showNextSlide();
       }
-    }, 5000); // Change slide every 5 seconds
+    }, 5000); 
   }
 
   // Show next slide
