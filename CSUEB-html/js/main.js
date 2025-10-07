@@ -256,7 +256,7 @@ function initTestimonialSlider() {
     spaceBetween: 30,
     effect: "fade",
     loop: true,
-    autoplay: { delay: 10000, disableOnInteraction: false },
+    autoplay: { delay: 12000, disableOnInteraction: false },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -1304,6 +1304,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 100);
   }, 1000);
 });
+
+//Testimonial slider screen reader accessibility
+
+
 
 // Call on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function () {
