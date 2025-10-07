@@ -1385,8 +1385,10 @@ document.addEventListener('DOMContentLoaded', function () {
       progressBar.style.transform = `translateX(${currentSlide * 100}%)`;
     }
 
-    // Update current slide counter
-    currentSlideElement.textContent = currentSlide + 1;
+    // Update current slide counter safely
+    if (currentSlideElement) {
+      currentSlideElement.textContent = currentSlide + 1;
+    }
 
     // Update ARIA attributes
     updateAriaAttributes();
