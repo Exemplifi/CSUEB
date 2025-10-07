@@ -1267,7 +1267,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         setTimeout(() => {
           // Then set the new content with ALL text
-          announcementElement.textContent = 'Tab content: ' + tabContent.trim() + ' Use left and right arrow keys to navigate between tabs. Use enter key to open tab content.';
+          announcementElement.textContent = 'Tab content: ' + tabContent.trim() + ' Use left and right arrow keys to navigate between tabs.';
           console.log('Announcing:', tabContent.trim().substring(0, 100) + '...'); // Debug
         }, 100);
       }, 100);
@@ -1323,8 +1323,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Set up initial ARIA attributes
     updateAriaAttributes();
 
-    // Set total slides count
-    totalSlidesElement.textContent = slides.length;
+    // Set total slides count if element exists
+    if (totalSlidesElement) {
+      totalSlidesElement.textContent = slides.length;
+    }
 
     // Start auto-rotation
     startAutoRotation();

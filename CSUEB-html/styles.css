@@ -6686,6 +6686,9 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .accodian-global {
   margin-bottom: 0;
 }
+.accodian-global .accordion-item {
+  margin-top: 0.75rem;
+}
 .accodian-global .accordion-item .accordion-button {
   font-weight: 600;
   display: flex;
@@ -6696,7 +6699,6 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   padding: 2rem;
   padding-right: 4rem;
   margin-bottom: 0;
-  margin-top: 0.75rem;
   transition: all 0.3s ease-in-out;
 }
 .accodian-global .accordion-item .accordion-button:focus {
@@ -6780,6 +6782,9 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   transition: all 0.3s ease-in-out;
   transform: scale(1.2);
 }
+.accodian-global .accordion-item .accordion-button[aria-expanded=true] .sr-only {
+  display: none;
+}
 .accodian-global .accordion-collapse {
   background-color: var(--light-gray);
 }
@@ -6804,6 +6809,9 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .accodian-global .accordion-collapse .accordion-body a:not(.btn):hover {
   background: rgba(213, 0, 50, 0.1) !important;
   text-decoration-color: transparent !important;
+}
+.accodian-global .accordion-collapse .accordion-body .star-ul {
+  padding-left: 0;
 }
 .accodian-global .accordion-collapse .accordion-body .custom-table-section {
   margin-top: 0;
