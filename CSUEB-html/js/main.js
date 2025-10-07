@@ -1260,16 +1260,16 @@ document.addEventListener('DOMContentLoaded', function () {
       // Get ALL text content from the tab panel
       const tabContent = tabPanel.textContent || tabPanel.innerText;
 
-      // Use multiple timeouts to ensure screen readers detect the change
+      // Use setTimeout to ensure screen readers detect the change
       setTimeout(() => {
         // First clear the content
         announcementElement.textContent = '';
 
         setTimeout(() => {
           // Then set the new content with ALL text
-          announcementElement.textContent = 'Tab content: ' + tabContent.trim() + 'Use left and right arrow keys to navigate between tabs' + 'Use enter key to open tab content';
+          announcementElement.textContent = 'Tab content: ' + tabContent.trim() + ' Use left and right arrow keys to navigate between tabs. Use enter key to open tab content.';
           console.log('Announcing:', tabContent.trim().substring(0, 100) + '...'); // Debug
-        }, 50);
+        }, 100);
       }, 100);
     }
   }
@@ -1279,9 +1279,11 @@ document.addEventListener('DOMContentLoaded', function () {
     tab.addEventListener('shown.bs.tab', function (event) {
       const targetId = event.target.getAttribute('data-bs-target').substring(1);
 
-      // Wait for Bootstrap's fade animation to complete
+      // Wait for Bootstrap's fade animation to complete, then use setTimeout for announcement
       setTimeout(() => {
-        announceTabContent(targetId);
+        setTimeout(() => {
+          announceTabContent(targetId);
+        }, 100);
       }, 350);
     });
 
@@ -1295,9 +1297,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Announce the first tab's ALL content on page load
+  // Announce the first tab's ALL content on page load, with setTimeout
   setTimeout(() => {
-    announceTabContent('tab1');
+    setTimeout(() => {
+      announceTabContent('tab1');
+    }, 100);
   }, 1000);
 });
 
