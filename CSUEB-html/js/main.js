@@ -1308,7 +1308,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //Testimonial slider screen reader accessibility
 document.addEventListener('DOMContentLoaded', function () {
   const sliderWrapper = document.getElementById('.testimonial-sec .slider-wrapper');
-  const slides = document.querySelectorAll('.testimonial-sec .slider-wrapper .slide');
+  const slides = document.querySelectorAll('.testimonial-sec .slider-wrapper .swiper-slide');
   const progressBar = document.getElementById('progress-bar');
   const currentSlideElement = document.getElementById('current-slide');
   const totalSlidesElement = document.getElementById('total-slides');
