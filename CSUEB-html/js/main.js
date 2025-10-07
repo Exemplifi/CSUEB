@@ -256,7 +256,7 @@ function initTestimonialSlider() {
     spaceBetween: 30,
     effect: "fade",
     loop: true,
-    autoplay: { delay: 2500, disableOnInteraction: false },
+    autoplay: { delay: 10000, disableOnInteraction: false },
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -1247,6 +1247,201 @@ function initFlipTilesGallery() {
     });
   });
 }
+
+//Screen reader accessibility Tab component
+document.addEventListener('DOMContentLoaded', function () {
+  const tabElements = document.querySelectorAll('.tabbed-section .nav-tabs button[data-bs-toggle="tab"]');
+  const announcementElement = document.getElementById('sr-announcement');
+
+  // Function to announce ALL tab content to screen readers
+  function announceTabContent(tabId) {
+    const tabPanel = document.getElementById(tabId);
+    if (tabPanel) {
+      // Get ALL text content from the tab panel
+      const tabContent = tabPanel.textContent || tabPanel.innerText;
+
+      // Use multiple timeouts to ensure screen readers detect the change
+      setTimeout(() => {
+        // First clear the content
+        announcementElement.textContent = '';
+
+        setTimeout(() => {
+          // Then set the new content with ALL text
+          announcementElement.textContent = 'Tab content: ' + tabContent.trim() + 'Use left and right arrow keys to navigate between tabs' + 'Use enter key to open tab content';
+          console.log('Announcing:', tabContent.trim().substring(0, 100) + '...'); // Debug
+        }, 50);
+      }, 100);
+    }
+  }
+
+  // Add event listeners to all tab buttons
+  tabElements.forEach(tab => {
+    tab.addEventListener('shown.bs.tab', function (event) {
+      const targetId = event.target.getAttribute('data-bs-target').substring(1);
+
+      // Wait for Bootstrap's fade animation to complete
+      setTimeout(() => {
+        announceTabContent(targetId);
+      }, 350);
+    });
+
+    // Handle keyboard navigation
+    tab.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        const bsTab = new bootstrap.Tab(this);
+        bsTab.show();
+      }
+    });
+  });
+
+  // Announce the first tab's ALL content on page load
+  setTimeout(() => {
+    announceTabContent('tab1');
+  }, 1000);
+});
+
+//Testimonial slider screen reader accessibility
+document.addEventListener('DOMContentLoaded', function () {
+  const sliderWrapper = document.getElementById('.testimonial-sec .slider-wrapper');
+  const slides = document.querySelectorAll('.testimonial-sec .slider-wrapper .slide');
+  const progressBar = document.getElementById('progress-bar');
+  const currentSlideElement = document.getElementById('current-slide');
+  const totalSlidesElement = document.getElementById('total-slides');
+  const announcement = document.getElementById('slide-announcement');
+
+  let currentSlide = 0;
+  let slideInterval;
+  let isUserInteracting = false;
+
+  // Initialize slider
+  function initSlider() {
+    // Set up initial ARIA attributes
+    updateAriaAttributes();
+
+    // Set total slides count
+    totalSlidesElement.textContent = slides.length;
+
+    // Start auto-rotation
+    startAutoRotation();
+
+    // Add keyboard navigation
+    document.addEventListener('keydown', handleKeyDown);
+
+    // Pause auto-rotation on focus and hover
+    sliderWrapper.addEventListener('mouseenter', pauseAutoRotation);
+    sliderWrapper.addEventListener('focusin', pauseAutoRotation);
+
+    // Resume auto-rotation when user leaves
+    sliderWrapper.addEventListener('mouseleave', resumeAutoRotation);
+    sliderWrapper.addEventListener('focusout', resumeAutoRotation);
+  }
+
+  // Start auto rotation
+  function startAutoRotation() {
+    slideInterval = setInterval(() => {
+      if (!isUserInteracting) {
+        showNextSlide();
+      }
+    }, 5000); // Change slide every 5 seconds
+  }
+
+  // Show next slide
+  function showNextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateSlider();
+  }
+
+  // Show previous slide
+  function showPrevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateSlider();
+  }
+
+  // Update slider position and attributes
+  function updateSlider() {
+    // Update slider position
+    sliderWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+    // Update progress bar
+    progressBar.style.transform = `translateX(${currentSlide * 100}%)`;
+
+    // Update current slide counter
+    currentSlideElement.textContent = currentSlide + 1;
+
+    // Update ARIA attributes
+    updateAriaAttributes();
+
+    // Announce slide change to screen readers
+    announceSlideChange();
+  }
+
+  // Update ARIA attributes
+  function updateAriaAttributes() {
+    slides.forEach((slide, index) => {
+      if (index === currentSlide) {
+        slide.setAttribute('aria-hidden', 'false');
+        slide.setAttribute('aria-label', `${index + 1} of ${slides.length}`);
+      } else {
+        slide.setAttribute('aria-hidden', 'true');
+        slide.removeAttribute('aria-label');
+      }
+    });
+  }
+
+  // Announce slide change to screen readers
+  function announceSlideChange() {
+    const currentSlideElement = slides[currentSlide];
+    const quote = currentSlideElement.querySelector('.section-title').textContent;
+    const author = currentSlideElement.querySelector('.heading-name').textContent.trim();
+
+    announcement.textContent = `Slide ${currentSlide + 1} of ${slides.length}: ${quote} by ${author}`;
+  }
+
+  // Handle keyboard navigation
+  function handleKeyDown(event) {
+    if (event.key === 'ArrowLeft') {
+      event.preventDefault();
+      isUserInteracting = true;
+      showPrevSlide();
+      // Reset user interaction flag after a delay
+      setTimeout(() => { isUserInteracting = false; }, 5000);
+    } else if (event.key === 'ArrowRight') {
+      event.preventDefault();
+      isUserInteracting = true;
+      showNextSlide();
+      // Reset user interaction flag after a delay
+      setTimeout(() => { isUserInteracting = false; }, 5000);
+    } else if (event.key === 'Home') {
+      event.preventDefault();
+      isUserInteracting = true;
+      currentSlide = 0;
+      updateSlider();
+      setTimeout(() => { isUserInteracting = false; }, 5000);
+    } else if (event.key === 'End') {
+      event.preventDefault();
+      isUserInteracting = true;
+      currentSlide = slides.length - 1;
+      updateSlider();
+      setTimeout(() => { isUserInteracting = false; }, 5000);
+    }
+  }
+
+  // Pause auto-rotation when user interacts
+  function pauseAutoRotation() {
+    isUserInteracting = true;
+  }
+
+  // Resume auto-rotation when user stops interacting
+  function resumeAutoRotation() {
+    // Only resume if the user isn't currently interacting via keyboard
+    setTimeout(() => { isUserInteracting = false; }, 1000);
+  }
+
+  // Initialize the slider
+  initSlider();
+});
+
 
 // Call on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function () {

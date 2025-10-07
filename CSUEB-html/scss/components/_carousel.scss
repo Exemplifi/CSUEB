@@ -298,17 +298,6 @@
     }
   }
 
-  .swiper-btn[aria-disabled="true"] {
-    background-color: #FFFFFF40 !important;
-    opacity: 1 !important;
-    pointer-events: none !important;
-
-    svg {
-      path {
-        fill: var(--white) !important;
-      }
-    }
-  }
 
   .swiper-pagination {
     position: relative;

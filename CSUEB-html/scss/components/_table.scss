@@ -81,6 +81,9 @@ table {
           &:first-child {
               padding-left: rem.convert(8px) !important;
           }
+          tr{
+            border-bottom: 2px solid var(--gold) !important;
+          }
       }
   }
 

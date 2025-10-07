@@ -12,6 +12,21 @@
 
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="override.css">
+  <style>
+    .visually-hidden {
+      position: absolute;
+      left: -10000px;
+      top: auto;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+    .nav-link{
+      .sr-only{
+       display: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -720,9 +735,6 @@
                     <th>Column 1</th>
                     <th>Another Column</th>
                     <th>One Last Column</th>
-                    <th>
-                      <span class="screen-only" aria-label="Text">Text</span>
-                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -1347,8 +1359,7 @@
       <div class="container-smaller position-relative">
 
         <div class="next-card bg-white text-black">
-          <!-- Skip to testimonial content for screen readers -->
-          <a href="#testimonial-content" class="sr-only sr-only-focusable">Skip to testimonial content</a>
+         
           
           <!-- Testimonial slider with full accessibility -->
           <div class="swiper testimonial-slider" 
@@ -1357,10 +1368,7 @@
                aria-live="polite">
             
             <!-- Live region for screen reader announcements -->
-            <div id="testimonial-announcements" 
-                 class="sr-only" 
-                 aria-live="polite" 
-                 aria-atomic="true"></div>
+            <div id="testimonial-announcements" class="sr-only" aria-live="polite" aria-atomic="true"></div>
 
             <div class="swiper-wrapper">
               <div class="swiper-slide h-auto" 
@@ -1458,27 +1466,28 @@
       <div class="container-smaller container-tab">
         <div class="tab-card">
           <!-- Nav tabs -->
+          <div id="sr-announcement" class="sr-announcement sr-only" aria-live="polite" aria-atomic="true"></div>
           <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
               <button class="nav-link subtext fw-bold active" id="tab1-tab" data-bs-toggle="tab" data-bs-target="#tab1"
-                type="button" role="tab" aria-controls="tab1" aria-selected="true" tabindex="0">TAB NO. 1</button>
+                type="button" role="tab" aria-controls="tab1" aria-selected="true">TAB One </button>
             </li>
             <li class="nav-item" role="presentation">
               <button class="nav-link subtext fw-bold" id="tab2-tab" data-bs-toggle="tab" data-bs-target="#tab2"
-                type="button" role="tab" aria-controls="tab2" aria-selected="false" tabindex="0">TAB NO. 2</button>
+                type="button" role="tab" aria-controls="tab2" aria-selected="false">TAB Two</button>
             </li>
             <li class="nav-item" role="presentation">
               <button class="nav-link subtext fw-bold" id="tab3-tab" data-bs-toggle="tab" data-bs-target="#tab3"
-                type="button" role="tab" aria-controls="tab3" aria-selected="false" tabindex="0">TAB NO. 3</button>
+                type="button" role="tab" aria-controls="tab3" aria-selected="false">TAB Three</button>
             </li>
             <li class="nav-item" role="presentation">
               <button class="nav-link subtext fw-bold" id="tab4-tab" data-bs-toggle="tab" data-bs-target="#tab4"
-                type="button" role="tab" aria-controls="tab4" aria-selected="false" tabindex="0">TAB NO. 4</button>
+                type="button" role="tab" aria-controls="tab4" aria-selected="false">TAB Four</button>
             </li>
           </ul>
         
           <!-- Tab panes -->
-          <div class="tab-content" tabindex="0">
+          <div class="tab-content">
             <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
               <div class="tab-content-box text-medium">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eu eros finibus, vestibulum nisi ut,
@@ -1487,34 +1496,39 @@
               </div>
             </div>
             <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
-              <div class="tab-content-box text-medium">Tab 2 content goes here.</div>
+              <div class="tab-content-box text-medium"><h3>Menu 2</h3>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</div>
             </div>
             <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tab3-tab">
               <div class="tab-content-box text-medium">Tab 3 content goes here.</div>
             </div>
             <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tab4-tab">
-              <div class="tab-content-box text-medium">Tab 4 content goes here.</div>
+              <div class="tab-content-box text-medium"> <div class="tab-content-box text-medium">
+                <h2>Fourth Tab Content</h2>
+                <p>This is the final tab with its own unique content.</p>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Item 1</td>
+                            <td>100</td>
+                        </tr>
+                        <tr>
+                            <td>Item 2</td>
+                            <td>200</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div></div>
             </div>
           </div>
-
-
-          <ul class="nav nav-tabs" id="myTab2" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
-            </li>
-          </ul>
-          <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-          </div>
         </div>
+
         
       </div>
 
@@ -2544,7 +2558,8 @@
   <script src="./js/swiper-bundle.min.js"></script>
   <!-- custom JS -->
   <script src="./js/main.js"></script>
-  <script></script>
+
+
 
 </body>
 

@@ -201,7 +201,7 @@ ul {
 }
 
 .button-listing {
-    margin-top: rem.convert(32px);   
+    margin-top: rem.convert(32px);
 }
 
 // Section padding
@@ -213,8 +213,11 @@ section.bg-white+section.bg-white {
 section.bg-black+section.bg-black {
     padding-top: 0;
 }
-section.bg-black.key-feature-sec+section.bg-black.key-feature-sec, section.bg-black + .bg-black.key-feature-sec  {
+
+section.bg-black.key-feature-sec+section.bg-black.key-feature-sec,
+section.bg-black+.bg-black.key-feature-sec {
     padding-top: rem.convert(96px);
+
     @include media-breakpoint-down(md) {
         padding-top: rem.convert(72px);
     }
@@ -469,6 +472,7 @@ section.bg-white.section-with-padding+section.bg-white {
     display: flex;
     align-items: center;
     gap: rem.convert(4px);
+
     >a:not(.star-btn-link) {
         font-weight: 700;
         font-size: rem.convert(14px);
@@ -798,6 +802,7 @@ section.bg-white.section-with-padding+section.bg-white {
     iframe {
         width: 100% !important;
         min-height: rem.convert(400px) !important;
+
         @include media-breakpoint-down(md) {
             min-height: auto !important;
         }
@@ -859,7 +864,7 @@ section.bg-white.section-with-padding+section.bg-white {
     display: none;
 }
 
-.divider{
+.divider {
     .gray-rule {
         background: var(--white);
         border-bottom: 1px solid #e5e6e7;
@@ -868,12 +873,14 @@ section.bg-white.section-with-padding+section.bg-white {
         max-width: rem.convert(1280px);
         width: 100%;
         padding: rem.convert(48px 0px);
-        @include media-breakpoint-down(md){
+
+        @include media-breakpoint-down(md) {
             padding: rem.convert(24px 0px);
             width: calc(100% - 32px);
         }
     }
-    &.bg-white{
+
+    &.bg-white {
         .gray-rule {
             padding: rem.convert(0px);
         }
@@ -887,16 +894,23 @@ section.bg-white.section-with-padding+section.bg-white {
 
 .no-pseudo::before,
 .no-pseudo::after {
-  content: none !important;
-  display: none !important;
+    content: none !important;
+    display: none !important;
 }
-.accent-mark{
+
+.accent-mark {
     border-left: 5px solid var(--red);
     clear: both;
     padding-left: rem.convert(10px);
     margin: rem.convert(24px 0);
     font-style: italic;
     color: #717171;
+}
+
+.no-mobile {
+    @include media-breakpoint-down(lg) {
+        display: none !important;
+    }
 }
 
 // High Contrast Mode
@@ -1121,6 +1135,3 @@ html[hc="a4"] {
         }
     }
 }
-
-
- 

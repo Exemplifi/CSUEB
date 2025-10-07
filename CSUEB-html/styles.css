@@ -1,6 +1,13 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@font-face {
+  font-family: "Font Awesome 6 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("../../webfonts/fa-solid-900.woff2") format("woff2"), url("../../webfonts/fa-solid-900.ttf") format("truetype");
+}
 :root {
   --body-font-family: Montserrat, sans-serif;
   --heading-font-family: Roboto Serif, serif;
@@ -487,11 +494,13 @@ section.bg-black + section.bg-black {
   padding-top: 0;
 }
 
-section.bg-black.key-feature-sec + section.bg-black.key-feature-sec, section.bg-black + .bg-black.key-feature-sec {
+section.bg-black.key-feature-sec + section.bg-black.key-feature-sec,
+section.bg-black + .bg-black.key-feature-sec {
   padding-top: 6rem;
 }
 @media (max-width: 767.98px) {
-  section.bg-black.key-feature-sec + section.bg-black.key-feature-sec, section.bg-black + .bg-black.key-feature-sec {
+  section.bg-black.key-feature-sec + section.bg-black.key-feature-sec,
+  section.bg-black + .bg-black.key-feature-sec {
     padding-top: 4.5rem;
   }
 }
@@ -1079,6 +1088,12 @@ section.bg-white.section-with-padding + section.bg-white {
   margin: 1.5rem 0;
   font-style: italic;
   color: #717171;
+}
+
+@media (max-width: 991.98px) {
+  .no-mobile {
+    display: none !important;
+  }
 }
 
 html[hc=a2] .main-header .header-links .menu-list-link .menu-link:hover,
@@ -2952,14 +2967,6 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .button-with-pagination-sec .swiper-btn.swiper-button-lock {
   display: none !important;
 }
-.button-with-pagination-sec .swiper-btn[aria-disabled=true] {
-  background-color: rgba(255, 255, 255, 0.2509803922) !important;
-  opacity: 1 !important;
-  pointer-events: none !important;
-}
-.button-with-pagination-sec .swiper-btn[aria-disabled=true] svg path {
-  fill: var(--white) !important;
-}
 .button-with-pagination-sec .swiper-pagination {
   position: relative;
   inset: 0 !important;
@@ -3651,6 +3658,14 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
     display: none !important;
   }
 }
+.text-icon-slider .button-with-pagination-sec .swiper-btn[aria-disabled=true] {
+  background-color: rgba(255, 255, 255, 0.2509803922) !important;
+  opacity: 1 !important;
+  pointer-events: none !important;
+}
+.text-icon-slider .button-with-pagination-sec .swiper-btn[aria-disabled=true] svg path {
+  fill: var(--white) !important;
+}
 
 .testimonial-sec {
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"><g opacity="0.07"><path d="M17.6299 10.722L18 8.625L18.3701 10.722C19.1102 14.176 21.824 16.8898 25.278 17.6299L27.375 18L25.278 18.3701C21.824 19.1102 19.1102 21.824 18.3701 25.278L18 27.375L17.6299 25.278C16.8898 21.824 14.176 19.1102 10.722 18.3701L8.625 18L10.722 17.6299C14.176 16.8898 16.8898 14.176 17.6299 10.722Z" fill="black"/></g></svg>'), var(--red);
@@ -3716,6 +3731,14 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 @media (max-width: 767.98px) {
   .testimonial-sec .next-card .section-heading .title-wrap .section-title {
     margin-bottom: 1.5rem;
+  }
+}
+.testimonial-sec.bg-red:has(+ .bg-light-gray) {
+  margin-bottom: 6rem;
+}
+@media (max-width: 767.98px) {
+  .testimonial-sec.bg-red:has(+ .bg-light-gray) {
+    margin-bottom: 4.5rem;
   }
 }
 
@@ -7294,6 +7317,9 @@ table thead th:last-child {
 }
 table thead th:first-child {
   padding-left: 0.5rem !important;
+}
+table thead th tr {
+  border-bottom: 2px solid var(--gold) !important;
 }
 table td {
   width: auto !important;
