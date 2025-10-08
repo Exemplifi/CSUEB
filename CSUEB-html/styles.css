@@ -5981,6 +5981,12 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .home-hero-sec .custom-container {
   position: relative;
   z-index: 3;
+  max-width: 100%;
+}
+@media (min-width: 1400px) {
+  .home-hero-sec .custom-container {
+    padding-left: calc(50vw - 644px);
+  }
 }
 .home-hero-sec .content-section {
   padding-block: 5rem;

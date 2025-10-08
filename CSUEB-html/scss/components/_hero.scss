@@ -25,6 +25,10 @@
   .custom-container {
     position: relative;
     z-index: 3;
+    max-width: 100%;
+    @include media-breakpoint-up(xxl){
+      padding-left: calc(50vw - 644px);
+    }
   }
 
   .content-section {
