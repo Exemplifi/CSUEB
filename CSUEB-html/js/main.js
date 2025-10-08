@@ -1306,6 +1306,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //Testimonial slider screen reader accessibility
 
+// window.addEventListener('scroll', function () {
+//   const scrollPosition = window.scrollY + window.innerHeight;
+//   const pageHeight = document.documentElement.scrollHeight;
+
+//   if (pageHeight - scrollPosition >= 200) {
+//     document.body.classList.add('scroll');
+//   } else {
+//     document.body.classList.remove('scroll');
+//   }
+// });
 
 
 // Call on DOMContentLoaded
