@@ -2606,10 +2606,6 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   }
 }
 
-body:has(.home-hero-sec) .main-header > .container {
-  background-color: transparent;
-}
-
 .footer {
   background-color: var(--black);
   color: var(--white);
