@@ -2256,7 +2256,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 
 .secondary-nav-sec {
-  padding-top: 1rem;
+  padding: 1rem 0;
   z-index: 999;
   position: relative;
 }
@@ -2266,7 +2266,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   }
 }
 .secondary-nav-sec .secondary-nav {
-  row-gap: 1.25rem;
+  row-gap: 0rem;
   column-gap: 1.5rem;
   padding-inline: 2rem;
   margin-bottom: 0;

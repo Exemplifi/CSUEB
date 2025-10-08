@@ -693,7 +693,7 @@
 
 // secondary-nav
 .secondary-nav-sec {
-  padding-top: rem.convert(16px);
+  padding: rem.convert(16px 0);
   z-index: 999;
   position: relative;
 
@@ -702,7 +702,7 @@
   }
 
   .secondary-nav {
-    row-gap: rem.convert(20px);
+    row-gap: rem.convert(0px);
     column-gap: rem.convert(24px);
     padding-inline: rem.convert(32px);
     margin-bottom: 0;
