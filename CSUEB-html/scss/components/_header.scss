@@ -1073,3 +1073,14 @@
     }
   }
 }
+
+body{
+  &:has(.home-hero-sec){
+    .main-header{
+      > .container{
+        background-color: transparent;
+      }
+    }
+    
+  }
+}

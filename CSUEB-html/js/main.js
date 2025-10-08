@@ -1192,11 +1192,10 @@ function adjustHeroPadding() {
   const alert = header?.querySelector('.alert');
   header.classList.add('alert-present');
   const hero = document.querySelector('.inner-hero-section, .home-hero-sec');
-  if (hero && hero.classList.contains('no-image')) {
-    // Always apply padding for .no-image, regardless of screen size
+  if (hero && (hero.classList.contains('no-image') || hero.classList.contains('home-hero-sec'))) {
     hero.style.paddingTop = header ? header.offsetHeight + 'px' : '';
-  } else if (window.innerWidth <= 991.98 && header && alert && hero) {
-    let headerHeight;
+  }
+   else if (window.innerWidth <= 991.98 && header && alert && hero) {
     if (hero.classList.contains('home-hero-sec')) {
       headerHeight = header.offsetHeight + 50;
     } else {
