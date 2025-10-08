@@ -1645,10 +1645,12 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 .main-header .alert {
   max-width: 120rem;
+  margin: 0 auto 1rem auto;
 }
 @media (max-width: 575.98px) {
   .main-header .alert {
     font-size: 0.75rem;
+    margin: 0 auto 0.5rem auto;
   }
 }
 .main-header.upwards {

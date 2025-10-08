@@ -16,10 +16,12 @@
   .alert {
 
     max-width: rem.convert(1920px);
+    margin: 0 auto rem.convert(16px) auto;
   
    
     @include media-breakpoint-down(sm) {
       font-size: rem.convert(12px);
+      margin: 0 auto rem.convert(8px) auto;
     }
   }
 
