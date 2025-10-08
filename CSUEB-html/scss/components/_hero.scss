@@ -369,9 +369,11 @@
     }
 
     .pagination-container {
+      @media(min-width:1920px) {
+        max-width: rem.convert(1920px) !important;
+      }
       @include media-breakpoint-down(md) {
         bottom: rem.convert(60px);
-
         .button-with-pagination-sec {
           margin-inline: auto;
         }
