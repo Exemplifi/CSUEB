@@ -29,6 +29,10 @@
     @include media-breakpoint-up(xxl){
       padding-left: calc(50vw - 644px);
     }
+    @media(min-width:2400px) {
+      max-width: rem.convert(1920px);
+      padding-left: 0;
+    }
   }
 
   .content-section {

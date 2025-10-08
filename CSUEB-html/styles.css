@@ -5988,6 +5988,12 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
     padding-left: calc(50vw - 644px);
   }
 }
+@media (min-width: 2400px) {
+  .home-hero-sec .custom-container {
+    max-width: 120rem;
+    padding-left: 0;
+  }
+}
 .home-hero-sec .content-section {
   padding-block: 5rem;
   padding-left: 4rem;
