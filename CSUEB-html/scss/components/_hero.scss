@@ -278,6 +278,7 @@
       }
     }
     .swiper-slide {
+      text-decoration: none;
       min-height: rem.convert(696px);
       @media (min-width: 1660px) {
         min-height: 80vh;

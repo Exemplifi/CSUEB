@@ -67,7 +67,7 @@
       top: 2.5rem;
       height: 100%;
       width: 100%;
-      background-image: url('data:image/svg+xml,<svg width="940" height="732" viewBox="0 0 940 732" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M191.859 732H939.822V0H0L0.00011756 466L191.859 732ZM12 462.124V12H469.911H927.822V720H198L12 462.124Z" fill="%23FDC25A"/></svg>');
+      background-image: url('data:image/svg+xml,<svg width="940" height="732" viewBox="0 0 940 732" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M191.859 732H939.822V0H0L0.00011756 466L191.859 732ZM12 462.124V12H469.911H927.822V720H198L12 462.124Z" fill="%23AF0927"/></svg>');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: top left;
@@ -165,7 +165,7 @@
       height: 94%;
       width: 94%;
       background-position: top left;
-      border: 12px solid #fdc25a;
+      border: 12px solid var(--red);
 
       @include media-breakpoint-down(lg) {
         border-width: rem.convert(6px);
