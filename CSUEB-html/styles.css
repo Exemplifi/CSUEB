@@ -7392,6 +7392,9 @@ table.gsc-input td {
 table.gsc-search-box tr {
   border-bottom: none !important;
 }
+table.gssb_c td {
+  padding: 0 !important;
+}
 
 .table-responsive {
   margin-bottom: 1.5rem;
@@ -7715,6 +7718,9 @@ table.gsc-search-box tr {
   border: 1px solid var(--gold) !important;
   box-shadow: none !important;
 }
+.gsc-search-box-tools .gsc-input .gsc-input-box {
+  border: none;
+}
 .gsc-search-box-tools .gsc-input .td {
   padding: 0.25rem 2rem !important;
 }
@@ -7724,6 +7730,23 @@ table.gsc-search-box tr {
 }
 .gsc-search-box-tools .gsc-search-button-v2 svg {
   height: 1rem;
+}
+.gsc-search-box-tools .gsc-input-box {
+  border: none;
+  background: var(--light-gray);
+}
+.gsc-search-box-tools .gscb_a {
+  line-height: 1.5;
+}
+.gsc-search-box-tools .gsst_a .gscb_a {
+  color: #a1b9ed;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.gssb_c {
+  transform: translateX(-50%);
+  left: 50%;
 }
 
 /*# sourceMappingURL=styles.css.map */

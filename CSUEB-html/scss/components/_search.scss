@@ -18,6 +18,9 @@
     }
 
     .gsc-input {
+        .gsc-input-box{
+            border: none;
+        }
         .td {
             padding: rem.convert(4px 32px) !important;
         }
@@ -29,6 +32,21 @@
     .gsc-search-button-v2 svg{
         height: rem.convert(16px);
     }
-    
+    .gsc-input-box {
+        border: none;
+        background: var(--light-gray);
+    }
+    .gscb_a {
+        line-height: 1.5;
+    }
+    .gsst_a .gscb_a {
+        color: #a1b9ed;
+        cursor: pointer;
+        vertical-align: middle;
+    }
 
+}
+.gssb_c{
+    transform: translateX(-50%);
+    left: 50%;
 }
