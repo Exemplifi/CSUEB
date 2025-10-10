@@ -57,9 +57,6 @@ table {
   }
   tr{
       border-bottom: 1px solid var(--grey-800) !important;
-      &:hover{
-        background-color: var(--light-gray) !important;
-      }
    
   }
  
@@ -87,7 +84,7 @@ table {
       }
   }
 
-  td {
+  td:not(.gsc-input), td:not(.gsc-search-button), td:not(.gsc-clear-button) {
       width: auto !important;
       padding: rem.convert(8px 32px) !important;
       font-size: rem.convert(16px) !important;
