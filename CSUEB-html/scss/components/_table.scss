@@ -145,6 +145,11 @@ table{
       padding: 0 !important;
     }
   }
+  &.gsc-completion-container{
+    tr{
+      border: none !important;
+    }
+  }
 }
 
 

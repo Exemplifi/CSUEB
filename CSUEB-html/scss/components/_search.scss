@@ -11,8 +11,11 @@
     .gsc-input-box {
         table {
             tr {
-                border: 1px solid var(--gold) !important;
+                border: 2px solid var(--grey-800) !important;
                 box-shadow: none !important;
+                &:focus-within{
+                    border-color: var(--gold);
+                }
             }
         }
     }
@@ -37,7 +40,7 @@
         background: var(--light-gray);
     }
     .gscb_a {
-        line-height: 1.5;
+        line-height: 0;
     }
     .gsst_a .gscb_a {
         color: #a1b9ed;
@@ -45,7 +48,7 @@
         vertical-align: middle;
     }
     .gsc-input{
-
+       background-color: transparent;
     }
 
 }
