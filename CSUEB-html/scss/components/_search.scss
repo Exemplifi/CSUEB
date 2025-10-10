@@ -1,8 +1,11 @@
 .gsc-search-box-tools {
     background: var(--white);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
     border-radius: 0;
     padding: rem.convert(20px 24px);
+    @include media-breakpoint-down(md) {
+        padding: rem.convert(16px);
+    }
 
     td {
         padding: 0 !important;
@@ -14,7 +17,7 @@
                 border: 2px solid var(--grey-800) !important;
                 box-shadow: none !important;
                 &:focus-within{
-                    border-color: var(--gold);
+                    border-color: var(--gold) !important;
                 }
             }
         }
@@ -52,7 +55,7 @@
         vertical-align: middle;
     }
     .gsc-input{
-       background-color: transparent;
+       background-color: transparent !important;
     }
 
 }

@@ -7710,9 +7710,14 @@ table.gsc-completion-container tr {
 
 .gsc-search-box-tools {
   background: var(--white);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
   border-radius: 0;
   padding: 1.25rem 1.5rem;
+}
+@media (max-width: 767.98px) {
+  .gsc-search-box-tools {
+    padding: 1rem;
+  }
 }
 .gsc-search-box-tools td {
   padding: 0 !important;
@@ -7722,7 +7727,7 @@ table.gsc-completion-container tr {
   box-shadow: none !important;
 }
 .gsc-search-box-tools .gsc-input-box table tr:focus-within {
-  border-color: var(--gold);
+  border-color: var(--gold) !important;
 }
 .gsc-search-box-tools .gsc-input .gsc-input-box {
   border: none;
@@ -7754,7 +7759,7 @@ table.gsc-completion-container tr {
   vertical-align: middle;
 }
 .gsc-search-box-tools .gsc-input {
-  background-color: transparent;
+  background-color: transparent !important;
 }
 
 .gssb_c {
