@@ -7743,10 +7743,10 @@ table.gssb_c td {
   cursor: pointer;
   vertical-align: middle;
 }
-
 .gssb_c {
   transform: translateX(-50%);
-  left: 50%;
+  left: 50% !important;
+  max-width: 80rem;
 }
 
 /*# sourceMappingURL=styles.css.map */
