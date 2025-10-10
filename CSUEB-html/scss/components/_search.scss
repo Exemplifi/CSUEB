@@ -3,7 +3,23 @@
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
     border-radius: 0;
     padding: rem.convert(20px 24px);
-    td{
+
+    td {
         padding: 0 !important;
     }
+
+    .gsc-input-box {
+        table {
+            tr {
+                border: 1px solid var(--gold);
+            }
+        }
+    }
+
+    .gsc-input {
+        .td {
+            padding: rem.convert(4px 32px) !important;
+        }
+    }
+
 }

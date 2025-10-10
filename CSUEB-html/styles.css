@@ -3960,7 +3960,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   }
 }
 .contact-us-sec .next-card {
-  border: 12px solid var(--gold);
+  border: 12px solid var(--black);
   padding: 4.5rem 6rem;
   margin-inline: auto;
   position: relative;
@@ -7325,23 +7325,28 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   border-bottom: 1px solid var(--grey-800);
 }
 
-table:not(.gsc-search-box) {
+table:not(.gsc-search-box),
+table:not(.gsc-input) {
   width: 100% !important;
   caption-side: top;
 }
-table:not(.gsc-search-box):not(caption) > * > * {
+table:not(.gsc-search-box):not(caption) > * > *,
+table:not(.gsc-input):not(caption) > * > * {
   padding: 0.5rem 0.5rem;
   background-color: var(--bs-table-bg);
   border-bottom-width: 1px;
   box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
 }
-table:not(.gsc-search-box) tr {
+table:not(.gsc-search-box) tr,
+table:not(.gsc-input) tr {
   border-bottom: 1px solid var(--grey-800) !important;
 }
-table:not(.gsc-search-box) thead {
+table:not(.gsc-search-box) thead,
+table:not(.gsc-input) thead {
   border-bottom: 2px solid var(--gold) !important;
 }
-table:not(.gsc-search-box) thead th {
+table:not(.gsc-search-box) thead th,
+table:not(.gsc-input) thead th {
   width: auto !important;
   padding: 0.5rem 2rem !important;
   font-size: 1rem !important;
@@ -7350,32 +7355,40 @@ table:not(.gsc-search-box) thead th {
   font-size: 0.875rem !important;
   text-transform: uppercase !important;
 }
-table:not(.gsc-search-box) thead th:last-child {
+table:not(.gsc-search-box) thead th:last-child,
+table:not(.gsc-input) thead th:last-child {
   padding-right: 0 !important;
 }
-table:not(.gsc-search-box) thead th:first-child {
+table:not(.gsc-search-box) thead th:first-child,
+table:not(.gsc-input) thead th:first-child {
   padding-left: 0.5rem !important;
 }
-table:not(.gsc-search-box) thead th tr {
+table:not(.gsc-search-box) thead th tr,
+table:not(.gsc-input) thead th tr {
   border-bottom: 2px solid var(--gold) !important;
 }
-table:not(.gsc-search-box) td {
+table:not(.gsc-search-box) td,
+table:not(.gsc-input) td {
   width: auto !important;
   padding: 0.5rem 2rem !important;
   font-size: 1rem !important;
   line-height: 1.75 !important;
   font-weight: 500 !important;
 }
-table:not(.gsc-search-box) td:last-child {
+table:not(.gsc-search-box) td:last-child,
+table:not(.gsc-input) td:last-child {
   padding-right: 0 !important;
 }
-table:not(.gsc-search-box) td:first-child {
+table:not(.gsc-search-box) td:first-child,
+table:not(.gsc-input) td:first-child {
   padding-left: 0.5rem !important;
 }
-table:not(.gsc-search-box) th:has(.screen-only) {
+table:not(.gsc-search-box) th:has(.screen-only),
+table:not(.gsc-input) th:has(.screen-only) {
   display: none;
 }
-table:not(.gsc-search-box) caption {
+table:not(.gsc-search-box) caption,
+table:not(.gsc-input) caption {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -7699,6 +7712,12 @@ table:not(.gsc-search-box) caption {
 }
 .gsc-search-box-tools td {
   padding: 0 !important;
+}
+.gsc-search-box-tools .gsc-input-box table tr {
+  border: 1px solid var(--gold);
+}
+.gsc-search-box-tools .gsc-input .td {
+  padding: 0.25rem 2rem !important;
 }
 
 /*# sourceMappingURL=styles.css.map */
