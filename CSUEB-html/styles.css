@@ -4752,11 +4752,6 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   position: relative;
   padding-right: 0;
 }
-@media (min-width: 768px) {
-  .img-text-full-width-sec .image-section {
-    width: 54%;
-  }
-}
 .img-text-full-width-sec .image-section.img-clip-path .img-wrapper::after {
   display: none;
 }
@@ -7772,12 +7767,6 @@ table:not(.gssb_c) {
   background-color: transparent !important;
 }
 
-.gssb_c {
-  transform: translateX(-50%);
-  left: 50% !important;
-  max-width: 80rem;
-}
-
 .gsc-above-wrapper-area {
   border-bottom: 1px solid var(--red) !important;
 }
@@ -7796,7 +7785,7 @@ table:not(.gssb_c) {
 }
 
 .gsc-result-info, .gsc-result-info {
-  color: var(--black);
+  color: var(--black) !important;
 }
 
 .gsc-result-info {

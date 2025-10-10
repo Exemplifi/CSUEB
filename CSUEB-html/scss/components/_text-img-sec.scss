@@ -349,9 +349,7 @@
     position: relative;
     padding-right: 0;
 
-    @include media-breakpoint-up(md) {
-      width: 54%;
-    }
+    
 
     &.img-clip-path {
       .img-wrapper {
