@@ -7782,4 +7782,17 @@ table.gsc-above-wrapper-area-container tr {
   border-bottom: 1px solid #e0ded9 !important;
 }
 
+.gs-webResult.gs-result a.gs-title:link, .gs-webResult.gs-result a.gs-title:link b, .gs-imageResult a.gs-title:link, .gs-imageResult a.gs-title:link b {
+  color: var(--red);
+  text-shadow: 1px 1px 0 #fff, -1px 1px 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff;
+}
+.gs-webResult.gs-result a.gs-title:link:hover, .gs-webResult.gs-result a.gs-title:link b:hover, .gs-imageResult a.gs-title:link:hover, .gs-imageResult a.gs-title:link b:hover {
+  color: var(--red);
+  box-shadow: inset 0 -2px 0 0 #fff, inset 0 -3px 0 0 var(--red);
+}
+
+.gsc-result-info, .gsc-result-info {
+  color: var(--black);
+}
+
 /*# sourceMappingURL=styles.css.map */
