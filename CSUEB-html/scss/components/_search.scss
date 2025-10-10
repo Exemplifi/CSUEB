@@ -31,9 +31,13 @@
     .gsc-search-button{
         min-height: rem.convert(40px);
         padding: rem.convert(6px 16px);
+        background-color: var(--red);
+        border-radius: 0;
+        border: none;
     }
     .gsc-search-button-v2 svg{
         height: rem.convert(16px);
+        width: auto;
     }
     .gsc-input-box {
         border: none;

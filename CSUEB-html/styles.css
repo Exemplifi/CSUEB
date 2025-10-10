@@ -7733,9 +7733,13 @@ table.gsc-completion-container tr {
 .gsc-search-box-tools .gsc-search-button {
   min-height: 2.5rem;
   padding: 0.375rem 1rem;
+  background-color: var(--red);
+  border-radius: 0;
+  border: none;
 }
 .gsc-search-box-tools .gsc-search-button-v2 svg {
   height: 1rem;
+  width: auto;
 }
 .gsc-search-box-tools .gsc-input-box {
   border: none;
