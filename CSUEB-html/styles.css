@@ -7718,5 +7718,12 @@ table.gsc-search-box tr {
 .gsc-search-box-tools .gsc-input .td {
   padding: 0.25rem 2rem !important;
 }
+.gsc-search-box-tools .gsc-search-button {
+  min-height: 2.5rem;
+  padding: 0.375rem 1rem;
+}
+.gsc-search-box-tools .gsc-search-button-v2 svg {
+  height: 1rem;
+}
 
 /*# sourceMappingURL=styles.css.map */
