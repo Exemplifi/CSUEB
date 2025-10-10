@@ -7399,6 +7399,9 @@ table.gsc-completion-container tr {
 table.gsc-above-wrapper-area-container tr {
   border-bottom: none !important;
 }
+table.gsc-above-wrapper-area-container td {
+  padding: 1rem !important;
+}
 
 table:not(.gssb_c) {
   width: 100% !important;

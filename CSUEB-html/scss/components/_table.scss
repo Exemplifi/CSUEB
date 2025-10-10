@@ -154,6 +154,9 @@ table{
     tr{
       border-bottom: none !important;
     }
+    td{
+      padding: rem.convert(16px) !important;
+    }
   }
   
 }
