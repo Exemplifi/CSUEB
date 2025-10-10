@@ -40,7 +40,7 @@
     }
     .gsc-search-button-v2 svg{
         height: rem.convert(16px);
-        width: auto;
+        width: auto !important;
     }
     .gsc-input-box {
         border: none;
@@ -63,4 +63,10 @@
     transform: translateX(-50%);
     left: 50% !important;
     max-width: rem.convert(1280px);
+}
+.gsc-above-wrapper-area {
+    border-bottom: 1px solid var(--red);
+}
+.gsc-webResult .gsc-result {
+    border-bottom: 1px solid #e0ded9 !important;
 }
