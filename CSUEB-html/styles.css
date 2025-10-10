@@ -7329,7 +7329,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 
 table {
-  width: 100% !important;
+  width: 100%;
   caption-side: top;
 }
 table:not(caption) > * > * {
@@ -7403,6 +7403,10 @@ table.gsc-completion-container tr {
 }
 table.gsc-above-wrapper-area-container tr {
   border-bottom: none !important;
+}
+
+table:not(.gssb_c) {
+  width: 100% !important;
 }
 
 .table-responsive {
@@ -7775,7 +7779,7 @@ table.gsc-above-wrapper-area-container tr {
 }
 
 .gsc-above-wrapper-area {
-  border-bottom: 1px solid var(--red);
+  border-bottom: 1px solid var(--red) !important;
 }
 
 .gsc-webResult .gsc-result {
@@ -7797,6 +7801,10 @@ table.gsc-above-wrapper-area-container tr {
 
 .gsc-result-info {
   font-size: 1rem !important;
+}
+
+.gsq_a td {
+  padding: 0.5rem 1.5rem !important;
 }
 
 /*# sourceMappingURL=styles.css.map */

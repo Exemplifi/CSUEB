@@ -65,7 +65,7 @@
     max-width: rem.convert(1280px);
 }
 .gsc-above-wrapper-area {
-    border-bottom: 1px solid var(--red);
+    border-bottom: 1px solid var(--red) !important;
 }
 .gsc-webResult .gsc-result {
     border-bottom: 1px solid #e0ded9 !important;
@@ -83,4 +83,9 @@
 }
 .gsc-result-info {
     font-size: rem.convert(16px) !important;
+}
+.gsq_a{
+    td{
+        padding: rem.convert(8px 24px) !important;
+    }
 }
