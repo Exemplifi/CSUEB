@@ -5615,7 +5615,8 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   }
 }
 .side-nav-with-content .side-nav-wrap .right-content .section.bg-light-gray {
-  padding: 0 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 .side-nav-with-content .side-nav-wrap .right-content .container-smaller {
   padding-inline: 0;
@@ -7695,6 +7696,9 @@ table caption {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
   border-radius: 0;
   padding: 1.25rem 1.5rem;
+}
+.gsc-search-box td {
+  padding: 0 !important;
 }
 
 /*# sourceMappingURL=styles.css.map */

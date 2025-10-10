@@ -1417,7 +1417,8 @@
       }
       .section{
         &.bg-light-gray{
-          padding: rem.convert(0 24px);
+          padding-left: rem.convert(24px);
+          padding-right: rem.convert(24px);
         }
       }
       .container-smaller {
