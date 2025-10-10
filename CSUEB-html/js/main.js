@@ -1193,7 +1193,7 @@ function adjustHeroPadding() {
   header.classList.add('alert-present');
   const hero = document.querySelector('.inner-hero-section, .home-hero-sec');
   if (hero && (hero.classList.contains('no-image') || hero.classList.contains('home-hero-sec'))) {
-    hero.style.paddingTop = header ? header.offsetHeight + 'px' : '';
+    hero.style.paddingTop = header ? header.offsetHeight + 30 + 'px' : '';
   }
    else if (window.innerWidth <= 991.98 && header && alert && hero) {
     if (hero.classList.contains('home-hero-sec')) {

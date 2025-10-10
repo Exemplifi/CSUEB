@@ -77,10 +77,10 @@ ul {
         }
 
         .star-icon {
-            color: #595959;
+            color: var(--black);
 
             * {
-                color: #595959;
+                color: var(--black);
             }
         }
     }
@@ -180,10 +180,10 @@ ul {
 
     &.heading-gray-icon {
         .star-icon {
-            color: #595959;
+            color: var(--black);
 
             * {
-                color: #595959;
+                color: var(--black);
             }
         }
     }

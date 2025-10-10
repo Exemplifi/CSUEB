@@ -1407,6 +1407,16 @@
       >.big-heading {
        margin-bottom: 0;
       }
+
+      .contact-us-sec .next-card {
+        padding: rem.convert(48px);
+        @include media-breakpoint-down(md) {
+          padding: rem.convert(32px 24px);
+        }
+      }
+      .container-smaller {
+        padding-inline: 0;
+      }
     }
   }
 
