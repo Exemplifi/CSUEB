@@ -11,7 +11,8 @@
     .gsc-input-box {
         table {
             tr {
-                border: 1px solid var(--gold);
+                border: 1px solid var(--gold) !important;
+                box-shadow: none !important;
             }
         }
     }
@@ -21,5 +22,6 @@
             padding: rem.convert(4px 32px) !important;
         }
     }
+    
 
 }

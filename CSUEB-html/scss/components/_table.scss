@@ -55,7 +55,7 @@
   }
 }
 
-table:not(.gsc-search-box){
+table{
   width: 100% !important;
   caption-side: top;
 
@@ -123,7 +123,18 @@ table:not(.gsc-search-box){
     margin-bottom: rem.convert(16px);
     color: var(--black);
   }
+  &.gsc-search-box{
+    td{
+      padding: 0 !important;
+    }
+  }
+  &.gsc-input{
+    td{
+      padding: 0 !important;
+    }
+  }
 }
+
 
 .table-responsive {
   margin-bottom: rem.convert(24px);
