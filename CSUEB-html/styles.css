@@ -7383,9 +7383,14 @@ table caption {
 }
 table.gsc-search-box td {
   padding: 0 !important;
+  width: 100% !important;
 }
 table.gsc-input td {
   padding: 0 !important;
+  width: 100% !important;
+}
+table.gsc-search-box tr {
+  border-bottom: none !important;
 }
 
 .table-responsive {

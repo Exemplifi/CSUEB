@@ -126,11 +126,18 @@ table{
   &.gsc-search-box{
     td{
       padding: 0 !important;
+      width: 100% !important;
     }
   }
   &.gsc-input{
     td{
       padding: 0 !important;
+      width: 100% !important;
+    }
+  }
+  &.gsc-search-box{
+    tr{
+      border-bottom: none !important;
     }
   }
 }
