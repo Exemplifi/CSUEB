@@ -7325,23 +7325,23 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   border-bottom: 1px solid var(--grey-800);
 }
 
-table {
+table:not(.gsc-search-box) {
   width: 100% !important;
   caption-side: top;
 }
-table:not(caption) > * > * {
+table:not(.gsc-search-box):not(caption) > * > * {
   padding: 0.5rem 0.5rem;
   background-color: var(--bs-table-bg);
   border-bottom-width: 1px;
   box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
 }
-table tr {
+table:not(.gsc-search-box) tr {
   border-bottom: 1px solid var(--grey-800) !important;
 }
-table thead {
+table:not(.gsc-search-box) thead {
   border-bottom: 2px solid var(--gold) !important;
 }
-table thead th {
+table:not(.gsc-search-box) thead th {
   width: auto !important;
   padding: 0.5rem 2rem !important;
   font-size: 1rem !important;
@@ -7350,32 +7350,32 @@ table thead th {
   font-size: 0.875rem !important;
   text-transform: uppercase !important;
 }
-table thead th:last-child {
+table:not(.gsc-search-box) thead th:last-child {
   padding-right: 0 !important;
 }
-table thead th:first-child {
+table:not(.gsc-search-box) thead th:first-child {
   padding-left: 0.5rem !important;
 }
-table thead th tr {
+table:not(.gsc-search-box) thead th tr {
   border-bottom: 2px solid var(--gold) !important;
 }
-table td:not(.gsc-input), table td:not(.gsc-search-button), table td:not(.gsc-clear-button) {
+table:not(.gsc-search-box) td {
   width: auto !important;
   padding: 0.5rem 2rem !important;
   font-size: 1rem !important;
   line-height: 1.75 !important;
   font-weight: 500 !important;
 }
-table td:not(.gsc-input):last-child, table td:not(.gsc-search-button):last-child, table td:not(.gsc-clear-button):last-child {
+table:not(.gsc-search-box) td:last-child {
   padding-right: 0 !important;
 }
-table td:not(.gsc-input):first-child, table td:not(.gsc-search-button):first-child, table td:not(.gsc-clear-button):first-child {
+table:not(.gsc-search-box) td:first-child {
   padding-left: 0.5rem !important;
 }
-table th:has(.screen-only) {
+table:not(.gsc-search-box) th:has(.screen-only) {
   display: none;
 }
-table caption {
+table:not(.gsc-search-box) caption {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;

@@ -46,7 +46,7 @@
     }
   }
 }
-table {
+table:not(.gsc-search-box) {
   width: 100% !important;
   caption-side: top;
   &:not(caption)>*>* {
@@ -84,7 +84,7 @@ table {
       }
   }
 
-  td:not(.gsc-input), td:not(.gsc-search-button), td:not(.gsc-clear-button) {
+  td {
       width: auto !important;
       padding: rem.convert(8px 32px) !important;
       font-size: rem.convert(16px) !important;
