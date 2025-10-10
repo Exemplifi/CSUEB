@@ -7386,7 +7386,7 @@ table.gsc-search-box td {
   width: 100% !important;
 }
 table.gsc-input td {
-  padding: 0 !important;
+  padding: 0.3125rem 1rem !important;
   width: 100% !important;
 }
 table.gsc-search-box tr {
