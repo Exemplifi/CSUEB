@@ -826,6 +826,7 @@
 
           img {
             margin-top: 0 !important;
+            filter: brightness(0) saturate(100%) invert(30%) sepia(6%) saturate(467%) hue-rotate(139deg) brightness(97%) contrast(88%);
           }
 
           @include media-breakpoint-down(md) {
@@ -914,6 +915,7 @@
         //transition: filter 0.3s ease;
         //filter: brightness(0) saturate(100%) invert(75%) sepia(1%) saturate(0%) hue-rotate(330deg) brightness(94%) contrast(91%);
         transition: all 0.4s ease-in-out;
+        vertical-align: middle;
 
         svg {
           width: rem.convert(24px);
@@ -922,7 +924,7 @@
 
           path {
             transition: all 0.4s ease-in-out;
-            color: #999494;
+            color: #4B5253;
           }
         }
 

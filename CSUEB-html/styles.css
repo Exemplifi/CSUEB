@@ -4119,6 +4119,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 .contact-us-sec .social-icon .social-icons a {
   transition: all 0.4s ease-in-out;
+  vertical-align: middle;
 }
 .contact-us-sec .social-icon .social-icons a svg {
   width: 1.5rem;
@@ -4127,7 +4128,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 .contact-us-sec .social-icon .social-icons a svg path {
   transition: all 0.4s ease-in-out;
-  color: #999494;
+  color: #4B5253;
 }
 .contact-us-sec .social-icon .social-icons a:hover svg path {
   color: var(--red);
