@@ -1101,6 +1101,26 @@ section.bg-white.section-with-padding + section.bg-white {
   }
 }
 
+a[href="#skipToTopNav"], a[href="#skipToFooter"] {
+  display: none;
+}
+
+.screenreader {
+  position: absolute;
+  left: -10000px;
+}
+.screenreader:focus-within {
+  left: 2rem;
+  top: 1.5rem;
+  z-index: 99999;
+  background: var(--red);
+  padding: 0.25rem 1rem;
+}
+.screenreader a {
+  text-decoration: none;
+  color: white;
+}
+
 html[hc=a2] .main-header .header-links .menu-list-link .menu-link:hover,
 html[hc=a4] .main-header .header-links .menu-list-link .menu-link:hover {
   border-color: var(--white);
