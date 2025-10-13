@@ -1686,7 +1686,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 @media (min-width: 1200px) {
   .main-header .container {
-    padding-inline: 2rem;
+    padding-inline: 0.75rem;
   }
 }
 @media (max-width: 1199.98px) {
@@ -7797,6 +7797,28 @@ table:not(.gssb_c) {
 
 .gsq_a td {
   padding: 0.5rem 1.5rem !important;
+}
+
+.gsc-control-cse .gsc-option-menu {
+  margin-top: -1.5rem;
+}
+
+.gsc-selected-option {
+  cursor: pointer;
+}
+
+.gsc-results .gsc-cursor-box {
+  margin: 24px;
+  text-align: center;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+  cursor: pointer;
+  color: var(--black) !important;
+  margin-right: 24px;
+  display: inline;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page.gsc-cursor-current-page {
+  color: var(--red) !important;
 }
 
 /*# sourceMappingURL=styles.css.map */

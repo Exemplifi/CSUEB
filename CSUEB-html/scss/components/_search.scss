@@ -87,3 +87,26 @@
         padding: rem.convert(8px 24px) !important;
     }
 }
+.gsc-control-cse {
+    .gsc-option-menu{
+        margin-top: rem.convert(-24px);
+    }
+}
+.gsc-selected-option {
+    cursor: pointer;
+}
+.gsc-results{
+    .gsc-cursor-box {
+        margin: 24px;
+        text-align: center;
+        .gsc-cursor-page {
+            cursor: pointer;
+            color: var(--black) !important;
+            margin-right: 24px;
+            display: inline;
+            &.gsc-cursor-current-page{
+                color: var(--red) !important;
+            }
+        }
+    }
+} 
