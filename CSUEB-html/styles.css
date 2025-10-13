@@ -7716,6 +7716,20 @@ table:not(.gssb_c) {
   max-width: 25rem;
 }
 
+.gsc-control-cse {
+  margin-top: 3rem;
+}
+@media (max-width: 767.98px) {
+  .gsc-control-cse {
+    margin-top: 1.5rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .gsc-control-cse .gsc-search-box-tools {
+    padding: 1rem 0 !important;
+  }
+}
+
 .gsc-search-box-tools {
   background: var(--white);
   box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
@@ -7778,16 +7792,23 @@ table:not(.gssb_c) {
   border-bottom: 1px solid #e0ded9 !important;
 }
 
-.gs-webResult.gs-result a.gs-title:link, .gs-webResult.gs-result a.gs-title:link b, .gs-imageResult a.gs-title:link, .gs-imageResult a.gs-title:link b {
+.gs-webResult.gs-result a.gs-title:link,
+.gs-webResult.gs-result a.gs-title:link b,
+.gs-imageResult a.gs-title:link,
+.gs-imageResult a.gs-title:link b {
   color: var(--red) !important;
   text-decoration: underline !important;
-  text-decoration-color: rgba(var(--red), 0.2) !important;
+  text-decoration-color: rgba(168, 0, 39, 0.2) !important;
 }
-.gs-webResult.gs-result a.gs-title:link:hover, .gs-webResult.gs-result a.gs-title:link b:hover, .gs-imageResult a.gs-title:link:hover, .gs-imageResult a.gs-title:link b:hover {
+.gs-webResult.gs-result a.gs-title:link:hover,
+.gs-webResult.gs-result a.gs-title:link b:hover,
+.gs-imageResult a.gs-title:link:hover,
+.gs-imageResult a.gs-title:link b:hover {
   text-decoration-color: var(--red) !important;
 }
 
-.gsc-result-info, .gsc-result-info {
+.gsc-result-info,
+.gsc-result-info {
   color: var(--black) !important;
 }
 
@@ -7808,15 +7829,14 @@ table:not(.gssb_c) {
 }
 
 .gsc-results .gsc-cursor-box {
-  margin: 24px;
   text-align: center;
 }
 .gsc-results .gsc-cursor-box .gsc-cursor-page {
   cursor: pointer;
   color: var(--black) !important;
-  margin-right: 24px;
+  padding: 0.5rem 0.75rem;
 }
-.gsc-results .gsc-cursor-box .gsc-cursor-page.gsc-cursor-current-page {
+.gsc-results .gsc-cursor-box .gsc-cursor-page:hover, .gsc-results .gsc-cursor-box .gsc-cursor-page.gsc-cursor-current-page {
   color: var(--red) !important;
 }
 
