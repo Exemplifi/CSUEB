@@ -73,6 +73,8 @@
           width: rem.convert(24px);
           height: rem.convert(24px);
           margin-top: rem.convert(2px);
+          filter: brightness(0) saturate(100%) invert(30%) sepia(6%) saturate(467%) hue-rotate(139deg) brightness(97%) contrast(88%);
+         
         }
 
         a {
