@@ -3190,10 +3190,13 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   color: var(--black);
 }
 .bg-black .btn-secondary .arrow {
-  color: var(--red);
+  color: var(--gold);
 }
 .bg-black .btn-secondary .arrow * {
-  color: var(--red);
+  color: var(--gold);
+}
+.bg-black .btn-secondary .arrow path {
+  fill: var(--gold) !important;
 }
 .bg-black .btn-secondary span {
   flex: 1;
@@ -6690,9 +6693,6 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   margin-right: 2.5rem;
 }
 
-.related-news-sec .text-img-main-card .bottom-content-sec {
-  padding-right: 0;
-}
 .related-news-sec .text-img-main-card .bottom-content-sec .heading-row {
   padding-right: 1.5rem;
 }
