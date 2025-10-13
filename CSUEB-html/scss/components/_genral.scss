@@ -931,13 +931,14 @@ a[href="#skipToTopNav"], a[href="#skipToFooter"] {
         left: rem.convert(32px);
         top: rem.convert(24px);
         z-index: 99999;
-        background: var(--red);
-        padding: rem.convert(4px 16px);
+        
        
     }
   a{
      text-decoration: none;
         color: white;
+        background: var(--red);
+        padding: rem.convert(4px 16px);
   }
 }
 // High Contrast Mode
