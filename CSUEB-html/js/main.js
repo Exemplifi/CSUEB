@@ -1,9 +1,14 @@
+// import "../scss/styles.scss";
+// import Swiper and styles if needed
+// import Swiper from "swiper";
+// import "swiper/css";
+
 
 // DOM Ready
 document.addEventListener("DOMContentLoaded", () => {
   initTestimonialSlider();
   initHeader();
-  initGallerySlider();
+  initGallerySlider();  
   initInnerHeroSlider();
   initTextIconSlider();
   initBrightFutureSlider();
@@ -1229,44 +1234,7 @@ document.querySelectorAll('br').forEach(br => {
   br.setAttribute('aria-hidden', 'true'); // hide from screen readers
 });
 
-// Select all news sections
-const newsSections = document.querySelectorAll('section'); // Add a class to each section if needed
 
-newsSections.forEach(section => {
-  // Count only cards inside this section
-  const newsCards = section.querySelectorAll('.text-img-main-card');
-
-  // Find the live region inside this section
-  const newsCountEl = section.querySelector('.news-count');
-
-  // Update the count
-  if (newsCountEl) {
-    newsCountEl.textContent = `Showing ${newsCards.length} news article${newsCards.length > 1 ? 's' : ''}.`;
-  }
-});
-
-// Select the dropdown and the live region
-
-const expertiseSelect = document.getElementById('filter-expertise');
-const liveRegion = document.getElementById('live-region');
-
-if (expertiseSelect && liveRegion) {
-    expertiseSelect.addEventListener('change', () => {
-        const selected = expertiseSelect.value;
-        if (selected) {
-            liveRegion.textContent = `Selected expertise is ${selected}.`;
-        } else {
-            liveRegion.textContent = '';
-        }
-    });
-}
-
-
-//Added aria label to email links
-document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-  const email = link.getAttribute('href').replace('mailto:', '');
-  link.setAttribute('aria-label', `Email to ${email}`);
-});
 
 
 
