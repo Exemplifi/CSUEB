@@ -1237,44 +1237,44 @@ document.querySelectorAll('br').forEach(br => {
 
 
 
-// Select all news sections
-const newsSections = document.querySelectorAll('section'); // Add a class to each section if needed
+// // Select all news sections
+// const newsSections = document.querySelectorAll('section'); // Add a class to each section if needed
 
-newsSections.forEach(section => {
-  // Count only cards inside this section
-  const newsCards = section.querySelectorAll('.text-img-main-card');
+// newsSections.forEach(section => {
+//   // Count only cards inside this section
+//   const newsCards = section.querySelectorAll('.text-img-main-card');
 
-  // Find the live region inside this section
-  const newsCountEl = section.querySelector('.news-count');
+//   // Find the live region inside this section
+//   const newsCountEl = section.querySelector('.news-count');
 
-  // Update the count
-  if (newsCountEl) {
-    newsCountEl.textContent = `Showing ${newsCards.length} news article${newsCards.length > 1 ? 's' : ''}.`;
-  }
-});
+//   // Update the count
+//   if (newsCountEl) {
+//     newsCountEl.textContent = `Showing ${newsCards.length} news article${newsCards.length > 1 ? 's' : ''}.`;
+//   }
+// });
 
-// Select the dropdown and the live region
+// // Select the dropdown and the live region
 
-const expertiseSelect = document.getElementById('filter-expertise');
-const liveRegion = document.getElementById('live-region');
+// const expertiseSelect = document.getElementById('filter-expertise');
+// const liveRegion = document.getElementById('live-region');
 
-if (expertiseSelect && liveRegion) {
-    expertiseSelect.addEventListener('change', () => {
-        const selected = expertiseSelect.value;
-        if (selected) {
-            liveRegion.textContent = `Selected expertise is ${selected}.`;
-        } else {
-            liveRegion.textContent = '';
-        }
-    });
-}
+// if (expertiseSelect && liveRegion) {
+//     expertiseSelect.addEventListener('change', () => {
+//         const selected = expertiseSelect.value;
+//         if (selected) {
+//             liveRegion.textContent = `Selected expertise is ${selected}.`;
+//         } else {
+//             liveRegion.textContent = '';
+//         }
+//     });
+// }
 
 
-//Added aria label to email links
-document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
-  const email = link.getAttribute('href').replace('mailto:', '');
-  link.setAttribute('aria-label', `Email to ${email}`);
-});
+// //Added aria label to email links
+// document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+//   const email = link.getAttribute('href').replace('mailto:', '');
+//   link.setAttribute('aria-label', `Email to ${email}`);
+// });
 // Flip Tiles Gallery
 
 function initFlipTilesGallery() {
