@@ -282,6 +282,14 @@
       }
     }
   }
+  &.experts-profile-faculty-wraper{
+    .row-section {
+      @include media-breakpoint-up(md) {
+        flex-direction: row !important;
+      }
+    }
+  }
+ 
 }
 
 // img-text-full-width-sec Start

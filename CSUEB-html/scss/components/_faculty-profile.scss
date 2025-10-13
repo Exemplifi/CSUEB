@@ -45,9 +45,11 @@
         padding: rem.convert(4px) rem.convert(16px);
         background: rgba(253, 194, 90, 0.1);
         border: 1px solid var(--gold);
-        a{
+
+        a {
           text-decoration: none;
-          &:hover{
+
+          &:hover {
             color: var(--red);
           }
         }
@@ -180,20 +182,26 @@
     margin-top: rem.convert(20px);
   }
 }
+
 .experts-profile-faculty-wraper {
   padding-top: rem.convert(48px) !important;
-  .content-section{
+
+  .content-section {
     gap: 0;
     padding-top: rem.convert(34px);
   }
+
   .wrap-row {
     flex-direction: column;
   }
+
   .content-grid-wrap-section {
     margin-bottom: rem.convert(48px);
-    &:last-child{
-        margin-bottom: 0;
+
+    &:last-child {
+      margin-bottom: 0;
     }
+
     a {
       line-height: 1.75;
       text-decoration-line: underline;
@@ -207,9 +215,18 @@
       word-break: break-word;
     }
   }
-  .img-clip-path-box{
-    .img-wrapper{
-        max-width: rem.convert(400px);
+
+  .img-clip-path-box {
+    .img-wrapper {
+      max-width: rem.convert(400px);
+    }
+  }
+
+  &.img-text-sec {
+    &.left-img-text-sec {
+      .row-section {
+        flex-direction: row;
+      }
     }
   }
 }

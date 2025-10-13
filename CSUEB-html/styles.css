@@ -4696,6 +4696,11 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
     left: 2rem;
   }
 }
+@media (min-width: 768px) {
+  .img-text-sec.experts-profile-faculty-wraper .row-section {
+    flex-direction: row !important;
+  }
+}
 
 .img-text-full-width-sec .row-section {
   margin: 0;
@@ -7714,6 +7719,9 @@ table:not(.gssb_c) {
 }
 .experts-profile-faculty-wraper .img-clip-path-box .img-wrapper {
   max-width: 25rem;
+}
+.experts-profile-faculty-wraper.img-text-sec.left-img-text-sec .row-section {
+  flex-direction: row;
 }
 
 .gsc-control-cse {
