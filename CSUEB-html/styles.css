@@ -4427,7 +4427,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 .bg-img .dec-box a:not(.btn),
 .bg-img .dec-box a:not([class]) {
-  color: var(--red);
+  color: var(--white) !important;
   text-decoration: underline;
   transition: all 0.3s ease-in-out;
 }

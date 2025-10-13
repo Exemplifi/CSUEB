@@ -1234,21 +1234,25 @@ document.querySelectorAll('br').forEach(br => {
   br.setAttribute('aria-hidden', 'true'); // hide from screen readers
 });
 
-// Select all news sections
-const newsSections = document.querySelectorAll('section'); // Add a class to each section if needed
+setTimeout(() => {
+  // Select all news sections
+  const newsSections = document.querySelectorAll('section');
 
-newsSections.forEach(section => {
-  // Count only cards inside this section
-  const newsCards = section.querySelectorAll('.text-img-main-card');
+  // Add a class to each section if needed
+  newsSections.forEach(section => {
+    // Count only cards inside this section
+    const newsCards = section.querySelectorAll('.text-img-main-card');
 
-  // Find the live region inside this section
-  const newsCountEl = section.querySelector('.news-count');
+    // Find the live region inside this section
+    const newsCountEl = section.querySelector('.news-count');
 
-  // Update the count
-  if (newsCountEl) {
-    newsCountEl.textContent = `Showing ${newsCards.length} news article${newsCards.length > 1 ? 's' : ''}.`;
-  }
-});
+    // Update the count
+    if (newsCountEl) {
+      newsCountEl.textContent = `Showing ${newsCards.length} news article${newsCards.length > 1 ? 's' : ''}.`;
+    }
+  });
+}, 1000); // delay of 1 second (1000 milliseconds)
+
 
 // Select the dropdown and the live region
 
