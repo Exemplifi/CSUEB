@@ -7815,7 +7815,6 @@ table:not(.gssb_c) {
   cursor: pointer;
   color: var(--black) !important;
   margin-right: 24px;
-  display: inline;
 }
 .gsc-results .gsc-cursor-box .gsc-cursor-page.gsc-cursor-current-page {
   color: var(--red) !important;
