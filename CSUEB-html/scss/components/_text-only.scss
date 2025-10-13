@@ -1243,7 +1243,7 @@
 
     a:not(.btn),
     a:not([class]) {
-      color: var(--red);
+      color: var(--white) !important;
       text-decoration: underline;
       transition: all 0.3s ease-in-out;
       @extend .link--hover;
