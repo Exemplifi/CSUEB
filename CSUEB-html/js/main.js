@@ -1,8 +1,3 @@
-// import "../scss/styles.scss";
-// import Swiper and styles if needed
-// import Swiper from "swiper";
-// import "swiper/css";
-
 
 // DOM Ready
 document.addEventListener("DOMContentLoaded", () => {
