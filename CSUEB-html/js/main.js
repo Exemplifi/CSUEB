@@ -1251,17 +1251,21 @@ newsSections.forEach(section => {
 });
 
 // Select the dropdown and the live region
-const expertiseSelect = document.getElementById('filter-expertise');
-const liveRegion = document.getElementById('expertise-live');
 
-expertiseSelect.addEventListener('change', () => {
-  const selected = expertiseSelect.value;
-  if (selected) {
-    liveRegion.textContent = `Selected expertise is ${selected}.`;
-  } else {
-    liveRegion.textContent = '';
-  }
-});
+const expertiseSelect = document.getElementById('filter-expertise');
+const liveRegion = document.getElementById('live-region');
+
+if (expertiseSelect && liveRegion) {
+    expertiseSelect.addEventListener('change', () => {
+        const selected = expertiseSelect.value;
+        if (selected) {
+            liveRegion.textContent = `Selected expertise is ${selected}.`;
+        } else {
+            liveRegion.textContent = '';
+        }
+    });
+}
+
 
 //Added aria label to email links
 document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
