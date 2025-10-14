@@ -4133,6 +4133,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 .contact-us-sec .social-icon .social-icons li {
   list-style-type: none !important;
+  margin-bottom: 0 !important;
 }
 @media (max-width: 767.98px) {
   .contact-us-sec .social-icon .social-icons {
@@ -7854,7 +7855,7 @@ table:not(.gssb_c) {
 }
 
 .gsc-control-cse .gsc-option-menu {
-  margin-top: -1.5rem;
+  margin-top: 2.25rem !important;
 }
 
 .gsc-selected-option {
@@ -7871,6 +7872,10 @@ table:not(.gssb_c) {
 }
 .gsc-results .gsc-cursor-box .gsc-cursor-page:hover, .gsc-results .gsc-cursor-box .gsc-cursor-page.gsc-cursor-current-page {
   color: var(--red) !important;
+}
+
+.gsc-orderby-label {
+  color: var(--black);
 }
 
 /*# sourceMappingURL=styles.css.map */

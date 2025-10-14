@@ -122,7 +122,7 @@
 
 .gsc-control-cse {
     .gsc-option-menu {
-        margin-top: rem.convert(-24px);
+        margin-top: rem.convert(36px) !important;
     }
 }
 
@@ -145,4 +145,7 @@
             }
         }
     }
+}
+.gsc-orderby-label{
+    color: var(--black);
 }
