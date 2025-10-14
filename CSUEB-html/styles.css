@@ -7622,6 +7622,12 @@ table:not(.gssb_c) {
   margin-top: 0.125rem;
   filter: brightness(0) saturate(100%) invert(30%) sepia(6%) saturate(467%) hue-rotate(139deg) brightness(97%) contrast(88%);
 }
+.faculty-details-wrapper .faculty-info .contact-info-list li svg {
+  flex: 0 0 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: 0.125rem;
+}
 .faculty-details-wrapper .faculty-info .contact-info-list li a {
   color: var(--red);
   line-height: 1.75;
