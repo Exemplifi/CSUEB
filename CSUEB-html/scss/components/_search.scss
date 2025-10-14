@@ -2,10 +2,12 @@
     margin-top: rem.convert(48px);
     @include media-breakpoint-down(md){
         margin-top: rem.convert(24px);
+        padding: 0 !important;
     }
     .gsc-search-box-tools{
         @include media-breakpoint-down(md){
-            padding: rem.convert(16px 0) !important;
+            padding: rem.convert(16px) !important;
+            margin-bottom: rem.convert(24px) !important;
         }
     }
 }

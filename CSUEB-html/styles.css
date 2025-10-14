@@ -7753,11 +7753,13 @@ table:not(.gssb_c) {
 @media (max-width: 767.98px) {
   .gsc-control-cse {
     margin-top: 1.5rem;
+    padding: 0 !important;
   }
 }
 @media (max-width: 767.98px) {
   .gsc-control-cse .gsc-search-box-tools {
-    padding: 1rem 0 !important;
+    padding: 1rem !important;
+    margin-bottom: 1.5rem !important;
   }
 }
 
