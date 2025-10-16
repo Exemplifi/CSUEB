@@ -2426,11 +2426,14 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   border-radius: 0;
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  color: #929292;
+  color: var(--dark-grey);
   transition: border 0.2s;
 }
+.header-search-dropdown .search-form .search-input::placeholder {
+  color: var(--dark-grey);
+}
 .header-search-dropdown .search-form .search-input:focus {
-  border-color: var(--gold);
+  border-color: var(--dark-grey);
   outline: none;
   box-shadow: none;
 }
