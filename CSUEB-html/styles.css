@@ -1679,6 +1679,10 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .main-header .alert .btn-close:hover {
   opacity: 1 !important;
 }
+.main-header .alert .btn-close:focus, .main-header .alert .btn-close:focus-visible {
+  outline: var(--black) auto 2px !important;
+  box-shadow: none !important;
+}
 .main-header.upwards {
   top: -8.875rem;
   transition: top 0.3s ease-in-out;

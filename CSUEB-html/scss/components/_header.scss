@@ -28,6 +28,10 @@
       &:hover{
         opacity: 1 !important;
       }
+      &:focus, &:focus-visible{
+        outline: var(--black) auto 2px !important;
+        box-shadow: none !important;
+      }
     }
   }
 
