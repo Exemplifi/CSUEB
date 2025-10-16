@@ -2036,6 +2036,10 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
     padding-left: 0.25rem;
   }
 }
+.sidebar .mega-menu-wrapper .left-red-sec .btn.btn-primary-yellow:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--black), inset 0 0 0 4px var(--white) !important;
+  outline: none !important;
+}
 .sidebar .mega-menu-wrapper .sidebar-body {
   flex: 1;
   overflow-y: auto;
@@ -2185,6 +2189,13 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 
 /* Accordion Items */
+.accordion-menu .accordion-header:focus-visible, .accordion-menu .accordion-item:focus-visible {
+  outline: none !important;
+  pointer-events: none;
+}
+.accordion-menu .accordion-header button {
+  pointer-events: auto;
+}
 .accordion-menu .accordion-item {
   border-bottom: 1px solid var(--grey-800);
 }
