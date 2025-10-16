@@ -23,6 +23,12 @@
       font-size: rem.convert(12px);
       margin: 0 auto rem.convert(8px) auto;
     }
+    .btn-close{
+      opacity: 0.7 !important;
+      &:hover{
+        opacity: 1 !important;
+      }
+    }
   }
 
   &.upwards {
@@ -391,9 +397,6 @@
             text-decoration-color: transparent;
           }
 
-          svg {
-            display: none;
-          }
         }
       }
 
@@ -550,10 +553,6 @@
       &:hover {
         text-decoration-color: transparent;
       }
-    }
-
-    .arrow {
-      display: none;
     }
   }
 }
