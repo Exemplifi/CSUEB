@@ -189,6 +189,9 @@
         @include media-breakpoint-up(xxl) {
           max-height: 25.63088rem;
         }
+        &svg{
+          width: auto;
+        }
       }
 
       .img-wrapper {

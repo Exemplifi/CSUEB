@@ -380,6 +380,9 @@
       }
     }
   }
+  .swiper-wrapper{
+    max-height: rem.convert(749px);
+  }
 }
 
 // img-text-full-width-sec End
