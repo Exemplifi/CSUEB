@@ -4857,7 +4857,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .img-text-full-width-sec .image-section.img-clip-path .img-wrapper::after {
   display: none;
 }
-.img-text-full-width-sec .swiper-wrapper {
+.img-text-full-width-sec .swiper {
   max-height: 46.8125rem;
 }
 
@@ -6204,8 +6204,8 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
     max-height: 25.63088rem;
   }
 }
-.home-hero-sec .image-section.img-clip-path .star-svgsvg {
-  width: auto;
+.home-hero-sec .image-section.img-clip-path svg.star-svg {
+  width: auto !important;
 }
 .home-hero-sec .image-section.img-clip-path .img-wrapper {
   position: relative;
