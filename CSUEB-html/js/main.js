@@ -292,9 +292,20 @@ function initInnerHeroSlider() {
     loop: true,
     pagination: { el: ".swiper-pagination", clickable: true },
     navigation: {
-      nextEl: ".swiper-button-next.swiper-btn",
+      nextEl: ".swiper-button-next.swiper-btn", 
       prevEl: ".swiper-button-prev.swiper-btn",
     },
+    on: {
+      init: function() {
+        // Hide navigation if only one slide
+        if (this.slides.length <= 1) {
+          const nextBtn = document.querySelector('.swiper-button-next.swiper-btn');
+          const prevBtn = document.querySelector('.swiper-button-prev.swiper-btn');
+          if (nextBtn) nextBtn.classList.add('d-none');
+          if (prevBtn) prevBtn.classList.add('d-none');
+        }
+      }
+    }
   });
 }
 
@@ -359,7 +370,7 @@ function initTextIconSlider() {
         640: { slidesPerView: 2.1 },
         768: { slidesPerView: 3 },
       },
-      ...(isMobile
+      ...(isMobile || window.innerWidth < 768
         ? {
           pagination: { el: ".swiper-pagination", clickable: true },
           navigation: {
