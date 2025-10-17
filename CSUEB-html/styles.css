@@ -4443,7 +4443,17 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .bg-img .dec-box img, .bg-img .dec-box iframe {
   width: 100%;
   max-width: 100%;
-  height: auto;
+  height: auto !important;
+}
+.bg-img .dec-box iframe {
+  width: 100%;
+  max-width: 100%;
+  height: auto !important;
+}
+.bg-img .dec-box video {
+  width: 100%;
+  max-width: 100%;
+  height: auto !important;
 }
 .bg-img .dec-box a:not(.btn),
 .bg-img .dec-box a:not([class]) {

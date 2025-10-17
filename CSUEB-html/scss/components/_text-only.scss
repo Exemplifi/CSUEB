@@ -1246,7 +1246,17 @@
     img, iframe{
       width: 100%;
       max-width: 100%;
-      height: auto;
+      height: auto !important;
+    }
+    iframe{
+      width: 100%;
+      max-width: 100%;
+      height: auto !important;
+    }
+    video{
+      width: 100%;
+      max-width: 100%;
+      height: auto !important;
     }
 
     a:not(.btn),
