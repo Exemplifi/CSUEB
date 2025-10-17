@@ -1253,6 +1253,7 @@
       max-width: 100%;
       @include media-breakpoint-down(md){
         height: auto;
+        min-height: rem.convert(276px);
       }
     }
     video{

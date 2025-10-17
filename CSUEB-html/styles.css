@@ -4452,6 +4452,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 @media (max-width: 767.98px) {
   .bg-img .dec-box iframe {
     height: auto;
+    min-height: 17.25rem;
   }
 }
 .bg-img .dec-box video {
@@ -4636,7 +4637,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 @media (max-width: 575.98px) {
   .img-clip-path-box .img-wrapper {
-    max-height: 19.625rem;
+    height: 19.625rem;
     min-height: 19.625rem;
   }
 }
@@ -4652,11 +4653,6 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   width: 100%;
   position: relative;
   z-index: 2;
-}
-@media (max-width: 767.98px) {
-  .img-clip-path-box .img-wrapper img {
-    min-height: 18.5625rem;
-  }
 }
 .img-clip-path-box .img-wrapper video {
   object-fit: cover;
@@ -4865,6 +4861,12 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 .img-text-full-width-sec .swiper {
   max-height: 46.8125rem;
+}
+@media (min-width: 768px) {
+  .img-text-full-width-sec .swiper {
+    position: sticky;
+    top: 0;
+  }
 }
 .img-text-full-width-sec .swiper .swiper-slide {
   justify-content: flex-end;
