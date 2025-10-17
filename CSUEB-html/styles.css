@@ -6449,6 +6449,13 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
     min-height: 43.75rem;
   }
 }
+.inner-hero-full-image:not(.no-image) .full-img-hero-wrap {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
 @media (min-width: 1920px) {
   .inner-hero-full-image:has(.small-height) {
     min-height: 34rem;
