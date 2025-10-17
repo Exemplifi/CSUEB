@@ -4,59 +4,65 @@
   .img-wrapper {
     position: relative;
     overflow: hidden;
-    padding-left: 1.81rem;
-    height: 100%;
-
-    @include media-breakpoint-up(xxl) {
-      padding-left: 2.81rem;
+    min-height: rem.convert(749px);
+    height: rem.convert(749px);
+    @include media-breakpoint-down(xl) {
+      min-height: rem.convert(562px);
+      max-height: rem.convert(562px);
+      height: rem.convert(562px);
     }
 
-    @include media-breakpoint-down(md) {
-      padding-left: rem.convert(16px);
+    @include media-breakpoint-down(lg) {
+      // padding-left: rem.convert(16px);
       width: 85%;
-      margin-left: auto;
+    }
+    @include media-breakpoint-down(sm) {
+      min-height: rem.convert(297px);
+      max-height: rem.convert(297px);
+      height: rem.convert(297px);
+      background-size: contain;
     }
 
-    img {
+    img:not(.star-svg) {
       object-fit: cover;
       height: 100%;
       width: 100%;
-      clip-path: polygon(0 0,
-          80% 0%,
-          100% 0,
-          100% 100%,
-          63% 100%,
-          25% 100%,
-          1% 68%,
-          0% 20%);
+      margin-left: rem.convert(44px);
+      // clip-path: polygon(0 0,
+      //     80% 0%,
+      //     100% 0,
+      //     100% 100%,
+      //     63% 100%,
+      //     25% 100%,
+      //     1% 68%,
+      //     0% 20%);
       position: relative;
       z-index: 2;
-
-      @include media-breakpoint-up(md) {
-        clip-path: polygon(0 0,
-            80% 0%,
-            100% 0,
-            100% 100%,
-            63% 100%,
-            43% 100%,
-            1% 68%,
-            0% 20%);
+      @media(min-width: 1501px) {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 178px 100%, 0 calc(100% - 246px));
       }
-
-      @include media-breakpoint-up(lg) {
-        clip-path: polygon(0 0,
-            80% 0%,
-            100% 0,
-            100% 100%,
-            63% 100%,
-            23% 100%,
-            1% 68%,
-            0% 20%);
+      @media(max-width: 1500px) {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 188px 100%, 0 calc(100% - 268px));
+      }
+      @include media-breakpoint-down(xxl) {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 192px 100%, 0 calc(100% - 268px));
+      }
+      @include media-breakpoint-down(xl) {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 124px 100%, 0 calc(100% - 178px));
+      }
+      @include media-breakpoint-down(lg) {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 124px 100%, 0 calc(100% - 178px));
       }
 
       @include media-breakpoint-down(md) {
-        min-height: rem.convert(297px);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 148px 100%, 0 calc(100% - 200px));
+        margin-left: rem.convert(24px);
       }
+      @include media-breakpoint-down(sm) {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 72px 100%, 0 calc(100% - 98px));
+        margin-left: rem.convert(16px);
+      }
+      
     }
 
     &::before {
@@ -75,6 +81,7 @@
       @include media-breakpoint-down(md) {
         top: 1rem;
       }
+      
     }
 
     // &::after {

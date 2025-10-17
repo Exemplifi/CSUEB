@@ -4525,42 +4525,72 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .img-clip-path .img-wrapper {
   position: relative;
   overflow: hidden;
-  padding-left: 1.81rem;
-  height: 100%;
+  min-height: 46.8125rem;
+  height: 46.8125rem;
 }
-@media (min-width: 1400px) {
+@media (max-width: 1199.98px) {
   .img-clip-path .img-wrapper {
-    padding-left: 2.81rem;
+    min-height: 35.125rem;
+    max-height: 35.125rem;
+    height: 35.125rem;
   }
 }
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .img-clip-path .img-wrapper {
-    padding-left: 1rem;
     width: 85%;
-    margin-left: auto;
   }
 }
-.img-clip-path .img-wrapper img {
+@media (max-width: 575.98px) {
+  .img-clip-path .img-wrapper {
+    min-height: 18.5625rem;
+    max-height: 18.5625rem;
+    height: 18.5625rem;
+    background-size: contain;
+  }
+}
+.img-clip-path .img-wrapper img:not(.star-svg) {
   object-fit: cover;
   height: 100%;
   width: 100%;
-  clip-path: polygon(0 0, 80% 0%, 100% 0, 100% 100%, 63% 100%, 25% 100%, 1% 68%, 0% 20%);
+  margin-left: 2.75rem;
   position: relative;
   z-index: 2;
 }
-@media (min-width: 768px) {
-  .img-clip-path .img-wrapper img {
-    clip-path: polygon(0 0, 80% 0%, 100% 0, 100% 100%, 63% 100%, 43% 100%, 1% 68%, 0% 20%);
+@media (min-width: 1501px) {
+  .img-clip-path .img-wrapper img:not(.star-svg) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 178px 100%, 0 calc(100% - 246px));
   }
 }
-@media (min-width: 992px) {
-  .img-clip-path .img-wrapper img {
-    clip-path: polygon(0 0, 80% 0%, 100% 0, 100% 100%, 63% 100%, 23% 100%, 1% 68%, 0% 20%);
+@media (max-width: 1500px) {
+  .img-clip-path .img-wrapper img:not(.star-svg) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 188px 100%, 0 calc(100% - 268px));
+  }
+}
+@media (max-width: 1399.98px) {
+  .img-clip-path .img-wrapper img:not(.star-svg) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 192px 100%, 0 calc(100% - 268px));
+  }
+}
+@media (max-width: 1199.98px) {
+  .img-clip-path .img-wrapper img:not(.star-svg) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 124px 100%, 0 calc(100% - 178px));
+  }
+}
+@media (max-width: 991.98px) {
+  .img-clip-path .img-wrapper img:not(.star-svg) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 124px 100%, 0 calc(100% - 178px));
   }
 }
 @media (max-width: 767.98px) {
-  .img-clip-path .img-wrapper img {
-    min-height: 18.5625rem;
+  .img-clip-path .img-wrapper img:not(.star-svg) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 148px 100%, 0 calc(100% - 200px));
+    margin-left: 1.5rem;
+  }
+}
+@media (max-width: 575.98px) {
+  .img-clip-path .img-wrapper img:not(.star-svg) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 72px 100%, 0 calc(100% - 98px));
+    margin-left: 1rem;
   }
 }
 .img-clip-path .img-wrapper::before {
@@ -6091,14 +6121,15 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   gap: 1.875rem;
   padding-left: 3rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .home-hero-sec .content-section {
     width: 46%;
   }
 }
 @media (min-width: 1400px) {
   .home-hero-sec .content-section {
-    padding-block: 9rem;
+    padding-top: 0rem;
+    padding-bottom: 6rem;
   }
 }
 @media (max-width: 767.98px) {
@@ -6130,13 +6161,21 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .home-hero-sec .image-section {
   position: relative;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .home-hero-sec .image-section {
     width: 54%;
   }
 }
+.home-hero-sec .image-section .swiper .swiper-slide {
+  align-items: flex-start;
+}
 .home-hero-sec .image-section.img-clip-path .img-wrapper::before {
   background-image: url('data:image/svg+xml,<svg width="940" height="732" viewBox="0 0 940 732" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M191.859 732H939.822V0H0L0.00011756 466L191.859 732ZM12 462.124V12H469.911H927.822V720H198L12 462.124Z" fill="%23D50032"/></svg>');
+}
+@media (max-width: 575.98px) {
+  .home-hero-sec .image-section.img-clip-path .img-wrapper::before {
+    background-image: url('data:image/svg+xml,<svg width="470" height="366" viewBox="0 0 940 732" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M191.859 732H939.822V0H0L0.00011756 466L191.859 732ZM12 462.124V12H469.911H927.822V720H198L12 462.124Z" fill="%23D50032"/></svg>');
+  }
 }
 .home-hero-sec .image-section.img-clip-path .star-svg {
   position: absolute;
