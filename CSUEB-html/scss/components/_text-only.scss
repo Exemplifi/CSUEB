@@ -1243,7 +1243,7 @@
     max-width: rem.convert(978px);
     margin: 0 auto;
 
-    img, iframe{
+    img{
       width: 100%;
       max-width: 100%;
       height: auto !important;
@@ -1251,7 +1251,6 @@
     iframe{
       width: 100%;
       max-width: 100%;
-      height: auto !important;
     }
     video{
       width: 100%;

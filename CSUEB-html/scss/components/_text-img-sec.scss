@@ -109,8 +109,10 @@
     padding-top: rem.convert(36px);
     padding-left: rem.convert(36px);
     max-height: rem.convert(552px);
+    min-height: rem.convert(525px);
     @include media-breakpoint-up(sm) {
       max-height: rem.convert(314px);
+      min-height: rem.convert(314px);
     }
 
     @include media-breakpoint-down(lg) {
