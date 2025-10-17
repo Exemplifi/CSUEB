@@ -1126,14 +1126,14 @@
     align-items: flex-start;
     flex-direction: column;
     &:has(.left-nav){
-      @include media-breakpoint-up(md) {
+      @include media-breakpoint-up(lg) {
         flex-direction: row;
         gap: rem.convert(32px);
       }
       @include media-breakpoint-up(lg) {
         gap: rem.convert(60px);
       }
-      @include media-breakpoint-down(md) {
+      @include media-breakpoint-down(lg) {
         gap: rem.convert(48px);
       }
     }
@@ -1409,6 +1409,7 @@
                 margin-bottom: rem.convert(16px);
               }
             }
+            .testimonial-sec{}
           }
         }
       }
@@ -1453,7 +1454,7 @@
       }
       .testimonial-sec{
         &.bg-red{
-          @include media-breakpoint-down(md){
+          @include media-breakpoint-down(lg){
             padding: rem.convert(24px);
           }
         }

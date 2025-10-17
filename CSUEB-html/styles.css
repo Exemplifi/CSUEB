@@ -5452,7 +5452,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   align-items: flex-start;
   flex-direction: column;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .side-nav-with-content .side-nav-wrap:has(.left-nav) {
     flex-direction: row;
     gap: 2rem;
@@ -5463,7 +5463,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
     gap: 3.75rem;
   }
 }
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .side-nav-with-content .side-nav-wrap:has(.left-nav) {
     gap: 3rem;
   }
@@ -5735,7 +5735,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .side-nav-with-content .side-nav-wrap .right-content .container-smaller {
   padding-inline: 0;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .side-nav-with-content .side-nav-wrap .right-content .testimonial-sec.bg-red {
     padding: 1.5rem;
   }
