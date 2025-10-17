@@ -1243,6 +1243,12 @@
     max-width: rem.convert(978px);
     margin: 0 auto;
 
+    img, iframe{
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+
     a:not(.btn),
     a:not([class]) {
       color: var(--white) !important;

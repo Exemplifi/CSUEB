@@ -5,7 +5,7 @@
 
 .lightbox-modal {
   .modal-content {
-    background-color: var(--lightbox);
+    background-color: rgb(0 0 0 / 50%);
   }
 
   .btn-close {
@@ -15,6 +15,7 @@
     font-size: rem.convert(20px);
     z-index: 10;
     filter: invert(1) grayscale(100);
+    opacity: 1 !important;
   }
 
   .modal-body {
@@ -93,6 +94,12 @@
       &-prev,
       &-next {
         width: auto;
+        opacity: 1 !important;
+        &:hover{
+          .carousel-control-prev-icon, .carousel-control-next-icon {
+            border: 2px solid var(--white);
+          }
+        }
       }
 
       &-prev {

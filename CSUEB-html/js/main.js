@@ -1361,6 +1361,22 @@ document.addEventListener('DOMContentLoaded', function () {
 //     document.body.classList.remove('scroll');
 //   }
 // });
+document.querySelectorAll('.gallery-item').forEach(item => {
+  item.addEventListener('click', e => {
+    e.preventDefault();
+    const dialogId = item.getAttribute('aria-controls');
+    item.setAttribute('aria-expanded', 'true');
+    
+    // Set aria-expanded to false when dialog closes
+    const dialog = document.getElementById(dialogId);
+    const closeBtn = document.querySelector('.lightbox-modal .btn-close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        item.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+});
 
 
 // Call on DOMContentLoaded

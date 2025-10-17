@@ -1312,7 +1312,8 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   clip-path: polygon(0 0, 100% 0, 100% 100%, 14px 100%, 0 calc(100% - 20px));
 }
 .btn.btn-primary:focus-visible {
-  outline: var(--black) auto 1px;
+  outline: var(--black) auto 2px;
+  box-shadow: inset 0 0 0 1px var(--black), inset 0 0 0 1px var(--white) !important;
 }
 .btn.btn-primary span {
   display: block;
@@ -2812,6 +2813,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   gap: 0.25rem;
   align-items: center;
   opacity: 0;
+  visibility: hidden;
   transition: all 0.4s ease-in-out;
   position: absolute;
   left: auto;
@@ -2822,6 +2824,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 @media (max-width: 767.98px) {
   .bright-future-swiper .slide-card.slide-card .slide-text {
     opacity: 1;
+    visibility: visible;
   }
 }
 .bright-future-swiper .slide-card.slide-card .slide-text .h3 {
@@ -2867,6 +2870,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .bright-future-swiper .slide-card.slide-card:hover .slide-text {
   opacity: 1;
   background: rgba(0, 0, 0, 0);
+  visibility: visible;
 }
 @media (min-width: 768px) {
   .bright-future-swiper .slide-card.purple-hover:hover .overlay, .bright-future-swiper .flip-tiles-gallery-grid .gallery-item:nth-child(3n+1) a.slide-card:hover .overlay, .flip-tiles-gallery-grid .gallery-item:nth-child(3n+1) .bright-future-swiper a.slide-card:hover .overlay {
@@ -4436,6 +4440,11 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   max-width: 61.125rem;
   margin: 0 auto;
 }
+.bg-img .dec-box img, .bg-img .dec-box iframe {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
 .bg-img .dec-box a:not(.btn),
 .bg-img .dec-box a:not([class]) {
   color: var(--white) !important;
@@ -4572,6 +4581,12 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   height: 100%;
   padding-top: 2.25rem;
   padding-left: 2.25rem;
+  max-height: 34.5rem;
+}
+@media (min-width: 576px) {
+  .img-clip-path-box .img-wrapper {
+    max-height: 19.625rem;
+  }
 }
 @media (max-width: 991.98px) {
   .img-clip-path-box .img-wrapper {
@@ -7454,7 +7469,7 @@ table:not(.gssb_c) {
 }
 
 .lightbox-modal .modal-content {
-  background-color: var(--lightbox);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 .lightbox-modal .btn-close {
   position: absolute;
@@ -7463,6 +7478,7 @@ table:not(.gssb_c) {
   font-size: 1.25rem;
   z-index: 10;
   filter: invert(1) grayscale(100);
+  opacity: 1 !important;
 }
 .lightbox-modal .modal-body {
   display: flex;
@@ -7530,6 +7546,10 @@ table:not(.gssb_c) {
 }
 .lightbox-modal .carousel-control-prev, .lightbox-modal .carousel-control-next {
   width: auto;
+  opacity: 1 !important;
+}
+.lightbox-modal .carousel-control-prev:hover .carousel-control-prev-icon, .lightbox-modal .carousel-control-prev:hover .carousel-control-next-icon, .lightbox-modal .carousel-control-next:hover .carousel-control-prev-icon, .lightbox-modal .carousel-control-next:hover .carousel-control-next-icon {
+  border: 2px solid var(--white);
 }
 .lightbox-modal .carousel-control-prev {
   left: 0.5rem;

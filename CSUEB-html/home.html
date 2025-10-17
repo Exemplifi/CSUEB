@@ -1034,17 +1034,25 @@
           <div class="gallery-grid swiper-wrapper">
             <!-- Slide 1 -->
             <div class="swiper-slide">
-              <a class="gallery-item img-card text-center w-100" href="https://www.youtube.com/embed/Oczpz9SyX2s"
-                data-video-url="https://www.youtube.com/embed/Oczpz9SyX2s?enablejsapi=1&origin=window.location.origin">
+              <!-- Video Link accessible for screen readers -->
+              <a href="https://www.youtube.com/embed/dQw4w9WgXcQ" class="gallery-item img-card text-center w-100"
+                data-video-url="https://www.youtube.com/embed/dQw4w9WgXcQ" role="button" aria-haspopup="dialog"
+                aria-controls="videoDialog" aria-expanded="false" aria-label="Play video: Going it alone?">
                 <div class="slide-card purple-hover">
-                  <img src="./images/video-slider-cover.png" alt="Video 1" class="img-fluid">
+                  <img src="./images/video-slider-cover.png" alt="Video thumbnail for 'Going it alone?'"
+                    class="img-fluid" />
 
                   <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
-                    <button class="play-btn">
-                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10.6667 6.625V25.375L25.2682 16L23.5208 14.8776L10.6667 6.625Z" fill="currentColor" />
+                    <span class="play-btn">
+                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill="currentColor" d="M10.6667 6.625V25.375L25.2682 16L23.5208 14.8776L10.6667 6.625Z">
+                        </path>
                       </svg>
-                    </button>
+                    </span>
+                  
+                    <span class="screen-only" aria-label="Play">Play</span>
+                    <span class="screen-only">Play video: Going it alone?</span>
 
                     <div class="slide-text mt-3">
                       <div class="mb-1 h3">Going it alone?</div>
@@ -1053,6 +1061,8 @@
                   </div>
                 </div>
               </a>
+              <!-- Video Link accessible for screen readers End -->
+
             </div>
 
             <!-- Slide 2 -->
