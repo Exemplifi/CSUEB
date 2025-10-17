@@ -4628,6 +4628,12 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   max-height: 34.5rem;
   min-height: 34.5rem;
 }
+@media (min-width: 768px) {
+  .img-clip-path-box .img-wrapper {
+    position: sticky;
+    top: 0;
+  }
+}
 @media (max-width: 575.98px) {
   .img-clip-path-box .img-wrapper {
     max-height: 19.625rem;
