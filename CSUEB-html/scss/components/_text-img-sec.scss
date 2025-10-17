@@ -1454,9 +1454,10 @@
       }
       .testimonial-sec{
         &.bg-red{
-          @include media-breakpoint-down(xl){
+          @include media-breakpoint-down(xxl){
             padding: rem.convert(24px);
           }
+          
         }
       }
     }
