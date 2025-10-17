@@ -4860,6 +4860,9 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .img-text-full-width-sec .swiper {
   max-height: 46.8125rem;
 }
+.img-text-full-width-sec .swiper .swiper-slide {
+  justify-content: flex-end;
+}
 
 .text-img-main-card .video-wrap {
   display: flex;

@@ -382,6 +382,9 @@
   }
   .swiper{
     max-height: rem.convert(749px);
+    .swiper-slide{
+      justify-content: flex-end;
+    }
   }
 }
 
