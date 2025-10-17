@@ -1409,7 +1409,7 @@
                 margin-bottom: rem.convert(16px);
               }
             }
-            .testimonial-sec{}
+           
           }
         }
       }
@@ -1454,7 +1454,7 @@
       }
       .testimonial-sec{
         &.bg-red{
-          @include media-breakpoint-down(lg){
+          @include media-breakpoint-down(xl){
             padding: rem.convert(24px);
           }
         }
