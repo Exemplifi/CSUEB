@@ -27,7 +27,7 @@
     z-index: 3;
     max-width: 100%;
     @include media-breakpoint-up(xxl){
-      padding-left: calc(50vw - 644px);
+      padding-left: calc(50vw - 730px);
     }
     @media(min-width:2400px) {
       max-width: rem.convert(1920px);
