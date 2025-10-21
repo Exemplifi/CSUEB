@@ -843,7 +843,7 @@ section.bg-white.section-with-padding+section.bg-white {
 }
 
 .section {
-    .section:last-child {
+    .section:not(.bg-red):last-child {
         padding-bottom: 0;
     }
 

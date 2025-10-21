@@ -1028,7 +1028,7 @@ section.bg-white.section-with-padding + section.bg-white {
   padding: 0;
 }
 
-.section .section:last-child {
+.section .section:not(.bg-red):last-child {
   padding-bottom: 0;
 }
 .section.bg-white.side-nav-with-content:has(+ .bg-white.contact-us-sec) {
@@ -6368,7 +6368,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 @media (max-width: 991.98px) {
   .inner-hero-full-slider .inner-hero-slider .swiper-slide .content-section {
     padding-bottom: 7.75rem;
-    margin-top: 6rem;
+    margin-top: 8rem;
   }
 }
 .inner-hero-full-slider .inner-hero-slider .swiper-slide .content-section .slider-heading {
