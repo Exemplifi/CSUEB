@@ -1242,6 +1242,13 @@
   .dec-box {
     max-width: rem.convert(978px);
     margin: 0 auto;
+    a:not(.btn),
+    a:not([class]) {
+      text-decoration: underline;
+      transition: all 0.3s ease-in-out;
+      @extend .link--hover;
+      
+    }
 
     img{
       width: 100%;
@@ -1287,9 +1294,6 @@
       a:not(.btn),
       a:not([class]) {
         color: var(--white) !important;
-        text-decoration: underline;
-        transition: all 0.3s ease-in-out;
-        @extend .link--hover;
         
       }
     }
