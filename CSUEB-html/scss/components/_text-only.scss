@@ -1262,19 +1262,8 @@
       height: auto !important;
     }
 
-    a:not(.btn),
-    a:not([class]) {
-      color: var(--white) !important;
-      text-decoration: underline;
-      transition: all 0.3s ease-in-out;
-      @extend .link--hover;
-      // &:hover {
-      //   color: var(--red);
-      //   text-decoration: none;
-      //   background: rgba(213, 0, 50, 0.1) !important;
-      //   text-decoration-color: transparent !important;
-      // }
-    }
+  
+   
   }
 
   .text-white,
@@ -1294,6 +1283,16 @@
 
   &.parallax {
     position: relative;
+    .dec-box{
+      a:not(.btn),
+      a:not([class]) {
+        color: var(--white) !important;
+        text-decoration: underline;
+        transition: all 0.3s ease-in-out;
+        @extend .link--hover;
+        
+      }
+    }
 
     .section-bg-overlay {
       display: block;

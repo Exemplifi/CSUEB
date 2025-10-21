@@ -47,7 +47,7 @@
     }
 
     @include media-breakpoint-up(xxl) {
-      padding-top: rem.convert(0px);
+      padding-top: rem.convert(64px);
       padding-bottom: rem.convert(96px);
     }
 

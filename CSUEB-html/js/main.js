@@ -584,25 +584,23 @@ function initHeader() {
     }
   });
 
-  window.addEventListener("scroll", () => {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+  let lastScrollTopHeader = 0;
+
+  window.addEventListener("scroll", function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     if (document.body.querySelector('.home-hero-sec')) {
       header.classList.toggle("header-color", scrollTop > 10);
     }
-
-    if (window.innerWidth > 768) {
-      // Only toggle 'upwards' class on screens wider than 768px and when scrolling down
-      header.classList.toggle("upwards", scrollTop > lastScrollTop && scrollTop > 10);
+    if (scrollTop > lastScrollTopHeader) {
+      // Scrolling down
+      header.classList.add("upwards");
     } else {
-      // Always add 'upwards' class when scrolling down below 768px
-      if (scrollTop > 100) {
-        header.classList.add("upwards");
-      } else {
-        header.classList.remove("upwards");
-      }
+      // Scrolling up
+      header.classList.remove("upwards");
     }
-
-    lastScrollTop = Math.max(scrollTop, 0);
+  
+    lastScrollTopHeader = scrollTop <= 0 ? 0 : scrollTop; // Avoid negative scroll
   });
 }
 
@@ -1206,7 +1204,7 @@ function adjustHeroPadding() {
   header.classList.add('alert-present');
   const hero = document.querySelector('.inner-hero-section, .home-hero-sec');
   if (hero && (hero.classList.contains('no-image') || hero.classList.contains('home-hero-sec'))) {
-    hero.style.paddingTop = header ? header.offsetHeight + 30 + 'px' : '';
+    hero.style.paddingTop = header ? header.offsetHeight + 4 + 'px' : '';
   }
    else if (window.innerWidth <= 991.98 && header && alert && hero) {
     if (hero.classList.contains('home-hero-sec')) {
