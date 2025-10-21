@@ -586,7 +586,9 @@ function initHeader() {
 
   window.addEventListener("scroll", () => {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    header.classList.toggle("header-color", scrollTop > 10);
+    if (document.body.querySelector('.home-hero-sec')) {
+      header.classList.toggle("header-color", scrollTop > 10);
+    }
 
     if (window.innerWidth > 768) {
       // Only toggle 'upwards' class on screens wider than 768px and when scrolling down

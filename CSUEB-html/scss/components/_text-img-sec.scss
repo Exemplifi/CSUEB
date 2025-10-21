@@ -1126,15 +1126,19 @@
     align-items: flex-start;
     flex-direction: column;
     &:has(.left-nav){
+      @include media-breakpoint-up(xl) {
+        gap: rem.convert(60px);
+      }
       @include media-breakpoint-up(lg) {
         flex-direction: row;
         gap: rem.convert(32px);
       }
-      @include media-breakpoint-up(lg) {
-        gap: rem.convert(60px);
+    
+      @include media-breakpoint-down(xl) {
+        gap: rem.convert(24px);
       }
       @include media-breakpoint-down(lg) {
-        gap: rem.convert(48px);
+        gap: rem.convert(32px);
       }
     }
     &.padding-top-48 {
@@ -1464,15 +1468,15 @@
   }
 
   .container {
-    @include media-breakpoint-up(xl) {
-      padding-right: rem.convert(48px);
+    @include media-breakpoint-down(xxl) {
+      padding-inline: rem.convert(24px);
     }
 
-    padding-right: 0;
+    // padding-right: 0;
 
-    @include media-breakpoint-down(xl) {
-      padding-right: rem.convert(20px);
-    }
+    // @include media-breakpoint-down(xl) {
+    //   padding-right: rem.convert(20px);
+    // }
   }
 
   .navbar-hidden {
@@ -1480,7 +1484,7 @@
   }
 }
 
-// Hover Card
+// Hover Cardwidth: calc(50% - 8px);
 .card-color-hover {
   position: relative;
   overflow: hidden;

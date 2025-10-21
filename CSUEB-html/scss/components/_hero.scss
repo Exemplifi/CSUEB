@@ -558,3 +558,18 @@
     padding-top: 10rem;
   }
 }
+body{
+  &:has(.home-hero-sec){
+    .main-header{
+      &.header-color{
+        > .container{
+          background-color: var(--black);
+        }
+      }
+      > .container{
+        background-color: transparent;
+      }
+      
+    }
+  }
+}
