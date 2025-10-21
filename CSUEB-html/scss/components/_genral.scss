@@ -49,6 +49,19 @@ ul {
 
     @include media-breakpoint-down(md) {
         padding: rem.convert(72px 0px);
+        
+    }
+    &.testimonial-with-paralax{
+        &.bg-red{
+            @include media-breakpoint-down(lg) {
+                padding: rem.convert(72px 16px);
+                
+            }
+            @include media-breakpoint-down(md) {
+                padding: rem.convert(48x 16px);
+                
+            }
+        }
     }
 }
 

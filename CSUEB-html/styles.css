@@ -358,6 +358,16 @@ ul {
     padding: 4.5rem 0rem;
   }
 }
+@media (max-width: 991.98px) {
+  .section.testimonial-with-paralax.bg-red {
+    padding: 4.5rem 1rem;
+  }
+}
+@media (max-width: 767.98px) {
+  .section.testimonial-with-paralax.bg-red {
+    padding: 48x 1rem;
+  }
+}
 
 @media (max-width: 1199.98px) {
   .container-fluid,
