@@ -4572,14 +4572,11 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .img-clip-path .img-wrapper {
   position: relative;
   overflow: hidden;
-  min-height: 46.8125rem;
   height: 46.8125rem;
 }
 @media (max-width: 1199.98px) {
   .img-clip-path .img-wrapper {
-    min-height: 35.125rem;
-    max-height: 35.125rem;
-    height: 35.125rem;
+    height: 36.125rem;
   }
 }
 @media (max-width: 991.98px) {
@@ -4589,10 +4586,12 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 @media (max-width: 575.98px) {
   .img-clip-path .img-wrapper {
-    min-height: 18.5625rem;
-    max-height: 18.5625rem;
+    height: 20.5625rem;
+  }
+}
+@media (max-width: 480px) {
+  .img-clip-path .img-wrapper {
     height: 18.5625rem;
-    background-size: contain;
   }
 }
 .img-clip-path .img-wrapper img:not(.star-svg) {
@@ -4615,29 +4614,86 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 @media (max-width: 1399.98px) {
   .img-clip-path .img-wrapper img:not(.star-svg) {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 192px 100%, 0 calc(100% - 268px));
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 184px 100%, 0 calc(100% - 248px));
+  }
+}
+@media (max-width: 1281px) {
+  .img-clip-path .img-wrapper img:not(.star-svg) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 178px 100%, 0 calc(100% - 248px));
   }
 }
 @media (max-width: 1199.98px) {
   .img-clip-path .img-wrapper img:not(.star-svg) {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 124px 100%, 0 calc(100% - 178px));
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 132px 100%, 0 calc(100% - 182px));
+    margin-left: 2rem;
   }
 }
 @media (max-width: 991.98px) {
   .img-clip-path .img-wrapper img:not(.star-svg) {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 124px 100%, 0 calc(100% - 178px));
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 124px 100%, 0 calc(100% - 166px));
+  }
+}
+@media (max-width: 981px) {
+  .img-clip-path .img-wrapper img:not(.star-svg) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 132px 100%, 0 calc(100% - 182px));
+  }
+}
+@media (max-width: 860px) {
+  .img-clip-path .img-wrapper img:not(.star-svg) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 132px 100%, 0 calc(100% - 182px));
+  }
+}
+@media (max-width: 821px) {
+  .img-clip-path .img-wrapper img:not(.star-svg) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 132px 100%, 0 calc(100% - 178px));
   }
 }
 @media (max-width: 767.98px) {
   .img-clip-path .img-wrapper img:not(.star-svg) {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 148px 100%, 0 calc(100% - 200px));
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 148px 100%, 0 calc(100% - 203px));
     margin-left: 1.5rem;
   }
 }
 @media (max-width: 575.98px) {
   .img-clip-path .img-wrapper img:not(.star-svg) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 64px 100%, 0 calc(100% - 86px));
+    margin-left: 1.25rem;
+  }
+}
+@media (max-width: 540px) {
+  .img-clip-path .img-wrapper img:not(.star-svg) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 68px 100%, 0 calc(100% - 94px));
+    margin-left: 1.25rem;
+  }
+}
+@media (max-width: 520px) {
+  .img-clip-path .img-wrapper img:not(.star-svg) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 78px 100%, 0 calc(100% - 104px));
+    margin-left: 1.25rem;
+  }
+}
+@media (max-width: 500px) {
+  .img-clip-path .img-wrapper img:not(.star-svg) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 78px 100%, 0 calc(100% - 108px));
+    margin-left: 1.25rem;
+  }
+}
+@media (max-width: 480px) {
+  .img-clip-path .img-wrapper img:not(.star-svg) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 64px 100%, 0 calc(100% - 88px));
+    margin-left: 1.25rem;
+  }
+}
+@media (max-width: 460px) {
+  .img-clip-path .img-wrapper img:not(.star-svg) {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 72px 100%, 0 calc(100% - 98px));
-    margin-left: 1rem;
+    margin-left: 1.25rem;
+  }
+}
+@media (max-width: 440px) {
+  .img-clip-path .img-wrapper img:not(.star-svg) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 72px 100%, 0 calc(100% - 98px));
+    margin-left: 1.25rem;
   }
 }
 .img-clip-path .img-wrapper::before {
