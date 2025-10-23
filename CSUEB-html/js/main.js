@@ -1164,9 +1164,13 @@ function handleAccordionBehavior() {
 
   if (!accordion || !button) return; // stop if not found
 
-  if (window.innerWidth >= 768) {
+  if (window.innerWidth >= 992) {
     accordion.classList.add('show');       // keep open
     button.setAttribute('aria-expanded', 'true');
+  }
+  else{
+    accordion.classList.remove('show');       // keep open
+    button.setAttribute('aria-expanded', 'false');
   }
 }
 

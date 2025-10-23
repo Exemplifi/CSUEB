@@ -757,17 +757,17 @@ section.bg-white.section-with-padding + section.bg-white {
   margin-left: -0.5rem;
   padding: 0.5rem !important;
 }
-@media (max-width: 767.98px) {
-  .main-dropdown > a:not(.star-btn-link) {
-    margin-left: -0.75rem;
-  }
-}
 .main-dropdown > a:not(.star-btn-link):hover {
   color: var(--red);
   background-color: rgba(213, 0, 50, 0.1);
 }
 .main-dropdown > .btn {
   padding: 0.5rem !important;
+}
+@media (max-width: 991.98px) {
+  .main-dropdown > .btn {
+    padding: 0.5rem 0.5rem 0.5rem 0.25rem !important;
+  }
 }
 
 .leftnav > ul {
@@ -5616,12 +5616,12 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   /* 1.53125rem */
   font-weight: 500;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .side-nav-with-content .side-nav-wrap .left-nav-wrap .left-nav .accordion-item .accordion-button {
     pointer-events: none;
   }
 }
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .side-nav-with-content .side-nav-wrap .left-nav-wrap .left-nav .accordion-item .accordion-button::after {
     content: "";
     background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"><path d="M7.42969 10L5.92969 11.5L12 17.5703L18.0703 11.5L16.5703 10L12 14.5703L7.42969 10Z" fill="black"/></svg>');

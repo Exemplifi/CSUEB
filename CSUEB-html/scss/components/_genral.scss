@@ -500,9 +500,7 @@ section.bg-white.section-with-padding+section.bg-white {
         text-transform: uppercase;
         margin-left: rem.convert(-8px);
 
-        @include media-breakpoint-down(md) {
-            margin-left: rem.convert(-12px);
-        }
+       
 
         padding: rem.convert(8px) !important;
 
@@ -515,6 +513,9 @@ section.bg-white.section-with-padding+section.bg-white {
 
     >.btn {
         padding: rem.convert(8px) !important;
+        @include media-breakpoint-down(lg){
+            padding: rem.convert(8px 8px 8px 4px) !important;
+        }
 
     }
 

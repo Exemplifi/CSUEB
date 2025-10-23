@@ -1229,11 +1229,11 @@
             /* 1.53125rem */
             font-weight: 500;
 
-            @include media-breakpoint-up(md) {
+            @include media-breakpoint-up(lg) {
               pointer-events: none;
             }
 
-            @include media-breakpoint-down(md) {
+            @include media-breakpoint-down(lg) {
               &::after {
                 content: "";
                 background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"><path d="M7.42969 10L5.92969 11.5L12 17.5703L18.0703 11.5L16.5703 10L12 14.5703L7.42969 10Z" fill="black"/></svg>');
