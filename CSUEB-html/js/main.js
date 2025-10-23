@@ -25,10 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const submenu = this.closest('li').querySelector('.sidenav-sub');
       const icon = this.querySelector('.glyphicon');
 
-      // // Toggle submenu visibility
-      // if (submenu) {
-      //   submenu.style.display = submenu.style.display === 'none' ? 'block' : 'none';
-      // }
+      // Toggle submenu visibility
+      if (submenu) {
+        submenu.style.display = submenu.style.display === 'none' ? 'block' : 'none';
+      }
 
       // Toggle plus/minus icon
       if (icon) {
