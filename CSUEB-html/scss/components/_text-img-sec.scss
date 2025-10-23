@@ -153,14 +153,12 @@
     height: 100%;
     padding-top: rem.convert(36px);
     padding-left: rem.convert(36px);
-    max-height: rem.convert(552px);
     min-height: rem.convert(552px);
     @include media-breakpoint-up(md){
       position: sticky;
       top: 0;
     }
     @include media-breakpoint-down(sm) {
-      height: rem.convert(314px);
       min-height: rem.convert(314px);
     }
 
