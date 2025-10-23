@@ -2882,6 +2882,9 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   background: rgba(0, 0, 0, 0);
   visibility: visible;
 }
+.bright-future-swiper .slide-card.slide-card:hover .play-btn span {
+  display: none;
+}
 @media (min-width: 768px) {
   .bright-future-swiper .slide-card.purple-hover:hover .overlay, .bright-future-swiper .flip-tiles-gallery-grid .gallery-item:nth-child(3n+1) a.slide-card:hover .overlay, .flip-tiles-gallery-grid .gallery-item:nth-child(3n+1) .bright-future-swiper a.slide-card:hover .overlay {
     border-color: var(--purple);

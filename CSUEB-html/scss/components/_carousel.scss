@@ -125,6 +125,11 @@
           background: #00000000;
           visibility: visible;
         }
+        .play-btn{
+          span{
+            display: none;
+          }
+        }
       }
     }
 
