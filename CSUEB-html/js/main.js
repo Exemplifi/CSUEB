@@ -999,13 +999,13 @@ function initAccessibilityFeatures() {
   });
 
 
-  // Enhanced heading structure
-  const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-  headings.forEach((heading, index) => {
-    if (!heading.getAttribute('id')) {
-      heading.setAttribute('id', 'heading-' + index);
-    }
-  });
+  // // Enhanced heading structure
+  // const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+  // headings.forEach((heading, index) => {
+  //   if (!heading.getAttribute('id')) {
+  //     heading.setAttribute('id', 'heading-' + index);
+  //   }
+  // });
 
   // Enhanced ARIA live regions
   const liveRegions = document.querySelectorAll('[aria-live]');
