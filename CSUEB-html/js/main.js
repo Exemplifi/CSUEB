@@ -1248,7 +1248,7 @@ function adjustHeroPadding() {
   if ((hero.classList.contains('no-image') || hero.classList.contains('home-hero-sec')) && alert) {
 
     if (window.innerWidth <= 575 && hero.classList.contains('home-hero-sec')) {
-      headerHeight = header ? header.offsetHeight + 64 : 0;
+      headerHeight = header ? header.offsetHeight + 40 : 0;
     }
     else {
       headerHeight = header ? header.offsetHeight + 4 : 0;
