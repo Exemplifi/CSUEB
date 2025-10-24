@@ -6369,6 +6369,12 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   position: relative;
   width: 100%;
 }
+@media (max-width: 991.98px) {
+  .home-hero-sec .image-section.img-clip-path .img-wrapper {
+    width: 85%;
+    margin-left: auto;
+  }
+}
 
 .section-hero {
   padding-top: 9.4375rem;

@@ -1248,11 +1248,12 @@ function adjustHeroPadding() {
   if ((hero.classList.contains('no-image') || hero.classList.contains('home-hero-sec')) && alert) {
     headerHeight = header ? header.offsetHeight + 4 : 0;
     hero.style.paddingTop = headerHeight + 'px';
-  } else if (window.innerWidth <= 991.98 && header && alert) {
+  } 
+  else if (window.innerWidth <= 991.98 && header && alert) {
     if (hero.classList.contains('home-hero-sec')) {
-      headerHeight = header.offsetHeight + 64;
+      headerHeight = header.offsetHeight;
     } else {
-      headerHeight = header.offsetHeight - 100;
+      headerHeight = header.offsetHeight;
     }
     hero.style.paddingTop = headerHeight + 'px';
   } else {

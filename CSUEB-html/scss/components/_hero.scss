@@ -180,6 +180,7 @@
           @include media-breakpoint-down(sm) {
             background-image: url('data:image/svg+xml,<svg width="470" height="366" viewBox="0 0 940 732" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M191.859 732H939.822V0H0L0.00011756 466L191.859 732ZM12 462.124V12H469.911H927.822V720H198L12 462.124Z" fill="%23D50032"/></svg>');
           }
+         
         }
       }
       
@@ -208,26 +209,10 @@
       .img-wrapper {
         position: relative;
         width: 100%;
-        // &::after {
-        //   content: "";
-        //   position: absolute;
-        //   z-index: 3;
-        //   right:  rem.convert(20px);
-        //   bottom: rem.convert(20px);
-        //   height: 100%;
-        //   width: 100%;
-        //   max-height: 10.16338rem;
-        //   background-image: url(images/stars.svg);
-        //   background-size: contain;
-        //   background-repeat: no-repeat;
-        //   background-position: right;
-        //   @include media-breakpoint-up(md) {
-        //     max-height: 18rem;
-        //   }
-        //   @include media-breakpoint-up(xxl) {
-        //     max-height: 25.63088rem;
-        //   }
-        // }
+        @include media-breakpoint-down(lg){
+          width: 85%;
+          margin-left: auto;
+        }
       }
     }
 
