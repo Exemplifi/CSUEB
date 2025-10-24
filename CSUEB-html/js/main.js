@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMainImgSlider();
   initGalleryLightbox();
   initAccessibilityFeatures();
+  adjustHeroPadding();
 
 
   const expanderButtons = document.querySelectorAll('.btn-expander');
@@ -1231,12 +1232,23 @@ document.addEventListener("DOMContentLoaded", function () {
 function adjustHeroPadding() {
   const header = document.querySelector('.main-header');
   const alert = header?.querySelector('.alert');
-  header.classList.add('alert-present');
   const hero = document.querySelector('.inner-hero-section, .home-hero-sec');
-  if (hero && (hero.classList.contains('no-image') || hero.classList.contains('home-hero-sec'))) {
-    hero.style.paddingTop = header ? header.offsetHeight + 4 + 'px' : '';
+  
+  // Only add alert-present class if alert actually exists
+  if (alert) {
+    header.classList.add('alert-present');
+  } else {
+    header.classList.remove('alert-present');
   }
-   else if (window.innerWidth <= 991.98 && header && alert && hero) {
+  
+  if (!hero) return;
+  
+  let headerHeight = 0;
+  
+  if ((hero.classList.contains('no-image') || hero.classList.contains('home-hero-sec')) && alert) {
+    headerHeight = header ? header.offsetHeight + 4 : 0;
+    hero.style.paddingTop = headerHeight + 'px';
+  } else if (window.innerWidth <= 991.98 && header && alert) {
     if (hero.classList.contains('home-hero-sec')) {
       headerHeight = header.offsetHeight + 64;
     } else {
@@ -1245,28 +1257,34 @@ function adjustHeroPadding() {
     hero.style.paddingTop = headerHeight + 'px';
   } else {
     // Remove padding if above max-width or if no alert present
-    document.querySelectorAll('.inner-hero-section, .home-hero-sec').forEach(function (hero) {
-      hero.style.paddingTop = '';
-    });
+    hero.style.paddingTop = '';
   }
 }
 
-// Run on load
-window.addEventListener('load', adjustHeroPadding);
+// Initialize hero padding on page load
+document.addEventListener('DOMContentLoaded', adjustHeroPadding);
 
-// Run on resize
-window.addEventListener('resize', adjustHeroPadding);
+// Debounced resize handler to prevent performance issues
+let resizeTimeout;
+window.addEventListener('resize', function() {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(adjustHeroPadding, 100);
+});
 
-// When alert is closed → remove padding (only below max-width)
+// When alert is closed → remove padding and class
 document.addEventListener('click', function (e) {
-  const header = document.querySelector('.main-header');
   if (e.target.classList.contains('btn-close')) {
+    const header = document.querySelector('.main-header');
     const hero = document.querySelector('.inner-hero-section, .home-hero-sec');
+    
+    // Remove alert-present class
+    header.classList.remove('alert-present');
+    
+    // Reset hero padding - no need to recalculate since alert is gone
     if (hero) {
-      hero.style.paddingTop = null; // reset
+      hero.style.paddingTop = '';
     }
   }
-  header.classList.remove('alert-present');
 });
 
 
