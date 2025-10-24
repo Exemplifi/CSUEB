@@ -415,6 +415,24 @@ function initBrightFutureSlider() {
   });
 }
 
+// Bright-future-swiper update aria-live based on viewport
+function setSwiperAriaLiveBasedOnViewport() {
+  const swiperWrappers = document.querySelectorAll('.bright-future-swiper .swiper-wrapper');
+  const isDesktop = window.innerWidth >= 1024; 
+  
+  swiperWrappers.forEach(wrapper => {
+      wrapper.setAttribute('aria-live', isDesktop ? 'off' : 'polite');
+  });
+}
+
+window.addEventListener('load', setSwiperAriaLiveBasedOnViewport);
+
+window.addEventListener('resize', () => {
+  clearTimeout(window.ariaLiveResizeTimeout);
+  window.ariaLiveResizeTimeout = setTimeout(setSwiperAriaLiveBasedOnViewport, 100);
+});
+// Bright-future-swiper update aria-live based on viewport ends
+
 function initHeroSlider() {
   const slides = document.querySelectorAll(".hero-slider .swiper-slide");
   const hasMultipleSlides = slides.length > 1;
@@ -905,15 +923,15 @@ function initAccessibilityFeatures() {
   });
 
   // Enhanced link descriptions
-  const links = document.querySelectorAll('a[href]');
-  links.forEach(link => {
-    if (!link.getAttribute('aria-label') && !link.textContent.trim()) {
-      const href = link.getAttribute('href');
-      if (href) {
-        link.setAttribute('aria-label', 'Link to ' + href);
-      }
-    }
-  });
+  // const links = document.querySelectorAll('a[href]');
+  // links.forEach(link => {
+  //   if (!link.getAttribute('aria-label') && !link.textContent.trim()) {
+  //     const href = link.getAttribute('href');
+  //     if (href) {
+  //       link.setAttribute('aria-label', 'Link to ' + href);
+  //     }
+  //   }
+  // });
 
   // Enhanced button descriptions
   const buttons = document.querySelectorAll('button');
@@ -1220,7 +1238,7 @@ function adjustHeroPadding() {
   }
    else if (window.innerWidth <= 991.98 && header && alert && hero) {
     if (hero.classList.contains('home-hero-sec')) {
-      headerHeight = header.offsetHeight + 50;
+      headerHeight = header.offsetHeight + 64;
     } else {
       headerHeight = header.offsetHeight - 100;
     }
@@ -1384,7 +1402,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //     document.body.classList.remove('scroll');
 //   }
 // });
-document.querySelectorAll('.gallery-item').forEach(item => {
+document.querySelectorAll('.bright-future-swiper .gallery-item').forEach(item => {
   item.addEventListener('click', e => {
     e.preventDefault();
     const dialogId = item.getAttribute('aria-controls');

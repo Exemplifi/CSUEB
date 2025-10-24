@@ -11,6 +11,7 @@
     z-index: 2;
     height: 100%;
   }
+  
 
   padding-top: 0.6rem;
 
@@ -63,6 +64,8 @@
     }
 
     .tagline {
+      word-break: break-word;
+     
       .highlight {
         color: var(--gold); 
       }
@@ -94,6 +97,13 @@
 
     @include media-breakpoint-up(lg) {
       width: 54%;
+    }
+    .swiper{
+      @include media-breakpoint-up(md){
+        height: auto !important;
+        position: sticky;
+        top: 0;
+      }
     }
 
     // .img-clip-path-box {

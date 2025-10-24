@@ -70,6 +70,15 @@
   .container {
     position: relative;
     z-index: 3;
+
+    >.row {
+      .col-lg-8 {
+        @include media-breakpoint-up(lg) {
+          position: sticky;
+          top: 0;
+        }
+      }
+    }
   }
 
   .oasis-list {
@@ -371,6 +380,7 @@
 .text-icon-slider {
   .swiper-slide {
     background-color: transparent;
+
     &:nth-child(n+4) {
       display: none !important;
     }
@@ -381,22 +391,23 @@
       }
     }
   }
-  .button-with-pagination-sec{
+
+  .button-with-pagination-sec {
     @include media-breakpoint-up(md) {
       display: none !important;
     }
-    
-  .swiper-btn[aria-disabled="true"] {
-    background-color: #FFFFFF40 !important;
-    opacity: 1 !important;
-    pointer-events: none !important;
 
-    svg {
-      path {
-        fill: var(--white) !important;
+    .swiper-btn[aria-disabled="true"] {
+      background-color: #FFFFFF40 !important;
+      opacity: 1 !important;
+      pointer-events: none !important;
+
+      svg {
+        path {
+          fill: var(--white) !important;
+        }
       }
     }
-  }
   }
 
 }
@@ -469,9 +480,11 @@
     }
 
   }
+
   &.bg-red {
-    &:has( + .bg-light-gray){
+    &:has(+ .bg-light-gray) {
       margin-bottom: rem.convert(96px);
+
       @include media-breakpoint-down(md) {
         margin-bottom: rem.convert(72px);
       }
@@ -1242,35 +1255,40 @@
   .dec-box {
     max-width: rem.convert(978px);
     margin: 0 auto;
+
     a:not(.btn),
     a:not([class]) {
       text-decoration: underline;
       transition: all 0.3s ease-in-out;
       @extend .link--hover;
-      
+
     }
 
-    img{
+    img {
       width: 100%;
       max-width: 100%;
       height: auto !important;
     }
-    iframe{
+
+    iframe {
       width: 100%;
       max-width: 100%;
-      @include media-breakpoint-down(md){
+      max-height: rem.convert(548px);
+
+      @include media-breakpoint-down(md) {
         height: auto;
         min-height: rem.convert(276px);
       }
     }
-    video{
+
+    video {
       width: 100%;
       max-width: 100%;
       height: auto !important;
     }
 
-  
-   
+
+
   }
 
   .text-white,
@@ -1290,11 +1308,13 @@
 
   &.parallax {
     position: relative;
-    .dec-box{
+
+    .dec-box {
+
       a:not(.btn),
       a:not([class]) {
         color: var(--white) !important;
-        
+
       }
     }
 

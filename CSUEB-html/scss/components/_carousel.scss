@@ -28,10 +28,17 @@
 
 
 .bright-future-swiper {
+  padding: rem.convert(4px);
   .swiper-slide {
     width: rem.convert(300px);
+    
   }
-
+  .img-card{
+    &:focus-visible{
+      outline: var(--red) auto 3px !important;
+      outline-offset: 3px !important;
+    }
+  }
   .slide-card {
     position: relative;
     overflow: hidden;
@@ -43,6 +50,15 @@
       height: auto;
       display: block;
     }
+    &:hover{
+      .play-btn{
+        .sr-only{
+          display: none;
+        }
+      }
+    }
+   
+    
 
 
     &.slide-card {
@@ -124,11 +140,6 @@
           opacity: 1;
           background: #00000000;
           visibility: visible;
-        }
-        .play-btn{
-          span{
-            display: none;
-          }
         }
       }
     }

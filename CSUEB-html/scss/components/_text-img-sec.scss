@@ -150,7 +150,6 @@
 
   .img-wrapper {
     position: relative;
-    height: 100%;
     padding-top: rem.convert(36px);
     padding-left: rem.convert(36px);
     min-height: rem.convert(552px);
@@ -285,6 +284,14 @@
 
     ul {
       margin-bottom: 0;
+    }
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+    iframe{
+      width: 100%;
+      max-height: rem.convert(364px);
     }
   }
 
