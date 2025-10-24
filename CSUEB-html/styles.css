@@ -2994,7 +2994,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   position: absolute;
   right: 2rem;
   bottom: 2rem;
-  display: flex !important;
+  display: flex;
   gap: 0.75rem;
 }
 @media (max-width: 767.98px) {
@@ -3586,6 +3586,12 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   display: inline-flex;
   flex-direction: column;
   gap: 2rem;
+}
+@media (min-width: 992px) {
+  .key-feature-sec .content-section {
+    position: sticky;
+    top: 0;
+  }
 }
 @media (max-width: 767.98px) {
   .key-feature-sec .content-section {
@@ -4769,9 +4775,14 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   padding-top: 2.25rem;
   padding-left: 2.25rem;
 }
+@media (min-width: 1200px) {
+  .img-clip-path-box .img-wrapper {
+    min-height: 27.875rem;
+  }
+}
 @media (min-width: 992px) {
   .img-clip-path-box .img-wrapper {
-    min-height: 34.5rem;
+    min-height: 19.75rem;
   }
 }
 @media (min-width: 768px) {
@@ -4798,12 +4809,27 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   position: relative;
   z-index: 2;
 }
+@media (min-width: 1200px) {
+  .img-clip-path-box .img-wrapper img {
+    min-height: 27.875rem;
+  }
+}
+@media (min-width: 992px) {
+  .img-clip-path-box .img-wrapper img {
+    min-height: 19.75rem;
+  }
+}
 .img-clip-path-box .img-wrapper video {
   object-fit: cover;
   height: 100%;
   width: 100%;
   position: relative;
   z-index: 2;
+}
+@media (min-width: 992px) {
+  .img-clip-path-box .img-wrapper video {
+    min-height: 25rem;
+  }
 }
 @media (max-width: 767.98px) {
   .img-clip-path-box .img-wrapper video {
@@ -5029,7 +5055,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   flex-direction: column;
   position: relative;
   width: 100%;
-  min-height: 14.5625rem;
+  min-height: 17.75rem;
 }
 .text-img-main-card .video-wrap video {
   position: absolute;
@@ -5052,7 +5078,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   flex-direction: column;
   position: relative;
   width: 100%;
-  min-height: 14.5625rem;
+  min-height: 17.75rem;
 }
 .text-img-main-card .img-wrap img {
   position: absolute;

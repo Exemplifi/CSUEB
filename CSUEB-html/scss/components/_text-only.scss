@@ -142,6 +142,11 @@
     display: inline-flex;
     flex-direction: column;
     gap: rem.convert(32px);
+    @include media-breakpoint-up(lg) {
+      position: sticky;
+      top: 0;
+    }
+  
 
     @include media-breakpoint-down(md) {
       gap: rem.convert(24px);

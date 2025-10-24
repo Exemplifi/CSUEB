@@ -294,7 +294,7 @@
     position: absolute;
     right: rem.convert(32px);
     bottom: rem.convert(32px);
-    display: flex !important; // Force display
+    display: flex;
     gap: rem.convert(12px);
 
     @include media-breakpoint-down(md) {
