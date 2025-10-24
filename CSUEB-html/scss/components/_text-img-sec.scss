@@ -469,7 +469,7 @@
     flex-direction: column;
     position: relative;
     width: 100%;
-    padding-top: 63.7%;
+    min-height: rem.convert(233px);
 
     video {
       position: absolute;
@@ -495,7 +495,7 @@
     flex-direction: column;
     position: relative;
     width: 100%;
-    padding-top: 66.7%;
+    min-height: rem.convert(233px);
 
     img {
       position: absolute;
@@ -2033,4 +2033,14 @@
 
 .experts-profile-faculty-wraper .img-clip-path-box.img-content-section .img-wrapper {
   max-width: 608px;
+}
+
+.main-img-slider{
+  .swiper-slide{
+    .img-wrapper{
+      @include media-breakpoint-up(lg){
+        width: 100%;
+      }
+    }
+  }
 }

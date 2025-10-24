@@ -276,12 +276,12 @@ function initGallerySlider() {
       1280: { slidesPerView: 5 },
     },
     pagination: {
-      el: ".swiper-pagination",
+      el: ".image-gallery-slider .swiper-pagination",
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next.swiper-button-next-new",
-      prevEl: ".swiper-button-prev.swiper-button-prev-new",
+      nextEl: ".image-gallery-slider .swiper-button-next.swiper-button-next-new",
+      prevEl: ".image-gallery-slider .swiper-button-prev.swiper-button-prev-new",
     },
   });
 }
@@ -291,10 +291,10 @@ function initInnerHeroSlider() {
     slidesPerView: 1,
     spaceBetween: 10,
     loop: true,
-    pagination: { el: ".swiper-pagination", clickable: true },
+    pagination: { el: ".hero-full-swiper .swiper-pagination", clickable: true },
     navigation: {
-      nextEl: ".swiper-button-next.swiper-btn",
-      prevEl: ".swiper-button-prev.swiper-btn",
+      nextEl: ".hero-full-swiper .swiper-button-next.swiper-btn",
+      prevEl: ".hero-full-swiper .swiper-button-prev.swiper-btn",
     },
     on: {
       init: function () {
@@ -373,10 +373,10 @@ function initTextIconSlider() {
       },
       ...(isMobile || window.innerWidth < 768
         ? {
-          pagination: { el: ".swiper-pagination", clickable: true },
+          pagination: { el: ".text-icon-slider .swiper-pagination", clickable: true },
           navigation: {
-            nextEl: ".swiper-button-next.swiper-button-next-new",
-            prevEl: ".swiper-button-prev.swiper-button-prev-new",
+            nextEl: ".text-icon-slider .swiper-button-next.swiper-button-next-new",
+            prevEl: ".text-icon-slider .swiper-button-prev.swiper-button-prev-new",
           },
         }
         : {}),
@@ -407,12 +407,12 @@ function initBrightFutureSlider() {
       1024: { slidesPerView: 3 },
     },
     pagination: {
-      el: ".swiper-pagination",
+      el: ".bright-future-section .swiper-pagination",
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".bright-future-section .swiper-button-next-new",
+      prevEl: ".bright-future-section .swiper-button-prev-new",
     },
     on: {
       init: function () {
@@ -488,10 +488,20 @@ function initMainImgSlider() {
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
+    allowTouchMove: true,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-button-next.swiper-btn",
+      prevEl: ".swiper-button-prev.swiper-btn",
+      disabledClass: 'swiper-button-disabled',
     },
+    pagination: {
+      el: ".main-img-slider .swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+    },
+    // Force navigation to always be visible
+    watchSlidesProgress: true,
+    watchSlidesVisibility: true,
   });
 }
 
@@ -964,13 +974,7 @@ function initAccessibilityFeatures() {
   //   }
   // });
 
-  // Enhanced button descriptions
-  const buttons = document.querySelectorAll('button');
-  buttons.forEach(button => {
-    if (!button.getAttribute('aria-label') && !button.textContent.trim()) {
-      button.setAttribute('aria-label', 'Button');
-    }
-  });
+ 
 
   // Enhanced table accessibility
   const tables = document.querySelectorAll('table');

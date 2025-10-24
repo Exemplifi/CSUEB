@@ -294,7 +294,7 @@
     position: absolute;
     right: rem.convert(32px);
     bottom: rem.convert(32px);
-    display: flex;
+    display: flex !important; // Force display
     gap: rem.convert(12px);
 
     @include media-breakpoint-down(md) {
@@ -303,7 +303,7 @@
     }
 
     .swiper-btn {
-      display: flex;
+      display: flex !important; // Force display
       padding: rem.convert(8px);
       align-items: flex-start;
       gap: rem.convert(4px);
@@ -315,6 +315,7 @@
       left: 0;
       right: 0;
       transition: all 0.3s ease-in-out;
+      opacity: 1 !important; // Force visibility
 
       &::after {
         display: none;
@@ -327,7 +328,21 @@
       &:hover {
         background-color: var(--white);
       }
+
+      // Override Swiper's disabled state
+      &.swiper-button-disabled {
+        opacity: 0.5 !important; // Show but dimmed instead of hidden
+        pointer-events: auto !important;
+      }
     }
+  }
+
+  // Force pagination to be visible
+  .swiper-pagination {
+    display: block !important;
+    position: relative;
+    margin-top: rem.convert(16px);
+    text-align: center;
   }
 }
 
