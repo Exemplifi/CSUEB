@@ -6367,6 +6367,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 .home-hero-sec .image-section.img-clip-path .img-wrapper {
   position: relative;
+  width: 100%;
 }
 
 .section-hero {
