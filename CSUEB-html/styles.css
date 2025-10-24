@@ -3532,7 +3532,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   .key-feature-sec .container > .row .col-lg-8 .content-big,
   .key-feature-sec .container > .row .col-lg-7 .content-big {
     position: sticky;
-    top: 0;
+    top: 3rem;
   }
 }
 .key-feature-sec .oasis-list {
@@ -3590,7 +3590,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 @media (min-width: 992px) {
   .key-feature-sec .content-section {
     position: sticky;
-    top: 0;
+    top: 3rem;
   }
 }
 @media (max-width: 767.98px) {
@@ -4788,7 +4788,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 @media (min-width: 768px) {
   .img-clip-path-box .img-wrapper {
     position: sticky;
-    top: 0;
+    top: 3rem;
   }
 }
 @media (max-width: 575.98px) {

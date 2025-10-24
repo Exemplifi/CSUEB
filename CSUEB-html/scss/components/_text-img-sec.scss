@@ -179,7 +179,7 @@
     }
     @include media-breakpoint-up(md) {
       position: sticky;
-      top: 0;
+      top: rem.convert(48px);
     }
 
     @include media-breakpoint-down(sm) {

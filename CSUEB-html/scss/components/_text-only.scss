@@ -80,7 +80,7 @@
           top: 0;
           .content-big {
             position: sticky;
-            top: 0;
+            top: rem.convert(48px);
           }
         }
       }
@@ -144,7 +144,7 @@
     gap: rem.convert(32px);
     @include media-breakpoint-up(lg) {
       position: sticky;
-      top: 0;
+      top: rem.convert(48px);
     }
   
 
