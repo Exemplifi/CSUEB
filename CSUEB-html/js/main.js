@@ -8,7 +8,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   initTestimonialSlider();
   initHeader();
-  initGallerySlider();  
+  initGallerySlider();
   initInnerHeroSlider();
   initTextIconSlider();
   initBrightFutureSlider();
@@ -293,11 +293,11 @@ function initInnerHeroSlider() {
     loop: true,
     pagination: { el: ".swiper-pagination", clickable: true },
     navigation: {
-      nextEl: ".swiper-button-next.swiper-btn", 
+      nextEl: ".swiper-button-next.swiper-btn",
       prevEl: ".swiper-button-prev.swiper-btn",
     },
     on: {
-      init: function() {
+      init: function () {
         // Hide navigation if only one slide
         if (this.slides.length <= 1) {
           const nextBtn = document.querySelector('.swiper-button-next.swiper-btn');
@@ -412,17 +412,17 @@ function initBrightFutureSlider() {
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
-    },  
+    },
   });
 }
 
 // Bright-future-swiper update aria-live based on viewport
 function setSwiperAriaLiveBasedOnViewport() {
   const swiperWrappers = document.querySelectorAll('.bright-future-swiper .swiper-wrapper');
-  const isDesktop = window.innerWidth >= 1024; 
-  
+  const isDesktop = window.innerWidth >= 1024;
+
   swiperWrappers.forEach(wrapper => {
-      wrapper.setAttribute('aria-live', isDesktop ? 'off' : 'polite');
+    wrapper.setAttribute('aria-live', isDesktop ? 'off' : 'polite');
   });
 }
 
@@ -626,7 +626,7 @@ function initHeader() {
       // Scrolling up
       header.classList.remove("upwards");
     }
-  
+
     lastScrollTopHeader = scrollTop <= 0 ? 0 : scrollTop; // Avoid negative scroll
   });
 }
@@ -1187,7 +1187,7 @@ function handleAccordionBehavior() {
     accordion.classList.add('show');       // keep open
     button.setAttribute('aria-expanded', 'true');
   }
-  else{
+  else {
     accordion.classList.remove('show');       // keep open
     button.setAttribute('aria-expanded', 'false');
   }
@@ -1233,27 +1233,34 @@ function adjustHeroPadding() {
   const header = document.querySelector('.main-header');
   const alert = header?.querySelector('.alert');
   const hero = document.querySelector('.inner-hero-section, .home-hero-sec');
-  
+
   // Only add alert-present class if alert actually exists
   if (alert) {
     header.classList.add('alert-present');
   } else {
     header.classList.remove('alert-present');
   }
-  
+
   if (!hero) return;
-  
+
   let headerHeight = 0;
-  
+
   if ((hero.classList.contains('no-image') || hero.classList.contains('home-hero-sec')) && alert) {
-    headerHeight = header ? header.offsetHeight + 4 : 0;
+
+    if (window.innerWidth <= 575 && hero.classList.contains('home-hero-sec')) {
+      headerHeight = header ? header.offsetHeight + 64 : 0;
+    }
+    else {
+      headerHeight = header ? header.offsetHeight + 4 : 0;
+    }
+
     hero.style.paddingTop = headerHeight + 'px';
-  } 
+  }
   else if (window.innerWidth <= 991.98 && header && alert) {
     if (hero.classList.contains('home-hero-sec')) {
-      headerHeight = header.offsetHeight;
+      headerHeight = header.offsetHeight + 64;
     } else {
-      headerHeight = header.offsetHeight;
+      headerHeight = header.offsetHeight - 100;
     }
     hero.style.paddingTop = headerHeight + 'px';
   } else {
@@ -1267,7 +1274,7 @@ document.addEventListener('DOMContentLoaded', adjustHeroPadding);
 
 // Debounced resize handler to prevent performance issues
 let resizeTimeout;
-window.addEventListener('resize', function() {
+window.addEventListener('resize', function () {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(adjustHeroPadding, 100);
 });
@@ -1277,10 +1284,10 @@ document.addEventListener('click', function (e) {
   if (e.target.classList.contains('btn-close')) {
     const header = document.querySelector('.main-header');
     const hero = document.querySelector('.inner-hero-section, .home-hero-sec');
-    
+
     // Remove alert-present class
     header.classList.remove('alert-present');
-    
+
     // Reset hero padding - no need to recalculate since alert is gone
     if (hero) {
       hero.style.paddingTop = '';
@@ -1320,14 +1327,14 @@ const expertiseSelect = document.getElementById('filter-expertise');
 const liveRegion = document.getElementById('live-region');
 
 if (expertiseSelect && liveRegion) {
-    expertiseSelect.addEventListener('change', () => {
-        const selected = expertiseSelect.value;
-        if (selected) {
-            liveRegion.textContent = `Selected expertise is ${selected}.`;
-        } else {
-            liveRegion.textContent = '';
-        }
-    });
+  expertiseSelect.addEventListener('change', () => {
+    const selected = expertiseSelect.value;
+    if (selected) {
+      liveRegion.textContent = `Selected expertise is ${selected}.`;
+    } else {
+      liveRegion.textContent = '';
+    }
+  });
 }
 
 
@@ -1426,7 +1433,7 @@ document.querySelectorAll('.bright-future-swiper .gallery-item').forEach(item =>
     e.preventDefault();
     const dialogId = item.getAttribute('aria-controls');
     item.setAttribute('aria-expanded', 'true');
-    
+
     // Set aria-expanded to false when dialog closes
     const dialog = document.getElementById(dialogId);
     const closeBtn = document.querySelector('.lightbox-modal .btn-close');
