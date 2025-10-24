@@ -72,10 +72,16 @@
     z-index: 3;
 
     >.row {
-      .col-lg-8 {
+
+      .col-lg-8,
+      .col-lg-7 {
         @include media-breakpoint-up(lg) {
           position: sticky;
           top: 0;
+          .content-big {
+            position: sticky;
+            top: 0;
+          }
         }
       }
     }
