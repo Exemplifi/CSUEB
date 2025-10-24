@@ -2807,6 +2807,9 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .bright-future-swiper .swiper-slide {
   width: 18.75rem;
 }
+.bright-future-swiper .img-card {
+  height: 100%;
+}
 .bright-future-swiper .img-card:focus-visible {
   outline: var(--red) auto 3px !important;
   outline-offset: 3px !important;
@@ -2816,17 +2819,24 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   width: 100%;
+  min-height: 47.125rem;
+}
+@media (max-width: 991.98px) {
+  .bright-future-swiper .slide-card {
+    min-height: 33.3125rem;
+  }
 }
 .bright-future-swiper .slide-card img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: cover;
 }
 .bright-future-swiper .slide-card:hover .play-btn .sr-only {
   display: none;
 }
 .bright-future-swiper .slide-card.slide-card {
   box-shadow: 0px 12px 28px 0px rgba(0, 0, 0, 0);
+  height: 100%;
 }
 .bright-future-swiper .slide-card.slide-card .slide-text {
   color: var(--white);

@@ -397,7 +397,8 @@ function initTextIconSlider() {
 }
 
 function initBrightFutureSlider() {
-  new Swiper(".bright-future-swiper", {
+  // Ensure all slides have the same height
+  const brightFutureSwiper = new Swiper(".bright-future-swiper", {
     slidesPerView: 3,
     spaceBetween: 20,
     breakpoints: {
@@ -413,7 +414,36 @@ function initBrightFutureSlider() {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    on: {
+      init: function () {
+        setUniformSlideHeights('.bright-future-swiper .swiper-slide');
+      },
+      resize: function () {
+        setUniformSlideHeights('.bright-future-swiper .swiper-slide');
+      }
+    }
   });
+
+  // Helper function to set all slides to the same (max) height
+  function setUniformSlideHeights(slideSelector) {
+    const slides = document.querySelectorAll(slideSelector);
+    let maxHeight = 0;
+
+    // Reset heights first
+    slides.forEach(slide => {
+      slide.style.height = 'auto';
+    });
+
+    // Calculate max height
+    slides.forEach(slide => {
+      maxHeight = Math.max(maxHeight, slide.offsetHeight);
+    });
+
+    // Set all slides to max height
+    slides.forEach(slide => {
+      slide.style.height = maxHeight + 'px';
+    });
+  }
 }
 
 // Bright-future-swiper update aria-live based on viewport

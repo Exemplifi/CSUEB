@@ -29,40 +29,52 @@
 
 .bright-future-swiper {
   padding: rem.convert(4px);
+
   .swiper-slide {
     width: rem.convert(300px);
-    
+
   }
-  .img-card{
-    &:focus-visible{
+
+  .img-card {
+    height: 100%;
+
+    &:focus-visible {
       outline: var(--red) auto 3px !important;
       outline-offset: 3px !important;
     }
   }
+
   .slide-card {
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     width: 100%;
+    min-height: rem.convert(754px);
+
+    @include media-breakpoint-down(lg) {
+      min-height: rem.convert(533px);
+    }
 
     img {
       width: 100%;
-      height: auto;
-      display: block;
+      height: 100%;
+      object-fit: cover;
     }
-    &:hover{
-      .play-btn{
-        .sr-only{
+
+    &:hover {
+      .play-btn {
+        .sr-only {
           display: none;
         }
       }
     }
-   
-    
+
+
 
 
     &.slide-card {
       box-shadow: 0px 12px 28px 0px rgba(0, 0, 0, 0);
+      height: 100%;
 
       .slide-text {
         color: var(--white);
@@ -241,19 +253,22 @@
           opacity: 0.7;
           pointer-events: none !important;
         }
-        &:focus-visible, &:focus {
+
+        &:focus-visible,
+        &:focus {
           outline: var(--black) auto 2px;
           box-shadow: inset 0 0 0 1px var(--black), inset 0 0 0 1px var(--white) !important;
           transition: all 0.3s ease-in-out;
         }
 
-        
+
       }
 
       .swiper-pagination {
         .swiper-pagination-bullet {
           opacity: 0.2;
           background: var(--red);
+
           &.swiper-pagination-bullet-active {
             background: var(--red);
             opacity: 1;
