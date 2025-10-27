@@ -266,23 +266,52 @@ function initTestimonialSlider() {
 }
 
 function initGallerySlider() {
-  new Swiper(".image-gallery-slider", {
-    slidesPerView: 1.2,
-    spaceBetween: 4,
-    breakpoints: {
-      640: { slidesPerView: 2.1 },
-      768: { slidesPerView: 3 },
-      1024: { slidesPerView: 4 },
-      1280: { slidesPerView: 5 },
-    },
-    pagination: {
-      el: ".image-gallery-slider .swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".image-gallery-slider .swiper-button-next.swiper-button-next-new",
-      prevEl: ".image-gallery-slider .swiper-button-prev.swiper-button-prev-new",
-    },
+  // Check if slider is inside .right-content
+  const rightContentSliders = document.querySelectorAll('.right-content .image-gallery-slider');
+  const otherSliders = document.querySelectorAll('.image-gallery-slider:not(.right-content .image-gallery-slider)');
+  
+  // Initialize sliders inside .right-content with 3 slides at 1280px
+  rightContentSliders.forEach(slider => {
+    new Swiper(slider, {
+      slidesPerView: 1.2,
+      spaceBetween: 4,
+      breakpoints: {
+        640: { slidesPerView: 2.1 },
+        768: { slidesPerView: 3 },
+        1024: { slidesPerView: 4 },
+        1280: { slidesPerView: 3 },
+      },
+      pagination: {
+        el: slider.querySelector('.swiper-pagination'),
+        clickable: true,
+      },
+      navigation: {
+        nextEl: slider.querySelector('.swiper-button-next.swiper-button-next-new'),
+        prevEl: slider.querySelector('.swiper-button-prev.swiper-button-prev-new'),
+      },
+    });
+  });
+  
+  // Initialize other sliders with 5 slides at 1280px
+  otherSliders.forEach(slider => {
+    new Swiper(slider, {
+      slidesPerView: 1.2,
+      spaceBetween: 4,
+      breakpoints: {
+        640: { slidesPerView: 2.1 },
+        768: { slidesPerView: 3 },
+        1024: { slidesPerView: 4 },
+        1280: { slidesPerView: 5 },
+      },
+      pagination: {
+        el: slider.querySelector('.swiper-pagination'),
+        clickable: true,
+      },
+      navigation: {
+        nextEl: slider.querySelector('.swiper-button-next.swiper-button-next-new'),
+        prevEl: slider.querySelector('.swiper-button-prev.swiper-button-prev-new'),
+      },
+    });
   });
 }
 

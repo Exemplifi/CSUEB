@@ -562,5 +562,8 @@
 .image-gallery-slider {
   .swiper-wrapper {
     margin: 0 auto;
+    @include media-breakpoint-up(md){
+      justify-content: center;
+    }
   }
 }

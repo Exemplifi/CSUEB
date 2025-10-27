@@ -3211,6 +3211,11 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .image-gallery-slider .swiper-wrapper {
   margin: 0 auto;
 }
+@media (min-width: 768px) {
+  .image-gallery-slider .swiper-wrapper {
+    justify-content: center;
+  }
+}
 
 .bg-red {
   background: var(--red) !important;
@@ -3604,6 +3609,23 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 .key-feature-sec .content-section .actions li:first-child {
   margin-top: 0;
+}
+.key-feature-sec .content-section img {
+  max-width: 100%;
+  height: auto;
+}
+.key-feature-sec .content-section iframe {
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .key-feature-sec .content-section iframe {
+    max-height: 22.75rem;
+  }
+}
+@media (max-width: 575.98px) {
+  .key-feature-sec .content-section iframe {
+    height: auto;
+  }
 }
 
 .whats-next-section {

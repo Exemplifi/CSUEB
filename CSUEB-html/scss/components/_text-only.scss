@@ -161,6 +161,20 @@
         }
       }
     }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    iframe {
+      width: 100%;
+      @include media-breakpoint-up(sm) {
+        max-height: rem.convert(364px);
+      }
+      @include media-breakpoint-down(sm) {
+        height: auto;
+      }
+    }
   }
 }
 
