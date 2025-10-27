@@ -269,7 +269,7 @@ function initGallerySlider() {
   // Check if slider is inside .right-content
   const rightContentSliders = document.querySelectorAll('.right-content .image-gallery-slider');
   const otherSliders = document.querySelectorAll('.image-gallery-slider:not(.right-content .image-gallery-slider)');
-  
+
   // Initialize sliders inside .right-content with 3 slides at 1280px
   rightContentSliders.forEach(slider => {
     new Swiper(slider, {
@@ -291,7 +291,7 @@ function initGallerySlider() {
       },
     });
   });
-  
+
   // Initialize other sliders with 5 slides at 1280px
   otherSliders.forEach(slider => {
     new Swiper(slider, {
@@ -1003,7 +1003,7 @@ function initAccessibilityFeatures() {
   //   }
   // });
 
- 
+
 
   // Enhanced table accessibility
   const tables = document.querySelectorAll('table');
@@ -1034,21 +1034,27 @@ function initAccessibilityFeatures() {
     }
   });
 
+  //For table tbody first td convert into th with scope row
+  document.addEventListener("DOMContentLoaded", function () {
+    // Select all table rows inside tbody
+    const rows = document.querySelectorAll("table tbody tr");
 
-  // // Enhanced list accessibility
-  // const lists = document.querySelectorAll('ul, ol');
-  // lists.forEach(list => {
-  //   if (!list.getAttribute('role')) {
-  //     list.setAttribute('role', 'list');
-  //   }
+    rows.forEach((row) => {
+      const firstCell = row.querySelector("td:first-child");
+      if (firstCell) {
+        // Create a new <th> element
+        const th = document.createElement("th");
+        th.scope = "row";
+        th.className = firstCell.className; // keep same classes
+        th.innerHTML = firstCell.innerHTML; // copy content
 
-  //   const listItems = list.querySelectorAll('li');
-  //   listItems.forEach(item => {
-  //     if (!item.getAttribute('role')) {
-  //       item.setAttribute('role', 'listitem');
-  //     }
-  //   });
-  // });
+        // Replace <td> with <th>
+        row.replaceChild(th, firstCell);
+      }
+    });
+  });
+
+
 
   // Select all links inside the menu list
   const menuLinks = document.querySelectorAll('.menu-list-link a');
@@ -1479,6 +1485,27 @@ document.addEventListener('DOMContentLoaded', function () {
   }, 1000);
 });
 
+document.querySelectorAll('.tabbed-section .nav-link[role="tab"]').forEach(tab => {
+  tab.addEventListener('focus', function() {
+    this.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  });
+});
+
+// Get all breadcrumb items
+var breadcrumbItems = document.querySelectorAll('.breadcrumb-item');
+breadcrumbItems.forEach(function(item) {
+  // Check if the breadcrumb item contains a link
+  if (item.querySelector('a')) {
+    // If it has a link, remove aria-current
+    item.removeAttribute('aria-current');
+  } else {
+    // If it does not have a link, add aria-current="page"
+    item.setAttribute('aria-current', 'page');
+  }
+});
+
+
+
 //Testimonial slider screen reader accessibility
 
 // window.addEventListener('scroll', function () {
@@ -1509,10 +1536,14 @@ document.querySelectorAll('.bright-future-swiper .gallery-item').forEach(item =>
 });
 
 
+
+
 // Call on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', function () {
   initFlipTilesGallery();
 });
+
+
 
 // Also call on visibility change (e.g., when switching tabs or browsers)
 document.addEventListener('visibilitychange', function () {
