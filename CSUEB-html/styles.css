@@ -3166,6 +3166,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   height: 100%;
   transition: all 0.3s ease-in-out;
   position: relative;
+  min-height: 25rem;
 }
 .image-gallery-sec .swiper-slide .img-card::before {
   content: "";
@@ -5006,7 +5007,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   flex-direction: column;
   gap: 1.875rem;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .img-text-full-width-sec .content-section {
     width: 46%;
     padding-block: 4rem;
