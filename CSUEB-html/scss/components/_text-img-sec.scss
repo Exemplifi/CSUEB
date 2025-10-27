@@ -170,13 +170,15 @@
     position: relative;
     padding-top: rem.convert(36px);
     padding-left: rem.convert(36px);
-   
-    @include media-breakpoint-up(xl){
+
+    @include media-breakpoint-up(xl) {
       min-height: rem.convert(446px);
     }
-    @include media-breakpoint-up(lg){
+
+    @include media-breakpoint-up(lg) {
       min-height: rem.convert(316px);
     }
+
     @include media-breakpoint-up(md) {
       position: sticky;
       top: rem.convert(48px);
@@ -197,10 +199,12 @@
       width: 100%;
       position: relative;
       z-index: 2;
-      @include media-breakpoint-up(xl){
+
+      @include media-breakpoint-up(xl) {
         min-height: rem.convert(446px);
       }
-      @include media-breakpoint-up(lg){
+
+      @include media-breakpoint-up(lg) {
         min-height: rem.convert(316px);
       }
     }
@@ -326,8 +330,14 @@
 
     iframe {
       width: 100%;
-      max-height: rem.convert(364px);
+      @include media-breakpoint-up(sm) {
+        max-height: rem.convert(364px);
+      }
+      @include media-breakpoint-down(sm) {
+        height: auto;
+      }
     }
+
   }
 
   .image-section {
@@ -439,6 +449,21 @@
         &:first-child {
           margin-top: 0;
         }
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    iframe {
+      width: 100%;
+      @include media-breakpoint-up(sm) {
+        max-height: rem.convert(364px);
+      }
+      @include media-breakpoint-down(sm) {
+        height: auto;
       }
     }
   }
@@ -730,7 +755,8 @@
     // cursor: pointer;
     position: relative;
     height: rem.convert(246px);
-    @include media-breakpoint-down(md){
+
+    @include media-breakpoint-down(md) {
       height: rem.convert(228px);
     }
 
@@ -1288,7 +1314,8 @@
             @include media-breakpoint-up(lg) {
               pointer-events: none;
             }
-            &:focus-visible{
+
+            &:focus-visible {
               outline: 2px solid var(--black);
               outline-offset: 3px;
               border-radius: 4px;
@@ -2046,10 +2073,10 @@
   max-width: 608px;
 }
 
-.main-img-slider{
-  .swiper-slide{
-    .img-wrapper{
-      @include media-breakpoint-up(lg){
+.main-img-slider {
+  .swiper-slide {
+    .img-wrapper {
+      @include media-breakpoint-up(lg) {
         width: 100%;
       }
     }
