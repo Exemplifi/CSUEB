@@ -1034,25 +1034,7 @@ function initAccessibilityFeatures() {
     }
   });
 
-  //For table tbody first td convert into th with scope row
-  document.addEventListener("DOMContentLoaded", function () {
-    // Select all table rows inside tbody
-    const rows = document.querySelectorAll("table tbody tr");
-
-    rows.forEach((row) => {
-      const firstCell = row.querySelector("td:first-child");
-      if (firstCell) {
-        // Create a new <th> element
-        const th = document.createElement("th");
-        th.scope = "row";
-        th.className = firstCell.className; // keep same classes
-        th.innerHTML = firstCell.innerHTML; // copy content
-
-        // Replace <td> with <th>
-        row.replaceChild(th, firstCell);
-      }
-    });
-  });
+ 
 
 
 
@@ -1138,7 +1120,25 @@ function initAccessibilityFeatures() {
 }
 
 
-// Lightbox Gallery End
+//For table tbody first td convert into th with scope row
+ document.addEventListener("DOMContentLoaded", function () {
+  // Select all table rows inside tbody
+  const rows = document.querySelectorAll("table tbody tr");
+
+  rows.forEach((row) => {
+    const firstCell = row.querySelector("td:first-child");
+    if (firstCell) {
+      // Create a new <th> element
+      const th = document.createElement("th");
+      th.scope = "row";
+      th.className = firstCell.className; // keep same classes
+      th.innerHTML = firstCell.innerHTML; // copy content
+
+      // Replace <td> with <th>
+      row.replaceChild(th, firstCell);
+    }
+  });
+});
 
 document.addEventListener("click", function (e) {
   // Check if click is outside #more-collapse and its toggle button
