@@ -3210,11 +3210,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 
 .image-gallery-slider .swiper-wrapper {
   margin: 0 auto;
-}
-@media (min-width: 768px) {
-  .image-gallery-slider .swiper-wrapper {
-    justify-content: center;
-  }
+  width: fit-content;
 }
 
 .bg-red {
