@@ -1156,12 +1156,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-// // Remove empty p Tag
-// document.querySelectorAll(".accodian-global .accordion-body p").forEach(function (p) {
-//   if (p.textContent.trim() === "") {
-//     p.remove();
-//   }
-// });
+
 
 
 // Accessibility for iframe

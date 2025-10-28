@@ -7287,27 +7287,16 @@ body:has(.home-hero-sec) .main-header > .container {
 .accodian-global .accordion-collapse .accordion-body iframe {
   margin-top: 1rem !important;
   width: 100% !important;
-  min-height: 25rem !important;
+  height: auto !important;
 }
 @media (max-width: 767.98px) {
   .accodian-global .accordion-collapse .accordion-body iframe {
     min-height: auto !important;
   }
 }
-@media (min-width: 576px) {
-  .accodian-global .accordion-collapse .accordion-body {
-    width: 90%;
-  }
-}
 @media (min-width: 768px) {
   .accodian-global .accordion-collapse .accordion-body {
     padding-inline: 3rem;
-  }
-}
-@media (min-width: 1200px) {
-  .accodian-global .accordion-collapse .accordion-body {
-    padding-inline: 3rem;
-    width: 85%;
   }
 }
 .accodian-global .accordion-collapse .accordion-body p {
