@@ -259,8 +259,8 @@ function initTestimonialSlider() {
     loop: true,
     autoplay: { delay: 12000, disableOnInteraction: false },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".testimonial-sec .swiper-button-next",
+      prevEl: ".testimonial-sec .swiper-button-prev",
     },
   });
 }
@@ -275,6 +275,7 @@ function initGallerySlider() {
     new Swiper(slider, {
       slidesPerView: 1.2,
       spaceBetween: 4,
+      watchOverflow: true,
       breakpoints: {
         640: { slidesPerView: 2.1 },
         768: { slidesPerView: 3 },
@@ -297,6 +298,7 @@ function initGallerySlider() {
     new Swiper(slider, {
       slidesPerView: 1.2,
       spaceBetween: 4,
+      watchOverflow: true,
       breakpoints: {
         640: { slidesPerView: 2.1 },
         768: { slidesPerView: 3 },
@@ -329,8 +331,8 @@ function initInnerHeroSlider() {
       init: function () {
         // Hide navigation if only one slide
         if (this.slides.length <= 1) {
-          const nextBtn = document.querySelector('.swiper-button-next.swiper-btn');
-          const prevBtn = document.querySelector('.swiper-button-prev.swiper-btn');
+          const nextBtn = document.querySelector('.hero-full-swiper .swiper-button-next.swiper-btn');
+          const prevBtn = document.querySelector('.hero-full-swiper .swiper-button-prev.swiper-btn');
           if (nextBtn) nextBtn.classList.add('d-none');
           if (prevBtn) prevBtn.classList.add('d-none');
         }
@@ -498,15 +500,15 @@ function initHeroSlider() {
   const hasMultipleSlides = slides.length > 1;
 
   if (!hasMultipleSlides) {
-    const group = document.querySelector(".swiper-button-group");
+    const group = document.querySelector(".home-hero-sec .swiper-button-group");
     if (group) group.style.display = "none";
   }
 
   new Swiper(".hero-slider", {
     navigation: hasMultipleSlides
       ? {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+        nextEl: ".home-hero-sec .swiper-button-next",
+        prevEl: ".home-hero-sec .swiper-button-prev",
       }
       : false,
   });
