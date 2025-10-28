@@ -7599,6 +7599,7 @@ body:has(.home-hero-sec) .main-header > .container {
 @media (max-width: 767.98px) {
   .tabbed-section .nav-tabs .nav-link {
     padding: 0.5rem 1rem;
+    margin-bottom: 0;
   }
 }
 .tabbed-section .nav-tabs .nav-link:hover {
