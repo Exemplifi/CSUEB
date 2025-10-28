@@ -4384,10 +4384,10 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .program-link-sec .program-filter .form-select:focus {
   outline: none;
   box-shadow: none;
-  border: 2px solid var(--gold);
+  border: 2px solid var(--dark-grey);
 }
 .program-link-sec .program-filter .form-select:hover {
-  border: 2px solid var(--gold);
+  border: 2px solid var(--dark-grey);
 }
 .program-link-sec .program-filter .form-select::placeholder {
   font-family: var(--body-font-family);
