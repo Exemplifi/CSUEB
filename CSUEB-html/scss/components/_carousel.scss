@@ -88,7 +88,7 @@
         position: absolute;
         left: auto;
         right: auto;
-        bottom: 20%;
+        bottom: 10%;
         background: #0000000a;
 
         @include media-breakpoint-down(md) {
@@ -101,7 +101,7 @@
         }
 
         p {
-          max-width: rem.convert(150px);
+          max-width: 90%;
         }
       }
 

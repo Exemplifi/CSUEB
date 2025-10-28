@@ -41,7 +41,7 @@
 
   &.upwards {
     top: rem.convert(-142px);
-    transition: top 0.3s ease-in-out;
+    transition: top 1.5s ease-in-out;
 
     &.alert-present {
       top: rem.convert(-400px);

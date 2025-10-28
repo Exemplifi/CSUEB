@@ -1140,24 +1140,7 @@ function initAccessibilityFeatures() {
   });
 });
 
-document.addEventListener("click", function (e) {
-  // Check if click is outside #more-collapse and its toggle button
-  const moreCollapse = document.getElementById("more-collapse");
-  const toggleButton = document.querySelector('[data-bs-target="#more-collapse"]');
-  const clickedInsideCollapse = moreCollapse && moreCollapse.contains(e.target);
-  const clickedToggle = toggleButton && toggleButton.contains(e.target);
-
-  if (!clickedInsideCollapse && !clickedToggle) {
-    // Use Bootstrap's native collapse API if available
-    if (moreCollapse && typeof bootstrap !== "undefined" && bootstrap.Collapse) {
-      const collapseInstance = bootstrap.Collapse.getOrCreateInstance(moreCollapse);
-      collapseInstance.hide();
-    } else if (moreCollapse && typeof $(moreCollapse).collapse === "function") {
-      // Fallback for jQuery-based Bootstrap
-      $(moreCollapse).collapse("hide");
-    }
-  }
-});
+// Removed duplicate event listener - functionality is already handled in the DOMContentLoaded event above
 
 document.addEventListener('DOMContentLoaded', function () {
   var links = document.querySelectorAll('a[target="_blank"]');
@@ -1338,8 +1321,7 @@ function adjustHeroPadding() {
   }
 }
 
-// Initialize hero padding on page load
-document.addEventListener('DOMContentLoaded', adjustHeroPadding);
+
 
 // Debounced resize handler to prevent performance issues
 let resizeTimeout;
@@ -1347,6 +1329,9 @@ window.addEventListener('resize', function () {
   clearTimeout(resizeTimeout);
   resizeTimeout = setTimeout(adjustHeroPadding, 100);
 });
+
+// Initialize hero padding on page load
+document.addEventListener('DOMContentLoaded', adjustHeroPadding);
 
 // When alert is closed → remove padding and class
 document.addEventListener('click', function (e) {

@@ -1698,7 +1698,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 .main-header.upwards {
   top: -8.875rem;
-  transition: top 0.3s ease-in-out;
+  transition: top 1.5s ease-in-out;
 }
 .main-header.upwards.alert-present {
   top: -25rem;
@@ -2850,7 +2850,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   position: absolute;
   left: auto;
   right: auto;
-  bottom: 20%;
+  bottom: 10%;
   background: rgba(0, 0, 0, 0.0392156863);
 }
 @media (max-width: 767.98px) {
@@ -2863,7 +2863,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   font-family: var(--body-font-family);
 }
 .bright-future-swiper .slide-card.slide-card .slide-text p {
-  max-width: 9.375rem;
+  max-width: 90%;
 }
 .bright-future-swiper .slide-card.slide-card .overlay {
   border: 12px solid transparent;
@@ -3536,6 +3536,9 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
     position: sticky;
     top: 3rem;
   }
+}
+.key-feature-sec .container .content-big {
+  word-break: break-word;
 }
 .key-feature-sec .oasis-list {
   display: flex;
