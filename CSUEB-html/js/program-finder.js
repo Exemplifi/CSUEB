@@ -60,11 +60,11 @@ document.addEventListener("DOMContentLoaded", function () {
   filterBar.innerHTML = `
     <form class="row gx-3">
       <div class="input-first col-12 col-sm-6">
-        <label for="search-input" class="form-label screen-only">Search for Majors</label>
+        <label for="search-input" class="form-label">Search for Majors</label>
         <input type="text" class="form-control" placeholder="Search for Majors" id="search-input">
       </div>
       <div class="input-last col-12 col-sm-6">
-        <label for="degree-level" class="form-label screen-only">All Major</label>
+        <label for="degree-level" class="form-label">Major Type</label>
         <select id="degree-level" class="form-select">
           ${buildDropdownOptions()}
         </select>
