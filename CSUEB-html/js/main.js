@@ -282,12 +282,12 @@ function initGallerySlider() {
         1280: { slidesPerView: 3 },
       },
       pagination: {
-        el: slider.querySelector('.swiper-pagination'),
+        el: slider.querySelector('.image-gallery-slider .swiper-pagination'),
         clickable: true,
       },
       navigation: {
-        nextEl: slider.querySelector('.swiper-button-next.swiper-button-next-new'),
-        prevEl: slider.querySelector('.swiper-button-prev.swiper-button-prev-new'),
+        nextEl: slider.querySelector('.image-gallery-slider .swiper-button-next.swiper-button-next-new'),
+        prevEl: slider.querySelector('.image-gallery-slider .swiper-button-prev.swiper-button-prev-new'),
       },
     });
   });
@@ -304,12 +304,12 @@ function initGallerySlider() {
         1280: { slidesPerView: 5 },
       },
       pagination: {
-        el: slider.querySelector('.swiper-pagination'),
+        el: slider.querySelector('.image-gallery-slider .swiper-pagination'),
         clickable: true,
       },
       navigation: {
-        nextEl: slider.querySelector('.swiper-button-next.swiper-button-next-new'),
-        prevEl: slider.querySelector('.swiper-button-prev.swiper-button-prev-new'),
+        nextEl: slider.querySelector('.image-gallery-slider .swiper-button-next.swiper-button-next-new'),
+        prevEl: slider.querySelector('.image-gallery-slider .swiper-button-prev.swiper-button-prev-new'),
       },
     });
   });
