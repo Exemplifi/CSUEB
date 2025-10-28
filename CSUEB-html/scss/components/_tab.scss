@@ -25,9 +25,9 @@
       line-height: 1.75; 
       display: inline-block;
       background: rgb(0 0 0 / 0%);
+      margin-bottom: 0;
       @include media-breakpoint-down(md) {
         padding: 0.5rem 1rem;
-        margin-bottom: 0;
       }
       &:hover {
         background-color: var(--light-gray);

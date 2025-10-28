@@ -13,9 +13,10 @@ document.addEventListener("DOMContentLoaded", function () {
   loadMoreWrapper.style.display = "none"; // hidden until needed
 
   loadMoreWrapper.innerHTML = `
-    <a href="#" class="btn btn-primary" aria-label="Load more">
+    <button class="btn btn-primary">
       <span>Load more</span>
-    </a>
+      <span class="sr-only">Majors</span>
+    </button>
   `;
 
   programList.insertAdjacentElement("afterend", loadMoreWrapper);
@@ -139,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   // Load more button click
-  loadMoreWrapper.querySelector("a").addEventListener("click", function (e) {
+  loadMoreWrapper.querySelector("button").addEventListener("click", function (e) {
     e.preventDefault();
     currentlyShownCount += itemsPerPage;
     if (currentlyShownCount > filteredPrograms.length) {

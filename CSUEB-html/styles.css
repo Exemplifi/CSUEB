@@ -4325,10 +4325,10 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .program-link-sec .program-filter .form-control:focus {
   outline: none;
   box-shadow: none;
-  border: 2px solid var(--gold);
+  border: 2px solid var(--dark-grey);
 }
 .program-link-sec .program-filter .form-control:hover {
-  border: 2px solid var(--gold);
+  border: 2px solid var(--dark-grey);
 }
 .program-link-sec .program-filter .form-control::placeholder {
   font-family: var(--body-font-family);
@@ -7595,11 +7595,11 @@ body:has(.home-hero-sec) .main-header > .container {
   line-height: 1.75;
   display: inline-block;
   background: rgba(0, 0, 0, 0);
+  margin-bottom: 0;
 }
 @media (max-width: 767.98px) {
   .tabbed-section .nav-tabs .nav-link {
     padding: 0.5rem 1rem;
-    margin-bottom: 0;
   }
 }
 .tabbed-section .nav-tabs .nav-link:hover {
