@@ -142,11 +142,36 @@ document.addEventListener("DOMContentLoaded", function () {
   // Load more button click
   loadMoreWrapper.querySelector("button").addEventListener("click", function (e) {
     e.preventDefault();
+    const previouslyShownCount = currentlyShownCount;
     currentlyShownCount += itemsPerPage;
     if (currentlyShownCount > filteredPrograms.length) {
       currentlyShownCount = filteredPrograms.length;
     }
     updateProgramVisibility();
+
+    // Move focus to first newly revealed program
+    if (filteredPrograms.length > previouslyShownCount) {
+      const focusTarget = filteredPrograms[previouslyShownCount];
+      if (focusTarget) {
+        // Prefer a focusable child (like a link) if available
+        const focusableChild = focusTarget.querySelector('a, button, [tabindex]:not([tabindex="-1"])');
+        const nodeToFocus = focusableChild || focusTarget;
+        const needsTabIndex = nodeToFocus.tabIndex < 0;
+        if (needsTabIndex) nodeToFocus.setAttribute('tabindex', '-1');
+        nodeToFocus.focus({ preventScroll: false });
+        // Announce update via live region near the button
+        let live = loadMoreWrapper.querySelector('[aria-live="polite"]');
+        if (!live) {
+          live = document.createElement('div');
+          live.className = 'sr-only';
+          live.setAttribute('aria-live', 'polite');
+          live.setAttribute('role', 'status');
+          loadMoreWrapper.appendChild(live);
+        }
+        const newlyRevealed = Math.min(itemsPerPage, filteredPrograms.length - previouslyShownCount);
+        live.textContent = `${newlyRevealed} more results loaded. ${currentlyShownCount} of ${filteredPrograms.length} shown.`;
+      }
+    }
   });
 
   // Event listeners
