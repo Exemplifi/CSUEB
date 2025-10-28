@@ -757,6 +757,7 @@ function initGalleryLightbox() {
       const img = link.querySelector('img');
       const imgAlt = img ? img.getAttribute('alt') || "" : "";
       const isActive = i === activeIndex ? " active" : "";
+      const title = link.getAttribute('rel');
 
       if (videoUrl) {
         const autoplayParam = i === activeIndex ? "&autoplay=1" : "";
@@ -774,7 +775,7 @@ function initGalleryLightbox() {
           <div class="carousel-item${isActive}">
             <div class="modal-img-container">
               <img class="d-block img-fluid w-100" src="${imgSrc}" alt="${imgAlt}">
-              ${createCaption(imgAlt)}
+              ${createCaption(title)}
             </div>
           </div>
         `;
