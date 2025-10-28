@@ -519,8 +519,8 @@ function initMainImgSlider() {
     loop: true,
     allowTouchMove: true,
     navigation: {
-      nextEl: ".swiper-button-next.swiper-btn",
-      prevEl: ".swiper-button-prev.swiper-btn",
+      nextEl: ".main-img-slider .swiper-button-next.swiper-btn",
+      prevEl: ".main-img-slider .swiper-button-prev.swiper-btn",
       disabledClass: 'swiper-button-disabled',
     },
     pagination: {
