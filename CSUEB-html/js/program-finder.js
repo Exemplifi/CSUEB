@@ -61,10 +61,11 @@ document.addEventListener("DOMContentLoaded", function () {
     <form class="row gx-3">
       <div class="input-first col-12 col-sm-6">
         <label for="search-input" class="form-label">Search for Majors</label>
-        <input type="text" class="form-control" placeholder="Search for Majors" id="search-input">
+        <input type="text" class="form-control" placeholder="Search for Majors" id="search-input" aria-describedby="search-results-status">
+        <div id="search-results-status" class="visually-hidden" aria-live="polite"></div>
       </div>
       <div class="input-last col-12 col-sm-6">
-        <label for="degree-level" class="form-label">Major Type</label>
+        <label for="degree-level" class="form-label">Filter by Major Type</label>
         <select id="degree-level" class="form-select">
           ${buildDropdownOptions()}
         </select>
@@ -74,6 +75,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const searchInput = document.getElementById("search-input");
   const degreeSelect = document.getElementById("degree-level");
+  const resultsLive = document.getElementById("search-results-status");
+
+  // Enhance live region semantics and relationships
+  if (resultsLive) {
+    resultsLive.setAttribute("role", "status");
+    resultsLive.setAttribute("aria-atomic", "true");
+  }
+  if (degreeSelect) {
+    degreeSelect.setAttribute("aria-describedby", "search-results-status");
+  }
+  if (searchInput && programList && programList.id) {
+    searchInput.setAttribute("aria-controls", programList.id);
+  }
 
   const itemsPerPage = 10;
   let currentlyShownCount = 0;
@@ -136,6 +150,24 @@ document.addEventListener("DOMContentLoaded", function () {
     
       currentlyShownCount = Math.min(itemsPerPage, filteredPrograms.length);
       updateProgramVisibility();
+
+      // Announce result changes for screen reader users
+      if (resultsLive) {
+        const total = filteredPrograms.length;
+        const hasQuery = !!searchTerm;
+        const hasFilter = !!selectedModality;
+        let detail = "";
+        if (hasQuery) {
+          detail += ` for "${searchTerm}"`;
+        }
+        if (hasFilter) {
+          const selectedText = degreeSelect.options[degreeSelect.selectedIndex]?.text || selectedModality;
+          detail += (detail ? " " : " ") + `(filtered by ${selectedText})`;
+        }
+        resultsLive.textContent = total === 0
+          ? `No results${detail}.`
+          : `${total} result${total === 1 ? "" : "s"}${detail}.`;
+      }
     }
 
 
