@@ -192,17 +192,11 @@
       }
 
       iframe {
-        margin-top: rem.convert(16px) !important;
-        width: 100% !important;
-        height: auto !important;
-        @include media-breakpoint-down(md) {
-          min-height: auto !important;
-        }
+        margin-top: rem.convert(16px);
+        max-width: 100%;
+        height: auto;
+        
       }
-
-      
-     
-
       @include media-breakpoint-up(md) {
         padding-inline: rem.convert(48px);
       }
