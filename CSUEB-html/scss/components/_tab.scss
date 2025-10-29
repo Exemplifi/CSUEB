@@ -117,8 +117,8 @@
       iframe{
         margin-top: rem.convert(16px) !important;
         margin-bottom: rem.convert(16 px) !important;
-        width: 100% !important;
-        min-height: rem.convert(400px) !important;
+        max-width: 100%;
+        aspect-ratio: 16 / 9;
         @include media-breakpoint-down(md) {
           min-height: auto !important;
         }

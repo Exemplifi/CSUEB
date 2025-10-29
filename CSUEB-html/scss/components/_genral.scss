@@ -177,12 +177,9 @@ ul {
 
         iframe {
 
-            width: 100% !important;
-            min-height: rem.convert(400px) !important;
-
-            @include media-breakpoint-down(md) {
-                min-height: auto !important;
-            }
+            max-width: 100%;
+            aspect-ratio: 16 / 9;
+            height: auto !important;
         }
 
         h3,
