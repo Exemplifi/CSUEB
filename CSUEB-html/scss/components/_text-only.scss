@@ -1299,14 +1299,9 @@
     }
 
     iframe {
-      width: 100%;
-      max-width: 100%;
-      max-height: rem.convert(548px);
-
-      @include media-breakpoint-down(md) {
-        height: auto;
-        min-height: rem.convert(276px);
-      }
+     max-width: 100%;
+     height: auto;
+     aspect-ratio: 16 / 9;
     }
 
     video {

@@ -4550,15 +4550,9 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   height: auto !important;
 }
 .bg-img .dec-box iframe {
-  width: 100%;
   max-width: 100%;
-  max-height: 34.25rem;
-}
-@media (max-width: 767.98px) {
-  .bg-img .dec-box iframe {
-    height: auto;
-    min-height: 17.25rem;
-  }
+  height: auto;
+  aspect-ratio: 16/9;
 }
 .bg-img .dec-box video {
   width: 100%;
