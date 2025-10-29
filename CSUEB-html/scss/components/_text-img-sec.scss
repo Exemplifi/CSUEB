@@ -1502,9 +1502,16 @@
           .img-wrapper {
             padding-bottom: rem.convert(29px);
             min-height: rem.convert(538px);
+            width: 100%;
             @include media-breakpoint-down(md) {
               padding-bottom: rem.convert(27px);
               min-height: rem.convert(201px);
+            }
+            a:has(.video-wrap){
+              width: 100%;
+            }
+            .video-wrap{
+              width: 100%;
             }
             img{
               min-height: rem.convert(538px);
