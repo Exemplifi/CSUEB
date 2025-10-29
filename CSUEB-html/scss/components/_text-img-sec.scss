@@ -1501,9 +1501,17 @@
 
           .img-wrapper {
             padding-bottom: rem.convert(29px);
-
+            min-height: rem.convert(538px);
             @include media-breakpoint-down(md) {
               padding-bottom: rem.convert(27px);
+              min-height: rem.convert(201px);
+            }
+            img{
+              min-height: rem.convert(538px);
+              object-fit: cover;
+              @include media-breakpoint-down(md) {
+                min-height: rem.convert(201px);
+              }
             }
           }
         }

@@ -690,7 +690,7 @@ function initHeader() {
     if (document.body.querySelector('.home-hero-sec')) {
       header.classList.toggle("header-color", scrollTop > 10);
     }
-    if (scrollTop > lastScrollTopHeader) {
+    if (scrollTop > lastScrollTopHeader && scrollTop >= 200) {
       // Scrolling down
       header.classList.add("upwards");
     } else {
