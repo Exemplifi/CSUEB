@@ -5103,12 +5103,13 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   flex-direction: column;
   position: relative;
   width: 100%;
-  min-height: 17.75rem;
+}
+@media (min-width: 992px) {
+  .text-img-main-card .video-wrap {
+    height: 14.5625rem;
+  }
 }
 .text-img-main-card .video-wrap video {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -5126,15 +5127,21 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   flex-direction: column;
   position: relative;
   width: 100%;
-  min-height: 17.75rem;
+}
+@media (min-width: 992px) {
+  .text-img-main-card .img-wrap {
+    height: 14.5625rem;
+  }
 }
 .text-img-main-card .img-wrap img {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+@media (min-width: 992px) {
+  .text-img-main-card.with-star .img-wrap {
+    height: 18rem;
+  }
 }
 .text-img-main-card .heading-row {
   display: flex;
