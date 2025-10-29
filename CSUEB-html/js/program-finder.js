@@ -130,9 +130,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const matchesSearch =
           !searchTerm ||
           programName.includes(searchTerm) ||
-          concentration.includes(searchTerm) ||
-          degree.includes(searchTerm) ||
-          modalities.includes(searchTerm);
+          //concentration.includes(searchTerm) ||
+          degree.includes(searchTerm);
+          //modalities.includes(searchTerm);
     
         // Dropdown will match only if selected modality is present
         const matchesModality =
