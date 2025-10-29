@@ -7698,14 +7698,11 @@ body:has(.home-hero-sec) .main-header > .container {
 }
 .tabbed-section .tab-content .tab-content-box iframe {
   margin-top: 1rem !important;
-  margin-bottom: 16 px !important;
+  margin-bottom: 1rem !important;
+  width: 100%;
   max-width: 100%;
+  height: auto;
   aspect-ratio: 16/9;
-}
-@media (max-width: 767.98px) {
-  .tabbed-section .tab-content .tab-content-box iframe {
-    min-height: auto !important;
-  }
 }
 .tabbed-section .tab-content .tab-content-box h3, .tabbed-section .tab-content .tab-content-box h4, .tabbed-section .tab-content .tab-content-box h5, .tabbed-section .tab-content .tab-content-box h6 {
   margin-top: 1rem !important;
