@@ -763,9 +763,12 @@
     .menu-link {
       text-transform: uppercase;
       font-weight: $bold;
-      text-decoration: none;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-underline-offset: 4px;
+      text-decoration-thickness: 1.5px;
       padding: rem.convert(8px) 0rem rem.convert(16px);
-      border-bottom: 4px solid transparent;
+      //border-bottom: 4px solid transparent;
       transition: all 0.3s ease-in-out;
       font-family: var(--body-font-family);
       font-size: rem.convert(14px);
@@ -773,6 +776,9 @@
       font-weight: 700;
       line-height: 1.75;
       text-transform: uppercase;
+      &:hover{
+        text-decoration-color: var(--black);
+      }
 
       @include media-breakpoint-up(md) {
         font-size: rem.convert(13px);

@@ -2354,9 +2354,11 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .secondary-nav-sec .secondary-nav .menu-link {
   text-transform: uppercase;
   font-weight: 700;
-  text-decoration: none;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1.5px;
   padding: 0.5rem 0rem 1rem;
-  border-bottom: 4px solid transparent;
   transition: all 0.3s ease-in-out;
   font-family: var(--body-font-family);
   font-size: 0.875rem;
@@ -2364,6 +2366,9 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   font-weight: 700;
   line-height: 1.75;
   text-transform: uppercase;
+}
+.secondary-nav-sec .secondary-nav .menu-link:hover {
+  text-decoration-color: var(--black);
 }
 @media (min-width: 768px) {
   .secondary-nav-sec .secondary-nav .menu-link {
