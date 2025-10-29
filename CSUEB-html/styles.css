@@ -7300,6 +7300,7 @@ body:has(.home-hero-sec) .main-header > .container {
   margin-top: 1rem;
   max-width: 100%;
   height: auto;
+  aspect-ratio: 16/9;
 }
 @media (min-width: 768px) {
   .accodian-global .accordion-collapse .accordion-body {
