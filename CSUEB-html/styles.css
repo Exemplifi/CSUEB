@@ -5917,12 +5917,19 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .side-nav-with-content .side-nav-wrap .right-content .full-img-text-sec .img-full-sec .img-wrapper {
   padding-bottom: 1.8125rem;
   min-height: 33.625rem;
+  width: 100%;
 }
 @media (max-width: 767.98px) {
   .side-nav-with-content .side-nav-wrap .right-content .full-img-text-sec .img-full-sec .img-wrapper {
     padding-bottom: 1.6875rem;
     min-height: 12.5625rem;
   }
+}
+.side-nav-with-content .side-nav-wrap .right-content .full-img-text-sec .img-full-sec .img-wrapper a:has(.video-wrap) {
+  width: 100%;
+}
+.side-nav-with-content .side-nav-wrap .right-content .full-img-text-sec .img-full-sec .img-wrapper .video-wrap {
+  width: 100%;
 }
 .side-nav-with-content .side-nav-wrap .right-content .full-img-text-sec .img-full-sec .img-wrapper img {
   min-height: 33.625rem;
