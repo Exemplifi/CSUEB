@@ -5052,17 +5052,9 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   height: auto;
 }
 .img-text-full-width-sec .content-section iframe {
-  width: 100%;
-}
-@media (min-width: 576px) {
-  .img-text-full-width-sec .content-section iframe {
-    max-height: 22.75rem;
-  }
-}
-@media (max-width: 575.98px) {
-  .img-text-full-width-sec .content-section iframe {
-    height: auto;
-  }
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
 }
 .img-text-full-width-sec .image-section {
   position: relative;
