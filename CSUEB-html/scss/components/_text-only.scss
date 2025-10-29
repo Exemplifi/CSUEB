@@ -78,6 +78,7 @@
         @include media-breakpoint-up(lg) {
           position: sticky;
           top: 0;
+
           .content-big {
             position: sticky;
             top: rem.convert(48px);
@@ -85,7 +86,8 @@
         }
       }
     }
-    .content-big{
+
+    .content-big {
       word-break: break-word;
     }
   }
@@ -145,11 +147,12 @@
     display: inline-flex;
     flex-direction: column;
     gap: rem.convert(32px);
+
     @include media-breakpoint-up(lg) {
       position: sticky;
       top: rem.convert(48px);
     }
-  
+
 
     @include media-breakpoint-down(md) {
       gap: rem.convert(24px);
@@ -164,6 +167,7 @@
         }
       }
     }
+
     img {
       max-width: 100%;
       height: auto;
@@ -1396,5 +1400,14 @@
       position: absolute;
       inset: 0;
     }
+  }
+}
+
+.form-sec {
+  iframe {
+    max-width: 100%;
+    width: 100%;
+    overflow: auto;
+    max-height: 100vh;
   }
 }

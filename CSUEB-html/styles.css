@@ -4628,6 +4628,13 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   inset: 0;
 }
 
+.form-sec iframe {
+  max-width: 100%;
+  width: 100%;
+  overflow: auto;
+  max-height: 100vh;
+}
+
 .img-clip-path {
   position: relative;
 }
@@ -5010,8 +5017,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 @media (min-width: 992px) {
   .img-text-full-width-sec .content-section {
-    width: 46%;
-    padding-block: 4rem;
+    padding-bottom: 4rem;
     padding-left: 1.25rem;
   }
 }
@@ -5022,7 +5028,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 @media (min-width: 1400px) {
   .img-text-full-width-sec .content-section {
-    padding-block: 9rem;
+    padding-bottom: 9rem;
     padding-right: 4rem;
   }
 }

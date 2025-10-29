@@ -408,8 +408,7 @@
     gap: rem.convert(30px);
 
     @include media-breakpoint-up(lg) {
-      width: 46%;
-      padding-block: 4rem;
+      padding-bottom: 4rem;
       padding-left: 1.25rem;
     }
 
@@ -418,7 +417,7 @@
     }
 
     @include media-breakpoint-up(xxl) {
-      padding-block: 9rem;
+      padding-bottom: 9rem;
       padding-right: 4rem;
     }
 
