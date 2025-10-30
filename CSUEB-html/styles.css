@@ -5023,6 +5023,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   height: auto;
 }
 .img-text-full-width-sec .content-section iframe {
+  width: 100%;
   max-width: 100%;
   height: auto;
   aspect-ratio: 16/9;
