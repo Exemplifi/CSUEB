@@ -7309,6 +7309,7 @@ body:has(.home-hero-sec) .main-header > .container {
 .accodian-global .accordion-collapse .accordion-body iframe {
   margin-top: 1rem;
   max-width: 100%;
+  width: 100%;
   height: auto;
   aspect-ratio: 16/9;
 }
