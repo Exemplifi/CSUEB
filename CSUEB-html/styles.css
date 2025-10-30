@@ -2849,12 +2849,6 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   bottom: 10%;
   background: rgba(0, 0, 0, 0.0392156863);
 }
-@media (max-width: 767.98px) {
-  .bright-future-swiper .slide-card.slide-card .slide-text {
-    opacity: 1;
-    visibility: visible;
-  }
-}
 .bright-future-swiper .slide-card.slide-card .slide-text .h3 {
   font-family: var(--body-font-family);
 }
@@ -2900,47 +2894,20 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   background: rgba(0, 0, 0, 0);
   visibility: visible;
 }
-@media (min-width: 768px) {
-  .bright-future-swiper .slide-card.purple-hover:hover .overlay, .bright-future-swiper .flip-tiles-gallery-grid .gallery-item:nth-child(3n+1) a.slide-card:hover .overlay, .flip-tiles-gallery-grid .gallery-item:nth-child(3n+1) .bright-future-swiper a.slide-card:hover .overlay {
-    border-color: var(--purple);
-    background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), linear-gradient(357deg, var(--purple-80, rgba(122, 35, 106, 0.8)) 0%, var(--purple-80, rgba(122, 35, 106, 0.8)) 100%);
-    transition: all 0.4s ease-in-out;
-  }
+.bright-future-swiper .slide-card.purple-hover:hover .overlay, .bright-future-swiper .flip-tiles-gallery-grid .gallery-item:nth-child(3n+1) a.slide-card:hover .overlay, .flip-tiles-gallery-grid .gallery-item:nth-child(3n+1) .bright-future-swiper a.slide-card:hover .overlay {
+  border-color: var(--purple);
+  background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), linear-gradient(357deg, var(--purple-80, rgba(122, 35, 106, 0.8)) 0%, var(--purple-80, rgba(122, 35, 106, 0.8)) 100%);
+  transition: all 0.4s ease-in-out;
 }
-@media (max-width: 767.98px) {
-  .bright-future-swiper .slide-card.purple-hover .overlay, .bright-future-swiper .flip-tiles-gallery-grid .gallery-item:nth-child(3n+1) a.slide-card:hover .overlay, .flip-tiles-gallery-grid .gallery-item:nth-child(3n+1) .bright-future-swiper a.slide-card:hover .overlay {
-    border-color: var(--purple);
-    background: linear-gradient(0deg, var(--black-40, rgba(0, 0, 0, 0.4)) 0%, var(--black-40, rgba(0, 0, 0, 0.4)) 100%), linear-gradient(357deg, var(--purple-80, rgba(122, 35, 106, 0.8)) 0%, var(--purple-80, rgba(122, 35, 106, 0.8)) 100%);
-    transition: all 0.4s ease-in-out;
-  }
+.bright-future-swiper .slide-card.teal-hover:hover .overlay, .bright-future-swiper .flip-tiles-gallery-grid .gallery-item:nth-child(3n) a.slide-card:hover .overlay, .flip-tiles-gallery-grid .gallery-item:nth-child(3n) .bright-future-swiper a.slide-card:hover .overlay {
+  border-color: var(--teal);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), linear-gradient(0deg, rgba(0, 160, 173, 0.8), rgba(0, 160, 173, 0.8));
+  transition: all 0.4s ease-in-out;
 }
-@media (min-width: 768px) {
-  .bright-future-swiper .slide-card.teal-hover:hover .overlay, .bright-future-swiper .flip-tiles-gallery-grid .gallery-item:nth-child(3n) a.slide-card:hover .overlay, .flip-tiles-gallery-grid .gallery-item:nth-child(3n) .bright-future-swiper a.slide-card:hover .overlay {
-    border-color: var(--teal);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), linear-gradient(0deg, rgba(0, 160, 173, 0.8), rgba(0, 160, 173, 0.8));
-    transition: all 0.4s ease-in-out;
-  }
-}
-@media (max-width: 767.98px) {
-  .bright-future-swiper .slide-card.teal-hover .overlay, .bright-future-swiper .flip-tiles-gallery-grid .gallery-item:nth-child(3n) a.slide-card:hover .overlay, .flip-tiles-gallery-grid .gallery-item:nth-child(3n) .bright-future-swiper a.slide-card:hover .overlay {
-    border-color: var(--teal);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), linear-gradient(0deg, rgba(0, 160, 173, 0.8), rgba(0, 160, 173, 0.8));
-    transition: all 0.4s ease-in-out;
-  }
-}
-@media (min-width: 768px) {
-  .bright-future-swiper .slide-card.gold-hover:hover .overlay, .bright-future-swiper .flip-tiles-gallery-grid .gallery-item:nth-child(3n+2) a.slide-card:hover .overlay, .flip-tiles-gallery-grid .gallery-item:nth-child(3n+2) .bright-future-swiper a.slide-card:hover .overlay {
-    border-color: var(--gold);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), linear-gradient(0deg, rgba(246, 144, 30, 0.8), rgba(246, 144, 30, 0.8));
-    transition: background 0.4s, all 0.4s ease-in-out;
-  }
-}
-@media (max-width: 767.98px) {
-  .bright-future-swiper .slide-card.gold-hover .overlay, .bright-future-swiper .flip-tiles-gallery-grid .gallery-item:nth-child(3n+2) a.slide-card:hover .overlay, .flip-tiles-gallery-grid .gallery-item:nth-child(3n+2) .bright-future-swiper a.slide-card:hover .overlay {
-    border-color: var(--gold);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), linear-gradient(0deg, rgba(246, 144, 30, 0.8), rgba(246, 144, 30, 0.8));
-    transition: background 0.4s, all 0.4s ease-in-out;
-  }
+.bright-future-swiper .slide-card.gold-hover:hover .overlay, .bright-future-swiper .flip-tiles-gallery-grid .gallery-item:nth-child(3n+2) a.slide-card:hover .overlay, .flip-tiles-gallery-grid .gallery-item:nth-child(3n+2) .bright-future-swiper a.slide-card:hover .overlay {
+  border-color: var(--gold);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), linear-gradient(0deg, rgba(246, 144, 30, 0.8), rgba(246, 144, 30, 0.8));
+  transition: background 0.4s, all 0.4s ease-in-out;
 }
 
 @media (max-width: 991.98px) {
@@ -3610,6 +3577,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   height: auto;
 }
 .key-feature-sec .content-section iframe {
+  width: 100%;
   max-width: 100%;
   aspect-ratio: 16/9;
   height: auto !important;
@@ -4550,6 +4518,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   height: auto !important;
 }
 .bg-img .dec-box iframe {
+  width: 100%;
   max-width: 100%;
   height: auto;
   aspect-ratio: 16/9;
@@ -4946,6 +4915,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   height: auto;
 }
 .img-text-sec .content-section iframe {
+  width: 100%;
   max-width: 100%;
   aspect-ratio: 16/9;
   height: auto !important;
