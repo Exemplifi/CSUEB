@@ -462,6 +462,7 @@ ul {
   height: auto !important;
 }
 .section-heading .heading-description iframe {
+  width: 100%;
   max-width: 100%;
   aspect-ratio: 16/9;
   height: auto !important;
@@ -2795,6 +2796,12 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 .swiper:has(.swiper-slide:first-chil.swiper-slide-active) .swiper-button-prev {
   display: none;
+}
+.swiper.inner-hero-slider .swiper-slide {
+  justify-content: flex-start;
+}
+.swiper.inner-hero-slider .swiper-slide > a {
+  text-decoration: none;
 }
 
 .bright-future-swiper {

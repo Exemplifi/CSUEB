@@ -24,6 +24,14 @@
       display: none;
     }
   }
+  &.inner-hero-slider{
+    .swiper-slide{
+      justify-content: flex-start;
+      > a{
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 
