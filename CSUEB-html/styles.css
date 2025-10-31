@@ -3190,6 +3190,12 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   z-index: 9;
   transition: all 0.4s ease-in-out;
 }
+.image-gallery-sec .swiper-pagination-bullet {
+  background-image: url('data:image/svg+xml,<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0L11.2567 16H18L6.74325 0H0Z" fill="%23313536" fill-opacity="0.6"/></svg>') !important;
+}
+.image-gallery-sec .swiper-pagination-bullet.swiper-pagination-bullet-active, .image-gallery-sec .swiper-pagination-bullet:hover, .image-gallery-sec .swiper-pagination-bullet:focus-visible {
+  background-image: url('data:image/svg+xml,<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0L11.2567 16H18L6.74325 0H0Z" fill="%23FDC25A" fill-opacity="1"/></svg>') !important;
+}
 
 .carousel-indicators {
   z-index: 1;
