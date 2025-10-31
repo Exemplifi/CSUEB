@@ -499,6 +499,38 @@
     position: relative;
     width: 100%;
 
+    .play-btn {
+      background: rgba(0, 0, 0, 0.7);
+      border: none;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      color: var(--black);
+      display: flex;
+      padding: 1rem;
+      justify-content: center;
+      align-items: center;
+      gap: 0.25rem;
+      transition: background 0.4s;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      svg {
+        path {
+          fill: var(--white);
+        }
+      }
+    }
+
+    &:hover {
+      .play-btn {
+        background: rgba(0, 0, 0, 1);
+      }
+
+    }
+
     @include media-breakpoint-up(lg) {
       height: rem.convert(233px);
     }
@@ -1089,14 +1121,19 @@
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          svg{
-            path{
+
+          svg {
+            path {
               fill: var(--white);
             }
           }
-          &:hover{
+        }
+
+        &:hover {
+          .play-btn {
             background: rgba(0, 0, 0, 1);
           }
+
         }
       }
     }

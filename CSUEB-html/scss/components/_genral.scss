@@ -422,17 +422,6 @@ section.bg-white.section-with-padding+section.bg-white {
 
         &:last-child {
             @include media-breakpoint-down(lg) {
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                width: rem.convert(500px);
-                overflow: hidden;
-            }
-
-            @include media-breakpoint-down(md) {
-                width: auto;
-            }
-
-            @include media-breakpoint-down(sm) {
                 width: auto;
             }
         }

@@ -253,16 +253,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Swiper Sliders
 function initTestimonialSlider() {
-  new Swiper(".testimonial-slider", {
+  const testimonialSwiper = new Swiper(".testimonial-slider", {
     spaceBetween: 30,
     effect: "fade",
     loop: true,
-    autoplay: { delay: 12000, disableOnInteraction: false },
+    autoplay: { delay: 12000, disableOnInteraction: false, pauseOnMouseEnter: true },
     navigation: {
       nextEl: ".testimonial-sec .swiper-button-next",
       prevEl: ".testimonial-sec .swiper-button-prev",
     },
   });
+
+  const pauseBtn = document.getElementById('testimonial-pause-btn');
+  const announcements = document.getElementById('testimonial-announcements');
+
+  if (pauseBtn && testimonialSwiper) {
+    // initialize icons state
+    pauseBtn.setAttribute('aria-pressed', 'false');
+
+    pauseBtn.addEventListener('click', function() {
+      const isPaused = pauseBtn.getAttribute('aria-pressed') === 'true';
+      const nextState = !isPaused;
+
+      pauseBtn.setAttribute('aria-pressed', nextState ? 'true' : 'false');
+      pauseBtn.setAttribute('aria-label', nextState ? 'Resume carousel auto-rotation' : 'Pause carousel auto-rotation');
+      pauseBtn.setAttribute('title', nextState ? 'Resume carousel rotation' : 'Pause carousel rotation');
+
+      if (nextState) {
+        testimonialSwiper.autoplay.stop();
+        if (announcements) announcements.textContent = 'Carousel auto-rotation paused';
+      } else {
+        testimonialSwiper.autoplay.start();
+        if (announcements) announcements.textContent = 'Carousel auto-rotation resumed';
+      }
+    });
+  }
 }
 
 function initGallerySlider() {
