@@ -1070,6 +1070,35 @@
           object-fit: cover;
         }
       }
+
+      .video-wrap {
+        .play-btn {
+          background: rgba(0, 0, 0, 0.7);
+          border: none;
+          width: 4rem;
+          height: 4rem;
+          border-radius: 50%;
+          color: var(--black);
+          display: flex;
+          padding: 1rem;
+          justify-content: center;
+          align-items: center;
+          gap: 0.25rem;
+          transition: background 0.4s;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          svg{
+            path{
+              fill: var(--white);
+            }
+          }
+          &:hover{
+            background: rgba(0, 0, 0, 1);
+          }
+        }
+      }
     }
   }
 
@@ -1512,6 +1541,7 @@
             .video-wrap {
               width: 100%;
               position: relative;
+
               .play-btn {
                 background: rgba(0, 0, 0, 0.8);
                 border: none;
@@ -1529,14 +1559,16 @@
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-                svg{
-                  path{
+
+                svg {
+                  path {
                     fill: var(--white);
                   }
                 }
               }
-              &:hover{
-                .play-btn{
+
+              &:hover {
+                .play-btn {
                   background: rgba(0, 0, 0, 1);
                 }
               }
