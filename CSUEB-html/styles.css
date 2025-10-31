@@ -3254,7 +3254,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 .testimonial-slider .button-with-pagination-sec .swiper-btn.swiper-button-disabled {
   opacity: 0.6;
-  pointer-events: none;
+  pointer-events: unset;
   cursor: not-allowed;
 }
 

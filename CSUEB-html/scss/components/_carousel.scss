@@ -678,7 +678,7 @@
     .swiper-btn {
       &.swiper-button-disabled {
         opacity: 0.6;
-        pointer-events: none;
+        pointer-events: unset;
         cursor: not-allowed;
       }
     }
