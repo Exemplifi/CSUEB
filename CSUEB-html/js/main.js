@@ -253,40 +253,141 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Swiper Sliders
 function initTestimonialSlider() {
+  const testimonialSlider = document.querySelector(".testimonial-slider");
+  if (!testimonialSlider) return;
+
+  const announcementEl = document.getElementById("testimonial-announcements");
+  const wrapper = testimonialSlider.querySelector(".swiper-wrapper");
+  const slides = wrapper ? wrapper.querySelectorAll(".swiper-slide") : [];
+  const totalSlides = slides.length;
+
+  // Track last announced slide index to prevent duplicates
+  let lastAnnouncedIndex = -1;
+  // Track if user initiated the interaction
+  let userInteracted = false;
+
   const testimonialSwiper = new Swiper(".testimonial-slider", {
     spaceBetween: 30,
     effect: "fade",
-    loop: true,
-    autoplay: { delay: 12000, disableOnInteraction: false, pauseOnMouseEnter: true },
+    loop: false,
+    // autoplay: { delay: 12000, disableOnInteraction: false, pauseOnMouseEnter: true },
+
+    // Swiper built-in accessibility module (simplifies ARIA attributes, keyboard navigation)
+
+
+    pagination: {
+      el: ".testimonial-sec .swiper-pagination",
+      clickable: true,
+      renderBullet: function (index, className) {
+        const slideNumber = index + 1;
+        const ariaLabel = `Go to testimonial ${slideNumber}`;
+        // Add descriptive aria-label for screen readers
+        return `<button type="button" class="${className}" aria-label="${ariaLabel}"></button>`;
+      },
+    },
     navigation: {
       nextEl: ".testimonial-sec .swiper-button-next",
       prevEl: ".testimonial-sec .swiper-button-prev",
     },
+    on: {
+      init: function () {
+        // Track user interactions on navigation buttons and pagination
+        setupUserInteractionTracking(testimonialSlider, function () {
+          userInteracted = true;
+        });
+        // Remove aria-labels that Swiper adds so sr-only text is used instead
+        setTimeout(function() {
+          const prevBtn = document.getElementById("testimonial-prev-btn");
+          const nextBtn = document.getElementById("testimonial-next-btn");
+    
+          if (prevBtn) {
+            prevBtn.removeAttribute("aria-label");
+          }
+          if (nextBtn) {
+            nextBtn.removeAttribute("aria-label");
+          }
+        }, 300);
+      },
+      slideChangeTransitionEnd: function () {
+        // Remove aria-labels again in case Swiper re-adds them on slide change
+        const prevBtn = document.getElementById("testimonial-prev-btn");
+        const nextBtn = document.getElementById("testimonial-next-btn");
+        
+        if (prevBtn && prevBtn.hasAttribute("aria-label")) {
+          prevBtn.removeAttribute("aria-label");
+        }
+        if (nextBtn && nextBtn.hasAttribute("aria-label")) {
+          nextBtn.removeAttribute("aria-label");
+        }
+        
+        // Only announce custom testimonial content (quote + author) if user interacted
+        if (userInteracted) {
+          const realIndex = this.realIndex !== undefined ? this.realIndex : this.activeIndex;
+          const currentSlideIndex = realIndex % totalSlides;
+    
+          // Prevent duplicate announcements
+          if (currentSlideIndex !== lastAnnouncedIndex && announcementEl) {
+            announceTestimonialContent(currentSlideIndex, announcementEl, slides, totalSlides);
+            lastAnnouncedIndex = currentSlideIndex;
+          }
+    
+          userInteracted = false;
+        }
+      },
+    },
   });
 
-  const pauseBtn = document.getElementById('testimonial-pause-btn');
-  const announcements = document.getElementById('testimonial-announcements');
+  return testimonialSwiper;
+}
 
-  if (pauseBtn && testimonialSwiper) {
-    // initialize icons state
-    pauseBtn.setAttribute('aria-pressed', 'false');
+// Simplified function to track user interactions
+function setupUserInteractionTracking(slider, callback) {
+  // Track clicks on navigation buttons
+  const prevBtn = document.getElementById("testimonial-prev-btn");
+  const nextBtn = document.getElementById("testimonial-next-btn");
 
-    pauseBtn.addEventListener('click', function() {
-      const isPaused = pauseBtn.getAttribute('aria-pressed') === 'true';
-      const nextState = !isPaused;
+  if (prevBtn) {
+    prevBtn.addEventListener("click", callback, true);
+  }
 
-      pauseBtn.setAttribute('aria-pressed', nextState ? 'true' : 'false');
-      pauseBtn.setAttribute('aria-label', nextState ? 'Resume carousel auto-rotation' : 'Pause carousel auto-rotation');
-      pauseBtn.setAttribute('title', nextState ? 'Resume carousel rotation' : 'Pause carousel rotation');
+  if (nextBtn) {
+    nextBtn.addEventListener("click", callback, true);
+  }
 
-      if (nextState) {
-        testimonialSwiper.autoplay.stop();
-        if (announcements) announcements.textContent = 'Carousel auto-rotation paused';
-      } else {
-        testimonialSwiper.autoplay.start();
-        if (announcements) announcements.textContent = 'Carousel auto-rotation resumed';
+  // Track clicks on pagination bullets
+  const paginationEl = slider.querySelector(".swiper-pagination");
+  if (paginationEl) {
+    paginationEl.addEventListener("click", function (e) {
+      if (e.target.classList.contains("swiper-pagination-bullet")) {
+        callback();
       }
-    });
+    }, true);
+  }
+}
+
+// Simplified function to announce testimonial content (quote + author)
+function announceTestimonialContent(currentSlideIndex, announcementEl, slides, totalSlides) {
+  if (!announcementEl || !slides) return;
+
+  const currentSlide = slides[currentSlideIndex];
+  if (!currentSlide) return;
+
+  const quoteEl = currentSlide.querySelector(".section-title");
+  const authorEl = currentSlide.querySelector(".heading-name");
+  const quote = quoteEl ? quoteEl.textContent.trim() : "";
+  const author = authorEl ? authorEl.textContent.replace(/^[–-]\s*/, "").trim() : "";
+
+  if (quote) {
+    const currentSlideNumber = currentSlideIndex + 1;
+    const announcement = `Testimonial ${currentSlideNumber} of ${totalSlides}: ${quote}${author ? ` by ${author}` : ""}`;
+
+    // Clear and update announcement
+    announcementEl.textContent = "";
+    setTimeout(function () {
+      if (announcementEl) {
+        announcementEl.textContent = announcement;
+      }
+    }, 10);
   }
 }
 
@@ -376,38 +477,7 @@ function initTextIconSlider() {
     const randomIndex = Math.floor(Math.random() * slides.length);
     container.appendChild(slides.splice(randomIndex, 1)[0]);
   }
-  // Get all slides
-  // const slider = document.querySelector('.text-icon-slider .swiper-wrapper');
-  // const slides = slider ? Array.from(slider.children) : [];
-  // const totalSlides = slides.length;
-
-  // // Show only 3 new items on each page load, randomize which 3
-  // if (totalSlides > 3) {
-  //   // Remove all slides first
-  //   slides.forEach(slide => slide.remove());
-
-  //   // Show slides in groups of 3, cycling through them on each page load
-  //   // Use localStorage to persist the current group index
-  //   let groupIndex = parseInt(localStorage.getItem('textIconSliderGroupIndex') || '0', 10);
-  //   const groupSize = 3;
-  //   const totalGroups = Math.ceil(totalSlides / groupSize);
-
-  //   // Calculate start and end indices for the current group
-  //   const startIdx = groupIndex * groupSize;
-  //   const endIdx = startIdx + groupSize;
-
-  //   // Select the current group of slides
-  //   let selectedSlides = slides.slice(startIdx, endIdx);
-
-  //   // Update group index for next page load
-  //   groupIndex = (groupIndex + 1) % totalGroups;
-  //   localStorage.setItem('textIconSliderGroupIndex', groupIndex.toString());
-  //   // Select first 3
-  //   const selected = selectedSlides.slice(0, 3);
-
-  //   // Append selected slides
-  //   selected.forEach(slide => slider.appendChild(slide));
-  // }
+  
 
   // Responsive Swiper initialization with re-init on window resize
   let textIconSwiper;
@@ -433,6 +503,22 @@ function initTextIconSlider() {
           navigation: {
             nextEl: ".text-icon-slider .swiper-button-next.swiper-button-next-new",
             prevEl: ".text-icon-slider .swiper-button-prev.swiper-button-prev-new",
+          },
+          on: {
+            init: function () {
+              // Update prev/next button aria-labels after initialization
+              setTimeout(function() {
+                const prevBtn = document.querySelector('.text-icon-slider .swiper-button-prev.swiper-button-prev-new');
+                const nextBtn = document.querySelector('.text-icon-slider .swiper-button-next.swiper-button-next-new');
+                
+                if (prevBtn) {
+                  prevBtn.setAttribute("aria-label", "Go to previous slide");
+                }
+                if (nextBtn) {
+                  nextBtn.setAttribute("aria-label", "Go to next slide");
+                }
+              }, 300);
+            },
           },
         }
         : {}),
@@ -1062,7 +1148,7 @@ function initAccessibilityFeatures() {
     }
   });
 
- 
+
 
 
 
@@ -1149,7 +1235,7 @@ function initAccessibilityFeatures() {
 
 
 //For table tbody first td convert into th with scope row
- document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   // Select all table rows inside tbody
   const rows = document.querySelectorAll("table tbody tr");
 
@@ -1494,14 +1580,14 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.querySelectorAll('.tabbed-section .nav-link[role="tab"]').forEach(tab => {
-  tab.addEventListener('focus', function() {
+  tab.addEventListener('focus', function () {
     this.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
   });
 });
 
 // Get all breadcrumb items
 var breadcrumbItems = document.querySelectorAll('.breadcrumb-item');
-breadcrumbItems.forEach(function(item) {
+breadcrumbItems.forEach(function (item) {
   // Check if the breadcrumb item contains a link
   if (item.querySelector('a')) {
     // If it has a link, remove aria-current
