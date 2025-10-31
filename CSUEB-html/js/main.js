@@ -447,7 +447,7 @@ function initInnerHeroSlider() {
   new Swiper(".hero-full-swiper", {
     slidesPerView: 1,
     spaceBetween: 10,
-    loop: true,
+    loop: false,
     pagination: { el: ".hero-full-swiper .swiper-pagination", clickable: true },
     navigation: {
       nextEl: ".hero-full-swiper .swiper-button-next.swiper-btn",
