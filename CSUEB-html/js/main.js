@@ -1438,7 +1438,7 @@ function adjustHeroPadding() {
 let resizeTimeout;
 window.addEventListener('resize', function () {
   clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(adjustHeroPadding, 0);
+  resizeTimeout = setTimeout(adjustHeroPadding, 100);
 });
 
 
