@@ -1486,7 +1486,7 @@ function adjustHeroPadding() {
           // Remove padding if no alert
           hero.style.paddingTop = '';
         }
-      }, 100); // Additional delay after RAF for production environments
+      }, 1000); // Additional delay after RAF for production environments
     });
   });
 }
