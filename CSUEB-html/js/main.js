@@ -1440,6 +1440,7 @@ function adjustHeroPadding() {
   const alert = header?.querySelector('.alert');
   const hero = document.querySelector('.inner-hero-section, .home-hero-sec');
 
+  // Update alert class first
   if (alert) {
     header.classList.add('alert-present');
   } else {
@@ -1448,27 +1449,28 @@ function adjustHeroPadding() {
 
   if (!hero) return;
 
+  // Force browser reflow to ensure accurate height calculation
+  void header.offsetHeight;
+
   let headerHeight = 0;
 
   if ((hero.classList.contains('no-image') || hero.classList.contains('home-hero-sec')) && alert) {
     
-    if (window.innerWidth <= 991.98 && hero.classList.contains('home-hero-sec')) {
+    if (window.innerWidth <= 575 && hero.classList.contains('home-hero-sec')) {
       headerHeight = header ? header.offsetHeight + 40 : 0;
-      console.log("1 - Mobile small", headerHeight);
+      console.log("1 - Mobile small", headerHeight, header?.offsetHeight);
     }
-    // else if (window.innerWidth <= 991.98) {
-    //   // This only runs between 576px - 991px
-    //   if (hero.classList.contains('home-hero-sec')) {
-    //     headerHeight = header.offsetHeight + 64;
-    //   } else {
-    //     headerHeight = header.offsetHeight - 100;
-    //   }
-    //   console.log("2 - Tablet", headerHeight);
-    // }
+    else if (window.innerWidth <= 991.98) {
+      if (hero.classList.contains('home-hero-sec')) {
+        headerHeight = header.offsetHeight + 64;
+      } else {
+        headerHeight = header.offsetHeight - 100;
+      }
+      console.log("2 - Tablet", headerHeight, header?.offsetHeight);
+    }
     else {
-      // This runs for ≥ 992px
       headerHeight = header ? header.offsetHeight + 4 : 0;
-      console.log("3 - Desktop", headerHeight);
+      console.log("3 - Desktop", headerHeight, header?.offsetHeight);
     }
 
     hero.style.paddingTop = headerHeight + 'px';
