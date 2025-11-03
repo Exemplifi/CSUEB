@@ -1435,11 +1435,8 @@ function adjustHeroPadding() {
 let resizeTimeout;
 window.addEventListener('resize', function () {
   clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(adjustHeroPadding, 100);
+  resizeTimeout = setTimeout(adjustHeroPadding, 400);
 });
-
-// Initialize hero padding on page load
-document.addEventListener('DOMContentLoaded', adjustHeroPadding);
 
 // When alert is closed → remove padding and class
 document.addEventListener('click', function (e) {
