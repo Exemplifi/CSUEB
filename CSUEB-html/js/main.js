@@ -1435,7 +1435,7 @@ function adjustHeroPadding() {
 let resizeTimeout;
 window.addEventListener('resize', function () {
   clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(adjustHeroPadding, 400);
+  resizeTimeout = setTimeout(adjustHeroPadding, 0);
 });
 
 // When alert is closed → remove padding and class
