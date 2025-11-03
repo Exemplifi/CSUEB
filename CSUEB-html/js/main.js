@@ -1392,13 +1392,54 @@ document.addEventListener("DOMContentLoaded", function () {
 // Initialize hero padding on page load
 document.addEventListener('DOMContentLoaded', adjustHeroPadding);
 
-// Only add dynamic padding for Hero section if .main-header has .alert
+// // Only add dynamic padding for Hero section if .main-header has .alert
+// function adjustHeroPadding() {
+//   const header = document.querySelector('.main-header');
+//   const alert = header?.querySelector('.alert');
+//   const hero = document.querySelector('.inner-hero-section, .home-hero-sec');
+
+//   // Only add alert-present class if alert actually exists
+//   if (alert) {
+//     header.classList.add('alert-present');
+//   } else {
+//     header.classList.remove('alert-present');
+//   }
+
+//   if (!hero) return;
+
+//   let headerHeight = 0;
+
+//   if ((hero.classList.contains('no-image') || hero.classList.contains('home-hero-sec')) && alert) {
+
+//     if (window.innerWidth <= 575 && hero.classList.contains('home-hero-sec')) {
+//       headerHeight = header ? header.offsetHeight + 40 : 0;
+//       console.log("1", headerHeight);
+//     }
+//     else {
+//       headerHeight = header ? header.offsetHeight + 4 : 0;
+//       console.log("2", headerHeight);
+//     }
+
+//     hero.style.paddingTop = headerHeight + 'px';
+//   }
+//   else if (window.innerWidth <= 991.98 && header && alert) {
+//     if (hero.classList.contains('home-hero-sec')) {
+//       headerHeight = header.offsetHeight + 64;
+//     } else {
+//       headerHeight = header.offsetHeight - 100;
+//     }
+//     hero.style.paddingTop = headerHeight + 'px';
+//   } else {
+//     // Remove padding if above max-width or if no alert present
+//     hero.style.paddingTop = '';
+//   }
+// }
+
 function adjustHeroPadding() {
   const header = document.querySelector('.main-header');
   const alert = header?.querySelector('.alert');
   const hero = document.querySelector('.inner-hero-section, .home-hero-sec');
 
-  // Only add alert-present class if alert actually exists
   if (alert) {
     header.classList.add('alert-present');
   } else {
@@ -1410,27 +1451,28 @@ function adjustHeroPadding() {
   let headerHeight = 0;
 
   if ((hero.classList.contains('no-image') || hero.classList.contains('home-hero-sec')) && alert) {
-
+    
     if (window.innerWidth <= 575 && hero.classList.contains('home-hero-sec')) {
       headerHeight = header ? header.offsetHeight + 40 : 0;
-      console.log("1", headerHeight);
+      console.log("1 - Mobile small", headerHeight);
+    }
+    else if (window.innerWidth <= 991.98) {
+      // This only runs between 576px - 991px
+      if (hero.classList.contains('home-hero-sec')) {
+        headerHeight = header.offsetHeight + 64;
+      } else {
+        headerHeight = header.offsetHeight - 100;
+      }
+      console.log("2 - Tablet", headerHeight);
     }
     else {
+      // This runs for ≥ 992px
       headerHeight = header ? header.offsetHeight + 4 : 0;
-      console.log("2", headerHeight);
+      console.log("3 - Desktop", headerHeight);
     }
 
     hero.style.paddingTop = headerHeight + 'px';
-  }
-  else if (window.innerWidth <= 991.98 && header && alert) {
-    if (hero.classList.contains('home-hero-sec')) {
-      headerHeight = header.offsetHeight + 64;
-    } else {
-      headerHeight = header.offsetHeight - 100;
-    }
-    hero.style.paddingTop = headerHeight + 'px';
   } else {
-    // Remove padding if above max-width or if no alert present
     hero.style.paddingTop = '';
   }
 }
