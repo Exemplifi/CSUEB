@@ -1432,10 +1432,10 @@ function adjustHeroPadding() {
 
 
 // Debounced resize handler to prevent performance issues
-let resizeTimeout;
-window.addEventListener('resize', function () {
-  clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(adjustHeroPadding, 0);
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(adjustHeroPadding, 200);
 });
 
 // When alert is closed → remove padding and class
