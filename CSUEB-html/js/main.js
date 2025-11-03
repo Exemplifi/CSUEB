@@ -1413,11 +1413,9 @@ function adjustHeroPadding() {
 
       if (window.innerWidth <= 575 && hero.classList.contains('home-hero-sec')) {
         headerHeight = header ? header.offsetHeight + 40 : 0;
-        console.log("1", headerHeight);
       }
       else {
         headerHeight = header ? header.offsetHeight + 4 : 0;
-        console.log("2", headerHeight);
       }
 
       hero.style.paddingTop = headerHeight + 'px';
@@ -1433,7 +1431,7 @@ function adjustHeroPadding() {
       // Remove padding if above max-width or if no alert present
       hero.style.paddingTop = '';
     }
-  }, 400); // 100ms delay
+  }, 300); // 100ms delay
 }
 
 // Debounced resize handler to prevent performance issues
