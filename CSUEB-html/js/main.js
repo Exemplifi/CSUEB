@@ -1401,24 +1401,48 @@ function adjustHeroPadding() {
     header.classList.remove('alert-present');
   }
 
-  if (!hero) return;
-
-  let headerHeight = 0;
-
-  if ((hero.classList.contains('no-image')) && alert) {
-    hero.style.paddingTop = headerHeight + 'px';
+  if (!hero || !alert || !header) {
+    // Remove padding if no hero, no alert, or no header
+    if (hero) {
+      hero.style.paddingTop = '';
+    }
+    return;
   }
-  else if (window.innerWidth <= 991.98 && header && alert) {
+
+  const windowWidth = window.innerWidth;
+
+  // Desktop: > 991.98px
+  if (windowWidth > 991.98) {
+    if (hero.classList.contains('home-hero-sec')) {
+      headerHeight = header.offsetHeight + 4;
+    } else if (hero.classList.contains('no-image')) {
+      headerHeight = header.offsetHeight + 4;
+    } else {
+      headerHeight = header.offsetHeight + 4;
+    }
+  }
+  // Mobile: <= 575px
+  else if (windowWidth <= 575) {
+    if (hero.classList.contains('home-hero-sec')) {
+      headerHeight = header.offsetHeight + 40;
+    } else if (hero.classList.contains('no-image')) {
+      headerHeight = header.offsetHeight + 4;
+    } else {
+      headerHeight = header.offsetHeight + 4;
+    }
+  }
+  // Tablet: 576px - 991.98px
+  else {
     if (hero.classList.contains('home-hero-sec')) {
       headerHeight = header.offsetHeight + 64;
+    } else if (hero.classList.contains('no-image')) {
+      headerHeight = header.offsetHeight + 4;
     } else {
       headerHeight = header.offsetHeight - 100;
     }
-    hero.style.paddingTop = headerHeight + 'px';
-  } else {
-    // Remove padding if above max-width or if no alert present
-    hero.style.paddingTop = '';
   }
+
+  hero.style.paddingTop = headerHeight + 'px';
 }
 
 
