@@ -1451,36 +1451,39 @@ function adjustHeroPadding() {
   if (!hero) return;
 
   let headerHeight = 0;
-  const headerActualHeight = header ? header.offsetHeight : 0;
-  const width = window.innerWidth;
+  const headerActualHeight = header ? header.offsetHeight : 0; 
+  // Add delay before calculating width to ensure layout has settled
+  setTimeout(() => {
+    const width = window.innerWidth;
 
-  console.log(`Window width: ${width}px, Header height: ${headerActualHeight}px`);
+    console.log(`Window width: ${width}px, Header height: ${headerActualHeight}px`);
 
-  // Set padding for hero section
-  if ((hero.classList.contains('no-image') || hero.classList.contains('home-hero-sec')) && alert) {
+    // Set padding for hero section
+    if ((hero.classList.contains('no-image') || hero.classList.contains('home-hero-sec')) && alert) {
 
-    if (width >= 576 && width <= 991.98) {
-      // Tablet screen (576px to 991px)
-      headerHeight = headerActualHeight + 64;
-      console.log("Tablet - Height:", headerHeight);
+      if (width >= 576 && width <= 991.98) {
+        // Tablet screen (576px to 991px)
+        headerHeight = headerActualHeight + 64;
+        console.log("Tablet - Height:", headerHeight);
+      }
+
+      else if (width <= 575) {
+        // Mobile screen (< 575px)
+        headerHeight = headerActualHeight + 40;
+        console.log("Mobile - Height:", headerHeight);
+      }
+      else {
+        // Desktop screen (> 992px)
+        headerHeight = headerActualHeight + 4;
+        console.log("Desktop - Height:", headerHeight);
+      }
+
+      hero.style.paddingTop = headerHeight + 'px';
+    } else {
+      // Remove padding if no alert
+      hero.style.paddingTop = '';
     }
-
-    else if (width <= 575) {
-      // Mobile screen (< 575px)
-      headerHeight = headerActualHeight + 40;
-      console.log("Mobile - Height:", headerHeight);
-    }
-    else {
-      // Desktop screen (> 992px)
-      headerHeight = headerActualHeight + 4;
-      console.log("Desktop - Height:", headerHeight);
-    }
-
-    hero.style.paddingTop = headerHeight + 'px';
-  } else {
-    // Remove padding if no alert
-    hero.style.paddingTop = '';
-  }
+  }, 100); // 100ms delay
 }
 
 // Handle window resize - header height changes on resize
