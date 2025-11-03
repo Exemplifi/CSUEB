@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMainImgSlider();
   initGalleryLightbox();
   initAccessibilityFeatures();
-  adjustHeroPadding();
+
 
 
   const expanderButtons = document.querySelectorAll('.btn-expander');
@@ -1388,6 +1388,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }, 3000);
 });
 
+
+// Initialize hero padding on page load
+document.addEventListener('DOMContentLoaded', adjustHeroPadding);
+
 // Only add dynamic padding for Hero section if .main-header has .alert
 function adjustHeroPadding() {
   const header = document.querySelector('.main-header');
@@ -1429,14 +1433,14 @@ function adjustHeroPadding() {
   }
 }
 
-
-
 // Debounced resize handler to prevent performance issues
-let resizeTimer;
-window.addEventListener('resize', () => {
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(adjustHeroPadding, 200);
+let resizeTimeout;
+window.addEventListener('resize', function () {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(adjustHeroPadding, 100);
 });
+
+
 
 // When alert is closed → remove padding and class
 document.addEventListener('click', function (e) {
