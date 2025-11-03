@@ -1458,16 +1458,17 @@ function adjustHeroPadding() {
 
   // Set padding for hero section
   if ((hero.classList.contains('no-image') || hero.classList.contains('home-hero-sec')) && alert) {
-    
-    if (width <= 575) {
-      // Mobile screen (< 575px)
-      headerHeight = headerActualHeight + 40;
-      console.log("Mobile - Height:", headerHeight);
-    }
-    else if (width <= 991.98) {
+
+    if (width >= 576 && width <= 991.98) {
       // Tablet screen (576px to 991px)
       headerHeight = headerActualHeight + 64;
       console.log("Tablet - Height:", headerHeight);
+    }
+
+    else if (width <= 575) {
+      // Mobile screen (< 575px)
+      headerHeight = headerActualHeight + 40;
+      console.log("Mobile - Height:", headerHeight);
     }
     else {
       // Desktop screen (> 992px)
