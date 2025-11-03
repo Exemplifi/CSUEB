@@ -1435,12 +1435,12 @@ document.addEventListener('DOMContentLoaded', adjustHeroPadding);
 //   }
 // }
 
+
 function adjustHeroPadding() {
   const header = document.querySelector('.main-header');
   const alert = header?.querySelector('.alert');
   const hero = document.querySelector('.inner-hero-section, .home-hero-sec');
 
-  // Update alert class first
   if (alert) {
     header.classList.add('alert-present');
   } else {
@@ -1449,28 +1449,41 @@ function adjustHeroPadding() {
 
   if (!hero) return;
 
-  // Force browser reflow to ensure accurate height calculation
-  void header.offsetHeight;
+  // Force reflow for accurate height measurement
+  void header?.offsetHeight;
 
   let headerHeight = 0;
+  const headerActualHeight = header ? header.offsetHeight : 0;
+  const width = window.innerWidth;
+
+  console.log(`Current width: ${width}px, Header height: ${headerActualHeight}px`);
 
   if ((hero.classList.contains('no-image') || hero.classList.contains('home-hero-sec')) && alert) {
     
-    if (window.innerWidth <= 575 && hero.classList.contains('home-hero-sec')) {
-      headerHeight = header ? header.offsetHeight + 40 : 0;
-      console.log("1 - Mobile small", headerHeight, header?.offsetHeight);
-    }
-    else if (window.innerWidth <= 991.98) {
+    if (width <= 575) {
+      // MOBILE: Only runs when width ≤ 575px
       if (hero.classList.contains('home-hero-sec')) {
-        headerHeight = header.offsetHeight + 64;
+        headerHeight = headerActualHeight + 40;
+        console.log("1 - Mobile small", headerHeight, headerActualHeight);
       } else {
-        headerHeight = header.offsetHeight - 100;
+        // Handle non-home-hero-sec on mobile
+        headerHeight = headerActualHeight + 20; // Adjust as needed
+        console.log("1b - Mobile other", headerHeight, headerActualHeight);
       }
-      console.log("2 - Tablet", headerHeight, header?.offsetHeight);
+    }
+    else if (width <= 991.98) {
+      // TABLET: Only runs when 576px - 991px
+      if (hero.classList.contains('home-hero-sec')) {
+        headerHeight = headerActualHeight + 64;
+      } else {
+        headerHeight = headerActualHeight - 100;
+      }
+      console.log("2 - Tablet", headerHeight, headerActualHeight);
     }
     else {
-      headerHeight = header ? header.offsetHeight + 4 : 0;
-      console.log("3 - Desktop", headerHeight, header?.offsetHeight);
+      // DESKTOP: Only runs when ≥ 992px
+      headerHeight = headerActualHeight + 4;
+      console.log("3 - Desktop", headerHeight, headerActualHeight);
     }
 
     hero.style.paddingTop = headerHeight + 'px';
@@ -1479,12 +1492,21 @@ function adjustHeroPadding() {
   }
 }
 
-// Debounced resize handler to prevent performance issues
+// Better debouncing with leading edge
 let resizeTimeout;
 window.addEventListener('resize', function () {
   clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(adjustHeroPadding, 100);
+  // Call immediately on first resize, then debounce subsequent calls
+  if (!resizeTimeout) {
+    adjustHeroPadding();
+  }
+  resizeTimeout = setTimeout(() => {
+    resizeTimeout = null;
+    adjustHeroPadding(); // Final call after resize ends
+  }, 150);
 });
+
+  
 
 
 
