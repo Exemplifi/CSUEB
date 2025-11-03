@@ -49,18 +49,32 @@ ul {
 
     @include media-breakpoint-down(md) {
         padding: rem.convert(72px 0px);
-        
+
     }
-    &.testimonial-with-paralax{
-        &.bg-red{
+
+    &.testimonial-with-paralax {
+        &.bg-red {
             @include media-breakpoint-down(lg) {
                 padding: rem.convert(72px 16px);
-                
+
             }
+
             @include media-breakpoint-down(md) {
                 padding: rem.convert(48x 16px);
-                
+
             }
+        }
+    }
+
+    &.testimonial-sec {
+        @include media-breakpoint-down(lg) {
+            padding: rem.convert(72px 16px);
+
+        }
+
+        @include media-breakpoint-down(md) {
+            padding: rem.convert(48x 16px);
+
         }
     }
 }
@@ -482,7 +496,7 @@ section.bg-white.section-with-padding+section.bg-white {
         text-transform: uppercase;
         margin-left: rem.convert(-8px);
 
-       
+
 
         padding: rem.convert(8px) !important;
 
@@ -495,7 +509,8 @@ section.bg-white.section-with-padding+section.bg-white {
 
     >.btn {
         padding: rem.convert(8px) !important;
-        @include media-breakpoint-down(lg){
+
+        @include media-breakpoint-down(lg) {
             padding: rem.convert(8px 8px 8px 4px) !important;
         }
 
@@ -917,26 +932,31 @@ section.bg-white.section-with-padding+section.bg-white {
     }
 }
 
-a[href="#skipToTopNav"], a[href="#skipToFooter"] {
+a[href="#skipToTopNav"],
+a[href="#skipToFooter"] {
     display: none;
 }
+
 .screenreader {
     position: absolute;
     left: -10000px;
-    &:focus-within{
+
+    &:focus-within {
         left: rem.convert(32px);
         top: rem.convert(24px);
         z-index: 99999;
-        
-       
+
+
     }
-  a{
-     text-decoration: none;
+
+    a {
+        text-decoration: none;
         color: white;
         background: var(--red);
         padding: rem.convert(4px 16px);
-  }
+    }
 }
+
 // High Contrast Mode
 
 html[hc="a2"],

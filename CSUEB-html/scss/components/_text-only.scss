@@ -509,8 +509,6 @@
     }
 
   }
-
-  &.bg-red {
     &:has(+ .bg-light-gray) {
       margin-bottom: rem.convert(96px);
 
@@ -518,9 +516,6 @@
         margin-bottom: rem.convert(72px);
       }
     }
-  }
-
-
 }
 
 .testimonial-with-paralax {

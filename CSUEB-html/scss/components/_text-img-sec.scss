@@ -1702,12 +1702,12 @@
       }
 
       .testimonial-sec {
-        &.bg-red {
           @include media-breakpoint-down(xxl) {
-            padding: rem.convert(24px);
+            padding: rem.convert(48px 24px);
           }
-
-        }
+          @include media-breakpoint-down(md) {
+            padding: rem.convert(32px 24px);
+          }
       }
     }
   }
