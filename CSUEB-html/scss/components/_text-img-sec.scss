@@ -226,17 +226,11 @@
     }
 
     iframe {
-      object-fit: cover;
-      height: 100%;
+      height: auto;
       width: 100%;
-      position: relative;
       z-index: 2;
+      aspect-ratio: 16 / 9;
 
-      @include media-breakpoint-up(lg) {}
-
-      @include media-breakpoint-down(md) {
-        min-height: rem.convert(297px);
-      }
     }
 
     &::before {
@@ -542,12 +536,10 @@
     }
 
     iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
     }
   }
 
@@ -752,9 +744,9 @@
     }
 
     iframe {
-      max-width: 100% !important;
+      width: 100% !important;
       height: auto !important;
-
+      aspect-ratio: 16 / 9;
       video {
         width: 100% !important;
       }
