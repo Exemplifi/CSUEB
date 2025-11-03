@@ -1408,9 +1408,11 @@ function adjustHeroPadding() {
   if ((hero.classList.contains('no-image') || hero.classList.contains('home-hero-sec')) && alert) {
     if (window.innerWidth <= 768 && hero.classList.contains('home-hero-sec')) {
       headerHeight = header ? header.offsetHeight + 40 : 0;
+      console.log("1");
     }
     else {
       headerHeight = header ? header.offsetHeight + 4 : 0;
+      console.log("2");
     }
 
     hero.style.paddingTop = headerHeight + 'px';
@@ -1418,8 +1420,10 @@ function adjustHeroPadding() {
   else if (window.innerWidth <= 991.98 && header && alert) {
     if (hero.classList.contains('home-hero-sec')) {
       headerHeight = header.offsetHeight + 64;
+      console.log("3");
     } else {
       headerHeight = header.offsetHeight - 100;
+      console.log("4");
     }
     hero.style.paddingTop = headerHeight + 'px';
   } else {
