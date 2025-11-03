@@ -1402,6 +1402,10 @@ function adjustHeroPadding() {
     header.classList.remove('alert-present');
   }
 
+  // Capture window width BEFORE requestAnimationFrame to avoid timing issues
+  // This ensures we're checking the correct viewport size during resize
+  const currentWidth = window.innerWidth;
+  
   // Use requestAnimationFrame to ensure layout has updated before reading height
   // This is especially important during resize events when breakpoints change
   requestAnimationFrame(() => {
@@ -1412,7 +1416,7 @@ function adjustHeroPadding() {
 
     // --- Case 1: Hero has no image or is home hero + alert exists ---
     if ((hero.classList.contains('no-image') || hero.classList.contains('home-hero-sec')) && alert) {
-      if (window.innerWidth <= 768 && hero.classList.contains('home-hero-sec')) {
+      if (currentWidth <= 768 && hero.classList.contains('home-hero-sec')) {
         // Mobile Home Hero
         headerHeight = header.offsetHeight + 40;
         console.log("1");
@@ -1425,7 +1429,7 @@ function adjustHeroPadding() {
     }
 
     // --- Case 2: General layout below 991.98px + alert exists ---
-    else if (window.innerWidth <= 991.98 && alert) {
+    else if (currentWidth <= 991.98 && alert) {
       if (hero.classList.contains('home-hero-sec')) {
         headerHeight = header.offsetHeight + 64;
         console.log("3");
