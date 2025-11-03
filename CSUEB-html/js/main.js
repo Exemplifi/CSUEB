@@ -1431,7 +1431,7 @@ function adjustHeroPadding() {
       // Remove padding if above max-width or if no alert present
       hero.style.paddingTop = '';
     }
-  }, 300); // 100ms delay
+  }, 350); // 100ms delay
 }
 
 // Debounced resize handler to prevent performance issues
