@@ -1401,48 +1401,31 @@ function adjustHeroPadding() {
     header.classList.remove('alert-present');
   }
 
-  if (!hero || !alert || !header) {
-    // Remove padding if no hero, no alert, or no header
-    if (hero) {
-      hero.style.paddingTop = '';
-    }
-    return;
-  }
+  if (!hero) return;
 
-  const windowWidth = window.innerWidth;
+  let headerHeight = 0;
 
-  // Desktop: > 991.98px
-  if (windowWidth > 991.98) {
-    if (hero.classList.contains('home-hero-sec')) {
-      headerHeight = header.offsetHeight + 4;
-    } else if (hero.classList.contains('no-image')) {
-      headerHeight = header.offsetHeight + 4;
-    } else {
-      headerHeight = header.offsetHeight + 4;
+  if ((hero.classList.contains('no-image') || hero.classList.contains('home-hero-sec')) && alert) {
+    if (window.innerWidth <= 768 && hero.classList.contains('home-hero-sec')) {
+      headerHeight = header ? header.offsetHeight + 40 : 0;
     }
-  }
-  // Mobile: <= 575px
-  else if (windowWidth <= 575) {
-    if (hero.classList.contains('home-hero-sec')) {
-      headerHeight = header.offsetHeight + 40;
-    } else if (hero.classList.contains('no-image')) {
-      headerHeight = header.offsetHeight + 4;
-    } else {
-      headerHeight = header.offsetHeight + 4;
+    else {
+      headerHeight = header ? header.offsetHeight + 4 : 0;
     }
+
+    hero.style.paddingTop = headerHeight + 'px';
   }
-  // Tablet: 576px - 991.98px
-  else {
+  else if (window.innerWidth <= 991.98 && header && alert) {
     if (hero.classList.contains('home-hero-sec')) {
       headerHeight = header.offsetHeight + 64;
-    } else if (hero.classList.contains('no-image')) {
-      headerHeight = header.offsetHeight + 4;
     } else {
       headerHeight = header.offsetHeight - 100;
     }
+    hero.style.paddingTop = headerHeight + 'px';
+  } else {
+    // Remove padding if above max-width or if no alert present
+    hero.style.paddingTop = '';
   }
-
-  hero.style.paddingTop = headerHeight + 'px';
 }
 
 
