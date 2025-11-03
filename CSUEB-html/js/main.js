@@ -1441,6 +1441,7 @@ function adjustHeroPadding() {
   const alert = header?.querySelector('.alert');
   const hero = document.querySelector('.inner-hero-section, .home-hero-sec');
 
+  // Check alert and update class
   if (alert) {
     header.classList.add('alert-present');
   } else {
@@ -1449,64 +1450,50 @@ function adjustHeroPadding() {
 
   if (!hero) return;
 
-  // Force reflow for accurate height measurement
-  void header?.offsetHeight;
-
   let headerHeight = 0;
   const headerActualHeight = header ? header.offsetHeight : 0;
   const width = window.innerWidth;
 
-  console.log(`Current width: ${width}px, Header height: ${headerActualHeight}px`);
+  console.log(`Window width: ${width}px, Header height: ${headerActualHeight}px`);
 
+  // Set padding for hero section
   if ((hero.classList.contains('no-image') || hero.classList.contains('home-hero-sec')) && alert) {
     
     if (width <= 575) {
-      // MOBILE: Only runs when width ≤ 575px
-      if (hero.classList.contains('home-hero-sec')) {
-        headerHeight = headerActualHeight + 40;
-        console.log("1 - Mobile small", headerHeight, headerActualHeight);
-      } else {
-        // Handle non-home-hero-sec on mobile
-        headerHeight = headerActualHeight + 20; // Adjust as needed
-        console.log("1b - Mobile other", headerHeight, headerActualHeight);
-      }
+      // Mobile screen (< 575px)
+      headerHeight = headerActualHeight + 40;
+      console.log("Mobile - Height:", headerHeight);
     }
     else if (width <= 991.98) {
-      // TABLET: Only runs when 576px - 991px
-      if (hero.classList.contains('home-hero-sec')) {
-        headerHeight = headerActualHeight + 64;
-      } else {
-        headerHeight = headerActualHeight - 100;
-      }
-      console.log("2 - Tablet", headerHeight, headerActualHeight);
+      // Tablet screen (576px to 991px)
+      headerHeight = headerActualHeight + 64;
+      console.log("Tablet - Height:", headerHeight);
     }
     else {
-      // DESKTOP: Only runs when ≥ 992px
+      // Desktop screen (> 992px)
       headerHeight = headerActualHeight + 4;
-      console.log("3 - Desktop", headerHeight, headerActualHeight);
+      console.log("Desktop - Height:", headerHeight);
     }
 
     hero.style.paddingTop = headerHeight + 'px';
   } else {
+    // Remove padding if no alert
     hero.style.paddingTop = '';
   }
 }
 
-// Better debouncing with leading edge
+// Handle window resize - header height changes on resize
 let resizeTimeout;
 window.addEventListener('resize', function () {
   clearTimeout(resizeTimeout);
-  // Call immediately on first resize, then debounce subsequent calls
-  if (!resizeTimeout) {
-    adjustHeroPadding();
-  }
-  resizeTimeout = setTimeout(() => {
-    resizeTimeout = null;
-    adjustHeroPadding(); // Final call after resize ends
-  }, 150);
+  resizeTimeout = setTimeout(adjustHeroPadding, 150);
 });
 
-  
+// Call on page load
+document.addEventListener('DOMContentLoaded', adjustHeroPadding);
+window.addEventListener('load', adjustHeroPadding);
+
+
 
 
 
