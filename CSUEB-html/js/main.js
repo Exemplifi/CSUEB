@@ -1413,9 +1413,11 @@ function adjustHeroPadding() {
 
     if (window.innerWidth <= 575 && hero.classList.contains('home-hero-sec')) {
       headerHeight = header ? header.offsetHeight + 40 : 0;
+      console.log("1", headerHeight);
     }
     else {
       headerHeight = header ? header.offsetHeight + 4 : 0;
+      console.log("2", headerHeight);
     }
 
     hero.style.paddingTop = headerHeight + 'px';
