@@ -296,10 +296,10 @@ function initTestimonialSlider() {
           userInteracted = true;
         });
         // Remove aria-labels that Swiper adds so sr-only text is used instead
-        setTimeout(function() {
+        setTimeout(function () {
           const prevBtn = document.getElementById("testimonial-prev-btn");
           const nextBtn = document.getElementById("testimonial-next-btn");
-    
+
           if (prevBtn) {
             prevBtn.removeAttribute("aria-label");
           }
@@ -312,25 +312,25 @@ function initTestimonialSlider() {
         // Remove aria-labels again in case Swiper re-adds them on slide change
         const prevBtn = document.getElementById("testimonial-prev-btn");
         const nextBtn = document.getElementById("testimonial-next-btn");
-        
+
         if (prevBtn && prevBtn.hasAttribute("aria-label")) {
           prevBtn.removeAttribute("aria-label");
         }
         if (nextBtn && nextBtn.hasAttribute("aria-label")) {
           nextBtn.removeAttribute("aria-label");
         }
-        
+
         // Only announce custom testimonial content (quote + author) if user interacted
         if (userInteracted) {
           const realIndex = this.realIndex !== undefined ? this.realIndex : this.activeIndex;
           const currentSlideIndex = realIndex % totalSlides;
-    
+
           // Prevent duplicate announcements
           if (currentSlideIndex !== lastAnnouncedIndex && announcementEl) {
             announceTestimonialContent(currentSlideIndex, announcementEl, slides, totalSlides);
             lastAnnouncedIndex = currentSlideIndex;
           }
-    
+
           userInteracted = false;
         }
       },
@@ -477,7 +477,7 @@ function initTextIconSlider() {
     const randomIndex = Math.floor(Math.random() * slides.length);
     container.appendChild(slides.splice(randomIndex, 1)[0]);
   }
-  
+
 
   // Responsive Swiper initialization with re-init on window resize
   let textIconSwiper;
@@ -507,10 +507,10 @@ function initTextIconSlider() {
           on: {
             init: function () {
               // Update prev/next button aria-labels after initialization
-              setTimeout(function() {
+              setTimeout(function () {
                 const prevBtn = document.querySelector('.text-icon-slider .swiper-button-prev.swiper-button-prev-new');
                 const nextBtn = document.querySelector('.text-icon-slider .swiper-button-next.swiper-button-next-new');
-                
+
                 if (prevBtn) {
                   prevBtn.setAttribute("aria-label", "Go to previous slide");
                 }
@@ -1318,7 +1318,6 @@ document.querySelectorAll("h1, h2, h3, h4, h5, h6, p").forEach(el => {
 document.addEventListener("DOMContentLoaded", () => {
   // Select all td and th elements
   const cells = document.querySelectorAll("td, th");
-
   // Remove inline style attribute from each
   cells.forEach(cell => {
     cell.removeAttribute("style");
@@ -1628,6 +1627,48 @@ document.querySelectorAll('.bright-future-swiper .gallery-item').forEach(item =>
     }
   });
 });
+
+
+// Run after all Swipers are initialized
+document.addEventListener('DOMContentLoaded', () => {
+  // Wait a bit in case Swipers are initialized later
+  setTimeout(() => {
+    // Get all Swiper instances from window.Swiper
+    if (window.Swiper) {
+      const swipers = Array.isArray(window.swipers)
+        ? window.swipers
+        : document.querySelectorAll('.swiper');
+
+      swipers.forEach(container => {
+        const swiperInstance = container.swiper;
+        if (swiperInstance) {
+          makeSwiperAccessible(swiperInstance);
+        }
+      });
+    }
+  }, 300);
+});
+
+function makeSwiperAccessible(swiper) {
+  // Initial aria-hidden setup
+  updateAriaHidden(swiper);
+
+  // Re-apply whenever slide changes
+  swiper.on('slideChange', () => {
+    updateAriaHidden(swiper);
+  });
+}
+
+function updateAriaHidden(swiper) {
+  swiper.slides.forEach((slide, index) => {
+    if (index === swiper.activeIndex) {
+      slide.removeAttribute('aria-hidden');
+    } else {
+      slide.setAttribute('aria-hidden', 'true');
+    }
+  });
+}
+
 
 
 
