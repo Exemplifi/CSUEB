@@ -1406,44 +1406,48 @@ function adjustHeroPadding() {
   // This ensures we're checking the correct viewport size during resize
   const currentWidth = window.innerWidth;
   
-  // Use requestAnimationFrame to ensure layout has updated before reading height
-  // This is especially important during resize events when breakpoints change
+  // Use double requestAnimationFrame to ensure all CSS media queries and layout have fully applied
+  // This is critical when switching between mobile/desktop breakpoints
   requestAnimationFrame(() => {
-    // Force reflow to ensure all CSS changes have been applied
-    void header.offsetHeight;
-    
-    let headerHeight = 0;
+    // First RAF: Browser has queued the style recalculation
+    requestAnimationFrame(() => {
+      // Second RAF: All layout calculations should be complete
+      // Force reflow to ensure all CSS changes have been applied
+      void header.offsetHeight;
+      
+      let headerHeight = 0;
 
-    // --- Case 1: Hero has no image or is home hero + alert exists ---
-    if ((hero.classList.contains('no-image') || hero.classList.contains('home-hero-sec')) && alert) {
-      if (currentWidth <= 768 && hero.classList.contains('home-hero-sec')) {
-        // Mobile Home Hero
-        headerHeight = header.offsetHeight + 40;
-        console.log("1");
-      } else {
-        // Desktop or non-home hero
-        headerHeight = header.offsetHeight + 4;
-        console.log("2");
+      // --- Case 1: Hero has no image or is home hero + alert exists ---
+      if ((hero.classList.contains('no-image') || hero.classList.contains('home-hero-sec')) && alert) {
+        if (currentWidth <= 768 && hero.classList.contains('home-hero-sec')) {
+          // Mobile Home Hero
+          headerHeight = header.offsetHeight + 40;
+          console.log("1");
+        } else {
+          // Desktop or non-home hero
+          headerHeight = header.offsetHeight + 4;
+          console.log("2");
+        }
+        hero.style.paddingTop = `${headerHeight}px`;
       }
-      hero.style.paddingTop = `${headerHeight}px`;
-    }
 
-    // --- Case 2: General layout below 991.98px + alert exists ---
-    else if (currentWidth <= 991.98 && alert) {
-      if (hero.classList.contains('home-hero-sec')) {
-        headerHeight = header.offsetHeight + 64;
-        console.log("3");
-      } else {
-        headerHeight = header.offsetHeight - 100;
-        console.log("4");
+      // --- Case 2: General layout below 991.98px + alert exists ---
+      else if (currentWidth <= 991.98 && alert) {
+        if (hero.classList.contains('home-hero-sec')) {
+          headerHeight = header.offsetHeight + 64;
+          console.log("3");
+        } else {
+          headerHeight = header.offsetHeight - 100;
+          console.log("4");
+        }
+        hero.style.paddingTop = `${headerHeight}px`;
       }
-      hero.style.paddingTop = `${headerHeight}px`;
-    }
 
-    // --- Case 3: Remove padding above breakpoint or when no alert ---
-    else {
-      hero.style.paddingTop = '';
-    }
+      // --- Case 3: Remove padding above breakpoint or when no alert ---
+      else {
+        hero.style.paddingTop = '';
+      }
+    });
   });
 }
 
@@ -1452,7 +1456,7 @@ document.addEventListener('DOMContentLoaded', adjustHeroPadding);
 let resizeTimer;
 window.addEventListener('resize', () => {
   clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(adjustHeroPadding, 200);
+  resizeTimer = setTimeout(adjustHeroPadding, 300);
 });
 
 // Observe only header for alert changes
