@@ -1450,10 +1450,10 @@ function adjustHeroPadding() {
 
   if (!hero) return;
 
-  let headerHeight = 0;
-  const headerActualHeight = header ? header.offsetHeight : 0; 
-  // Add delay before calculating width to ensure layout has settled
+  // Add delay before calculating width and height to ensure layout has settled
   setTimeout(() => {
+    let headerHeight = 0;
+    const headerActualHeight = header ? header.offsetHeight : 0;
     const width = window.innerWidth;
 
     console.log(`Window width: ${width}px, Header height: ${headerActualHeight}px`);
@@ -1483,14 +1483,14 @@ function adjustHeroPadding() {
       // Remove padding if no alert
       hero.style.paddingTop = '';
     }
-  }, 100); // 100ms delay
+  }, 200); // 200ms delay to ensure layout has fully settled after resize
 }
 
 // Handle window resize - header height changes on resize
 let resizeTimeout;
 window.addEventListener('resize', function () {
   clearTimeout(resizeTimeout);
-  resizeTimeout = setTimeout(adjustHeroPadding, 150);
+  resizeTimeout = setTimeout(adjustHeroPadding, 50); // Reduced since function has internal delay
 });
 
 // Call on page load
