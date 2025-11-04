@@ -1582,7 +1582,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.querySelectorAll('.tabbed-section .nav-link[role="tab"]').forEach(tab => {
   tab.addEventListener('focus', function () {
-    this.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    this.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
   });
 });
 

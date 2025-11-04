@@ -4755,11 +4755,6 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   position: relative;
   z-index: 2;
 }
-@media (min-width: 2300px) {
-  .img-clip-path .img-wrapper img:not(.star-svg) {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 160px 100%, 0 calc(100% - 217px));
-  }
-}
 @media (min-width: 1501px) {
   .img-clip-path .img-wrapper img:not(.star-svg) {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 178px 100%, 0 calc(100% - 246px));
@@ -4768,6 +4763,11 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 @media (max-width: 1500px) {
   .img-clip-path .img-wrapper img:not(.star-svg) {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 188px 100%, 0 calc(100% - 268px));
+  }
+}
+@media (min-width: 1900px) {
+  .img-clip-path .img-wrapper img:not(.star-svg) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 160px 100%, 0 calc(100% - 217px));
   }
 }
 @media (max-width: 1399.98px) {
