@@ -187,6 +187,9 @@
   .content-section {
     gap: 0;
     padding-top: rem.convert(34px);
+    @include media-breakpoint-up(md){
+      width: 50%;
+    }
   }
 
   .wrap-row {
@@ -247,6 +250,11 @@
         }
         
       }
+    }
+    &:has(.form-sec) {
+     .img-wrapper{
+      max-width: 100%;
+     }
     }
   }
 

@@ -5153,7 +5153,8 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .text-img-main-card .video-wrap img {
   height: auto !important;
 }
-.text-img-main-card .video-wrap .play-btn, .text-img-main-card .img-wrap .play-btn {
+.text-img-main-card .video-wrap .play-btn,
+.text-img-main-card .img-wrap .play-btn {
   background: rgba(0, 0, 0, 0.7);
   border: none;
   width: 4rem;
@@ -5171,13 +5172,16 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.text-img-main-card .video-wrap .play-btn svg path, .text-img-main-card .img-wrap .play-btn svg path {
+.text-img-main-card .video-wrap .play-btn svg path,
+.text-img-main-card .img-wrap .play-btn svg path {
   fill: var(--white);
 }
-.text-img-main-card .video-wrap:hover .play-btn, .text-img-main-card .img-wrap:hover .play-btn {
+.text-img-main-card .video-wrap:hover .play-btn,
+.text-img-main-card .img-wrap:hover .play-btn {
   background: rgb(0, 0, 0);
 }
-.text-img-main-card .video-wrap iframe, .text-img-main-card .img-wrap iframe {
+.text-img-main-card .video-wrap iframe,
+.text-img-main-card .img-wrap iframe {
   width: 100%;
   max-width: 100%;
   height: auto;
@@ -6164,6 +6168,9 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 .card-color-hover .slide-text .title, .flip-tiles-gallery-grid .gallery-item a .slide-text .title {
   font-family: var(--body-font-family);
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  word-spacing: 0.16em;
   margin-bottom: 0;
   background-color: rgba(0, 0, 0, 0.0392156863);
 }
@@ -6466,10 +6473,6 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
     content: "";
     transform: rotate(-180deg);
   }
-}
-
-.experts-profile-faculty-wraper .img-clip-path-box.img-content-section .img-wrapper {
-  max-width: 608px;
 }
 
 @media (min-width: 992px) {
@@ -8236,6 +8239,11 @@ table:not(.gssb_c) {
   gap: 0;
   padding-top: 2.125rem;
 }
+@media (min-width: 768px) {
+  .experts-profile-faculty-wraper .content-section {
+    width: 50%;
+  }
+}
 .experts-profile-faculty-wraper .wrap-row {
   flex-direction: column;
 }
@@ -8284,6 +8292,9 @@ table:not(.gssb_c) {
 }
 .experts-profile-faculty-wraper .img-clip-path-box .img-wrapper:hover .play-btn {
   background: rgb(0, 0, 0);
+}
+.experts-profile-faculty-wraper .img-clip-path-box:has(.form-sec) .img-wrapper {
+  max-width: 100%;
 }
 .experts-profile-faculty-wraper.img-text-sec.left-img-text-sec .row-section {
   flex-direction: row;
