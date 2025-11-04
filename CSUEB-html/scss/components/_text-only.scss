@@ -1402,3 +1402,11 @@
     max-height: 100vh;
   }
 }
+.text-button-sec{
+  padding: rem.convert(16px 0);
+  .row{
+    @include media-breakpoint-down(md){
+      gap: rem.convert(24px);
+    }
+  }
+}
