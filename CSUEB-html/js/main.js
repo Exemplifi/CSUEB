@@ -1343,7 +1343,7 @@ function handleAccordionBehavior() {
 
   if (!accordion || !button) return; // stop if not found
 
-  if (window.innerWidth >= 992) {
+  if (window.innerWidth >= 1200) {
     accordion.classList.add('show');       // keep open
     button.setAttribute('aria-expanded', 'true');
   }
