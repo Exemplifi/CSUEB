@@ -662,7 +662,7 @@
       }
     }
 
-    &.bg-white {
+    &.bg-white, &.bg-light-gray {
       a.btn {
         text-decoration: none !important;
 
@@ -689,17 +689,6 @@
       }
 
       .heading-row {
-        a {
-          color: var(--black) !important;
-          text-decoration: none !important;
-
-          &:hover {
-            background-color: transparent !important;
-            color: var(--red) !important;
-          }
-
-        }
-
         a:not([class]) {
           text-decoration-line: underline !important;
           text-decoration-style: solid !important;
@@ -712,11 +701,25 @@
           word-break: break-word !important;
 
           &:hover {
-            color: var(--red) !important;
-            background-color: transparent;
+            background: rgba(213, 0, 50, 0.10) !important;
             text-decoration-color: transparent !important;
           }
         }
+        h3{
+          a {
+            color: var(--black) !important;
+            text-decoration: none !important;
+  
+            &:hover {
+              background-color: transparent !important;
+              color: var(--red) !important;
+            }
+  
+          }
+        }
+        
+
+        
       }
 
     }

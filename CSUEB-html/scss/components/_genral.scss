@@ -911,6 +911,14 @@ section.bg-white.section-with-padding+section.bg-white {
     padding-top: 0;
 }
 
+.heading-content {
+    iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+}
+
 .no-pseudo::before,
 .no-pseudo::after {
     content: none !important;

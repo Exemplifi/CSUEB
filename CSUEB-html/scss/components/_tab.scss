@@ -46,9 +46,7 @@
   }
 
   .tab-content {
-     @include media-breakpoint-down(md) {
-      padding-right: 1.25rem;
-    }
+    
      .tab-content-box {
       background-color: var(--light-gray);
       padding: 2rem;
