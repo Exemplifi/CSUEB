@@ -303,9 +303,7 @@
       padding-block: 2rem;
     }
 
-    @include media-breakpoint-up(xxl) {
-      padding-block: 5rem;
-    }
+   
 
     @include media-breakpoint-down(md) {
       padding-top: 0;

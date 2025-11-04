@@ -251,12 +251,12 @@
         
       }
     }
-    &:has(.form-sec) {
-     .img-wrapper{
-      max-width: 100%;
-     }
-    }
   }
+  &:has(.form-sec) {
+    .img-wrapper{
+     max-width: 100%;
+    }
+   }
 
   &.img-text-sec {
     &.left-img-text-sec {
