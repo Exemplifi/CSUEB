@@ -918,6 +918,12 @@ section.bg-white.section-with-padding+section.bg-white {
         aspect-ratio: 16 / 9;
     }
 }
+.img-text-full-width-sec.bg-white:has(.main-img-slider) + .img-text-full-width-sec.bg-white:has(.main-img-slider) {
+    margin-top: rem.convert(96px);
+    @include media-breakpoint-down(md) {
+        margin-top: rem.convert(72px);
+    }
+}
 
 .no-pseudo::before,
 .no-pseudo::after {

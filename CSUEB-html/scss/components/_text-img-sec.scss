@@ -175,13 +175,13 @@
     padding-top: rem.convert(36px);
     padding-left: rem.convert(36px);
 
-    @include media-breakpoint-up(xl) {
-      min-height: rem.convert(446px);
-    }
+    // @include media-breakpoint-up(xl) {
+    //   min-height: rem.convert(446px);
+    // }
 
-    @include media-breakpoint-up(lg) {
-      min-height: rem.convert(316px);
-    }
+    // @include media-breakpoint-up(lg) {
+    //   min-height: rem.convert(316px);
+    // }
 
     @include media-breakpoint-up(md) {
       position: sticky;
@@ -198,19 +198,20 @@
     }
 
     img {
-      object-fit: cover;
-      height: 100%;
-      width: 100%;
+      // object-fit: cover;
       position: relative;
       z-index: 2;
+      height: auto !important;
+      // width: 100%;
+      
 
-      @include media-breakpoint-up(xl) {
-        min-height: rem.convert(446px);
-      }
+      // @include media-breakpoint-up(xl) {
+      //   min-height: rem.convert(446px);
+      // }
 
-      @include media-breakpoint-up(lg) {
-        min-height: rem.convert(316px);
-      }
+      // @include media-breakpoint-up(lg) {
+      //   min-height: rem.convert(316px);
+      // }
     }
 
     video {

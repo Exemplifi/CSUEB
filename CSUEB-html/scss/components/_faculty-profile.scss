@@ -12,16 +12,6 @@
   overflow: hidden;
 
   .img-clip-path-box .img-wrapper {
-    height: rem.convert(362px);
-
-    @include media-breakpoint-down(md) {
-      height: rem.convert(314px);
-    }
-
-    img {
-      object-fit: cover;
-    }
-
     &::after {
       left: rem.convert(48px);
       max-height: rem.convert(123px);
