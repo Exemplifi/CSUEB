@@ -699,6 +699,7 @@
           color: var(--red) !important;
           display: inline-flex !important;
           word-break: break-word !important;
+          transition: all 0.3s ease-in-out;
 
           &:hover {
             background: rgba(213, 0, 50, 0.10) !important;
