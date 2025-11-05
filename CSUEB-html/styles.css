@@ -6165,12 +6165,12 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   font-family: var(--body-font-family);
   line-height: 1.5;
   letter-spacing: 0.05em;
-  word-spacing: 0.16em;
+  word-spacing: normal;
   margin-bottom: 0;
   background-color: rgba(0, 0, 0, 0.0392156863);
 }
 .card-color-hover .slide-text p, .flip-tiles-gallery-grid .gallery-item a .slide-text p {
-  max-width: 17.5rem;
+  max-width: 18.5rem;
   background-color: rgba(0, 0, 0, 0.0392156863);
 }
 .card-color-hover::after, .flip-tiles-gallery-grid .gallery-item a::after {

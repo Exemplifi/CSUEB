@@ -1782,13 +1782,13 @@
       font-family: var(--body-font-family);
       line-height: 1.5;
       letter-spacing: 0.05em;
-      word-spacing: 0.16em;
+      word-spacing: normal;
       margin-bottom: 0;
       background-color: rgba(0, 0, 0, 0.0392156863);
     }
 
     p {
-      max-width: rem.convert(280px);
+      max-width: rem.convert(296px);
       background-color: rgba(0, 0, 0, 0.0392156863);
     }
   }
