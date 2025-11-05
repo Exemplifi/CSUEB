@@ -6164,7 +6164,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .card-color-hover .slide-text .title, .flip-tiles-gallery-grid .gallery-item a .slide-text .title {
   font-family: var(--body-font-family);
   line-height: 1.5;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   word-spacing: 0.16em;
   margin-bottom: 0;
   background-color: rgba(0, 0, 0, 0.0392156863);
