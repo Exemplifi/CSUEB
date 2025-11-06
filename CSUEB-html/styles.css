@@ -5808,14 +5808,14 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .side-nav-with-content .side-nav-wrap .left-nav-wrap {
   width: 100%;
 }
-@media (min-width: 1400px) {
-  .side-nav-with-content .side-nav-wrap .left-nav-wrap {
-    width: 18.75rem;
-  }
-}
 @media (min-width: 1200px) {
   .side-nav-with-content .side-nav-wrap .left-nav-wrap {
     width: 16.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .side-nav-with-content .side-nav-wrap .left-nav-wrap {
+    width: 18.75rem;
   }
 }
 @media (max-width: 767.98px) {

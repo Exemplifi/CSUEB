@@ -1354,12 +1354,12 @@
     .left-nav-wrap {
       width: 100%;
 
-      @include media-breakpoint-up(xxl) {
-        width: rem.convert(300px);
-      }
-
       @include media-breakpoint-up(xl) {
         width: rem.convert(264px);
+      }
+
+      @media (min-width: 1280px) {
+        width: rem.convert(300px);
       }
 
       @include media-breakpoint-down(md) {
