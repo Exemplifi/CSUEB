@@ -78,7 +78,10 @@
         color: var(--white) !important;
         text-align: center;
         z-index: 3;
-        padding-left: rem.convert(16px);                                                                                     
+        padding-left: rem.convert(16px); 
+        h5{
+          font-size: rem.convert(40px);
+        }                                                                                    
       }
 
       img {

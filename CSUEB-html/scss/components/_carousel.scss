@@ -70,10 +70,10 @@
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     width: 100%;
-    min-height: rem.convert(754px);
+    min-height: rem.convert(376px);
 
     @include media-breakpoint-down(lg) {
-      min-height: rem.convert(533px);
+      min-height: rem.convert(376px);
     }
 
     img {
