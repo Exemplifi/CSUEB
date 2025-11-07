@@ -375,7 +375,7 @@ ul {
 }
 @media (max-width: 767.98px) {
   .section.testimonial-sec {
-    padding: 48x 1rem;
+    padding: 3rem 0;
   }
 }
 
@@ -2700,6 +2700,9 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
     gap: 3rem;
   }
 }
+.footer .footer-lists .footer-logo svg {
+  max-width: 100%;
+}
 .footer .social-icons {
   display: flex;
   flex-direction: row;
@@ -3102,6 +3105,11 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   background-image: url('data:image/svg+xml,<svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0L11.2567 16H18L6.74325 0H0Z" fill="%23FDC25A" fill-opacity="1"/></svg>');
   transition: all 0.3s ease-in-out;
   outline-offset: 2px;
+}
+@media (max-width: 575.98px) {
+  .button-with-pagination-sec .swiper-pagination {
+    max-width: 50%;
+  }
 }
 
 .pagination-container {
@@ -3930,6 +3938,11 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
     padding: 4rem 2rem 3rem 2rem;
   }
 }
+@media (max-width: 575.98px) {
+  .testimonial-sec .next-card {
+    padding: 4rem 1rem 3rem 1rem;
+  }
+}
 .testimonial-sec .next-card .section-heading .star-icon * {
   color: var(--black);
 }
@@ -3993,6 +4006,11 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   margin-inline: auto;
   position: relative;
   z-index: 3;
+}
+@media (max-width: 575.98px) {
+  .testimonial-with-paralax .next-card {
+    padding: 4rem 1rem 3rem 1rem;
+  }
 }
 @media (max-width: 767.98px) {
   .testimonial-with-paralax .next-card {
@@ -4061,6 +4079,14 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   .important-announcement-sec .next-card {
     padding: 2rem 1.75rem 3rem 1.75rem;
     border-width: 8px;
+  }
+}
+@media (max-width: 354px) {
+  .important-announcement-sec .next-card {
+    padding: 2rem 1rem 3rem 1rem;
+  }
+  .important-announcement-sec .next-card h2 {
+    font-size: 1.5rem;
   }
 }
 .important-announcement-sec .next-card .section-heading .star-icon * {

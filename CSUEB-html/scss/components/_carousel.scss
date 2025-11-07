@@ -449,6 +449,9 @@
         outline-offset: 2px;
       }
     }
+    @include media-breakpoint-down(sm) {
+      max-width: 50%;
+    }
 
   }
 

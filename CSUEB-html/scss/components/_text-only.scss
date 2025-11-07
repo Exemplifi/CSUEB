@@ -485,6 +485,9 @@
     @include media-breakpoint-down(md) {
       padding: 4rem 2rem 3rem 2rem;
     }
+    @include media-breakpoint-down(sm) {
+      padding: 4rem 1rem 3rem 1rem;
+    }
 
     .section-heading {
       .star-icon * {
@@ -565,10 +568,14 @@
     position: relative;
     z-index: 3;
 
+    @include media-breakpoint-down(sm) {
+      padding: 4rem 1rem 3rem 1rem;
+    }
+
     @include media-breakpoint-down(md) {
       padding: 4rem 2rem 3rem 2rem;
     }
-
+    
     .section-heading {
       .star-icon * {
         color: var(--grey-700);
@@ -636,6 +643,12 @@
     @include media-breakpoint-down(md) {
       padding: 2rem 1.75rem 3rem 1.75rem;
       border-width: 8px;
+    }
+    @media (max-width: 354px) {
+      padding: 2rem 1rem 3rem 1rem;
+      h2{
+        font-size: rem.convert(24px);
+      }
     }
 
     .section-heading {

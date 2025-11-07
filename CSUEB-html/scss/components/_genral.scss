@@ -73,9 +73,11 @@ ul {
         }
 
         @include media-breakpoint-down(md) {
-            padding: rem.convert(48x 16px);
+            padding: rem.convert(48px 0);
 
         }
+       
+      
     }
 }
 
