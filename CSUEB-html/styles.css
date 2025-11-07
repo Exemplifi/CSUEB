@@ -4791,7 +4791,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
     clip-path: polygon(0 0, 100% 0, 100% 100%, 188px 100%, 0 calc(100% - 268px));
   }
 }
-@media (min-width: 1900px) {
+@media (min-width: 2200px) {
   .img-clip-path .img-wrapper img:not(.star-svg) {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 160px 100%, 0 calc(100% - 217px));
   }
