@@ -7929,9 +7929,9 @@ table thead th tr {
   border-bottom: 2px solid var(--gold) !important;
 }
 table td {
-  width: auto !important;
-  padding: 0.5rem 2rem !important;
-  font-size: 1rem !important;
+  width: auto;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
   line-height: 1.75 !important;
   font-weight: 500 !important;
 }
