@@ -7951,7 +7951,7 @@ table caption {
   color: var(--black);
 }
 table.gsc-search-box td {
-  padding: 0 !important;
+  padding: 0;
   width: 100% !important;
 }
 table.gsc-input td {
@@ -7962,7 +7962,7 @@ table.gsc-search-box tr {
   border-bottom: none !important;
 }
 table.gssb_c td {
-  padding: 0 !important;
+  padding: 0;
 }
 table.gsc-completion-container tr {
   border: none !important;
