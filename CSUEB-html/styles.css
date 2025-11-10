@@ -8362,7 +8362,7 @@ table:not(.gssb_c) {
   box-shadow: none !important;
 }
 .gsc-search-box-tools .gsc-input-box table tr:focus-within {
-  border-color: var(--gold) !important;
+  border-color: var(--dark-grey) !important;
 }
 .gsc-search-box-tools .gsc-input .gsc-input-box {
   border: none;
