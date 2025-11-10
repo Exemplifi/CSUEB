@@ -6813,6 +6813,9 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
     padding-inline: 2rem;
   }
 }
+.inner-hero-full-slider .inner-hero-slider .pagination-container {
+  z-index: unset;
+}
 @media (min-width: 1920px) {
   .inner-hero-full-slider .inner-hero-slider .pagination-container {
     max-width: 120rem !important;
