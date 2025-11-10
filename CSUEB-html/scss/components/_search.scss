@@ -70,7 +70,7 @@
     }
 
     .gsst_a .gscb_a {
-        color: #a1b9ed;
+        color: var(--dark-grey);
         cursor: pointer;
         vertical-align: middle;
     }
@@ -142,6 +142,7 @@
             &.gsc-cursor-current-page {
                 color: var(--red) !important;
             }
+            
         }
     }
 }

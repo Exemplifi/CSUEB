@@ -7958,6 +7958,11 @@ table.gsc-input td {
   padding: 0.3125rem 1rem !important;
   width: 100% !important;
 }
+@media (max-width: 575.98px) {
+  table.gsc-input td {
+    padding: 0.3125rem 0.5rem;
+  }
+}
 table.gsc-search-box tr {
   border-bottom: none !important;
 }
@@ -8389,7 +8394,7 @@ table:not(.gssb_c) {
   line-height: 0;
 }
 .gsc-search-box-tools .gsst_a .gscb_a {
-  color: #a1b9ed;
+  color: var(--dark-grey);
   cursor: pointer;
   vertical-align: middle;
 }
