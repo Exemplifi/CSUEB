@@ -7939,7 +7939,7 @@ table td:last-child {
   padding-right: 0 !important;
 }
 table td:first-child {
-  padding-left: 0.5rem !important;
+  padding-left: 0.5rem;
 }
 table th:has(.screen-only) {
   display: none;

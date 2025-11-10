@@ -109,7 +109,7 @@ table{
     }
 
     &:first-child {
-      padding-left: rem.convert(8px) !important;
+      padding-left: rem.convert(8px);
     }
   }
 
