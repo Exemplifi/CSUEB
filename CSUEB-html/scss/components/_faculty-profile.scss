@@ -268,8 +268,8 @@
   }
   &.bg-light-gray {
     @include media-breakpoint-down(sm){
-      padding-left: 0;
-      padding-right: 0;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
     }
   }
 }
