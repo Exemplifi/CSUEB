@@ -856,10 +856,6 @@ section.bg-white.section-with-padding+section.bg-white {
 }
 
 .section {
-    .section:not(.bg-red):last-child {
-        padding-bottom: 0;
-    }
-
 
     &.bg-white.side-nav-with-content {
         &:has(+ .bg-white.contact-us-sec) {
