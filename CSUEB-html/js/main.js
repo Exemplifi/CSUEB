@@ -629,7 +629,7 @@ function initMainImgSlider() {
   new Swiper(".main-img-slider", {
     slidesPerView: 1,
     spaceBetween: 0,
-    loop: true,
+    loop: false,
     allowTouchMove: true,
     navigation: {
       nextEl: ".main-img-slider .swiper-button-next.swiper-btn",
@@ -638,12 +638,8 @@ function initMainImgSlider() {
     },
     pagination: {
       el: ".main-img-slider .swiper-pagination",
-      clickable: true,
-      dynamicBullets: true,
-    },
-    // Force navigation to always be visible
-    watchSlidesProgress: true,
-    watchSlidesVisibility: true,
+      clickable: true
+    }
   });
 }
 
