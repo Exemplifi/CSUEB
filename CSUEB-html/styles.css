@@ -8112,7 +8112,6 @@ table:not(.gssb_c) {
 }
 
 .faculty-details-wrapper {
-  padding-right: 1.25rem;
   overflow: hidden;
 }
 .faculty-details-wrapper .img-clip-path-box .img-wrapper::after {
@@ -8294,6 +8293,11 @@ table:not(.gssb_c) {
 .experts-profile-faculty-wraper .img-clip-path-box .img-wrapper {
   max-width: 25rem;
 }
+@media (max-width: 575.98px) {
+  .experts-profile-faculty-wraper .img-clip-path-box .img-wrapper {
+    min-height: unset;
+  }
+}
 .experts-profile-faculty-wraper .img-clip-path-box .img-wrapper .play-btn {
   background: rgba(0, 0, 0, 0.7);
   border: none;
@@ -8324,6 +8328,12 @@ table:not(.gssb_c) {
 }
 .experts-profile-faculty-wraper.img-text-sec.left-img-text-sec .row-section {
   flex-direction: row;
+}
+@media (max-width: 575.98px) {
+  .experts-profile-faculty-wraper.bg-light-gray {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .gsc-control-cse {

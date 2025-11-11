@@ -8,9 +8,7 @@
 }
 
 .faculty-details-wrapper {
-  padding-right: rem.convert(20px);
   overflow: hidden;
-
   .img-clip-path-box .img-wrapper {
     &::after {
       left: rem.convert(48px);
@@ -220,6 +218,9 @@
   .img-clip-path-box {
     .img-wrapper {
       max-width: rem.convert(400px);
+      @include media-breakpoint-down(sm){
+        min-height: unset;
+      }
       .play-btn {
         background: rgba(0, 0, 0, 0.7);
         border: none;
@@ -263,6 +264,12 @@
       .row-section {
         flex-direction: row;
       }
+    }
+  }
+  &.bg-light-gray {
+    @include media-breakpoint-down(sm){
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }
