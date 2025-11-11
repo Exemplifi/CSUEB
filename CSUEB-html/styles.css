@@ -8331,8 +8331,8 @@ table:not(.gssb_c) {
 }
 @media (max-width: 575.98px) {
   .experts-profile-faculty-wraper.bg-light-gray {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
 
