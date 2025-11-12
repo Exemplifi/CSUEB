@@ -303,7 +303,7 @@
       padding-block: 2rem;
     }
 
-   
+
 
     @include media-breakpoint-down(md) {
       padding-top: 0;
@@ -1267,6 +1267,14 @@
 }
 
 .review-text-img {
+  .row-section{
+    @include media-breakpoint-up(md) {
+      row-gap: rem.convert(64px);
+    }
+    @include media-breakpoint-up(xl) {
+      --bs-gutter-x: 4rem;
+    }
+  }
   .image-section {
     padding-top: rem.convert(20px);
     position: relative;
@@ -1280,7 +1288,6 @@
     @include media-breakpoint-up(md) {
       background: var(--light-gray);
       padding: 3rem 3rem 3rem 2rem;
-
       &::after {
         content: "";
         background: var(--light-gray);
@@ -2024,6 +2031,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+
     .bottom-content-sec {
       padding-right: 0;
       height: 100%;

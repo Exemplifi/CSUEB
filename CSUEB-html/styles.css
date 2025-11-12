@@ -1062,6 +1062,27 @@ section.bg-white.section-with-padding + section.bg-white {
   padding: 0rem;
 }
 
+.has-divider {
+  padding-bottom: 4rem;
+  margin-bottom: 4rem;
+  position: relative;
+}
+@media (max-width: 767.98px) {
+  .has-divider {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+.has-divider::after {
+  content: "";
+  background: #e5e6e7;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.0625rem;
+}
+
 .bg-light-gray + .bg-light-gray {
   padding-top: 0;
 }
@@ -5745,6 +5766,16 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   }
 }
 
+@media (min-width: 768px) {
+  .review-text-img .row-section {
+    row-gap: 4rem;
+  }
+}
+@media (min-width: 1200px) {
+  .review-text-img .row-section {
+    --bs-gutter-x: 4rem;
+  }
+}
 .review-text-img .image-section {
   padding-top: 1.25rem;
   position: relative;
