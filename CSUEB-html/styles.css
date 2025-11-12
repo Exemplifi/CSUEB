@@ -4969,6 +4969,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   width: 100%;
   z-index: 2;
   aspect-ratio: 16/9;
+  position: relative;
 }
 .img-clip-path-box .img-wrapper::before {
   content: "";
@@ -7017,9 +7018,7 @@ body:has(.home-hero-sec) .main-header > .container {
 }
 .campus-news .news-card img {
   transition: transform 0.4s ease;
-  height: 100%;
-  object-fit: cover;
-  min-height: 283px;
+  height: auto;
 }
 .campus-news .news-card.main-first-card img {
   max-height: 591px;
@@ -7071,12 +7070,7 @@ body:has(.home-hero-sec) .main-header > .container {
   z-index: 4;
   background: rgba(0, 0, 0, 0.0392156863);
 }
-@media (min-width: 1400px) {
-  .campus-news .news-card .overlay .news-content {
-    max-width: 80%;
-  }
-}
-.campus-news .news-card .overlay .news-content h3, .campus-news .news-card .overlay .news-content h4 {
+.campus-news .news-card .overlay .news-content h3, .campus-news .news-card .overlay .news-content h4, .campus-news .news-card .overlay .news-content h2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -7084,7 +7078,7 @@ body:has(.home-hero-sec) .main-header > .container {
   text-overflow: ellipsis;
 }
 @media (max-width: 767.98px) {
-  .campus-news .news-card .overlay .news-content h3, .campus-news .news-card .overlay .news-content h4 {
+  .campus-news .news-card .overlay .news-content h3, .campus-news .news-card .overlay .news-content h4, .campus-news .news-card .overlay .news-content h2 {
     font-size: 1.125rem;
     line-height: 1.4;
   }
