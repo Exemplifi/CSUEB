@@ -1269,11 +1269,23 @@
 
 .review-text-img {
   .row-section{
-    @include media-breakpoint-up(md) {
-      row-gap: rem.convert(64px);
+    margin-bottom: rem.convert(32px);
+    @include media-breakpoint-down(md){
+      margin-bottom: rem.convert(16px);
+    }
+    &:last-child{
+      margin-bottom: 0;
     }
     @include media-breakpoint-up(xl) {
       --bs-gutter-x: 4rem;
+    }
+    &.has-divider{
+      padding-bottom: rem.convert(32px);
+      margin-bottom: rem.convert(32px);
+      @include media-breakpoint-down(md){
+        padding-bottom: rem.convert(16px);
+        margin-bottom: rem.convert(16px);
+      }
     }
   }
   .image-section {
