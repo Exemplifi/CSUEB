@@ -235,8 +235,8 @@
         gap: 0.25rem;
         transition: background 0.4s;
         position: absolute;
-        top: calc(50% - 16px);
-        left: calc(50% - 16px);
+        top: calc(50% + 18px);
+        left: calc(50% + 18px);
         transform: translate(-50%, -50%);
         z-index: 2;
         svg{
