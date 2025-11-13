@@ -1422,4 +1422,10 @@
       gap: rem.convert(24px);
     }
   }
+  &:has(.section-heading){
+    padding: rem.convert(96px 0);
+    @include media-breakpoint-down(md){
+      padding: rem.convert(72px 0);
+    }
+  }
 }

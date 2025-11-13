@@ -50,7 +50,10 @@
       }
 
       @media(min-width: 2200px) {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 160px 100%, 0 calc(100% - 217px));
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 160px 100%, 0 calc(100% - 224px));
+      }
+      @media(min-width: 2400px) {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 152px 100%, 0 calc(100% - 206px));
       }
 
       @include media-breakpoint-down(xxl) {
