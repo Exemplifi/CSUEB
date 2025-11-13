@@ -125,7 +125,7 @@
     text-overflow: ellipsis;
     word-break: break-word;
     word-wrap: break-word;
-    max-height: calc(1.75em * 4); // Fallback for line-height * line-clamp
+    max-height: calc(1.75em * 4.30); // Fallback for line-height * line-clamp
     line-height: 1.75;
 
     &.expand {

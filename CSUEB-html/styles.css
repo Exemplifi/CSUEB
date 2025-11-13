@@ -8283,7 +8283,7 @@ table:not(.gssb_c) {
   text-overflow: ellipsis;
   word-break: break-word;
   word-wrap: break-word;
-  max-height: 7em;
+  max-height: 7.525em;
   line-height: 1.75;
 }
 .faculty-more-info .faculty-desc-wrap.expand {
