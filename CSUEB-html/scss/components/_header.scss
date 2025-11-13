@@ -203,6 +203,20 @@
       @include media-breakpoint-down(lg) {
         display: none;
       }
+      .dropdown-menu{
+        li{
+          a{
+            text-decoration: underline;
+            text-decoration-thickness: 1px !important;
+            text-underline-offset: 3px !important;
+            transition: all 0.3s ease-in-out;
+            &:hover{
+              text-decoration-color: transparent !important;
+              text-decoration-thickness: 1px !important;
+            }
+          }
+        }
+      }
     }
 
     @include media-breakpoint-down(sm) {
@@ -1056,9 +1070,15 @@
         }
 
         a {
-          text-decoration: none;
           display: inline-block;
           margin-bottom: rem.convert(2px);
+          text-underline-offset: 3px;
+          text-decoration-thickness: 1px;
+          transition: all 0.3s ease-in-out;
+          &:hover{
+            text-decoration-color: transparent !important;
+            text-decoration-thickness: 1px !important;
+          }
 
           @include media-breakpoint-down(md) {
             font-size: rem.convert(14px);
