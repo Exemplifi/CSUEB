@@ -8277,13 +8277,22 @@ table:not(.gssb_c) {
 .faculty-more-info .faculty-desc-wrap {
   display: -webkit-box;
   -webkit-line-clamp: 4;
+  line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+  word-break: break-word;
+  word-wrap: break-word;
+  max-height: 7em;
+  line-height: 1.75;
 }
 .faculty-more-info .faculty-desc-wrap.expand {
+  display: block;
   -webkit-line-clamp: unset;
-  max-height: 100%;
+  line-clamp: unset;
+  -webkit-box-orient: unset;
+  max-height: none;
+  overflow: visible;
 }
 .faculty-more-info .faculty-desc-wrap a {
   color: var(--red);
