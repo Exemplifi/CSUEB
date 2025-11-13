@@ -2655,22 +2655,21 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .more-menu-wrap .collapse-menu .section-title .sub-column a {
   display: inline-block;
   margin-bottom: 0.125rem;
+  text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
   transition: all 0.3s ease-in-out;
 }
 .more-menu-wrap .collapse-menu .section-title .sub-column a:hover {
+  color: var(--gold);
   text-decoration-color: transparent !important;
   text-decoration-thickness: 1px !important;
+  transition: all 0.3s ease-in-out;
 }
 @media (max-width: 767.98px) {
   .more-menu-wrap .collapse-menu .section-title .sub-column a {
     font-size: 0.875rem;
   }
-}
-.more-menu-wrap .collapse-menu .section-title .sub-column a:hover {
-  color: var(--gold);
-  text-decoration: underline;
 }
 .more-menu-wrap .collapse-menu .section-title .btn-expand {
   background-color: transparent;

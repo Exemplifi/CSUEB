@@ -1072,22 +1072,22 @@
         a {
           display: inline-block;
           margin-bottom: rem.convert(2px);
+          text-decoration: underline;
           text-underline-offset: 3px;
           text-decoration-thickness: 1px;
           transition: all 0.3s ease-in-out;
           &:hover{
+            color: var(--gold);
             text-decoration-color: transparent !important;
             text-decoration-thickness: 1px !important;
+            transition: all 0.3s ease-in-out;
+            
           }
 
           @include media-breakpoint-down(md) {
             font-size: rem.convert(14px);
           }
 
-          &:hover {
-            color: var(--gold);
-            text-decoration: underline;
-          }
         }
       }
 
