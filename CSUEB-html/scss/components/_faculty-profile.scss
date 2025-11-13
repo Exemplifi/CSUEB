@@ -146,6 +146,21 @@
         text-decoration-color: transparent;
       }
     }
+    img{
+      max-width: 100%;
+      height: auto;
+      width: 100%;
+    }
+    iframe{
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+    }
+    video{
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
   }
 
   .read-more-btn {

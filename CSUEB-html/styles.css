@@ -8302,6 +8302,21 @@ table:not(.gssb_c) {
   background: rgba(213, 0, 50, 0.1);
   text-decoration-color: transparent;
 }
+.faculty-more-info .faculty-desc-wrap img {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+}
+.faculty-more-info .faculty-desc-wrap iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+.faculty-more-info .faculty-desc-wrap video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
 .faculty-more-info .read-more-btn {
   width: max-content;
   display: inline-flex;
