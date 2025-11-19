@@ -6899,12 +6899,22 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
     margin-inline: auto;
   }
 }
+@media (max-width: 768px) {
+  .inner-hero-full-slider .inner-hero-slider:has(.section-videotexture) .img-wrapper {
+    padding-top: 104px;
+    min-height: auto;
+    height: auto;
+  }
+}
 .inner-hero-full-slider .inner-hero-slider:has(.section-videotexture) .img-wrapper .video-thumbnail-image {
   display: none;
 }
 @media (max-width: 768px) {
   .inner-hero-full-slider .inner-hero-slider:has(.section-videotexture) .img-wrapper .video-thumbnail-image {
     display: block;
+    object-fit: contain;
+    height: auto;
+    min-height: auto;
   }
 }
 @media (max-width: 768px) {

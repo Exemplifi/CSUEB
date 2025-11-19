@@ -424,11 +424,19 @@
 
     &:has(.section-videotexture) {
       .img-wrapper {
+        @media(max-width: 768px) {
+         padding-top: 104px;
+         min-height: auto;
+         height: auto;
+        }
         .video-thumbnail-image {
           display: none;
 
           @media(max-width: 768px) {
             display: block;
+            object-fit: contain;
+            height: auto;
+            min-height: auto;
           }
         }
 
