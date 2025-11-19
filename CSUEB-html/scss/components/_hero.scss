@@ -446,6 +446,14 @@
           }
         }
       }
+      .content-section{
+        .slider-heading {
+          @media(max-width: 768px) {
+            text-align: center !important;
+            padding-bottom: rem.convert(60px);
+          }
+        }
+      }
     }
   }
 
