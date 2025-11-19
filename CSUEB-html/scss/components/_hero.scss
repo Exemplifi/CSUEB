@@ -425,10 +425,15 @@
     &:has(.section-videotexture) {
       .img-wrapper {
         @media(max-width: 768px) {
-         padding-top: 104px;
-         min-height: auto;
-         height: auto;
+          padding-top: 104px;
+          min-height: auto;
+          height: auto;
+
+          &::after {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 1) 100%);
+          }
         }
+
         .video-thumbnail-image {
           display: none;
 
@@ -446,10 +451,12 @@
           }
         }
       }
-      .content-section{
+
+      .content-section {
         @media(max-width: 768px) {
           padding-bottom: rem.convert(60px);
         }
+
         .slider-heading {
           @media(max-width: 768px) {
             text-align: center !important;

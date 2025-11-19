@@ -6905,6 +6905,9 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
     min-height: auto;
     height: auto;
   }
+  .inner-hero-full-slider .inner-hero-slider:has(.section-videotexture) .img-wrapper::after {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgb(0, 0, 0) 100%);
+  }
 }
 .inner-hero-full-slider .inner-hero-slider:has(.section-videotexture) .img-wrapper .video-thumbnail-image {
   display: none;
