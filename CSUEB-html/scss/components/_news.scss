@@ -278,8 +278,8 @@
     overflow-x: auto;
     padding-bottom: rem.convert(5px);
     position: relative;
-
-    @include media-breakpoint-up(md) {
+    padding-left: 0 !important;
+    padding-bottom: rem.convert(12px);
 
       &::-webkit-scrollbar-track {
         -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
@@ -289,7 +289,7 @@
 
       &::-webkit-scrollbar {
         width: rem.convert(10px);
-        height: rem.convert(4px);
+        height: rem.convert(8px);
         background-color: transparent;
       }
 
@@ -298,19 +298,11 @@
         -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0);
         background-color: var(--gold-10, rgba(253, 193, 90, 0.308));
       }
-    }
 
     @include media-breakpoint-down(md) {
-
-      // Hide scrollbar but keep scrolling functionality
       &::-webkit-scrollbar {
-        display: none;
+        height: rem.convert(6px);
       }
-
-      // Firefox - hide scrollbar
-      scrollbar-width: none;
-      // IE/Edge - hide scrollbar
-      -ms-overflow-style: none;
     }
 
     li {
