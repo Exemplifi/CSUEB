@@ -5378,7 +5378,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   background-color: transparent !important;
   color: var(--red) !important;
 }
-.text-img-main-card .bottom-content-sec a:not(.btn) {
+.text-img-main-card .bottom-content-sec a:not([class]) {
   text-decoration: underline !important;
 }
 .text-img-main-card .bottom-content-sec ul {

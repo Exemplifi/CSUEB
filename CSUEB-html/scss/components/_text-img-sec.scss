@@ -736,7 +736,7 @@
 
     }
 
-    a:not(.btn) {
+    a:not([class]) {
       text-decoration: underline !important;
     }
 
