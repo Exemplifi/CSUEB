@@ -6465,19 +6465,20 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   padding-bottom: 0.75rem;
 }
 .faculty-experts-litsing-sec .text-img-main-card .bottom-content-sec .expert-tags-sec .tag-item::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  border-radius: 0.625rem;
-  background-color: rgba(245, 245, 245, 0);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3) !important;
+  border-radius: 0.625rem !important;
+  background-color: rgba(245, 245, 245, 0) !important;
 }
 .faculty-experts-litsing-sec .text-img-main-card .bottom-content-sec .expert-tags-sec .tag-item::-webkit-scrollbar {
-  width: 0.625rem;
-  height: 0.5rem;
+  width: 0.625rem !important;
+  height: 0.5rem !important;
   background-color: rgba(245, 245, 245, 0);
 }
 .faculty-experts-litsing-sec .text-img-main-card .bottom-content-sec .expert-tags-sec .tag-item::-webkit-scrollbar-thumb {
   border-radius: 0.625rem;
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: white;
+  cursor: pointer !important;
 }
 @media (max-width: 767.98px) {
   .faculty-experts-litsing-sec .text-img-main-card .bottom-content-sec .expert-tags-sec .tag-item::-webkit-scrollbar {
