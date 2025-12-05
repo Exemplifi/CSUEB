@@ -2250,7 +2250,8 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 
 /* Accordion Items */
-.accordion-menu .accordion-header:focus-visible, .accordion-menu .accordion-item:focus-visible {
+.accordion-menu .accordion-header:focus-visible,
+.accordion-menu .accordion-item:focus-visible {
   outline: none !important;
   pointer-events: none;
 }
@@ -2654,6 +2655,18 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 @media (max-width: 767.98px) {
   .more-menu-wrap .collapse-menu .section-title > a {
+    font-size: 1rem;
+    flex: 0 0 calc(100% - 40px);
+  }
+}
+.more-menu-wrap .collapse-menu .section-title > p,
+.more-menu-wrap .collapse-menu .section-title > span {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+@media (max-width: 767.98px) {
+  .more-menu-wrap .collapse-menu .section-title > p,
+  .more-menu-wrap .collapse-menu .section-title > span {
     font-size: 1rem;
     flex: 0 0 calc(100% - 40px);
   }

@@ -203,14 +203,16 @@
       @include media-breakpoint-down(lg) {
         display: none;
       }
-      .dropdown-menu{
-        li{
-          a{
+
+      .dropdown-menu {
+        li {
+          a {
             text-decoration: underline;
             text-decoration-thickness: 1px !important;
             text-underline-offset: 3px !important;
             transition: all 0.3s ease-in-out;
-            &:hover{
+
+            &:hover {
               text-decoration-color: transparent !important;
               text-decoration-thickness: 1px !important;
             }
@@ -609,7 +611,9 @@
 
 /* Accordion Items */
 .accordion-menu {
-  .accordion-header:focus-visible , .accordion-item:focus-visible {
+
+  .accordion-header:focus-visible,
+  .accordion-item:focus-visible {
     outline: none !important;
     pointer-events: none;
   }
@@ -790,7 +794,8 @@
       font-weight: 700;
       line-height: 1.75;
       text-transform: uppercase;
-      &:hover{
+
+      &:hover {
         text-decoration-color: var(--black);
       }
 
@@ -1056,8 +1061,15 @@
         @include media-breakpoint-down(md) {
           font-size: rem.convert(16px);
           flex: 0 0 calc(100% - 40px);
-
-
+        }
+      }
+      >p,
+      >span {
+        font-size: rem.convert(20px);
+        font-weight: 600;
+        @include media-breakpoint-down(md) {
+          font-size: rem.convert(16px);
+          flex: 0 0 calc(100% - 40px);
         }
       }
 
@@ -1076,12 +1088,13 @@
           text-underline-offset: 3px;
           text-decoration-thickness: 1px;
           transition: all 0.3s ease-in-out;
-          &:hover{
+
+          &:hover {
             color: var(--gold);
             text-decoration-color: transparent !important;
             text-decoration-thickness: 1px !important;
             transition: all 0.3s ease-in-out;
-            
+
           }
 
           @include media-breakpoint-down(md) {
