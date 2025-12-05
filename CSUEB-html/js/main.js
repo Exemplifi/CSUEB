@@ -17,14 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initGalleryLightbox();
   initAccessibilityFeatures();
 
-
-  const submenuItems = document.querySelectorAll('.leftnav .sidenav .drop:not(.active) .sidenav-sub');
-  submenuItems.forEach(submenuItem => {
-    if (submenuItem && submenuItem.style.display === '') {
-      submenuItem.style.display = 'none';
-    }
-  });
-
   const expanderButtons = document.querySelectorAll('.btn-expander');
 
   expanderButtons.forEach(button => {
@@ -44,23 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
-  // Accordion for .main-dropdown > .btn-expander
-  // const mainDropdownExpanders = document.querySelectorAll('.main-dropdown > .btn-expander');
-  // mainDropdownExpanders.forEach(btn => {
-  //   btn.addEventListener('click', function () {
-  //     const menu = btn.parentElement.nextElementSibling;
-  //     if (menu && menu.classList.contains('sidenav-sub-menu')) {
-  //       menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-  //       btn.querySelector('.plus-minus-btn').classList.toggle('minus-btn', menu.style.display === 'block');
-  //     }
-  //   });
-  //   // Set initial state
-  //   const menu = btn.parentElement.nextElementSibling;
-  //   if (menu && menu.classList.contains('sidenav-sub-menu')) {
-  //     menu.style.display = 'none';
-  //   }
-  // });
 
 
   //script for left sidebar toggle by default active if have a tag active
