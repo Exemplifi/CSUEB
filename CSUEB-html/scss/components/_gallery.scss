@@ -1,4 +1,3 @@
-
 .gallery-item {
   display: block;
 }
@@ -49,7 +48,8 @@
       // padding-bottom:4rem;
       text-align: center;
       position: relative;
-      .modal-img-container {  
+
+      .modal-img-container {
         position: relative;
         width: auto;
         margin: 0 auto;
@@ -57,11 +57,10 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+
         &::after {
           content: "";
-          background: linear-gradient(180deg, rgba(0, 0, 0, 0) 63%, rgb(0 0 0 / 50%) 88.29%
-          88.29%
-          );
+          background: linear-gradient(180deg, rgba(0, 0, 0, 0) 63%, rgb(0 0 0 / 50%) 88.29% 88.29%);
           position: absolute;
           inset: 0;
           z-index: 2;
@@ -69,6 +68,7 @@
           height: 100%;
         }
       }
+
       .carousel-caption {
         right: 0;
         bottom: 0;
@@ -78,28 +78,34 @@
         color: var(--white) !important;
         text-align: center;
         z-index: 3;
-        padding-left: rem.convert(16px); 
-        h5{
+        padding-left: rem.convert(16px);
+
+        h5 {
           font-size: rem.convert(40px);
-        }                                                                                    
+        }
       }
 
       img {
         height: 85vh;
         object-fit: contain;
+
         @include media-breakpoint-down(md) {
           height: auto;
         }
       }
-    }       
+    }
 
     &-control {
+
       &-prev,
       &-next {
         width: auto;
         opacity: 1 !important;
-        &:hover{
-          .carousel-control-prev-icon, .carousel-control-next-icon {
+
+        &:hover {
+
+          .carousel-control-prev-icon,
+          .carousel-control-next-icon {
             border: 2px solid var(--white);
           }
         }
@@ -119,12 +125,14 @@
 [data-bs-theme="dark"] {
   .lightbox-modal {
     .carousel-control {
+
       &-next-icon,
       &-prev-icon {
         filter: none;
       }
     }
   }
+
   .video-lightbox-modal {
     .carousel-item::after {
       display: none;
@@ -134,6 +142,7 @@
 
 .btn {
   &-fullscreen {
+
     &-enlarge,
     &-exit {
       position: absolute;
@@ -156,3 +165,10 @@
   fill: currentcolor;
 }
 
+.photo-gallery {
+  >.container-fluid {
+    @include media-breakpoint-down(md) {
+      padding: 0;
+    }
+  }
+}

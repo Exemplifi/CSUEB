@@ -155,10 +155,11 @@
       }
       ul:not(:first-child) {
         margin-top: rem.convert(16px) !important;
+      }
+      ul{
         padding-left: rem.convert(16px) !important;
-
         li {
-          margin-bottom: rem.convert(2px) !important;
+          margin-bottom: rem.convert(8px) !important;
           list-style-type: initial !important;
 
           &:last-child {
@@ -169,10 +170,12 @@
 
       ol {
         padding-left: rem.convert(16px) !important;
-        margin-top: rem.convert(16px) !important;
+        &:not(:first-child) {
+          margin-top: rem.convert(16px) !important;
+        }
 
         li {
-          margin-bottom: rem.convert(2px) !important;
+          margin-bottom: rem.convert(8px) !important;
 
           &:last-child {
             margin-bottom: 0 !important;

@@ -1112,7 +1112,7 @@
 
       img {
         @include media-breakpoint-down(md) {
-          min-height: rem.convert(201px);
+          //min-height: rem.convert(201px);
           object-fit: cover;
         }
       }
@@ -1469,13 +1469,26 @@
       .message-content-sec {
         ul {
           list-style: disc;
-          padding-left: 1rem;
+          padding-left: 2rem;
           margin-bottom: 2rem;
+          ul{
+            margin-bottom: rem.convert(8px);
+          }
+          @include media-breakpoint-down(xl) {
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+          }
         }
 
         ol {
-          padding-left: 1rem;
+          padding-left: 2rem;
           margin-bottom: 2rem;
+          ul, ol{
+            margin-bottom: rem.convert(8px);
+          }
+          @include media-breakpoint-down(xl) {
+            margin-bottom: 1.5rem;
+          }
         }
 
         a:not([class]),
@@ -1592,12 +1605,13 @@
 
           .img-wrapper {
             padding-bottom: rem.convert(29px);
-            min-height: rem.convert(538px);
+            //min-height: rem.convert(538px);
             width: 100%;
+            margin-bottom: rem.convert(32px);
 
             @include media-breakpoint-down(md) {
               padding-bottom: rem.convert(27px);
-              min-height: rem.convert(201px);
+             // min-height: rem.convert(201px);
             }
 
             a:has(.video-wrap) {
@@ -1641,11 +1655,11 @@
             }
 
             img {
-              min-height: rem.convert(538px);
-              object-fit: cover;
+              //min-height: rem.convert(538px);
+              //object-fit: cover;
 
               @include media-breakpoint-down(md) {
-                min-height: rem.convert(201px);
+                //min-height: rem.convert(201px);
               }
             }
           }
@@ -1669,7 +1683,7 @@
 
         .content-section {
           @include media-breakpoint-down(md) {
-            padding-right: 1.25rem;
+            //padding-right: 1.25rem;
           }
 
           .full-sec-content {

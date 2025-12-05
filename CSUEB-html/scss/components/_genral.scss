@@ -48,7 +48,7 @@ ul {
     padding: rem.convert(96px 0px);
 
     @include media-breakpoint-down(md) {
-        padding: rem.convert(72px 0px);
+        padding: rem.convert(40px 0px);
 
     }
 
@@ -76,8 +76,8 @@ ul {
             padding: rem.convert(48px 0);
 
         }
-       
-      
+
+
     }
 }
 
@@ -138,7 +138,7 @@ ul {
 
         ul {
             margin-top: rem.convert(16px) !important;
-            padding-left: rem.convert(16px) !important;
+            padding-left: rem.convert(32px) !important;
             margin-bottom: 0 !important;
 
             li {
@@ -156,9 +156,8 @@ ul {
         }
 
         ol {
-            padding-left: rem.convert(16px) !important;
+            
             margin-top: rem.convert(16px) !important;
-            margin-bottom: 0 !important;
 
             li {
                 margin-bottom: rem.convert(2px) !important;
@@ -743,10 +742,17 @@ section.bg-white.section-with-padding+section.bg-white {
         display: inline-flex !important;
         word-break: break-word !important;
 
+        &:has(img) {
+            &:hover {
+                background: transparent !important;
+            }
+        }
+
         &:hover {
             background: rgba(213, 0, 50, 0.10) !important;
             text-decoration-color: transparent !important;
         }
+
     }
 
     .social-icons {
@@ -758,18 +764,22 @@ section.bg-white.section-with-padding+section.bg-white {
     }
 
     ul {
-        margin-bottom: 0 !important;
-
         li {
-            margin-bottom: rem.convert(2px) !important;
+            margin-bottom: rem.convert(8px);
             list-style-type: initial !important;
 
             &:last-child {
                 margin-bottom: 0 !important;
             }
-
             ul {
                 margin-top: 0 !important;
+                li{
+                    margin-bottom: rem.convert(4px);
+                    &:last-child {
+                        margin-bottom: 0 !important;
+                    }
+                }
+               
             }
         }
 
@@ -779,19 +789,30 @@ section.bg-white.section-with-padding+section.bg-white {
     }
 
     ol {
-        padding-left: rem.convert(16px) !important;
-        margin-top: rem.convert(16px) !important;
-        margin-bottom: 0 !important;
-
+        padding-left: rem.convert(32px);
+        margin-top: rem.convert(16px);
         li {
-            margin-bottom: rem.convert(2px) !important;
+            margin-bottom: rem.convert(8px);
 
             &:last-child {
                 margin-bottom: 0 !important;
             }
-
             ul {
                 margin-top: 0 !important;
+                li{
+                    margin-bottom: rem.convert(4px);
+                    &:last-child {
+                        margin-bottom: 0 !important;
+                    }
+                }
+                ol{
+                    li{
+                        margin-bottom: rem.convert(4px);
+                        &:last-child {
+                            margin-bottom: 0 !important;
+                        }
+                    }
+                }
             }
         }
 
@@ -878,7 +899,6 @@ section.bg-white.section-with-padding+section.bg-white {
 
 .row.white-bg {
     background-color: var(--white);
-    display: none;
 }
 
 .divider {
@@ -903,14 +923,17 @@ section.bg-white.section-with-padding+section.bg-white {
         }
     }
 }
+
 .has-divider {
     padding-bottom: rem.convert(64px);
     margin-bottom: rem.convert(64px);
     position: relative;
+
     @include media-breakpoint-down(md) {
-      padding-bottom: rem.convert(32px);
-      margin-bottom: rem.convert(32px);
+        padding-bottom: rem.convert(32px);
+        margin-bottom: rem.convert(32px);
     }
+
     &::after {
         content: "";
         background: #e5e6e7;
@@ -919,9 +942,9 @@ section.bg-white.section-with-padding+section.bg-white {
         left: 0;
         width: calc(100%);
         height: rem.convert(1px);
-      }
-    
-  }
+    }
+
+}
 
 // .has-divider {
 //     padding-bottom: rem.convert(64px);
@@ -958,8 +981,10 @@ section.bg-white.section-with-padding+section.bg-white {
         aspect-ratio: 16 / 9;
     }
 }
-.img-text-full-width-sec.bg-white:has(.main-img-slider) + .img-text-full-width-sec.bg-white:has(.main-img-slider) {
+
+.img-text-full-width-sec.bg-white:has(.main-img-slider)+.img-text-full-width-sec.bg-white:has(.main-img-slider) {
     margin-top: rem.convert(96px);
+
     @include media-breakpoint-down(md) {
         margin-top: rem.convert(72px);
     }

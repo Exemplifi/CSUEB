@@ -18,6 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
   initAccessibilityFeatures();
 
 
+  const submenuItems = document.querySelectorAll('.leftnav .sidenav .drop:not(.active) .sidenav-sub');
+  submenuItems.forEach(submenuItem => {
+    if (submenuItem && submenuItem.style.display === '') {
+      submenuItem.style.display = 'none';
+    }
+  });
 
   const expanderButtons = document.querySelectorAll('.btn-expander');
 
@@ -399,19 +405,24 @@ function initGallerySlider() {
   // Initialize sliders inside .right-content with 3 slides at 1280px
   rightContentSliders.forEach(slider => {
     new Swiper(slider, {
-      slidesPerView: 1.2,
+      slidesPerView: 1,
       spaceBetween: 4,
       watchOverflow: true,
       breakpoints: {
-        640: { slidesPerView: 2.1 },
+        640: { slidesPerView: 2 },
         768: { slidesPerView: 3 },
         1024: { slidesPerView: 4 },
         1280: { slidesPerView: 3 },
       },
-      pagination: {
-        el: slider.querySelector('.image-gallery-slider .swiper-pagination'),
-        clickable: true,
-      },
+      // Show pagination only if slides count is 20 or fewer
+      ...(slider.querySelectorAll('.swiper-slide').length > 20
+        ? {}
+        : {
+            pagination: {
+              el: slider.querySelector('.image-gallery-slider .swiper-pagination'),
+              clickable: true,
+            }
+          }),
       navigation: {
         nextEl: slider.querySelector('.image-gallery-slider .swiper-button-next.swiper-button-next-new'),
         prevEl: slider.querySelector('.image-gallery-slider .swiper-button-prev.swiper-button-prev-new'),
