@@ -2360,7 +2360,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   }
 }
 .secondary-nav-sec .secondary-nav {
-  row-gap: 0rem;
+  row-gap: 0.5rem;
   column-gap: 1.5rem;
   padding-inline: 2rem;
   margin-bottom: 0;
@@ -2371,6 +2371,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
     column-gap: 1.5rem;
     max-width: fit-content;
     margin: 0 auto;
+    flex-wrap: nowrap !important;
   }
 }
 @media (min-width: 1200px) {
@@ -2380,7 +2381,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 @media (min-width: 1400px) {
   .secondary-nav-sec .secondary-nav {
-    column-gap: 1.75rem;
+    column-gap: 1.5rem;
     padding-inline: 2rem;
   }
 }

@@ -743,7 +743,7 @@
   }
 
   .secondary-nav {
-    row-gap: rem.convert(0px);
+    row-gap: rem.convert(8px);
     column-gap: rem.convert(24px);
     padding-inline: rem.convert(32px);
     margin-bottom: 0;
@@ -753,6 +753,7 @@
       column-gap: rem.convert(24px);
       max-width: fit-content;
       margin: 0 auto;
+      flex-wrap: nowrap !important;
     }
 
     @include media-breakpoint-up(xl) {
@@ -760,7 +761,7 @@
     }
 
     @include media-breakpoint-up(xxl) {
-      column-gap: rem.convert(28px);
+      column-gap: rem.convert(24px);
       padding-inline: rem.convert(32px);
     }
 
