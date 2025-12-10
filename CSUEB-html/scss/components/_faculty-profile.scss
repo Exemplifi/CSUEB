@@ -337,6 +337,19 @@
       height: auto !important;
       margin-top: rem.convert(16px);
     }
+    
+    ul {
+      margin-bottom: rem.convert(16px);
+      margin-top: rem.convert(16px);
+      list-style: disc;
+      padding-left: rem.convert(32px);
+      @include media-breakpoint-down(md){
+        padding-left: rem.convert(24px);
+      }
+      ul{
+        margin-top: 0;
+      }
+    }
   }
 
   &.img-text-sec {
