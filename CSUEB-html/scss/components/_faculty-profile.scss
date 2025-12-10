@@ -17,7 +17,21 @@
       max-width: rem.convert(14.53px);
     }
   }
-
+ .heading-content{
+  img{
+    width: 100% !important;
+    height: auto !important;
+  }
+  iframe{
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+  }
+  video{
+    width: 100% !important;
+    height: auto !important;
+  }
+ }
   .faculty-info {
     h3 {
       font-size: rem.convert(24px);
@@ -317,6 +331,11 @@
     video {
       width: 100%;
       height: auto;
+    }
+    img{
+      width: 100% !important;
+      height: auto !important;
+      margin-top: rem.convert(16px);
     }
   }
 

@@ -8298,6 +8298,19 @@ table:not(.gssb_c) {
   max-height: 7.6875rem;
   max-width: 0.908125rem;
 }
+.faculty-details-wrapper .heading-content img {
+  width: 100% !important;
+  height: auto !important;
+}
+.faculty-details-wrapper .heading-content iframe {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 16/9;
+}
+.faculty-details-wrapper .heading-content video {
+  width: 100% !important;
+  height: auto !important;
+}
 .faculty-details-wrapper .faculty-info h3 {
   font-size: 1.5rem;
 }
@@ -8549,6 +8562,11 @@ table:not(.gssb_c) {
 .experts-profile-faculty-wraper:has(.form-sec) video {
   width: 100%;
   height: auto;
+}
+.experts-profile-faculty-wraper:has(.form-sec) img {
+  width: 100% !important;
+  height: auto !important;
+  margin-top: 1rem;
 }
 .experts-profile-faculty-wraper.img-text-sec.left-img-text-sec .row-section {
   flex-direction: row;
