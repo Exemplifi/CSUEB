@@ -9,6 +9,7 @@
 
 .faculty-details-wrapper {
   overflow: hidden;
+
   .img-clip-path-box .img-wrapper {
     &::after {
       left: rem.convert(48px);
@@ -62,9 +63,10 @@
           height: rem.convert(24px);
           margin-top: rem.convert(2px);
           filter: brightness(0) saturate(100%) invert(30%) sepia(6%) saturate(467%) hue-rotate(139deg) brightness(97%) contrast(88%);
-         
+
         }
-        svg{
+
+        svg {
           flex: 0 0 rem.convert(24px);
           width: rem.convert(24px);
           height: rem.convert(24px);
@@ -155,17 +157,20 @@
         text-decoration-color: transparent;
       }
     }
-    img{
+
+    img {
       max-width: 100%;
       height: auto;
       width: 100%;
     }
-    iframe{
+
+    iframe {
       width: 100%;
       height: auto;
       aspect-ratio: 16 / 9;
     }
-    video{
+
+    video {
       width: 100%;
       max-width: 100%;
       height: auto;
@@ -209,8 +214,24 @@
   .content-section {
     gap: 0;
     padding-top: rem.convert(34px);
-    @include media-breakpoint-up(md){
+
+    @include media-breakpoint-up(md) {
       width: 50%;
+    }
+  }
+
+  .form-sec,
+  .img-content-section {
+    iframe {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      margin-top: rem.convert(32px);
+    }
+
+    video {
+      width: 100%;
+      height: auto;
     }
   }
 
@@ -242,9 +263,11 @@
   .img-clip-path-box {
     .img-wrapper {
       max-width: rem.convert(400px);
-      @include media-breakpoint-down(sm){
+
+      @include media-breakpoint-down(sm) {
         min-height: unset;
       }
+
       .play-btn {
         background: rgba(0, 0, 0, 0.7);
         border: none;
@@ -263,25 +286,39 @@
         left: calc(50% + 18px);
         transform: translate(-50%, -50%);
         z-index: 2;
-        svg{
-          path{
+
+        svg {
+          path {
             fill: var(--white);
           }
         }
       }
-      &:hover{
-        .play-btn{
+
+      &:hover {
+        .play-btn {
           background: rgba(0, 0, 0, 1);
         }
-        
+
       }
     }
   }
+
   &:has(.form-sec) {
-    .img-wrapper{
-     max-width: 100%;
+    .img-wrapper {
+      max-width: 100%;
     }
-   }
+
+    iframe {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+    }
+  }
 
   &.img-text-sec {
     &.left-img-text-sec {
@@ -290,8 +327,9 @@
       }
     }
   }
+
   &.bg-light-gray {
-    @include media-breakpoint-down(sm){
+    @include media-breakpoint-down(sm) {
       padding-left: 0 !important;
       padding-right: 0 !important;
     }

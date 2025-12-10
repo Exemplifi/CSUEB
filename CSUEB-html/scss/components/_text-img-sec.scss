@@ -52,6 +52,7 @@
       @media(min-width: 2200px) {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 160px 100%, 0 calc(100% - 224px));
       }
+
       @media(min-width: 2400px) {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 152px 100%, 0 calc(100% - 206px));
       }
@@ -804,7 +805,8 @@
     transition: all 0.4s ease;
     // cursor: pointer;
     position: relative;
-    height: rem.convert(246px);
+    //height: rem.convert(246px);
+    display: block;
 
     @include media-breakpoint-down(md) {
       height: rem.convert(228px);
@@ -836,7 +838,7 @@
     &::after {
       content: "";
       background: linear-gradient(180deg,
-          rgba(0, 0, 0, 0) 15%,
+          rgba(0, 0, 0, 0) 40%,
           rgba(0, 0, 0, 0.9) 73.29% 71.29%);
       position: absolute;
       inset: 0;
@@ -865,9 +867,21 @@
         .button-grp {
           background: #0000000a;
           margin-top: rem.convert(12px);
+          color: var(--white);
+          width: 100%;
+          padding: rem.convert(0px);
+          text-transform: capitalize;
+          display: flex;
+          align-items: center;
+          gap: rem.convert(8px);
 
           a {
             text-decoration: none !important;
+          }
+
+          .arrow {
+            color: var(--gold);
+            transition: all 0.4s ease-in-out;
           }
 
           @include media-breakpoint-up(md) {
@@ -886,17 +900,12 @@
 
       span {
         font-weight: 600;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
       }
 
       &:hover {
         .arrow {
           color: var(--white);
-
+          transform: rotate(-45deg);
           * {
             color: var(--white);
           }
@@ -909,6 +918,13 @@
 
       .button-grp {
         background: #00000000 !important;
+      }
+      .arrow {
+        color: var(--white);
+        transform: rotate(-45deg);
+        * {
+          color: var(--white);
+        }
       }
 
       @include media-breakpoint-up(md) {
@@ -993,7 +1009,7 @@
       }
 
       img {
-        transform: scale(1.05);
+        transform: scale(1.02);
       }
 
       .btn-secondary {
@@ -1271,26 +1287,32 @@
 }
 
 .review-text-img {
-  .row-section{
+  .row-section {
     margin-bottom: rem.convert(32px);
-    @include media-breakpoint-down(md){
+
+    @include media-breakpoint-down(md) {
       margin-bottom: rem.convert(16px);
     }
-    &:last-child{
+
+    &:last-child {
       margin-bottom: 0;
     }
+
     @include media-breakpoint-up(xl) {
       --bs-gutter-x: 4rem;
     }
-    &.has-divider{
+
+    &.has-divider {
       padding-bottom: rem.convert(32px);
       margin-bottom: rem.convert(32px);
-      @include media-breakpoint-down(md){
+
+      @include media-breakpoint-down(md) {
         padding-bottom: rem.convert(16px);
         margin-bottom: rem.convert(16px);
       }
     }
   }
+
   .image-section {
     padding-top: rem.convert(20px);
     position: relative;
@@ -1304,6 +1326,7 @@
     @include media-breakpoint-up(md) {
       background: var(--light-gray);
       padding: 3rem 3rem 3rem 2rem;
+
       &::after {
         content: "";
         background: var(--light-gray);
@@ -1317,7 +1340,7 @@
     }
 
     @include media-breakpoint-up(xl) {
-      padding: 3rem 3rem 3rem 2.75rem;
+      padding: 3rem 3.5rem 3rem 0rem;
     }
 
     .content-wrap {
@@ -1328,6 +1351,15 @@
         background: var(--light-gray);
         padding: 2rem;
       }
+
+    }
+    iframe , video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+    }
+    img{
+      max-width: 100%;
+      height: auto;
     }
   }
 }
@@ -1471,9 +1503,11 @@
           list-style: disc;
           padding-left: 2rem;
           margin-bottom: 2rem;
-          ul{
+
+          ul {
             margin-bottom: rem.convert(8px);
           }
+
           @include media-breakpoint-down(xl) {
             padding-left: 1.5rem;
             margin-bottom: 1.5rem;
@@ -1483,9 +1517,12 @@
         ol {
           padding-left: 2rem;
           margin-bottom: 2rem;
-          ul, ol{
+
+          ul,
+          ol {
             margin-bottom: rem.convert(8px);
           }
+
           @include media-breakpoint-down(xl) {
             margin-bottom: 1.5rem;
           }
@@ -1611,7 +1648,7 @@
 
             @include media-breakpoint-down(md) {
               padding-bottom: rem.convert(27px);
-             // min-height: rem.convert(201px);
+              // min-height: rem.convert(201px);
             }
 
             a:has(.video-wrap) {
@@ -2110,31 +2147,31 @@
           padding-left: 0 !important;
           padding-bottom: rem.convert(12px);
 
-            &::-webkit-scrollbar-track {
-              -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3) !important;
-              border-radius: rem.convert(10px) !important;
-              background-color: #f5f5f500 !important;
-            }
+          &::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3) !important;
+            border-radius: rem.convert(10px) !important;
+            background-color: #f5f5f500 !important;
+          }
 
-            &::-webkit-scrollbar {
-              width: rem.convert(10px) !important;
-              height: rem.convert(8px) !important;
-              background-color: #f5f5f500; 
-            }
+          &::-webkit-scrollbar {
+            width: rem.convert(10px) !important;
+            height: rem.convert(8px) !important;
+            background-color: #f5f5f500;
+          }
 
-            &::-webkit-scrollbar-thumb {
-              border-radius: rem.convert(10px);
-              -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-              background-color: white;
-              cursor:  pointer !important;
-            }
-          
+          &::-webkit-scrollbar-thumb {
+            border-radius: rem.convert(10px);
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            background-color: white;
+            cursor: pointer !important;
+          }
+
 
           @include media-breakpoint-down(md) {
             &::-webkit-scrollbar {
               height: rem.convert(6px);
             }
-            
+
           }
 
           li {

@@ -17,6 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
   initGalleryLightbox();
   initAccessibilityFeatures();
 
+
+  const submenuItems = document.querySelectorAll('.leftnav .sidenav .drop:not(.active) .sidenav-sub');
+  submenuItems.forEach(submenuItem => {
+    if (submenuItem && submenuItem.style.display === '') {
+      submenuItem.style.display = 'none';
+    }
+  });
+
   const expanderButtons = document.querySelectorAll('.btn-expander');
 
   expanderButtons.forEach(button => {
