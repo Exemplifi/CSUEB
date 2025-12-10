@@ -5524,6 +5524,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   text-transform: capitalize;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.5rem;
 }
 .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .button-grp a {
@@ -5532,6 +5533,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .button-grp .arrow {
   color: var(--gold);
   transition: all 0.4s ease-in-out;
+  flex: 0 0 24px;
 }
 @media (min-width: 768px) {
   .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .button-grp {

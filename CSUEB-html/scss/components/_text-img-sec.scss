@@ -873,6 +873,7 @@
           text-transform: capitalize;
           display: flex;
           align-items: center;
+          justify-content: space-between;
           gap: rem.convert(8px);
 
           a {
@@ -882,6 +883,7 @@
           .arrow {
             color: var(--gold);
             transition: all 0.4s ease-in-out;
+            flex: 0 0 24px;
           }
 
           @include media-breakpoint-up(md) {
@@ -900,6 +902,7 @@
 
       span {
         font-weight: 600;
+        
       }
 
       &:hover {
