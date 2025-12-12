@@ -236,7 +236,7 @@
 
   .form-sec,
   .img-content-section {
-    iframe {
+    iframe[src*="//www.youtube.com/"] {
       width: 100%;
       height: auto;
       aspect-ratio: 16 / 9;
@@ -322,7 +322,7 @@
       max-width: 100%;
     }
 
-    iframe {
+    iframe[src*="//www.youtube.com/"] {
       width: 100%;
       height: auto;
       aspect-ratio: 16 / 9;

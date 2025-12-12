@@ -8505,8 +8505,8 @@ table:not(.gssb_c) {
     width: 50%;
   }
 }
-.experts-profile-faculty-wraper .form-sec iframe,
-.experts-profile-faculty-wraper .img-content-section iframe {
+.experts-profile-faculty-wraper .form-sec iframe[src*="//www.youtube.com/"],
+.experts-profile-faculty-wraper .img-content-section iframe[src*="//www.youtube.com/"] {
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
@@ -8574,7 +8574,7 @@ table:not(.gssb_c) {
 .experts-profile-faculty-wraper:has(.form-sec) .img-wrapper {
   max-width: 100%;
 }
-.experts-profile-faculty-wraper:has(.form-sec) iframe {
+.experts-profile-faculty-wraper:has(.form-sec) iframe[src*="//www.youtube.com/"] {
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
