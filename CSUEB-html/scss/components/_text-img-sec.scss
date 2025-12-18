@@ -1519,14 +1519,27 @@
       }
 
       .message-content-sec {
+        P:has([aria-hidden="true"]) + ul:nth-of-type(1){
+          margin-top: 0 !important;
+        }
         ul {
           list-style: disc;
           padding-left: 2rem;
           margin-bottom: 2rem;
+          &:nth-of-type(1) {
+            margin-top: 1rem !important;
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
 
           ul {
             margin-bottom: rem.convert(8px);
+            &:last-child {
+              margin-bottom: 0;
+            }
           }
+
 
           @include media-breakpoint-down(xl) {
             padding-left: 1.5rem;
@@ -1554,11 +1567,12 @@
           text-decoration-style: solid;
           text-decoration-skip-ink: none;
           text-decoration-thickness: auto;
-          text-underline-offset: auto;
+          text-underline-offset: 2px;
           background: transparent;
           color: var(--red) !important;
-          display: inline-flex;
+          display: inline;
           word-break: break-word;
+          padding: 0.125rem 0;
 
           &:hover {
             background: rgba(213, 0, 50, 0.1);

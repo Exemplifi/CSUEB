@@ -1319,7 +1319,41 @@
       max-width: 100%;
       height: auto !important;
     }
-
+    // FIX: Avoid :has selector for broader compatibility
+    // Instead, apply these styles by default and override when .message exists
+  
+      ul{
+        list-style: disc;
+        max-width: max-content;
+        margin: 0 0 rem.convert(16px) 0;
+        text-align: left;
+        padding-left: rem.convert(32px);
+        li{
+          margin-bottom: rem.convert(8px);
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        &:not(:first-child) {
+          margin-top: rem.convert(16px);
+        }
+      }
+      ol{
+        max-width: max-content;
+        margin: 0 0 rem.convert(16px) 0;
+        text-align: left;
+        li{
+          margin-bottom: rem.convert(8px);
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+  
+   
 
 
   }

@@ -936,11 +936,12 @@ section.bg-white.section-with-padding + section.bg-white {
   text-decoration-style: solid !important;
   text-decoration-skip-ink: none !important;
   text-decoration-thickness: auto !important;
-  text-underline-offset: auto !important;
+  text-underline-offset: 2px !important;
   background: transparent !important;
   color: var(--red) !important;
-  display: inline-flex !important;
+  display: inline !important;
   word-break: break-word !important;
+  padding: 0.125rem 0;
 }
 .full-sec-content a:not(.btn):has(img):hover,
 .full-sec-content a:not([class]):has(img):hover {
@@ -1321,6 +1322,10 @@ html[hc=a4] .flip-tiles-gallery-grid .gallery-item a::after {
 html[hc=a2] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .button-grp a *,
 html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .button-grp a * {
   color: var(--white);
+}
+
+.section.bg-white:has(+ .section.bg-white.contact-us-sec) {
+  padding-bottom: 0;
 }
 
 .btn {
@@ -4732,6 +4737,36 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   max-width: 100%;
   height: auto !important;
 }
+.bg-img .dec-box ul {
+  list-style: disc;
+  max-width: max-content;
+  margin: 0 0 1rem 0;
+  text-align: left;
+  padding-left: 2rem;
+}
+.bg-img .dec-box ul li {
+  margin-bottom: 0.5rem;
+}
+.bg-img .dec-box ul li:last-child {
+  margin-bottom: 0;
+}
+.bg-img .dec-box ul:not(:first-child) {
+  margin-top: 1rem;
+}
+.bg-img .dec-box ol {
+  max-width: max-content;
+  margin: 0 0 1rem 0;
+  text-align: left;
+}
+.bg-img .dec-box ol li {
+  margin-bottom: 0.5rem;
+}
+.bg-img .dec-box ol li:last-child {
+  margin-bottom: 0;
+}
+.bg-img .dec-box ol:last-child {
+  margin-bottom: 0;
+}
 .bg-img .text-white,
 .bg-img span.text-white {
   color: var(--white);
@@ -6054,13 +6089,25 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
     padding-left: 0.25rem;
   }
 }
+.side-nav-with-content .side-nav-wrap .right-content .message-content-sec P:has([aria-hidden=true]) + ul:nth-of-type(1) {
+  margin-top: 0 !important;
+}
 .side-nav-with-content .side-nav-wrap .right-content .message-content-sec ul {
   list-style: disc;
   padding-left: 2rem;
   margin-bottom: 2rem;
 }
+.side-nav-with-content .side-nav-wrap .right-content .message-content-sec ul:nth-of-type(1) {
+  margin-top: 1rem !important;
+}
+.side-nav-with-content .side-nav-wrap .right-content .message-content-sec ul:last-child {
+  margin-bottom: 0;
+}
 .side-nav-with-content .side-nav-wrap .right-content .message-content-sec ul ul {
   margin-bottom: 0.5rem;
+}
+.side-nav-with-content .side-nav-wrap .right-content .message-content-sec ul ul:last-child {
+  margin-bottom: 0;
 }
 @media (max-width: 1199.98px) {
   .side-nav-with-content .side-nav-wrap .right-content .message-content-sec ul {
@@ -6087,11 +6134,12 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   text-decoration-style: solid;
   text-decoration-skip-ink: none;
   text-decoration-thickness: auto;
-  text-underline-offset: auto;
+  text-underline-offset: 2px;
   background: transparent;
   color: var(--red) !important;
-  display: inline-flex;
+  display: inline;
   word-break: break-word;
+  padding: 0.125rem 0;
 }
 .side-nav-with-content .side-nav-wrap .right-content .message-content-sec a:not([class]):hover,
 .side-nav-with-content .side-nav-wrap .right-content .message-content-sec a:not(.btn):hover {

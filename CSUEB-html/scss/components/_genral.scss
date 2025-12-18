@@ -156,7 +156,7 @@ ul {
         }
 
         ol {
-            
+
             margin-top: rem.convert(16px) !important;
 
             li {
@@ -736,11 +736,12 @@ section.bg-white.section-with-padding+section.bg-white {
         text-decoration-style: solid !important;
         text-decoration-skip-ink: none !important;
         text-decoration-thickness: auto !important;
-        text-underline-offset: auto !important;
+        text-underline-offset: 2px !important;
         background: transparent !important;
         color: var(--red) !important;
-        display: inline-flex !important;
+        display: inline !important;
         word-break: break-word !important;
+        padding: 0.125rem 0;
 
         &:has(img) {
             &:hover {
@@ -771,15 +772,18 @@ section.bg-white.section-with-padding+section.bg-white {
             &:last-child {
                 margin-bottom: 0 !important;
             }
+
             ul {
                 margin-top: 0 !important;
-                li{
+
+                li {
                     margin-bottom: rem.convert(4px);
+
                     &:last-child {
                         margin-bottom: 0 !important;
                     }
                 }
-               
+
             }
         }
 
@@ -791,23 +795,29 @@ section.bg-white.section-with-padding+section.bg-white {
     ol {
         padding-left: rem.convert(32px);
         margin-top: rem.convert(16px);
+
         li {
             margin-bottom: rem.convert(8px);
 
             &:last-child {
                 margin-bottom: 0 !important;
             }
+
             ul {
                 margin-top: 0 !important;
-                li{
+
+                li {
                     margin-bottom: rem.convert(4px);
+
                     &:last-child {
                         margin-bottom: 0 !important;
                     }
                 }
-                ol{
-                    li{
+
+                ol {
+                    li {
                         margin-bottom: rem.convert(4px);
+
                         &:last-child {
                             margin-bottom: 0 !important;
                         }
@@ -1256,5 +1266,11 @@ html[hc="a4"] {
         * {
             color: var(--white);
         }
+    }
+}
+
+.section.bg-white {
+    &:has(+ .section.bg-white.contact-us-sec) {
+        padding-bottom: 0;
     }
 }
