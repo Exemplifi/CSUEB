@@ -1274,3 +1274,7 @@ html[hc="a4"] {
         padding-bottom: 0;
     }
 }
+
+.section.bg-white:has(.main-img-slider) {
+    padding-bottom: 0;
+}

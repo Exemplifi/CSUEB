@@ -179,6 +179,27 @@
       aspect-ratio: 16 / 9;
       height: auto !important;
     }
+
+    ul:not(.actions) {
+      list-style: disc;
+      padding-left: 2rem;
+      margin-bottom: 0;
+      li {
+        margin-bottom: 0.5rem;
+      }
+
+      ul {
+        margin-bottom: rem.convert(8px);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  ol {
+    padding-left: 2rem;
   }
 }
 
@@ -485,6 +506,7 @@
     @include media-breakpoint-down(md) {
       padding: 4rem 2rem 3rem 2rem;
     }
+
     @include media-breakpoint-down(sm) {
       padding: 4rem 1rem 3rem 1rem;
     }
@@ -512,13 +534,14 @@
     }
 
   }
-    &:has(+ .bg-light-gray) {
-      margin-bottom: rem.convert(96px);
 
-      @include media-breakpoint-down(md) {
-        margin-bottom: rem.convert(72px);
-      }
+  &:has(+ .bg-light-gray) {
+    margin-bottom: rem.convert(96px);
+
+    @include media-breakpoint-down(md) {
+      margin-bottom: rem.convert(72px);
     }
+  }
 }
 
 .testimonial-with-paralax {
@@ -575,7 +598,7 @@
     @include media-breakpoint-down(md) {
       padding: 4rem 2rem 3rem 2rem;
     }
-    
+
     .section-heading {
       .star-icon * {
         color: var(--grey-700);
@@ -644,9 +667,11 @@
       padding: 2rem 1.75rem 3rem 1.75rem;
       border-width: 8px;
     }
+
     @media (max-width: 354px) {
       padding: 2rem 1rem 3rem 1rem;
-      h2{
+
+      h2 {
         font-size: rem.convert(24px);
       }
     }
@@ -1309,9 +1334,9 @@
 
     iframe {
       width: 100%;
-     max-width: 100%;
-     height: auto;
-     aspect-ratio: 16 / 9;
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
     }
 
     video {
@@ -1319,41 +1344,49 @@
       max-width: 100%;
       height: auto !important;
     }
+
     // FIX: Avoid :has selector for broader compatibility
     // Instead, apply these styles by default and override when .message exists
-  
-      ul{
-        list-style: disc;
-        max-width: max-content;
-        margin: 0 0 rem.convert(16px) 0;
-        text-align: left;
-        padding-left: rem.convert(32px);
-        li{
-          margin-bottom: rem.convert(8px);
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
-        &:not(:first-child) {
-          margin-top: rem.convert(16px);
-        }
-      }
-      ol{
-        max-width: max-content;
-        margin: 0 0 rem.convert(16px) 0;
-        text-align: left;
-        li{
-          margin-bottom: rem.convert(8px);
-          &:last-child {
-            margin-bottom: 0;
-          }
-        }
+
+    ul {
+      list-style: disc;
+      max-width: max-content;
+      margin: 0 0 rem.convert(16px) 0;
+      text-align: left;
+      padding-left: rem.convert(32px);
+
+      li {
+        margin-bottom: rem.convert(8px);
+
         &:last-child {
           margin-bottom: 0;
         }
       }
-  
-   
+
+      &:not(:first-child) {
+        margin-top: rem.convert(16px);
+      }
+    }
+
+    ol {
+      max-width: max-content;
+      margin: 0 0 rem.convert(16px) 0;
+      text-align: left;
+
+      li {
+        margin-bottom: rem.convert(8px);
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+
 
 
   }
@@ -1449,16 +1482,20 @@
     max-height: 100vh;
   }
 }
-.text-button-sec{
+
+.text-button-sec {
   padding: rem.convert(16px 0);
-  .row{
-    @include media-breakpoint-down(md){
+
+  .row {
+    @include media-breakpoint-down(md) {
       gap: rem.convert(24px);
     }
   }
-  &:has(.section-heading){
+
+  &:has(.section-heading) {
     padding: rem.convert(96px 0);
-    @include media-breakpoint-down(md){
+
+    @include media-breakpoint-down(md) {
       padding: rem.convert(72px 0);
     }
   }

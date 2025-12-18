@@ -1328,6 +1328,10 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   padding-bottom: 0;
 }
 
+.section.bg-white:has(.main-img-slider) {
+  padding-bottom: 0;
+}
+
 .btn {
   border-radius: 0rem;
   text-transform: uppercase;
@@ -3773,6 +3777,23 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   aspect-ratio: 16/9;
   height: auto !important;
 }
+.key-feature-sec .content-section ul:not(.actions) {
+  list-style: disc;
+  padding-left: 2rem;
+  margin-bottom: 0;
+}
+.key-feature-sec .content-section ul:not(.actions) li {
+  margin-bottom: 0.5rem;
+}
+.key-feature-sec .content-section ul:not(.actions) ul {
+  margin-bottom: 0.5rem;
+}
+.key-feature-sec .content-section ul:not(.actions) ul:last-child {
+  margin-bottom: 0;
+}
+.key-feature-sec ol {
+  padding-left: 2rem;
+}
 
 .whats-next-section {
   position: relative;
@@ -5170,6 +5191,25 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   aspect-ratio: 16/9;
   height: auto !important;
 }
+.img-text-sec .section-heading img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+.img-text-sec .section-heading ul {
+  list-style: disc;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+.img-text-sec .section-heading ul:last-child {
+  margin-bottom: 0;
+}
+.img-text-sec .section-heading ul li {
+  margin-bottom: 0.5rem;
+}
+.img-text-sec .section-heading ul li:last-child {
+  margin-bottom: 0;
+}
 .img-text-sec .image-section {
   position: relative;
 }
@@ -5261,6 +5301,14 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .img-text-full-width-sec .content-section .actions li:first-child {
   margin-top: 0;
 }
+.img-text-full-width-sec .content-section ul:not(.actions) {
+  list-style: disc;
+  padding-left: 2rem;
+  margin-bottom: 2rem;
+}
+.img-text-full-width-sec .content-section ul:not(.actions):last-child {
+  margin-bottom: 0;
+}
 .img-text-full-width-sec .content-section img {
   max-width: 100%;
   height: auto;
@@ -5289,6 +5337,10 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 .img-text-full-width-sec .swiper .swiper-slide {
   justify-content: flex-end;
+}
+.img-text-full-width-sec:has(.image-section .main-img-slider) .custom-container {
+  max-width: 100%;
+  padding-left: calc(50vw - 721px);
 }
 
 .text-img-main-card .video-wrap {
