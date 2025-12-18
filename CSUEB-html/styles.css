@@ -4199,6 +4199,34 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
     margin-bottom: 0.75rem;
   }
 }
+.important-announcement-sec .next-card ul {
+  list-style: disc;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.important-announcement-sec .next-card ul:last-child {
+  margin-bottom: 0;
+}
+.important-announcement-sec .next-card ul li {
+  margin-bottom: 0.5rem;
+}
+.important-announcement-sec .next-card ul li:last-child {
+  margin-bottom: 0;
+}
+.important-announcement-sec .next-card ol {
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+.important-announcement-sec .next-card ol:last-child {
+  margin-bottom: 0;
+}
+.important-announcement-sec .next-card ol li {
+  margin-bottom: 0.5rem;
+}
+.important-announcement-sec .next-card ol li:last-child {
+  margin-bottom: 0;
+}
 
 .testimonial-with-paralax {
   position: relative;
@@ -6012,13 +6040,43 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
     padding: 2rem;
   }
 }
+.review-text-img .content-section .content-wrap .section-title {
+  margin-bottom: 1rem;
+}
 .review-text-img .content-section iframe, .review-text-img .content-section video {
   width: 100%;
   aspect-ratio: 16/9;
+  height: auto;
+  margin-bottom: 2rem;
+}
+.review-text-img .content-section iframe:last-child, .review-text-img .content-section video:last-child {
+  margin-bottom: 0;
 }
 .review-text-img .content-section img {
   max-width: 100%;
   height: auto;
+}
+.review-text-img .content-section ul {
+  list-style: disc;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.review-text-img .content-section ul:last-child {
+  margin-bottom: 0;
+}
+.review-text-img .content-section ul li {
+  margin-bottom: 0.5rem;
+}
+.review-text-img .content-section ol {
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+}
+.review-text-img .content-section ol:last-child {
+  margin-bottom: 0;
+}
+.review-text-img .content-section ol li {
+  margin-bottom: 0.5rem;
 }
 
 @media (max-width: 767.98px) {
@@ -6394,6 +6452,14 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 }
 @media (max-width: 767.98px) {
   .side-nav-with-content .side-nav-wrap .right-content .testimonial-sec {
+    padding: 2rem 1.5rem;
+  }
+}
+.side-nav-with-content .side-nav-wrap .right-content .important-announcement-sec .next-card {
+  padding: 2.5rem 3rem;
+}
+@media (max-width: 767.98px) {
+  .side-nav-with-content .side-nav-wrap .right-content .important-announcement-sec .next-card {
     padding: 2rem 1.5rem;
   }
 }
