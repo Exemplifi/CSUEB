@@ -1225,24 +1225,24 @@ function initAccessibilityFeatures() {
 
 
 //For table tbody first td convert into th with scope row
-document.addEventListener("DOMContentLoaded", function () {
-  // Select all table rows inside tbody
-  const rows = document.querySelectorAll("table tbody tr");
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Select all table rows inside tbody
+//   const rows = document.querySelectorAll("table tbody tr");
 
-  rows.forEach((row) => {
-    const firstCell = row.querySelector("td:first-child");
-    if (firstCell) {
-      // Create a new <th> element
-      const th = document.createElement("th");
-      th.scope = "row";
-      th.className = firstCell.className; // keep same classes
-      th.innerHTML = firstCell.innerHTML; // copy content
+//   rows.forEach((row) => {
+//     const firstCell = row.querySelector("td:first-child");
+//     if (firstCell) {
+//       // Create a new <th> element
+//       const th = document.createElement("th");
+//       th.scope = "row";
+//       th.className = firstCell.className; // keep same classes
+//       th.innerHTML = firstCell.innerHTML; // copy content
 
-      // Replace <td> with <th>
-      row.replaceChild(th, firstCell);
-    }
-  });
-});
+//       // Replace <td> with <th>
+//       row.replaceChild(th, firstCell);
+//     }
+//   });
+// });
 
 // Removed duplicate event listener - functionality is already handled in the DOMContentLoaded event above
 
@@ -1305,14 +1305,14 @@ document.querySelectorAll("h1, h2, h3, h4, h5, h6, p").forEach(el => {
   }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Select all td and th elements
-  const cells = document.querySelectorAll("td, th");
-  // Remove inline style attribute from each
-  cells.forEach(cell => {
-    cell.removeAttribute("style");
-  });
-});
+// document.addEventListener("DOMContentLoaded", () => {
+//   // Select all td and th elements
+//   const cells = document.querySelectorAll("td, th");
+//   // Remove inline style attribute from each
+//   cells.forEach(cell => {
+//     cell.removeAttribute("style");
+//   });
+// });
 
 // script for add aria-hidden true for star icon svg
 const stars = document.querySelectorAll('svg.star-icon');
