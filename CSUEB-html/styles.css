@@ -3519,6 +3519,24 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
 .bg-black .btn-primary:hover::before {
   background-color: var(--gold);
 }
+.bg-black a:not([class]),
+.bg-black a:not(.btn) {
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: 2px;
+  background: transparent;
+  display: inline !important;
+  word-break: break-word;
+  padding: 1px 0;
+  color: var(--white) !important;
+}
+.bg-black a:not([class]):hover,
+.bg-black a:not(.btn):hover {
+  background: rgba(253, 194, 90, 0.1019607843);
+  text-decoration-color: transparent;
+}
 
 .bg-gold {
   background: var(--gold);
@@ -5364,6 +5382,24 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   max-width: 100%;
   height: auto;
   aspect-ratio: 16/9;
+}
+.img-text-full-width-sec .content-section a:not([class]),
+.img-text-full-width-sec .content-section a:not(.btn) {
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: 2px;
+  background: transparent;
+  color: var(--red) !important;
+  display: inline !important;
+  word-break: break-word;
+  padding: 1px 0;
+}
+.img-text-full-width-sec .content-section a:not([class]):hover,
+.img-text-full-width-sec .content-section a:not(.btn):hover {
+  background: rgba(213, 0, 50, 0.1);
+  text-decoration-color: transparent;
 }
 .img-text-full-width-sec .image-section {
   position: relative;

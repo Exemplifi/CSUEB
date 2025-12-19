@@ -525,6 +525,23 @@
       height: auto;
       aspect-ratio: 16 / 9;
     }
+    a:not([class]),
+    a:not(.btn){
+      text-decoration: underline;
+      text-decoration-style: solid;
+      text-decoration-skip-ink: none;
+      text-decoration-thickness: auto;
+      text-underline-offset: 2px;
+      background: transparent;
+      color: var(--red) !important;
+      display: inline !important;
+      word-break: break-word; 
+      padding: 1px 0;
+      &:hover {
+        background: rgba(213, 0, 50, 0.1);
+        text-decoration-color: transparent;
+      }
+    }
   }
 
   .image-section {

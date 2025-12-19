@@ -210,6 +210,23 @@
             }
         }
     }
+    a:not([class]),
+    a:not(.btn){
+      text-decoration: underline;
+      text-decoration-style: solid;
+      text-decoration-skip-ink: none;
+      text-decoration-thickness: auto;
+      text-underline-offset: 2px;
+      background: transparent;
+      display: inline !important;
+      word-break: break-word; 
+      padding: 1px 0;
+      color: var(--white) !important;
+      &:hover {
+          background: rgba(253, 194, 90, 0.1019607843);
+          text-decoration-color: transparent;
+        }
+    }   
 }
 
 .bg-gold {
