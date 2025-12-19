@@ -741,7 +741,7 @@ section.bg-white.section-with-padding+section.bg-white {
         color: var(--red) !important;
         display: inline !important;
         word-break: break-word !important;
-        padding: 0.125rem 0;
+        padding: 1px 0;
 
         &:has(img) {
             &:hover {

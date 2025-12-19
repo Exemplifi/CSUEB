@@ -941,7 +941,7 @@ section.bg-white.section-with-padding + section.bg-white {
   color: var(--red) !important;
   display: inline !important;
   word-break: break-word !important;
-  padding: 0.125rem 0;
+  padding: 1px 0;
 }
 .full-sec-content a:not(.btn):has(img):hover,
 .full-sec-content a:not([class]):has(img):hover {
@@ -5158,6 +5158,24 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   }
 }
 
+.img-text-sec a:not([class]),
+.img-text-sec a:not(.btn) {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: 2px;
+  background: transparent;
+  color: var(--red) !important;
+  display: inline !important;
+  word-break: break-word;
+  padding: 1px 0;
+}
+.img-text-sec a:not([class]):hover,
+.img-text-sec a:not(.btn):hover {
+  background: rgba(213, 0, 50, 0.1);
+  text-decoration-color: transparent;
+}
 @media (min-width: 768px) {
   .img-text-sec .row-section {
     --bs-gutter-x: 2rem;
@@ -6005,6 +6023,24 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   position: relative;
   z-index: 5;
 }
+.review-text-img .image-section a:not([class]),
+.review-text-img .image-section a:not(.btn) {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: 2px;
+  background: transparent;
+  color: var(--red) !important;
+  display: inline !important;
+  word-break: break-word;
+  padding: 1px 0;
+}
+.review-text-img .image-section a:not([class]):hover,
+.review-text-img .image-section a:not(.btn):hover {
+  background: rgba(213, 0, 50, 0.1);
+  text-decoration-color: transparent;
+}
 .review-text-img .content-section {
   position: relative;
   z-index: 4;
@@ -6029,6 +6065,24 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   .review-text-img .content-section {
     padding: 3rem 3.5rem 3rem 0rem;
   }
+}
+.review-text-img .content-section a:not([class]),
+.review-text-img .content-section a:not(.btn) {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: 2px;
+  background: transparent;
+  color: var(--red) !important;
+  display: inline !important;
+  word-break: break-word;
+  padding: 1px 0;
+}
+.review-text-img .content-section a:not([class]):hover,
+.review-text-img .content-section a:not(.btn):hover {
+  background: rgba(213, 0, 50, 0.1);
+  text-decoration-color: transparent;
 }
 .review-text-img .content-section .content-wrap {
   position: relative;
@@ -6249,7 +6303,7 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   color: var(--red) !important;
   display: inline;
   word-break: break-word;
-  padding: 0.125rem 0;
+  padding: 1px 0;
 }
 .side-nav-with-content .side-nav-wrap .right-content .message-content-sec a:not([class]):hover,
 .side-nav-with-content .side-nav-wrap .right-content .message-content-sec a:not(.btn):hover {
@@ -6271,18 +6325,21 @@ html[hc=a4] .img-verlap-link-sec .img-verlap-link-card .overlay .news-content .b
   padding-left: 1rem;
   margin-bottom: 2rem;
 }
-.side-nav-with-content .side-nav-wrap .right-content .image-content-sec a {
+.side-nav-with-content .side-nav-wrap .right-content .image-content-sec a:not([class]),
+.side-nav-with-content .side-nav-wrap .right-content .image-content-sec a:not(.btn) {
   text-decoration-line: underline;
   text-decoration-style: solid;
   text-decoration-skip-ink: none;
   text-decoration-thickness: auto;
-  text-underline-offset: auto;
+  text-underline-offset: 2px;
   background: transparent;
   color: var(--red) !important;
-  display: inline-flex;
+  display: inline !important;
   word-break: break-word;
+  padding: 1px 0;
 }
-.side-nav-with-content .side-nav-wrap .right-content .image-content-sec a:hover {
+.side-nav-with-content .side-nav-wrap .right-content .image-content-sec a:not([class]):hover,
+.side-nav-with-content .side-nav-wrap .right-content .image-content-sec a:not(.btn):hover {
   background: rgba(213, 0, 50, 0.1);
   text-decoration-color: transparent;
 }
@@ -8664,6 +8721,24 @@ table:not(.gssb_c) {
 
 .experts-profile-faculty-wraper {
   padding-top: 3rem !important;
+}
+.experts-profile-faculty-wraper a:not([class]),
+.experts-profile-faculty-wraper a:not(.btn) {
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: 2px;
+  background: transparent;
+  color: var(--red) !important;
+  display: inline !important;
+  word-break: break-word;
+  padding: 1px 0;
+}
+.experts-profile-faculty-wraper a:not([class]):hover,
+.experts-profile-faculty-wraper a:not(.btn):hover {
+  background: rgba(213, 0, 50, 0.1);
+  text-decoration-color: transparent;
 }
 .experts-profile-faculty-wraper .content-section {
   gap: 0;

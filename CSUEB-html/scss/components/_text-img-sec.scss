@@ -287,6 +287,24 @@
 }
 
 .img-text-sec {
+
+  a:not([class]),
+  a:not(.btn) {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: 2px;
+    background: transparent;
+    color: var(--red) !important;
+    display: inline !important;
+    word-break: break-word;
+    padding: 1px 0;
+    &:hover {
+      background: rgba(213, 0, 50, 0.1);
+      text-decoration-color: transparent;
+    }
+  }
   .row-section {
     @include media-breakpoint-up(md) {
       --bs-gutter-x: 2rem;
@@ -1372,6 +1390,24 @@
     padding-top: rem.convert(20px);
     position: relative;
     z-index: 5;
+    a:not([class]),
+    a:not(.btn) {
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+      text-decoration-skip-ink: none;
+      text-decoration-thickness: auto;
+      text-underline-offset: 2px;
+      background: transparent;
+      color: var(--red) !important;
+      display: inline !important;
+      word-break: break-word;
+      padding: 1px 0;
+
+      &:hover {
+        background: rgba(213, 0, 50, 0.1);
+        text-decoration-color: transparent;
+      }
+    }
   }
 
   .content-section {
@@ -1396,6 +1432,25 @@
 
     @include media-breakpoint-up(xl) {
       padding: 3rem 3.5rem 3rem 0rem;
+    }
+
+    a:not([class]),
+    a:not(.btn) {
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+      text-decoration-skip-ink: none;
+      text-decoration-thickness: auto;
+      text-underline-offset: 2px;
+      background: transparent;
+      color: var(--red) !important;
+      display: inline !important;
+      word-break: break-word;
+      padding: 1px 0;
+
+      &:hover {
+        background: rgba(213, 0, 50, 0.1);
+        text-decoration-color: transparent;
+      }
     }
 
     .content-wrap {
@@ -1638,7 +1693,7 @@
           color: var(--red) !important;
           display: inline;
           word-break: break-word;
-          padding: 0.125rem 0;
+          padding: 1px 0;
 
           &:hover {
             background: rgba(213, 0, 50, 0.1);
@@ -1666,16 +1721,18 @@
           margin-bottom: 2rem;
         }
 
-        a {
+        a:not([class]),
+        a:not(.btn) {
           text-decoration-line: underline;
           text-decoration-style: solid;
           text-decoration-skip-ink: none;
           text-decoration-thickness: auto;
-          text-underline-offset: auto;
+          text-underline-offset: 2px;
           background: transparent;
           color: var(--red) !important;
-          display: inline-flex;
+          display: inline !important;
           word-break: break-word;
+          padding: 1px 0;
 
           &:hover {
             background: rgba(213, 0, 50, 0.1);

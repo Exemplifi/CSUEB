@@ -224,7 +224,24 @@
 
 .experts-profile-faculty-wraper {
   padding-top: rem.convert(48px) !important;
-
+  
+  a:not([class]),
+  a:not(.btn) {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: 2px;
+    background: transparent;
+    color: var(--red) !important;
+    display: inline !important;
+    word-break: break-word;
+    padding: 1px 0;
+    &:hover {
+      background: rgba(213, 0, 50, 0.1);
+      text-decoration-color: transparent;
+    }
+  }
   .content-section {
     gap: 0;
     padding-top: rem.convert(34px);
