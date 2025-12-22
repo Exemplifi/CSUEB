@@ -116,10 +116,12 @@
 
         .arrow {
             color: var(--gold);
+
             * {
                 color: var(--gold);
             }
-            path{
+
+            path {
                 fill: var(--gold) !important;
             }
         }
@@ -210,23 +212,21 @@
             }
         }
     }
-    a:not([class]),
-    a:not(.btn){
-      text-decoration: underline;
-      text-decoration-style: solid;
-      text-decoration-skip-ink: none;
-      text-decoration-thickness: auto;
-      text-underline-offset: 2px;
-      background: transparent;
-      display: inline !important;
-      word-break: break-word; 
-      padding: 1px 0;
-      color: var(--white) !important;
-      &:hover {
-          background: rgba(253, 194, 90, 0.1019607843);
-          text-decoration-color: transparent;
+
+    &.key-feature-sec {
+        a:not([class]),
+        a:not(.btn) {
+            @extend .link--hover;
+            text-underline-offset: 1px !important;
+            text-decoration-color: var(--white) !important;
+            color: var(--white) !important;
+            &:hover {
+                text-decoration-color: transparent !important;
+                background: rgba(253, 194, 90, 0.1019607843)!important;
+                color: var(--white) !important;
+            }
         }
-    }   
+    }
 }
 
 .bg-gold {

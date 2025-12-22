@@ -16,6 +16,12 @@
       max-height: rem.convert(123px);
       max-width: rem.convert(14.53px);
     }
+    @include media-breakpoint-down(md) {
+      width: max-content;
+      img{
+        width: auto !important;
+      }
+    }
   }
  .heading-content{
   img{
@@ -227,20 +233,7 @@
   
   a:not([class]),
   a:not(.btn) {
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    text-decoration-skip-ink: none;
-    text-decoration-thickness: auto;
-    text-underline-offset: 2px;
-    background: transparent;
-    color: var(--red) !important;
-    display: inline !important;
-    word-break: break-word;
-    padding: 1px 0;
-    &:hover {
-      background: rgba(213, 0, 50, 0.1);
-      text-decoration-color: transparent;
-    }
+    @extend .link--hover;
   }
   .content-section {
     gap: 0;
