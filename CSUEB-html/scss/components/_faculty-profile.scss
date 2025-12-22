@@ -17,7 +17,8 @@
       max-width: rem.convert(14.53px);
     }
     @include media-breakpoint-down(md) {
-      width: max-content;
+      width: auto;
+      display: inline-flex;
       img{
         width: auto !important;
       }

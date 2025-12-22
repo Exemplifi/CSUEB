@@ -8503,7 +8503,8 @@ table:not(.gssb_c) {
 }
 @media (max-width: 767.98px) {
   .faculty-details-wrapper .img-clip-path-box .img-wrapper {
-    width: max-content;
+    width: auto;
+    display: inline-flex;
   }
   .faculty-details-wrapper .img-clip-path-box .img-wrapper img {
     width: auto !important;
