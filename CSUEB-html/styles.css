@@ -8496,19 +8496,17 @@ table:not(.gssb_c) {
 .faculty-details-wrapper {
   overflow: hidden;
 }
+.faculty-details-wrapper .img-clip-path-box .img-wrapper {
+  width: auto;
+  display: inline-flex;
+}
 .faculty-details-wrapper .img-clip-path-box .img-wrapper::after {
   left: 3rem;
   max-height: 7.6875rem;
   max-width: 0.908125rem;
 }
-@media (max-width: 767.98px) {
-  .faculty-details-wrapper .img-clip-path-box .img-wrapper {
-    width: auto;
-    display: inline-flex;
-  }
-  .faculty-details-wrapper .img-clip-path-box .img-wrapper img {
-    width: auto !important;
-  }
+.faculty-details-wrapper .img-clip-path-box .img-wrapper img {
+  width: auto !important;
 }
 .faculty-details-wrapper .heading-content img {
   width: 100% !important;
